@@ -1,9 +1,7 @@
 ---
-title: "Project"
-permalink: /categories/project/
-layout: category
+title: "Posts by Projects"
+permalink: /projects/
+layout: categories
 author_profile: true
-taxonomy: Project
+taxonomy: projects
 ---
-
-📘 Project 회고록
