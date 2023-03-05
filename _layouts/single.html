@@ -41,7 +41,7 @@ breadcrumbs.html %} {% endunless %} {% endif %}
           <p>" | remove: "</p>
           " }}
         </h1>
-        {% endif %} {% if page.read_time %}
+        {% endif %} {% if page.data %}
         <p class="page__date">
           <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{
           site.data.ui-text[site.locale].date_label | default: "Updated:" }}
