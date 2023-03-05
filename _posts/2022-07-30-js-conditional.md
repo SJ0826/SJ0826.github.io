@@ -5,7 +5,7 @@ toc: true
 toc_sticky: true
 
 categories:
-  - JavaScript
+  - TIL/JavaScript
 tags:
   - ["JavaScript", "조건문"]
 last_modified_at: 2022-07-30T08:06:00-05:00

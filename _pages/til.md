@@ -1,6 +1,6 @@
 ---
 title: "Posts by TIL"
 layout: categories
-permalink: /til/
+permalink: /TIL/
 author_profile: true
 ---

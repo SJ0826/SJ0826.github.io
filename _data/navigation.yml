@@ -1,8 +1,8 @@
 # main links
 main:
   - title: "TIL"
-    url: /til/
-  - title: "Tags"
-    url: /tags/
+    url: /TIL/
   - title: "Projects"
     url: /projects/
+  - title: "Tags"
+    url: /tags/

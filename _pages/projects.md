@@ -1,6 +1,6 @@
 ---
 title: "Posts by Projects"
-permalink: /projects/
+permalink: /projects/#projects
 layout: categories
 author_profile: true
 taxonomy: projects
