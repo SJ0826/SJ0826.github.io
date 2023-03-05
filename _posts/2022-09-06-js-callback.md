@@ -83,10 +83,10 @@ loadScript("/my/script.js", function (error, script) {
 });
 ```
 
-<오류 우선 콜백의 관례><br>
+### 오류 우선 콜백의 관례
 
-1. `callback`의 첫 번째 인수는 에러를 위해 남겨둔다. 에러가 발생하면 이 인수를 이용해 `callback(err)이 호출된다.
-2. 두 번째 인수는 에러가 발생하지 않았을 때를 위해 남겨둔다. 원하는 동작이 성공한 경우엔 `callback(null, result1, result2)가 호출된다.
+1. `callback`의 첫 번째 인수는 에러를 위해 남겨둔다. 에러가 발생하면 이 인수를 이용해 `callback(err)`이 호출된다.
+2. 두 번째 인수는 에러가 발생하지 않았을 때를 위해 남겨둔다. 원하는 동작이 성공한 경우엔 `callback(null, result1, result2)`가 호출된다.
 
 ### 오류 우선 콜백의 장점
 
