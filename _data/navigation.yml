@@ -4,5 +4,5 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
-  - title: "JavaScript"
-    url: /categories/javascript
+  - title: "Project"
+    url: /categories/Project

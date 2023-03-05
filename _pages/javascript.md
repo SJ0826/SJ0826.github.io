@@ -1,9 +1,9 @@
 ---
-title: "JavaScript"
-permalink: /categories/javascript/
+title: "Project"
+permalink: /categories/Project/
 layout: category
 author_profile: true
-taxonomy: JavaScript
+taxonomy: Project
 ---
 
 JavaScript Learning History
