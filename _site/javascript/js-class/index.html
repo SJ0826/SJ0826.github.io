@@ -1,0 +1,765 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[클래스] 클래스(Class) - Sometimes we fall, then we rise</title>
+<meta name="description" content="클래스(Class)">
+
+
+  <meta name="author" content="Sujin Kim">
+  
+  <meta property="article:author" content="Sujin Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sometimes we fall, then we rise">
+<meta property="og:title" content="[클래스] 클래스(Class)">
+<meta property="og:url" content="http://localhost:4000/javascript/js-class/">
+
+
+  <meta property="og:description" content="클래스(Class)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-09-05T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-09-05T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/js-class/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sujin Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sometimes we fall, then we rise Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7662177111410384"
+  crossorigin="anonymous"
+></script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sometimes we fall, then we rise
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sujin Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>프론트엔드 엔지니어가 되기까지</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ikosdu60@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="[클래스] 클래스(Class)"
+    /> <meta
+      itemprop="description"
+      content="클래스(Class)"
+    /> <meta
+      itemprop="datePublished"
+      content="2022-09-05T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2022-09-05T22:06:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[클래스] 클래스(Class)</p>
+
+        </h1>
+         
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                On this page
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#-클래스class란">📄 클래스(Class)란</a></li><li><a href="#-선언적-방식">📄 선언적 방식</a></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="-클래스class란">📄 클래스(Class)란</h2>
+
+<p>자바스크립트는 기본적으로 객체지향언어를 지원합니다.</p>
+
+<p>es6문법에 class가 추가되어 좀더 강력한 객체지향언어를 지향하게 되었습니다.</p>
+
+<p>Class는 객체를 생성하기 위한 템플릿이자 함수의 한 종류입니다.</p>
+
+<p>클래스는 데이터와 이를 조작하는 코드를 하나로 추상화합니다.</p>
+
+<h2 id="-선언적-방식">📄 선언적 방식</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">()</span> <span class="p">{...}</span>
+    <span class="nf">method1</span><span class="p">()</span> <span class="p">{...}</span>
+    <span class="nf">method2</span><span class="p">()</span> <span class="p">{...}</span>
+<span class="p">}</span> <span class="c1">//class A 생성</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">new</span> <span class="nc">A</span><span class="p">());</span> <span class="c1">// class A의 세로운 객체를 출력</span>
+</code></pre></div></div>
+
+<결과>
+
+```js
+A {}
+```
+
+클래스를 만들고 `new A()`를 호출하면 내부에서 정의한 메서드가 들어 있는 객체가 생성됩니다.<br />
+클래스 내부에서 정의한 메서드는 `A.prototype`에 저장됩니다.<br />
+객체의 기본 상태를 설정해주는 생성자 메서드 `constructor()`는 `new`에 의해 자동으로 호출되므로, 특별한 절차 없이 객체를 초기화할 수 있습니다.
+
+### 주의할 점
+
+- 메서드 사이에는 쉼표가 없습니다.
+- 클래스의 선언적 방식에서 호이스팅은 일어나지 않습니다.
+
+* `new`키워들를 통해 호출하지 않으면 에러가 발생합니다.
+* 클래스에 정의된 메서드는 열거할 수 없습니다. 클래스의 `prototype`프로퍼티에 추가된 메서드의 `enumerable`플래그는 `false`입니다.
+* 클래스는 항상 엄격모드로 실행됩니다.(`use strict`)
+
+## 📄 클래스 표현식
+
+클래스의 표현식을 변수에 할당하는 방식으로 사용됩니다.
+
+```js
+const B = class {};
+
+console.log(new B());
+```
+
+<결과>
+
+```js
+B {}
+```
+
+## 📄 클래스 필드로 바인딩 된 메서드
+
+자바스크립트에서 `this`는 동적으로 결정됩니다.
+
+따라서 객체 메서드를 여기저기 전달해 전혀 다른 컨텍스트에서 호출하게 되면 `this`는 메서드가 정의된 객체를 참조하지 않습니다.
+
+```js
+class Button {
+  constructor(value) {
+    this.value = value;
+  }
+
+  click() {
+    cosole.log(this.value);
+  }
+}
+
+let button = new Button("안녕하세요");
+
+setTimeout(button.click, 1000);
+```
+
+<결과><br />
+
+```js
+undefined;
+```
+
+`this`의 컨텍스트를 알 수 없게 된 현상을 '잃어버린 `this`'라고 합니다.<br />
+이러한 현상을 해결하기 위해 클래스 필드를 사용할 수 있습니다.<br />
+
+```js
+class Button {
+  constructor(value) {
+    this.value = value;
+  }
+
+  click = () =&gt; {
+    // 수정한 부분
+    alert(this.value);
+  };
+}
+
+let button = new Button("안녕하세요.");
+
+setTimeout(button.click, 1000);
+```
+
+<결과><br />
+
+```
+안녕하세요.
+```
+
+클래스 필스 `click = () =&gt; {...}`는 각 `Button`객체마다 독립적인 함수를 만들어주고 이 함수의 `this`를 해당 객체에 바인딩시켜줍니다.<br />
+클래스의 이러한 기능은 브라우저 환경에서 메서드를 이벤트 리스너로 설정해야할 때 특히 유용합니다.
+
+## 📄 멤버변수
+
+멤버 변수는 메소드 밖에서 선언된 변수를 뜻합니다.
+클래스의 멤버변수는 this라는 키워드를 사용하여 반드시 생성자에 만들어야 합니다.
+
+```js
+class C {
+  name = "no name"; // 초기값 설정
+  age = 0;
+
+  constructor(name, age) {
+    // 생성자를 통해서 새로 할당.
+    this.name = name; // 멤버변수
+    this.age = age; // 멤버변수
+  }
+}
+
+console.log(new C("Mark", 37));
+```
+
+<결과>
+
+```js
+C { name: 'Mark', age: 37 }
+```
+
+## 📄 멤버 함수
+
+클래스에는 멤버변수 뿐만 아니라 멤버 함수도 생성할 수 있습니다.
+
+```js
+class A {
+  // 방법1: 함수의 이름과 중괄호를 이용해 설정
+  hello1() {
+    console.log("hello1", this);
+  }
+  // 방법2: 멤버변수 이름에 함수를 할당하는 방법
+  hello2 = () =&gt; {
+    console.log("hello2", this);
+  };
+}
+
+new A().hello1();
+new A().hello2();
+```
+
+<결과>
+
+```js
+hello1 A { hello2: [Function: hello2] }
+hello2 A { hello2: [Function: hello2] }
+```
+
+## 출처
+
+- 패스트캠퍼스<br /><br />
+
+- [MDN web docs](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)
+</결과></결과></결과></결과></결과></결과>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%81%B4%EB%9E%98%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">클래스</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+    
+    </span>
+  </p>
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-09-05">September 5, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%ED%81%B4%EB%9E%98%EC%8A%A4%5D+%ED%81%B4%EB%9E%98%EC%8A%A4%28Class%29%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-class%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-class%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-class%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/javascript/js-primitive/" class="pagination--pager" title="원시값의 메서드
+">Previous</a>
+    
+    
+      <a href="/javascript/js-prototype/" class="pagination--pager" title="프로토타입(prototype)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+      You may also enjoy
+    </h2>
+    <div class="grid__wrapper">
+        
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/%EC%9D%BC%EC%83%81/first-post/" rel="permalink"><p>github.io 블로그 시작하기</a>
+      
+    </h2>
+    <!--
+    devinlife comments :
+        아키이브 싱글 페이지(ex. 카테고리)에 각 포스트 제목 밑에 Updated 시간 표기
+        기존에는 read_time이 표기. read_time -> date 변경
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i>    less than 1 minute read 
+</p>
+    
+-->
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 05 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/projects/projects-todoList-redux/" rel="permalink"><p>[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기</a>
+      
+    </h2>
+    <!--
+    devinlife comments :
+        아키이브 싱글 페이지(ex. 카테고리)에 각 포스트 제목 밑에 Updated 시간 표기
+        기존에는 read_time이 표기. read_time -> date 변경
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i>    1 minute read 
+</p>
+    
+-->
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> January 31 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      툴킷을 사용하지 않고 redux만을 이용한 전역상태 관리
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/javascript/js-image-random/" rel="permalink"><p>이미지 랜덤 배치</a>
+      
+    </h2>
+    <!--
+    devinlife comments :
+        아키이브 싱글 페이지(ex. 카테고리)에 각 포스트 제목 밑에 Updated 시간 표기
+        기존에는 read_time이 표기. read_time -> date 변경
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i>    less than 1 minute read 
+</p>
+    
+-->
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> November 29 2022
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/javascript/js-callback/" rel="permalink"><p>콜백(Callback)</a>
+      
+    </h2>
+    <!--
+    devinlife comments :
+        아키이브 싱글 페이지(ex. 카테고리)에 각 포스트 제목 밑에 Updated 시간 표기
+        기존에는 read_time이 표기. read_time -> date 변경
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i>    1 minute read 
+</p>
+    
+-->
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 06 2022
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      
+
+    </p>
+    
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Sujin Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/javascript/js-class/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/javascript/js-class"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sj0826-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
