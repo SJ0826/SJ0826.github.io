@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>평균 구하기 - Sometimes we fall, then we rise ⛵</title>
-<meta name="description" content="프로그래머스 Lv1. 평균 구하기 풀이">
+<!-- begin _includes/seo.html --><title>해시(Hash) - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="해시 테이블은 (Key, Value)로 데이터를 저장하는 자료구조입니다.">
 
 
   <meta name="author" content="Sujin Kim">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
-<meta property="og:title" content="평균 구하기">
-<meta property="og:url" content="http://localhost:4000/programmers-lv1/programmers-arr/">
+<meta property="og:title" content="해시(Hash)">
+<meta property="og:url" content="http://localhost:4000/structure/structure-hash/">
 
 
-  <meta property="og:description" content="프로그래머스 Lv1. 평균 구하기 풀이">
-
-
-
+  <meta property="og:description" content="해시 테이블은 (Key, Value)로 데이터를 저장하는 자료구조입니다.">
 
 
 
 
-  <meta property="article:published_time" content="2023-02-17T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-02-17T22:06:00+09:00">
+  <meta property="article:published_time" content="2022-03-07T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-03-07T22:06:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/programmers-lv1/programmers-arr/">
+
+<link rel="canonical" href="http://localhost:4000/structure/structure-hash/">
 
 
 
@@ -328,16 +328,16 @@
   >
     <meta
       itemprop="headline"
-      content="평균 구하기"
+      content="해시(Hash)"
     /> <meta
       itemprop="description"
-      content="프로그래머스 Lv1. 평균 구하기 풀이"
+      content="해시 테이블은 (Key, Value)로 데이터를 저장하는 자료구조입니다."
     /> <meta
       itemprop="datePublished"
-      content="2023-02-17T00:00:00+09:00"
+      content="2022-03-07T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-17T22:06:00+09:00"
+      content="2023-03-07T22:06:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -345,7 +345,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>평균 구하기</p>
+          <p>해시(Hash)</p>
 
         </h1>
          
@@ -362,30 +362,25 @@
                 On this page
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#문제-">문제 📖</a></li><li><a href="#나의-풀이-️">나의 풀이 🙋‍♀️</a></li></ul>
+            <ul class="toc__menu"><li><a href="#-해시hash">📄 해시(Hash)</a></li><li><a href="#참고">참고</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="문제-">문제 📖</h2>
+         <h2 id="-해시hash">📄 해시(Hash)</h2>
 
-<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
+<p><img src="https://camo.githubusercontent.com/4e48be3863145cbf9c6ba79ce9ed561f91756b24157426980398351df34bf228/68747470733a2f2f696d67312e6461756d63646e2e6e65742f7468756d622f523132383078302f3f73636f64653d6d746973746f72793226666e616d653d6874747073253341253246253246626c6f672e6b616b616f63646e2e6e6574253246646e25324662317a4f77312532466274714c36484157376a792532466a7042413570506b51466e66695a63504c616b673030253246696d672e706e67" alt="해시" /></p>
+
+<p>해시는 (Key, Value)로 데이터를 저장하는 자료구조입니다.</p>
+
+<p>해시 함수는 임이의 길이를 갖는 데이터를 고정된 길이의 데이터로 변환시켜주는 함수를 뜻합니다.</p>
+
+<p>해시 함수를 사용하면 한 배열의 키에 해시함수를 적용해 고유한 인덱스를 생성할 수 있습니다.</p>
+
+<h2 id="참고">참고</h2>
 
 <ul>
-  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
-  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
+  <li><a href="https://upbitcare.com/academy/education/blockchain/52">업비트 투자자보호센터</a></li>
 </ul>
-
-<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>
  
       </section>
 
@@ -400,9 +395,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#%ED%8F%89%EA%B7%A0%EA%B5%AC%ED%95%98%EA%B8%B0" class="page__taxonomy-item p-category" rel="tag">평균구하기</a><span class="sep">, </span>
-    
-      <a href="/tags/#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">프로그래머스</a><span class="sep">, </span>
+      <a href="/tags/#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0" class="page__taxonomy-item p-category" rel="tag">자료구조</a><span class="sep">, </span>
     
       <a href="/tags/#%ED%95%B4%EC%8B%9C" class="page__taxonomy-item p-category" rel="tag">해시</a>
     
@@ -421,14 +414,14 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#programmers-lv1" class="page__taxonomy-item p-category" rel="tag">programmers-lv1</a>
+      <a href="/categories/#structure" class="page__taxonomy-item p-category" rel="tag">structure</a>
     
     </span>
   </p>
 
  
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-02-17">February 17, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-03-07">March 7, 2023</time></p>
 
       </footer>
 
@@ -437,20 +430,20 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%ED%8F%89%EA%B7%A0+%EA%B5%AC%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2Fprogrammers-arr%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%ED%95%B4%EC%8B%9C%28Hash%29%20http%3A%2F%2Flocalhost%3A4000%2Fstructure%2Fstructure-hash%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2Fprogrammers-arr%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstructure%2Fstructure-hash%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2Fprogrammers-arr%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstructure%2Fstructure-hash%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
  
   <nav class="pagination">
     
-      <a href="/programmers-lv1/evenandodd/" class="pagination--pager" title="짝수와 홀수
+      <a href="/programmers-lv1/2016/" class="pagination--pager" title="2016년
 ">Previous</a>
     
     
-      <a href="/programmers-lv1/programmers-phonecatmon/" class="pagination--pager" title="폰켓몬
+      <a href="/javascript/js-identifier/" class="pagination--pager" title="식별자(Identifier)
 ">Next</a>
     
   </nav>
@@ -641,8 +634,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/programmers-lv1/programmers-arr/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/programmers-lv1/programmers-arr"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/structure/structure-hash/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/structure/structure-hash"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

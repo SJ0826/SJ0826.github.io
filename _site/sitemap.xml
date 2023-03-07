@@ -13,6 +13,10 @@
 <lastmod>2023-02-21T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/structure/structure-hash/</loc>
+<lastmod>2023-03-07T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/javascript/js-identifier/</loc>
 <lastmod>2022-07-29T22:06:00+09:00</lastmod>
 </url>
@@ -85,6 +89,10 @@
 <lastmod>2023-03-05T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/</loc>
+<lastmod>2023-03-07T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/</loc>
 </url>
 <url>
@@ -101,6 +109,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/projects/#projects</loc>
+</url>
+<url>
+<loc>http://localhost:4000/cs/structure/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/tags/</loc>

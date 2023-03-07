@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-07T14:48:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">github.io 블로그 시작하기</title><link href="http://localhost:4000/%EC%9D%BC%EC%83%81/first-post/" rel="alternate" type="text/html" title="github.io 블로그 시작하기" /><published>2023-03-05T00:00:00+09:00</published><updated>2023-03-05T22:06:00+09:00</updated><id>http://localhost:4000/%EC%9D%BC%EC%83%81/first-post</id><content type="html" xml:base="http://localhost:4000/%EC%9D%BC%EC%83%81/first-post/"><![CDATA[<p>GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-07T19:33:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">완주하지 못한 선수</title><link href="http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/" rel="alternate" type="text/html" title="완주하지 못한 선수" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+
+<p>수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.</p>
+
+<p>마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때, 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.</p>
+
+<ul>
+  <li>마라톤 경기에 참여한 선수의 수는 1명 이상 100,000명 이하입니다.</li>
+  <li>completion의 길이는 participant의 길이보다 1 작습니다.</li>
+  <li>참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어져 있습니다.</li>
+  <li>참가자 중에는 동명이인이 있을 수 있습니다.</li>
+</ul>
+
+<h2 id="나의-풀이-1-️">나의 풀이 #1 🙋‍♀️</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">participant</span><span class="p">,</span> <span class="nx">completion</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">setParticipant</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">(</span><span class="nx">participant</span><span class="p">);</span> <span class="c1">// 1</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">setParticipant</span><span class="p">.</span><span class="nx">size</span> <span class="o">&lt;</span> <span class="nx">participant</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 2</span>
+    <span class="kd">const</span> <span class="nx">notCompletion</span> <span class="o">=</span> <span class="nx">participant</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">setParticipant</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">item</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">setParticipant</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">notCompletion</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">participant</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">person</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">completion</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">person</span><span class="p">));</span> <span class="c1">// 3</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Set</code>객체를 사용해서 <code class="language-plaintext highlighter-rouge">participant</code> 중복요소를 제거한다.</li>
+  <li>중복요소를 제거한 <code class="language-plaintext highlighter-rouge">participant</code> 객체(<code class="language-plaintext highlighter-rouge">setParticipant</code>)의 크기가 <code class="language-plaintext highlighter-rouge">participant</code>보다 작다면, 동명이인이 있다는 뜻이므로 <code class="language-plaintext highlighter-rouge">filter</code>함수를 사용해 완주하지 못한 선수의 이름을 구한다.</li>
+  <li>동명이인이 없는 경우 바로 완주하지 못한 선수의 이름을 구한다.</li>
+</ol>
+
+<p>이 코드를 제출하며 정확성 체크는 통과하지만 효율성 체크는 통과하지 못한다.</p>
+
+<p>효율성까지 테스트하는 문제는 처음이라 시간이 좀 걸려서 코드를 고쳤다.</p>
+
+<h2 id="나의-풀이-2-️">나의 풀이 #2 🙋‍♀️</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">participant</span><span class="p">,</span> <span class="nx">completion</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">sortedParticipant</span> <span class="o">=</span> <span class="nx">participant</span><span class="p">.</span><span class="nf">sort</span><span class="p">();</span> <span class="c1">// 1</span>
+  <span class="kd">const</span> <span class="nx">sortedCompletion</span> <span class="o">=</span> <span class="nx">completion</span><span class="p">.</span><span class="nf">sort</span><span class="p">();</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">sortedParticipant</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 2</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">sortedParticipant</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">sortedCompletion</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+      <span class="c1">// 3</span>
+      <span class="k">return</span> <span class="nx">sortedParticipant</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>참가자 배열과 완주자 배열의 문자열을 abc차순으로 정리한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">for</code>문을 사용해서 참가자 수만큼 반복문을 실행한다.</li>
+  <li>순차가 정리된 배열끼리 이름을 비교하게 되고, 이름이 같지 않으면 해당 이름을 정답으로 제출한다.</li>
+</ol>
+
+<p>효율성 체크는 수행 시간과 메모리를 기준으로 평가된다.</p>
+
+<p>코드의 시간복잡도와 저장된 메모리를 고려해야 통과할 수 있다.</p>
+
+<p>반복문을 사용하는 경우에는 원하는 값이 도출되었을 때, 바로 반복문을 종료시킬 수 있어야 효율성이 증가한다.</p>
+
+<p>그런면에서 배열에 <code class="language-plaintext highlighter-rouge">for...in</code>을 사용하는 것은 좋지 않다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">for...in</code>은 모든 값을 조회해 효율성을 떨어뜨리기 때문이다.</p>
+
+<h2 id="best-practice-">Best Practice 👍</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">participant</span><span class="p">,</span> <span class="nx">completion</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">();</span> <span class="c1">// 1</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">participant</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">participant</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span>
+      <span class="nx">b</span> <span class="o">=</span> <span class="nx">completion</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+
+    <span class="nx">map</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 2</span>
+    <span class="nx">map</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 3</span>
+  <span class="p">}</span> <span class="c1">// 4</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">]</span> <span class="k">of</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 5</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">v</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nx">k</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="dl">"</span><span class="s2">nothing</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>해시의 컨셉을 정확히 접목시킨 풀이이다.</p>
+
+<p>해시의 개념은 알고 있었지만 프로그래머스에서 이렇게 접목시킬 생각은 못했다.</p>
+
+<ol>
+  <li>우선 <code class="language-plaintext highlighter-rouge">Map</code>객체를 생성한다.</li>
+  <li>참가자 수만큼 반복문을 돌려 <code class="language-plaintext highlighter-rouge">map</code>에 키는 참가자 이름으로, 값은 기존에 1을 더해준다.</li>
+  <li>map에 완주자 이름의 키에 해당되는 값을 <code class="language-plaintext highlighter-rouge">-1</code>만큼 빼준다.</li>
+  <li>처음 <code class="language-plaintext highlighter-rouge">for</code>문을 나온 <code class="language-plaintext highlighter-rouge">map</code>의 키는 참가자이름이고 값은 0 또는 1이 된다.</li>
+  <li>완주하지 못한 참가자는 1의 값을 가지고 있으므로 해당 key의 값을 답으로 제출한다.</li>
+  <li>동명이인이 있을 경우에는 해당 이름의 값에 두번 1이 더해지고 한번 1이 빼지므로 마찬가지로 1이 된다.</li>
+</ol>
+
+<p>풀이를 정리하자면 다음과 같게 된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/223395946-3b217984-2284-408b-916f-8c85a22952fe.png" alt="image" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">sort</code>로 풀면 <strong>O(NlogN)</strong>의 시간이 걸리지만 해시로 풀면 <strong>O(N)</strong>의 시간 복잡도를 가진다.</p>
+
+<p>다음 해시 문제를 풀때는 꼭 <code class="language-plaintext highlighter-rouge">Map</code>을 사용해서 답을 낼 것이다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="완주하지 못한 선수" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 완주하지 못한 선수]]></summary></entry><entry><title type="html">github.io 블로그 시작하기</title><link href="http://localhost:4000/%EC%9D%BC%EC%83%81/first-post/" rel="alternate" type="text/html" title="github.io 블로그 시작하기" /><published>2023-03-05T00:00:00+09:00</published><updated>2023-03-05T22:06:00+09:00</updated><id>http://localhost:4000/%EC%9D%BC%EC%83%81/first-post</id><content type="html" xml:base="http://localhost:4000/%EC%9D%BC%EC%83%81/first-post/"><![CDATA[<p>GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.</p>
 
 <p>GitHub TIL레포에 공부내용을 기록해왔는데 이 블로그로 모든 내용을 옮겨야 한다.</p>
 
@@ -32,26 +149,7 @@
 
 <p>어차피 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>의 절반까지만 정답의 유효 범위이기 때문에 반복 횟수를 조금이라도 줄이려고 신경썼다.</p>
 
-<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry><entry><title type="html">평균 구하기</title><link href="http://localhost:4000/programmers-lv1/programmers-arr/" rel="alternate" type="text/html" title="평균 구하기" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-arr</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-arr/"><![CDATA[<h2 id="문제-">문제 📖</h2>
-
-<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
-
-<ul>
-  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
-  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
-</ul>
-
-<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="평균구하기" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 평균 구하기 풀이]]></summary></entry><entry><title type="html">폰켓몬</title><link href="http://localhost:4000/programmers-lv1/programmers-phonecatmon/" rel="alternate" type="text/html" title="폰켓몬" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-phonecatmon</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-phonecatmon/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry><entry><title type="html">폰켓몬</title><link href="http://localhost:4000/programmers-lv1/programmers-phonecatmon/" rel="alternate" type="text/html" title="폰켓몬" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-phonecatmon</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-phonecatmon/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>당신은 폰켓몬을 잡기 위한 오랜 여행 끝에, 홍 박사님의 연구실에 도착했습니다. 홍 박사님은 당신에게 자신의 연구실에 있는 총 N 마리의 폰켓몬 중에서 N/2마리를 가져가도 좋다고 했습니다.</p>
 
@@ -105,7 +203,26 @@
 
 <p>내 풀이에서는 <code class="language-plaintext highlighter-rouge">newNums.length</code>에 쓸데없이 올림처리를 한 것을 지우지도 않았고, <code class="language-plaintext highlighter-rouge">set</code>함수를 사용할때 굳이 상수를 두번이나 선언한게 보인다.</p>
 
-<p>답이 나와도 다시한번 보고 정리하는 습관을 가져야겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="폰켓몬" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 폰켓몬 풀이]]></summary></entry><entry><title type="html">짝수와 홀수</title><link href="http://localhost:4000/programmers-lv1/evenandodd/" rel="alternate" type="text/html" title="짝수와 홀수" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/evenandodd</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/evenandodd/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<p>답이 나와도 다시한번 보고 정리하는 습관을 가져야겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="폰켓몬" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 폰켓몬 풀이]]></summary></entry><entry><title type="html">평균 구하기</title><link href="http://localhost:4000/programmers-lv1/programmers-arr/" rel="alternate" type="text/html" title="평균 구하기" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-arr</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-arr/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+
+<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
+
+<ul>
+  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
+  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
+</ul>
+
+<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="평균구하기" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 평균 구하기 풀이]]></summary></entry><entry><title type="html">짝수와 홀수</title><link href="http://localhost:4000/programmers-lv1/evenandodd/" rel="alternate" type="text/html" title="짝수와 홀수" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/evenandodd</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/evenandodd/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요.</p>
 
@@ -413,117 +530,4 @@
 
 <h2 id="출처">출처</h2>
 
-<p><a href="https://ko.javascript.info/static-properties-methods">모던 자바스크립트 튜토리얼</a></p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="정적메서드" /><category term="정적프로퍼티" /></entry><entry><title type="html">프로토타입(prototype)</title><link href="http://localhost:4000/javascript/js-prototype/" rel="alternate" type="text/html" title="프로토타입(prototype)" /><published>2022-09-05T00:00:00+09:00</published><updated>2022-09-05T22:06:00+09:00</updated><id>http://localhost:4000/javascript/js-prototype</id><content type="html" xml:base="http://localhost:4000/javascript/js-prototype/"><![CDATA[<h2 id="-프로토타입이란">📄 프로토타입이란?</h2>
-
-<p>프로토타입의 한국어 뜻은 <strong>원형</strong>입니다.</p>
-
-<p>프로토타입은 말 그대로 객체의 원형이라고 할 수 있는 것입니다.</p>
-
-<p>Javascript에서는 객체를 상속하기 위하여 프로토타입이라는 방식을 사용합니다.</p>
-
-<ul>
-  <li>
-    <p>생성자 함수에 기본으로 세팅되는 프로퍼티<code class="language-plaintext highlighter-rouge">(F.prototype)</code>는 <code class="language-plaintext highlighter-rouge">[[Prototype]]</code>과 다릅니다. <code class="language-plaintext highlighter-rouge">F.prototype</code>은 <code class="language-plaintext highlighter-rouge">new F()</code>를 호출할 때 만들어지는 새로운 객체의 <code class="language-plaintext highlighter-rouge">[[Prototype]]</code>을 설정합니다.</p>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">F.prototype</code>의 값은 객체나 <code class="language-plaintext highlighter-rouge">null</code>만 가능합니다. 다른 값은 무시됩니다.</li>
-  <li>굳이 this라는 자기참조변수를 사용하지 않고 prototype으로 변수 p에 hello라는 함수를 할당했다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-  <span class="c1">//this.hello = function() {</span>
-  <span class="c1">//    console.log('hello', this.name, this.age);</span>
-  <span class="c1">//}</span>
-<span class="p">}</span>
-
-<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hello</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="kd">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mark</span><span class="dl">"</span><span class="p">,</span> <span class="mi">37</span><span class="p">);</span>
-
-<span class="nx">p</span><span class="p">.</span><span class="nf">hello</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>결과</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">hello</span> <span class="nx">Mark</span> <span class="mi">37</span>
-</code></pre></div></div>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Person</span><span class="p">()</span> <span class="p">{}</span> <span class="c1">//Person함수 생성</span>
-
-<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hello</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">//Person의 프로토타입으로 hello 함수 생성</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="kd">function</span> <span class="nf">Korean</span><span class="p">(</span><span class="nx">region</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">//Korean 함수 생성</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">region</span> <span class="o">=</span> <span class="nx">region</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">where</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">where</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">region</span><span class="p">);</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="nx">Korean</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> <span class="c1">// 프로토타입을 이용해 부모의 프로퍼티를 자식의 프로퍼티에 할당</span>
-
-<span class="kd">const</span> <span class="nx">k</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Korean</span><span class="p">(</span><span class="dl">"</span><span class="s2">Seoul</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 변수 k에 객체 할당</span>
-
-<span class="nx">k</span><span class="p">.</span><span class="nf">hello</span><span class="p">();</span>
-<span class="nx">k</span><span class="p">.</span><span class="nf">where</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>결과</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">hello1</span>
-<span class="nx">where</span> <span class="nx">Seoul</span>
-</code></pre></div></div>
-
-<h2 id="-프로토타입-장점">📄 프로토타입 장점</h2>
-
-<p>프로토타입의 장점은 <strong>함수의 재사용성을 높인다는 것</strong>입니다.</p>
-
-<p>프로토 타입을 사용해서 함수 밖에서 새로운 함수나 값을 선언한다면,</p>
-
-<p>새로운 함수나 값을 기존 함수에 할당할 필요없이 <code class="language-plaintext highlighter-rouge">prototype</code>이라는 키워드 하나로 바로 사용가능하기 때문에 코드가 훨씬 간결해집니다.</p>
-
-<h2 id="-프로토타입-체인">📄 프로토타입 체인</h2>
-
-<p>프로토타입을 이용해 서로 이어져 있는 집합을 <strong>프로토타입 체인</strong>이라고 합니다.</p>
-
-<p>위의 코드에 다음과 같은 코드를 이어서 작성합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">k</span> <span class="k">instanceof</span> <span class="nx">Korean</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">k</span> <span class="k">instanceof</span> <span class="nx">Person</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">k</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">);</span>
-</code></pre></div></div>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span><span class="p">;</span>
-<span class="kc">true</span><span class="p">;</span>
-<span class="kc">true</span><span class="p">;</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Korean</code>이 <code class="language-plaintext highlighter-rouge">Person</code>을 상속하고, <code class="language-plaintext highlighter-rouge">Person</code>이 <code class="language-plaintext highlighter-rouge">Object</code>를 상속하므로 <code class="language-plaintext highlighter-rouge">true</code>값이 나왔다.</li>
-</ul>
-
-<h2 id="느낀-점">느낀 점</h2>
-
-<p>자바스크립트 공부하면서 제일 난관에 봉착했다.<br />
-뭔가 알듯 말듯 헷갈리는 개념이다.<br />
-강의를 끝나면 모던자바스크립트튜토리얼도 보고 책도 보고 할텐데 그 과정에서 익숙해지며 습득될 수 있도록 꼼꼼히 학습해야겠다.<br /><br /></p>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li>
-    <p>패스트캠퍼스 프론트엔드 강의<br /><br /></p>
-  </li>
-  <li>
-    <p><a href="https://opentutorials.org/course/743/6573">생활코딩</a><br /><br /></p>
-  </li>
-  <li>
-    <p><a href="https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes">MDN Web Docs</a></p>
-  </li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="프로토타입" /><summary type="html"><![CDATA[프로토타입(prototype)]]></summary></entry></feed>
+<p><a href="https://ko.javascript.info/static-properties-methods">모던 자바스크립트 튜토리얼</a></p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="정적메서드" /><category term="정적프로퍼티" /></entry></feed>

@@ -19,3 +19,8 @@ docs:
       - title: "Lv2"
         url: /programmers/lv2/
         category: "programmers-lv2"
+  - title: CS
+    children:
+      - title: "자료구조"
+        url: /cs/structure/
+        category: "structure"
