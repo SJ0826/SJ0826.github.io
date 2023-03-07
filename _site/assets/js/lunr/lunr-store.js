@@ -5,6 +5,18 @@ var store = [{
         "url": "/projects/projects-todolist-axios/",
         "teaser": null
       },{
+        "title": "최댓값과 최솟값",
+        "excerpt":"문제 📖 문자열 s에는 공백으로 구분된 숫자들이 저장되어 있습니다. str에 나타나는 숫자 중 최소값과 최대값을 찾아 이를 “(최소값) (최대값)”형태의 문자열을 반환하는 함수, solution을 완성하세요. 예를들어 s가 “1 2 3 4”라면 “1 4”를 리턴하고, “-1 -2 -3 -4”라면 “-4 -1”을 리턴하면 됩니다. s에는 둘 이상의 정수가 공백으로 구분되어 있습니다. function solution(s)...","categories": ["programmers-lv2"],
+        "tags": ["프로그래머스","최댓값과 최솟값"],
+        "url": "/programmers-lv2/programmers-maxandmin/",
+        "teaser": null
+      },{
+        "title": "2016년",
+        "excerpt":"문제 📖 2016년 1월 1일은 금요일입니다. 2016년 a월 b일은 무슨 요일일까요? 두 수 a ,b를 입력받아 2016년 a월 b일이 무슨 요일인지 리턴하는 함수, solution을 완성하세요. 요일의 이름은 일요일부터 토요일까지 각각 SUN,MON,TUE,WED,THU,FRI,SAT 입니다. 예를 들어 a=5, b=24라면 5월 24일은 화요일이므로 문자열 “TUE”를 반환하세요. 2016년은 윤년입니다. 2016년 a월 b일은 실제로 있는 날입니다....","categories": ["programmers-lv1"],
+        "tags": ["프로그래머스","2016년"],
+        "url": "/programmers-lv1/2016/",
+        "teaser": null
+      },{
         "title": "식별자(Identifier)",
         "excerpt":"📄 식별자(Identifier) 코드 내의 변수, 함수 혹은 속성을 식별하는 문자열을 식별자라고 합니다. 식별자를 통해서 이름을 지어주게 됩니다. 📄 식별자를 만들 때 규칙 식별자는 대소문자를 구분합니다. 유니코드 문자, $, 숫자를 사용할 수는 있지만, 숫자로 시작할 수는 없습니다. 예약어는 사용할 수 없고, 공백 문자도 사용할 수 없습니다. 한글도 가능은 하지만, 보통 영문을...","categories": ["JavaScript"],
         "tags": ["JavaScript","식별자"],
@@ -81,6 +93,30 @@ var store = [{
         "excerpt":"📄 리덕스 툴킷을 사용하지 않은 이유 리덕스를 인강을 통해서 배웠지만 처음엔 이해가 잘 안갔다. 리듀서, 액션 등등 새로운 키워드가 많았고 컨셉도 어려웠다. 배우고 꾸준히 사용해보지 않아서 고이 묻어둔 상태였는데 원티드에서 리덕스를 다루게 되어 다시 꺼내 보았다. 그렇게 리덕스를 사용해서 만든 과제물에 대해 팀원분에게 피드백을 듣게 되었고 리덕스의 컨셉을 이해하지 않았다는...","categories": ["Projects"],
         "tags": ["TodoList","Redux"],
         "url": "/projects/projects-todoList-redux/",
+        "teaser": null
+      },{
+        "title": "짝수와 홀수",
+        "excerpt":"문제 📖 정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요. num은 int 범위의 정수입니다. 0은 짝수입니다. function solution(num) { var answer = \"\"; return answer; } 나의 풀이 🙋‍♀️ function solution(num) { const answer = num % 2 === 0 ? \"Even\" : \"Odd\"; return...","categories": ["programmers-lv1"],
+        "tags": ["프로그래머스","짝수와홀수"],
+        "url": "/programmers-lv1/evenandodd/",
+        "teaser": null
+      },{
+        "title": "평균 구하기",
+        "excerpt":"문제 📖 정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요. arr은 길이 1 이상, 100 이하인 배열입니다. arr의 원소는 -10,000 이상 10,000 이하인 정수입니다. 나의 풀이 🙋‍♀️ function solution(arr) { const answer = arr.reduce((a, c) =&gt; a + c) / arr.length; return answer; } 배열 내장 함수인 reduce함수를...","categories": ["programmers-lv1"],
+        "tags": ["프로그래머스","평균구하기","해시"],
+        "url": "/programmers-lv1/programmers-arr/",
+        "teaser": null
+      },{
+        "title": "폰켓몬",
+        "excerpt":"문제 📖 당신은 폰켓몬을 잡기 위한 오랜 여행 끝에, 홍 박사님의 연구실에 도착했습니다. 홍 박사님은 당신에게 자신의 연구실에 있는 총 N 마리의 폰켓몬 중에서 N/2마리를 가져가도 좋다고 했습니다. 홍 박사님 연구실의 폰켓몬은 종류에 따라 번호를 붙여 구분합니다. 따라서 같은 종류의 폰켓몬은 같은 번호를 가지고 있습니다. 예를 들어 연구실에 총 4마리의...","categories": ["programmers-lv1"],
+        "tags": ["프로그래머스","폰켓몬","해시"],
+        "url": "/programmers-lv1/programmers-phonecatmon/",
+        "teaser": null
+      },{
+        "title": "약수의 합",
+        "excerpt":"문제 📖 정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요. n은 0 이상 3000이하인 정수입니다. 나의 풀이 🙋‍♀️ function solution(n) { let sum = n; for (let i = 1; i &lt;= Math.floor(n / 2); i++) { if (n % i === 0) sum += i;...","categories": ["programmers-lv1"],
+        "tags": ["프로그래머스","약수의 합"],
+        "url": "/programmers-lv1/sumofdivisor/",
         "teaser": null
       },{
         "title": "github.io 블로그 시작하기",

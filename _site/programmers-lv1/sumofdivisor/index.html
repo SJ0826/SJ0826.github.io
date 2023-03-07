@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>클로저(Closer) - Sometimes we fall, then we rise ⛵</title>
-<meta name="description" content="클로저(Closer)">
+<!-- begin _includes/seo.html --><title>약수의 합 - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="프로그래머스 Lv1. 약수의 합 풀이">
 
 
   <meta name="author" content="Sujin Kim">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
-<meta property="og:title" content="클로저(Closer)">
-<meta property="og:url" content="http://localhost:4000/javascript/js-closer/">
+<meta property="og:title" content="약수의 합">
+<meta property="og:url" content="http://localhost:4000/programmers-lv1/sumofdivisor/">
 
 
-  <meta property="og:description" content="클로저(Closer)">
-
-
-
+  <meta property="og:description" content="프로그래머스 Lv1. 약수의 합 풀이">
 
 
 
 
-  <meta property="article:published_time" content="2022-08-29T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2022-08-29T22:06:00+09:00">
+  <meta property="article:published_time" content="2023-02-20T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-02-20T22:06:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/javascript/js-closer/">
+
+<link rel="canonical" href="http://localhost:4000/programmers-lv1/sumofdivisor/">
 
 
 
@@ -308,16 +308,16 @@
   >
     <meta
       itemprop="headline"
-      content="클로저(Closer)"
+      content="약수의 합"
     /> <meta
       itemprop="description"
-      content="클로저(Closer)"
+      content="프로그래머스 Lv1. 약수의 합 풀이"
     /> <meta
       itemprop="datePublished"
-      content="2022-08-29T00:00:00+09:00"
+      content="2023-02-20T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2022-08-29T22:06:00+09:00"
+      content="2023-02-20T22:06:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -325,7 +325,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>클로저(Closer)</p>
+          <p>약수의 합</p>
 
         </h1>
          
@@ -342,90 +342,34 @@
                 On this page
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#-클로저란">📄 클로저란</a></li><li><a href="#-클로저의-동작-원리">📄 클로저의 동작 원리</a></li></ul>
+            <ul class="toc__menu"><li><a href="#문제-">문제 📖</a></li><li><a href="#나의-풀이-️">나의 풀이 🙋‍♀️</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="-클로저란">📄 클로저란</h2>
+         <h2 id="문제-">문제 📖</h2>
 
-<p>클로저란 <br />
-어떤 함수 A에서 선언한 변수 a를 참조하는 내부함수 B를 외부로 전달할 경우 A의 실행 컨텍스트가 종료된 이후에도 변수 a가 사라지지 않는 현상이다.</p>
+<p>정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.</p>
 
-<h2 id="-클로저의-동작-원리">📄 클로저의 동작 원리</h2>
+<ul>
+  <li>n은 0 이상 3000이하인 정수입니다.</li>
+</ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">outer</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">inner</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="o">++</span><span class="nx">a</span><span class="p">;</span>
-  <span class="p">};</span>
-  <span class="k">return</span> <span class="nx">inner</span><span class="p">;</span>
-<span class="p">};</span>
-<span class="kd">var</span> <span class="nx">outer2</span> <span class="o">=</span> <span class="nf">outer</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">outer2</span><span class="p">());</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">outer2</span><span class="p">());</span>
+<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<결과>
+<p>간단하게 <code class="language-plaintext highlighter-rouge">for</code>문을 사용했다.</p>
 
-```js
-2;
-3;
-```
+<p>어차피 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>의 절반까지만 정답의 유효 범위이기 때문에 반복 횟수를 조금이라도 줄이려고 신경썼다.</p>
 
-`inner`함수의 실행 시점에는 `outer`함수가 이미 종료 되었는데 `outer`함수의 **LexicalEnvitonment**에 접근했다.
-
-바로 가비지 컬렉터의 동작 방식 때문이다.
-
-**가비지 컬렉터는 어떤 값을 참조하는 변수가 하나라도 있다면 그 값은 수집 대상에 포함하지 않는다.**
-
-외부함수인 `outer`의 실행이 종료 되더라도<br />
-내부함수인 `inner`함수는 언젠가 `outer2`를 실행함으로써 호출될 가능성이 열렸기 때문에 <br />
-가비지 컬렉터의 수집대상에 포함되지 않는다.
-
-## 클로저와 메모리 관리
-
-클로저는 어떤 필요에 의해 의도적으로 함수의 지역변수의 메모리를 소모하도록 함으로써 발생한다.
-
-하지만 클로저의 필요성이 사라진 시점에는 더이상 메모리를 소모하지 않게 해주어야 한다.
-
-방법은 **참조 카운터를 0으로 만들어 주는 것**이다.
-
-식별자에 참조형이 아닌 기본형 데이터(보통`null` 또는 `undefined`)를 할당해주면 가비지 컬렉터가 값을 수거해 갈 것이다.
-
-```js
-var outer = (function () {
-  var a = 1;
-  var inner = function () {
-    return ++a;
-  };
-  return inner;
-})();
-console.log(outer());
-console.log(outer());
-outer = null; // outer 식별자의 inner 함수 참조를 끊음
-```
-
-```js
-(function () {
-  var a = 0;
-  var intervalId = null;
-  var inner = function () {
-    if (++a &gt;= 10) {
-      clearInterval(intervalId);
-      inner = null; // inner 식별자의 함수 참조를 끊음
-    }
-    console.log(a);
-  };
-  intervalId = setInterval(inner, 1000);
-})();
-```
-
-이렇게 식별자에 기본형 데이터 값을 대입해서 함수 참조를 끊으면 메모리를 효율적으로 관리할 수 있다.
-
-## 출처
-
-- 코어 자바스크립트
-</결과>
+<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>
  
       </section>
 
@@ -440,9 +384,9 @@ outer = null; // outer 식별자의 inner 함수 참조를 끊음
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a><span class="sep">, </span>
+      <a href="/tags/#%EC%95%BD%EC%88%98%EC%9D%98-%ED%95%A9" class="page__taxonomy-item p-category" rel="tag">약수의 합</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%81%B4%EB%A1%9C%EC%A0%80" class="page__taxonomy-item p-category" rel="tag">클로저</a>
+      <a href="/tags/#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">프로그래머스</a>
     
     </span>
   </p>
@@ -459,14 +403,14 @@ outer = null; // outer 식별자의 inner 함수 참조를 끊음
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+      <a href="/categories/#programmers-lv1" class="page__taxonomy-item p-category" rel="tag">programmers-lv1</a>
     
     </span>
   </p>
 
  
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-08-29">August 29, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-02-20">February 20, 2023</time></p>
 
       </footer>
 
@@ -475,20 +419,20 @@ outer = null; // outer 식별자의 inner 함수 참조를 끊음
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%ED%81%B4%EB%A1%9C%EC%A0%80%28Closer%29%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-closer%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EC%95%BD%EC%88%98%EC%9D%98+%ED%95%A9%20http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2Fsumofdivisor%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-closer%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2Fsumofdivisor%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-closer%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2Fsumofdivisor%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
  
   <nav class="pagination">
     
-      <a href="/javascript/js-function/" class="pagination--pager" title="함수
+      <a href="/programmers-lv1/programmers-phonecatmon/" class="pagination--pager" title="폰켓몬
 ">Previous</a>
     
     
-      <a href="/javascript/js-optionalchaning/" class="pagination--pager" title="옵셔널 체이닝
+      <a href="/%EC%9D%BC%EC%83%81/first-post/" class="pagination--pager" title="github.io 블로그 시작하기
 ">Next</a>
     
   </nav>
@@ -541,32 +485,6 @@ outer = null; // outer 식별자의 inner 함수 참조를 끊음
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-      <a href="/programmers-lv1/sumofdivisor/" rel="permalink"><p>약수의 합</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 20 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      프로그래머스 Lv1. 약수의 합 풀이
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
       <a href="/programmers-lv1/programmers-phonecatmon/" rel="permalink"><p>폰켓몬</a>
       
     </h2>
@@ -603,6 +521,32 @@ outer = null; // outer 식별자의 inner 함수 참조를 끊음
      
     <p class="archive__item-excerpt" itemprop="description">
       프로그래머스 Lv1. 평균 구하기 풀이
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/evenandodd/" rel="permalink"><p>짝수와 홀수</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 16 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 짝수와 홀수
 
     </p>
     
@@ -664,8 +608,8 @@ outer = null; // outer 식별자의 inner 함수 참조를 끊음
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/javascript/js-closer/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/javascript/js-closer"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/programmers-lv1/sumofdivisor/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/programmers-lv1/sumofdivisor"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

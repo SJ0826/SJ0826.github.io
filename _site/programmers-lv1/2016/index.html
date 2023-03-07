@@ -1,0 +1,747 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>2016년 - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="프로그래머스 Lv1. 2016년 풀이">
+
+
+  <meta name="author" content="Sujin Kim">
+  
+  <meta property="article:author" content="Sujin Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
+<meta property="og:title" content="2016년">
+<meta property="og:url" content="http://localhost:4000/programmers-lv1/2016/">
+
+
+  <meta property="og:description" content="프로그래머스 Lv1. 2016년 풀이">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-21T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-02-21T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/programmers-lv1/2016/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sujin Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sometimes we fall, then we rise ⛵ Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7662177111410384"
+  crossorigin="anonymous"
+></script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sometimes we fall, then we rise ⛵
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sujin Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>프론트엔드 엔지니어가 되기까지</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ikosdu60@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Front</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/javascript/">JavaScript (12)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">프로그래머스</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/programmers/lv1/">Lv1 (5)</a></li>
+          
+          
+            <li><a href="/programmers/lv2/">Lv2 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="2016년"
+    /> <meta
+      itemprop="description"
+      content="프로그래머스 Lv1. 2016년 풀이"
+    /> <meta
+      itemprop="datePublished"
+      content="2022-02-21T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-02-21T22:06:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>2016년</p>
+
+        </h1>
+         
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                On this page
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#문제-">문제 📖</a></li><li><a href="#나의-풀이-️">나의 풀이 🙋‍♀️</a><ul><li><a href="#trouble-shooting-1-">trouble shooting 1 💥</a><ul><li><a href="#처음-코드">처음 코드</a></li><li><a href="#수정한-코드">수정한 코드</a></li></ul></li><li><a href="#trouble-shooting-2-">trouble shooting 2 💥</a><ul><li><a href="#처음-코드-1">처음 코드</a></li><li><a href="#수정한-코드-1">수정한 코드</a></li></ul></li></ul></li><li><a href="#best-practice-1-">Best Practice #1 👍</a></li><li><a href="#best-practice-2-">Best Practice #2 👍</a></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="문제-">문제 📖</h2>
+
+<p>2016년 1월 1일은 금요일입니다. 2016년 a월 b일은 무슨 요일일까요? 두 수 a ,b를 입력받아 2016년 a월 b일이 무슨 요일인지 리턴하는 함수, solution을 완성하세요. 요일의 이름은 일요일부터 토요일까지 각각 SUN,MON,TUE,WED,THU,FRI,SAT</p>
+
+<p>입니다. 예를 들어 a=5, b=24라면 5월 24일은 화요일이므로 문자열 “TUE”를 반환하세요.</p>
+
+<ul>
+  <li>2016년은 윤년입니다.</li>
+  <li>2016년 a월 b일은 실제로 있는 날입니다. (13월 26일이나 2월 45일같은 날짜는 주어지지 않습니다)</li>
+</ul>
+
+<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">dayOfTheWeek</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">FRI</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">SAT</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">SUN</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">MON</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">TUE</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">WED</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">THU</span><span class="dl">"</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">daysOfMonth</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">];</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="nf">if </span><span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 1</span>
+      <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">daysOfMonth</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">;</span> <span class="c1">//2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nx">sum</span> <span class="o">/</span> <span class="mi">7</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// 3</span>
+
+  <span class="k">return</span> <span class="nx">index</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">dayOfTheWeek</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="p">:</span> <span class="nx">dayOfTheWeek</span><span class="p">[</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>내가 생각한 풀이의 순서는 다음과 같다.</p>
+
+<ol>
+  <li>주어진 월(a)전의 총 날짜를 더한 값을 구한다.. = <code class="language-plaintext highlighter-rouge">sum</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sum</code>에 <code class="language-plaintext highlighter-rouge">b</code>를 더해 필요한 날짜를 모두 더한 값을 구한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">sum</code>에 7의 배수를 뺐을 때 나올 수 있는 한자리 수를 구해 <code class="language-plaintext highlighter-rouge">dayOfTheWeek</code>의 인덱스로 활용한다.</li>
+</ol>
+
+<h3 id="trouble-shooting-1-">trouble shooting 1 💥</h3>
+
+<h4 id="처음-코드">처음 코드</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">daysOfMonth</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="수정한-코드">수정한 코드</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">sum</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">daysOfMonth</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">;</span> <span class="c1">//2</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이 부분은 왜 통과하지 못했는지 머리를 굴리다 1월인 경우, 2월인 경우 값을 대입해서 생각해보니 문제점을 찾을 수 있었다.</p>
+
+<p>만약 1월이라면 <code class="language-plaintext highlighter-rouge">a</code>는 1이되는데 <code class="language-plaintext highlighter-rouge">for</code>문의 조건에 처음부터 충족되지 못해서 <code class="language-plaintext highlighter-rouge">sum</code>에 값이 들어가지 않았던 것이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">if</code>문으로 조건을 달아주긴 했지만 조건문속 반복문속 조건문.. 정말 맘에 들지 않는다..</p>
+
+<h3 id="trouble-shooting-2-">trouble shooting 2 💥</h3>
+
+<h4 id="처음-코드-1">처음 코드</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">dayOfTheWeek</span><span class="p">[</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</code></pre></div></div>
+
+<h4 id="수정한-코드-1">수정한 코드</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">index</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">dayOfTheWeek</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="p">:</span> <span class="nx">dayOfTheWeek</span><span class="p">[</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>계산대로 하면 모든 케이스가 통과해야하는데 13개의 케이스 중 2개가 통과하지 못하고 계속 실패로 걸렸다.</p>
+
+<p>테스트 케이스에 날짜를 하나 하나 추가해서 결과를 확인하던 중 이유를 알 수 있었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">index</code>가 0이 될 수도 있었던것이었다.</p>
+
+<p>예를 들어 5월 5일인 경우, <code class="language-plaintext highlighter-rouge">index</code>가 <code class="language-plaintext highlighter-rouge">126 - (18*7) = 0</code>이 되는데 나는 결과값을 <code class="language-plaintext highlighter-rouge">dayOfTheWeek[index-1]</code>로만 리턴해서 결과가 <code class="language-plaintext highlighter-rouge">undefined</code>가 나왔던 것이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">return</code>할 때 삼항연산자를 이용해 <code class="language-plaintext highlighter-rouge">index</code>가 0이 될 경우의 케이스도 처리해주었다.</p>
+
+<h2 id="best-practice-1-">Best Practice #1 👍</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">getDayName</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">tempDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">tempDate</span><span class="p">.</span><span class="nf">toString</span><span class="p">().</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nf">toUpperCase</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">//아래 코드는 테스트를 위한 코드입니다.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">getDayName</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">24</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Date</code>가 있는 걸 알긴 했지만 그러면 너무 단순해질것같아서 사용하지 않았다.</p>
+
+<p>그래도 메소드를 사용한걸 보니 훨씬 보기 편하다.</p>
+
+<h2 id="best-practice-2-">Best Practice #2 👍</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">monthDay</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">weekDay</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">THU</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">FRI</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">SAT</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">SUN</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">MON</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">TUE</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">WED</span><span class="dl">"</span><span class="p">];</span>
+
+  <span class="kd">let</span> <span class="nx">days</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">days</span> <span class="o">+=</span> <span class="nx">monthDay</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+
+  <span class="k">return</span> <span class="nx">weekDay</span><span class="p">[</span><span class="nx">days</span> <span class="o">%</span> <span class="mi">7</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>코드가 흘러가는 구성이 내가 작성한 코드와 크게 다르지 않다.</p>
+
+<p>하지만 간결함과 가독성이 크게 다르다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">for</code>문의 조건식에서 <code class="language-plaintext highlighter-rouge">&lt;=</code>을 <code class="language-plaintext highlighter-rouge">&lt;</code>로 고쳤을뿐인데 <code class="language-plaintext highlighter-rouge">if</code>문이 하나 줄었다.</p>
+
+<p>굳이 <code class="language-plaintext highlighter-rouge">sum</code>이라는 변수를 새로 만들지 않고 <code class="language-plaintext highlighter-rouge">b</code>에 값을 더해주었다.</p>
+
+<p>굳이… <code class="language-plaintext highlighter-rouge">Math.floor()</code>를 사용하지 않고도 그냥 <code class="language-plaintext highlighter-rouge">%</code>연산자로 나머지값 계산해서 index로 처리해주었다…</p>
+
+<p>만약 다른 사람이 푼 답에 Best Practice가 있다면 배열 내장 함수를 사용했을 것이라고 생각했는데 아니었다.</p>
+
+<p>물론 배열 내장 함수를 사용할 수도 있지만 이 코드가 가독성도 좋고 제일 좋아보였다.</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#2016%EB%85%84" class="page__taxonomy-item p-category" rel="tag">2016년</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">프로그래머스</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#programmers-lv1" class="page__taxonomy-item p-category" rel="tag">programmers-lv1</a>
+    
+    </span>
+  </p>
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-02-21">February 21, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=2016%EB%85%84%20http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2F2016%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2F2016%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers-lv1%2F2016%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/programmers-lv2/programmers-maxandmin/" class="pagination--pager" title="최댓값과 최솟값
+">Previous</a>
+    
+    
+      <a href="/javascript/js-identifier/" class="pagination--pager" title="식별자(Identifier)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+      You may also enjoy
+    </h2>
+    <div class="grid__wrapper">
+        
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/%EC%9D%BC%EC%83%81/first-post/" rel="permalink"><p>github.io 블로그 시작하기</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 05 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/sumofdivisor/" rel="permalink"><p>약수의 합</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 20 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 약수의 합 풀이
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/programmers-phonecatmon/" rel="permalink"><p>폰켓몬</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 17 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 폰켓몬 풀이
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/programmers-arr/" rel="permalink"><p>평균 구하기</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 17 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 평균 구하기 풀이
+
+    </p>
+    
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Sujin Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/programmers-lv1/2016/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/programmers-lv1/2016"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sj0826-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
