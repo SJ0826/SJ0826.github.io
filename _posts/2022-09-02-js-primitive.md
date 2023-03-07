@@ -3,6 +3,8 @@ title: "원시값의 메서드"
 excerpt: ""
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "docs"
 
 categories:
   - JavaScript

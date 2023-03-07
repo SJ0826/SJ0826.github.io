@@ -3,6 +3,8 @@ title: "[TodoList-Project] 클래스로 작성하는 로그인/회원가입 axio
 excerpt: "axios를 사용한 api통신 로직을 클래스로 작성하기"
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "docs"
 
 categories:
   - Projects

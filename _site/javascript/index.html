@@ -1,0 +1,596 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>JavaScript - Sometimes we fall, then we rise</title>
+<meta name="description" content="프론트엔드 엔지니어가 되기까지">
+
+
+  <meta name="author" content="Sujin Kim">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sometimes we fall, then we rise">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="http://localhost:4000/javascript/">
+
+
+  <meta property="og:description" content="프론트엔드 엔지니어가 되기까지">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sujin Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sometimes we fall, then we rise Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7662177111410384"
+  crossorigin="anonymous"
+></script>
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sometimes we fall, then we rise
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sujin Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>프론트엔드 엔지니어가 되기까지</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ikosdu60@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Front</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/javascript/" class="active">JavaScript (12)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">JavaScript</h1>
+    
+    
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-image-random/">이미지 랜덤 배치</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.11.29
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-callback/">콜백(Callback)</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.09.06
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%EC%BD%9C%EB%B0%B1" class="page__taxonomy-item-tag" rel="tag">콜백</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-static-method/">[클래스] 정적 메서드와 정적 프로퍼티</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.09.05
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%EC%A0%95%EC%A0%81%EB%A9%94%EC%84%9C%EB%93%9C" class="page__taxonomy-item-tag" rel="tag">정적메서드</a><span class="sep"> </span>   
+    <a href="/tags/#%EC%A0%95%EC%A0%81%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0" class="page__taxonomy-item-tag" rel="tag">정적프로퍼티</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-prototype/">프로토타입(prototype)</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.09.05
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85" class="page__taxonomy-item-tag" rel="tag">프로토타입</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-class/">[클래스] 클래스(Class)</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.09.05
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%ED%81%B4%EB%9E%98%EC%8A%A4" class="page__taxonomy-item-tag" rel="tag">클래스</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-primitive/">원시값의 메서드</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.09.02
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%EC%9B%90%EC%8B%9C%EA%B0%92" class="page__taxonomy-item-tag" rel="tag">원시값</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-optionalchaning/">옵셔널 체이닝</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.09.02
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%EC%98%B5%EC%85%94%EB%84%90%EC%B2%B4%EC%9D%B4%EB%8B%9D" class="page__taxonomy-item-tag" rel="tag">옵셔널체이닝</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-closer/">클로저(Closer)</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.29
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%ED%81%B4%EB%A1%9C%EC%A0%80" class="page__taxonomy-item-tag" rel="tag">클로저</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-function/">함수</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.05
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%ED%95%A8%EC%88%98" class="page__taxonomy-item-tag" rel="tag">함수</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-class2/">[클래스] 상속</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.01
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%EC%83%81%EC%86%8D" class="page__taxonomy-item-tag" rel="tag">상속</a><span class="sep"> </span>   
+    <a href="/tags/#%ED%81%B4%EB%9E%98%EC%8A%A4" class="page__taxonomy-item-tag" rel="tag">클래스</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-conditional/">조건문</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.30
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%EC%A1%B0%EA%B1%B4%EB%AC%B8" class="page__taxonomy-item-tag" rel="tag">조건문</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/js-identifier/">식별자(Identifier)</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.29
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴--> 
+<span class="page__taxonomy">
+  <span itemprop="keywords"><a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>  
+    <a href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>   
+    <a href="/tags/#%EC%8B%9D%EB%B3%84%EC%9E%90" class="page__taxonomy-item-tag" rel="tag">식별자</a> 
+  </span>
+</span>
+            </small>
+        </div>
+      </article>
+</div>
+
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Sujin Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

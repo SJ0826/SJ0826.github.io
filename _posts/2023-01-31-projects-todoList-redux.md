@@ -3,6 +3,8 @@ title: "[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관�
 excerpt: "툴킷을 사용하지 않고 redux만을 이용한 전역상태 관리"
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "docs"
 
 categories:
   - Projects

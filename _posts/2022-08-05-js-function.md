@@ -3,6 +3,8 @@ title: "함수"
 excerpt: "JavaScript 함수"
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "docs"
 
 categories:
   - JavaScript

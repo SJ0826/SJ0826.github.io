@@ -3,9 +3,11 @@ title: "조건문"
 excerpt: ""
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "docs"
 
 categories:
-  - TIL/JavaScript
+  - JavaScript
 tags:
   - ["JavaScript", "조건문"]
 last_modified_at: 2022-07-30T08:06:00-05:00
@@ -90,20 +92,19 @@ else console.log("n이 0보다 크지 않은 경우");
 
 조건이 여러번 반복되는 경우에는, 조건을 변수나 상수에 넣어 작성할 수 있습니다.<br>
 
-```
+```js
 const multipleOfThree = n % 3 === 0;
 const multipleOfFive = n % 5 === 0;
 
-if(multipleOfThree && multipleOfFive) {
-    console.log('n은 15의 배수입니다.');
-} else if(multipleOfThree) {
-    console.log('n은 3의 배수입니다.');
-}  else if(multipleOfFive) {
-    console.log('n은 5의 배수 입니다.');
+if (multipleOfThree && multipleOfFive) {
+  console.log("n은 15의 배수입니다.");
+} else if (multipleOfThree) {
+  console.log("n은 3의 배수입니다.");
+} else if (multipleOfFive) {
+  console.log("n은 5의 배수 입니다.");
 } else {
-    console.log('n은 3의 배수도 아니고, 5의 배수도 아닙니다.');
+  console.log("n은 3의 배수도 아니고, 5의 배수도 아닙니다.");
 }
-
 ```
 
 ## 출처

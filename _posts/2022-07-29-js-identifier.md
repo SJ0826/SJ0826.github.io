@@ -3,6 +3,8 @@ title: "식별자(Identifier)"
 excerpt: ""
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "docs"
 
 categories:
   - JavaScript

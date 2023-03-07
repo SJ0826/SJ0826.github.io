@@ -9,7 +9,7 @@
 <lastmod>2022-07-29T22:06:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/til/javascript/js-conditional/</loc>
+<loc>http://localhost:4000/javascript/js-conditional/</loc>
 <lastmod>2022-07-30T22:06:00+09:00</lastmod>
 </url>
 <url>
@@ -67,10 +67,13 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/javascript/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/projects/#projects</loc>
 </url>
 <url>
-<loc>http://localhost:4000/cate/tags/</loc>
+<loc>http://localhost:4000/tags/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>

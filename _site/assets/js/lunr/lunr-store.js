@@ -12,9 +12,9 @@ var store = [{
         "teaser": null
       },{
         "title": "조건문",
-        "excerpt":"📄 조건문 조건문은 표현식이 참으로 평가될 때, 실행되는 블럭입니다. if (true) { console.log(\"항상 실행\"); // 출력됨. } if (false) { console.log(\"항상 실행되지 않음\"); // 출력되지 않음. } 조건이 참인 경우는 출력이 되고 거짓인 경우는 출력되지 않습니다. TIP 블록에 코드가 한줄이면, 중괄호는 생략 가능합니다. if (true) console.log(\"항상 실행\"); if (false) console.log(\"항상...","categories": ["TIL/JavaScript"],
+        "excerpt":"📄 조건문 조건문은 표현식이 참으로 평가될 때, 실행되는 블럭입니다. if (true) { console.log(\"항상 실행\"); // 출력됨. } if (false) { console.log(\"항상 실행되지 않음\"); // 출력되지 않음. } 조건이 참인 경우는 출력이 되고 거짓인 경우는 출력되지 않습니다. TIP 블록에 코드가 한줄이면, 중괄호는 생략 가능합니다. if (true) console.log(\"항상 실행\"); if (false) console.log(\"항상...","categories": ["JavaScript"],
         "tags": ["JavaScript","조건문"],
-        "url": "/til/javascript/js-conditional/",
+        "url": "/javascript/js-conditional/",
         "teaser": null
       },{
         "title": "[클래스] 상속",

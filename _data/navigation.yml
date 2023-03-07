@@ -6,3 +6,10 @@ main:
     url: /projects/
   - title: "Tags"
     url: /tags/
+
+docs:
+  - title: Front
+    children:
+      - title: "JavaScript"
+        url: /javascript/
+        category: "JavaScript"

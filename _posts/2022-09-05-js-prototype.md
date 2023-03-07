@@ -3,6 +3,8 @@ title: "프로토타입(prototype)"
 excerpt: "프로토타입(prototype)"
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "docs"
 
 categories:
   - JavaScript

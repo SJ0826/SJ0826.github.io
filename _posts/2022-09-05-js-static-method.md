@@ -3,6 +3,8 @@ title: "[클래스] 정적 메서드와 정적 프로퍼티"
 excerpt: ""
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "docs"
 
 categories:
   - JavaScript

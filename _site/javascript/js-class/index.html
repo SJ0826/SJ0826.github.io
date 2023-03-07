@@ -247,6 +247,40 @@
 </div>
 
   
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Front</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/javascript/">JavaScript (12)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
   </div>
 
 
@@ -292,7 +326,7 @@
                 On this page
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#-클래스class란">📄 클래스(Class)란</a></li><li><a href="#-선언적-방식">📄 선언적 방식</a></li></ul>
+            <ul class="toc__menu"><li><a href="#-클래스class란">📄 클래스(Class)란</a></li><li><a href="#-선언적-방식">📄 선언적 방식</a><ul><li><a href="#주의할-점">주의할 점</a></li></ul></li><li><a href="#-클래스-표현식">📄 클래스 표현식</a></li><li><a href="#-클래스-필드로-바인딩-된-메서드">📄 클래스 필드로 바인딩 된 메서드</a></li><li><a href="#-멤버변수">📄 멤버변수</a></li><li><a href="#-멤버-함수">📄 멤버 함수</a></li><li><a href="#출처">출처</a></li></ul>
 
           </nav>
         </aside>
@@ -317,157 +351,153 @@
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">new</span> <span class="nc">A</span><span class="p">());</span> <span class="c1">// class A의 세로운 객체를 출력</span>
 </code></pre></div></div>
 
-<결과>
+<p>결과</p>
 
-```js
-A {}
-```
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">A</span> <span class="p">{}</span>
+</code></pre></div></div>
 
-클래스를 만들고 `new A()`를 호출하면 내부에서 정의한 메서드가 들어 있는 객체가 생성됩니다.<br />
-클래스 내부에서 정의한 메서드는 `A.prototype`에 저장됩니다.<br />
-객체의 기본 상태를 설정해주는 생성자 메서드 `constructor()`는 `new`에 의해 자동으로 호출되므로, 특별한 절차 없이 객체를 초기화할 수 있습니다.
+<p>클래스를 만들고 <code class="language-plaintext highlighter-rouge">new A()</code>를 호출하면 내부에서 정의한 메서드가 들어 있는 객체가 생성됩니다.<br />
+클래스 내부에서 정의한 메서드는 <code class="language-plaintext highlighter-rouge">A.prototype</code>에 저장됩니다.<br />
+객체의 기본 상태를 설정해주는 생성자 메서드 <code class="language-plaintext highlighter-rouge">constructor()</code>는 <code class="language-plaintext highlighter-rouge">new</code>에 의해 자동으로 호출되므로, 특별한 절차 없이 객체를 초기화할 수 있습니다.</p>
 
-### 주의할 점
+<h3 id="주의할-점">주의할 점</h3>
 
-- 메서드 사이에는 쉼표가 없습니다.
-- 클래스의 선언적 방식에서 호이스팅은 일어나지 않습니다.
+<ul>
+  <li>메서드 사이에는 쉼표가 없습니다.</li>
+  <li>
+    <p>클래스의 선언적 방식에서 호이스팅은 일어나지 않습니다.</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">new</code>키워들를 통해 호출하지 않으면 에러가 발생합니다.</li>
+  <li>클래스에 정의된 메서드는 열거할 수 없습니다. 클래스의 <code class="language-plaintext highlighter-rouge">prototype</code>프로퍼티에 추가된 메서드의 <code class="language-plaintext highlighter-rouge">enumerable</code>플래그는 <code class="language-plaintext highlighter-rouge">false</code>입니다.</li>
+  <li>클래스는 항상 엄격모드로 실행됩니다.(<code class="language-plaintext highlighter-rouge">use strict</code>)</li>
+</ul>
 
-* `new`키워들를 통해 호출하지 않으면 에러가 발생합니다.
-* 클래스에 정의된 메서드는 열거할 수 없습니다. 클래스의 `prototype`프로퍼티에 추가된 메서드의 `enumerable`플래그는 `false`입니다.
-* 클래스는 항상 엄격모드로 실행됩니다.(`use strict`)
+<h2 id="-클래스-표현식">📄 클래스 표현식</h2>
 
-## 📄 클래스 표현식
+<p>클래스의 표현식을 변수에 할당하는 방식으로 사용됩니다.</p>
 
-클래스의 표현식을 변수에 할당하는 방식으로 사용됩니다.
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">B</span> <span class="o">=</span> <span class="kd">class</span> <span class="err">{};
 
-```js
-const B = class {};
+</span><span class="nc">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">new</span> <span class="nc">B</span><span class="p">());</span>
+</code></pre></div></div>
 
-console.log(new B());
-```
+<p>결과</p>
 
-<결과>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">B</span> <span class="p">{}</span>
+</code></pre></div></div>
 
-```js
-B {}
-```
+<h2 id="-클래스-필드로-바인딩-된-메서드">📄 클래스 필드로 바인딩 된 메서드</h2>
 
-## 📄 클래스 필드로 바인딩 된 메서드
+<p>자바스크립트에서 <code class="language-plaintext highlighter-rouge">this</code>는 동적으로 결정됩니다.</p>
 
-자바스크립트에서 `this`는 동적으로 결정됩니다.
+<p>따라서 객체 메서드를 여기저기 전달해 전혀 다른 컨텍스트에서 호출하게 되면 <code class="language-plaintext highlighter-rouge">this</code>는 메서드가 정의된 객체를 참조하지 않습니다.</p>
 
-따라서 객체 메서드를 여기저기 전달해 전혀 다른 컨텍스트에서 호출하게 되면 `this`는 메서드가 정의된 객체를 참조하지 않습니다.
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Button</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="p">}</span>
 
-```js
-class Button {
-  constructor(value) {
-    this.value = value;
-  }
+  <span class="nf">click</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">cosole</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-  click() {
-    cosole.log(this.value);
-  }
-}
+<span class="kd">let</span> <span class="nx">button</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Button</span><span class="p">(</span><span class="dl">"</span><span class="s2">안녕하세요</span><span class="dl">"</span><span class="p">);</span>
 
-let button = new Button("안녕하세요");
+<span class="nf">setTimeout</span><span class="p">(</span><span class="nx">button</span><span class="p">.</span><span class="nx">click</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
 
-setTimeout(button.click, 1000);
-```
+<p>결과</p>
 
-<결과><br />
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">undefined</span><span class="p">;</span>
+</code></pre></div></div>
 
-```js
-undefined;
-```
+<p><code class="language-plaintext highlighter-rouge">this</code>의 컨텍스트를 알 수 없게 된 현상을 ‘잃어버린 <code class="language-plaintext highlighter-rouge">this</code>‘라고 합니다.<br />
+이러한 현상을 해결하기 위해 클래스 필드를 사용할 수 있습니다.<br /></p>
 
-`this`의 컨텍스트를 알 수 없게 된 현상을 '잃어버린 `this`'라고 합니다.<br />
-이러한 현상을 해결하기 위해 클래스 필드를 사용할 수 있습니다.<br />
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Button</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="p">}</span>
 
-```js
-class Button {
-  constructor(value) {
-    this.value = value;
-  }
+  <span class="nx">click</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 수정한 부분</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
 
-  click = () =&gt; {
-    // 수정한 부분
-    alert(this.value);
-  };
-}
+<span class="kd">let</span> <span class="nx">button</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Button</span><span class="p">(</span><span class="dl">"</span><span class="s2">안녕하세요.</span><span class="dl">"</span><span class="p">);</span>
 
-let button = new Button("안녕하세요.");
+<span class="nf">setTimeout</span><span class="p">(</span><span class="nx">button</span><span class="p">.</span><span class="nx">click</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
 
-setTimeout(button.click, 1000);
-```
+<p>결과</p>
 
-<결과><br />
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>안녕하세요.
+</code></pre></div></div>
 
-```
-안녕하세요.
-```
+<p>클래스 필스 <code class="language-plaintext highlighter-rouge">click = () =&gt; {...}</code>는 각 <code class="language-plaintext highlighter-rouge">Button</code>객체마다 독립적인 함수를 만들어주고 이 함수의 <code class="language-plaintext highlighter-rouge">this</code>를 해당 객체에 바인딩시켜줍니다.<br />
+클래스의 이러한 기능은 브라우저 환경에서 메서드를 이벤트 리스너로 설정해야할 때 특히 유용합니다.</p>
 
-클래스 필스 `click = () =&gt; {...}`는 각 `Button`객체마다 독립적인 함수를 만들어주고 이 함수의 `this`를 해당 객체에 바인딩시켜줍니다.<br />
-클래스의 이러한 기능은 브라우저 환경에서 메서드를 이벤트 리스너로 설정해야할 때 특히 유용합니다.
+<h2 id="-멤버변수">📄 멤버변수</h2>
 
-## 📄 멤버변수
+<p>멤버 변수는 메소드 밖에서 선언된 변수를 뜻합니다.
+클래스의 멤버변수는 this라는 키워드를 사용하여 반드시 생성자에 만들어야 합니다.</p>
 
-멤버 변수는 메소드 밖에서 선언된 변수를 뜻합니다.
-클래스의 멤버변수는 this라는 키워드를 사용하여 반드시 생성자에 만들어야 합니다.
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">C</span> <span class="p">{</span>
+  <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">no name</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 초기값 설정</span>
+  <span class="nx">age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-```js
-class C {
-  name = "no name"; // 초기값 설정
-  age = 0;
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 생성자를 통해서 새로 할당.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span> <span class="c1">// 멤버변수</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span> <span class="c1">// 멤버변수</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-  constructor(name, age) {
-    // 생성자를 통해서 새로 할당.
-    this.name = name; // 멤버변수
-    this.age = age; // 멤버변수
-  }
-}
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">new</span> <span class="nc">C</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mark</span><span class="dl">"</span><span class="p">,</span> <span class="mi">37</span><span class="p">));</span>
+</code></pre></div></div>
 
-console.log(new C("Mark", 37));
-```
+<p>결과</p>
 
-<결과>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">C</span> <span class="p">{</span> <span class="nl">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Mark</span><span class="dl">'</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="mi">37</span> <span class="p">}</span>
+</code></pre></div></div>
 
-```js
-C { name: 'Mark', age: 37 }
-```
+<h2 id="-멤버-함수">📄 멤버 함수</h2>
 
-## 📄 멤버 함수
+<p>클래스에는 멤버변수 뿐만 아니라 멤버 함수도 생성할 수 있습니다.</p>
 
-클래스에는 멤버변수 뿐만 아니라 멤버 함수도 생성할 수 있습니다.
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="c1">// 방법1: 함수의 이름과 중괄호를 이용해 설정</span>
+  <span class="nf">hello1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello1</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// 방법2: 멤버변수 이름에 함수를 할당하는 방법</span>
+  <span class="nx">hello2</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello2</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
 
-```js
-class A {
-  // 방법1: 함수의 이름과 중괄호를 이용해 설정
-  hello1() {
-    console.log("hello1", this);
-  }
-  // 방법2: 멤버변수 이름에 함수를 할당하는 방법
-  hello2 = () =&gt; {
-    console.log("hello2", this);
-  };
-}
+<span class="k">new</span> <span class="nc">A</span><span class="p">().</span><span class="nf">hello1</span><span class="p">();</span>
+<span class="k">new</span> <span class="nc">A</span><span class="p">().</span><span class="nf">hello2</span><span class="p">();</span>
+</code></pre></div></div>
 
-new A().hello1();
-new A().hello2();
-```
+<p>결과</p>
 
-<결과>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">hello1</span> <span class="nx">A</span> <span class="p">{</span> <span class="nl">hello2</span><span class="p">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">:</span> <span class="nx">hello2</span><span class="p">]</span> <span class="p">}</span>
+<span class="nx">hello2</span> <span class="nx">A</span> <span class="p">{</span> <span class="nl">hello2</span><span class="p">:</span> <span class="p">[</span><span class="nb">Function</span><span class="p">:</span> <span class="nx">hello2</span><span class="p">]</span> <span class="p">}</span>
+</code></pre></div></div>
 
-```js
-hello1 A { hello2: [Function: hello2] }
-hello2 A { hello2: [Function: hello2] }
-```
+<h2 id="출처">출처</h2>
 
-## 출처
-
-- 패스트캠퍼스<br /><br />
-
-- [MDN web docs](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)
-</결과></결과></결과></결과></결과></결과>
+<ul>
+  <li>
+    <p>패스트캠퍼스<br /><br /></p>
+  </li>
+  <li>
+    <p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes">MDN web docs</a></p>
+  </li>
+</ul>
  
       </section>
 
@@ -560,15 +590,6 @@ hello2 A { hello2: [Function: hello2] }
       <a href="/%EC%9D%BC%EC%83%81/first-post/" rel="permalink"><p>github.io 블로그 시작하기</a>
       
     </h2>
-    <!--
-    devinlife comments :
-        아키이브 싱글 페이지(ex. 카테고리)에 각 포스트 제목 밑에 Updated 시간 표기
-        기존에는 read_time이 표기. read_time -> date 변경
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i>    less than 1 minute read 
-</p>
-    
--->
     
     <p class="page__meta">
       <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 05 2023
@@ -595,15 +616,6 @@ hello2 A { hello2: [Function: hello2] }
       <a href="/projects/projects-todoList-redux/" rel="permalink"><p>[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기</a>
       
     </h2>
-    <!--
-    devinlife comments :
-        아키이브 싱글 페이지(ex. 카테고리)에 각 포스트 제목 밑에 Updated 시간 표기
-        기존에는 read_time이 표기. read_time -> date 변경
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i>    1 minute read 
-</p>
-    
--->
     
     <p class="page__meta">
       <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> January 31 2023
@@ -630,15 +642,6 @@ hello2 A { hello2: [Function: hello2] }
       <a href="/javascript/js-image-random/" rel="permalink"><p>이미지 랜덤 배치</a>
       
     </h2>
-    <!--
-    devinlife comments :
-        아키이브 싱글 페이지(ex. 카테고리)에 각 포스트 제목 밑에 Updated 시간 표기
-        기존에는 read_time이 표기. read_time -> date 변경
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i>    less than 1 minute read 
-</p>
-    
--->
     
     <p class="page__meta">
       <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> November 29 2022
@@ -665,15 +668,6 @@ hello2 A { hello2: [Function: hello2] }
       <a href="/javascript/js-callback/" rel="permalink"><p>콜백(Callback)</a>
       
     </h2>
-    <!--
-    devinlife comments :
-        아키이브 싱글 페이지(ex. 카테고리)에 각 포스트 제목 밑에 Updated 시간 표기
-        기존에는 read_time이 표기. read_time -> date 변경
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i>    1 minute read 
-</p>
-    
--->
     
     <p class="page__meta">
       <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 06 2022
