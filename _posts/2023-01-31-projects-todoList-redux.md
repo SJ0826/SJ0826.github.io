@@ -7,7 +7,7 @@ sidebar:
   nav: "docs"
 
 categories:
-  - Projects
+  - TodoList-Project
 tags:
   - ["TodoList", "Redux"]
 last_modified_at: 2023-01-31T08:06:00-05:00

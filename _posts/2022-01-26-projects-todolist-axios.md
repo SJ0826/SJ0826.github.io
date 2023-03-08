@@ -7,7 +7,7 @@ sidebar:
   nav: "docs"
 
 categories:
-  - Projects
+  - TodoList-Project
 tags:
   - ["TodoList", "axios", "클래스"]
 last_modified_at: 2023-01-26T08:06:00-05:00

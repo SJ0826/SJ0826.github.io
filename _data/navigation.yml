@@ -24,3 +24,11 @@ docs:
       - title: "자료구조"
         url: /cs/structure/
         category: "structure"
+  - title: Projects
+    children:
+      - title: "TodoList-Project"
+        url: /project/todolist/
+        category: "TodoList-Project"
+      - title: "모여봐요 코딩의 숲"
+        url: /coding-swamp/
+        category: "coding-swamp"
