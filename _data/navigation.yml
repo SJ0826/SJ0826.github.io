@@ -30,5 +30,5 @@ docs:
         url: /project/todolist/
         category: "TodoList-Project"
       - title: "모여봐요 코딩의 숲"
-        url: /coding-swamp/
+        url: /project/coding-swamp/
         category: "coding-swamp"
