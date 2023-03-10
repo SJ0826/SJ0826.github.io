@@ -23,7 +23,7 @@ last_modified_at: 2023-03-10T08:06:00-05:00
 
 #### 💾 store/member/memberFormSlice.ts
 
-```ts
+```js
 const initialMemberForm = {
   value: [
     { key: "imageFile", value: null, isValidate: true },

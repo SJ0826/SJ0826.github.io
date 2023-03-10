@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-10T15:22:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">완주하지 못한 선수</title><link href="http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/" rel="alternate" type="text/html" title="완주하지 못한 선수" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-10T15:57:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</title><link href="http://localhost:4000/coding-swamp/projects-coding-swamp/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/projects-coding-swamp</id><content type="html" xml:base="http://localhost:4000/coding-swamp/projects-coding-swamp/"><![CDATA[<h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
+
+<p>좋은 코드는 코드만 보고 어떤 일을 하는지 알 수 있는 코드라고 배웠다.</p>
+
+<p>하지만 나의 코드는 코드만 보고 무슨일을 하는 지 알 수 없었다.</p>
+
+<h3 id="기존의-memberform-데이터-구조">기존의 MemberForm 데이터 구조</h3>
+
+<h4 id="-storemembermemberformslicets">💾 store/member/memberFormSlice.ts</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">initialMemberForm</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">imageFile</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">emailAuth</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>데이터 구조가 이렇게 되어있으면 값에 접근할 때 값의 이름이 아니라 <code class="language-plaintext highlighter-rouge">index</code>로 접근해야 했다.</p>
+
+<p>처음 프로젝트를 시작할때 <code class="language-plaintext highlighter-rouge">File</code> 타입에 <code class="language-plaintext highlighter-rouge">null</code>이 할당되지 않아 객체 안에 굳이 <code class="language-plaintext highlighter-rouge">key</code>라는 이름의 <code class="language-plaintext highlighter-rouge">key</code>를 생성했다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">imageFile</span><span class="p">:</span> <span class="nx">File</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// error</span>
+</code></pre></div></div>
+
+<p>아마 내가 ‘imageFile’의 타입을 오로지 File로만 했던 모양인데 시간이 지나고 보니 코드가 굉장히 가독성이 없다는 것이 보였다.</p>
+
+<h4 id="-componentssignupform">💾 Components/SignUpForm</h4>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span><span class="p">:</span> <span class="nx">UserParam</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">imageFile</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">value</span><span class="p">,</span>
+  <span class="na">username</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
+  <span class="na">password</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">userData</code>에 <code class="language-plaintext highlighter-rouge">index</code>로 접근하기 때문에 해당 변수가 어떤 값을 가지고 있는지 알 수 없다.</p>
+
+<p>이를 고치기 위해선 memberForm의 state 구조를 변경해야 했다.</p>
+
+<h2 id="-리팩토링-결과">❕ 리팩토링 결과</h2>
+
+<h4 id="-storemembermemberformslicets-1">💾 store/member/memberFormSlice.ts</h4>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">initialMemberForm</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">memberForm</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">imageFile</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">username</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="na">email</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="p">}</span> <span class="k">as</span> <span class="nb">Omit</span><span class="o">&lt;</span><span class="nx">MemberFormParam</span><span class="p">,</span> <span class="dl">"</span><span class="s2">profileUrl</span><span class="dl">"</span> <span class="o">&amp;</span> <span class="dl">"</span><span class="s2">imageUrl</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="na">emailAuth</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">isEditMode</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="-componentssignupform-1">💾 Components/SignUpForm</h4>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span><span class="p">:</span> <span class="nx">UserParam</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">imageFile</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">imageFile</span><span class="p">,</span>
+  <span class="na">username</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+  <span class="na">password</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>값에 이름으로 접근하니 어떤 데이터가 할당되는지 알 수 있게 되었다.</p>
+
+<h2 id="-나의-생각">💬 나의 생각</h2>
+
+<p>분명 코드를 작성할 때는 최선인 것 같았는데 지나고 보니 아닌 경우가 꽤 많다.</p>
+
+<p>완성된 프로젝트라 하더라도 다시 보고 리팩토링을 계속 해주는 것이 좋겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="redux-toolkit" /><category term="데이터구조" /><summary type="html"><![CDATA[redux에서 관리하는 state를 객체로 다시 구조화]]></summary></entry><entry><title type="html">완주하지 못한 선수</title><link href="http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/" rel="alternate" type="text/html" title="완주하지 못한 선수" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.</p>
 
@@ -149,26 +224,7 @@
 
 <p>어차피 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>의 절반까지만 정답의 유효 범위이기 때문에 반복 횟수를 조금이라도 줄이려고 신경썼다.</p>
 
-<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry><entry><title type="html">평균 구하기</title><link href="http://localhost:4000/programmers-lv1/programmers-arr/" rel="alternate" type="text/html" title="평균 구하기" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-arr</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-arr/"><![CDATA[<h2 id="문제-">문제 📖</h2>
-
-<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
-
-<ul>
-  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
-  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
-</ul>
-
-<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="평균구하기" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 평균 구하기 풀이]]></summary></entry><entry><title type="html">폰켓몬</title><link href="http://localhost:4000/programmers-lv1/programmers-phonecatmon/" rel="alternate" type="text/html" title="폰켓몬" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-phonecatmon</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-phonecatmon/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry><entry><title type="html">폰켓몬</title><link href="http://localhost:4000/programmers-lv1/programmers-phonecatmon/" rel="alternate" type="text/html" title="폰켓몬" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-phonecatmon</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-phonecatmon/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>당신은 폰켓몬을 잡기 위한 오랜 여행 끝에, 홍 박사님의 연구실에 도착했습니다. 홍 박사님은 당신에게 자신의 연구실에 있는 총 N 마리의 폰켓몬 중에서 N/2마리를 가져가도 좋다고 했습니다.</p>
 
@@ -222,7 +278,26 @@
 
 <p>내 풀이에서는 <code class="language-plaintext highlighter-rouge">newNums.length</code>에 쓸데없이 올림처리를 한 것을 지우지도 않았고, <code class="language-plaintext highlighter-rouge">set</code>함수를 사용할때 굳이 상수를 두번이나 선언한게 보인다.</p>
 
-<p>답이 나와도 다시한번 보고 정리하는 습관을 가져야겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="폰켓몬" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 폰켓몬 풀이]]></summary></entry><entry><title type="html">짝수와 홀수</title><link href="http://localhost:4000/programmers-lv1/evenandodd/" rel="alternate" type="text/html" title="짝수와 홀수" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/evenandodd</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/evenandodd/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<p>답이 나와도 다시한번 보고 정리하는 습관을 가져야겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="폰켓몬" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 폰켓몬 풀이]]></summary></entry><entry><title type="html">평균 구하기</title><link href="http://localhost:4000/programmers-lv1/programmers-arr/" rel="alternate" type="text/html" title="평균 구하기" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-arr</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-arr/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+
+<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
+
+<ul>
+  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
+  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
+</ul>
+
+<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="평균구하기" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 평균 구하기 풀이]]></summary></entry><entry><title type="html">짝수와 홀수</title><link href="http://localhost:4000/programmers-lv1/evenandodd/" rel="alternate" type="text/html" title="짝수와 홀수" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/evenandodd</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/evenandodd/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요.</p>
 
@@ -450,76 +525,4 @@ if (sum % 3 === 0) {
 
 <p>검색한 데이터(<code class="language-plaintext highlighter-rouge">histData</code>)를 받아서 새로운 배열 <code class="language-plaintext highlighter-rouge">avoidDulpli</code>를 만들고,</p>
 
-<p><code class="language-plaintext highlighter-rouge">new Set</code>을 이용해 중복된 값은 제거되는 새로운 배열을 만들어 받아온 데이터(<code class="language-plaintext highlighter-rouge">histData</code>)가 앞에 추가됩니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Set" /></entry><entry><title type="html">이미지 랜덤 배치</title><link href="http://localhost:4000/javascript/js-image-random/" rel="alternate" type="text/html" title="이미지 랜덤 배치" /><published>2022-11-29T00:00:00+09:00</published><updated>2022-11-29T22:06:00+09:00</updated><id>http://localhost:4000/javascript/js-image-random</id><content type="html" xml:base="http://localhost:4000/javascript/js-image-random/"><![CDATA[<h2 id="-이미지-랜덤-배치하기">📄 이미지 랜덤 배치하기</h2>
-
-<p><strong>목표: Vanila JavaScript로 새로고침 될 때마다 이미지가 특정 범위에 랜덤으로 배치된다.</strong></p>
-
-<p>원하는 범위의 위치를 받아와서 <strong>이미지의 left와 right 값을 지정</strong>해주자!<br /></p>
-
-<h2 id="-1-원하는-feild의-위치를-파악한다">📄 1. 원하는 feild의 위치를 파악한다.</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fieldRect</span> <span class="o">=</span> <span class="nx">field</span><span class="p">.</span><span class="nf">getBoundingClientRect</span><span class="p">();</span>
-<span class="kd">function</span> <span class="nf">initGame</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">fieldRect</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">getBoundingClientRect</code>를 이용해 출력하면 지정한 요소의 위치를 콘솔창에서 확인할 수 있다.</p>
-
-<h2 id="-2-feild에-추가하기-전에-이미지를-생성하는-함수를-만들어준다">📄 2. feild에 추가하기 전에 이미지를 생성하는 함수를 만들어준다.</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 랜덤으로 숫자를 생성하는 함수</span>
-<span class="kd">function</span> <span class="nf">randomNumber</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span><span class="p">)</span> <span class="o">+</span> <span class="nx">min</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// 아이템을 생성하는 함수</span>
-<span class="kd">function</span> <span class="nf">addItem</span><span class="p">(</span><span class="nx">className</span><span class="p">,</span> <span class="nx">count</span><span class="p">,</span> <span class="nx">imgPath</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">x1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">y1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="c1">// 이미지가 feild에서 벗어나는 것을 막기 위해 최댓값을 조정한다.</span>
-  <span class="kd">const</span> <span class="nx">x2</span> <span class="o">=</span> <span class="nx">fieldRect</span><span class="p">.</span><span class="nx">width</span> <span class="o">-</span> <span class="nx">CARROT_SIZE</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">y2</span> <span class="o">=</span> <span class="nx">fieldRect</span><span class="p">.</span><span class="nx">height</span> <span class="o">-</span> <span class="nx">CARROT_SIZE</span><span class="p">;</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 이미지 추가!</span>
-    <span class="nx">item</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="nx">className</span><span class="p">);</span> <span class="c1">// 이미지에 클래스 속성추가!</span>
-    <span class="nx">item</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">src</span><span class="dl">"</span><span class="p">,</span> <span class="nx">imgPath</span><span class="p">);</span> <span class="c1">// 이미지 경로 추가!</span>
-    <span class="nx">item</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">absolute</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// feild에 상대적으로 오프셋 적용</span>
-    <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nf">randomNumber</span><span class="p">(</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">);</span> <span class="c1">// 최솟값 x1와 최댓값 x2 사이에서 랜덤으로 숫자를 받아 상수 x에 할당!</span>
-    <span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nf">randomNumber</span><span class="p">(</span><span class="nx">y1</span><span class="p">,</span> <span class="nx">y2</span><span class="p">);</span> <span class="c1">// 최솟값 y1와 최댓값 y2 사이에서 랜덤으로 숫자를 받아 상수 y에 할당!</span>
-    <span class="nx">item</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">x</span><span class="p">}</span><span class="s2">px`</span><span class="p">;</span> <span class="c1">// 추가한 이미지의 left값에 x값 할당!</span>
-    <span class="nx">item</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">y</span><span class="p">}</span><span class="s2">px`</span><span class="p">;</span> <span class="c1">// 추가한 이미지의 top에 y값 할당!</span>
-    <span class="nx">field</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span> <span class="c1">// field에 해당 이미지를 추가</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="-3-additem함수에-값을-지정한다">📄 3. addItem함수에 값을 지정한다.</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">initGame</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">addItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">carrot</span><span class="dl">"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">"</span><span class="s2">carrot.png</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 당근 이미지 5개!</span>
-  <span class="nf">addItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">bug</span><span class="dl">"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bug.png</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 벌레 이미지 5개!</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h4 id="결과">결과</h4>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/184609114-2aaf8d9f-db80-40b6-9a59-a9b7b67ea962.PNG" alt="캡처" /></p>
-
-<p>새로고침할 때 마다 당근 5개와 벌레 5개가 배치된다.</p>
-
-<h2 id="느낀점">느낀점</h2>
-
-<p>강의 전혀 안보고 하려고 했는데 실패했다~ <br />
-이미지를 랜덤으로 배치하는 함수가 따로 있는 줄 알았다.<br />
-모든게 함수나 API로 있진 않나보다.<br />
-구글링할때 많은 사람들이 제이쿼리를 쓰는 것을 보았다.<br />
-생각보다 바닐라로 구현하는 내용은 보지 못했다.<br />
-코드를 혼자서 완성시키는 것은 지금 당장 해내지 못할지라도 강의에서 보여주는 코드를 완벽하게 이해하고 넘어가서 다음에 사용하는 경우가 생긴다면 그때는 꼭 적용시켜서 스스로 해낼 것이다.<br /></p>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li>드림코딩</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /></entry></feed>
+<p><code class="language-plaintext highlighter-rouge">new Set</code>을 이용해 중복된 값은 제거되는 새로운 배열을 만들어 받아온 데이터(<code class="language-plaintext highlighter-rouge">histData</code>)가 앞에 추가됩니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Set" /></entry></feed>
