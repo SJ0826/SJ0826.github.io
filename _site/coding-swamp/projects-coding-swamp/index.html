@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[클래스] 정적 메서드와 정적 프로퍼티 - Sometimes we fall, then we rise ⛵</title>
-<meta name="description" content="프론트엔드 엔지니어가 되기까지">
+<!-- begin _includes/seo.html --><title>[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기) - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="redux에서 관리하는 state를 객체로 다시 구조화">
 
 
   <meta name="author" content="Sujin Kim">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
-<meta property="og:title" content="[클래스] 정적 메서드와 정적 프로퍼티">
-<meta property="og:url" content="http://localhost:4000/javascript/js-static-method/">
+<meta property="og:title" content="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)">
+<meta property="og:url" content="http://localhost:4000/coding-swamp/projects-coding-swamp/">
 
 
-  <meta property="og:description" content="프론트엔드 엔지니어가 되기까지">
-
-
-
+  <meta property="og:description" content="redux에서 관리하는 state를 객체로 다시 구조화">
 
 
 
 
-  <meta property="article:published_time" content="2022-09-05T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2022-09-05T22:06:00+09:00">
+  <meta property="article:published_time" content="2022-03-10T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-03-10T22:06:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/javascript/js-static-method/">
+
+<link rel="canonical" href="http://localhost:4000/coding-swamp/projects-coding-swamp/">
 
 
 
@@ -346,16 +346,16 @@
   >
     <meta
       itemprop="headline"
-      content="[클래스] 정적 메서드와 정적 프로퍼티"
+      content="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)"
     /> <meta
       itemprop="description"
-      content=""
+      content="redux에서 관리하는 state를 객체로 다시 구조화"
     /> <meta
       itemprop="datePublished"
-      content="2022-09-05T00:00:00+09:00"
+      content="2022-03-10T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2022-09-05T22:06:00+09:00"
+      content="2023-03-10T22:06:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -363,7 +363,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[클래스] 정적 메서드와 정적 프로퍼티</p>
+          <p>[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</p>
 
         </h1>
          
@@ -380,64 +380,86 @@
                 On this page
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#-정적-메서드static-method">📄 정적 메서드(static method)</a><ul><li><a href="#정적-메서드의-this는-무엇을-가리킬까">정적 메서드의 this는 무엇을 가리킬까?</a></li><li><a href="#정적-메서드는-언제-사용할까">정적 메서드는 언제 사용할까?</a></li></ul></li><li><a href="#-정적-프로퍼티static-property">📄 정적 프로퍼티(static property)</a><ul><li><a href="#정적-프로퍼티는-언제-사용할까">정적 프로퍼티는 언제 사용할까?</a></li></ul></li><li><a href="#정적-프로퍼티와-메서드의-상속">정적 프로퍼티와 메서드의 상속</a></li><li><a href="#출처">출처</a></li></ul>
+            <ul class="toc__menu"><li><a href="#-리팩토링-이유">❔ 리팩토링 이유</a><ul><li><a href="#기존의-memberform-데이터-구조">기존의 MemberForm 데이터 구조</a><ul><li><a href="#-storemembermemberformslicets">💾 store/member/memberFormSlice.ts</a></li><li><a href="#-componentssignupform">💾 Components/SignUpForm</a></li></ul></li></ul></li><li><a href="#-리팩토링-결과">❕ 리팩토링 결과</a><ul><li><a href="#-storemembermemberformslicets-1">💾 store/member/memberFormSlice.ts</a></li><li><a href="#-componentssignupform-1">💾 Components/SignUpForm</a></li></ul></li></ul></li><li><a href="#-나의-생각">💬 나의 생각</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="-정적-메서드static-method">📄 정적 메서드(static method)</h2>
+         <h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
 
-<p>정적 메서드는 프로토타입이 아닌 <strong>클래스 함수 자체에 설정되어 있는 메서드</strong>이다.<br />
-클래스 안에서 <code class="language-plaintext highlighter-rouge">static</code>이라는 키워드를 사용해서 설정한다.</p>
+<p>좋은 코드는 코드만 보고 어떤 일을 하는지 알 수 있는 코드라고 배웠다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">User</span> <span class="p">{</span>
-  <span class="kd">static</span> <span class="nf">staticMethod</span><span class="p">()</span> <span class="p">{...}</span>
-<span class="p">}</span>
+<p>하지만 나의 코드는 코드만 보고 무슨일을 하는 지 알 수 없었다.</p>
+
+<h3 id="기존의-memberform-데이터-구조">기존의 MemberForm 데이터 구조</h3>
+
+<h4 id="-storemembermemberformslicets">💾 store/member/memberFormSlice.ts</h4>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">initialMemberForm</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">imageFile</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">emailAuth</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">};</span>
 </code></pre></div></div>
 
-<h3 id="정적-메서드의-this는-무엇을-가리킬까">정적 메서드의 this는 무엇을 가리킬까?</h3>
+<p>데이터 구조가 이렇게 되어있으면 값에 접근할 때 값의 이름이 아니라 <code class="language-plaintext highlighter-rouge">index</code>로 접근해야 했다.</p>
 
-<p>클래스의 메서드가 호출될 때<br />
-<code class="language-plaintext highlighter-rouge">this</code>의 값은 <strong>클래스 생성자</strong> 그자체가 된다.<br /></p>
+<p>처음 프로젝트를 시작할때 <code class="language-plaintext highlighter-rouge">File</code> 타입에 <code class="language-plaintext highlighter-rouge">null</code>이 할당되지 않아 객체 안에 굳이 <code class="language-plaintext highlighter-rouge">key</code>라는 이름의 <code class="language-plaintext highlighter-rouge">key</code>를 생성했다.</p>
 
-<h3 id="정적-메서드는-언제-사용할까">정적 메서드는 언제 사용할까?</h3>
-
-<p>정적 메서드는 어떤 특정한 객체가 아닌 <strong>클래스에 속한 함수를 구현하고자 할 때</strong> 사용한다.<br />
-데이터베이스 관련 클래스에도 사용되곤한다.<br /></p>
-
-<h2 id="-정적-프로퍼티static-property">📄 정적 프로퍼티(static property)</h2>
-
-<p>정적 프로퍼티또한 <code class="language-plaintext highlighter-rouge">static</code>이라는 키워드를 사용한다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">User</span> <span class="p">{</span>
-  <span class="kd">static</span> <span class="nx">staticProperty</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">imageFile</span><span class="p">:</span> <span class="nx">File</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// error</span>
 </code></pre></div></div>
 
-<h3 id="정적-프로퍼티는-언제-사용할까">정적 프로퍼티는 언제 사용할까?</h3>
+<p>아마 내가 ‘imageFile’의 타입을 오로지 File로만 했던 모양인데 시간이 지나고 보니 코드가 굉장히 가독성이 없다는 것이 보였다.</p>
 
-<p>정적 프로퍼티는 데이터를 클래스 수순에 저장하고 싶을 때 사용한다.<br />
-정적 프로퍼티 역시 개별 인스턴스에 묶이지 않는다.</p>
+<h4 id="-componentssignupform">💾 Components/SignUpForm</h4>
 
-<h2 id="정적-프로퍼티와-메서드의-상속">정적 프로퍼티와 메서드의 상속</h2>
-
-<p>정적 프로퍼티와 정적 메서드는 상속이 가능하다.<br /></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{}</span>
-<span class="kd">class</span> <span class="nc">Rabbit</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="p">{}</span>
-
-<span class="c1">// 정적 메서드</span>
-<span class="nx">consol</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">Rabbit</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">Animal</span><span class="p">);</span> <span class="c1">// true</span>
-
-<span class="c1">// 일반 메서드</span>
-<span class="nx">consol</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">Rabbit</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">Animal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span> <span class="c1">// true</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span><span class="p">:</span> <span class="nx">UserParam</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">imageFile</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">value</span><span class="p">,</span>
+  <span class="na">username</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
+  <span class="na">password</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
+<span class="p">};</span>
 </code></pre></div></div>
 
-<p>클래스 <code class="language-plaintext highlighter-rouge">Rabbit</code>의 프로토타입이 클래스 <code class="language-plaintext highlighter-rouge">Animal</code>을 가리키게 한다.<br />
-따라서 <code class="language-plaintext highlighter-rouge">Rabbit</code>에서 원하는 프로퍼티나 메서드를 찾지 못하면 <code class="language-plaintext highlighter-rouge">Animal</code>로 검색이 이어진다.</p>
+<p><code class="language-plaintext highlighter-rouge">userData</code>에 <code class="language-plaintext highlighter-rouge">index</code>로 접근하기 때문에 해당 변수가 어떤 값을 가지고 있는지 알 수 없다.</p>
 
-<h2 id="출처">출처</h2>
+<p>이를 고치기 위해선 memberForm의 state 구조를 변경해야 했다.</p>
 
-<p><a href="https://ko.javascript.info/static-properties-methods">모던 자바스크립트 튜토리얼</a></p>
+<h2 id="-리팩토링-결과">❕ 리팩토링 결과</h2>
+
+<h4 id="-storemembermemberformslicets-1">💾 store/member/memberFormSlice.ts</h4>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">initialMemberForm</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">memberForm</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">imageFile</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">username</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="na">email</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="p">}</span> <span class="k">as</span> <span class="nb">Omit</span><span class="o">&lt;</span><span class="nx">MemberFormParam</span><span class="p">,</span> <span class="dl">"</span><span class="s2">profileUrl</span><span class="dl">"</span> <span class="o">&amp;</span> <span class="dl">"</span><span class="s2">imageUrl</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="na">emailAuth</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">isEditMode</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="-componentssignupform-1">💾 Components/SignUpForm</h4>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span><span class="p">:</span> <span class="nx">UserParam</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">imageFile</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">imageFile</span><span class="p">,</span>
+  <span class="na">username</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+  <span class="na">password</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>값에 이름으로 접근하니 어떤 데이터가 할당되는지 알 수 있게 되었다.</p>
+
+<h2 id="-나의-생각">💬 나의 생각</h2>
+
+<p>분명 코드를 작성할 때는 최선인 것 같았는데 지나고 보니 아닌 경우가 꽤 많다.</p>
+
+<p>완성된 프로젝트라 하더라도 다시 보고 리팩토링을 계속 해주는 것이 좋겠다.</p>
  
       </section>
 
@@ -452,11 +474,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a><span class="sep">, </span>
+      <a href="/tags/#redux-toolkit" class="page__taxonomy-item p-category" rel="tag">redux-toolkit</a><span class="sep">, </span>
     
-      <a href="/tags/#%EC%A0%95%EC%A0%81%EB%A9%94%EC%84%9C%EB%93%9C" class="page__taxonomy-item p-category" rel="tag">정적메서드</a><span class="sep">, </span>
+      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0" class="page__taxonomy-item p-category" rel="tag">데이터구조</a><span class="sep">, </span>
     
-      <a href="/tags/#%EC%A0%95%EC%A0%81%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0" class="page__taxonomy-item p-category" rel="tag">정적프로퍼티</a>
+      <a href="/tags/#%EB%AA%A8%EC%BD%94%EB%8A%AA" class="page__taxonomy-item p-category" rel="tag">모코늪</a>
     
     </span>
   </p>
@@ -473,14 +495,14 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+      <a href="/categories/#coding-swamp" class="page__taxonomy-item p-category" rel="tag">coding-swamp</a>
     
     </span>
   </p>
 
  
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-09-05">September 5, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-03-10">March 10, 2023</time></p>
 
       </footer>
 
@@ -489,20 +511,20 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%ED%81%B4%EB%9E%98%EC%8A%A4%5D+%EC%A0%95%EC%A0%81+%EB%A9%94%EC%84%9C%EB%93%9C%EC%99%80+%EC%A0%95%EC%A0%81+%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-static-method%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%AA%A8%EC%97%AC%EB%B4%90%EC%9A%94+%EC%BD%94%EB%94%A9%EC%9D%98+%EB%8A%AA%5D+%EC%82%AC%EC%9A%A9%EC%9E%90+%ED%8F%BC+%EA%B4%80%EB%A0%A8+Slice+%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81+%28state+%EA%B0%9D%EC%B2%B4%EB%A1%9C+%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0%29%20http%3A%2F%2Flocalhost%3A4000%2Fcoding-swamp%2Fprojects-coding-swamp%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-static-method%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcoding-swamp%2Fprojects-coding-swamp%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-static-method%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcoding-swamp%2Fprojects-coding-swamp%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
  
   <nav class="pagination">
     
-      <a href="/javascript/js-prototype/" class="pagination--pager" title="프로토타입(prototype)
+      <a href="/structure/structure-hash/" class="pagination--pager" title="해시(Hash)
 ">Previous</a>
     
     
-      <a href="/javascript/js-callback/" class="pagination--pager" title="콜백(Callback)
+      <a href="/javascript/js-identifier/" class="pagination--pager" title="식별자(Identifier)
 ">Next</a>
     
   </nav>
@@ -693,8 +715,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/javascript/js-static-method/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/javascript/js-static-method"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/coding-swamp/projects-coding-swamp/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/coding-swamp/projects-coding-swamp"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
