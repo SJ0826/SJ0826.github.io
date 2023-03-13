@@ -1,0 +1,771 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>async 함수로 데이터 fetch하기 - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="프론트엔드 엔지니어가 되기까지">
+
+
+  <meta name="author" content="Sujin Kim">
+  
+  <meta property="article:author" content="Sujin Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
+<meta property="og:title" content="async 함수로 데이터 fetch하기">
+<meta property="og:url" content="http://localhost:4000/javascript/javascript-datafetchByAsync/">
+
+
+  <meta property="og:description" content="프론트엔드 엔지니어가 되기까지">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-30T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-11-30T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/javascript-datafetchByAsync/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sujin Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sometimes we fall, then we rise ⛵ Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7662177111410384"
+  crossorigin="anonymous"
+></script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sometimes we fall, then we rise ⛵
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sujin Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>프론트엔드 엔지니어가 되기까지</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ikosdu60@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Front</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/javascript/">JavaScript (34)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">프로그래머스</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/programmers/lv1/">Lv1 (6)</a></li>
+          
+          
+            <li><a href="/programmers/lv2/">Lv2 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CS</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/cs/structure/">자료구조 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Projects</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/project/todolist/">TodoList-Project (2)</a></li>
+          
+          
+            <li><a href="/project/coding-swamp/">모여봐요 코딩의 숲 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="async 함수로 데이터 fetch하기"
+    /> <meta
+      itemprop="description"
+      content=""
+    /> <meta
+      itemprop="datePublished"
+      content="2022-11-30T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2022-11-30T22:06:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>async 함수로 데이터 fetch하기</p>
+
+        </h1>
+         
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                On this page
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#-async-함수로-데이터-fetch하기">📄 async 함수로 데이터 fetch하기</a></li><li><a href="#-promise를-통한-비동기-코딩의-문제점">📄 Promise를 통한 비동기 코딩의 문제점</a></li><li><a href="#-ayncawait를-통해-데이터-fetch해오기">📄 aync/await를 통해 데이터 fetch해오기</a><ul><li><a href="#예외처리-하기-주의사항">예외처리 하기 주의사항</a></li></ul></li><li><a href="#출처">출처</a></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="-async-함수로-데이터-fetch하기">📄 async 함수로 데이터 fetch하기</h2>
+
+<p>서버로부터 데이터를 fetch해오는 방법은 여러가지가 있다.
+보통 <code class="language-plaintext highlighter-rouge">promise</code>를 사용하거나 <code class="language-plaintext highlighter-rouge">async</code> <code class="language-plaintext highlighter-rouge">await</code>문을 사용한다.</p>
+
+<h2 id="-promise를-통한-비동기-코딩의-문제점">📄 Promise를 통한 비동기 코딩의 문제점</h2>
+
+<p><strong>1. 디버깅</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">fetchAuthorName</span><span class="p">(</span><span class="nx">postId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">fetch</span><span class="p">(</span><span class="s2">`https://jsonplaceholder.typicode.com/posts/</span><span class="p">${</span><span class="nx">postId</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">post</span><span class="p">.</span><span class="nx">userId</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">userId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nf">fetch</span><span class="p">(</span><span class="s2">`https://jsonplaceholder.typicode.com/users/</span><span class="p">${</span><span class="nx">userId</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+        <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">user1</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// 의도한 Error</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nf">fetchAuthorName</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">then</span><span class="p">((</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">name:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">name</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>✔ 결과</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ReferenceError</span><span class="p">:</span> <span class="nx">user1</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">defined</span>
+    <span class="nx">at</span> <span class="nx">fetch</span><span class="p">.</span><span class="nx">then</span><span class="p">.</span><span class="nx">then</span><span class="p">.</span><span class="nx">then</span><span class="p">.</span><span class="nx">then</span><span class="p">.</span><span class="nf">then </span><span class="p">(</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">29</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>동일한 이름의 메소드인 여러개의 <code class="language-plaintext highlighter-rouge">then()</code>중에서 정확히 어디서 에러가 발생했는지 에러 메세지만 보고는 알 수 없다.</p>
+
+<p><strong>2. 예외처리</strong></p>
+
+<p>Promise를 사용하면 <code class="language-plaintext highlighter-rouge">try/catch</code>대신 <code class="language-plaintext highlighter-rouge">catch()</code>메서드만 사용하여 예외처리를 해야한다.
+비동기, 동기 코드가 섞인 경우에는 예외 처리를 하는 과정이 복잡해질 수 있다.</p>
+
+<p><strong>3. 들여쓰기</strong></p>
+
+<p>실제 프로젝트에서 비동기 처리 코드는 길고 복잡하기 마련인데, 무한 <code class="language-plaintext highlighter-rouge">then()</code> 메서드에 빠지게 되면 코드의 가독성이 매우 떨어진다.</p>
+
+<h2 id="-ayncawait를-통해-데이터-fetch해오기">📄 aync/await를 통해 데이터 fetch해오기</h2>
+
+<p><code class="language-plaintext highlighter-rouge">async/await</code>를 사용하면 Promise가 가진 문제점들을 해결해 줄 수 있다.</p>
+
+<p><strong>Promise 사용했을 때:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">fetch</span><span class="p">(</span><span class="s2">`https://api.idiots.band/api/search?keyword=</span><span class="p">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>async-await 사용했을 때:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">onSearchBand</span><span class="p">:</span> <span class="nf">async </span><span class="p">(</span><span class="nx">inputValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">postResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span>
+    <span class="s2">`https://api.idiots.band/api/search?keyword=</span><span class="p">${</span><span class="nx">inputValue</span><span class="p">}</span><span class="s2">`</span>
+  <span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">postResponse</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+  <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">(</span><span class="nx">post</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fetch</code>함수를 사용하는 함수를 aysnc 함수로 만들어준다.</li>
+  <li><code class="language-plaintext highlighter-rouge">fetch</code>함수에 <code class="language-plaintext highlighter-rouge">await</code>를 걸어준다.</li>
+  <li><code class="language-plaintext highlighter-rouge">await</code>로 가져온 데이터는 <code class="language-plaintext highlighter-rouge">.json()</code>을 호출해서 한번 더 <code class="language-plaintext highlighter-rouge">await</code>를 걸어준다.</li>
+</ul>
+
+<h3 id="예외처리-하기-주의사항">예외처리 하기 주의사항</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">getSearchData</span> <span class="o">=</span> <span class="nf">async </span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`https://api.idiots.band/api/search?keyword=</span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">postResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">postResponse</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">postResponse</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이 코드는 에러는 나지 않지만 성능이 떨어진다.</p>
+
+<ul>
+  <li>async 함수는 모두 Promise를 리턴한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">reponse.ok</code>인 경우도 Promise가 리턴된다.</li>
+  <li>하지만 <code class="language-plaintext highlighter-rouge">throw new Error(data)</code>를 선언한다면 async 함수는 <code class="language-plaintext highlighter-rouge">Promise&lt;Response&gt; | Promise&lt;void&gt;</code>로 타입이 잡히게 된다.</li>
+</ul>
+
+<p>따라서 <code class="language-plaintext highlighter-rouge">reponse.ok</code>를 선언했다면 예외처리를 할 경우도 Promise를 반환하게 하는 것이 바람직하다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 바람직한 코드</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getSearchBand</span> <span class="o">=</span> <span class="nf">async </span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`https://api.idiots.band/api/search?keyword=</span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nf">reject</span><span class="p">(</span><span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">API 요청에 실패 했습니다.</span><span class="dl">"</span><span class="p">));</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li><a href="https://www.daleseo.com/js-async-async-await/">DaleSeo - 비동기 처리 3부 async/await</a></li>
+</ul>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#async" class="page__taxonomy-item p-category" rel="tag">async</a><span class="sep">, </span>
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+    
+    </span>
+  </p>
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-11-30">November 30, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=async+%ED%95%A8%EC%88%98%EB%A1%9C+%EB%8D%B0%EC%9D%B4%ED%84%B0+fetch%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-datafetchByAsync%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-datafetchByAsync%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-datafetchByAsync%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/javascript/js-image-random/" class="pagination--pager" title="이미지 랜덤 배치
+">Previous</a>
+    
+    
+      <a href="/javascript/javascript-variableConstant/" class="pagination--pager" title="변수(variable)와 상수(constant)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+      You may also enjoy
+    </h2>
+    <div class="grid__wrapper">
+        
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/coding-swamp/projects-coding-swamp/" rel="permalink"><p>[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 10 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      redux에서 관리하는 state를 객체로 다시 구조화
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/programmers-notcolpletedplayer/" rel="permalink"><p>완주하지 못한 선수</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 07 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 완주하지 못한 선수
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/%EC%9D%BC%EC%83%81/first-post/" rel="permalink"><p>github.io 블로그 시작하기</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 05 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/sumofdivisor/" rel="permalink"><p>약수의 합</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 20 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 약수의 합 풀이
+
+    </p>
+    
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Sujin Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/javascript/javascript-datafetchByAsync/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/javascript/javascript-datafetchByAsync"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sj0826-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

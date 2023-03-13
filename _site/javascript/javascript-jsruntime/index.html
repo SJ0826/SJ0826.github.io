@@ -1,0 +1,713 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Nodejs, npm, yarn - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="프론트엔드 엔지니어가 되기까지">
+
+
+  <meta name="author" content="Sujin Kim">
+  
+  <meta property="article:author" content="Sujin Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
+<meta property="og:title" content="Nodejs, npm, yarn">
+<meta property="og:url" content="http://localhost:4000/javascript/javascript-jsruntime/">
+
+
+  <meta property="og:description" content="프론트엔드 엔지니어가 되기까지">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-15T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-02-15T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/javascript-jsruntime/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sujin Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sometimes we fall, then we rise ⛵ Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7662177111410384"
+  crossorigin="anonymous"
+></script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sometimes we fall, then we rise ⛵
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sujin Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>프론트엔드 엔지니어가 되기까지</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ikosdu60@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Front</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/javascript/">JavaScript (34)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">프로그래머스</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/programmers/lv1/">Lv1 (6)</a></li>
+          
+          
+            <li><a href="/programmers/lv2/">Lv2 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CS</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/cs/structure/">자료구조 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Projects</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/project/todolist/">TodoList-Project (2)</a></li>
+          
+          
+            <li><a href="/project/coding-swamp/">모여봐요 코딩의 숲 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="Nodejs, npm, yarn"
+    /> <meta
+      itemprop="description"
+      content=""
+    /> <meta
+      itemprop="datePublished"
+      content="2023-02-15T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-02-15T22:06:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>Nodejs, npm, yarn</p>
+
+        </h1>
+         
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                On this page
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#-nodejs란">📄 Node.js란?</a><ul><li><a href="#nodejs-의-유래">Node.js 의 유래</a></li></ul></li><li><a href="#-npmnode-packaged-manager">📄 npm(Node Packaged Manager)</a></li><li><a href="#-yarn">📄 yarn</a><ul><li><a href="#yarn을-사용하는-이유">yarn을 사용하는 이유</a></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="-nodejs란">📄 Node.js란?</h2>
+
+<blockquote>
+  <p>Nodejs는 Chrome V8 JavaScript 엔진으로 빌드 된 <strong>JavaScript의 런타임</strong> 입니다. (by Node 공식 페이지)</p>
+</blockquote>
+
+<blockquote>
+  <p>런타임이란? 특정 언어로 만든 프로그램을 실행할 수 있는 환경</p>
+</blockquote>
+
+<p>Nodejs는 자바스크립트를 브라우저 내에서 말고도 다른환경에서 자바스크립트를 실행할 수 있게 합니다.</p>
+
+<h3 id="nodejs-의-유래">Node.js 의 유래</h3>
+
+<p>크롬같은 브라우저에는 html을 동적으로 움직일 수 있게하는 자바스크립트 해석 엔진이 있습니다.</p>
+
+<p>크롬은 V8, 모질라는 SpiderMonkey를 사용합니다.</p>
+
+<p>브라우저 중 크롬이 인기가 있는 이유중 하나는 빠른 속도입니다.</p>
+
+<p>자바스크립트를 해석하는 속도가 빠르기 때문에 사용자가 브라우저를 이용할 때 속도가 빠르다고 느끼게 됩니다.</p>
+
+<p>크롬은 사용하던 해석 엔진인 V8을 Node.js라는 이름으로 따로 출시합니다.</p>
+
+<h2 id="-npmnode-packaged-manager">📄 npm(Node Packaged Manager)</h2>
+
+<p>npm은 <strong>Node.js의 패키지 관리자</strong>입니다.</p>
+
+<p>npm은 Node.js로 만들어진 모듈을 웹에서 받아서 설치하고 관리해주는 프로그램입니다.</p>
+
+<p>npm을 사용하여 패키지를 설치하면 <code class="language-plaintext highlighter-rouge">package.json</code>에서 설치한 패키지가 자동으로 정리됩니다.</p>
+
+<h2 id="-yarn">📄 yarn</h2>
+
+<p>yarn 또한 npm과 같이 javascript 패키지 매니저입니다.</p>
+
+<p>yarn을 사용하면 npm 보다 더 나은 환경에서 자바스크립트를 실행할 수 있어 사용량이 높습니다.</p>
+
+<h3 id="yarn을-사용하는-이유">yarn을 사용하는 이유</h3>
+
+<p><strong>1. 속도</strong></p>
+
+<p>우선 npm보다 빠릅니다. 다운받은 패키지를 캐시에 저장하여 중복된 데이터는 다운로드하지 않고 캐시에 저장된 파일을 활용하기 때문입니다.</p>
+
+<p>npm은 패키지를 설치할때 순차적으로 설치하는 반면, yarn은 병렬로 처리해 속도면에서 우수합니다.</p>
+
+<p><strong>2. 안정성과 보안</strong></p>
+
+<p>npm은 의존 관계를 가지는 다른 패키지들이 포함되지만 yarn은 <code class="language-plaintext highlighter-rouge">package.json</code>에 있는 파일만 설치한다고 합니다.</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a><span class="sep">, </span>
+    
+      <a href="/tags/#nodejs" class="page__taxonomy-item p-category" rel="tag">Nodejs</a><span class="sep">, </span>
+    
+      <a href="/tags/#npm" class="page__taxonomy-item p-category" rel="tag">npm</a><span class="sep">, </span>
+    
+      <a href="/tags/#yarn" class="page__taxonomy-item p-category" rel="tag">yarn</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+    
+    </span>
+  </p>
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-02-15">February 15, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Nodejs%2C+npm%2C+yarn%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-jsruntime%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-jsruntime%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-jsruntime%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/todolist-project/projects-todoList-redux/" class="pagination--pager" title="[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기
+">Previous</a>
+    
+    
+      <a href="/programmers-lv1/evenandodd/" class="pagination--pager" title="짝수와 홀수
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+      You may also enjoy
+    </h2>
+    <div class="grid__wrapper">
+        
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/coding-swamp/projects-coding-swamp/" rel="permalink"><p>[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 10 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      redux에서 관리하는 state를 객체로 다시 구조화
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/programmers-notcolpletedplayer/" rel="permalink"><p>완주하지 못한 선수</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 07 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 완주하지 못한 선수
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/%EC%9D%BC%EC%83%81/first-post/" rel="permalink"><p>github.io 블로그 시작하기</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 05 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/sumofdivisor/" rel="permalink"><p>약수의 합</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 20 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 약수의 합 풀이
+
+    </p>
+    
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Sujin Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/javascript/javascript-jsruntime/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/javascript/javascript-jsruntime"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sj0826-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

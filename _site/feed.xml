@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-12T15:25:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</title><link href="http://localhost:4000/coding-swamp/projects-coding-swamp/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/projects-coding-swamp</id><content type="html" xml:base="http://localhost:4000/coding-swamp/projects-coding-swamp/"><![CDATA[<h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-13T11:55:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</title><link href="http://localhost:4000/coding-swamp/projects-coding-swamp/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/projects-coding-swamp</id><content type="html" xml:base="http://localhost:4000/coding-swamp/projects-coding-swamp/"><![CDATA[<h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
 
 <p>좋은 코드는 코드만 보고 어떤 일을 하는지 알 수 있는 코드라고 배웠다.</p>
 
@@ -224,26 +224,7 @@
 
 <p>어차피 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>의 절반까지만 정답의 유효 범위이기 때문에 반복 횟수를 조금이라도 줄이려고 신경썼다.</p>
 
-<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry><entry><title type="html">평균 구하기</title><link href="http://localhost:4000/programmers-lv1/programmers-arr/" rel="alternate" type="text/html" title="평균 구하기" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-arr</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-arr/"><![CDATA[<h2 id="문제-">문제 📖</h2>
-
-<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
-
-<ul>
-  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
-  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
-</ul>
-
-<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="평균구하기" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 평균 구하기 풀이]]></summary></entry><entry><title type="html">폰켓몬</title><link href="http://localhost:4000/programmers-lv1/programmers-phonecatmon/" rel="alternate" type="text/html" title="폰켓몬" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-phonecatmon</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-phonecatmon/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry><entry><title type="html">폰켓몬</title><link href="http://localhost:4000/programmers-lv1/programmers-phonecatmon/" rel="alternate" type="text/html" title="폰켓몬" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-phonecatmon</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-phonecatmon/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>당신은 폰켓몬을 잡기 위한 오랜 여행 끝에, 홍 박사님의 연구실에 도착했습니다. 홍 박사님은 당신에게 자신의 연구실에 있는 총 N 마리의 폰켓몬 중에서 N/2마리를 가져가도 좋다고 했습니다.</p>
 
@@ -297,7 +278,26 @@
 
 <p>내 풀이에서는 <code class="language-plaintext highlighter-rouge">newNums.length</code>에 쓸데없이 올림처리를 한 것을 지우지도 않았고, <code class="language-plaintext highlighter-rouge">set</code>함수를 사용할때 굳이 상수를 두번이나 선언한게 보인다.</p>
 
-<p>답이 나와도 다시한번 보고 정리하는 습관을 가져야겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="폰켓몬" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 폰켓몬 풀이]]></summary></entry><entry><title type="html">짝수와 홀수</title><link href="http://localhost:4000/programmers-lv1/evenandodd/" rel="alternate" type="text/html" title="짝수와 홀수" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/evenandodd</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/evenandodd/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<p>답이 나와도 다시한번 보고 정리하는 습관을 가져야겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="폰켓몬" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 폰켓몬 풀이]]></summary></entry><entry><title type="html">평균 구하기</title><link href="http://localhost:4000/programmers-lv1/programmers-arr/" rel="alternate" type="text/html" title="평균 구하기" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-arr</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-arr/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+
+<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
+
+<ul>
+  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
+  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
+</ul>
+
+<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="평균구하기" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 평균 구하기 풀이]]></summary></entry><entry><title type="html">짝수와 홀수</title><link href="http://localhost:4000/programmers-lv1/evenandodd/" rel="alternate" type="text/html" title="짝수와 홀수" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/evenandodd</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/evenandodd/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요.</p>
 
@@ -331,7 +331,55 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>숫자 0은 <code class="language-plaintext highlighter-rouge">false</code>, 이외의 값은 <code class="language-plaintext highlighter-rouge">true</code>라는 점을 활용하니 코드가 더욱 간결해졌다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="짝수와홀수" /><summary type="html"><![CDATA[프로그래머스 Lv1. 짝수와 홀수]]></summary></entry><entry><title type="html">[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기</title><link href="http://localhost:4000/todolist-project/projects-todoList-redux/" rel="alternate" type="text/html" title="[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기" /><published>2023-01-31T00:00:00+09:00</published><updated>2023-01-31T22:06:00+09:00</updated><id>http://localhost:4000/todolist-project/projects-todoList-redux</id><content type="html" xml:base="http://localhost:4000/todolist-project/projects-todoList-redux/"><![CDATA[<h2 id="-리덕스-툴킷을-사용하지-않은-이유">📄 리덕스 툴킷을 사용하지 않은 이유</h2>
+<p>숫자 0은 <code class="language-plaintext highlighter-rouge">false</code>, 이외의 값은 <code class="language-plaintext highlighter-rouge">true</code>라는 점을 활용하니 코드가 더욱 간결해졌다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="짝수와홀수" /><summary type="html"><![CDATA[프로그래머스 Lv1. 짝수와 홀수]]></summary></entry><entry><title type="html">Nodejs, npm, yarn</title><link href="http://localhost:4000/javascript/javascript-jsruntime/" rel="alternate" type="text/html" title="Nodejs, npm, yarn" /><published>2023-02-15T00:00:00+09:00</published><updated>2023-02-15T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-jsruntime</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-jsruntime/"><![CDATA[<h2 id="-nodejs란">📄 Node.js란?</h2>
+
+<blockquote>
+  <p>Nodejs는 Chrome V8 JavaScript 엔진으로 빌드 된 <strong>JavaScript의 런타임</strong> 입니다. (by Node 공식 페이지)</p>
+</blockquote>
+
+<blockquote>
+  <p>런타임이란? 특정 언어로 만든 프로그램을 실행할 수 있는 환경</p>
+</blockquote>
+
+<p>Nodejs는 자바스크립트를 브라우저 내에서 말고도 다른환경에서 자바스크립트를 실행할 수 있게 합니다.</p>
+
+<h3 id="nodejs-의-유래">Node.js 의 유래</h3>
+
+<p>크롬같은 브라우저에는 html을 동적으로 움직일 수 있게하는 자바스크립트 해석 엔진이 있습니다.</p>
+
+<p>크롬은 V8, 모질라는 SpiderMonkey를 사용합니다.</p>
+
+<p>브라우저 중 크롬이 인기가 있는 이유중 하나는 빠른 속도입니다.</p>
+
+<p>자바스크립트를 해석하는 속도가 빠르기 때문에 사용자가 브라우저를 이용할 때 속도가 빠르다고 느끼게 됩니다.</p>
+
+<p>크롬은 사용하던 해석 엔진인 V8을 Node.js라는 이름으로 따로 출시합니다.</p>
+
+<h2 id="-npmnode-packaged-manager">📄 npm(Node Packaged Manager)</h2>
+
+<p>npm은 <strong>Node.js의 패키지 관리자</strong>입니다.</p>
+
+<p>npm은 Node.js로 만들어진 모듈을 웹에서 받아서 설치하고 관리해주는 프로그램입니다.</p>
+
+<p>npm을 사용하여 패키지를 설치하면 <code class="language-plaintext highlighter-rouge">package.json</code>에서 설치한 패키지가 자동으로 정리됩니다.</p>
+
+<h2 id="-yarn">📄 yarn</h2>
+
+<p>yarn 또한 npm과 같이 javascript 패키지 매니저입니다.</p>
+
+<p>yarn을 사용하면 npm 보다 더 나은 환경에서 자바스크립트를 실행할 수 있어 사용량이 높습니다.</p>
+
+<h3 id="yarn을-사용하는-이유">yarn을 사용하는 이유</h3>
+
+<p><strong>1. 속도</strong></p>
+
+<p>우선 npm보다 빠릅니다. 다운받은 패키지를 캐시에 저장하여 중복된 데이터는 다운로드하지 않고 캐시에 저장된 파일을 활용하기 때문입니다.</p>
+
+<p>npm은 패키지를 설치할때 순차적으로 설치하는 반면, yarn은 병렬로 처리해 속도면에서 우수합니다.</p>
+
+<p><strong>2. 안정성과 보안</strong></p>
+
+<p>npm은 의존 관계를 가지는 다른 패키지들이 포함되지만 yarn은 <code class="language-plaintext highlighter-rouge">package.json</code>에 있는 파일만 설치한다고 합니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Nodejs" /><category term="npm" /><category term="yarn" /></entry><entry><title type="html">[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기</title><link href="http://localhost:4000/todolist-project/projects-todoList-redux/" rel="alternate" type="text/html" title="[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기" /><published>2023-01-31T00:00:00+09:00</published><updated>2023-01-31T22:06:00+09:00</updated><id>http://localhost:4000/todolist-project/projects-todoList-redux</id><content type="html" xml:base="http://localhost:4000/todolist-project/projects-todoList-redux/"><![CDATA[<h2 id="-리덕스-툴킷을-사용하지-않은-이유">📄 리덕스 툴킷을 사용하지 않은 이유</h2>
 
 <p>리덕스를 인강을 통해서 배웠지만 처음엔 이해가 잘 안갔다. 리듀서, 액션 등등 새로운 키워드가 많았고 컨셉도 어려웠다. 배우고 꾸준히 사용해보지 않아서 고이 묻어둔 상태였는데 원티드에서 리덕스를 다루게 되어 다시 꺼내 보았다. 그렇게 리덕스를 사용해서 만든 과제물에 대해 팀원분에게 피드백을 듣게 되었고 리덕스의 컨셉을 이해하지 않았다는 것을 알게 되었다.</p>
 
@@ -488,45 +536,4 @@ if (sum % 3 === 0) {
 - 패스트캠퍼스 프론트엔드 강의
 
 * [모던 자바스크립트 튜토리얼](https://ko.javascript.info/object)
-</결과>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="변수" /><category term="상수" /></entry><entry><title type="html">디바운싱(Debouncing)</title><link href="http://localhost:4000/javascript/javascript-debouncing/" rel="alternate" type="text/html" title="디바운싱(Debouncing)" /><published>2022-11-29T00:00:00+09:00</published><updated>2022-11-29T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-debouncing</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-debouncing/"><![CDATA[<h2 id="-디바운싱debouncing">📄 디바운싱(debouncing)</h2>
-
-<ol>
-  <li>이벤트를 그룹화하여 특정시간이 지난 후 하나의 이벤트만 발생하도록 하는 기술</li>
-  <li>연이어 호출되는 함수들 중 마지막 함수(또는 제일 처음)만 호출하도록 하는 것</li>
-</ol>
-
-<p>디바운싱 기술는 검색 기능을 구현하는 경우에 가장 많이 사용됩니다.</p>
-
-<p>이런 경우에는</p>
-
-<p><code class="language-plaintext highlighter-rouge">j</code>
-<code class="language-plaintext highlighter-rouge">ja</code>
-<code class="language-plaintext highlighter-rouge">jav</code>
-<code class="language-plaintext highlighter-rouge">java</code></p>
-
-<p>처럼 키워드 하나하나 인식해서 키워드 하나에 매번 이벤트가 발생하게 됩니다.</p>
-
-<p>이렇게 처리해야하는 일이 여러번의 요청이 있을때 최종(혹은 처음) 요청의 처리결과만 내놓게 하는게 디바운싱입니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">timer</span><span class="p">;</span>
-<span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#input</span><span class="dl">"</span><span class="p">).</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">timer</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="nx">timer</span> <span class="o">=</span> <span class="nf">setTimeout</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">여기에 ajax 요청</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">},</span> <span class="mi">200</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<ul>
-  <li>타자를 칠 때(input 이벤트 발생)마다 타이머를 설정한다.</li>
-  <li>200ms동안 입력이 없으면 입력이 끝난 것으로 한다. (시간 자유 설정 가능)</li>
-  <li>200ms 이전에 타자 입력이 발생하면 이전 타이머는 취소하고 새로운 타이머를 다시 설정한다.</li>
-</ul>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li><a href="https://www.zerocho.com/category/JavaScript/post/59a8e9cb15ac0000182794fa">제로초-쓰로틀링과 디바운싱</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="디바운싱" /><summary type="html"><![CDATA[이벤트를 그룹화하여 특정시간이 지난 후 하나의 이벤트만 발생하도록 하는 기술]]></summary></entry></feed>
+</결과>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="변수" /><category term="상수" /></entry></feed>
