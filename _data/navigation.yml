@@ -11,6 +11,10 @@ docs:
       - title: "JavaScript"
         url: /javascript/
         category: "JavaScript"
+        children:
+      - title: "HTML"
+        url: /html/
+        category: "HTML"
   - title: 프로그래머스
     children:
       - title: "Lv1"

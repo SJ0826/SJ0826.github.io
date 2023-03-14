@@ -17,6 +17,18 @@ var store = [{
         "url": "/programmers-lv1/2016/",
         "teaser": null
       },{
+        "title": "🚨 Cannot find module",
+        "excerpt":"🚨 Cannot find module   자바스크립트 강의를 들으며 실습 도중 파일이 실행이 안됐다.      경로 설정 문제 인줄 알았는데 파일 설정을 잘못했다.   🔨 해결           확장자 명이 js로 되어 있는지 확인하고 고친다.            끝^^       느낀점   항상 오류가 발생하면 사실 대부분 이런 사소한 문제들인것 같다.   모든 과정을 꼼꼼히 살피자.   참고      [stackoverflow]https://stackoverflow.com/questions/9023672/how-do-i-resolve-cannot-find-module-error-using-node-js  ","categories": ["JavaScript"],
+        "tags": ["JavaScript","에러","상수","변수"],
+        "url": "/javascript/cannot-find-module/",
+        "teaser": null
+      },{
+        "title": "🚨 Cannot use import statement outside a module",
+        "excerpt":"🐞 에러 발생   공연 검색기 프로젝트 중 에러가 발생했다.    ❔ 원인   해당 스크립트를 모듈로 인식하지 못해 import문을 쓸 수 없다는 뜻이다.   직접 스크립트의 타입을 지정해주어야 한다.   ❕ 해결   [index.html]   &lt;script src=\"main.js\" type=\"module\"&gt;&lt;/script&gt;   이렇게 해당 스크립트 태그에서 타입을 모듈로 지정해주면 에러가 해결된다.  ","categories": ["JavaScript"],
+        "tags": ["JavaScript","에러","import"],
+        "url": "/javascript/javascript-cannot-use-import-statement-outside-a-module/",
+        "teaser": null
+      },{
         "title": "해시(Hash)",
         "excerpt":"📄 해시(Hash)      해시는 (Key, Value)로 데이터를 저장하는 자료구조입니다.   해시 함수는 임이의 길이를 갖는 데이터를 고정된 길이의 데이터로 변환시켜주는 함수를 뜻합니다.   해시 함수를 사용하면 한 배열의 키에 해시함수를 적용해 고유한 인덱스를 생성할 수 있습니다.   참고      업비트 투자자보호센터  ","categories": ["structure"],
         "tags": ["자료구조","해시"],
@@ -27,6 +39,66 @@ var store = [{
         "excerpt":"📄 논리 연산자를 이용한 조건문   조건문은 계산식뿐만 아니라 논리연산자를 이용해 완성할 수 있습니다.   📄 표현식 &amp;&amp; 표현식   &amp;&amp;는 and연산자로 불리며 조건 중 하나라도 거짓일 경우 거짓이 됩니다.   if (true &amp;&amp; true) {   console.log(\"두개 모두 참이면 참\"); }  if (true &amp;&amp; false) {   console.log(\"한개만 참이면 거짓\"); }  if (false &amp;&amp; false) {   console.log(\"두개 모두 거짓이면 거짓\"); }   결과      📄 표현식 || 표현식   ||는 &amp;&amp;OR연산자**로 둘중 하나만 참이면 참이 됩니다.   if (true || true) {   console.log(\"두개 모두 참이면 참\"); }  if (true || false) {   console.log(\"한개만 참이면 참\"); }  if (false || false) {   console.log(\"두개 모두 거짓이면 거짓\"); }   결과      📄 !표현식   !는 NOT연산자로 반대의 결과값을 출력합니다.   if (!true) {   console.log(\"참이면 거짓\"); // 거짓이므로 출력되지 않음. }  if (!false) {   console.log(\"거짓이면 참\"); }   결과      📄 논리연산자를 이용한 조건부 실행   표현식은 앞을 먼저 평가하고 뒤를 평가합니다.   앞 표현식을 평가를 해서 참 일때만, 뒤 표현식을 평가할 필요가 생기기 때문에 뒤의 표현식이 실행됩니다.   n % 5;  // 앞이 참이기 때문에 뒤가 실행이 되지 않음. n % 5 === 0 || console.log(\"5로 나누어 떨어지지 않을 때만 실행\");  n = 6;  // 앞이 거짓이기 때문에 뒤가 실행됨. n % 5 === 0 || console.log(\"5로 나누어 떨어지지 않을 때만 실행\");   결과    📄 논리연산자 우선순위   논리연산자에는 우선순위가 있습니다.   NOT(!) &gt; AND(&amp;&amp;) &gt; OR(||) 순으로 NOT연산자가 제일 먼저 실행됩니다.   const value = !((true &amp;&amp; false) || (true &amp;&amp; false) || !false);   세가지 논리연산자가 동시에 쓰였지만,   우선순위가 적용되어 value는 false라는 값을 가지게 됩니다.   출처      패스트캠퍼스 프론트엔드 강의  ","categories": ["JavaScript"],
         "tags": ["JavaScript","논리연산자"],
         "url": "/javascript/javascript-logical-operator/",
+        "teaser": null
+      },{
+        "title": "컨테이너와 전역 속성",
+        "excerpt":"📄 컨테이너 태그   콘텐츠에 아무런 영향을 주지 않고, 여러 요소를 묶어 관리하기 편하게 만드는 역할을 하는 태그입니다.   div: 블록 레벨 컨테이너      페이지 전체 면적을 차지합니다.   span: 인라인 컨테이너   지정한 부분의 면적만 차지합니다.   📄 전역 속성   전역속성(Global attributes)은 모든 HTML 태그에서 공통으로 사용할 수 있는 속성입니다.   &lt;태그명 속성명=**속성값** 속성명=**속성값**&gt;콘텐츠&lt;/태그명&gt;   대표적인 전역 속성들      id: 요소에 고유한 이름을 부여하는 식별자 역할 속성입니다. id는 태그당 하나씩만 지정합니다.   class: 요소를 그룹 별로 묶을 수 있는 식별자 역할 속성입니다. class는 다중 지정 및 중복이 가능합니다.   style: 요소에 적용할 CSS스타일을 선언하는 속성입니다.   title: 요소의 추가 정보를 제공하는 텍스트 속성입니다. 사용자에게 툴팁을 제공합니다.  ","categories": ["HTML"],
+        "tags": ["HTML","컨테이너","전역속성"],
+        "url": "/html/html-container/",
+        "teaser": null
+      },{
+        "title": "HTML 문서 기본 구조",
+        "excerpt":"📄 HTML이란?      HyperText: 하이퍼링크를 통해 어떤 문서에서 다른 문서로 접근할 수 있는 텍스트   MarkUp: (콘텐츠를) 표시하다   Language: 언어   즉, HTML은 웹브라우저를 통해 표시되는 웹페이지의 콘텐츠를 정의하기 위해 사용하는 언어입니다.   📄 HTML 문서 기본 구조   ▪ &lt;!DOCTYPE html&gt;   문서의 첫 부분에서 문서 유형을 지정하는 단일 태그입니다.   &lt;!DOCTYPE html&gt;   ▪ &lt;html&gt; ~ &lt;/html&gt;   문서 유형을 지정한 후 실제 문서가 시작되고 끝나는 것을 나타내는 태그입니다.   &lt;html&gt;   ... &lt;/html&gt;   ▪ &lt;head&gt; ~ &lt;/head&gt;   웹 브라우저 화면에는 보이지 않지만 웹 브라우저가 알아야 할 정보들입니다.   ▪ &lt;meta charset=\"utf-8\"&gt;   문자 인코딩 및 문서 키워드 등에 대한 요약 정보를 기입하는 단일 태그입니다.  영문과 한글을 모두 사용하기 위해 utf-8 방식을 사용하는 것이 좋습니다.    ▪ &lt;title&gt; ~ &lt;/title&gt;   문서의 제목을 나타냅니다. 콘텐츠는 브라우저 탭에 표시됩니다.       ▪ &lt;body&gt; ~ &lt;/body&gt;   실제 브라우저 화면에 표시될 내용을 입력하는 태그입니다.     들여쓰기를 깔끔하게 해서 가독성을 높이자   출처      유노코딩  ","categories": ["HTML"],
+        "tags": ["HTML","태그"],
+        "url": "/html/html-html-docs-structure/",
+        "teaser": null
+      },{
+        "title": "이미지 표시하기",
+        "excerpt":"📄 이미지를 보여주는 img 태그   html에서는 이미지를 보여줄 때 img라는 단일 태그를 사용합니다.   &lt;img src=\"표시할 이미지 파일\" alt=\"이미지설명\" /&gt;   이때 alt는 대체 택스트 역할을 합니다.   이미지가 로딩되기 전이나 이미지 로딩에 실패한 경우   이미지 대신에 대체 텍스트가 표시됩니다.   이미지 유실 상황에 대비하거나 시각 장애인을 위한 콘텐츠에 유용합니다.(음성인식기 활용)   📄 이미지 크기 조절하기   width와 height로 크기를 지정합니다.   이때 너비와 높이는 각각 픽셀(px)단위로 적용됩니다.   &lt;img   src=\"표시할 이미지 파일\"   alt=\"이미지 설명\"   width=\"너비 값\"   height=\"높이 값\" /&gt;  ","categories": ["HTML"],
+        "tags": ["HTML","img"],
+        "url": "/html/html-image/",
+        "teaser": null
+      },{
+        "title": "입력 요소 만들기(input)",
+        "excerpt":"📄 input 태그   입력요소는 &lt;input&gt; 태그를 이용해 만들어 줍니다.   &lt;input&gt;태그는 인라인 요소이며, 단일 태그입니다.   &lt;input&gt;태그에는 name식별자를 추가하여 각각 어떤 특징을 가지는지 설명하는 것이 좋습니다.   📄 input 태그의 type 속성   type값에 따라 입력 요소의 형태나 입력 데이터 유형 등이 달라집니다.   1. text: 텍스트 메세지를 입력합니다.   &lt;input name=\"text\" type=\"text\" maxlength=\"5\" placeholder=\"메세지입력\" /&gt;      maxlength: 텍스트 최대 크기를 지정합니다.   place holder: 텍스트 입력 전 창에 띄워지는 텍스트를 지정합니다.   2. button: 버튼이 생성됩니다.   &lt;input name=\"button\" type=\"button\" value=\"PUSH\" /&gt;   3. color: 색을 지정할 수 있는 팔레트가 띄워 집니다.   &lt;input name=\"color\" type=\"color\" /&gt;   4. rage: 숫자로 된 값을 입력 할 수 있는 바를 만들어 줍니다.   &lt;input name=\"score\" type=\"range\" max=\"100\" min=\"0\" step=\"10\" /&gt;   5. date: 날짜를 입력할 수 있는 달력이 생성됩니다.   &lt;input name=\"birthdaty\" type=\"date\" /&gt;  ","categories": ["HTML"],
+        "tags": ["HTML","input"],
+        "url": "/html/html-input/",
+        "teaser": null
+      },{
+        "title": "링크 만들기",
+        "excerpt":"📄 링크(Link)   링크는 현재 문서에서 다른 문서로 이동할 수 있는 수단입니다.   링크는 a 태그를 사용합니다.   a 태그에 사용하는 속성      href: 링크가 참조하고자 하는 url을 입력합니다.   target: 링크 클릭 시 현재 탭에서 열지 새로운 탭에서 열지 결정합니다   &lt;a href=\"www.naver.com\" target=\"_self\"&gt; 현재 탭에서 열기(기본값) &lt;/a&gt;  &lt;a href=\"www.naver.com\" target=\"_blank\"&gt; 새로운 탭에서 열기 &lt;/a&gt;   이 외에도 href에 전화번호나 메일 주소 등을 지정 할 수 있습니다.   &lt;a href=\"tel:010-1234-5678\"&gt;   전화 걸기   &lt;!-- 데스크탑일 경우 전화기능이 없다면 사용 불가--&gt; &lt;/a&gt;  &lt;a href=\"mailto:ikosdu60@gmail.com\"&gt; 메일 쓰기 &lt;/a&gt;   출처      유노코딩  ","categories": ["HTML"],
+        "tags": ["HTML","link"],
+        "url": "/html/html-link/",
+        "teaser": null
+      },{
+        "title": "HTML코드 기초 문법",
+        "excerpt":"📄 태그(tag)   HTML 코드에서 정보(콘텐츠)를 정의하는 형식입니다.   &lt;태그명&gt; 여기에 콘텐츠를 기입합니다.&lt;/태그명&gt; &lt;/태그명&gt; // 단일 태그 사용 형태   📄 속성   태그의 부가적인 기능을 정의합니다.   &lt;태그명 속성명=\"속성값\"&gt;내용이 들어감&lt;/태그명&gt; &lt;태그 속성명=\"속성값\"/&gt; //단일 태그 사용 형태   📄 주석   사람에게는 보이지만, 웹브라우저에게는 보이지 않는 코드입니다.   주로 메모를 남기기 위해 사용됩니다.   &lt;!--** 이 사이에 작성한 내용은 주석으로 처리된다. **--&gt;   출처      유노코딩  ","categories": ["HTML"],
+        "tags": ["HTML","태그","속성","주석"],
+        "url": "/html/html-html-grammner/",
+        "teaser": null
+      },{
+        "title": "목록 표시하기",
+        "excerpt":"📄 ul   순서 있는 항목은 &lt;ul&gt;태그로 작성합니다.   &lt;ul&gt;   &lt;li&gt;토끼&lt;/li&gt;   &lt;li&gt;다람쥐&lt;/li&gt;   &lt;li&gt;청설모&lt;/li&gt;   &lt;li&gt;호랑이&lt;/li&gt; &lt;/ul&gt;   이와 같이 항목 하나하나는 &lt;li&gt;로 표시합니다.   ul태그로 작성하면 앞에 숫자가 붙습니다.   📄 ol   순서 없는 항목은 &lt;ol&gt;태그로 작성합니다.   &lt;ol&gt;   &lt;li&gt;HTML&lt;/li&gt;   &lt;li&gt;CSS&lt;/li&gt;   &lt;li&gt;JAVAScript&lt;/li&gt;   &lt;ol&gt;&lt;/ol&gt; &lt;/ol&gt;   &lt;ul&gt;태그와 &lt;ol&gt;태그와 &lt;li&gt;태그는 모두 블록 레벨 요소를 만드는 태그입니다.  ","categories": ["HTML"],
+        "tags": ["HTML","ul","ol","li"],
+        "url": "/html/html-list/",
+        "teaser": null
+      },{
+        "title": "메타(meta) 태그",
+        "excerpt":"📄 메타(meta) 태그   meta 태그는 HTML 문서의 정보를 표시하는 태그입니다.   검색엔진 최적화에 기여하며, 검색 결과에도 영향을 끼칩니다.   개발자가 페이지를 참고할 때 도움이 되기도 합니다.   📄 메타 태그의 다양한 속성들   1. charset   문자 인코딩에 대한 요약 정보를 기입하는 속성입니다.   주로 영문과 한글을 모두 사용하기 위해 utf-8방식을 사용합니다.   &lt;meta charset=\"uth-8\" /&gt;   2. http-eqiv   콘텐츠 속성의 정보/값에 대한 HTTP 헤더를 제공합니다.   &lt;!-- IE 브라우저의 최신 버전의 엔진을 사용하라는 뜻--&gt; &lt;meta http-equiv=\"x-ua-compatible\" content=\"IE-edge\" /&gt; &lt;!-- 10초마다 페이지 새로고침하라는 뜻--&gt; &lt;meta http-equiv=\"refresh\" content=\"10\" /&gt;   3.name name 속성을 이름으로, content 속성을 값으로 하여 문서 정보를 제공합니다.   &lt;!--문서 제작자--&gt; &lt;meta name=\"author\" content=\"유노코딩\" /&gt; &lt;!-- 페이지에 대한 요약--&gt; &lt;meta name=\"desciption\" content=\"페이지에 대한 짧고 명확한 요약\" /&gt; &lt;!-- 페이지의 콘텐츠와 관련된, 쉼표로 구분한 키워드 목록--&gt; &lt;meta   name=\"keywords\"   content=\"예를 들면, 강아지, 고양이, 정보, 반려동물, 등등\" /&gt;   출처      유노코딩  ","categories": ["HTML"],
+        "tags": ["HTML","메타 태그","charset","http-eqiv","name"],
+        "url": "/html/html-metatag/",
+        "teaser": null
+      },{
+        "title": "select & textarea",
+        "excerpt":"📄 select   select는 다수의 옵션(선택지)를 포함할 수 있는 선택 메뉴입니다.   메뉴 안에 포함되는 옵션은 option 태그를 사용하여 표시합니다.   &lt;select&gt;     &lt;option value=\"starbucks\"&gt;스타벅스&lt;/option&gt;     &lt;optio nvalue=\"coffeebean\"&gt;커피빈&lt;/option&gt;     &lt;option value=\"ediya\"&gt;이디야&lt;/option&gt;     &lt;option value=\"pascucci\"&gt;파스쿠찌&lt;/option&gt; &lt;/select&gt;      선택지에서 커피빈을 고른다 = cafe의 입력 값은 coffebean이다    📄 textarea   textarea는 여러 줄의 일반 텍스트를 입력할 수 있는 입력 요소입니다.   &lt;textarea name=\"letter\" rows=\"10\" cols=:10\"&gt;기본적으로 쓰여 있는 텍스트&lt;/textarea&gt;   출처      유노코딩  ","categories": ["HTML"],
+        "tags": ["HTML","select","textarea"],
+        "url": "/html/html-select&textarea/",
+        "teaser": null
+      },{
+        "title": "뷰포트(viewport)",
+        "excerpt":"📄 뷰포트(viewport)   현재 화면에 보여지고 있는 영역을 의미합니다.   기기별로 뷰포트가 다르기때문에 보여지는 화면의 배율에 따라 화면이 다르게 보입니다.   html문서에서 이름이 뷰포트인 메타태그 설정을 확인할 수 있습니다.   &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;      width=device-width : 너비를 기기의 너비 기준으로 초기화 한다. initial-scale=1.0 : 기기의 너비에 맞게 초기 scale를 지정한다.    이 메타태그 설정은 기기에 맞게 화면 배율을 조정해주기 때문에, 모바일 화면에서도 pc화면과 동일하게 콘텐츠의 크기가 유지되는 것을 확인할 수 있습니다.   📄 뷰포트 단위   뷰포트 크기를 기반으로 값을 계산하여 크기를 결정하는 가변단위들이 있습니다.   이는 반응형 웹을 만들 때 매우 유용하게 사용되는 단위들입니다.   ▪ font-size: 1vw;      화면 사이즈에서 너비의 100분의 1    화면 너비의 백분율을 계산해서 크기를 조정합니다.   ▪ font-size: 1vh;      화면 사이즈에서 높이의 100분의 1    화면 높이의 백분율을 계산해서 크기를 조정합니다.   ▪ font-size: 1vmin;      화면 사이즈에서 너비와 높이 중 작은것의 100분의 1 너비와 높이 중 작은 것에 백분율을 맞춘다    ▪ font-size: 1vmax;      화면 사이즈에서 너비와 높이 중 큰것의 100분의 1 너비와 높이 중 큰 것에 백분율을 맞춘다.   ","categories": ["HTML"],
+        "tags": ["HTML","뷰포트"],
+        "url": "/html/html-viewport/",
         "teaser": null
       },{
         "title": "식별자(Identifier)",
@@ -221,6 +293,12 @@ var store = [{
         "url": "/javascript/javascript-variableConstant/",
         "teaser": null
       },{
+        "title": "동적 임포트(Dynamic import)",
+        "excerpt":"📄 동적 임포트(Dynamic import)   보통 코드의 최상단에서 import문을 사용해 클래스나 함수를 가져오는 것을 정적 import라고 합니다.   정적으로 모듈을 import한다면      import문에 동적 매개 변수를 사용할 수 없습니다. = 원시 문자열만 가능하기 때문에 함수 호출 결과값을 경로로 사용할 수 없습니다.   런타임이나 조건부로 모듈을 불러올 수 없습니다. = if문, 코드 블록에서 사용할 수 없습니다.   📄 동적으로 모듈 import 하는 방법   동적으로 모듈을 import한다면      프로미스 객체를 반환합니다. 프로미스 객체의 반환값은 불러온 모듈입니다.   코드의 위치에 관계없이 사용이 가능하기 때문에, 모듈들을 사용자가 필요로 할 때 불러올 수 있습니다.   import()를 호출하는 순간부터 로딩이 되기 때문에 성능을 향상시킬 수 있습니다.   import(\"./sum\").then((sum) =&gt; {   console.log(sum(1 + 2)); });  ","categories": ["JavaScript"],
+        "tags": ["JavaScript","동적 임포트","import"],
+        "url": "/javascript/javascript-dynamic-import/",
+        "teaser": null
+      },{
         "title": "[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기",
         "excerpt":"📄 리덕스 툴킷을 사용하지 않은 이유   리덕스를 인강을 통해서 배웠지만 처음엔 이해가 잘 안갔다. 리듀서, 액션 등등 새로운 키워드가 많았고 컨셉도 어려웠다. 배우고 꾸준히 사용해보지 않아서 고이 묻어둔 상태였는데 원티드에서 리덕스를 다루게 되어 다시 꺼내 보았다. 그렇게 리덕스를 사용해서 만든 과제물에 대해 팀원분에게 피드백을 듣게 되었고 리덕스의 컨셉을 이해하지 않았다는 것을 알게 되었다.   기존의 나는 api를 호출할 때 store에서 따로 상태관련 로직을 작성하지 않았다. 예를 들어 Post요청을 한다고 가정했을 때, 데이터를 Put요청을 통해 수정하고 바로 다시 Get요청으로 데이터를 불러와 변경된 데이터를 화면에 렌더링해서 보여줬다. 이 과정에서는 api호출이 총 두번 발생한다.   하지만 store에서 상태 관리 로직을 작성한다면 따로 Get요청을 하지 않아도 클라이언트단에서 변경된 데이터를 바로 렌더링 할 수 있었다. 같은 과정이지만 api요청이 한번으로 줄어들게 되는 것이었다. 단점으로는 코드가 무거워진다는 부분이 있지만 api호출이 줄어드는 만큼 확실히 사용자 입장에선 더 빠르게 느껴질 것 같다.   📄 기존의 리덕스 사용 방식   const commentSlice = createSlice({   name: \"comment\",   initialState: initialState,   reducers: {},   extraReducers: (builder) =&gt; {     builder.addCase(getComment.fulfilled, (state, action) =&gt; action.payload);     builder.addCase(createComment.fulfilled, (state, action) =&gt; action.payload);     builder.addCase(editComment.fulfilled, (state, action) =&gt; action.payload);     builder.addCase(deleteComment.fulfilled, (state, action) =&gt; action.payload);   }, });  export default commentSlice;   redux-toolkit에서 제공하는 createAsyncThunk를 이용해 비동기 로직을 처리하고 댓글의 상태를 관리하는 리듀서를 작성했다. 상태 관련 로직이 전혀 없기 때문에 리듀서가 깔끔하고 각 액션이 어떤 일을 수행하는지 알 수 없다.   📄 개선된 리덕스 사용 방식   const todoReducer = (   state: TodoParam[] = initialState,   action: TodoActionType ) =&gt; {   switch (action.type) {     case GET_TODOS:       return action.payload;     case CREATE_TODO:       return [...state, action.payload];     case DELETE_TODO:       return state.filter((todo) =&gt; todo.id !== action.payload);     case UPDATE_TODO:       return state.map((todo) =&gt;         todo.id === action.payload.id           ? { ...todo, todo: action.payload.todo, isCompleted: false }           : todo       );     case DONE_TODO:       return state.map((todo) =&gt;         todo.id === action.payload           ? { ...todo, isCompleted: !todo.isCompleted }           : todo       );     default:       return state;   } };   리덕스를 제대로 다시 공부하기 위해 툴킷을 사용하지 않고 구현해보았다. 한번 Get요청을 통해 받아온 데이터를 관리하는 리듀서를 만들었다. 상태가 변경될때마다 새로고침을 하는게 아니라면 다시 Get요청을 하지 않아도 되니 api요청이 훨씬 줄어들었다.   지금은 규모가 작은 프로젝트지만 큰 프로젝트의 경우라면 관련 로직이 꽤 길어질 것 같은데 그때도 이렇게 관리를 하는게 맞는지 궁금해졌다. 이 부분은 좀더 찾아봐야 알 것 같다.  ","categories": ["TodoList-Project"],
         "tags": ["TodoList","Redux"],
@@ -255,6 +333,18 @@ var store = [{
         "excerpt":"문제 📖   정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.      n은 0 이상 3000이하인 정수입니다.   나의 풀이 🙋‍♀️   function solution(n) {   let sum = n;   for (let i = 1; i &lt;= Math.floor(n / 2); i++) {     if (n % i === 0) sum += i;   }   return sum; }   간단하게 for문을 사용했다.   어차피 주어진 수 n의 절반까지만 정답의 유효 범위이기 때문에 반복 횟수를 조금이라도 줄이려고 신경썼다.   반복문을 통해 주어진 수 n을 정수로 나눈 값이 0일 경우, 총합 sum에 더해준다.  ","categories": ["programmers-lv1"],
         "tags": ["프로그래머스","약수의 합"],
         "url": "/programmers-lv1/sumofdivisor/",
+        "teaser": null
+      },{
+        "title": "🚨 Assignment to constant variable.",
+        "excerpt":"🚨 Assignment to constant variable.   자바스크립트 퀴즈를 푸는데 코드에 빨간 표시도 안났는데 에러가 떴다.   직역하면 상수값을 변수에 할당했다는 뜻이다.   function countBiggerThanTen(numbers) {   let sum = 0;   numbers.forEach((number) =&gt; {     if (number &gt; 10) {       sum += 1; // TypeError: Assignment to constant variable.     }   });   console.log(sum); }   원인   이미 선언한 const 변수에 새로운 값을 할당했을 때 발생한다.   위 코드에서 계속 값이 바뀌는 sum을 상수로 선언했다.   해결   값을 재할당에서 사용할 수 있는 let으로 바꾸어 주었더니 정상적으로 동작했다.  ","categories": ["JavaScript"],
+        "tags": ["JavaScript","에러","상수","변수"],
+        "url": "/javascript/javascript-assignment-to-constant-variable/",
+        "teaser": null
+      },{
+        "title": "이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)",
+        "excerpt":"📄 이벤트 버블링 (Event Bubbling)   이벤트 버블링은 특정 요소에서 이벤트가 발생했을 때, 해당 이벤트가 더 상위 요소로 전달되는 과정입니다.   브라우저는 특정 요소에서 이벤트가 발생했을 때 그 이벤트를 최상위에 있는 요소까지 전파합니다.   이러한 과정을 이벤트 버블링이라고 합니다.   // html &lt;body&gt;   &lt;div class=\"one\"&gt;     &lt;div class=\"two\"&gt;       &lt;div class=\"three\"&gt;&lt;/div&gt;     &lt;/div&gt;   &lt;/div&gt; &lt;/body&gt;;  // js var divs = document.querySelectorAll(\"div\"); divs.forEach(function (div) {   div.addEventListener(\"click\", logEvent); });  function logEvent(event) {   console.log(event.currentTarget.className); }   ✔ 결과   three; two; one;   📄 이벤트 캡처 (Event Capture)   이벤트 캡처는 이벤트 버블링과 반대로 진행되는 이벤트 전달 과정입니다.   이벤트 캡처는 이벤트 버블링과 반대로 상위요소에서 하위요소로 이벤트 전달 과정이 진행됩니다.   // html &lt;body&gt;   &lt;div class=\"one\"&gt;     &lt;div class=\"two\"&gt;       &lt;div class=\"three\"&gt;&lt;/div&gt;     &lt;/div&gt;   &lt;/div&gt; &lt;/body&gt;;  // js var divs = document.querySelectorAll(\"div\"); divs.forEach(function (div) {   div.addEventListener(\"click\", logEvent, {     capture: true, // default 값은 false입니다.   }); });  function logEvent(event) {   console.log(event.currentTarget.className); }   ✔ 결과   one; two; three;   addEventListener의 세번째 파라미터로 capture: true를 설정해주면 이벤트 캡처가 진행되어 가장 상위 요소에 적용된 이벤트가 먼저 발생합니다.   📄 이벤트 진행을 막고싶을 때는 어떻게 할까?   이벤트 버블링이나 이벤트 캡처를 구현할때 적용한 모든 요소에 이벤트를 실행하지 않고 중간에 멈추기 위한 속성이 있습니다. event.stopPropagation()을 사용하면 이벤트의 진행과정을 중단시킬 수 있습니다.   // 이벤트 버블링 예제 divs.forEach(function (div) {   div.addEventListener(\"click\", logEvent); });  function logEvent(event) {   event.stopPropagation();   console.log(event.currentTarget.className); // three }  // 이벤트 캡쳐 예제 divs.forEach(function (div) {   div.addEventListener(\"click\", logEvent, {     capture: true, // default 값은 false입니다.   }); });  function logEvent(event) {   event.stopPropagation();   console.log(event.currentTarget.className); // one }   📄 이벤트 위임 (Event Delegation)   이벤트 위임은 하위 요소에 각각 이벤트를 붙이지 않고 상위 요소에서 하위 요소의 이벤트들을 제어하는 방식입니다.   &lt;h1&gt;오늘의 할 일&lt;/h1&gt; &lt;ul class=\"itemList\"&gt;   &lt;li&gt;     &lt;input type=\"checkbox\" id=\"item1\" /&gt;     &lt;label for=\"item1\"&gt;이벤트 버블링 학습&lt;/label&gt;   &lt;/li&gt;   &lt;li&gt;     &lt;input type=\"checkbox\" id=\"item2\" /&gt;     &lt;label for=\"item2\"&gt;이벤트 캡쳐 학습&lt;/label&gt;   &lt;/li&gt; &lt;/ul&gt;   // 새 리스트 아이템을 추가하는 코드 var itemList = document.querySelector(\".itemList\");  var li = document.createElement(\"li\"); var input = document.createElement(\"input\"); var label = document.createElement(\"label\"); var labelText = document.createTextNode(\"이벤트 위임 학습\");  input.setAttribute(\"type\", \"checkbox\"); input.setAttribute(\"id\", \"item3\"); label.setAttribute(\"for\", \"item3\"); label.appendChild(labelText); li.appendChild(input); li.appendChild(label); itemList.appendChild(li);  var itemList = document.querySelector(\".itemList\"); itemList.addEventListener(\"click\", function (event) {   alert(\"clicked\"); });   아이템이 새로 추가될 때마다 이벤트를 새로 추가하지 않고 상위 요소인 .itemList에 이벤트를 달아줌으로써 하위요소에도 이벤트가 등록되었습니다.   출처      캡틴 판교-이벤트 버블링, 이벤트 캡처 그리고 이벤트 위임까지  ","categories": ["JavaScript"],
+        "tags": ["JavaScript","이벤트 버블링","이벤트 캡처","이벤트 위임"],
+        "url": "/javascript/javascript-eventBubbling/",
         "teaser": null
       },{
         "title": "github.io 블로그 시작하기",

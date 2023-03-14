@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-13T11:55:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</title><link href="http://localhost:4000/coding-swamp/projects-coding-swamp/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/projects-coding-swamp</id><content type="html" xml:base="http://localhost:4000/coding-swamp/projects-coding-swamp/"><![CDATA[<h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-14T11:00:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</title><link href="http://localhost:4000/coding-swamp/projects-coding-swamp/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/projects-coding-swamp</id><content type="html" xml:base="http://localhost:4000/coding-swamp/projects-coding-swamp/"><![CDATA[<h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
 
 <p>좋은 코드는 코드만 보고 어떤 일을 하는지 알 수 있는 코드라고 배웠다.</p>
 
@@ -201,7 +201,179 @@
 <p>우선, github 레포에서 보는 md파일은 가독성이 좋지 않다.
 글씨의 크기나 간격이 편하게 읽기 좋은 정도는 아니다.
 가장 큰 이유는 내가 지속적으로 관리하는 페이지를 가지고 싶었다.
-이 블로그에 공부기록도 하지만 이외에 다양한 주제를 가지고 나를 표현하는 웹 사이트로 성장시킬 예정이다.</p>]]></content><author><name>Sujin Kim</name></author><category term="일상" /><category term="Blog" /><summary type="html"><![CDATA[GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.]]></summary></entry><entry><title type="html">약수의 합</title><link href="http://localhost:4000/programmers-lv1/sumofdivisor/" rel="alternate" type="text/html" title="약수의 합" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/sumofdivisor</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/sumofdivisor/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+이 블로그에 공부기록도 하지만 이외에 다양한 주제를 가지고 나를 표현하는 웹 사이트로 성장시킬 예정이다.</p>]]></content><author><name>Sujin Kim</name></author><category term="일상" /><category term="Blog" /><summary type="html"><![CDATA[GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.]]></summary></entry><entry><title type="html">🚨 Assignment to constant variable.</title><link href="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/" rel="alternate" type="text/html" title="🚨 Assignment to constant variable." /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-assignment%20to%20constant%20variable</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/"><![CDATA[<h2 id="-assignment-to-constant-variable">🚨 Assignment to constant variable.</h2>
+
+<p>자바스크립트 퀴즈를 푸는데 코드에 빨간 표시도 안났는데 에러가 떴다.</p>
+
+<p>직역하면 <strong>상수값을 변수에 할당</strong>했다는 뜻이다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">countBiggerThanTen</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">numbers</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">sum</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// TypeError: Assignment to constant variable.</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="원인">원인</h2>
+
+<p>이미 선언한 const 변수에 새로운 값을 할당했을 때 발생한다.</p>
+
+<p>위 코드에서 계속 값이 바뀌는 sum을 상수로 선언했다.</p>
+
+<h2 id="해결">해결</h2>
+
+<p>값을 재할당에서 사용할 수 있는 <code class="language-plaintext highlighter-rouge">let</code>으로 바꾸어 주었더니 정상적으로 동작했다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="에러" /><category term="상수" /><category term="변수" /></entry><entry><title type="html">이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)</title><link href="http://localhost:4000/javascript/javascript-eventBubbling/" rel="alternate" type="text/html" title="이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)" /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-eventBubbling</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-eventBubbling/"><![CDATA[<h2 id="-이벤트-버블링-event-bubbling">📄 이벤트 버블링 (Event Bubbling)</h2>
+
+<p>이벤트 버블링은 특정 요소에서 이벤트가 발생했을 때, 해당 이벤트가 더 <strong>상위 요소로 전달</strong>되는 과정입니다.</p>
+
+<p>브라우저는 특정 요소에서 이벤트가 발생했을 때 그 이벤트를 최상위에 있는 요소까지 전파합니다.</p>
+
+<p>이러한 과정을 이벤트 버블링이라고 합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// html</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body&gt;</span><span class="err">;
+</span>
+<span class="c1">// js</span>
+<span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>✔ 결과</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">three</span><span class="p">;</span>
+<span class="nx">two</span><span class="p">;</span>
+<span class="nx">one</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="-이벤트-캡처-event-capture">📄 이벤트 캡처 (Event Capture)</h2>
+
+<p>이벤트 캡처는 이벤트 버블링과 반대로 진행되는 이벤트 전달 과정입니다.</p>
+
+<p>이벤트 캡처는 이벤트 버블링과 반대로 <strong>상위요소에서 하위요소로</strong> 이벤트 전달 과정이 진행됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// html</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body&gt;</span><span class="err">;
+</span>
+<span class="c1">// js</span>
+<span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">capture</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// default 값은 false입니다.</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>✔ 결과</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">one</span><span class="p">;</span>
+<span class="nx">two</span><span class="p">;</span>
+<span class="nx">three</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">addEventListener</code>의 세번째 파라미터로 <code class="language-plaintext highlighter-rouge">capture: true</code>를 설정해주면
+이벤트 캡처가 진행되어 가장 상위 요소에 적용된 이벤트가 먼저 발생합니다.</p>
+
+<h2 id="-이벤트-진행을-막고싶을-때는-어떻게-할까">📄 이벤트 진행을 막고싶을 때는 어떻게 할까?</h2>
+
+<p>이벤트 버블링이나 이벤트 캡처를 구현할때 적용한 모든 요소에 이벤트를 실행하지 않고 중간에 멈추기 위한 속성이 있습니다.
+<code class="language-plaintext highlighter-rouge">event.stopPropagation()</code>을 사용하면 이벤트의 진행과정을 중단시킬 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 이벤트 버블링 예제</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span> <span class="c1">// three</span>
+<span class="p">}</span>
+
+<span class="c1">// 이벤트 캡쳐 예제</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">capture</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// default 값은 false입니다.</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span> <span class="c1">// one</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-이벤트-위임-event-delegation">📄 이벤트 위임 (Event Delegation)</h2>
+
+<p>이벤트 위임은 하위 요소에 각각 이벤트를 붙이지 않고 <strong>상위 요소에서 하위 요소의 이벤트들을 제어</strong>하는 방식입니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>오늘의 할 일<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"itemList"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"item1"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"item1"</span><span class="nt">&gt;</span>이벤트 버블링 학습<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"item2"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"item2"</span><span class="nt">&gt;</span>이벤트 캡쳐 학습<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 새 리스트 아이템을 추가하는 코드</span>
+<span class="kd">var</span> <span class="nx">itemList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.itemList</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">labelText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createTextNode</span><span class="p">(</span><span class="dl">"</span><span class="s2">이벤트 위임 학습</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">input</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">input</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">item3</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">label</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">for</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">item3</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">label</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">labelText</span><span class="p">);</span>
+<span class="nx">li</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
+<span class="nx">li</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+<span class="nx">itemList</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">itemList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.itemList</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">itemList</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">clicked</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>아이템이 새로 추가될 때마다 이벤트를 새로 추가하지 않고
+상위 요소인 <code class="language-plaintext highlighter-rouge">.itemList</code>에 이벤트를 달아줌으로써 하위요소에도 이벤트가 등록되었습니다.</p>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li><a href="https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/">캡틴 판교-이벤트 버블링, 이벤트 캡처 그리고 이벤트 위임까지</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="이벤트 버블링" /><category term="이벤트 캡처" /><category term="이벤트 위임" /></entry><entry><title type="html">약수의 합</title><link href="http://localhost:4000/programmers-lv1/sumofdivisor/" rel="alternate" type="text/html" title="약수의 합" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/sumofdivisor</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/sumofdivisor/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.</p>
 
@@ -379,161 +551,4 @@
 
 <p><strong>2. 안정성과 보안</strong></p>
 
-<p>npm은 의존 관계를 가지는 다른 패키지들이 포함되지만 yarn은 <code class="language-plaintext highlighter-rouge">package.json</code>에 있는 파일만 설치한다고 합니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Nodejs" /><category term="npm" /><category term="yarn" /></entry><entry><title type="html">[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기</title><link href="http://localhost:4000/todolist-project/projects-todoList-redux/" rel="alternate" type="text/html" title="[TodoList-Project] 툴킷없이 리덕스 사용해서 전역상태 관리하기" /><published>2023-01-31T00:00:00+09:00</published><updated>2023-01-31T22:06:00+09:00</updated><id>http://localhost:4000/todolist-project/projects-todoList-redux</id><content type="html" xml:base="http://localhost:4000/todolist-project/projects-todoList-redux/"><![CDATA[<h2 id="-리덕스-툴킷을-사용하지-않은-이유">📄 리덕스 툴킷을 사용하지 않은 이유</h2>
-
-<p>리덕스를 인강을 통해서 배웠지만 처음엔 이해가 잘 안갔다. 리듀서, 액션 등등 새로운 키워드가 많았고 컨셉도 어려웠다. 배우고 꾸준히 사용해보지 않아서 고이 묻어둔 상태였는데 원티드에서 리덕스를 다루게 되어 다시 꺼내 보았다. 그렇게 리덕스를 사용해서 만든 과제물에 대해 팀원분에게 피드백을 듣게 되었고 리덕스의 컨셉을 이해하지 않았다는 것을 알게 되었다.</p>
-
-<p>기존의 나는 api를 호출할 때 store에서 따로 상태관련 로직을 작성하지 않았다.
-예를 들어 Post요청을 한다고 가정했을 때, 데이터를 Put요청을 통해 수정하고 바로 다시 Get요청으로 데이터를 불러와 변경된 데이터를 화면에 렌더링해서 보여줬다. 이 과정에서는 api호출이 총 두번 발생한다.</p>
-
-<p>하지만 store에서 상태 관리 로직을 작성한다면 따로 Get요청을 하지 않아도 클라이언트단에서 변경된 데이터를 바로 렌더링 할 수 있었다. 같은 과정이지만 api요청이 한번으로 줄어들게 되는 것이었다. 단점으로는 코드가 무거워진다는 부분이 있지만 api호출이 줄어드는 만큼 확실히 사용자 입장에선 더 빠르게 느껴질 것 같다.</p>
-
-<h2 id="-기존의-리덕스-사용-방식">📄 기존의 리덕스 사용 방식</h2>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">commentSlice</span> <span class="o">=</span> <span class="nf">createSlice</span><span class="p">({</span>
-  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">comment</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">initialState</span><span class="p">:</span> <span class="nx">initialState</span><span class="p">,</span>
-  <span class="na">reducers</span><span class="p">:</span> <span class="p">{},</span>
-  <span class="na">extraReducers</span><span class="p">:</span> <span class="p">(</span><span class="nx">builder</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">builder</span><span class="p">.</span><span class="nf">addCase</span><span class="p">(</span><span class="nx">getComment</span><span class="p">.</span><span class="nx">fulfilled</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-    <span class="nx">builder</span><span class="p">.</span><span class="nf">addCase</span><span class="p">(</span><span class="nx">createComment</span><span class="p">.</span><span class="nx">fulfilled</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-    <span class="nx">builder</span><span class="p">.</span><span class="nf">addCase</span><span class="p">(</span><span class="nx">editComment</span><span class="p">.</span><span class="nx">fulfilled</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-    <span class="nx">builder</span><span class="p">.</span><span class="nf">addCase</span><span class="p">(</span><span class="nx">deleteComment</span><span class="p">.</span><span class="nx">fulfilled</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-  <span class="p">},</span>
-<span class="p">});</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">commentSlice</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>redux-toolkit에서 제공하는 <code class="language-plaintext highlighter-rouge">createAsyncThunk</code>를 이용해 비동기 로직을 처리하고 댓글의 상태를 관리하는 리듀서를 작성했다.
-상태 관련 로직이 전혀 없기 때문에 리듀서가 깔끔하고 각 액션이 어떤 일을 수행하는지 알 수 없다.</p>
-
-<h2 id="-개선된-리덕스-사용-방식">📄 개선된 리덕스 사용 방식</h2>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">todoReducer</span> <span class="o">=</span> <span class="p">(</span>
-  <span class="nx">state</span><span class="p">:</span> <span class="nx">TodoParam</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">initialState</span><span class="p">,</span>
-  <span class="nx">action</span><span class="p">:</span> <span class="nx">TodoActionType</span>
-<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nf">switch </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="kd">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="na">GET_TODOS</span><span class="p">:</span>
-      <span class="k">return</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
-    <span class="k">case</span> <span class="na">CREATE_TODO</span><span class="p">:</span>
-      <span class="k">return</span> <span class="p">[...</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">];</span>
-    <span class="k">case</span> <span class="na">DELETE_TODO</span><span class="p">:</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">todo</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-    <span class="k">case</span> <span class="na">UPDATE_TODO</span><span class="p">:</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">todo</span><span class="p">)</span> <span class="o">=&gt;</span>
-        <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">id</span>
-          <span class="p">?</span> <span class="p">{</span> <span class="p">...</span><span class="nx">todo</span><span class="p">,</span> <span class="na">todo</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">todo</span><span class="p">,</span> <span class="na">isCompleted</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span>
-          <span class="p">:</span> <span class="nx">todo</span>
-      <span class="p">);</span>
-    <span class="k">case</span> <span class="na">DONE_TODO</span><span class="p">:</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">todo</span><span class="p">)</span> <span class="o">=&gt;</span>
-        <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span>
-          <span class="p">?</span> <span class="p">{</span> <span class="p">...</span><span class="nx">todo</span><span class="p">,</span> <span class="na">isCompleted</span><span class="p">:</span> <span class="o">!</span><span class="nx">todo</span><span class="p">.</span><span class="nx">isCompleted</span> <span class="p">}</span>
-          <span class="p">:</span> <span class="nx">todo</span>
-      <span class="p">);</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>리덕스를 제대로 다시 공부하기 위해 툴킷을 사용하지 않고 구현해보았다.
-한번 Get요청을 통해 받아온 데이터를 관리하는 리듀서를 만들었다.
-상태가 변경될때마다 새로고침을 하는게 아니라면 다시 Get요청을 하지 않아도 되니 api요청이 훨씬 줄어들었다.</p>
-
-<p>지금은 규모가 작은 프로젝트지만 큰 프로젝트의 경우라면 관련 로직이 꽤 길어질 것 같은데 그때도 이렇게 관리를 하는게 맞는지 궁금해졌다. 이 부분은 좀더 찾아봐야 알 것 같다.</p>]]></content><author><name>Sujin Kim</name></author><category term="TodoList-Project" /><category term="TodoList" /><category term="Redux" /><summary type="html"><![CDATA[툴킷을 사용하지 않고 redux만을 이용한 전역상태 관리]]></summary></entry><entry><title type="html">변수(variable)와 상수(constant)</title><link href="http://localhost:4000/javascript/javascript-variableConstant/" rel="alternate" type="text/html" title="변수(variable)와 상수(constant)" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-variableConstant</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-variableConstant/"><![CDATA[<h2 id="-선언이란">📄 선언이란?</h2>
-
-<p>특정 이름에 특정 값을 담는 것을 선언이라고 합니다.</p>
-
-<p>선언을 하는 방식에는 두가지가 있습니다.</p>
-
-<p>하나는 변수이고 다른 하나는 상수입니다.</p>
-
-<h2 id="-변수">📄 변수</h2>
-
-<p>변수에는 고정된 값이 아닌 <strong>바뀔 수 있는 값</strong>을 담습니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">let</code>이라는 키워드를 사용하여 변수를 선언합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>value라는 변수를 선언하고, 1이라는 값을 담았다.</p>
-</blockquote>
-
-<h2 id="-상수">📄 상수</h2>
-
-<p>상수는 변수와 다르게 <strong>고정된 값</strong>을 가집니다.</p>
-
-<p>상수를 선언할 때는 <code class="language-plaintext highlighter-rouge">const</code>라는 키워드를 사용합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>상수는 고정된 값을 담기 때문에 위와 같은 코드에는 오류가 발생합니다.</p>
-
-<p>한번 선언되어 1이라는 값을 가지고 있는 상수 a에 다른 값을 다시 넣었기 때문입니다.<br /></p>
-
-<h3 id="주의할-점">주의할 점</h3>
-
-<p><strong>상수 객체는 수정될 수 있습니다.</strong></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">};</span>
-
-<span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Pete</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-</code></pre></div></div>
-
-<결과><br />
-
-```js
-Pete;
-```
-
-`const`는 `user`의 값을 고정하지만, 그 내용은 고정하지 않습니다.
-
-`const`는 `user=...`를 전체적으로 설정하려고 할 때만 오류가 발생합니다.
-
-## 📄 왜 변수와 상수를 사용할까?
-
-복잡한 식을 컴퓨터가 매번 읽어낸다면 프로그래밍의 효율성이 떨어집니다.
-
-변수와 상수에 값을 담아두면 컴퓨터가 매번 똑같은 일을 반복하지 않고 코드도 간결해집니다.
-
-```js
-const sum = 5 + 10;
-
-if (sum % 3 === 0) {
-  console.log("야호");
-}
-```
-
-이렇게 값을 변수나 상수에 지정하면 컴퓨터가 5 + 10을 매번 계산하지 않고 코드를 실행할 수 있습니다.
-
-## 📄 변수 명명 규칙
-
-- 변수명에는 오직 문자와 숫자, 그리고 기호 `$`와 `_`만 들어갈 수 있습니다.
-- 첫 글자는 숫자가 될 수 없습니다.
-- 대·소문자는 구별됩니다. `a`와 `A`는 다릅니다.
-- 비 라틴계 언어도 변수명에 사용할 수 있지만 권장하지 않습니다.
-- 예약어는 사용하지 않습니다.
-- 첫 단어를 제외한 각 단어의 첫 글자를 대문자로 작성하는 카멜표기법이 흔히 사용됩니다.
-- `userName` 이나 `shoppingCart`처럼 사람이 읽을 수 있는 이름을 사용합니다.
-- 무엇을 하고 있는지 명확히 알고 있지 않을 경우 외에는 줄임말이나 a, b, c와 같은 짧은 이름은 피해야 합니다.
-- 최대한 서술적이고 간결하게 명명해 주세요. data와 value는 나쁜 이름의 예시입니다. 이런 이름은 아무것도 설명해주지 않습니다. 코드 문맥상 변수가 가리키는 데이터나 값이 아주 명확할 때에만 이런 이름을 사용합니다.
-- 자신만의 규칙이나 소속된 팀의 규칙을 따릅니다. 만약 사이트 방문객을 'user’라고 부르기로 했다면, 이와 관련된 변수를 currentVisitor나 newManInTown이 아닌 currentUser나 newUser라는 이름으로 지어야 합니다.
-- 변수명은 클래스명과 관련지으면 좋습니다.
-
-## 출처
-
-- 패스트캠퍼스 프론트엔드 강의
-
-* [모던 자바스크립트 튜토리얼](https://ko.javascript.info/object)
-</결과>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="변수" /><category term="상수" /></entry></feed>
+<p>npm은 의존 관계를 가지는 다른 패키지들이 포함되지만 yarn은 <code class="language-plaintext highlighter-rouge">package.json</code>에 있는 파일만 설치한다고 합니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Nodejs" /><category term="npm" /><category term="yarn" /></entry></feed>
