@@ -15,6 +15,9 @@ docs:
       - title: "HTML"
         url: /html/
         category: "HTML"
+      - title: "CSS"
+        url: /css/
+        category: "CSS"
   - title: 프로그래머스
     children:
       - title: "Lv1"

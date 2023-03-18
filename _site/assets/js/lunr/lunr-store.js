@@ -71,6 +71,30 @@ var store = [{
         "url": "/html/html-link/",
         "teaser": null
       },{
+        "title": "블록 레벨 요소와 인라인 요소",
+        "excerpt":"📄 태그의 구분   블록 레벨 요소를 만드는 태그 vs 인라인 요소를 만드는 태그   📄 블록 레벨 요소   블록 레벨 요소는 페이지의 너비를 모두 차지하여 블록을 형성합니다.  아래와 같이 개발자도구(단축키:F12)를 사용하면  페이지의 너비를 모두 차지하고 있는 것을 확인할 수 있습니다.  블록 안에 블록을 생성하면 공간이 형성되어 층이 생깁니다.     📄 인라인 요소   인라인 요소는 콘텐츠를 표시하기 위해 필요한 공간만 차지합니다.  블록 요소 안에 인라인 요소를 넣어도 인라인 요소는 필요한 공간만 차지합니다.     ","categories": ["HTML"],
+        "tags": ["HTML","블록 레벨","인라인 레벨"],
+        "url": "/html/html-tag&inlinetext/",
+        "teaser": null
+      },{
+        "title": "텍스트 태그 사용 방법과 특징",
+        "excerpt":"📄 문단(paragraph)   문단 요소를 나타내는 태그로써, 가장 많이 사용되는 텍스트 태그 입니다.  문단과 문단 사이에는 공백이 있습니다.   &lt;p&gt;이것은 문단을 표시하는 태그입니다.&lt;/p&gt;   📄 제목(headline)   h 태그는 제목 요소를 나타냅니다.  숫자와 함께 사용되며, 숫자가 1일 때 가장 크고 6일 때 가장 작습니다.   &lt;h1&gt;제목을 나타내자!&lt;/h1&gt; &lt;h2&gt;제목을 나타내자!&lt;/h2&gt; &lt;h3&gt;제목을 나타내자!&lt;/h3&gt; &lt;h4&gt;제목을 나타내자!&lt;/h4&gt; &lt;h5&gt;제목을 나타내자!&lt;/h5&gt; &lt;h6&gt;제목을 나타내자!&lt;/h6&gt;   ✔ 결과   제목을 나타내자!  제목을 나타내자!  제목을 나타내자!  제목을 나타내자!  제목을 나타내자!  제목을 나타내자!   📄 수평선   hr 태그는 수평선을 표시하는 태그입니다.  주로 주제 변경 또는 내용 구분을 위해 단일 태그로 사용됩니다.   &lt;hr /&gt;   📄 줄바꿈태그와 공백문자   br태그는 줄바꿈을 담당하는 단일 태그입니다.   &lt;br /&gt;   html 문서에서 스페이스바로 공백을 두 번 이상 입력해도 표시되지 않습니다.  공백을 두 번 이상 표시할 때는 &amp;nbsp를 사용합니다.   &amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp   출처      유노코딩  ","categories": ["HTML"],
+        "tags": ["HTML","텍스트 태그"],
+        "url": "/html/html-texttag/",
+        "teaser": null
+      },{
+        "title": "CSS 함수",
+        "excerpt":"📄 CSS 함수   CSS의 속성값을 지정할 때 함수의 성격을 적용할 수 있습니다.   CSS함수는 괄호 안에 인수를 전달하면, 인수에 따른 결과값을 속성에 적용하는 방식으로 동작합니다.   📄 calc()   CSS함수 중 계산을 담당하는 함수 입니다.   괄호안의 표현식을 결과값으로 적용합니다.   .message_text {   width: calc(100% - 100px); }   이렇게 message_text를 가변적인 크기로 설정이 가능합니다.   출처      유노코딩  ","categories": ["CSS"],
+        "tags": ["calc"],
+        "url": "/css/css-cssfunction/",
+        "teaser": null
+      },{
+        "title": "폼(form) 태그",
+        "excerpt":"📄 폼(form) 태그   form은 입력 요소를 감싸며 입력 값을 서버 측으로 제출합니다.  입력값을 클라이언트가 서버로 전송하면 서버 측에서는 데이터를 처리한 결과를 클라이언트에게 보내줍니다.   📄 폼(form)태그의 속성      action: 입력값을 전송할 서버의 url   method: 클라이언트가 입력한 데이터를 어떤 식으로 전송할 방법(GET or POST)   &lt;form action=\"example.php\" method=:\"POST\"&gt;     &lt;input type=\"submit\" value=\"전송\"&gt; &lt;/form&gt;       GET: 서버로 요청을 보내 응답을 받아냅니다. POST: 서버에 요청을 보내어 서버에 있는 데이터를 추가/수정/삭제한 후에 응답을 받아냅니다.   ","categories": ["HTML"],
+        "tags": ["HTML","form"],
+        "url": "/html/html-form/",
+        "teaser": null
+      },{
         "title": "HTML코드 기초 문법",
         "excerpt":"📄 태그(tag)   HTML 코드에서 정보(콘텐츠)를 정의하는 형식입니다.   &lt;태그명&gt; 여기에 콘텐츠를 기입합니다.&lt;/태그명&gt; &lt;/태그명&gt; // 단일 태그 사용 형태   📄 속성   태그의 부가적인 기능을 정의합니다.   &lt;태그명 속성명=\"속성값\"&gt;내용이 들어감&lt;/태그명&gt; &lt;태그 속성명=\"속성값\"/&gt; //단일 태그 사용 형태   📄 주석   사람에게는 보이지만, 웹브라우저에게는 보이지 않는 코드입니다.   주로 메모를 남기기 위해 사용됩니다.   &lt;!--** 이 사이에 작성한 내용은 주석으로 처리된다. **--&gt;   출처      유노코딩  ","categories": ["HTML"],
         "tags": ["HTML","태그","속성","주석"],
@@ -95,10 +119,58 @@ var store = [{
         "url": "/html/html-select&textarea/",
         "teaser": null
       },{
+        "title": "CSS box-sizing",
+        "excerpt":"📄 box-sizing 속성   box-sizing 속성은 너비와 높이가 포함할 영역을 변경함으로써 너비와 높이의 계산 방법을 결정할 수 있습니다.      content-box: 기본값. 너비와 높이가 콘텐츠 영역만을 포함합니다. padding이 추가 되어도 content크기는 보장받고 싶을 때 씁니다.   border-box: 너비와 높이가 안쪽 여백과 테두리까지 포함합니다.   div {   content-box: border-box; }      개발자도구를 통해 padding이 추가되어도 content크기는 변하지 않은 것을 확인할 수 있습니다.  ","categories": ["CSS"],
+        "tags": ["content-box","border-box"],
+        "url": "/css/css-boxsizing/",
+        "teaser": null
+      },{
+        "title": "CSS 선택자",
+        "excerpt":"📄 CSS 선택자   선택자는 어떤 요소에 대한 스타일을 정의할 것인지에 대한 정보입니다.   📄 선택자의 종류   1. 전체 선택자   애스터리스크(*)는 문서 내의 모든 요소를 의미합니다.   * {   color: blue; }   2. 태그 선택자(유형 선택자)   주어진 이름을 가진 요소를 선택합니다.   p {   color: blue; }   3. 클래스 선택자   주어진 class 속성값을 가진 요소를 선택합니다.   .text {   color: blue; }   4. 아이디 선택자   주어진 id 속성값을 가진 요소를 선택합니다.   #topic {   color: blue; }   5. 그룹 선택자   다양한 유형의 요소를 한꺼번에 선택하고자 할 때 사용합니다.  쉼표(,)를 이용해 선택자를 그룹화 합니다.   h1, p, div {   color: blue; }   📄 선택자의 우선순위   아이디 선택자 &gt; 클래스 선택자 &gt; 태그 선택자   출처      유노코딩  ","categories": ["CSS"],
+        "tags": ["css 선택자"],
+        "url": "/css/css-cssSelector/",
+        "teaser": null
+      },{
+        "title": "CSS기본문법",
+        "excerpt":"📄 CSS란?   ▪ Cascading: 계단식  ▪ Style: 멋을 내다  ▪ Sheets: (종이)한 장    즉, 계단식으로 스타일을 정의하는 문서입니다.    css는 웹문서를 꾸며주기 위해 사용하는 언어입니다.    확장자는 *.css입니다.    css문서는 html문서와 함께 작업을 수행합니다.   &lt;link href=\"style.css\" rel=\"stylesheet\"&gt;   이와 같이 html문서에 css문서의 링크를 걸어주어 작업을 수행하게 됩니다.   📄 CSS 기본 구성   선택자 {   속성명: 속성값; }      선택자: 어떤 요소에 스타일을 적용할지에 대한 정보   {중괄호}: 선택한 요소에 적용할 스타일을 정의하는 영역   속성명: 어떤 스타일을 정의하고 싶은지에 대한 정보(색상, 크기 등)   속성값: 어떻게 정의하고 싶은지에 대한 정보   📄 주석   p {   /* 이 안에 작성하면 주석으로 처리됩니다. */ }   📄 HTML에 CSS문서를 적용하는 법      인라인 스타일: 태그에 직접 기술합니다.   스타일 태그: 스타일시트를 위한 태그를 추가하여 기술합니다   문서 간의 연결: 스타일시트 문서를 따로 작성하여 HTML 문서와 연결합니다.   &lt;link href=\"./style.css\" rel=\"stylesheet\" /&gt;      href: 연결하고자 하는 외부 소스의 url을 기술하는 속성   rel: 현재 문서(HTML)와 외부 소스의 연관 관계를 기술하는 속성    출처      유노코딩  ","categories": ["CSS"],
+        "tags": ["css 구성","css 주석"],
+        "url": "/css/css-cssgrammer/",
+        "teaser": null
+      },{
+        "title": "display속성&border속성",
+        "excerpt":"📄 display 속성   display 속성은 요소를 블록과 인라인 요소 중 어느 쪽으로 처리할지 정의합니다.   display 속성 값      inline: 인라인으로 처리   block: 블록 레벨로 처리   inline-block: 인라인으로 배치하되, 블록 레벨 요소의 속성을 추가할 수 있도록 처리   none: 존재는 하되, 디스플레이하지 않음   div {   display: inline; } div {   display: block; } div {   display: inline-block; } div {   display: none; }   📄 border 속성   요소가 차지하고 있는 영역에 테두리를 그릴 수 있습니다.  border 속성에는 속성값으로 테두리의 두께, 모양, 크기 등을 함께 지정할 수 있는데,  이러한 속성을 ‘단축속성’이라고 합니다.   &lt;!--두께가 2px인 직선 모양(solid)의 초록(green) 테두리를 만들어줘-- &gt; span {   border: 2px solid green; }   border 속성의 하위 속성      border-color: color 정의 방식과 동일   border-width: thin, medium, thick 등의 키워드 또는 px, em, rem 등의 단위   border-style: none, solid, dotted, dashed 등   출처      유노코딩  ","categories": ["CSS"],
+        "tags": ["display","border"],
+        "url": "/css/css-display&border/",
+        "teaser": null
+      },{
+        "title": "fixed&sticky",
+        "excerpt":"📄 position: fixed;   요소를 일반적인 문서의 흐름에서 제거하고, 지정된 위치에 고정시킵니다.   .pos {   position: fixed;   top: 50px;   left: 50px; }      위에서부터 50px 왼쪽에서부터 50px 떨어진 자리에서 움직이지 않는다.    📄 position: sticky;   요소를 일반적인 문서 흐름에 따라 배치하고, 스크롤(roll)되는 가장 가까운 상위 요소에 대해 오프셋을 적용합니다.   .pos {   position: sticky; }      스크롤 이동으로 요소가 움직여도 스티키 요소는 고정된 상태를 유지한다.    출처      유노코딩  ","categories": ["CSS"],
+        "tags": ["fixed","sticky"],
+        "url": "/css/css-fixed&sticky/",
+        "teaser": null
+      },{
+        "title": "float&clear",
+        "excerpt":"📄 float   float속성은 요소가 문서의 흐름에서 제외되어 자신을 포함하고 있는 컨테이너의 왼쪽이나 오른쪽에 배치되게 합니다.  문서의 흐름에선 제외되지만, 필요한 만큼의 공간은 차지합니다.   주로 레이아웃을 구성할 때 블록레벨 요소를 가로 정렬하기 위해 사용됩니다.   float의 속성값      none: 기본값   left: 왼쪽부터 가로정렬   right: 오른쪽부터 가로정렬   float: left; float: right; margin: 0 auto; /* 중앙 정렬 */   📄 clear   clear속성은 float 요소 이후에 표시되는 요소의 동작들을 조절합니다.   컨테이너 요소에 float요소를 적용하고 이후 요소에 더이상 float을 적용하고 싶지 않을 때 사용합니다.   clear의 속성값      none: 기본값   left: float이 left인 요소의 아래로 내려가겠다    right: float이 right인 요소의 아래로 내려가겠다    both: float이 left및 right인 요소의 아래로 내려가겠다    .left {   background-color: #ff8c00;   width: 150px;   height: 50px;   float: left; } .right {   background-color: #9932cc;   width: 150px;   height: 50px;   float: right; } p {   clear: both; }   출처           유노코딩            Inpa Dev - Float 속성 간단 정리      ","categories": ["CSS"],
+        "tags": ["fixed","sticky"],
+        "url": "/css/css-float&clear/",
+        "teaser": null
+      },{
         "title": "뷰포트(viewport)",
         "excerpt":"📄 뷰포트(viewport)   현재 화면에 보여지고 있는 영역을 의미합니다.   기기별로 뷰포트가 다르기때문에 보여지는 화면의 배율에 따라 화면이 다르게 보입니다.   html문서에서 이름이 뷰포트인 메타태그 설정을 확인할 수 있습니다.   &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;      width=device-width : 너비를 기기의 너비 기준으로 초기화 한다. initial-scale=1.0 : 기기의 너비에 맞게 초기 scale를 지정한다.    이 메타태그 설정은 기기에 맞게 화면 배율을 조정해주기 때문에, 모바일 화면에서도 pc화면과 동일하게 콘텐츠의 크기가 유지되는 것을 확인할 수 있습니다.   📄 뷰포트 단위   뷰포트 크기를 기반으로 값을 계산하여 크기를 결정하는 가변단위들이 있습니다.   이는 반응형 웹을 만들 때 매우 유용하게 사용되는 단위들입니다.   ▪ font-size: 1vw;      화면 사이즈에서 너비의 100분의 1    화면 너비의 백분율을 계산해서 크기를 조정합니다.   ▪ font-size: 1vh;      화면 사이즈에서 높이의 100분의 1    화면 높이의 백분율을 계산해서 크기를 조정합니다.   ▪ font-size: 1vmin;      화면 사이즈에서 너비와 높이 중 작은것의 100분의 1 너비와 높이 중 작은 것에 백분율을 맞춘다    ▪ font-size: 1vmax;      화면 사이즈에서 너비와 높이 중 큰것의 100분의 1 너비와 높이 중 큰 것에 백분율을 맞춘다.   ","categories": ["HTML"],
         "tags": ["HTML","뷰포트"],
         "url": "/html/html-viewport/",
+        "teaser": null
+      },{
+        "title": "CSS 텍스트 꾸미기",
+        "excerpt":"📄 font-family   글꼴을 정의합니다.   여러 개의 글꼴을 연달아 작성하여 우선순위를 정할 수 있습니다.   p {   font-family: Times.monospace, serif; }   📄 font-size   글자 크기를 정의합니다.      px: 모니터 상의 화소 하나 크기에 대응하는 절대적인 크기   span {   font-size: 16px; }      rem: &lt;html&gt; 태그의 font-size에 대응하는 상대적인 크기   span {   font-size: 2rem; }      em: 부모태그(상위태그)의 font-size에 대응하는 상대적인 크기   span {   font-size: 1.5em; }   📄 text-align   정렬 방식 정의합니다.      left/right: 왼쪽 또는 오른쪽 정렬한다.   center: 가운데 정렬한다.   justify: 양끝 정렬한다.(마지막 줄 제외)   p {   text-align: right; }   📄 color   글자 색상을 정의합니다.      키워드: 미리 정의된 색상별 키워드를 정의한다.   RGB 색상 코드: # + 여섯자리 16진수 값 형태로 지정한다.   RGB 함수: Red, Green, Blue의 수준을 각각 정의해 지정한다.   span {   color: red; } span {   color: #FF000; } span {   color: rgb(100%, 0%, 0%); }   📄 line-height   글자가 위치한 높이의 크기(행간)를 의미합니다.   단위를 입력하지 않으면 브라우저가 자동으로 배율로 인식합니다.   line-height: 52px;   📄 letter-spacing   텍스트의 자간을 설정합니다.   해당 수치만큼 자간이 가까워집니다.   letter-spacing: 20px; letter-spacing: -2px;   📄 word-spacing   띄어쓰기를 기준으로한 단어의 간격을 의미합니다.   word-spacing: 20px;   📄 text-indent   텍스트의 들여쓰기를 결정합니다.   text-indent: 50px;   📄 text-transform   영문 텍스트의 대/소문자를 바꿀 수 있습니다.   text-transform: none; text-transform: capitalize; text-transform: uppercase; text-transform: lowercase;   📄 overflow   콘텐츠가 커서 요소 안에서 내용을 다 보여주기 힘들 때, 어떤 방식으로 보여줄지 결정합니다.   overflow: visible(기본값); overflow: hidden; overflow: scroll; // 무조건 스크롤 적용 overflow: auto; // 콘텐츠 밖으로 텍스트가 넘쳤을때만 스크롤 적용   📄 text-overflow   텍스트가 한줄일 때, 요소 밖으로 넘치는 text를 어떻게 표기할지 결정합니다.   선행 조건      white-space: nowrap;   overflow: hidden;   text-overflow: clip(기본값); // 공간에 맞게 텍스트가 잘림 text-overflow: ellipsis; // 잘린 텍스트를 말줄임표를 이용해 표현     출처      강력한 CSS  ","categories": ["CSS"],
+        "tags": ["font","text","line-height","letter","word","overflow"],
+        "url": "/css/css-font/",
+        "teaser": null
+      },{
+        "title": "CSS background",
+        "excerpt":"📄 background   background는 콘텐츠의 배경을 정의합니다.   📄 background의 하위 속성   ▪ background-color   : 배경색을 정의합니다.   ▪ background-image   : 배경 이미지를 정의합니다.   background-image: url(이미지);   ▪ background-position   : 배경 이미지의 초기 위치를 정의합니다.   ▪ background-size   : 배경 이미지의 크기를 정의합니다.      cover: 이미지가 찌그러지지 않는 한도 내에서 최대로 설정합니다.   contain: 이미지가 찌그러지거나 잘리지 않는 한도 내에서 최대로 설정합니다.   ▪ background-repeat   : 배경 이미지의 반복 방법을 정의합니다.      no-repeat: 이미지를 반복하지 않습니다.(이미지가 콘텐츠보다 작을 경우 활용)   div {   background-image: url(이미지);   background-repeat: no-repeat;   background-position: center;   background-size: contain; }     background는 하위 속성을 연달아 정의할 수 있습니다.  매우 다양하여 사용자는 속성값을 정확한 값으로만 정의하면 됩니다.   background: no-repeat url(이미지);  ","categories": ["CSS"],
+        "tags": ["backgroud"],
+        "url": "/css/css-background/",
         "teaser": null
       },{
         "title": "식별자(Identifier)",

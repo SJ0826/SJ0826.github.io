@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-14T11:00:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</title><link href="http://localhost:4000/coding-swamp/projects-coding-swamp/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/projects-coding-swamp</id><content type="html" xml:base="http://localhost:4000/coding-swamp/projects-coding-swamp/"><![CDATA[<h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-18T15:33:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</title><link href="http://localhost:4000/coding-swamp/projects-coding-swamp/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/projects-coding-swamp</id><content type="html" xml:base="http://localhost:4000/coding-swamp/projects-coding-swamp/"><![CDATA[<h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
 
 <p>좋은 코드는 코드만 보고 어떤 일을 하는지 알 수 있는 코드라고 배웠다.</p>
 
@@ -396,7 +396,26 @@
 
 <p>어차피 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>의 절반까지만 정답의 유효 범위이기 때문에 반복 횟수를 조금이라도 줄이려고 신경썼다.</p>
 
-<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry><entry><title type="html">폰켓몬</title><link href="http://localhost:4000/programmers-lv1/programmers-phonecatmon/" rel="alternate" type="text/html" title="폰켓몬" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-phonecatmon</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-phonecatmon/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry><entry><title type="html">평균 구하기</title><link href="http://localhost:4000/programmers-lv1/programmers-arr/" rel="alternate" type="text/html" title="평균 구하기" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-arr</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-arr/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+
+<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
+
+<ul>
+  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
+  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
+</ul>
+
+<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="평균구하기" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 평균 구하기 풀이]]></summary></entry><entry><title type="html">폰켓몬</title><link href="http://localhost:4000/programmers-lv1/programmers-phonecatmon/" rel="alternate" type="text/html" title="폰켓몬" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-phonecatmon</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-phonecatmon/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>당신은 폰켓몬을 잡기 위한 오랜 여행 끝에, 홍 박사님의 연구실에 도착했습니다. 홍 박사님은 당신에게 자신의 연구실에 있는 총 N 마리의 폰켓몬 중에서 N/2마리를 가져가도 좋다고 했습니다.</p>
 
@@ -450,26 +469,7 @@
 
 <p>내 풀이에서는 <code class="language-plaintext highlighter-rouge">newNums.length</code>에 쓸데없이 올림처리를 한 것을 지우지도 않았고, <code class="language-plaintext highlighter-rouge">set</code>함수를 사용할때 굳이 상수를 두번이나 선언한게 보인다.</p>
 
-<p>답이 나와도 다시한번 보고 정리하는 습관을 가져야겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="폰켓몬" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 폰켓몬 풀이]]></summary></entry><entry><title type="html">평균 구하기</title><link href="http://localhost:4000/programmers-lv1/programmers-arr/" rel="alternate" type="text/html" title="평균 구하기" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-arr</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-arr/"><![CDATA[<h2 id="문제-">문제 📖</h2>
-
-<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
-
-<ul>
-  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
-  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
-</ul>
-
-<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>배열 내장 함수인 <code class="language-plaintext highlighter-rouge">reduce</code>함수를 사용했다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">for</code>문을 사용하는 것보다 훨씬 간결한 코드가 나왔다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="평균구하기" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 평균 구하기 풀이]]></summary></entry><entry><title type="html">짝수와 홀수</title><link href="http://localhost:4000/programmers-lv1/evenandodd/" rel="alternate" type="text/html" title="짝수와 홀수" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/evenandodd</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/evenandodd/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+<p>답이 나와도 다시한번 보고 정리하는 습관을 가져야겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="폰켓몬" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 폰켓몬 풀이]]></summary></entry><entry><title type="html">짝수와 홀수</title><link href="http://localhost:4000/programmers-lv1/evenandodd/" rel="alternate" type="text/html" title="짝수와 홀수" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/evenandodd</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/evenandodd/"><![CDATA[<h2 id="문제-">문제 📖</h2>
 
 <p>정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요.</p>
 
