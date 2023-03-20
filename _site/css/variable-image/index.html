@@ -1,0 +1,715 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>가변 이미지 - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="프론트엔드 엔지니어가 되기까지">
+
+
+  <meta name="author" content="Sujin Kim">
+  
+  <meta property="article:author" content="Sujin Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
+<meta property="og:title" content="가변 이미지">
+<meta property="og:url" content="http://localhost:4000/css/variable-image/">
+
+
+  <meta property="og:description" content="프론트엔드 엔지니어가 되기까지">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-07-27T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-07-27T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/css/variable-image/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sujin Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sometimes we fall, then we rise ⛵ Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7662177111410384"
+  crossorigin="anonymous"
+></script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sometimes we fall, then we rise ⛵
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sujin Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>프론트엔드 엔지니어가 되기까지</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ikosdu60@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Front</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/javascript/">JavaScript (39)</a></li>
+          
+          
+            <li><a href="/html/">HTML (13)</a></li>
+          
+          
+            <li><a href="/css/">CSS (14)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">프로그래머스</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/programmers/lv1/">Lv1 (6)</a></li>
+          
+          
+            <li><a href="/programmers/lv2/">Lv2 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CS</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/cs/structure/">자료구조 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Projects</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/project/todolist/">TodoList-Project (2)</a></li>
+          
+          
+            <li><a href="/project/coding-swamp/">모여봐요 코딩의 숲 (1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="가변 이미지"
+    /> <meta
+      itemprop="description"
+      content=""
+    /> <meta
+      itemprop="datePublished"
+      content="2022-07-27T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2022-07-27T22:06:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>가변 이미지</p>
+
+        </h1>
+         
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                On this page
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#-가변-이미지">📄 가변 이미지</a></li><li><a href="#-가변-이미지-설정-1--max-width-사용">📄 가변 이미지 설정 1 | max-width 사용</a><ul><li><a href="#주의할-점">주의할 점</a></li></ul></li><li><a href="#-가변이미지-설정-2--picture-태그-사용">📄 가변이미지 설정 2 | picture 태그 사용</a></li><li><a href="#출처">출처</a></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="-가변-이미지">📄 가변 이미지</h2>
+
+<p>화면의 배율에 따라 크기가 달라지는 이미지 입니다.</p>
+
+<p>보통 <code class="language-plaintext highlighter-rouge">px</code>로 고정을 시켜놓는 경우도 있지만,
+그렇지 않은 경우에는 화면이 커질 수록 픽셀이 깨져보이는 현상이 발생합니다.</p>
+
+<h2 id="-가변-이미지-설정-1--max-width-사용">📄 가변 이미지 설정 1 | max-width 사용</h2>
+
+<p>이미지 너비를 <code class="language-plaintext highlighter-rouge">%</code>단위로 지정하고 <code class="language-plaintext highlighter-rouge">max-width</code>를 사용하면
+화면이 커질수록 이미지크기가 증가하다가,<br />
+일정 크기에 도달하면 더이상 증가하지 않음으로써 이미지를 보호할 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+        <span class="nt">div</span><span class="p">{</span>
+            <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span><span class="c">/* body의 50%로 크기지정*/</span>
+        <span class="p">}</span>
+        <span class="nt">img</span><span class="p">{</span>
+
+            <span class="nl">max-width</span><span class="p">:</span> <span class="m">640px</span><span class="p">;</span> <span class="c">/*이미지 최대크기 지정*/</span>
+        <span class="p">}</span>
+ <span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="주의할-점">주의할 점</h3>
+
+<p><code class="language-plaintext highlighter-rouge">width</code>는 너비를 지정하는 속성이고, <code class="language-plaintext highlighter-rouge">max-width</code>는 최대 넓이 제한 길이를 지정하는 속성입니다.</p>
+
+<p>혼동하지 않도록 조심해야 합니다.</p>
+
+<h2 id="-가변이미지-설정-2--picture-태그-사용">📄 가변이미지 설정 2 | picture 태그 사용</h2>
+
+<p>주로 해상도 별로 이미지의 비율을 바꾸고 싶을때 <code class="language-plaintext highlighter-rouge">picture</code>태그를 사용합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">source</code>태그를 통해서 이미지를 미디어 조건에 맞게 불러올 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="nt">picture</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">source</span> <span class="nt">srcset</span><span class="o">=</span><span class="s1">"jake2.jpg"</span> <span class="nt">media</span><span class="o">=</span><span class="s1">"(min-width: 800px)"</span><span class="o">&gt;&lt;!</span><span class="nt">--800px보다</span> <span class="nt">이미지가</span> <span class="nt">커지면</span> <span class="nt">jake2이미지를</span> <span class="nt">보여준다</span><span class="nc">.--</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">img</span> <span class="nt">src</span><span class="o">=</span><span class="s1">"jake..jpg"</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="nt">picture</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li>유노코딩</li>
+</ul>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#max-width" class="page__taxonomy-item p-category" rel="tag">max-width</a><span class="sep">, </span>
+    
+      <a href="/tags/#picture" class="page__taxonomy-item p-category" rel="tag">picture</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B0%80%EB%B3%80-%EC%9D%B4%EB%AF%B8%EC%A7%80" class="page__taxonomy-item p-category" rel="tag">가변 이미지</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#css" class="page__taxonomy-item p-category" rel="tag">CSS</a>
+    
+    </span>
+  </p>
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-27">July 27, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EA%B0%80%EB%B3%80+%EC%9D%B4%EB%AF%B8%EC%A7%80%20http%3A%2F%2Flocalhost%3A4000%2Fcss%2Fvariable-image%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcss%2Fvariable-image%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcss%2Fvariable-image%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/css/css-variable-video/" class="pagination--pager" title="가변 동영상
+">Previous</a>
+    
+    
+      <a href="/css/css-font/" class="pagination--pager" title="CSS 텍스트 꾸미기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+      You may also enjoy
+    </h2>
+    <div class="grid__wrapper">
+        
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/coding-swamp/projects-coding-swamp/" rel="permalink"><p>[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 10 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      redux에서 관리하는 state를 객체로 다시 구조화
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/programmers-lv1/programmers-notcolpletedplayer/" rel="permalink"><p>완주하지 못한 선수</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 07 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      프로그래머스 Lv1. 완주하지 못한 선수
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/%EC%9D%BC%EC%83%81/first-post/" rel="permalink"><p>github.io 블로그 시작하기</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 05 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/javascript/javascript-eventBubbling/" rel="permalink"><p>이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 27 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      
+
+    </p>
+    
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/susupow_er" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Sujin Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/css/variable-image/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/css/variable-image"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sj0826-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
