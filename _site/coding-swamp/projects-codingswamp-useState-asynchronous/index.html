@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[클래스] 상속 - Sometimes we fall, then we rise ⛵</title>
-<meta name="description" content="클래스 상속">
+<!-- begin _includes/seo.html --><title>[모여봐요 코딩의 늪] useState 비동기 에러 처리하기 - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="redux에서 관리하는 state를 객체로 다시 구조화">
 
 
   <meta name="author" content="Sujin Kim">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
-<meta property="og:title" content="[클래스] 상속">
-<meta property="og:url" content="http://localhost:4000/javascript/js-class2/">
+<meta property="og:title" content="[모여봐요 코딩의 늪] useState 비동기 에러 처리하기">
+<meta property="og:url" content="http://localhost:4000/coding-swamp/projects-codingswamp-useState-asynchronous/">
 
 
-  <meta property="og:description" content="클래스 상속">
-
-
-
+  <meta property="og:description" content="redux에서 관리하는 state를 객체로 다시 구조화">
 
 
 
 
-  <meta property="article:published_time" content="2022-08-01T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2022-09-05T22:06:00+09:00">
+  <meta property="article:published_time" content="2023-03-21T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-03-21T22:06:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/javascript/js-class2/">
+
+<link rel="canonical" href="http://localhost:4000/coding-swamp/projects-codingswamp-useState-asynchronous/">
 
 
 
@@ -352,16 +352,16 @@
   >
     <meta
       itemprop="headline"
-      content="[클래스] 상속"
+      content="[모여봐요 코딩의 늪] useState 비동기 에러 처리하기"
     /> <meta
       itemprop="description"
-      content="클래스 상속"
+      content="redux에서 관리하는 state를 객체로 다시 구조화"
     /> <meta
       itemprop="datePublished"
-      content="2022-08-01T00:00:00+09:00"
+      content="2023-03-21T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2022-09-05T22:06:00+09:00"
+      content="2023-03-21T22:06:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -369,7 +369,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[클래스] 상속</p>
+          <p>[모여봐요 코딩의 늪] useState 비동기 에러 처리하기</p>
 
         </h1>
          
@@ -386,86 +386,71 @@
                 On this page
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#-클래스-상속">📄 클래스 상속</a></li><li><a href="#오버라이딩override">오버라이딩(override)</a></li><li><a href="#-super-새로운-속성-추가하기">📄 super (새로운 속성 추가하기)</a></li><li><a href="#출처">출처</a></li></ul>
+            <ul class="toc__menu"><li><a href="#-문제발생">🐞 문제발생</a><ul><li><a href="#-문제-코드">▪ 문제 코드</a></li></ul></li><li><a href="#-문제해결">🔨 문제해결</a><ul><li><a href="#-변경된-코드">▪ 변경된 코드</a></li></ul></li></ul>
 
           </nav>
         </aside>
-         <h2 id="-클래스-상속">📄 클래스 상속</h2>
+         <h2 id="-문제발생">🐞 문제발생</h2>
 
-<p><code class="language-plaintext highlighter-rouge">extends</code>라는 키워들를 통해서 자식클래스가 부모클래스를 상속받습니다.</p>
+<p>사용자의 프로필을 수정하는 과정에서 <code class="language-plaintext highlighter-rouge">useState</code>를 사용해 form을 변경하는데, state가 업데이트 되지 않았다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Parent</span> <span class="p">{}</span>
+<h3 id="-문제-코드">▪ 문제 코드</h3>
 
-<span class="kd">class</span> <span class="nc">Child</span> <span class="kd">extends</span> <span class="nc">Parent</span> <span class="p">{}</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="p">...</span>
+<span class="kd">const</span> <span class="nx">initialEditForm</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">profileUrl</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+  <span class="na">imageFile</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="na">username</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+  <span class="na">imageUrl</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="p">[</span><span class="nx">memberForm</span><span class="p">,</span> <span class="nx">setMemberForm</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="nx">initialEditForm</span><span class="p">)</span>
+
+<span class="p">...</span>
+
+<span class="kd">const</span> <span class="nx">onChangeProfileImg</span> <span class="o">=</span> <span class="nf">useCallback</span><span class="p">(</span>
+    <span class="nf">async </span><span class="p">(</span><span class="nx">e</span><span class="p">:</span> <span class="nx">ChangeEvent</span><span class="o">&lt;</span><span class="nx">HTMLElement</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">ImageFiles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="k">as</span> <span class="nx">HTMLInputElement</span><span class="p">).</span><span class="nx">files</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">ImageFiles</span> <span class="o">&amp;&amp;</span> <span class="nx">ImageFiles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nf">createObjectURL</span><span class="p">(</span><span class="nx">ImageFiles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="nf">setMemberForm</span><span class="p">({</span> <span class="p">...</span><span class="nx">memberForm</span><span class="p">,</span> <span class="na">imageFile</span><span class="p">:</span> <span class="nx">ImageFiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">})</span> <span class="c1">// 문제부분</span>
+        <span class="nf">setMemberForm</span><span class="p">({</span> <span class="p">...</span><span class="nx">memberForm</span><span class="p">,</span> <span class="na">imageUrl</span><span class="p">:</span> <span class="nx">url</span> <span class="p">})</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">[</span><span class="nx">imgInputRef</span><span class="p">],</span>
+  <span class="p">)</span>
+
 </code></pre></div></div>
 
-<h2 id="오버라이딩override">오버라이딩(override)</h2>
+<p>이 부분을 해결하려고 imageFile만 담는 state를 생성했을 때는 값이 바뀌는 것을 확인했는데,
+도대체 왜 처음 작성했던 코드에서는 state가 변경되지 않는지 너무 궁금해서 꽤 오래 코드를 수정하고 손봤다.</p>
 
-<p>오버라이딩은 부모클래스에서 구현한 함수나 변수를 자식클래스에서 다시 구현하는 것입니다.
-즉, 자식이 만든 함수가 부모가 만든 함수를 덮어씌우는 것을 오버라이딩이라고 합니다.</p>
+<p>그래도 해결이 안되서 <a href="https://okky.kr/questions/1417086#answer-661188">오키</a>에 질문글을 작성하고 이유를 알 수 있었다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Parent</span> <span class="p">{</span>
-  <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span><span class="p">;</span>
+<h2 id="-문제해결">🔨 문제해결</h2>
 
-  <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p>문제는 <strong><code class="language-plaintext highlighter-rouge">useState</code>의 비동기 처리 방식</strong>이었다.</p>
 
-<span class="kd">class</span> <span class="nc">Child</span> <span class="kd">extends</span> <span class="nc">Parent</span> <span class="p">{</span>
-  <span class="nx">age</span> <span class="o">=</span> <span class="mi">37</span><span class="p">;</span>
+<p><code class="language-plaintext highlighter-rouge">useState</code>가 비동기로 동작한다는 것을 어렴풋이 알고있었지만 어떻게 처리가 진행되는지 몰라서 문제가 어디서 발생했는지 정확히 모르고 애먼 코드들만 뜯어보고 답답해했다.<br /> 왜 <code class="language-plaintext highlighter-rouge">imageUrl</code>은 변경이 적용되고 첫번째 setState를 호출해서 적용한 <code class="language-plaintext highlighter-rouge">imageFile</code>은 변경이 안될까?</p>
 
-  <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">//오버라이딩</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p>💡 useState는 비동기적으로 처리가 진행되기 때문에 useState를 두번 호출할 때, 마지막 호출시 처음 state의 변경분은 반영되지 않기 때문이다!</p>
+
+<p>리액트는 성능을 최적화하기 위해 setState가 연속 호출되면 배치처리를 통해 한번에 렌더링한다고 한다.</p>
+
+<blockquote>
+  <p>배치(batch)란? 리액트가 여러개의 state 업데이트를 하나의 리렌더링으로 묶는 것</p>
+</blockquote>
+
+<p>따라서, 위 코드에서 문제가 발생한 이유는 기존 <code class="language-plaintext highlighter-rouge">memberForm</code>에 imageFile이 더해진 상태로 변경된 것이 state에 적용되기 전에 <strong>다시 <code class="language-plaintext highlighter-rouge">memberForm</code>을 재사용</strong>하기 때문에 imageFile에 관한 변경사항이 적용되지 않고 imageUrl이 더해진 값으로 state가 적용되기 때문이었던 것이다.</p>
+
+<h3 id="-변경된-코드">▪ 변경된 코드</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">setMemberForm</span><span class="p">({</span> <span class="p">...</span><span class="nx">memberForm</span><span class="p">,</span> <span class="na">imageFile</span><span class="p">:</span> <span class="p">...,</span> <span class="na">imageUrl</span><span class="p">:</span> <span class="nx">url</span> <span class="p">})</span>
 </code></pre></div></div>
 
-<ul>
-  <li>자식 클래스에서 부모클래스의 hello 함수를 오버라이딩 함.</li>
-</ul>
-
-<h2 id="-super-새로운-속성-추가하기">📄 super (새로운 속성 추가하기)</h2>
-
-<p>자식클래스가 부모클래스로부터 상속을 받을 때,
-새로운 속성을 추가하려면 <code class="language-plaintext highlighter-rouge">super()</code>로 부모클래스로부터 생성자를 호출해 초기값을 세팅합니다.</p>
-
-<p>super은 생성자안에서 사용합니다.<br /></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Parent</span> <span class="p">{</span>
-  <span class="nx">name</span><span class="p">;</span>
-
-  <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// name값을 받는 생성자</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Child</span> <span class="kd">extends</span> <span class="nc">Parent</span> <span class="p">{</span>
-  <span class="nx">age</span><span class="p">;</span>
-
-  <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span> <span class="c1">//부모클래스의 생성자를 호출해 초기값 세팅</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">//오버라이딩</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li>패스트클래스</li>
-</ul>
+<p>setState를 한번만 호출해서 비동기 상황을 발생시키지 않게 고쳤고, 문제는 해결되었다.<br />
+비동기에 관한 삽질은 api통신을 할 때만 생길줄 알았던 내 안일한 생각이 가장 큰 문제였다.<br />
+안다고 다 아는게 아니라는 것을 다시 한번 뇌에 새기게 되었다.</p>
  
       </section>
 
@@ -480,11 +465,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a><span class="sep">, </span>
+      <a href="/tags/#usestate" class="page__taxonomy-item p-category" rel="tag">useState</a><span class="sep">, </span>
     
-      <a href="/tags/#%EC%83%81%EC%86%8D" class="page__taxonomy-item p-category" rel="tag">상속</a><span class="sep">, </span>
+      <a href="/tags/#%EB%AA%A8%EC%BD%94%EB%8A%AA" class="page__taxonomy-item p-category" rel="tag">모코늪</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%81%B4%EB%9E%98%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">클래스</a>
+      <a href="/tags/#%EB%B9%84%EB%8F%99%EA%B8%B0" class="page__taxonomy-item p-category" rel="tag">비동기</a>
     
     </span>
   </p>
@@ -501,14 +486,14 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+      <a href="/categories/#coding-swamp" class="page__taxonomy-item p-category" rel="tag">coding-swamp</a>
     
     </span>
   </p>
 
  
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-09-05">September 5, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-03-21">March 21, 2023</time></p>
 
       </footer>
 
@@ -517,21 +502,20 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%ED%81%B4%EB%9E%98%EC%8A%A4%5D+%EC%83%81%EC%86%8D%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-class2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%AA%A8%EC%97%AC%EB%B4%90%EC%9A%94+%EC%BD%94%EB%94%A9%EC%9D%98+%EB%8A%AA%5D+useState+%EB%B9%84%EB%8F%99%EA%B8%B0+%EC%97%90%EB%9F%AC+%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fcoding-swamp%2Fprojects-codingswamp-useState-asynchronous%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-class2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcoding-swamp%2Fprojects-codingswamp-useState-asynchronous%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-class2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcoding-swamp%2Fprojects-codingswamp-useState-asynchronous%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
  
   <nav class="pagination">
     
-      <a href="/javascript/javascript-object/" class="pagination--pager" title="객체(Object)
+      <a href="/coding-swamp/projects-coding-swamp/" class="pagination--pager" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)
 ">Previous</a>
     
     
-      <a href="/javascript/javascript-datatype/" class="pagination--pager" title="데이터 타입(Data type)
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -547,32 +531,6 @@
     </h2>
     <div class="grid__wrapper">
         
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/coding-swamp/projects-codingswamp-useState-asynchronous/" rel="permalink"><p>[모여봐요 코딩의 늪] useState 비동기 에러 처리하기</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 21 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      redux에서 관리하는 state를 객체로 다시 구조화
-
-    </p>
-    
-  </article>
-</div>
-   
 
 <div class="grid__item">
   <article
@@ -650,6 +608,32 @@
     
   </article>
 </div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/javascript/javascript-eventBubbling/" rel="permalink"><p>이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 27 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      
+
+    </p>
+    
+  </article>
+</div>
  
     </div>
   </div>
@@ -721,8 +705,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/javascript/js-class2/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/javascript/js-class2"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/coding-swamp/projects-codingswamp-useState-asynchronous/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/coding-swamp/projects-codingswamp-useState-asynchronous"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
