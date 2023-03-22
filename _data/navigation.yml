@@ -18,6 +18,9 @@ docs:
       - title: "CSS"
         url: /css/
         category: "CSS"
+      - title: "TypeScript"
+        url: /typescript/
+        category: "TypeScript"
   - title: 프로그래머스
     children:
       - title: "Lv1"
