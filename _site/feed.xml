@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-23T11:27:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Leaning Typescript] system of a clown</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/" rel="alternate" type="text/html" title="[Leaning Typescript] system of a clown" /><published>2023-03-23T00:00:00+09:00</published><updated>2023-03-23T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-clowning-around</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/"><![CDATA[<h1 id="-system-of-a-clown">🤡 system of a clown</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-24T17:20:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Leaning Typescript] system of a clown</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/" rel="alternate" type="text/html" title="[Leaning Typescript] system of a clown" /><published>2023-03-23T00:00:00+09:00</published><updated>2023-03-23T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-clowning-around</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/"><![CDATA[<h1 id="-system-of-a-clown">🤡 system of a clown</h1>
 
 <blockquote>
   <p>🎈 Help me, please!<br />
@@ -162,7 +162,159 @@ Oh, and they introduced several unsettling clown puns in comments.<br />
 It’s because of those puns that I can’t fix the code myself.<br />
 The clowns again changed a few things around, but nothing more than an incorrect type annotation or different value for a variable.<br />
 Could you please fix up the file to have no TypeScript complaints?</p>
-</blockquote>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
+</blockquote>
+
+<p><strong>▪ 요약: 고마운데 일하나 더 해라! 광대 배정 플래너에서 오류를 수정해라!</strong></p>
+
+<h3 id="-문제-코드-1">📄 문제 코드</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Note: I'm planning on inviting 20 guests in total.</span>
+<span class="c1">// Some clowns can only handle a certain number of guests.</span>
+<span class="kd">let</span> <span class="nx">guestCount</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">clownsCount</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">zilch!</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">krustyAvailability</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">ronaldAvailability</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">pennywiseAvailability</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">matchingsDescription</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">lastClown</span><span class="p">;</span>
+
+<span class="k">do</span> <span class="p">{</span>
+	<span class="nx">clownsCount</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+
+	<span class="c1">// Krusty says: I had a one-man show on Broadway...</span>
+	<span class="c1">// That's who showed up, one man!</span>
+	<span class="nf">if </span><span class="p">(</span><span class="nx">krustyAvailability</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">guestCount</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+		<span class="nx">krustyAvailability</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="nx">matchingsDescription</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Krusty will handle the first ten guests.</span><span class="se">\n</span><span class="dl">"</span><span class="p">;</span>
+		<span class="nx">lastClown</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Krusty</span><span class="dl">"</span><span class="p">;</span>
+		<span class="k">continue</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Ronald says: McDonald's donated a large set of computers to a school...</span>
+	<span class="c1">// They were all Big Macs!</span>
+	<span class="nf">if </span><span class="p">(</span><span class="nx">ronaldAvailability</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">guestCount</span> <span class="o">-=</span> <span class="mi">5</span><span class="p">;</span>
+		<span class="nx">ronaldAvailability</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="nx">matchingsDescription</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Ronald will handle the next five guests.</span><span class="se">\n</span><span class="dl">"</span><span class="p">;</span>
+		<span class="nx">lastClown</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Ronald</span><span class="dl">"</span><span class="p">;</span>
+		<span class="k">continue</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Pennywise asks: what's a sewer's favorite data type?</span>
+	<span class="c1">// Pennywise answers: Floats!</span>
+	<span class="nf">if </span><span class="p">(</span><span class="nx">pennywiseAvailability</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">pennywiseAvailability</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="nx">matchingsDescription</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Pennywise w̺̞̠i̢͇͙l͇̞l͇͍̘ c͓͕̝o̡̠̞n̼̝s̡̞͎u͉̝͔m͚̪̞e̢͚̝ y̴̡̡͕͌̿́ó̸̢͇͚̾̕u̸̡̡͎͒͛r̸͕͓͖̈́͆͒ s̵̺̘̪͒͆̓o̵̡͚̟̽͆̚u̵̠͖̓͐͝l̸͓̘͇̐̓̚s̸̺͎̽̈́͆.</span><span class="dl">"</span><span class="p">;</span>
+		<span class="nx">lastClown</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Pennywise</span><span class="dl">"</span><span class="p">;</span>
+		<span class="k">continue</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`Oh no! We're out of clowns!`</span><span class="p">);</span>
+<span class="p">}</span> <span class="nf">while </span><span class="p">(</span><span class="nx">guestCount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="nx">clownsCount</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">We've got a lot of clowns coming!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="nx">matchingsDescription</span><span class="p">.</span><span class="nf">length</span><span class="p">())</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`There will be </span><span class="p">${</span><span class="nx">clownsCount</span><span class="p">}</span><span class="s2"> clowns!\n`</span><span class="p">);</span>
+	<span class="nx">clownsole</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">matchingsDescription</span><span class="p">);</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`The last clown is: </span><span class="p">${</span><span class="nx">lastClown</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">()}</span><span class="s2">!`</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Nobody gets a clown. Terrible party. Goodbye.</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="p">{};</span>
+</code></pre></div></div>
+
+<p>1번 문제보다 많은 오류가 발생했습니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/227455072-5aa043a8-f1b9-430b-9b62-249b1050c3b6.png" alt="image" /></p>
+
+<h3 id="-풀이과정">📄 풀이과정</h3>
+
+<h4>▪ Type 'number' is not assignable to type 'boolean'.</h4>
+
+<p><code class="language-plaintext highlighter-rouge">guestCount</code>의 타입이 number인데 boolean으로 타입 애너테이션 설정이 잘못되어 있습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 문제 코드</span>
+<span class="kd">let</span> <span class="nx">guestCount</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+<span class="c1">// 수정된 코드</span>
+<span class="kd">let</span> <span class="nx">guestCount</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4> ▪  Operator '&gt;' cannot be applied types 'string' and 'number'.</h4>
+
+<p><code class="language-plaintext highlighter-rouge">clownCount</code>에 산술연산자를 사용하고 있는데 선언부에 보면 문자열을 할당하고 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">zilch</code>가 무슨 뜻인지 찾아보니 <code class="language-plaintext highlighter-rouge">아무것도 없음</code>이라는 뜻이라 값을 할당하지 않았습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">let</code>으로 선언되었기 때문에 가능합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 문제 코드</span>
+<span class="kd">let</span> <span class="nx">clownsCount</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">zilch!</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="nf">if </span><span class="p">(</span><span class="nx">clownsCount</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">We've got a lot of clowns coming!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 수정된 코드</span>
+<span class="kd">let</span> <span class="nx">clownCount</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/227459790-39d64e84-a7a5-4e18-bbbf-d66322f0d4cc.png" alt="image" /></p>
+
+<p>새로운 에러를 만들며 해결되지 않았습니다.</p>
+
+<p>값이 할당되기 전에 산술연산자를 적용할 수 없기 때문입니다.</p>
+
+<p>초기값으로 <code class="language-plaintext highlighter-rouge">0</code>을 할당해주었지만, 뭔가 답이 아닐것만 같은 느낌이 드네요.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 수정된 코드</span>
+<span class="kd">let</span> <span class="nx">clownCount</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4>▪ Cannot find name 'clownsole'. Did 
+you mean 'console'?</h4>
+
+<p><code class="language-plaintext highlighter-rouge">clownsole</code>은 처음 들어봅니다. 문제가 저를 바보로 아나봅니다. 재밌네요.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 문제 코드</span>
+<span class="nx">clownsole</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">matchingsDescription</span><span class="p">);</span>
+
+<span class="c1">// 수정된 코드</span>
+<span class="kd">let</span> <span class="nx">clownCount</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">matchingsDescription</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>끝!</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Found</span> <span class="mi">0</span> <span class="nx">errors</span><span class="p">.</span> <span class="nx">Watching</span> <span class="k">for</span> <span class="nx">file</span> <span class="nx">changes</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>📄 고쳐야 할 점</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">guestCount</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">clownsCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div></div>
+<p>솔루션 코드를 보니 타입 애너테이션이 빠져있습니다.</p>
+
+<p>책을 읽을 때 값을 할당할 경우 자동으로 타입추론이 되기 때문에 타입 애너테이션을 설정하면 중복으로 타입설정과정이 진행되는 것과 마찬가지라 불필요한 과정이라고 한 기억이 납니다.</p>
+
+<p><strong>✔ 값을 할당해 타입추론이 될 경우에는, 타입 애너테이션을 생략하자</strong></p>
+
+<p>그래도 <code class="language-plaintext highlighter-rouge">0</code>을 할당하는게 맞았네요 🎉</p>
+
+<hr />
+
+<p>출처</p>
+
+<ul>
+  <li><a href="https://www.learningtypescript.com/the-type-system/">learning typescript</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
 <p>tsconfig.json 파일은 타입스크립트 프로젝트에서 타입스크립트에 관한 환경설정을 할 수 있는 <strong>타입스크립트 컴파일러 설정파일</strong>입니다.</p>
 
 <h2 id="-tsconfigjson-파일에서-사용하는-옵션">📄 tsconfig.json 파일에서 사용하는 옵션</h2>

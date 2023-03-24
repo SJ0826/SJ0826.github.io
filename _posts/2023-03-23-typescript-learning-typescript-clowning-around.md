@@ -174,3 +174,164 @@ export {};
 > It's because of those puns that I can't fix the code myself.<br/>
 > The clowns again changed a few things around, but nothing more than an incorrect type annotation or different value for a variable.<br/>
 > Could you please fix up the file to have no TypeScript complaints?
+
+**▪ 요약: 고마운데 일하나 더 해라! 광대 배정 플래너에서 오류를 수정해라!**
+
+### 📄 문제 코드
+
+```ts
+// Note: I'm planning on inviting 20 guests in total.
+// Some clowns can only handle a certain number of guests.
+let guestCount: boolean = 20;
+let clownsCount = "zilch!";
+
+let krustyAvailability = true;
+let ronaldAvailability = true;
+let pennywiseAvailability = true;
+
+let matchingsDescription: any = "";
+let lastClown;
+
+do {
+	clownsCount += 1;
+
+	// Krusty says: I had a one-man show on Broadway...
+	// That's who showed up, one man!
+	if (krustyAvailability) {
+		guestCount -= 10;
+		krustyAvailability = false;
+		matchingsDescription += "Krusty will handle the first ten guests.\n";
+		lastClown = "Krusty";
+		continue;
+	}
+
+	// Ronald says: McDonald's donated a large set of computers to a school...
+	// They were all Big Macs!
+	if (ronaldAvailability) {
+		guestCount -= 5;
+		ronaldAvailability = false;
+		matchingsDescription += "Ronald will handle the next five guests.\n";
+		lastClown = "Ronald";
+		continue;
+	}
+
+	// Pennywise asks: what's a sewer's favorite data type?
+	// Pennywise answers: Floats!
+	if (pennywiseAvailability) {
+		pennywiseAvailability = false;
+		matchingsDescription += "Pennywise w̺̞̠i̢͇͙l͇̞l͇͍̘ c͓͕̝o̡̠̞n̼̝s̡̞͎u͉̝͔m͚̪̞e̢͚̝ y̴̡̡͕͌̿́ó̸̢͇͚̾̕u̸̡̡͎͒͛r̸͕͓͖̈́͆͒ s̵̺̘̪͒͆̓o̵̡͚̟̽͆̚u̵̠͖̓͐͝l̸͓̘͇̐̓̚s̸̺͎̽̈́͆.";
+		lastClown = "Pennywise";
+		continue;
+	}
+
+	throw new Error(`Oh no! We're out of clowns!`);
+} while (guestCount > 0);
+
+if (clownsCount > 2) {
+	console.log("We've got a lot of clowns coming!");
+}
+
+if (matchingsDescription.length()) {
+	console.log(`There will be ${clownsCount} clowns!\n`);
+	clownsole.log(matchingsDescription);
+	console.log(`The last clown is: ${lastClown.toUpperCase()}!`);
+} else {
+	console.log("Nobody gets a clown. Terrible party. Goodbye.");
+}
+
+export {};
+```
+
+1번 문제보다 많은 오류가 발생했습니다.
+
+![image](https://user-images.githubusercontent.com/56298540/227455072-5aa043a8-f1b9-430b-9b62-249b1050c3b6.png)
+
+### 📄 풀이과정
+
+
+
+<h4>▪ Type 'number' is not assignable to type 'boolean'.</h4>
+
+`guestCount`의 타입이 number인데 boolean으로 타입 애너테이션 설정이 잘못되어 있습니다.
+
+```ts
+// 문제 코드
+let guestCount: boolean = 20;
+
+// 수정된 코드
+let guestCount: number = 20;
+```
+
+<h4> ▪  Operator '>' cannot be applied types 'string' and 'number'.</h4>
+
+`clownCount`에 산술연산자를 사용하고 있는데 선언부에 보면 문자열을 할당하고 있습니다.
+
+`zilch`가 무슨 뜻인지 찾아보니 `아무것도 없음`이라는 뜻이라 값을 할당하지 않았습니다.
+
+`let`으로 선언되었기 때문에 가능합니다.
+
+```ts
+// 문제 코드
+let clownsCount = "zilch!";
+...
+if (clownsCount > 2) {
+	console.log("We've got a lot of clowns coming!");
+}
+
+// 수정된 코드
+let clownCount;
+```
+
+![image](https://user-images.githubusercontent.com/56298540/227459790-39d64e84-a7a5-4e18-bbbf-d66322f0d4cc.png)
+
+새로운 에러를 만들며 해결되지 않았습니다.
+
+값이 할당되기 전에 산술연산자를 적용할 수 없기 때문입니다.
+
+초기값으로 `0`을 할당해주었지만, 뭔가 답이 아닐것만 같은 느낌이 드네요.
+
+```ts
+// 수정된 코드
+let clownCount: number = 0;
+```
+
+<h4>▪ Cannot find name 'clownsole'. Did 
+you mean 'console'?</h4> 
+
+`clownsole`은 처음 들어봅니다. 문제가 저를 바보로 아나봅니다. 재밌네요.
+
+```ts
+// 문제 코드
+clownsole.log(matchingsDescription);
+
+// 수정된 코드
+let clownCount: number = 0;
+console.log(matchingsDescription);
+```
+
+끝!
+```ts
+Found 0 errors. Watching for file changes.
+```
+
+📄 고쳐야 할 점
+
+
+```ts
+let guestCount = 20;
+let clownsCount = 0;
+```
+솔루션 코드를 보니 타입 애너테이션이 빠져있습니다.
+
+책을 읽을 때 값을 할당할 경우 자동으로 타입추론이 되기 때문에 타입 애너테이션을 설정하면 중복으로 타입설정과정이 진행되는 것과 마찬가지라 불필요한 과정이라고 한 기억이 납니다.
+
+**✔ 값을 할당해 타입추론이 될 경우에는, 타입 애너테이션을 생략하자**
+
+그래도 `0`을 할당하는게 맞았네요 🎉
+
+---
+
+출처
+
+* [learning typescript](https://www.learningtypescript.com/the-type-system/)
+
