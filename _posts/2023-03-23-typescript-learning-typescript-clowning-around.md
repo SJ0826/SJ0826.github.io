@@ -173,4 +173,4 @@ export {};
 > Oh, and they introduced several unsettling clown puns in comments.<br/>
 > It's because of those puns that I can't fix the code myself.<br/>
 > The clowns again changed a few things around, but nothing more than an incorrect type annotation or different value for a variable.<br/>
-> Could you please fix up the file to have no TypeScript complaints?
+> Could you please fix up the file to have no TypeScript complaints? x

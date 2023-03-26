@@ -42,3 +42,8 @@ docs:
       - title: "모여봐요 코딩의 숲"
         url: /project/coding-swamp/
         category: "coding-swamp"
+  - title: 일상
+    children:
+      - title: "books"
+        url: /books/
+        category: "books"
