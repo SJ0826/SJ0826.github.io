@@ -1,4 +1,248 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-27T16:38:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">🍸 칵테일 러브 좀비</title><link href="http://localhost:4000/books/books-cocktail-love-jombie/" rel="alternate" type="text/html" title="🍸 칵테일 러브 좀비" /><published>2023-03-26T00:00:00+09:00</published><updated>2023-03-26T22:06:00+09:00</updated><id>http://localhost:4000/books/books-cocktail-love-jombie</id><content type="html" xml:base="http://localhost:4000/books/books-cocktail-love-jombie/"><![CDATA[<p><img src="https://image.yes24.com/goods/89913383/XL" alt="칵테일, 러브, 좀비" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-27T19:10:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Leaning Typescript 🦜] Primitive Cooking</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-primitive-cooking/" rel="alternate" type="text/html" title="[Leaning Typescript 🦜] Primitive Cooking" /><published>2023-03-27T00:00:00+09:00</published><updated>2023-03-27T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-primitive%20cooking</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-primitive-cooking/"><![CDATA[<h1 id="-primitive-cooking">🥗 Primitive Cooking</h1>
+
+<blockquote>
+  <p>Those pesky Java programmers are at it again!<br />
+I wrote a few functions for a friend to help arrange meals when I have guests over. The friend worked with their enterprise application development team to “improve” the code. Next thing I know, they’ve replaced all my TypeScript-y literal and union types with plain old primitive types.<br />
+Those Java fans are perfectly good developers -and lovely people- but we don’t see eye-to-eye on type systems. Now TypeScript is reporting type errors on my code. Could you please correct the type annotations in my files – and maybe a couple bugs the improved types helped TypeScript find?</p>
+</blockquote>
+
+<p>성가신 자바 프로그래머들이 또 시작이야!<br />
+나는 친구를 위해 손님들이 왔을 때 식사 준비를 도와줄 수 있도록 몇개의 기능을 작성했어. 친구는 코드를 ✌향상시키기 위해✌ 기업 애플리케이션 개발팀과 일해. 다음으로 내가 아는건, 그 사람들이 내 타입스크립트 코드의 리터럴과 유니언 타입을 오래된 순수 원시 타입으로 바꿨다는 거야.(읽기만 해도 열받음)<br />
+이 자바 팬들은 완전 좋은 개발자들이야(게다가 사랑스러움). 하지만 우린(자바와 자바스크립트) 타입 시스템이 일치하지 않잖아. 지금 타입스크립트가 내 코드에서 타입 에러들을 보고하고 있거든. 내 파일들에서 타입 애너테이션들을 올바르게 고쳐줄래?</p>
+
+<h2 id="-step-1-ingredients">🍽 Step 1: Ingredients</h2>
+
+<blockquote>
+  <p>The first area of code I’ll need you to fix is my ingredients planner. I use this to print what kind of salad greens and dressings to use for meals.<br />
+Again, the runtime code is working fine. It’s just the type annotations you’ll need to correct.</p>
+</blockquote>
+
+<p><strong>▪ 요약: 샐러드 야채와 드레싱 재료 플래너의 타입 애너테이션을 고쳐라!</strong></p>
+
+<h3 id="-문제-코드">📄 문제 코드</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Please correct any type annotation problems here! ✨</span>
+<span class="kd">let</span> <span class="nx">arugula</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">dressing</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">lettuce</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">mealDate</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+<span class="nx">arugula</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">dressing</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">honey dijon</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">lettuce</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="nx">mealDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">September 13, 2021</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`We're starting on </span><span class="p">${</span><span class="nx">mealDate</span><span class="p">}</span><span class="s2"> with a dressing of </span><span class="p">${</span><span class="nx">dressing</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="nx">arugula</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`There are </span><span class="p">${</span><span class="nx">arugula</span><span class="p">}</span><span class="s2"> arugula serving(s) for this first meal.`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="nx">lettuce</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`There are </span><span class="p">${</span><span class="nx">lettuce</span><span class="p">}</span><span class="s2"> lettuce serving(s) for this first meal.`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">arugula</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="nx">dressing</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">balsamic vinaigrette</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">lettuce</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">mealDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">March 13, 2022</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Next up, a </span><span class="p">${</span><span class="nx">mealDate</span><span class="p">}</span><span class="s2"> meal with a dressing of </span><span class="p">${</span><span class="nx">dressing</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="nx">arugula</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`This time, there are </span><span class="p">${</span><span class="nx">arugula</span><span class="p">}</span><span class="s2"> arugula serving(s).`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="nx">lettuce</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`This time, there are </span><span class="p">${</span><span class="nx">lettuce</span><span class="p">}</span><span class="s2"> lettuce serving(s).`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="p">{};</span>
+</code></pre></div></div>
+
+<p>코드를 컴파일 하면 다음과 같은 에러가 발생합니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/227881136-7f53dfe4-79fd-4351-bc02-5ae9af8023ec.png" alt="image" /></p>
+
+<h3 id="-풀이-과정">📄 풀이 과정</h3>
+
+<p>에러 메시지를 보고 변수 선언부에서 유니언 타입으로 타입을 확장해주었습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arugula</span><span class="p">:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">dressing</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">lettuce</span><span class="p">:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">mealDate</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="nb">Date</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>정답 코드를 보니 고쳐야할 점이 있습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">mealDate</span><span class="p">:</span> <span class="nb">Date</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>변수 <code class="language-plaintext highlighter-rouge">mealDate</code>는 하나의 타입만 사용합니다.<br />
+따라서 유니언 타입을 통해 타입을 확장하는게 아니라, 타입 애너테이션에서 타입을 수정해주면 되는 것이었습니다.<br />
+낚였습니다.</p>
+
+<h2 id="-step-2-recipes">🍽 Step 2: Recipes</h2>
+
+<blockquote>
+  <p>Those salad ingredients are looking delectable, thank you! Next up is my list of favorite recipes.<br />
+It looks like these seem to pass the TypeScript compiler fine as-is. However, there’s a catch: I want to make sure future recipes keep to the same difficulty and group types. Could you please use unions of literal types for them? Both should only have three possible values.<br />
+This time, the runtime code is mostly working fine. Except I think I made a typo in one of the group values? You’ll need to fix that. Otherwise it’s just the type annotations you’ll need to correct.</p>
+</blockquote>
+
+<p><strong>▪ 요약: 샐러드는 이제 되었으니, 미래의 요리법(?)이 동일한 난이도와 그룹 타입을 갖도록 리터럴 유니언 타입을 사용해라!</strong></p>
+
+<ul>
+  <li>작성되는 유니언 타입은 세개의 타입으로 구성됩니다.</li>
+</ul>
+
+<h3 id="-문제-코드-1">📄 문제 코드</h3>
+
+<p>이번 문제는 문제 코드를 컴파일해도 에러가 발생하지 않습니다.</p>
+
+<p>목적은 에러 해결이 아닌, 유니언 타입을 사용한 코드 리팩토링입니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Please clarify any overly wide (permissive) type annotations here! ✨</span>
+<span class="kd">let</span> <span class="nx">difficulty</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">group</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+<span class="c1">// Start with something quick and painless to prepare...</span>
+<span class="nx">difficulty</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">group</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">appetizer</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Raspberry Vinaigrette Salad</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`[</span><span class="p">${</span><span class="nx">group</span><span class="p">}</span><span class="s2">] </span><span class="p">${</span><span class="nx">title</span><span class="p">}</span><span class="s2">: </span><span class="p">${</span><span class="nx">difficulty</span><span class="p">}</span><span class="s2">/3 difficulty`</span><span class="p">);</span>
+
+<span class="c1">// Next up, a nice hearty dish to center the meal...</span>
+<span class="nx">difficulty</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">group</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">entree</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Cauliflower Steaks</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`[</span><span class="p">${</span><span class="nx">group</span><span class="p">}</span><span class="s2">] </span><span class="p">${</span><span class="nx">title</span><span class="p">}</span><span class="s2">: </span><span class="p">${</span><span class="nx">difficulty</span><span class="p">}</span><span class="s2">/3 difficulty`</span><span class="p">);</span>
+
+<span class="c1">// Make a real impact with fancy delectable desserts...</span>
+<span class="nx">difficulty</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">group</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">dessert</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Coconut Chocolate Ganache</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`[</span><span class="p">${</span><span class="nx">group</span><span class="p">}</span><span class="s2">] </span><span class="p">${</span><span class="nx">title</span><span class="p">}</span><span class="s2">: </span><span class="p">${</span><span class="nx">difficulty</span><span class="p">}</span><span class="s2">/3 difficulty`</span><span class="p">);</span>
+
+<span class="c1">// Send everyone off with a nice closer.</span>
+<span class="nx">difficulty</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">group</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">desert</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Biscuits and Coffee</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`[</span><span class="p">${</span><span class="nx">group</span><span class="p">}</span><span class="s2">] </span><span class="p">${</span><span class="nx">title</span><span class="p">}</span><span class="s2">: </span><span class="p">${</span><span class="nx">difficulty</span><span class="p">}</span><span class="s2">/3 difficulty`</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="p">{};</span>
+</code></pre></div></div>
+
+<h3 id="-풀이-과정-1">📄 풀이 과정</h3>
+
+<p>정해진 값을 사용하는 변수는 <code class="language-plaintext highlighter-rouge">difficulty</code>와 <code class="language-plaintext highlighter-rouge">group</code>으로 보입니다.</p>
+
+<p>이 변수들이 사용하는 값을 리터럴 타입으로 사용해서 유니언 타입으로 타입을 구체화 시켜보겠습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">difficulty</span><span class="p">:</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">group</span><span class="p">:</span> <span class="dl">"</span><span class="s2">appetizer</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">entree</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">dessert</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>유니언 타입을 작성하다보니 문제 제공자의 오타가 보입니다.</p>
+
+<p>설마 레시피에 ‘desert(사막)`를 뜻하는 단어를 사용하진 않을 것 같은데요.</p>
+
+<p>정답 코드에는 <code class="language-plaintext highlighter-rouge">dessert</code>로 올바르게 작성되어 있습니다.</p>
+
+<p>너무 사소한 실수라 해당 레포에 pr를 날려볼까 고민하다 어떤 사람은 <code class="language-plaintext highlighter-rouge">a</code>하나로도 pr를 작성하길래 pr를 작성해보기로 결심했습니다.</p>
+
+<p>아니면 조슈아 골든버그씨가 말해주겠죠.</p>
+
+<p>🖇 <a href="https://github.com/LearningTypeScript/projects/pull/259">인생 처음 오픈소스 PR</a></p>
+
+<h2 id="-step3-seating">🍽 Step3: Seating</h2>
+
+<blockquote>
+  <p>You’re doing wonderfully, my friend. I can’t wait to invite you to my next fancy dinner party.<br />
+Speaking of which, I need to properly type the program to randomize invitations and seat assignments. My friends can be kind of childish -they’re babies, really- and are very picky about seating.<br />
+I also very much like what you did with the string literal union types in the last step. Could you please avoid using the string type altogether in this one? Just use literal types.<br />
+Oh, and I think there’s a typo in one of the names here too.</p>
+</blockquote>
+
+<p><strong>▪ 요약: 저번 step에서 네가 만든 string 리터럴 유니언 타입 맘에 들었어. 이번엔 string타입을 사용하지말고 리터럴 타입만 사용해서 타입을 완성시켜봐라!</strong></p>
+
+<h3 id="-문제-코드-2">📄 문제 코드</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Please fill in any missing type annotations here...</span>
+<span class="kd">const</span> <span class="nx">headOfTable</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Me!</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">adjacentLeft</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">adjacentRight</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">furtherLeft</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">furtherRight</span><span class="p">;</span>
+
+<span class="c1">// I always invite Susie and Tommy! ♥</span>
+<span class="nf">if </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">adjacentLeft</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Susie</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">adjacentRight</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Tommy</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">adjacentLeft</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Tommy</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">adjacentRight</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Susie</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// I invite Angelica about half of the time. We're not as close as Susie and Tommy. It's a long story.</span>
+<span class="c1">// I try to fill `furtherLeft` first...</span>
+<span class="nf">if </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">furtherLeft</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Angelica</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Same with Chuckie. I like them, but do I *really* like hanging out with them? Only sometimes.</span>
+<span class="c1">// ...then after that `furtherRight`</span>
+<span class="nf">if </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">furtherLeft</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">furtherRight</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">furtherLeft</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// If I invited Angelica but not Chuckie, I'll invite Kimi. They get along well with Angelica but not Chuckie.</span>
+<span class="nf">if </span><span class="p">(</span><span class="nx">furtherLeft</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Angelica</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">furtherRight</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">furtherRight</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Kimi</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// If I invited Chuckie but not Angelica, I'll invite Timmy. They get along well with Chuckie but not Angelica.</span>
+<span class="nf">if </span><span class="p">(</span><span class="nx">furtherLeft</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">furtherRight</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Timmy</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`At the head of the table is... </span><span class="p">${</span><span class="nx">headOfTable</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Adjacent to the left is: </span><span class="p">${</span><span class="nx">adjacentLeft</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Adjacent to the right is: </span><span class="p">${</span><span class="nx">adjacentRight</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Further down on the left is: </span><span class="p">${</span><span class="nx">adjacentLeft</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">nobody</span><span class="dl">"</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Further down on the right is: </span><span class="p">${</span><span class="nx">adjacentRight</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">nobody</span><span class="dl">"</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="p">{};</span>
+</code></pre></div></div>
+
+<p>변수 선언부를 보니 초깃값이 설정되어 있지 않아, 타입이 <code class="language-plaintext highlighter-rouge">any</code>로 추론되고 있습니다.</p>
+
+<p>변수 선언부에서 리터럴 타입으로 각각 타입을 설정합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">adjacentLeft</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Susie</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Tommy</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">adjacentRight</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Susie</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Tommy</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">furtherLeft</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Angelica</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">furtherRight</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kimi</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Timmy</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/227911602-a53012c3-99c1-47ca-8801-68d04b9dc5bd.png" alt="image" /></p>
+
+<p>값이 할당되기 전에 사용되어 에러를 발생시킵니다.</p>
+
+<p>값이 할당되지 않은 변수를 위해 <code class="language-plaintext highlighter-rouge">undefined</code> 타입을 명시적으로 추가해주었습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">furtherLeft</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Angelica</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">furtherRight</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kimi</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Timmy</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="Primitive Cooking" /><category term="유니언 타입" /><category term="리터럴 타입" /><summary type="html"><![CDATA[책 learning typescript 3장 유니언과 리터럴 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">🍸 칵테일 러브 좀비</title><link href="http://localhost:4000/books/books-cocktail-love-jombie/" rel="alternate" type="text/html" title="🍸 칵테일 러브 좀비" /><published>2023-03-26T00:00:00+09:00</published><updated>2023-03-26T22:06:00+09:00</updated><id>http://localhost:4000/books/books-cocktail-love-jombie</id><content type="html" xml:base="http://localhost:4000/books/books-cocktail-love-jombie/"><![CDATA[<p><img src="https://image.yes24.com/goods/89913383/XL" alt="칵테일, 러브, 좀비" /></p>
 
 <p>▪ 제목: 칵테일, 러브, 좀비<br />
 ▪ 작가: 조예은<br />
@@ -336,23 +580,7 @@ you mean 'console'?</h4>
 
 <ul>
   <li><a href="https://www.learningtypescript.com/the-type-system/">learning typescript</a></li>
-</ul>
-
-<blockquote>
-  <blockquote>
-    <blockquote>
-      <blockquote>
-        <blockquote>
-          <blockquote>
-            <blockquote>
-              <p>77a4f00c530441fbccf39c465757916e013909fb</p>
-            </blockquote>
-          </blockquote>
-        </blockquote>
-      </blockquote>
-    </blockquote>
-  </blockquote>
-</blockquote>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
 <p>tsconfig.json 파일은 타입스크립트 프로젝트에서 타입스크립트에 관한 환경설정을 할 수 있는 <strong>타입스크립트 컴파일러 설정파일</strong>입니다.</p>
 
 <h2 id="-tsconfigjson-파일에서-사용하는-옵션">📄 tsconfig.json 파일에서 사용하는 옵션</h2>
@@ -701,32 +929,7 @@ you mean 'console'?</h4>
 <p>우선, github 레포에서 보는 md파일은 가독성이 좋지 않다.
 글씨의 크기나 간격이 편하게 읽기 좋은 정도는 아니다.
 가장 큰 이유는 내가 지속적으로 관리하는 페이지를 가지고 싶었다.
-이 블로그에 공부기록도 하지만 이외에 다양한 주제를 가지고 나를 표현하는 웹 사이트로 성장시킬 예정이다.</p>]]></content><author><name>Sujin Kim</name></author><category term="일상" /><category term="Blog" /><summary type="html"><![CDATA[GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.]]></summary></entry><entry><title type="html">🚨 Assignment to constant variable.</title><link href="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/" rel="alternate" type="text/html" title="🚨 Assignment to constant variable." /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-assignment%20to%20constant%20variable</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/"><![CDATA[<h2 id="-assignment-to-constant-variable">🚨 Assignment to constant variable.</h2>
-
-<p>자바스크립트 퀴즈를 푸는데 코드에 빨간 표시도 안났는데 에러가 떴다.</p>
-
-<p>직역하면 <strong>상수값을 변수에 할당</strong>했다는 뜻이다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">countBiggerThanTen</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nx">numbers</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">sum</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// TypeError: Assignment to constant variable.</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="원인">원인</h2>
-
-<p>이미 선언한 const 변수에 새로운 값을 할당했을 때 발생한다.</p>
-
-<p>위 코드에서 계속 값이 바뀌는 sum을 상수로 선언했다.</p>
-
-<h2 id="해결">해결</h2>
-
-<p>값을 재할당에서 사용할 수 있는 <code class="language-plaintext highlighter-rouge">let</code>으로 바꾸어 주었더니 정상적으로 동작했다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="에러" /><category term="상수" /><category term="변수" /></entry><entry><title type="html">이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)</title><link href="http://localhost:4000/javascript/javascript-eventBubbling/" rel="alternate" type="text/html" title="이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)" /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-eventBubbling</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-eventBubbling/"><![CDATA[<h2 id="-이벤트-버블링-event-bubbling">📄 이벤트 버블링 (Event Bubbling)</h2>
+이 블로그에 공부기록도 하지만 이외에 다양한 주제를 가지고 나를 표현하는 웹 사이트로 성장시킬 예정이다.</p>]]></content><author><name>Sujin Kim</name></author><category term="일상" /><category term="Blog" /><summary type="html"><![CDATA[GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.]]></summary></entry><entry><title type="html">이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)</title><link href="http://localhost:4000/javascript/javascript-eventBubbling/" rel="alternate" type="text/html" title="이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)" /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-eventBubbling</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-eventBubbling/"><![CDATA[<h2 id="-이벤트-버블링-event-bubbling">📄 이벤트 버블링 (Event Bubbling)</h2>
 
 <p>이벤트 버블링은 특정 요소에서 이벤트가 발생했을 때, 해당 이벤트가 더 <strong>상위 요소로 전달</strong>되는 과정입니다.</p>
 
@@ -873,31 +1076,29 @@ you mean 'console'?</h4>
 
 <ul>
   <li><a href="https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/">캡틴 판교-이벤트 버블링, 이벤트 캡처 그리고 이벤트 위임까지</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="이벤트 버블링" /><category term="이벤트 캡처" /><category term="이벤트 위임" /></entry><entry><title type="html">투명도 설정하기</title><link href="http://localhost:4000/css/css-opacity/" rel="alternate" type="text/html" title="투명도 설정하기" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T22:06:00+09:00</updated><id>http://localhost:4000/css/css-opacity</id><content type="html" xml:base="http://localhost:4000/css/css-opacity/"><![CDATA[<h2 id="-opacity-속성">📄 opacity 속성</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="이벤트 버블링" /><category term="이벤트 캡처" /><category term="이벤트 위임" /></entry><entry><title type="html">🚨 Assignment to constant variable.</title><link href="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/" rel="alternate" type="text/html" title="🚨 Assignment to constant variable." /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-assignment%20to%20constant%20variable</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/"><![CDATA[<h2 id="-assignment-to-constant-variable">🚨 Assignment to constant variable.</h2>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
-  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;</span>
+<p>자바스크립트 퀴즈를 푸는데 코드에 빨간 표시도 안났는데 에러가 떴다.</p>
+
+<p>직역하면 <strong>상수값을 변수에 할당</strong>했다는 뜻이다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">countBiggerThanTen</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">numbers</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">sum</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// TypeError: Assignment to constant variable.</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">opacity</code>로 0~1의 값을 설정한다.</p>
-  </li>
-  <li>
-    <p>0에 가까울수록 투명하다.</p>
-  </li>
-</ul>
+<h2 id="원인">원인</h2>
 
-<h2 id="-rgba-속성">📄 rgba 속성</h2>
+<p>이미 선언한 const 변수에 새로운 값을 할당했을 때 발생한다.</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>위 코드에서 계속 값이 바뀌는 sum을 상수로 선언했다.</p>
 
-<h3 id="차이점">차이점</h3>
+<h2 id="해결">해결</h2>
 
-<p>opacity는 해당 요소를 포함한 하위 요소까지 적용되고,<br />
-raga는 해당 요소에만 적용됩니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="CSS" /><category term="opacity" /><category term="rgba" /></entry></feed>
+<p>값을 재할당에서 사용할 수 있는 <code class="language-plaintext highlighter-rouge">let</code>으로 바꾸어 주었더니 정상적으로 동작했다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="에러" /><category term="상수" /><category term="변수" /></entry></feed>

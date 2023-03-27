@@ -11,6 +11,8 @@ categories:
 tags:
   - ["learning typescript", "type system", "clowning around"]
 last_modified_at: 2023-03-23T08:06:00-05:00
+header:
+  teaser: assets\image\learning typescript.PNG
 ---
 
 # 🤡 system of a clown
@@ -336,5 +338,3 @@ let clownsCount = 0;
 출처
 
 - [learning typescript](https://www.learningtypescript.com/the-type-system/)
-
-> > > > > > > 77a4f00c530441fbccf39c465757916e013909fb
