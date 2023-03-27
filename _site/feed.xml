@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-26T17:33:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">🍸 칵테일 러브 좀비</title><link href="http://localhost:4000/books/books-cocktail-love-jombie/" rel="alternate" type="text/html" title="🍸 칵테일 러브 좀비" /><published>2023-03-26T00:00:00+09:00</published><updated>2023-03-26T22:06:00+09:00</updated><id>http://localhost:4000/books/books-cocktail-love-jombie</id><content type="html" xml:base="http://localhost:4000/books/books-cocktail-love-jombie/"><![CDATA[<p><img src="https://image.yes24.com/goods/89913383/XL" alt="칵테일, 러브, 좀비" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-27T09:47:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">🍸 칵테일 러브 좀비</title><link href="http://localhost:4000/books/books-cocktail-love-jombie/" rel="alternate" type="text/html" title="🍸 칵테일 러브 좀비" /><published>2023-03-26T00:00:00+09:00</published><updated>2023-03-26T22:06:00+09:00</updated><id>http://localhost:4000/books/books-cocktail-love-jombie</id><content type="html" xml:base="http://localhost:4000/books/books-cocktail-love-jombie/"><![CDATA[<p><img src="https://image.yes24.com/goods/89913383/XL" alt="칵테일, 러브, 좀비" /></p>
 
 <p>▪ 제목: 칵테일, 러브, 좀비<br />
 ▪ 작가: 조예은<br />
@@ -17,9 +16,6 @@
 <p>습지는 귀신이 나오지만 무섭지 않다. 오히려 긴장감 넘치는 책 분위기 속에서 살짝 긴장을 풀고 차분하게 읽을 수 있는 분위기를 풍기는 내용이다. 미스테리 스릴러 소설이라고 무조건 빠른 호흡과 높은 텐션이 필수일 필요가 없다는 점을 새로이 알게 해준 작품이다.</p>
 
 <p>이에 반해 오버랩 나이프, 나이프는 읽는 내내 책 종이가 넘어가는게 아까울 정도로 빠져들었다. 이때 혼자 카페에 앉아 책을 읽었는데 반전을 맞이할 때마다 표정관리하느라 꽤나 힘들었다. 조예은 작가님의 작품은 스토리가 흔하지 않고 결말이 뻔하지 않다. 작품의 제목조차 처음에는 어떤 뜻인지 알 수 없다. 오버랩 나이프, 나이프. 어떤 내용이 전개될지 도통 알기 힘들다. 작품을 다 읽고 다시 제목을 보았을 때 제목에서 다 알려주고 있다는걸 깨닫고는 무언가 당해버린 기분이 든다. 미루고 미뤘던 젤리장수 대학살도 조만간 읽어야 겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="books" /><category term="칵테일 러브 좀비" /><category term="조예은" /><category term="안전가옥" /><category term="추리/미스테리" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[Leaning Typescript] system of a clown</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/" rel="alternate" type="text/html" title="[Leaning Typescript] system of a clown" /><published>2023-03-23T00:00:00+09:00</published><updated>2023-03-23T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-clowning-around</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/"><![CDATA[<h1 id="-system-of-a-clown">🤡 system of a clown</h1>
-=======
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-24T17:20:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Leaning Typescript] system of a clown</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/" rel="alternate" type="text/html" title="[Leaning Typescript] system of a clown" /><published>2023-03-23T00:00:00+09:00</published><updated>2023-03-23T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-clowning-around</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/"><![CDATA[<h1 id="-system-of-a-clown">🤡 system of a clown</h1>
->>>>>>> 77a4f00c530441fbccf39c465757916e013909fb
 
 <blockquote>
   <p>🎈 Help me, please!<br />
@@ -182,9 +178,8 @@ I use this to print which clowns will be partying with which guests. <br />
 Oh, and they introduced several unsettling clown puns in comments.<br />
 It’s because of those puns that I can’t fix the code myself.<br />
 The clowns again changed a few things around, but nothing more than an incorrect type annotation or different value for a variable.<br />
-<<<<<<< HEAD
-Could you please fix up the file to have no TypeScript complaints? x</p>
-</blockquote>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
+«««&lt; HEAD
+Could you please fix up the file to have no TypeScript complaints? x
 =======
 Could you please fix up the file to have no TypeScript complaints?</p>
 </blockquote>
@@ -339,8 +334,23 @@ you mean 'console'?</h4>
 
 <ul>
   <li><a href="https://www.learningtypescript.com/the-type-system/">learning typescript</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
->>>>>>> 77a4f00c530441fbccf39c465757916e013909fb
+</ul>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>77a4f00c530441fbccf39c465757916e013909fb</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
 <p>tsconfig.json 파일은 타입스크립트 프로젝트에서 타입스크립트에 관한 환경설정을 할 수 있는 <strong>타입스크립트 컴파일러 설정파일</strong>입니다.</p>
 
 <h2 id="-tsconfigjson-파일에서-사용하는-옵션">📄 tsconfig.json 파일에서 사용하는 옵션</h2>
@@ -689,7 +699,32 @@ you mean 'console'?</h4>
 <p>우선, github 레포에서 보는 md파일은 가독성이 좋지 않다.
 글씨의 크기나 간격이 편하게 읽기 좋은 정도는 아니다.
 가장 큰 이유는 내가 지속적으로 관리하는 페이지를 가지고 싶었다.
-이 블로그에 공부기록도 하지만 이외에 다양한 주제를 가지고 나를 표현하는 웹 사이트로 성장시킬 예정이다.</p>]]></content><author><name>Sujin Kim</name></author><category term="일상" /><category term="Blog" /><summary type="html"><![CDATA[GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.]]></summary></entry><entry><title type="html">이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)</title><link href="http://localhost:4000/javascript/javascript-eventBubbling/" rel="alternate" type="text/html" title="이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)" /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-eventBubbling</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-eventBubbling/"><![CDATA[<h2 id="-이벤트-버블링-event-bubbling">📄 이벤트 버블링 (Event Bubbling)</h2>
+이 블로그에 공부기록도 하지만 이외에 다양한 주제를 가지고 나를 표현하는 웹 사이트로 성장시킬 예정이다.</p>]]></content><author><name>Sujin Kim</name></author><category term="일상" /><category term="Blog" /><summary type="html"><![CDATA[GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.]]></summary></entry><entry><title type="html">🚨 Assignment to constant variable.</title><link href="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/" rel="alternate" type="text/html" title="🚨 Assignment to constant variable." /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-assignment%20to%20constant%20variable</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/"><![CDATA[<h2 id="-assignment-to-constant-variable">🚨 Assignment to constant variable.</h2>
+
+<p>자바스크립트 퀴즈를 푸는데 코드에 빨간 표시도 안났는데 에러가 떴다.</p>
+
+<p>직역하면 <strong>상수값을 변수에 할당</strong>했다는 뜻이다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">countBiggerThanTen</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">numbers</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">sum</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// TypeError: Assignment to constant variable.</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="원인">원인</h2>
+
+<p>이미 선언한 const 변수에 새로운 값을 할당했을 때 발생한다.</p>
+
+<p>위 코드에서 계속 값이 바뀌는 sum을 상수로 선언했다.</p>
+
+<h2 id="해결">해결</h2>
+
+<p>값을 재할당에서 사용할 수 있는 <code class="language-plaintext highlighter-rouge">let</code>으로 바꾸어 주었더니 정상적으로 동작했다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="에러" /><category term="상수" /><category term="변수" /></entry><entry><title type="html">이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)</title><link href="http://localhost:4000/javascript/javascript-eventBubbling/" rel="alternate" type="text/html" title="이벤트 버블링 (Event Bubbling), 이벤트 캡쳐 (Event Capture), 이벤트 위임 (Event Delegation)" /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-eventBubbling</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-eventBubbling/"><![CDATA[<h2 id="-이벤트-버블링-event-bubbling">📄 이벤트 버블링 (Event Bubbling)</h2>
 
 <p>이벤트 버블링은 특정 요소에서 이벤트가 발생했을 때, 해당 이벤트가 더 <strong>상위 요소로 전달</strong>되는 과정입니다.</p>
 
@@ -836,52 +871,31 @@ you mean 'console'?</h4>
 
 <ul>
   <li><a href="https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/">캡틴 판교-이벤트 버블링, 이벤트 캡처 그리고 이벤트 위임까지</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="이벤트 버블링" /><category term="이벤트 캡처" /><category term="이벤트 위임" /></entry><entry><title type="html">🚨 Assignment to constant variable.</title><link href="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/" rel="alternate" type="text/html" title="🚨 Assignment to constant variable." /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-assignment%20to%20constant%20variable</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/"><![CDATA[<h2 id="-assignment-to-constant-variable">🚨 Assignment to constant variable.</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="이벤트 버블링" /><category term="이벤트 캡처" /><category term="이벤트 위임" /></entry><entry><title type="html">투명도 설정하기</title><link href="http://localhost:4000/css/css-opacity/" rel="alternate" type="text/html" title="투명도 설정하기" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T22:06:00+09:00</updated><id>http://localhost:4000/css/css-opacity</id><content type="html" xml:base="http://localhost:4000/css/css-opacity/"><![CDATA[<h2 id="-opacity-속성">📄 opacity 속성</h2>
 
-<p>자바스크립트 퀴즈를 푸는데 코드에 빨간 표시도 안났는데 에러가 떴다.</p>
-
-<p>직역하면 <strong>상수값을 변수에 할당</strong>했다는 뜻이다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">countBiggerThanTen</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nx">numbers</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">sum</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// TypeError: Assignment to constant variable.</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
-
-<h2 id="원인">원인</h2>
-
-<p>이미 선언한 const 변수에 새로운 값을 할당했을 때 발생한다.</p>
-
-<p>위 코드에서 계속 값이 바뀌는 sum을 상수로 선언했다.</p>
-
-<h2 id="해결">해결</h2>
-
-<p>값을 재할당에서 사용할 수 있는 <code class="language-plaintext highlighter-rouge">let</code>으로 바꾸어 주었더니 정상적으로 동작했다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="에러" /><category term="상수" /><category term="변수" /></entry><entry><title type="html">약수의 합</title><link href="http://localhost:4000/programmers-lv1/sumofdivisor/" rel="alternate" type="text/html" title="약수의 합" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/sumofdivisor</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/sumofdivisor/"><![CDATA[<h2 id="문제-">문제 📖</h2>
-
-<p>정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.</p>
 
 <ul>
-  <li>n은 0 이상 3000이하인 정수입니다.</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">opacity</code>로 0~1의 값을 설정한다.</p>
+  </li>
+  <li>
+    <p>0에 가까울수록 투명하다.</p>
+  </li>
 </ul>
 
-<h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
+<h2 id="-rgba-속성">📄 rgba 속성</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>간단하게 <code class="language-plaintext highlighter-rouge">for</code>문을 사용했다.</p>
+<h3 id="차이점">차이점</h3>
 
-<p>어차피 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>의 절반까지만 정답의 유효 범위이기 때문에 반복 횟수를 조금이라도 줄이려고 신경썼다.</p>
-
-<p>반복문을 통해 주어진 수 <code class="language-plaintext highlighter-rouge">n</code>을 정수로 나눈 값이 0일 경우, 총합 <code class="language-plaintext highlighter-rouge">sum</code>에 더해준다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="약수의 합" /><summary type="html"><![CDATA[프로그래머스 Lv1. 약수의 합 풀이]]></summary></entry></feed>
+<p>opacity는 해당 요소를 포함한 하위 요소까지 적용되고,<br />
+raga는 해당 요소에만 적용됩니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="CSS" /><category term="opacity" /><category term="rgba" /></entry></feed>
