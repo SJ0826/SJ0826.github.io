@@ -9,7 +9,7 @@ sidebar:
 categories:
   - TypeScript
 tags:
-  - ["유니언 타입", "리터럴 타입"]
+  - ["유니언 타입", "리터럴 타입", "내로잉", "타입 가드"]
 last_modified_at: 2023-03-27T08:06:00-05:00
 ---
 
