@@ -1,5 +1,5 @@
 ---
-title: "[Leaning Typescript] system of a clown"
+title: "[Leaning Typescript 🦜] system of a clown"
 excerpt: "책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다."
 toc: true
 toc_sticky: true
@@ -173,9 +173,9 @@ export {};
 > Oh, and they introduced several unsettling clown puns in comments.<br/>
 > It's because of those puns that I can't fix the code myself.<br/>
 > The clowns again changed a few things around, but nothing more than an incorrect type annotation or different value for a variable.<br/>
-<<<<<<< HEAD
+> <<<<<<< HEAD
 > Could you please fix up the file to have no TypeScript complaints? x
-=======
+> =======
 > Could you please fix up the file to have no TypeScript complaints?
 
 **▪ 요약: 고마운데 일하나 더 해라! 광대 배정 플래너에서 오류를 수정해라!**
@@ -196,50 +196,50 @@ let matchingsDescription: any = "";
 let lastClown;
 
 do {
-	clownsCount += 1;
+  clownsCount += 1;
 
-	// Krusty says: I had a one-man show on Broadway...
-	// That's who showed up, one man!
-	if (krustyAvailability) {
-		guestCount -= 10;
-		krustyAvailability = false;
-		matchingsDescription += "Krusty will handle the first ten guests.\n";
-		lastClown = "Krusty";
-		continue;
-	}
+  // Krusty says: I had a one-man show on Broadway...
+  // That's who showed up, one man!
+  if (krustyAvailability) {
+    guestCount -= 10;
+    krustyAvailability = false;
+    matchingsDescription += "Krusty will handle the first ten guests.\n";
+    lastClown = "Krusty";
+    continue;
+  }
 
-	// Ronald says: McDonald's donated a large set of computers to a school...
-	// They were all Big Macs!
-	if (ronaldAvailability) {
-		guestCount -= 5;
-		ronaldAvailability = false;
-		matchingsDescription += "Ronald will handle the next five guests.\n";
-		lastClown = "Ronald";
-		continue;
-	}
+  // Ronald says: McDonald's donated a large set of computers to a school...
+  // They were all Big Macs!
+  if (ronaldAvailability) {
+    guestCount -= 5;
+    ronaldAvailability = false;
+    matchingsDescription += "Ronald will handle the next five guests.\n";
+    lastClown = "Ronald";
+    continue;
+  }
 
-	// Pennywise asks: what's a sewer's favorite data type?
-	// Pennywise answers: Floats!
-	if (pennywiseAvailability) {
-		pennywiseAvailability = false;
-		matchingsDescription += "Pennywise w̺̞̠i̢͇͙l͇̞l͇͍̘ c͓͕̝o̡̠̞n̼̝s̡̞͎u͉̝͔m͚̪̞e̢͚̝ y̴̡̡͕͌̿́ó̸̢͇͚̾̕u̸̡̡͎͒͛r̸͕͓͖̈́͆͒ s̵̺̘̪͒͆̓o̵̡͚̟̽͆̚u̵̠͖̓͐͝l̸͓̘͇̐̓̚s̸̺͎̽̈́͆.";
-		lastClown = "Pennywise";
-		continue;
-	}
+  // Pennywise asks: what's a sewer's favorite data type?
+  // Pennywise answers: Floats!
+  if (pennywiseAvailability) {
+    pennywiseAvailability = false;
+    matchingsDescription += "Pennywise w̺̞̠i̢͇͙l͇̞l͇͍̘ c͓͕̝o̡̠̞n̼̝s̡̞͎u͉̝͔m͚̪̞e̢͚̝ y̴̡̡͕͌̿́ó̸̢͇͚̾̕u̸̡̡͎͒͛r̸͕͓͖̈́͆͒ s̵̺̘̪͒͆̓o̵̡͚̟̽͆̚u̵̠͖̓͐͝l̸͓̘͇̐̓̚s̸̺͎̽̈́͆.";
+    lastClown = "Pennywise";
+    continue;
+  }
 
-	throw new Error(`Oh no! We're out of clowns!`);
+  throw new Error(`Oh no! We're out of clowns!`);
 } while (guestCount > 0);
 
 if (clownsCount > 2) {
-	console.log("We've got a lot of clowns coming!");
+  console.log("We've got a lot of clowns coming!");
 }
 
 if (matchingsDescription.length()) {
-	console.log(`There will be ${clownsCount} clowns!\n`);
-	clownsole.log(matchingsDescription);
-	console.log(`The last clown is: ${lastClown.toUpperCase()}!`);
+  console.log(`There will be ${clownsCount} clowns!\n`);
+  clownsole.log(matchingsDescription);
+  console.log(`The last clown is: ${lastClown.toUpperCase()}!`);
 } else {
-	console.log("Nobody gets a clown. Terrible party. Goodbye.");
+  console.log("Nobody gets a clown. Terrible party. Goodbye.");
 }
 
 export {};
@@ -250,8 +250,6 @@ export {};
 ![image](https://user-images.githubusercontent.com/56298540/227455072-5aa043a8-f1b9-430b-9b62-249b1050c3b6.png)
 
 ### 📄 풀이과정
-
-
 
 <h4>▪ Type 'number' is not assignable to type 'boolean'.</h4>
 
@@ -299,7 +297,7 @@ let clownCount: number = 0;
 ```
 
 <h4>▪ Cannot find name 'clownsole'. Did 
-you mean 'console'?</h4> 
+you mean 'console'?</h4>
 
 `clownsole`은 처음 들어봅니다. 문제가 저를 바보로 아나봅니다. 재밌네요.
 
@@ -313,17 +311,18 @@ console.log(matchingsDescription);
 ```
 
 끝!
+
 ```ts
 Found 0 errors. Watching for file changes.
 ```
 
 📄 고쳐야 할 점
 
-
 ```ts
 let guestCount = 20;
 let clownsCount = 0;
 ```
+
 솔루션 코드를 보니 타입 애너테이션이 빠져있습니다.
 
 책을 읽을 때 값을 할당할 경우 자동으로 타입추론이 되기 때문에 타입 애너테이션을 설정하면 중복으로 타입설정과정이 진행되는 것과 마찬가지라 불필요한 과정이라고 한 기억이 납니다.
@@ -336,6 +335,6 @@ let clownsCount = 0;
 
 출처
 
-* [learning typescript](https://www.learningtypescript.com/the-type-system/)
+- [learning typescript](https://www.learningtypescript.com/the-type-system/)
 
->>>>>>> 77a4f00c530441fbccf39c465757916e013909fb
+> > > > > > > 77a4f00c530441fbccf39c465757916e013909fb
