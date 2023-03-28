@@ -9,7 +9,7 @@ sidebar:
 categories:
   - programmers-lv1
 tags:
-  - ["가운데 글자 가져오기", "삼항 연산자", "subString()"]
+  - ["filter", "스택", "큐"]
 last_modified_at: 2023-03-28T08:06:00-05:00
 ---
 
