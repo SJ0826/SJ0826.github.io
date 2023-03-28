@@ -9,7 +9,7 @@ sidebar:
 categories:
   - programmers-lv1
 tags:
-  - ["같은 숫자는 싫어"]
+  - ["filter", "스택", "큐"]
 last_modified_at: 2023-03-28T08:06:00-05:00
 ---
 
