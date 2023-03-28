@@ -9,7 +9,12 @@ sidebar:
 categories:
   - TypeScript
 tags:
-  - ["learning typescript", "type system", "clowning around"]
+  - [
+      "learning typescript",
+      "러닝 타입스크립트",
+      "type system",
+      "clowning around",
+    ]
 last_modified_at: 2023-03-23T08:06:00-05:00
 header:
   teaser: assets\image\learning typescript.PNG

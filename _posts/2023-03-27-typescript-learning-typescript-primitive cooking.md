@@ -9,7 +9,13 @@ sidebar:
 categories:
   - TypeScript
 tags:
-  - ["learning typescript", "Primitive Cooking", "유니언 타입", "리터럴 타입"]
+  - [
+      "learning typescript",
+      "러닝 타입스크립트",
+      "Primitive Cooking",
+      "유니언 타입",
+      "리터럴 타입",
+    ]
 last_modified_at: 2023-03-27T08:06:00-05:00
 header:
   teaser: assets\image\learning typescript.PNG
@@ -236,6 +242,8 @@ console.log(`Further down on the right is: ${adjacentRight ?? "nobody"}`);
 
 export {};
 ```
+
+### 📄 풀이 과정
 
 변수 선언부를 보니 초깃값이 설정되어 있지 않아, 타입이 `any`로 추론되고 있습니다.
 

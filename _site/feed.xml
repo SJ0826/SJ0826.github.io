@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-27T19:10:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Leaning Typescript 🦜] Primitive Cooking</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-primitive-cooking/" rel="alternate" type="text/html" title="[Leaning Typescript 🦜] Primitive Cooking" /><published>2023-03-27T00:00:00+09:00</published><updated>2023-03-27T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-primitive%20cooking</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-primitive-cooking/"><![CDATA[<h1 id="-primitive-cooking">🥗 Primitive Cooking</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-28T14:21:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">가운데 글자 가져오기</title><link href="http://localhost:4000/programmers-lv1/programmers-Import-Intermediate-Characters/" rel="alternate" type="text/html" title="가운데 글자 가져오기" /><published>2023-03-28T00:00:00+09:00</published><updated>2023-03-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-Import%20Intermediate%20Characters</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-Import-Intermediate-Characters/"><![CDATA[<h2 id="문제-">문제 📖</h2>
+
+<p>단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.</p>
+
+<ul>
+  <li>s는 길이가 1 이상, 100이하인 스트링입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">stringToArray</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">s</span><span class="p">];</span> <span class="c1">// 1</span>
+  <span class="kd">const</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 2</span>
+
+  <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 3</span>
+    <span class="k">return</span> <span class="nx">stringToArray</span><span class="p">[</span><span class="nx">target</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="nx">stringToArray</span><span class="p">[</span><span class="nx">target</span><span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">stringToArray</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nx">target</span><span class="p">)];</span> <span class="c1">// 4</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>문자열을 배열(<code class="language-plaintext highlighter-rouge">stringToArray</code>)로 바꾼다.</li>
+  <li>배열의 크기를 2로 나눈 수(<code class="language-plaintext highlighter-rouge">target</code>)를 구한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">stringToArray</code>가 짝수면 <code class="language-plaintext highlighter-rouge">target</code>과 직전의 값을 인덱스로 하는 값을 함께 반환한다.</li>
+  <li>아니면 <code class="language-plaintext highlighter-rouge">target</code>을 반내림해서 하나의 값만 반환한다.</li>
+</ol>
+
+<p>이번 문제는 간단해서 1분도 안되어 풀었지만, 오히려 이런 문제에서 고수는 드러나기 마련입니다.</p>
+
+<p>그리고 당연하게도 저는 아직 초보자임이 들통나버립니다.</p>
+
+<h2 id="-best-practice">🔨 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nf">substr</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="mi">2</span> <span class="p">:</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>왜 삼항연산자를 사용할 생각을 못했을까요.</p>
+
+<p>새로운 <code class="language-plaintext highlighter-rouge">subString()</code>이라는 자바스크립트 문법을 하나 알아갑니다.</p>
+
+<p>📌 <code class="language-plaintext highlighter-rouge">substr</code>이라는 자바스크립트 문법이 인상적이어서 가져왔는데 댓글을 보니 미래에 삭제되니 <code class="language-plaintext highlighter-rouge">subString()</code>으로 대체해서 사용하라고 알려주네요.</p>
+
+<h3 id="-substring">🔖 subString()</h3>
+
+<p><code class="language-plaintext highlighter-rouge">subString()</code>은 문자열을 인덱스를 기준으로 자를 수 있는 메소드 입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">str</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">시작</span> <span class="nx">인덱스</span><span class="p">,</span> <span class="nx">마지막</span> <span class="nf">인덱스</span><span class="p">(</span><span class="nx">옵션</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>시작 인덱스는 해당 인덱스를 포함하지만, 마지막 인덱스를 해당 인덱스까지 포함하지 않고 직전까지 잘라내기 때문에 헷갈리지 말아야 합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Mozilla</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+<span class="c1">// Expected output: "oz"</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+<span class="c1">// Expected output: "zilla"</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<span class="c1">// Expected output: ""</span>
+</code></pre></div></div>
+
+<p>만약, 마지막 인덱스보다 시작 인덱스가 크다면 알아서 순서를 바꿔서 메소드가 동작합니다.</p>
+
+<p>시작 인덱스와 마지막 인덱스가 같다면 빈 문자열을 반환합니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="가운데 글자 가져오기" /><category term="삼항 연산자" /><category term="subString()" /><summary type="html"><![CDATA[프로그래머스 Lv1. 가운데 글자 가져오기]]></summary></entry><entry><title type="html">[Leaning Typescript 🦜] Primitive Cooking</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-primitive-cooking/" rel="alternate" type="text/html" title="[Leaning Typescript 🦜] Primitive Cooking" /><published>2023-03-27T00:00:00+09:00</published><updated>2023-03-27T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-primitive%20cooking</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-primitive-cooking/"><![CDATA[<h1 id="-primitive-cooking">🥗 Primitive Cooking</h1>
 
 <blockquote>
   <p>Those pesky Java programmers are at it again!<br />
@@ -224,6 +301,8 @@ Oh, and I think there’s a typo in one of the names here too.</p>
 <span class="k">export</span> <span class="p">{};</span>
 </code></pre></div></div>
 
+<h3 id="-풀이-과정-2">📄 풀이 과정</h3>
+
 <p>변수 선언부를 보니 초깃값이 설정되어 있지 않아, 타입이 <code class="language-plaintext highlighter-rouge">any</code>로 추론되고 있습니다.</p>
 
 <p>변수 선언부에서 리터럴 타입으로 각각 타입을 설정합니다.</p>
@@ -242,7 +321,7 @@ Oh, and I think there’s a typo in one of the names here too.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">furtherLeft</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Angelica</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">furtherRight</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kimi</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Timmy</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">Chuckie</span><span class="dl">"</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
-</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="Primitive Cooking" /><category term="유니언 타입" /><category term="리터럴 타입" /><summary type="html"><![CDATA[책 learning typescript 3장 유니언과 리터럴 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">🍸 칵테일 러브 좀비</title><link href="http://localhost:4000/books/books-cocktail-love-jombie/" rel="alternate" type="text/html" title="🍸 칵테일 러브 좀비" /><published>2023-03-26T00:00:00+09:00</published><updated>2023-03-26T22:06:00+09:00</updated><id>http://localhost:4000/books/books-cocktail-love-jombie</id><content type="html" xml:base="http://localhost:4000/books/books-cocktail-love-jombie/"><![CDATA[<p><img src="https://image.yes24.com/goods/89913383/XL" alt="칵테일, 러브, 좀비" /></p>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="러닝 타입스크립트" /><category term="Primitive Cooking" /><category term="유니언 타입" /><category term="리터럴 타입" /><summary type="html"><![CDATA[책 learning typescript 3장 유니언과 리터럴 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">🍸 칵테일 러브 좀비</title><link href="http://localhost:4000/books/books-cocktail-love-jombie/" rel="alternate" type="text/html" title="🍸 칵테일 러브 좀비" /><published>2023-03-26T00:00:00+09:00</published><updated>2023-03-26T22:06:00+09:00</updated><id>http://localhost:4000/books/books-cocktail-love-jombie</id><content type="html" xml:base="http://localhost:4000/books/books-cocktail-love-jombie/"><![CDATA[<p><img src="https://image.yes24.com/goods/89913383/XL" alt="칵테일, 러브, 좀비" /></p>
 
 <p>▪ 제목: 칵테일, 러브, 좀비<br />
 ▪ 작가: 조예은<br />
@@ -580,7 +659,7 @@ you mean 'console'?</h4>
 
 <ul>
   <li><a href="https://www.learningtypescript.com/the-type-system/">learning typescript</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="러닝 타입스크립트" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
 <p>tsconfig.json 파일은 타입스크립트 프로젝트에서 타입스크립트에 관한 환경설정을 할 수 있는 <strong>타입스크립트 컴파일러 설정파일</strong>입니다.</p>
 
 <h2 id="-tsconfigjson-파일에서-사용하는-옵션">📄 tsconfig.json 파일에서 사용하는 옵션</h2>
@@ -1076,29 +1155,4 @@ you mean 'console'?</h4>
 
 <ul>
   <li><a href="https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/">캡틴 판교-이벤트 버블링, 이벤트 캡처 그리고 이벤트 위임까지</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="이벤트 버블링" /><category term="이벤트 캡처" /><category term="이벤트 위임" /></entry><entry><title type="html">🚨 Assignment to constant variable.</title><link href="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/" rel="alternate" type="text/html" title="🚨 Assignment to constant variable." /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-assignment%20to%20constant%20variable</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-assignment-to-constant-variable/"><![CDATA[<h2 id="-assignment-to-constant-variable">🚨 Assignment to constant variable.</h2>
-
-<p>자바스크립트 퀴즈를 푸는데 코드에 빨간 표시도 안났는데 에러가 떴다.</p>
-
-<p>직역하면 <strong>상수값을 변수에 할당</strong>했다는 뜻이다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">countBiggerThanTen</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nx">numbers</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">sum</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// TypeError: Assignment to constant variable.</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="원인">원인</h2>
-
-<p>이미 선언한 const 변수에 새로운 값을 할당했을 때 발생한다.</p>
-
-<p>위 코드에서 계속 값이 바뀌는 sum을 상수로 선언했다.</p>
-
-<h2 id="해결">해결</h2>
-
-<p>값을 재할당에서 사용할 수 있는 <code class="language-plaintext highlighter-rouge">let</code>으로 바꾸어 주었더니 정상적으로 동작했다.</p>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="에러" /><category term="상수" /><category term="변수" /></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="이벤트 버블링" /><category term="이벤트 캡처" /><category term="이벤트 위임" /></entry></feed>
