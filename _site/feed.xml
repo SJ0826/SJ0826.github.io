@@ -1,4 +1,457 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-28T18:10:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">같은 숫자는 싫어</title><link href="http://localhost:4000/programmers-lv1/programmers-I-don't-want-the-same-number/" rel="alternate" type="text/html" title="같은 숫자는 싫어" /><published>2023-03-28T00:00:00+09:00</published><updated>2023-03-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-I%20don&apos;t%20want%20the%20same%20number</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-I-don&apos;t-want-the-same-number/"><![CDATA[<h2 id="문제-">문제 📄</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-29T17:56:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">Sass (Syntactically Awesome StyleSheets)</title><link href="http://localhost:4000/css/css-Sass/" rel="alternate" type="text/html" title="Sass (Syntactically Awesome StyleSheets)" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/css/css-Sass</id><content type="html" xml:base="http://localhost:4000/css/css-Sass/"><![CDATA[<p>Sass의 수요가 높아지고, 많이들 사용하는 추세라 배워보고 싶었는데 생각보다 공부하고 프로젝트에 적용시키기가 어려웠습니다.</p>
+
+<p>프로젝트를 진행하는 경우에 Sass를 사용해 보고 싶었지만, 빌드된 CSS파일 관리를 어떻게 해야할지 몰라 결국 익숙한 styled-components로 사용하기도 했습니다.</p>
+
+<p>예전에 웹 공부를 시작할때 기초 강의로 도움을 받았던 유노코딩님의 Sass 강의가 열려 재밌게 공부하고 정리한 내용입니다.</p>
+
+<h2 id="-sass란-무엇인가">📄 Sass란 무엇인가?</h2>
+
+<p>Sass는 css를 효율적으로 작성하기 위한 CSS 전처리기 언어입니다.<br />
+전처리기는 ‘전에 처리한다’라고 이해하면 쉽습니다.<br />
+css가 되기 전에 Sass구문으로 작성해 처리하기 때문입니다.<br />
+css는 코드가 커질수록 유지보수가 복잡해집니다.<br />
+Sass는 이를 보완하기 위해 등장하였으며, 코드를 수정하거나 재사용하기에도 굉장히 편리합니다.</p>
+
+<p>정리하자면 <strong>CSS를 읽기도 좋고 쓰기에도 좋게 사용하기 위해 만들어진 CSS 전처리기 언어</strong>입니다.</p>
+
+<h3>▪ Sass 동작 방식</h3>
+
+<p>Sass의 동작 방식은 다음과 같습니다.</p>
+
+<ol>
+  <li>Sass 구문에 맞게 코드를 작성한다.</li>
+  <li>Sass 전처리기에 의해 CSS 코드로 변환(컴파일)된다.</li>
+  <li>변환을 마치고, CSS 파일이 생성된다.(빌드)</li>
+</ol>
+
+<h3>▪ SCSS 이란?</h3>
+
+<p>SCSS는 Sass의 하위 개념입니다.<br />
+Sass 구문과 동일한 기능을 제공하는데 사용하기 좋아 SCSS구문의 수요가 더 높은 편입니다.</p>
+
+<p>👾 scss로 작성한 코드</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$font-stack</span><span class="p">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nv">$primary-color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="m">100%</span> <span class="nv">$font-stack</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>👾 sass로 작성한 코드</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$font-stack</span><span class="p">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nv">$primary-color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+
+<span class="na">body</span><span class="err">
+  </span><span class="nl">font</span><span class="p">:</span> <span class="m">100%</span> <span class="nv">$font-stack</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p>Sass로 작성하나 SCSS로 작성하나 결과는 같지만 SCSS구문이 더 가독성있고 친숙한 느낌을 줍니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span> <span class="nt">결과</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="m">100%</span> <span class="err">$</span><span class="n">font-stack</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="err">$</span><span class="n">primary-color</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-sass-준비하기">📄 Sass 준비하기</h2>
+
+<h3>▪ Live Sass Compiler 설치하기</h3>
+
+<p>scss 코드의 변경 사항을 자동으로 감지해 저장할 때마다 새롭게 빌드를 진행하게 해주는 vscode extension입니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/228437241-00162cea-99bc-402e-9359-474c7749b04d.png" alt="image" /></p>
+
+<p>SCSS파일을 생성 후 vscode 하단에 있는 Live Sass Compiler 버튼을 클릭하면 실행됩니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/228437658-5e54cb94-2747-4e02-9b76-840eb01b87d1.png" alt="image" /></p>
+
+<h3>▪ 명령행 인터페이스 사용하기</h3>
+
+<p>명령행은 명령 프롬프트나 터미널을 뜻합니다.<br />
+명령행에서 명령어를 입력해 Sass 컴파일을 진행할 수 있습니다.<br />
+node.js가 설치되어 있어야 합니다..<br /></p>
+
+<p>✔ Sass 명령행 인터페이스 설치하기</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g sass
+
+// 설치 확인하기
+sass --version
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>✔ Sass파일을 css파일로 컴파일하기</p>
+
+<p>아래와 같이 컴파일을 진행하면 style폴더에 main.css 파일이 생성되어 컴파일됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sass style/main.scss:style/main.css // style/main.scss를 style/main.css로 컴파일한다.
+
+// live Sass Compiler처럼 자동으로 변경사항 감지하는 옵션 추가
+sass --watch  style/main.scss:style/main.css
+</code></pre></div></div>
+
+<p>css에서 기존 중괄호와 들여쓰기가 포함된 css스타일을 extend 스타일이라고 부릅니다.<br />
+extend 스타일은 가독성엔 좋지만 직접 css를 다루지 않는 경우엔 가독성이 필요가 없으니 파일이 큰 경우 용량에 부담이 됩니다.<br />
+<strong>compressed</strong>옵션은 그러한 단점을 보완해 코드를 공백없이 압축해 줍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sass --style compressed style/main.scss:style/main.css
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>✔ extend 스타일</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>✔ compressed 스타일</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>h1 {color: #fff;background-color: #ff0;}
+</code></pre></div></div>
+
+<h2 id="-주석과-중첩nestring">📄 주석과 중첩(nestring)</h2>
+
+<h3>▪ 주석</h3>
+
+<p>주석 1: 여러 줄 짜리 주석</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 여러 줄 짜리 주석*/</span>
+</code></pre></div></div>
+
+<p>주석 2: 한 줄 짜리 주석</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 한 줄 짜리 주석</span>
+</code></pre></div></div>
+
+<p>Scss에서 주석을 사용하는 방법은 두가지 입니다.<br />
+한 줄 짜리 주석은 컴파일된 css파일에 반영되지 않지만, 기존 css 주석은 최종 css 파일에도 반영된다는 차이점을 가지고 있습니다.</p>
+
+<h3>▪ 중첩 규칙 (nesting)</h3>
+
+<p>css를 작성하는 경우 선택자를 서로 다른 선언문에서 반복해야 하는 경우가 있습니다.<br />
+Sass에서는 선택자를 반복하지 않고 중첩해 사용할 수 있습니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+
+  <span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+
+    <span class="nt">span</span> <span class="p">{</span>
+      <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>컴파일 후 결과 파일에는 선택자가 따로 생성되어 반영된다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span> <span class="nt">p</span> <span class="nt">span</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>✔ 단축 속성 중첩</strong></p>
+
+<p>Sass의 단축 속성 중첩은 ‘네입스페이스 속성 중첩’이라고도 부릅니다.</p>
+
+<p>아래 코드는 font의 속성들을 중첩으로 정의한 예시입니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">family</span><span class="p">:</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="nl">size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="na">style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="na">weight</span><span class="p">:</span> <span class="m">900</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>✔ 상위 선택자 참조 (&amp;)</strong></p>
+
+<p>기호 <code class="language-plaintext highlighter-rouge">&amp;</code>사용하면 중첩된 선언문안에서 상위 선택자를 참조할 수 있습니다.<br />
+의사클래스를 선택하고자 할 때 유용합니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.first-btn</span> <span class="p">{</span>
+  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-변수">📄 변수</h2>
+
+<p>Sass에서는 <code class="language-plaintext highlighter-rouge">$</code>를 사용해 변수를 만들어 데이터를 저장하고 사용할 수 있습니다.<br />
+생성된 변수는 최종 CSS파일에서 표시되지 않습니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$main-color</span><span class="p">:</span> <span class="no">orange</span><span class="p">;</span>
+<span class="nv">$font-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+
+<span class="nt">button</span> <span class="p">{</span>
+  <span class="k">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$font-color</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$main-color</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$font-color</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$main-color</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$font-color</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$main-color</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>▪ SCSS 변수 사용 규칙</strong></p>
+
+<ol>
+  <li>개수 제한은 없지만, 가독성을 해치니 남용하지 않는다.</li>
+  <li>변수명에는 영문자, 숫자, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">_</code>를 사용하며 가능한 직관적인 이름을 사용한다.</li>
+</ol>
+
+<h2 id="-믹스인-mixin">📄 믹스인 (mixin)</h2>
+
+<p>믹스인은 사이트 전체에서 <strong>재사용할 스타일 그룹을 정의</strong>하기 위해 사용하는 문법입니다.</p>
+
+<h3>▪ 믹스인 정의하기</h3>
+
+<p>믹스인을 정의할 때 인자를 함께 정의하면, 믹스인 호출 시에 상황에 따라 값을 다르게 주어 사용할 수 있습니다.<br />
+인자를 정의할 때 기본값은 옵션으로 설정합니다.<br />
+정의된 믹스인은 최종 CSS파일에 포함되지 않습니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@mixin</span> <span class="nf">box-style</span><span class="p">(</span><span class="nv">$bg-color</span><span class="o">:</span> <span class="no">yellow</span><span class="o">,</span> <span class="nv">$font-color</span><span class="o">:</span> <span class="no">green</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$bg-color</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nv">$font-color</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3>▪ 믹스인 사용하기</h3>
+
+<p>정의된 믹스인을 사용하고자 할땐 <code class="language-plaintext highlighter-rouge">@include</code>지시어를 사용합니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.one</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">box-style</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nc">.two</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">box-style</span><span class="p">(</span><span class="no">purple</span><span class="o">,</span> <span class="no">yellow</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-content">📄 @content</h2>
+
+<p><code class="language-plaintext highlighter-rouge">@content</code>는 믹스인의 인자로 단순한 변수가 아닌 스타일 블록 전체를 넘길 때 사용하는 문법입니다.<br />
+인자와 스타일 블록을 모두 전달받는 형태의 믹스인을 정의할 수도 있습니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@mixin</span> <span class="nf">btn-style</span><span class="p">(</span><span class="nv">$hv-color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@content</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
+
+  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$hv-color</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.one</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">btn-style</span><span class="p">(</span><span class="no">orange</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.two</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">btn-style</span><span class="p">(</span><span class="no">green</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">teal</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-여러개의-scss파일을-하나의-css파일로-관리하기">📄 여러개의 .scss파일을 하나의 .css파일로 관리하기</h2>
+
+<p>여러개의 .scss파일이 우후죽순 생겨날 때 이를 관리하는 방법이 있습니다.<br />
+모든 scss파일을 하나의 css파일로 보내버리는 것이 아니라, <br />
+하나의 main.scss파일에서 각 기능을 담당하는 scss파일을 @import해서 사용하는 방법입니다.</p>
+
+<p>이때 주의해야할 점은 mains.scss파일이 아닌 scss파일의 이름은 <strong>언더바</strong>로 시작해야 컴파일 대상에서 제외된다는 사실입니다.&lt;/br&gt;
+@import지시자를 사용할 때는 언더바를 제거하고 사용합니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//main.scss</span>
+
+<span class="k">@import</span> <span class="s2">"variables.scss"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">"mixins.scss"</span><span class="p">;</span>
+
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">box</span><span class="p">(</span><span class="nv">$main-color</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 CSS파일을 하나로 만들게 된다면</p>
+
+<ul>
+  <li>HTML과 CSS 문서 간 연결 횟수가 줄어 웹사이트 성능 개선에 도움이 되고</li>
+  <li>scss파일을 기능별로 분리할 수 있어 보기도 좋고 재사용하기도 좋습니다.</li>
+</ul>
+
+<h2 id="-스타일-중복을-피하는-방법-extend">📄 스타일 중복을 피하는 방법 @extend</h2>
+
+<p>@extend지시자는 기존의 스타일을 확장해서 다른 클래스에서 쓰고 싶을 때 사용합니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.message</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="mh">#5f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.bad-message</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.message</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="mh">#f05</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>mixin과 비슷하지만, 저는 mixin은 규격을 설정하는 것이고 extend는 확장을 위해 사용하는 것이라고 이해했습니다.</p>
+
+<p>실제로 컴파일된 결과도 mixin과 다릅니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.message</span><span class="o">,</span>
+<span class="nc">.bad-message</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#5f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.bad-message</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#f05</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>@exclue를 사용해 컴파일된 결과를 보면 속성들을 사용하고 있는 클래스 네임이 쉼표와 함께 열거되고 있는 것을 확인할 수 있습니다.</p>
+
+<p><strong>유령 클래스</strong>(공식 명칭은 아닙니다.)를 사용해 컴파일 되었을 때 기존 클래스는 노출되지 않으면서 재사용한 클래스만 보여주는 방법도 있습니다.<br />
+유령 클래스는 <code class="language-plaintext highlighter-rouge">%</code>기호를 사용합니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">%message</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="mh">#5f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.bad-message</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nv">%message</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="mh">#f05</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>컴파일 된 결과를 확인하면 유령클래스의 이름은 노출되지 않고 있는 것을 확인할 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.bad-message</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#5f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.bad-message</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#f05</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-조건문을-사용해-코드의-흐름-제어하기">📄 조건문을 사용해 코드의 흐름 제어하기</h2>
+
+<p>Sass에서는 <code class="language-plaintext highlighter-rouge">@if</code> 지시자를 이용해 조건을 설정할 수 있습니다.&lt;/br&gt;
+아래 예시는 mixin안에 조건문을 설정한 경우입니다.&lt;/br&gt;
+<code class="language-plaintext highlighter-rouge">@else</code> 지시자를 사용하면 <code class="language-plaintext highlighter-rouge">@if</code>문이 불만족할 경우의 속성을 설정할 수 있습니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@mixin</span> <span class="nf">select-color</span><span class="p">(</span><span class="nv">$color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@if</span> <span class="nv">$color</span> <span class="o">==</span> <span class="no">blue</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">select-color</span><span class="p">((</span><span class="no">red</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Sass에서 조건문은 웹사이트를 개발하는 단계보다는 라이브러리를 만드는 경우에 더 자주 사용된다고 합니다.</p>
+
+<h2 id="-미디어-쿼리">📄 미디어 쿼리</h2>
+
+<p>미디어 쿼리는 반응형 웹을 만들 때 사용되는 필수 문법입니다.<br />
+Sass에서 미디어 쿼리를 사용할 때 문자열을 변수로 사용하는 경우가 있는데 이때 문자열 삽입용 기호인 <code class="language-plaintext highlighter-rouge">#{}</code>를 사용해야 합니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$width-small</span><span class="p">:</span> <span class="s2">"all and (min-width: 300px)"</span><span class="p">;</span>
+<span class="nv">$width-medium</span><span class="p">:</span> <span class="s2">"all and (min-width: 600px)"</span><span class="p">;</span>
+<span class="nv">$width-large</span><span class="p">:</span> <span class="s2">"all and (min-width: 900px)"</span><span class="p">;</span>
+
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+
+  <span class="k">@media</span> <span class="si">#{</span><span class="nv">$width-small</span><span class="si">}</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">cadetblue</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">@media</span> <span class="si">#{</span><span class="nv">$width-medium</span><span class="si">}</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">orange</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">@media</span> <span class="si">#{</span><span class="nv">$width-large</span><span class="si">}</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">purple</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li><a href="https://www.inflearn.com/course/%EC%B4%88%EB%B3%B4%EC%9E%90-%EC%82%AC%EC%8A%A4-%EA%B8%B0%EC%B4%88%EA%B0%95%EC%9D%98-%ED%81%B4%EB%A1%A0/dashboard">유노코딩</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="CSS" /><category term="Sass" /></entry><entry><title type="html">같은 숫자는 싫어</title><link href="http://localhost:4000/programmers-lv1/programmers-I-don't-want-the-same-number/" rel="alternate" type="text/html" title="같은 숫자는 싫어" /><published>2023-03-28T00:00:00+09:00</published><updated>2023-03-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-I%20don&apos;t%20want%20the%20same%20number</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-I-don&apos;t-want-the-same-number/"><![CDATA[<h2 id="문제-">문제 📄</h2>
 
 <p>배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져 있습니다. 이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다. 단, 제거된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지해야 합니다. 예를 들면,</p>
 
@@ -1016,121 +1469,4 @@ you mean 'console'?</h4>
 
 <p>분명 코드를 작성할 때는 최선인 것 같았는데 지나고 보니 아닌 경우가 꽤 많다.</p>
 
-<p>완성된 프로젝트라 하더라도 다시 보고 리팩토링을 계속 해주는 것이 좋겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="redux-toolkit" /><category term="데이터구조" /><summary type="html"><![CDATA[redux에서 관리하는 state를 객체로 다시 구조화]]></summary></entry><entry><title type="html">완주하지 못한 선수</title><link href="http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/" rel="alternate" type="text/html" title="완주하지 못한 선수" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-notcolpletedplayer/"><![CDATA[<h2 id="문제-">문제 📖</h2>
-
-<p>수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.</p>
-
-<p>마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때, 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.</p>
-
-<ul>
-  <li>마라톤 경기에 참여한 선수의 수는 1명 이상 100,000명 이하입니다.</li>
-  <li>completion의 길이는 participant의 길이보다 1 작습니다.</li>
-  <li>참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어져 있습니다.</li>
-  <li>참가자 중에는 동명이인이 있을 수 있습니다.</li>
-</ul>
-
-<h2 id="나의-풀이-1-️">나의 풀이 #1 🙋‍♀️</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">participant</span><span class="p">,</span> <span class="nx">completion</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">setParticipant</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">(</span><span class="nx">participant</span><span class="p">);</span> <span class="c1">// 1</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">setParticipant</span><span class="p">.</span><span class="nx">size</span> <span class="o">&lt;</span> <span class="nx">participant</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 2</span>
-    <span class="kd">const</span> <span class="nx">notCompletion</span> <span class="o">=</span> <span class="nx">participant</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">setParticipant</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">item</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">setParticipant</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-    <span class="k">return</span> <span class="nx">notCompletion</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-  <span class="p">}</span>
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">participant</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">person</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">completion</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">person</span><span class="p">));</span> <span class="c1">// 3</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">Set</code>객체를 사용해서 <code class="language-plaintext highlighter-rouge">participant</code> 중복요소를 제거한다.</li>
-  <li>중복요소를 제거한 <code class="language-plaintext highlighter-rouge">participant</code> 객체(<code class="language-plaintext highlighter-rouge">setParticipant</code>)의 크기가 <code class="language-plaintext highlighter-rouge">participant</code>보다 작다면, 동명이인이 있다는 뜻이므로 <code class="language-plaintext highlighter-rouge">filter</code>함수를 사용해 완주하지 못한 선수의 이름을 구한다.</li>
-  <li>동명이인이 없는 경우 바로 완주하지 못한 선수의 이름을 구한다.</li>
-</ol>
-
-<p>이 코드를 제출하며 정확성 체크는 통과하지만 효율성 체크는 통과하지 못한다.</p>
-
-<p>효율성까지 테스트하는 문제는 처음이라 시간이 좀 걸려서 코드를 고쳤다.</p>
-
-<h2 id="나의-풀이-2-️">나의 풀이 #2 🙋‍♀️</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">participant</span><span class="p">,</span> <span class="nx">completion</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">sortedParticipant</span> <span class="o">=</span> <span class="nx">participant</span><span class="p">.</span><span class="nf">sort</span><span class="p">();</span> <span class="c1">// 1</span>
-  <span class="kd">const</span> <span class="nx">sortedCompletion</span> <span class="o">=</span> <span class="nx">completion</span><span class="p">.</span><span class="nf">sort</span><span class="p">();</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">sortedParticipant</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 2</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">sortedParticipant</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">sortedCompletion</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
-      <span class="c1">// 3</span>
-      <span class="k">return</span> <span class="nx">sortedParticipant</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>참가자 배열과 완주자 배열의 문자열을 abc차순으로 정리한다.</li>
-  <li><code class="language-plaintext highlighter-rouge">for</code>문을 사용해서 참가자 수만큼 반복문을 실행한다.</li>
-  <li>순차가 정리된 배열끼리 이름을 비교하게 되고, 이름이 같지 않으면 해당 이름을 정답으로 제출한다.</li>
-</ol>
-
-<p>효율성 체크는 수행 시간과 메모리를 기준으로 평가된다.</p>
-
-<p>코드의 시간복잡도와 저장된 메모리를 고려해야 통과할 수 있다.</p>
-
-<p>반복문을 사용하는 경우에는 원하는 값이 도출되었을 때, 바로 반복문을 종료시킬 수 있어야 효율성이 증가한다.</p>
-
-<p>그런면에서 배열에 <code class="language-plaintext highlighter-rouge">for...in</code>을 사용하는 것은 좋지 않다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">for...in</code>은 모든 값을 조회해 효율성을 떨어뜨리기 때문이다.</p>
-
-<h2 id="best-practice-">Best Practice 👍</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">participant</span><span class="p">,</span> <span class="nx">completion</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">();</span> <span class="c1">// 1</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">participant</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">participant</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span>
-      <span class="nx">b</span> <span class="o">=</span> <span class="nx">completion</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-
-    <span class="nx">map</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 2</span>
-    <span class="nx">map</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 3</span>
-  <span class="p">}</span> <span class="c1">// 4</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">]</span> <span class="k">of</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 5</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">v</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nx">k</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="dl">"</span><span class="s2">nothing</span><span class="dl">"</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>해시의 컨셉을 정확히 접목시킨 풀이이다.</p>
-
-<p>해시의 개념은 알고 있었지만 프로그래머스에서 이렇게 접목시킬 생각은 못했다.</p>
-
-<ol>
-  <li>우선 <code class="language-plaintext highlighter-rouge">Map</code>객체를 생성한다.</li>
-  <li>참가자 수만큼 반복문을 돌려 <code class="language-plaintext highlighter-rouge">map</code>에 키는 참가자 이름으로, 값은 기존에 1을 더해준다.</li>
-  <li>map에 완주자 이름의 키에 해당되는 값을 <code class="language-plaintext highlighter-rouge">-1</code>만큼 빼준다.</li>
-  <li>처음 <code class="language-plaintext highlighter-rouge">for</code>문을 나온 <code class="language-plaintext highlighter-rouge">map</code>의 키는 참가자이름이고 값은 0 또는 1이 된다.</li>
-  <li>완주하지 못한 참가자는 1의 값을 가지고 있으므로 해당 key의 값을 답으로 제출한다.</li>
-  <li>동명이인이 있을 경우에는 해당 이름의 값에 두번 1이 더해지고 한번 1이 빼지므로 마찬가지로 1이 된다.</li>
-</ol>
-
-<p>풀이를 정리하자면 다음과 같게 된다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/223395946-3b217984-2284-408b-916f-8c85a22952fe.png" alt="image" /></p>
-
-<p><code class="language-plaintext highlighter-rouge">sort</code>로 풀면 <strong>O(NlogN)</strong>의 시간이 걸리지만 해시로 풀면 <strong>O(N)</strong>의 시간 복잡도를 가진다.</p>
-
-<p>다음 해시 문제를 풀때는 꼭 <code class="language-plaintext highlighter-rouge">Map</code>을 사용해서 답을 낼 것이다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="완주하지 못한 선수" /><category term="해시" /><summary type="html"><![CDATA[프로그래머스 Lv1. 완주하지 못한 선수]]></summary></entry></feed>
+<p>완성된 프로젝트라 하더라도 다시 보고 리팩토링을 계속 해주는 것이 좋겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="redux-toolkit" /><category term="데이터구조" /><summary type="html"><![CDATA[redux에서 관리하는 state를 객체로 다시 구조화]]></summary></entry></feed>
