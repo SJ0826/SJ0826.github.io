@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-29T17:56:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">Sass (Syntactically Awesome StyleSheets)</title><link href="http://localhost:4000/css/css-Sass/" rel="alternate" type="text/html" title="Sass (Syntactically Awesome StyleSheets)" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/css/css-Sass</id><content type="html" xml:base="http://localhost:4000/css/css-Sass/"><![CDATA[<p>Sass의 수요가 높아지고, 많이들 사용하는 추세라 배워보고 싶었는데 생각보다 공부하고 프로젝트에 적용시키기가 어려웠습니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-30T15:02:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">👩‍💻 개발자의 글쓰기</title><link href="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/" rel="alternate" type="text/html" title="👩‍💻 개발자의 글쓰기" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98%20%EA%B8%80%EC%93%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/228564066-8ebc1f8d-a344-4bc5-8777-2dc39bd2a745.png" alt="image" /></p>
+
+<div style="background: #EEE9DA; padding: 1em">
+▪ 제목: 개발자의 글쓰기<br />
+▪ 작가: 김철수<br />
+▪ 출판사: 위키북스<br />
+▪ 독서 기간: 2023/03/29 ~ ing<br />
+▪ 읽은 방식: 종이책
+</div>
+
+<hr />
+
+<p>원래 독서기록을 쓸 때는 자유형식으로 쓰지만, 이 책은 글 쓰는 스킬을 정리해두면 두고두고 볼 것 같아 정리합니다. 전체 내용을 정리한 것이 아니라 글 작성자에게 필요한 개념을 주로 정리했습니다.</p>
+
+<h2 id="-1장-개발자가-알아야-할-글쓰기-기본">📄 1장 개발자가 알아야 할 글쓰기 기본</h2>
+
+<h3>문장을 구조화 하는 법</h3>
+
+<p>핵심을 말하고 부가 설명을 해라.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나는 김수진이다. 글쓰기를 좋아하는 웹 개발자 취준생이다.
+</code></pre></div></div>
+
+<h3>서술식, 개조식, 도식의 차이</h3>
+
+<ul>
+  <li>서술식
+    <ul>
+      <li>~다.</li>
+      <li>소설, 신문, 개발 가이드문서</li>
+    </ul>
+  </li>
+  <li>개조식
+    <ul>
+      <li>명사형 종결어미</li>
+      <li>릴리스 문서나 장애 보고서</li>
+      <li>글머리 기호를 활용</li>
+    </ul>
+  </li>
+  <li>도식
+    <ul>
+      <li>중복이나 누락이 많은 경우</li>
+      <li>각 항목이나 사항의 관계를 명확히 규정하고 싶은 경우</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>변수나 함수 영어 단어 선택 팁</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">create</code>: 정해진 틀이 없을 때 틀을 만들기 위해 사용</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">resister</code>: 정해진 틀에 값을 넣을 때 사용.</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">change</code>: 단순히 내용을 바꾸는 경우에 사용</li>
+  <li><code class="language-plaintext highlighter-rouge">modify</code>: 잘못된 것을 바로잡을 때 사용</li>
+  <li><code class="language-plaintext highlighter-rouge">revise</code>: 기존에 없던 새로운 정보나 아이디어를 덧붙일 때 사용</li>
+</ul>
+
+<h2 id="-2장-개발-시간을-줄여주는-이름-짓기와-주석-쓰기">📄 2장 개발 시간을 줄여주는 이름 짓기와 주석 쓰기</h2>
+
+<p>책 읽는 중… 📖</p>]]></content><author><name>Sujin Kim</name></author><category term="books" /><category term="개발자의 글쓰기" /><category term="IT서적" /><category term="김철수" /><category term="위키북스" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Sass (Syntactically Awesome StyleSheets)</title><link href="http://localhost:4000/css/css-Sass/" rel="alternate" type="text/html" title="Sass (Syntactically Awesome StyleSheets)" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/css/css-Sass</id><content type="html" xml:base="http://localhost:4000/css/css-Sass/"><![CDATA[<p>Sass의 수요가 높아지고, 많이들 사용하는 추세라 배워보고 싶었는데 생각보다 공부하고 프로젝트에 적용시키기가 어려웠습니다.</p>
 
 <p>프로젝트를 진행하는 경우에 Sass를 사용해 보고 싶었지만, 빌드된 CSS파일 관리를 어떻게 해야할지 몰라 결국 익숙한 styled-components로 사용하기도 했습니다.</p>
 
@@ -447,10 +508,17 @@ Sass에서 미디어 쿼리를 사용할 때 문자열을 변수로 사용하는
 <span class="p">}</span>
 </code></pre></div></div>
 
+<hr />
+
 <h2 id="출처">출처</h2>
 
 <ul>
-  <li><a href="https://www.inflearn.com/course/%EC%B4%88%EB%B3%B4%EC%9E%90-%EC%82%AC%EC%8A%A4-%EA%B8%B0%EC%B4%88%EA%B0%95%EC%9D%98-%ED%81%B4%EB%A1%A0/dashboard">유노코딩</a></li>
+  <li>
+    <p><a href="https://www.inflearn.com/course/%EC%B4%88%EB%B3%B4%EC%9E%90-%EC%82%AC%EC%8A%A4-%EA%B8%B0%EC%B4%88%EA%B0%95%EC%9D%98-%ED%81%B4%EB%A1%A0/dashboard">유노코딩</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/SJ0826/jamong-talk">실습을 진행한 깃허브 레파지토리</a></p>
+  </li>
 </ul>]]></content><author><name>Sujin Kim</name></author><category term="CSS" /><category term="Sass" /></entry><entry><title type="html">같은 숫자는 싫어</title><link href="http://localhost:4000/programmers-lv1/programmers-I-don't-want-the-same-number/" rel="alternate" type="text/html" title="같은 숫자는 싫어" /><published>2023-03-28T00:00:00+09:00</published><updated>2023-03-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-I%20don&apos;t%20want%20the%20same%20number</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-I-don&apos;t-want-the-same-number/"><![CDATA[<h2 id="문제-">문제 📄</h2>
 
 <p>배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져 있습니다. 이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다. 단, 제거된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지해야 합니다. 예를 들면,</p>
@@ -1394,79 +1462,4 @@ you mean 'console'?</h4>
 
 <p>setState를 한번만 호출해서 비동기 상황을 발생시키지 않게 고쳤고, 문제는 해결되었다.<br />
 비동기에 관한 삽질은 api통신을 할 때만 생길줄 알았던 내 안일한 생각이 가장 큰 문제였다.<br />
-안다고 다 아는게 아니라는 것을 다시 한번 뇌에 새기게 되었다.</p>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="useState" /><category term="비동기" /><summary type="html"><![CDATA[redux에서 관리하는 state를 객체로 다시 구조화]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)</title><link href="http://localhost:4000/coding-swamp/projects-coding-swamp/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/projects-coding-swamp</id><content type="html" xml:base="http://localhost:4000/coding-swamp/projects-coding-swamp/"><![CDATA[<h2 id="-리팩토링-이유">❔ 리팩토링 이유</h2>
-
-<p>좋은 코드는 코드만 보고 어떤 일을 하는지 알 수 있는 코드라고 배웠다.</p>
-
-<p>하지만 나의 코드는 코드만 보고 무슨일을 하는 지 알 수 없었다.</p>
-
-<h3 id="기존의-memberform-데이터-구조">기존의 MemberForm 데이터 구조</h3>
-
-<h4 id="-storemembermemberformslicets">💾 store/member/memberFormSlice.ts</h4>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">initialMemberForm</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">value</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">imageFile</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">emailAuth</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">isValidate</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
-  <span class="p">],</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>데이터 구조가 이렇게 되어있으면 값에 접근할 때 값의 이름이 아니라 <code class="language-plaintext highlighter-rouge">index</code>로 접근해야 했다.</p>
-
-<p>처음 프로젝트를 시작할때 <code class="language-plaintext highlighter-rouge">File</code> 타입에 <code class="language-plaintext highlighter-rouge">null</code>이 할당되지 않아 객체 안에 굳이 <code class="language-plaintext highlighter-rouge">key</code>라는 이름의 <code class="language-plaintext highlighter-rouge">key</code>를 생성했다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">imageFile</span><span class="p">:</span> <span class="nx">File</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// error</span>
-</code></pre></div></div>
-
-<p>아마 내가 ‘imageFile’의 타입을 오로지 File로만 했던 모양인데 시간이 지나고 보니 코드가 굉장히 가독성이 없다는 것이 보였다.</p>
-
-<h4 id="-componentssignupform">💾 Components/SignUpForm</h4>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span><span class="p">:</span> <span class="nx">UserParam</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">imageFile</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">value</span><span class="p">,</span>
-  <span class="na">username</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
-  <span class="na">email</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
-  <span class="na">password</span><span class="p">:</span> <span class="nx">userData</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nx">value</span><span class="o">!</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">userData</code>에 <code class="language-plaintext highlighter-rouge">index</code>로 접근하기 때문에 해당 변수가 어떤 값을 가지고 있는지 알 수 없다.</p>
-
-<p>이를 고치기 위해선 memberForm의 state 구조를 변경해야 했다.</p>
-
-<h2 id="-리팩토링-결과">❕ 리팩토링 결과</h2>
-
-<h4 id="-storemembermemberformslicets-1">💾 store/member/memberFormSlice.ts</h4>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">initialMemberForm</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">memberForm</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">imageFile</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="na">username</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-    <span class="na">email</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-    <span class="na">password</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-  <span class="p">}</span> <span class="k">as</span> <span class="nb">Omit</span><span class="o">&lt;</span><span class="nx">MemberFormParam</span><span class="p">,</span> <span class="dl">"</span><span class="s2">profileUrl</span><span class="dl">"</span> <span class="o">&amp;</span> <span class="dl">"</span><span class="s2">imageUrl</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="na">emailAuth</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="na">isEditMode</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<h4 id="-componentssignupform-1">💾 Components/SignUpForm</h4>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span><span class="p">:</span> <span class="nx">UserParam</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">imageFile</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">imageFile</span><span class="p">,</span>
-  <span class="na">username</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
-  <span class="na">email</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
-  <span class="na">password</span><span class="p">:</span> <span class="nx">memberForm</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>값에 이름으로 접근하니 어떤 데이터가 할당되는지 알 수 있게 되었다.</p>
-
-<h2 id="-나의-생각">💬 나의 생각</h2>
-
-<p>분명 코드를 작성할 때는 최선인 것 같았는데 지나고 보니 아닌 경우가 꽤 많다.</p>
-
-<p>완성된 프로젝트라 하더라도 다시 보고 리팩토링을 계속 해주는 것이 좋겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="redux-toolkit" /><category term="데이터구조" /><summary type="html"><![CDATA[redux에서 관리하는 state를 객체로 다시 구조화]]></summary></entry></feed>
+안다고 다 아는게 아니라는 것을 다시 한번 뇌에 새기게 되었다.</p>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="useState" /><category term="비동기" /><summary type="html"><![CDATA[redux에서 관리하는 state를 객체로 다시 구조화]]></summary></entry></feed>
