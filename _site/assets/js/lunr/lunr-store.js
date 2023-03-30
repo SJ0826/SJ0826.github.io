@@ -646,4 +646,10 @@ var store = [{
         "tags": ["Sass"],
         "url": "/css/css-Sass/",
         "teaser": null
+      },{
+        "title": "x만큼 간격이 있는 n개의 숫자",
+        "excerpt":"📄 문제   함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.      x는 -10000000 이상, 10000000 이하인 정수입니다.   n은 1000 이하인 자연수입니다.   🙋‍♀️ 나의 풀이   function solution(x, n) {   let answer = []; // 1    for (let i = 1; i &lt; n + 1; i++) {     answer.push(x * i); // 2   }   return answer; }      정답으로 반환할 배열 answer을 생성합니다.   for문을 돌려 배열 내장함수인 push를 이용해 배열에 x만큼 더해준 값을 삽입합니다.   👍 Best Practice   function solution(x, n) {   return Array(n)     .fill(x)     .map((v, i) =&gt; (i + 1) * v); }   아예 미리 x로 채워진 배열을 생성후 map을 이용해 값을 변경해준 답안입니다.   한줄로 훨씬 깔끔하지만 성능은 for문으로 하는게 더 좋다고 합니다.   문제 출처      프로그래머스  ","categories": ["programmers-lv1"],
+        "tags": ["x만큼 간격이 있는 n개의 숫자"],
+        "url": "/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/",
+        "teaser": null
       }]
