@@ -72,3 +72,7 @@ function numPY(s) {
 ```
 
 이렇게 되면 `undefined === undefined`가 되어 `true`를 반환해 에러없이 통과할 수 있습니다.
+
+## 문제 출처
+
+- 프로그래머스

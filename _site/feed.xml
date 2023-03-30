@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-30T15:54:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">x만큼 간격이 있는 n개의 숫자</title><link href="http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/" rel="alternate" type="text/html" title="x만큼 간격이 있는 n개의 숫자" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC%20%EA%B0%84%EA%B2%A9%EC%9D%B4%20%EC%9E%88%EB%8A%94%20n%EA%B0%9C%EC%9D%98%20%EC%88%AB%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-30T16:25:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">x만큼 간격이 있는 n개의 숫자</title><link href="http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/" rel="alternate" type="text/html" title="x만큼 간격이 있는 n개의 숫자" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC%20%EA%B0%84%EA%B2%A9%EC%9D%B4%20%EC%9E%88%EB%8A%94%20n%EA%B0%9C%EC%9D%98%20%EC%88%AB%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.</p>
 
@@ -41,7 +41,65 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="x만큼 간격이 있는 n개의 숫자" /><summary type="html"><![CDATA[프로그래머스 Lv1. x만큼 간격이 있는 n개의 숫자]]></summary></entry><entry><title type="html">[Lv 1] 문자열 내 p와 y의 개수</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4-p%EC%99%80-y%EC%9D%98-%EA%B0%9C%EC%88%98/" rel="alternate" type="text/html" title="[Lv 1] 문자열 내 p와 y의 개수" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%20p%EC%99%80%20y%EC%9D%98%20%EA%B0%9C%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4-p%EC%99%80-y%EC%9D%98-%EA%B0%9C%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="x만큼 간격이 있는 n개의 숫자" /><summary type="html"><![CDATA[프로그래머스 Lv1. x만큼 간격이 있는 n개의 숫자]]></summary></entry><entry><title type="html">[Lv 2] 최솟값 만들기</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%B5%9C%EC%86%9F%EA%B0%92-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 2] 최솟값 만들기" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%B5%9C%EC%86%9F%EA%B0%92%20%EB%A7%8C%EB%93%A4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%B5%9C%EC%86%9F%EA%B0%92-%EB%A7%8C%EB%93%A4%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>길이가 같은 배열 A, B 두개가 있습니다. 각 배열은 자연수로 이루어져 있습니다.
+배열 A, B에서 각각 한 개의 숫자를 뽑아 두 수를 곱합니다. 이러한 과정을 배열의 길이만큼 반복하며, 두 수를 곱한 값을 누적하여 더합니다. 이때 최종적으로 누적된 값이 최소가 되도록 만드는 것이 목표입니다. (단, 각 배열에서 k번째 숫자를 뽑았다면 다음에 k번째 숫자는 다시 뽑을 수 없습니다.)</p>
+
+<p>예를 들어 A = [1, 4, 2] , B = [5, 4, 4] 라면</p>
+
+<ul>
+  <li>A에서 첫번째 숫자인 1, B에서 첫번째 숫자인 5를 뽑아 곱하여 더합니다. (누적된 값 : 0 + 5(1x5) = 5)</li>
+  <li>A에서 두번째 숫자인 4, B에서 세번째 숫자인 4를 뽑아 곱하여 더합니다. (누적된 값 : 5 + 16(4x4) = 21)</li>
+  <li>A에서 세번째 숫자인 2, B에서 두번째 숫자인 4를 뽑아 곱하여 더합니다. (누적된 값 : 21 + 8(2x4) = 29)</li>
+</ul>
+
+<p>즉, 이 경우가 최소가 되므로 29를 return 합니다.</p>
+
+<p>배열 A, B가 주어질 때 최종적으로 누적된 최솟값을 return 하는 solution 함수를 완성해 주세요.</p>
+
+<ul>
+  <li>배열 A, B의 크기 : 1,000 이하의 자연수</li>
+  <li>배열 A, B의 원소의 크기 : 1,000 이하의 자연수</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">newA</span> <span class="o">=</span> <span class="nx">A</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">newB</span> <span class="o">=</span> <span class="nx">B</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">A</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">newA</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">newB</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이번 문제를 통해 숫자를 오름차순, 내림차순 하는 법을 공부했습니다.</p>
+
+<p>곱셈한 값의 누적결과가 최솟값이 되려면 <code class="language-plaintext highlighter-rouge">가장 작은 수 x 가장 큰 수</code>가 되어야 하기 때문입니다.</p>
+
+<p>따라서 A는 오름차순으로 B는 내림차순으로 정렬해 인덱스가 일치하는 값끼리 곱셈해주었습니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">A</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="nx">B</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">A</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">total</span><span class="p">,</span> <span class="nx">val</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">total</span> <span class="o">+</span> <span class="nx">val</span> <span class="o">*</span> <span class="nx">B</span><span class="p">[</span><span class="nx">idx</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">reduce</code>메소드를 사용한 풀이입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">reduce</code>메소드를 배열 하나에만 적용할 수 있다는 생각에 시도하지 않았는데 이렇게도 접근이 가능하네요 👍</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="최솟값 만들기" /><category term="reduce" /><summary type="html"><![CDATA[숫자 내림차순 오름차순 하는 법 by sort()]]></summary></entry><entry><title type="html">[Lv 1] 문자열 내 p와 y의 개수</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4-p%EC%99%80-y%EC%9D%98-%EA%B0%9C%EC%88%98/" rel="alternate" type="text/html" title="[Lv 1] 문자열 내 p와 y의 개수" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%20p%EC%99%80%20y%EC%9D%98%20%EA%B0%9C%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4-p%EC%99%80-y%EC%9D%98-%EA%B0%9C%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 ‘p’의 개수와 ‘y’의 개수를 비교해 같으면 True, 다르면 False를 return 하는 solution를 완성하세요. ‘p’, ‘y’ 모두 하나도 없는 경우는 항상 True를 리턴합니다. 단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다.</p>
 
@@ -97,7 +155,13 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>이렇게 되면 <code class="language-plaintext highlighter-rouge">undefined === undefined</code>가 되어 <code class="language-plaintext highlighter-rouge">true</code>를 반환해 에러없이 통과할 수 있습니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="문자열 내 p와 y의 개수" /><category term="match" /><summary type="html"><![CDATA[문자열에서 특정 문자 개수 구하기]]></summary></entry><entry><title type="html">👩‍💻 개발자의 글쓰기</title><link href="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/" rel="alternate" type="text/html" title="👩‍💻 개발자의 글쓰기" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98%20%EA%B8%80%EC%93%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/228564066-8ebc1f8d-a344-4bc5-8777-2dc39bd2a745.png" alt="image" /></p>
+<p>이렇게 되면 <code class="language-plaintext highlighter-rouge">undefined === undefined</code>가 되어 <code class="language-plaintext highlighter-rouge">true</code>를 반환해 에러없이 통과할 수 있습니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="문자열 내 p와 y의 개수" /><category term="match" /><summary type="html"><![CDATA[문자열에서 특정 문자 개수 구하기]]></summary></entry><entry><title type="html">👩‍💻 개발자의 글쓰기</title><link href="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/" rel="alternate" type="text/html" title="👩‍💻 개발자의 글쓰기" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98%20%EA%B8%80%EC%93%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/228564066-8ebc1f8d-a344-4bc5-8777-2dc39bd2a745.png" alt="image" /></p>
 
 <div style="background: #EEE9DA; padding: 1em">
 ▪ 제목: 개발자의 글쓰기<br />
@@ -1094,325 +1158,4 @@ Oh, and I think there’s a typo in one of the names here too.</p>
 
 <p>습지는 귀신이 나오지만 무섭지 않다. 오히려 긴장감 넘치는 책 분위기 속에서 살짝 긴장을 풀고 차분하게 읽을 수 있는 분위기를 풍기는 내용이다. 미스테리 스릴러 소설이라고 무조건 빠른 호흡과 높은 텐션이 필수일 필요가 없다는 점을 새로이 알게 해준 작품이다.</p>
 
-<p>이에 반해 오버랩 나이프, 나이프는 읽는 내내 책 종이가 넘어가는게 아까울 정도로 빠져들었다. 이때 혼자 카페에 앉아 책을 읽었는데 반전을 맞이할 때마다 표정관리하느라 꽤나 힘들었다. 조예은 작가님의 작품은 스토리가 흔하지 않고 결말이 뻔하지 않다. 작품의 제목조차 처음에는 어떤 뜻인지 알 수 없다. 오버랩 나이프, 나이프. 어떤 내용이 전개될지 도통 알기 힘들다. 작품을 다 읽고 다시 제목을 보았을 때 제목에서 다 알려주고 있다는걸 깨닫고는 무언가 당해버린 기분이 든다. 미루고 미뤘던 젤리장수 대학살도 조만간 읽어야 겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="books" /><category term="칵테일 러브 좀비" /><category term="조예은" /><category term="안전가옥" /><category term="추리/미스테리" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[Leaning Typescript 🦜] system of a clown</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/" rel="alternate" type="text/html" title="[Leaning Typescript 🦜] system of a clown" /><published>2023-03-23T00:00:00+09:00</published><updated>2023-03-23T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-clowning-around</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-clowning-around/"><![CDATA[<h1 id="-system-of-a-clown">🤡 system of a clown</h1>
-
-<blockquote>
-  <p>🎈 Help me, please!<br />
-I planned an elaborate clown-themed surprise party for my best friend. The whole event was planned using a few files of TypeScript code I’d written.<br />
-My friend somehow caught wind of the party and enlisted the clowns’ help to vandalize the program. Not only did the clowns remove or make incorrect my TypeScript type annotations, they introduced subtle bugs by subtly changing some of the values.<br />
-Could you please add correct type annotations in my files and fix any bugs detected by TypeScript? You’re my surprise clown celebration’s last hope! 🤡</p>
-</blockquote>
-
-<p>🎈 도와주라주!<br />
-내 베프를 위해 삐에로 컨셉의 깜짝 파티를 준비했어.
-모든 이벤트가 내가 쓴 몇개의 타입스크립트 파일로 준비되어 있지.<br />
-근데 내 친구가 어떻게든 정보를 들어가지고 프로그램을 파괴하기 위해 삐에로들한테 도움을 요청한거야!
-삐에로들은 내 타입스크립트 애너테이션을 지우고 망가뜨리는것 뿐만 아니라, 일부 값들을 교묘하게 바꿔버리며 버그마저 도입해버렸어.<br />
-내 파일에 올바른 애너테이션을 추가하고 버그를 잡아줄 수 있어? 너는 내 깜짝 삐에로 파티의 마지막 희망이야! 🤡</p>
-
-<blockquote>
-  <p>타입 애너테이션 (type annotation)? 타입에 주석을 다는 것으로 변수나 함수의 타입을 설정하는 것.<br /> ex) let name: string = ‘sujin’</p>
-</blockquote>
-
-<h2 id="-step-1-clowning-around">🎈 Step 1: Clowning Around</h2>
-
-<blockquote>
-  <p>The first area of code I’ll need you to fix is the activity assignment engine. It repeatedly creates groups of size 5-10 guests. Each group is directed to go to an activity, which can hold up to a certain number of them at a time. <br />
-It looks like the clowns didn’t change too much on this one. They mostly just removed a few type annotations and changed one value. <br />
-Could you please add back missing type annotations to avoid evolving or implicit anys, and fix the wrong value?</p>
-</blockquote>
-
-<p><strong>▪ 요약: 액티비티 할당 엔진에서 타입 애너테이션을 추가하고 오류난 부분을 고쳐라!</strong></p>
-
-<h3 id="-문제-코드">📃 문제 코드</h3>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">remainingGuests</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="nf">while </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Each group of guests will be size 5-10</span>
-  <span class="kd">const</span> <span class="nx">guestsToAssign</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">activity</span><span class="p">;</span> <span class="c1">// Those were some nice type annotations you had here!</span>
-  <span class="kd">let</span> <span class="nx">capacity</span><span class="p">;</span> <span class="c1">// It'd be a shame if we ... *erased* them! 😈</span>
-  <span class="kd">let</span> <span class="nx">requiresSupplies</span><span class="p">;</span>
-  <span class="nf">switch </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">balloon animals</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-      <span class="nx">requiresSupplies</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">face painting</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">requiresSupplies</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">juggling</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-      <span class="nx">requiresSupplies</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">dancing</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">guestsToAssign</span><span class="p">}</span><span class="s2"> of us will enjoy </span><span class="p">${</span><span class="nx">activity</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">guestsToAssign</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="nx">capacity</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`\t</span><span class="p">${</span><span class="nx">capacity</span><span class="p">}</span><span class="s2"> will enter the </span><span class="p">${</span><span class="nx">activity</span><span class="p">}</span><span class="s2"> activity.`</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="nx">remainingGuests</span> <span class="o">-=</span> <span class="nx">guestsToAssign</span><span class="p">;</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">remainingGuests</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`We have </span><span class="p">${</span><span class="nx">remainingGuests</span><span class="p">}</span><span class="s2"> remaining guests to entertain.\n`</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="se">\n</span><span class="s2">All done!</span><span class="dl">"</span><span class="p">);</span>
-<span class="k">export</span> <span class="p">{};</span>
-</code></pre></div></div>
-
-<p>문제로 나온 이 코드를 tsc명령어를 이용해 컴파일하면 다음과 같은 오류가 발생합니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/227079353-886f9cad-aacd-4b8d-9a5c-08c359f7481b.png" alt="image" /></p>
-
-<p>산술 연산자에 <code class="language-plaintext highlighter-rouge">string</code>값이 할당되고 있는 상황입니다.</p>
-
-<h3 id="-풀이-과정">📃 풀이 과정</h3>
-
-<p>오류가 난 부분을 보니, 산술 연산자에 <code class="language-plaintext highlighter-rouge">string</code>값이 할당되어 컴파일과정에서 막혀버렸습니다.</p>
-
-<p>해당 변수 <code class="language-plaintext highlighter-rouge">capacity</code>를 찾습니다.</p>
-
-<p>switch문안에서 문자열로 되어 있는 <code class="language-plaintext highlighter-rouge">capacity</code>를 찾아 숫자로 고칩니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">face painting</span><span class="dl">"</span><span class="p">;</span>
-      <span class="c1">// capacity = "1";</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 수정</span>
-      <span class="nx">requiresSupplies</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>요구사항대로 변수가 선언된 부분에서 타입 애너테이션도 추가합니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">activity</span><span class="p">;</span> <span class="c1">// Those were some nice type annotations you had here!</span>
-<span class="kd">let</span> <span class="nx">capacity</span><span class="p">;</span> <span class="c1">// It'd be a shame if we ... *erased* them! 😈</span>
-<span class="kd">let</span> <span class="nx">requiresSupplies</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>✔ 수정된 전체 코드</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">remainingGuests</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-
-<span class="nf">while </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Each group of guests will be size 5-10</span>
-  <span class="kd">const</span> <span class="nx">guestsToAssign</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">activity</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">// Those were some nice type annotations you had here!</span>
-  <span class="kd">let</span> <span class="nx">capacity</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span> <span class="c1">// It'd be a shame if we ... *erased* them! 😈</span>
-  <span class="kd">let</span> <span class="nx">requiresSupplies</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
-
-  <span class="nf">switch </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">balloon animals</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-      <span class="nx">requiresSupplies</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">face painting</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-      <span class="nx">requiresSupplies</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">juggling</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-      <span class="nx">requiresSupplies</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="nx">activity</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">dancing</span><span class="dl">"</span><span class="p">;</span>
-      <span class="nx">capacity</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">guestsToAssign</span><span class="p">}</span><span class="s2"> of us will enjoy </span><span class="p">${</span><span class="nx">activity</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">guestsToAssign</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="nx">capacity</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`\t</span><span class="p">${</span><span class="nx">capacity</span><span class="p">}</span><span class="s2"> will enter the </span><span class="p">${</span><span class="nx">activity</span><span class="p">}</span><span class="s2"> activity.`</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="nx">remainingGuests</span> <span class="o">-=</span> <span class="nx">guestsToAssign</span><span class="p">;</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">remainingGuests</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`We have </span><span class="p">${</span><span class="nx">remainingGuests</span><span class="p">}</span><span class="s2"> remaining guests to entertain.\n`</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="se">\n</span><span class="s2">All done!</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="k">export</span> <span class="p">{};</span>
-</code></pre></div></div>
-
-<h2 id="-step-2-clown-availability">🎈 Step 2: Clown Availability</h2>
-
-<blockquote>
-  <p>The second and -thank heavens- final area of code I’ll need you to fix is my clown assignment planner.
-I use this to print which clowns will be partying with which guests. <br />
-Oh, and they introduced several unsettling clown puns in comments.<br />
-It’s because of those puns that I can’t fix the code myself.<br />
-The clowns again changed a few things around, but nothing more than an incorrect type annotation or different value for a variable.<br />
-«««&lt; HEAD
-Could you please fix up the file to have no TypeScript complaints? x
-=======
-Could you please fix up the file to have no TypeScript complaints?</p>
-</blockquote>
-
-<p><strong>▪ 요약: 고마운데 일하나 더 해라! 광대 배정 플래너에서 오류를 수정해라!</strong></p>
-
-<h3 id="-문제-코드-1">📄 문제 코드</h3>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Note: I'm planning on inviting 20 guests in total.</span>
-<span class="c1">// Some clowns can only handle a certain number of guests.</span>
-<span class="kd">let</span> <span class="nx">guestCount</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">clownsCount</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">zilch!</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">krustyAvailability</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">ronaldAvailability</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">pennywiseAvailability</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">matchingsDescription</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">lastClown</span><span class="p">;</span>
-
-<span class="k">do</span> <span class="p">{</span>
-  <span class="nx">clownsCount</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-
-  <span class="c1">// Krusty says: I had a one-man show on Broadway...</span>
-  <span class="c1">// That's who showed up, one man!</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">krustyAvailability</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">guestCount</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="nx">krustyAvailability</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="nx">matchingsDescription</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Krusty will handle the first ten guests.</span><span class="se">\n</span><span class="dl">"</span><span class="p">;</span>
-    <span class="nx">lastClown</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Krusty</span><span class="dl">"</span><span class="p">;</span>
-    <span class="k">continue</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="c1">// Ronald says: McDonald's donated a large set of computers to a school...</span>
-  <span class="c1">// They were all Big Macs!</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">ronaldAvailability</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">guestCount</span> <span class="o">-=</span> <span class="mi">5</span><span class="p">;</span>
-    <span class="nx">ronaldAvailability</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="nx">matchingsDescription</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Ronald will handle the next five guests.</span><span class="se">\n</span><span class="dl">"</span><span class="p">;</span>
-    <span class="nx">lastClown</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Ronald</span><span class="dl">"</span><span class="p">;</span>
-    <span class="k">continue</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="c1">// Pennywise asks: what's a sewer's favorite data type?</span>
-  <span class="c1">// Pennywise answers: Floats!</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">pennywiseAvailability</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">pennywiseAvailability</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="nx">matchingsDescription</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Pennywise w̺̞̠i̢͇͙l͇̞l͇͍̘ c͓͕̝o̡̠̞n̼̝s̡̞͎u͉̝͔m͚̪̞e̢͚̝ y̴̡̡͕͌̿́ó̸̢͇͚̾̕u̸̡̡͎͒͛r̸͕͓͖̈́͆͒ s̵̺̘̪͒͆̓o̵̡͚̟̽͆̚u̵̠͖̓͐͝l̸͓̘͇̐̓̚s̸̺͎̽̈́͆.</span><span class="dl">"</span><span class="p">;</span>
-    <span class="nx">lastClown</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Pennywise</span><span class="dl">"</span><span class="p">;</span>
-    <span class="k">continue</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`Oh no! We're out of clowns!`</span><span class="p">);</span>
-<span class="p">}</span> <span class="nf">while </span><span class="p">(</span><span class="nx">guestCount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
-
-<span class="nf">if </span><span class="p">(</span><span class="nx">clownsCount</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">We've got a lot of clowns coming!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nf">if </span><span class="p">(</span><span class="nx">matchingsDescription</span><span class="p">.</span><span class="nf">length</span><span class="p">())</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`There will be </span><span class="p">${</span><span class="nx">clownsCount</span><span class="p">}</span><span class="s2"> clowns!\n`</span><span class="p">);</span>
-  <span class="nx">clownsole</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">matchingsDescription</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`The last clown is: </span><span class="p">${</span><span class="nx">lastClown</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">()}</span><span class="s2">!`</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Nobody gets a clown. Terrible party. Goodbye.</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="p">{};</span>
-</code></pre></div></div>
-
-<p>1번 문제보다 많은 오류가 발생했습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/227455072-5aa043a8-f1b9-430b-9b62-249b1050c3b6.png" alt="image" /></p>
-
-<h3 id="-풀이과정">📄 풀이과정</h3>
-
-<h4>▪ Type 'number' is not assignable to type 'boolean'.</h4>
-
-<p><code class="language-plaintext highlighter-rouge">guestCount</code>의 타입이 number인데 boolean으로 타입 애너테이션 설정이 잘못되어 있습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 문제 코드</span>
-<span class="kd">let</span> <span class="nx">guestCount</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-
-<span class="c1">// 수정된 코드</span>
-<span class="kd">let</span> <span class="nx">guestCount</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h4> ▪  Operator '&gt;' cannot be applied types 'string' and 'number'.</h4>
-
-<p><code class="language-plaintext highlighter-rouge">clownCount</code>에 산술연산자를 사용하고 있는데 선언부에 보면 문자열을 할당하고 있습니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">zilch</code>가 무슨 뜻인지 찾아보니 <code class="language-plaintext highlighter-rouge">아무것도 없음</code>이라는 뜻이라 값을 할당하지 않았습니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">let</code>으로 선언되었기 때문에 가능합니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 문제 코드</span>
-<span class="kd">let</span> <span class="nx">clownsCount</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">zilch!</span><span class="dl">"</span><span class="p">;</span>
-<span class="p">...</span>
-<span class="nf">if </span><span class="p">(</span><span class="nx">clownsCount</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">We've got a lot of clowns coming!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// 수정된 코드</span>
-<span class="kd">let</span> <span class="nx">clownCount</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/227459790-39d64e84-a7a5-4e18-bbbf-d66322f0d4cc.png" alt="image" /></p>
-
-<p>새로운 에러를 만들며 해결되지 않았습니다.</p>
-
-<p>값이 할당되기 전에 산술연산자를 적용할 수 없기 때문입니다.</p>
-
-<p>초기값으로 <code class="language-plaintext highlighter-rouge">0</code>을 할당해주었지만, 뭔가 답이 아닐것만 같은 느낌이 드네요.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 수정된 코드</span>
-<span class="kd">let</span> <span class="nx">clownCount</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h4>▪ Cannot find name 'clownsole'. Did 
-you mean 'console'?</h4>
-
-<p><code class="language-plaintext highlighter-rouge">clownsole</code>은 처음 들어봅니다. 문제가 저를 바보로 아나봅니다. 재밌네요.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 문제 코드</span>
-<span class="nx">clownsole</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">matchingsDescription</span><span class="p">);</span>
-
-<span class="c1">// 수정된 코드</span>
-<span class="kd">let</span> <span class="nx">clownCount</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">matchingsDescription</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>끝!</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Found</span> <span class="mi">0</span> <span class="nx">errors</span><span class="p">.</span> <span class="nx">Watching</span> <span class="k">for</span> <span class="nx">file</span> <span class="nx">changes</span><span class="p">.</span>
-</code></pre></div></div>
-
-<p>📄 고쳐야 할 점</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">guestCount</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">clownsCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>솔루션 코드를 보니 타입 애너테이션이 빠져있습니다.</p>
-
-<p>책을 읽을 때 값을 할당할 경우 자동으로 타입추론이 되기 때문에 타입 애너테이션을 설정하면 중복으로 타입설정과정이 진행되는 것과 마찬가지라 불필요한 과정이라고 한 기억이 납니다.</p>
-
-<p><strong>✔ 값을 할당해 타입추론이 될 경우에는, 타입 애너테이션을 생략하자</strong></p>
-
-<p>그래도 <code class="language-plaintext highlighter-rouge">0</code>을 할당하는게 맞았네요 🎉</p>
-
-<hr />
-
-<p>출처</p>
-
-<ul>
-  <li><a href="https://www.learningtypescript.com/the-type-system/">learning typescript</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="러닝 타입스크립트" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry></feed>
+<p>이에 반해 오버랩 나이프, 나이프는 읽는 내내 책 종이가 넘어가는게 아까울 정도로 빠져들었다. 이때 혼자 카페에 앉아 책을 읽었는데 반전을 맞이할 때마다 표정관리하느라 꽤나 힘들었다. 조예은 작가님의 작품은 스토리가 흔하지 않고 결말이 뻔하지 않다. 작품의 제목조차 처음에는 어떤 뜻인지 알 수 없다. 오버랩 나이프, 나이프. 어떤 내용이 전개될지 도통 알기 힘들다. 작품을 다 읽고 다시 제목을 보았을 때 제목에서 다 알려주고 있다는걸 깨닫고는 무언가 당해버린 기분이 든다. 미루고 미뤘던 젤리장수 대학살도 조만간 읽어야 겠다.</p>]]></content><author><name>Sujin Kim</name></author><category term="books" /><category term="칵테일 러브 좀비" /><category term="조예은" /><category term="안전가옥" /><category term="추리/미스테리" /><summary type="html"><![CDATA[]]></summary></entry></feed>
