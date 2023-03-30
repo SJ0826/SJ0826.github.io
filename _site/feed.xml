@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-30T15:22:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">x만큼 간격이 있는 n개의 숫자</title><link href="http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/" rel="alternate" type="text/html" title="x만큼 간격이 있는 n개의 숫자" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC%20%EA%B0%84%EA%B2%A9%EC%9D%B4%20%EC%9E%88%EB%8A%94%20n%EA%B0%9C%EC%9D%98%20%EC%88%AB%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-30T15:54:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">x만큼 간격이 있는 n개의 숫자</title><link href="http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/" rel="alternate" type="text/html" title="x만큼 간격이 있는 n개의 숫자" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC%20%EA%B0%84%EA%B2%A9%EC%9D%B4%20%EC%9E%88%EB%8A%94%20n%EA%B0%9C%EC%9D%98%20%EC%88%AB%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.</p>
 
@@ -41,7 +41,63 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="x만큼 간격이 있는 n개의 숫자" /><summary type="html"><![CDATA[프로그래머스 Lv1. x만큼 간격이 있는 n개의 숫자]]></summary></entry><entry><title type="html">👩‍💻 개발자의 글쓰기</title><link href="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/" rel="alternate" type="text/html" title="👩‍💻 개발자의 글쓰기" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98%20%EA%B8%80%EC%93%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/228564066-8ebc1f8d-a344-4bc5-8777-2dc39bd2a745.png" alt="image" /></p>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="x만큼 간격이 있는 n개의 숫자" /><summary type="html"><![CDATA[프로그래머스 Lv1. x만큼 간격이 있는 n개의 숫자]]></summary></entry><entry><title type="html">[Lv 1] 문자열 내 p와 y의 개수</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4-p%EC%99%80-y%EC%9D%98-%EA%B0%9C%EC%88%98/" rel="alternate" type="text/html" title="[Lv 1] 문자열 내 p와 y의 개수" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%20p%EC%99%80%20y%EC%9D%98%20%EA%B0%9C%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4-p%EC%99%80-y%EC%9D%98-%EA%B0%9C%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 ‘p’의 개수와 ‘y’의 개수를 비교해 같으면 True, 다르면 False를 return 하는 solution를 완성하세요. ‘p’, ‘y’ 모두 하나도 없는 경우는 항상 True를 리턴합니다. 단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다.</p>
+
+<p>예를 들어 s가 “pPoooyY”면 true를 return하고 “Pyy”라면 false를 return합니다.</p>
+
+<ul>
+  <li>문자열 s의 길이 : 50 이하의 자연수</li>
+  <li>문자열 s는 알파벳으로만 이루어져 있습니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">return </span><span class="p">(</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">p</span><span class="dl">"</span><span class="p">).</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">===</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">).</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>문자열을 소문자로 바꾸고 <code class="language-plaintext highlighter-rouge">p</code>와 <code class="language-plaintext highlighter-rouge">y</code>를 기준으로 잘라 크기를 구한 후 1를 빼주면 각 문자가 몇개 들어있는지 알 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">pPoooyY</code>의 경우 <code class="language-plaintext highlighter-rouge">toLowerCase()</code>를 통해 소문자로 바꾸면 <code class="language-plaintext highlighter-rouge">ppoooyy</code>가 됩니다.</p>
+
+<p>이후 <code class="language-plaintext highlighter-rouge">p</code>를 기준을 문자열을 <code class="language-plaintext highlighter-rouge">split()</code>메소드를 이용해 잘라내면 <code class="language-plaintext highlighter-rouge">["", "", "oooyy"]</code>가 됩니다.</p>
+
+<p>이 배열의 크기는 3인데 여기서 1을 빼면 <code class="language-plaintext highlighter-rouge">p</code>의 개수를 알 수 있습니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">numPY</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/p/gi</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">s</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/y/gi</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이 답안은 <code class="language-plaintext highlighter-rouge">match()</code>라는 메소드를 이용했네요.</p>
+
+<p>이번에 처음으로 알아갑니다.</p>
+
+<p><span style="background: #FFD966; padding: 1em;">📌 match()는 특정 문자열를 추출하여 배열로 반환해주는 메소드입니다.</span></p>
+
+<p>그런데 이 코드는 문제가 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">p</code>와 <code class="language-plaintext highlighter-rouge">y</code>가 없을 때 match()가 null을 반환해서 length함수를 쓸 수 없기 때문에 다음과 같은 컴파일 에러가 납니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Cannot read properties of null (reading 'length')
+</code></pre></div></div>
+
+<p>이 부분을 해결해보기 위해 옵셔널 체이닝을 걸어주겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">numPY</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/p/gi</span><span class="p">)?.</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">s</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/y/gi</span><span class="p">)?.</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 되면 <code class="language-plaintext highlighter-rouge">undefined === undefined</code>가 되어 <code class="language-plaintext highlighter-rouge">true</code>를 반환해 에러없이 통과할 수 있습니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="문자열 내 p와 y의 개수" /><category term="match" /><summary type="html"><![CDATA[문자열에서 특정 문자 개수 구하기]]></summary></entry><entry><title type="html">👩‍💻 개발자의 글쓰기</title><link href="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/" rel="alternate" type="text/html" title="👩‍💻 개발자의 글쓰기" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98%20%EA%B8%80%EC%93%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/228564066-8ebc1f8d-a344-4bc5-8777-2dc39bd2a745.png" alt="image" /></p>
 
 <div style="background: #EEE9DA; padding: 1em">
 ▪ 제목: 개발자의 글쓰기<br />
@@ -1359,90 +1415,4 @@ you mean 'console'?</h4>
 
 <ul>
   <li><a href="https://www.learningtypescript.com/the-type-system/">learning typescript</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="러닝 타입스크립트" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">tsconfig.json 파일 살펴보기</title><link href="http://localhost:4000/typescript/typescript-tsconfig/" rel="alternate" type="text/html" title="tsconfig.json 파일 살펴보기" /><published>2023-03-22T00:00:00+09:00</published><updated>2023-03-22T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-tsconfig/"><![CDATA[<h2 id="-tsconfigjson-파일이란">📄 tsconfig.json 파일이란?</h2>
-<p>tsconfig.json 파일은 타입스크립트 프로젝트에서 타입스크립트에 관한 환경설정을 할 수 있는 <strong>타입스크립트 컴파일러 설정파일</strong>입니다.</p>
-
-<h2 id="-tsconfigjson-파일에서-사용하는-옵션">📄 tsconfig.json 파일에서 사용하는 옵션</h2>
-
-<p>tsconfig.json 파일에는 다양한 옵션이 있지만, 자주 사용되는 옵션을 정리했습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="dl">"</span><span class="s2">compilerOptions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">module</span><span class="dl">"</span> <span class="p">:</span><span class="dl">"</span><span class="s2">CommonJS</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">target</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">es5</span><span class="dl">"</span><span class="p">,</span>  
-    <span class="dl">"</span><span class="s2">esModuleInterop</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                            
-    <span class="dl">"</span><span class="s2">moduleResolution</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node</span><span class="dl">"</span><span class="p">,</span>                          
-    <span class="dl">"</span><span class="s2">outDir</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">baseUrl</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">sourceMap</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">downlevelIteration</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">noImplicitAny</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">paths</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">node_modules/*</span><span class="dl">"</span><span class="p">]}</span>                               
-  <span class="p">},</span>
-  <span class="dl">"</span><span class="s2">include</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">src/**/*</span><span class="dl">"</span><span class="p">]</span>
-<span class="p">}</span>
-
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">include</code>: 타입스크립트 컴파일러 대상이 되는 경로</li>
-</ul>
-
-<h3 id="-module-키">▪ module 키</h3>
-<ul>
-  <li>컴파일된 ES5 자바스크립트 코드는 웹브라우저와 노드제이에스에서 양쪽에서 동작해야 한다.</li>
-  <li>하지만, 웹브라우저와 노드제이에스는 동작방식이 다르다. (웹 브라우저: <code class="language-plaintext highlighter-rouge">amd</code>, 노드제이에스: <code class="language-plaintext highlighter-rouge">commonjs</code> )</li>
-  <li>따라서, module키로 동작 대상 플랫폼이 무엇인지 구분해주는 역할을 한다.</li>
-</ul>
-
-<h3 id="-moduleresolution-키">▪ moduleResolution 키</h3>
-<ul>
-  <li>moduule이 어떤 값을 가지느냐에 따라 다르게 설정된다.</li>
-  <li><code class="language-plaintext highlighter-rouge">commonjs</code>는 <code class="language-plaintext highlighter-rouge">node</code>로 설정하고, <code class="language-plaintext highlighter-rouge">amd</code>는 <code class="language-plaintext highlighter-rouge">classic</code>으로 설정한다.</li>
-</ul>
-
-<h3 id="-target-키">▪ target 키</h3>
-<ul>
-  <li>트랜스파일할 대상 자바스크립트의 버전을 설정한다.</li>
-  <li>보통 es5를 설정한다.</li>
-</ul>
-
-<h3 id="-baseurl--outdir-키">▪ baseUrl &amp; OutDir 키</h3>
-<ul>
-  <li>트랜스파일된 자바스크립트 파일을 저장하는 경로</li>
-  <li><code class="language-plaintext highlighter-rouge">OutDir</code>은 baseUrl 설정값을 기준으로 하위 디렉토리를 뜻한다.</li>
-</ul>
-
-<h3 id="-paths-키">▪ paths 키</h3>
-<ul>
-  <li>소스 파일의 import 문에서 from 부분을 해석할 때 찾아야 하는 디렉토리를 설정한다.</li>
-  <li><code class="language-plaintext highlighter-rouge">node-module</code>을 포함한 이유는 찾아야하는 소스가 외부 패키지일 경우를 위해 설정한 것이다.</li>
-</ul>
-
-<h3 id="-esmoduleinterop-키">▪ esModuleInterop 키</h3>
-<ul>
-  <li>웹 브라우저에서 동작한다는 가정으로 만들어진 오픈소스 자바스크립트 라이브러리가 CommonJS방식으로 동작하는 타입스크립트 코드에서 실행될 수 있도록 설정</li>
-</ul>
-
-<h3 id="-sourcemap-키">▪ sourceMap 키</h3>
-<ul>
-  <li>소스맵 파일 생성 유무를 설정한다.</li>
-  <li>소스맵 파일에는 변환된 자바스크립트 코드가 타입스크립트 코드의 어느 부분에 해당하는지 보여준다.</li>
-</ul>
-
-<h3 id="-downleveliteration-키">▪ downlevelIteration 키</h3>
-<ul>
-  <li>타입스크립트의 생성기(generator) 구문이 정상적으로 동작하도록 설정</li>
-</ul>
-
-<h3 id="-nolmplicitany-키">▪ nolmplicitAny 키</h3>
-<ul>
-  <li>지정하지 않은 타입을 암시적으로 <code class="language-plaintext highlighter-rouge">any</code>로 설정하게 한다.</li>
-  <li><code class="language-plaintext highlighter-rouge">false</code>로 설정하면 타입을 지정하지 않았을 때, 에러메세지가 표시되지 않고 넘어간다.</li>
-</ul>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li>Do It 타입스크립트 프로그래밍 (책)</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="tsconfig" /><summary type="html"><![CDATA[tsconfig.json 파일 구조를 살펴보자]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="러닝 타입스크립트" /><category term="type system" /><category term="clowning around" /><summary type="html"><![CDATA[책 learning typescript 2장 타입 시스템 실습 프로젝트 입니다.]]></summary></entry></feed>
