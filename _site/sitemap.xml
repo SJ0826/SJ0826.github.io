@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/todolist-project/projects-todolist-axios/</loc>
-<lastmod>2023-01-26T22:06:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/programmers-lv2/programmers-maxandmin/</loc>
 <lastmod>2023-02-16T22:06:00+09:00</lastmod>
 </url>
@@ -345,6 +341,10 @@
 <lastmod>2023-01-01T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/todolist-project/projects-todolist-axios/</loc>
+<lastmod>2023-01-26T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/todolist-project/projects-todoList-redux/</loc>
 <lastmod>2023-01-31T22:06:00+09:00</lastmod>
 </url>
@@ -431,6 +431,10 @@
 <url>
 <loc>http://localhost:4000/css/css-Sass/</loc>
 <lastmod>2023-03-29T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/programmers-lv2/programmer-%EC%98%AC%EB%B0%94%EB%A5%B8-%EA%B4%84%ED%98%B8/</loc>
+<lastmod>2023-03-30T22:06:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/programmers-lv1/programmers-x%EB%A7%8C%ED%81%BC-%EA%B0%84%EA%B2%A9%EC%9D%B4-%EC%9E%88%EB%8A%94-n%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90/</loc>
