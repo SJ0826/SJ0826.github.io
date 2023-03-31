@@ -9,7 +9,7 @@ sidebar:
 categories:
   - programmers-lv2
 tags:
-  - ["최솟값 만들기", "reduce"]
+  - ["올바른 괄호", "스택/큐"]
 last_modified_at: 2023-03-30T08:06:00-05:00
 ---
 
