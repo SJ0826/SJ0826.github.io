@@ -11,7 +11,6 @@ docs:
       - title: "JavaScript"
         url: /javascript/
         category: "JavaScript"
-        children:
       - title: "HTML"
         url: /html/
         category: "HTML"
@@ -21,6 +20,9 @@ docs:
       - title: "TypeScript"
         url: /typescript/
         category: "TypeScript"
+      - title: "Git"
+        url: /git/
+        category: "Git"
   - title: 프로그래머스
     children:
       - title: "Lv1"

@@ -161,10 +161,28 @@ var store = [{
         "url": "/css/css-float&clear/",
         "teaser": null
       },{
+        "title": "GIT에 대한 이해",
+        "excerpt":"📄 GIT에 대한 이해   GIT은 VCS(VersionControlSystem)중 하나 입니다.  서버에만 히스토리 정보가 있는것이 아니라 모든 개발자들이 동일한 히스토리 정보를 가지고 있는 것을 분산형 버전관리 시스템이라고 합니다.  분산된 시스템을 이용하게 되면 서버에 문제가 생기거나 인터넷이 없어도 각각의 개발자 들이 일을 진행 할 수 있습니다.  깃에는 원격 저장소가 중앙서버 역할을 하여 사용자의 컴퓨터에 있는 로컬 저장소와 소스코드를 주고 받습니다.  따라서 다른 사용자와 협업할 때도 유용하며 코드의 변경내역을 기록하기 때문에 안전하게 소스를 작성할 수 있습니다.   📄 용어 정리      초기화: 폴더를 깃 저장소로 변경합니다. 아래와 같이 커맨드창에 입력하여 초기화 할 수도 있습니다.   git init      커밋: 변경된 코드의 이력을 기록합니다.   브랜치: 분리 격리된 코드의 이력을 기록합니다.   병합: 기존 이력과 분리된 이력을 통합합니다.   푸시: 로컬 저장소의 이력을 서버로 전송 및 공유합니다.   공부한 곳   [더 북] https://thebook.io/080212/ [강 의] 드림코딩     깃을 이해하여 보다 나은 코드 작성을 위해 차근차근 익혀 나간다.  그냥 넘겼었던 용어를 다시 보고 이해가 안되는 부분이 있으면 강의를 듣고 검색을 하며  깃의 근본을 이해해고 파악하는 중이다.   ","categories": ["Git"],
+        "tags": ["Git"],
+        "url": "/git/git-git/",
+        "teaser": null
+      },{
         "title": "z-index",
         "excerpt":"📄 z-index   z-index 속성은 요소의 쌓임 순서(stack order)를 정의합니다.  정수 값을 지정하여 쌓임 맥락(stacking context)에서의 레벨을 정의하는 방식으로 적용됩니다.  위치 지정 요소에 대해 적용할 수 있는 속성입니다.    .first {   z-index: 1; } .second {   z-index: 2; } .third {   z-index: 3; } .fourth {   z-index: 1; }   간단히 말해, 요소들의 z축 순서를 결정해 주는 속성입니다.      z-index은 정해진 정수 값이 있는 것이 아니라, 상대적인 수로 쌓임 맥락이 결정됩니다.   z-index의 숫자가 같을 경우에는, 나중에 쌓은 요소가 위로 오게 됩니다.   출처      유노코딩  ","categories": ["CSS"],
         "tags": ["z-index"],
         "url": "/css/css-z-index/",
+        "teaser": null
+      },{
+        "title": "GIT 기본 명령어 정리",
+        "excerpt":"📄 GIT 명령어 정리   ▪ git status   git status   파일 정보를 확인할 수 있습니다.   git status -s   파일 정보를 더 간단히 확인 할 수 있습니다.   ▪ git init   git init   깃을 초기화 합니다.  깃을 초기화하면 commit해서 버전을 관리하는 master branch가 생성이 됩니다.  open .git(start .git)을 입력하여 깃폴더가 생성된 것을 확인할 수 있습니다.   ▪ git rm   git rm (파일)   원격저장소와 로컬저장소의 파일을 삭제합니다.  더이상 깃 프로젝트로 활용하지 않습니다.    git rm --cached (파일)   원격저장소에 있는 파일을 삭제합니다.  로컬저장소에 있는 파일은 삭제하지 않습니다.    ▪ git add   git add (파일)   untracking 파일을 staging area에 추가합니다.  이로써 staging area에 추가된 파일은 commit할 준비가 되었습니다.    ▪ git echo   git echo (파일) &gt;&gt; .gitignore   특정 파일을 버전관리에서 제외시킵니다.    ▪ git diff   git diff   commit이나 branch 사이의 다른 점 혹은 파일이나 repository와 working directory 사이의 다른 점을 보여줍니다.  즉, 수정된 파일의 내용을 상세히 확인할 수 있습니다.    git diff --staged   staging area에 있는 파일의 수정 내용을 확인할 수 있습니다.    ▪ git commit   git commit   commit은 로컬 저장소에 코드 변경 이력을 남기기 위한 작업입니다.  staging area에 있는 파일들을 원격 저장소에 업로드할 준비를 합니다.     commit 할때 팁!      변경내용을 commit할 때는 해당내용만 변경하여 commit message에 작성한다.    commit은 너무 커도 문제가 되지만, 너무 작아도 적합하지 않다. 적당한 크기는 프로젝트를 진행하면서 감을 익힌다.   출처      드림코딩  ","categories": ["Git"],
+        "tags": ["Git","status","init","rm","echo","diff"],
+        "url": "/git/git-commands/",
+        "teaser": null
+      },{
+        "title": "커밋 리셋하기(reset)",
+        "excerpt":"📄 커밋 리셋하기(reset)   리셋은 특정한 커밋으로 모든 것을 초기화 시키는 명령어 입니다.   📄 작업 내용 리셋하고 working directory로 가져오기   git reset HEAD~n   이와 같은 명령어를 이용하면 HEAD부터 n번째에 있는 커밋들을 reset합니다.  작업하던 내용은 사라지지 않고 working directory로 이동합니다.   📄 작업 내용 리셋하고 staging area로 가져오기   git reset --soft HEAD~n   이와 같은 명령어를 이용하면 HEAD부터 n번째에 있는 커밋들을 reset합니다.  작업하던 내용은 사라지지 않고 staging area로 이동합니다.     아직 작업 중인 내용이 있지만 커밋을 하지 않으면 불안하고 작업단위를 구분하고자 임시 저장 내용으로 커밋하고 자 할때 유용하게 사용할 수 있는 명령어 입니다.     이렇게 사용하면 무분별한 커밋메시지가 쌓이지 않게 됩니다.   📄 작업 내용 완전히 리셋하기   git reset --hard  작업내용을 working directory, staging area로 가져오지 않고 완전히 리셋하여 파일 내용이 완전히 삭제됩니다.   포인터가 첫 번쨰 commit을 가리키는데 이 상태로 초기화 하는 것은,  마지막으로 커밋한 이후에 수정한 모든 local의 파일들을 초기화하는 것을 뜻합니다.           working directory가 비워진 것을 확인할 수 있습니다.   ","categories": ["Git"],
+        "tags": ["커밋 리셋","git reset"],
+        "url": "/git/git-%EC%BB%A4%EB%B0%8B-%EB%A6%AC%EC%85%8B%ED%95%98%EA%B8%B0/",
         "teaser": null
       },{
         "title": "[flex-box] flex-direction & flex-wrap",
@@ -197,6 +215,24 @@ var store = [{
         "url": "/css/css-grid/",
         "teaser": null
       },{
+        "title": "브랜치(branch)란 무엇인가",
+        "excerpt":"📄 브랜치(branch)란 무엇인가   브랜치는 하나의 줄기에서 뻗어나온 과정들을 의미합니다.  즉, 저장공간 하나에서 빠져나오는 또다른 가상의 저장공간들을 생성하는 것을 뜻합니다.   📄 브랜치 과정   별도로 브랜치를 따로 작성하지 않으면 master 브랜치에서 계속 작성됩니다.  만약 새로운 기능을 만든다면, 새로운 브랜치를 만들어서 작업을 해나아가는 것이 중요합니다.  이런식으로 커밋을 하면 다수의 개발자들이 다수의 작업을 병렬적으로 처리하는 것이 가능해집니다.  이후 master 브랜치 외 featureA브랜치에서 작업이 완료가 되었다면, featureA의 커밋들을 master브랜치에 merge를 하게 되어 master브랜치에 병합합니다.  이때 featureA의 커밋들을 모두 master 브랜치로 가져오는 것 보다는, 커밋들을 합해서 새로운 하나의 커밋을 만들어 준 후에 master 브랜치로 가지고 오는 방법도 있습니다.   이후 featureA 브랜치는 삭제를 하여 깔끔하게 정리합니다.   📄 브랜치 관련 명령어   브랜치 확인하기   ▪ git branch   생성된 모든 브랜치를 확인할 수 있습니다.        ▪ git branch -all   서버를 포함한 생성된 모든 브랜치를 확인할 수 있습니다.   브랜치 생성하기   ▪ git branch (브랜치명)   브랜치를 생성합니다. 다만, 생성한 브랜치는 만들어지기만 하고 현재의 브랜치는 변하지 않습니다.      브랜치 이동하기   ▪ git switch (브랜치명)   원하는 브랜치로 이동합니다.   ▪ git switch -C new-branch1   새로운 브랜치를 생성함과 동시에 바로 이동합니다.   브랜치 삭제하기   ▪ git branch -d (브랜치명)   해당 브랜치를 삭제합니다.   ▪ git push origin --delete (브랜치명)   원격 저장소의 브랜치를 삭제합니다.   브랜치 이름 변경하기   ▪ git branch --move (브랜치명) (변경할 브랜치명)   브랜치 이름을 새롭게 변경합니다.   ▪ git push --set-upstream origin (변경할 브랜치명)      변경할 브랜치명을 원격저장소에 업데이트 합니다.    출처      드림코딩  ","categories": ["Git"],
+        "tags": ["브랜치"],
+        "url": "/git/git-branch/",
+        "teaser": null
+      },{
+        "title": "cherry pick",
+        "excerpt":"📄 cherry pick   작업들 중 특정 부분을 master branch로 가져오고 싶을 때 사용하는 유용한 기능입니다.   git cherry-pick 커밋해쉬코드를 입력하여 특정 커밋을 master brach로 가져옵니다.       참고      드림코딩  ","categories": ["Git"],
+        "tags": ["cherry pick"],
+        "url": "/git/git-cherry-pick/",
+        "teaser": null
+      },{
+        "title": "Git Conflict 해결 방법",
+        "excerpt":"📄 merge conflict   merge를 하는 과정에서 자동적으로 해결이 안되는 충돌이 발생한 상황을 말합니다.  예를 들어, 서로 다른 브랜치에서 동일한 파일을 수정했을 때 충돌이 발생할 수 있습니다.   아래와 같이 merge conflict가 발생한 것을 확인 할 수 있습니다.          Automatic merge failed: 자동 merge가 실패 됨.    git status를 입력해 확인해 보면 동시에 수정된 파일을 확인할 수 있습니다.       cat (파일명)을 입력하면 conflict가 발생한 부분을 알려주기 위해 자동으로 삽입된 문자열을 확인할 수 있습니다.       📄 merge conflict 수동적 해결방법           open 해당 파일 (윈도우: start 해당파일)명령어를 이용하여 conflict가 발생한 파일을 열어줍니다.              사용할 부분을 제외하고 삭제하거나, 모두 다 사용하고 싶다면 메세지만 삭제 한채 저장한 뒤 파일을 닫습니다.            git add를 이용해 conflict가 해결되었음을 알려줍니다.              git merge --continue를 입력해 merge를 마무리합니다.           📄 merge conflict tool을 이용한 해결방법: vscode           git config --global -e를 입력해서 vscode를 열어줍니다.            아래 코드를 입력해서 merge tool을 vscode로 다룰 수 있게 적용합니다.              conlict가 발생했을 때, git mergetool을 입력하면 vscode로 툴이 열리는 것을 확인 할 수 있습니다.       📄 merge conflict tool을 이용한 해결방법: p4merge           p4merge를 검색 후 다운받습니다.              아래 코드를 입력해서 merge tool을 p4code로 다룰 수 있게 합니다.              conlict가 발생했을 때, git mergetool을 입력하면 vscode로 툴이 열리는 것을 확인 할 수 있습니다.         참고      드림코딩  ","categories": ["Git"],
+        "tags": ["git conflict","깃 충돌"],
+        "url": "/git/git-conflict-%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95/",
+        "teaser": null
+      },{
         "title": "뷰포트(viewport)",
         "excerpt":"📄 뷰포트(viewport)   현재 화면에 보여지고 있는 영역을 의미합니다.   기기별로 뷰포트가 다르기때문에 보여지는 화면의 배율에 따라 화면이 다르게 보입니다.   html문서에서 이름이 뷰포트인 메타태그 설정을 확인할 수 있습니다.   &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;      width=device-width : 너비를 기기의 너비 기준으로 초기화 한다. initial-scale=1.0 : 기기의 너비에 맞게 초기 scale를 지정한다.    이 메타태그 설정은 기기에 맞게 화면 배율을 조정해주기 때문에, 모바일 화면에서도 pc화면과 동일하게 콘텐츠의 크기가 유지되는 것을 확인할 수 있습니다.   📄 뷰포트 단위   뷰포트 크기를 기반으로 값을 계산하여 크기를 결정하는 가변단위들이 있습니다.   이는 반응형 웹을 만들 때 매우 유용하게 사용되는 단위들입니다.   ▪ font-size: 1vw;      화면 사이즈에서 너비의 100분의 1    화면 너비의 백분율을 계산해서 크기를 조정합니다.   ▪ font-size: 1vh;      화면 사이즈에서 높이의 100분의 1    화면 높이의 백분율을 계산해서 크기를 조정합니다.   ▪ font-size: 1vmin;      화면 사이즈에서 너비와 높이 중 작은것의 100분의 1 너비와 높이 중 작은 것에 백분율을 맞춘다    ▪ font-size: 1vmax;      화면 사이즈에서 너비와 높이 중 큰것의 100분의 1 너비와 높이 중 큰 것에 백분율을 맞춘다.   ","categories": ["HTML"],
         "tags": ["HTML","뷰포트"],
@@ -213,6 +249,30 @@ var store = [{
         "excerpt":"📄 가변 동영상   동영상도 이미지와 마찬가지로 화면 배율에 따라 가변적으로 크기를 설정할 수 있습니다.   다만 유튜브 등 동영상 서비스에 따라 성질이 다를 수 있어 주의해야 합니다.   📄 가변 동영상 설정 1 | vedio 태그   &lt;video src=\"./my-cat.mp4\" controls&gt;&lt;/video&gt;   동영상 파일을 직접 가지고 있다면, 이렇게 body태그안에서 video태그를 설정하면 됩니다.   컨트롤 속성으로 컨트롤 패널을 추가했습니다.   style태그에서 너비를 %단위로 지정하게 되면 화면 크기에 따라 동영상 화면 크기가 변합니다.   📄 가변 동영상 설정 2 | iframe 태그   하지만 동영상 파일을 직접 가지고 있지 않다면 유튜브 등 동영상 서비스를 이용하는 방법이 있습니다.   유튜브에서 원하는 동영상을 선택후 공유 &gt; 퍼가기를 선택합니다.      유튜브는 이렇게 iframe태그를 제공합니다.   이 iframe 태그를 body태그로 가져오면 웹페이지에 동영상을 설정할 수 있습니다.   ▪ iframe 태그의 문제점   style태그에서 iframe태그의 너비를 100%로 설정해주면 생각보다 동영상 화면 크기 전환이 자연스럽지 않은 것을 확인할 수 있습니다.   제공받은 iframe태그는 동영상 서비스에서 다양한 속성을 설정하는 등 단순하지 않은게 이유가 됩니다.   이 문제는 여백을 만들어주고 그 여백에 동영상 크기를 맞춤으로써 해결할 수 있습니다.   &lt;div class=\"player\"&gt;         &lt;iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/BYMM5Dh_tSY\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen&gt;&lt;/iframe&gt; &lt;/div&gt;      여백을 설정해줄 div를 설정해준 후 iframe태그를 넣었습니다.   &lt;style&gt;      .player{        padding-top: 56.25%;        position: relative;       }      iframe{        position: absolute;        top: 0; left: 0;        width: 100%;        height: 100%;      } &lt;/style&gt;      스타일 태그안에서 클래스 선택자를 이용해 player로 설정한 div의 padding-top크기를 동영상의 종횡비에 맞추어 %단위로 지정했습니다.   iframe은 position을 이용해 위치를 고정시키고 너비와 높이를 부모 요소인 player에 맞게 100%설정했습니다.   이렇게 iframe태그로 동영상을 가져오면 크기 전환이 더 자연스럽고 보다 나은 웹 구현이 가능하게 됩니다.   출처      유노코딩  ","categories": ["CSS"],
         "tags": ["가변 동영상","video","iframe"],
         "url": "/css/css-variable-video/",
+        "teaser": null
+      },{
+        "title": "SSH로 간편하게 push하기",
+        "excerpt":"📄SSH란?   Secure SHell protocol의 약자로 터미널과 서버간에 안전하게 아이디와 비밀번호를 유지해주는 방법입니다.   서버에는 public key를 생성하고 사용자의 컴퓨터에는 private key를 생성해 넣음으로써 push를 할 때 번거롭게 아이디와 비밀번호를 입력하지 않아도 됩니다.   📄 순서   1. 깃허브 페이지에서 setting &gt; SSH keys and GPS keys 로 이동     아직 등록된 SSH key가 없는 것을 확인할 수 있습니다.     2. Git Bash 열기   3. 키 생성하기   다음과 같은 명령어를 입력하면 키를 생성한다는 메세지가 출력됩니다.   $ ssh-keygen -t ed25519 -C \"your_email@example.com\"   혹시 본인의 이메일을 잊었다면 git config --list를 통해 확인 가능합니다.  키가 저장될 경로를 확인 후 비밀번호를 설정하지 않는다면, ‘ENTER’를 두번 입력합니다.        출력된 메세지를 확인해보면 public key와 private key가 어느 폴더에 저장되었는지 확인할 수 있습니다.   4. 키 설정하기   저장된 public key를 복사해서 github페이지로 돌아가 설정합니다.   이렇게 커밋을 할때마다 아이디와 비밀번호를 입력하지 않고 검증된 유저로 커밋을 할 수 있게 되었습니다.   출처      드림코딩  ","categories": ["Git"],
+        "tags": ["SSH"],
+        "url": "/git/git-SSH%EB%A1%9C-%EA%B0%84%ED%8E%B8%ED%95%98%EA%B2%8C-push%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "🚨 The following untracked working tree files would be overwritten by merge",
+        "excerpt":"🚨 The following untracked working tree files would be overwritten by merge   git 저장소에서 파일을 당겨 오는데 오류가 발생했다.   error: The following untracked working tree files would be overwritten by merge: 오류 발생한 파일 위치 및 이름 Please move or remove them before you can merge.   깔끔하게 하고 싶어서 자꾸 이것저것 해서 그런가 overwritten 됐단다.  역시나 하라는 대로 해준다.   git clean -d -f -f   하고 다시 git pull 해주면    빠른 해결~  ","categories": ["Git"],
+        "tags": ["Git"],
+        "url": "/git/git-The-following-untracked-working-tree-files/",
+        "teaser": null
+      },{
+        "title": "🚨 Too many revisions specified",
+        "excerpt":"🚨 Too many revisions specified   git 공부를 하던 도중 에러가 났다.   git stash show stash{3}   stash 변경사항을 확인하려고 명령어를 입력했는데 내 명령어를 받아주질 않는다..       너무 많은 개정이 지정되었다니..뭔말일까..   What does the error message mean, and what should I do?   구글링 gogo~   ❔ 원인   그냥 쓰던 powershell 문제 였다.   powershell은 중괄호를 좋아하지 않는다니 어쩔 수 없다.   🔨 해결   따옴표를 써서 달래주자.   git stash show \"stash{3}\"      참조      stackoverfow   느낀 점   일부러 에러가 났을 때 국내 사이트보다 해외사이트에서 해결책을 찾았다.   그러다보니 점점 해외 사이트가 눈에 익고 익숙해지는게 느껴진다.  이번 에러를 찾는 과정에선 번역기를 돌리지 않고 해결책을 찾았다.  외국이나 한국이나 웃긴점.  -&gt; 저도 이게 왜 되는지 모르겠는데 해결됐어요.  라는 글을 심심치 않게 볼 수 있다.  역시 코딩으로 하나되는 우리 지구.  ","categories": ["Git"],
+        "tags": ["Git","powershell"],
+        "url": "/git/git-Too-many-revisions-specified/",
+        "teaser": null
+      },{
+        "title": "🚨 Can’t push refs to remote",
+        "excerpt":"🚨 Can’t push refs to remote. Try running ‘Pull’ first to integrate your changes      파일 저장 경로가 잘못 되어 수정했더니 해결되었다. 저장 경로는 항상 주의할 것.       눌렀더니 해결. 에러 메세지를 잘 읽어보자.  ","categories": ["Git"],
+        "tags": ["Git"],
+        "url": "/git/git-cant-push-refs-to-remote/",
         "teaser": null
       },{
         "title": "가변 이미지",
