@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/programmers-lv2/programmers-maxandmin/</loc>
-<lastmod>2023-02-16T22:06:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/programmers-lv1/2016/</loc>
-<lastmod>2023-02-21T22:06:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/javascript/cannot-find-module/</loc>
 <lastmod>2023-02-27T22:06:00+09:00</lastmod>
 </url>
@@ -397,6 +389,10 @@
 <lastmod>2023-02-16T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/programmers-lv2/programmers-maxandmin/</loc>
+<lastmod>2023-02-16T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/programmers-lv1/programmers-arr/</loc>
 <lastmod>2023-02-17T22:06:00+09:00</lastmod>
 </url>
@@ -407,6 +403,10 @@
 <url>
 <loc>http://localhost:4000/programmers-lv1/sumofdivisor/</loc>
 <lastmod>2023-02-20T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/programmers-lv1/2016/</loc>
+<lastmod>2023-02-21T22:06:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/css/css-opacity/</loc>
@@ -502,6 +502,10 @@
 </url>
 <url>
 <loc>http://localhost:4000/programmers-lv2/programmers-%EC%A0%95%EC%88%98-%EC%A0%9C%EA%B3%B1%EA%B7%BC-%ED%8C%90%EB%B3%84/</loc>
+<lastmod>2023-04-03T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/</loc>
 <lastmod>2023-04-03T22:06:00+09:00</lastmod>
 </url>
 <url>
