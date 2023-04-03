@@ -266,3 +266,7 @@ let furtherRight: "Kimi" | "Timmy" | "Chuckie";
 let furtherLeft: "Angelica" | "Chuckie" | undefined;
 let furtherRight: "Kimi" | "Timmy" | "Chuckie" | undefined;
 ```
+
+## 문제 출처
+
+- [learning typescript](https://www.learningtypescript.com)

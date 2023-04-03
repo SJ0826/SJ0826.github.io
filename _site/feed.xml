@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-03T17:11:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Lv 2] 숫자의 표현</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/" rel="alternate" type="text/html" title="[Lv 2] 숫자의 표현" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98%20%ED%91%9C%ED%98%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-03T19:27:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Lv 2] 숫자의 표현</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/" rel="alternate" type="text/html" title="[Lv 2] 숫자의 표현" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98%20%ED%91%9C%ED%98%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>Finn은 요즘 수학공부에 빠져 있습니다. 수학 공부를 하던 Finn은 자연수 n을 연속한 자연수들로 표현 하는 방법이 여러개라는 사실을 알게 되었습니다. 예를들어 15는 다음과 같이 4가지로 표현 할 수 있습니다.</p>
 
@@ -200,7 +200,360 @@
 <ul>
   <li>learning TypeScript</li>
   <li><a href="https://inpa.tistory.com/entry/TS-%F0%9F%93%98-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85-%EC%B2%B4%ED%82%B9-%EC%9B%90%EB%A6%AC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0">InPa-Dev - 타입스크립트 잉여 속성 검사 원리 이해하기</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="객체 타입" /><category term="구조적 타이핑" /><category term="선택적 속성" /><category term="교차타입" /><category term="never" /></entry><entry><title type="html">[Lv 1] 정수 제곱근 판별</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%A0%95%EC%88%98-%EC%A0%9C%EA%B3%B1%EA%B7%BC-%ED%8C%90%EB%B3%84/" rel="alternate" type="text/html" title="[Lv 1] 정수 제곱근 판별" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%A0%95%EC%88%98%20%EC%A0%9C%EA%B3%B1%EA%B7%BC%20%ED%8C%90%EB%B3%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%A0%95%EC%88%98-%EC%A0%9C%EA%B3%B1%EA%B7%BC-%ED%8C%90%EB%B3%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="객체 타입" /><category term="구조적 타이핑" /><category term="선택적 속성" /><category term="교차타입" /><category term="never" /></entry><entry><title type="html">[Leaning Typescript 🦜] various-lawyerings</title><link href="http://localhost:4000/typescript/typescript-learning-typescript-various-lawyerings/" rel="alternate" type="text/html" title="[Leaning Typescript 🦜] various-lawyerings" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-learning-typescript-various-lawyerings</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-learning-typescript-various-lawyerings/"><![CDATA[<h1 id="-various-lawyerings">👩‍🎓 Various Lawyerings</h1>
+
+<blockquote>
+  <p>Hello, fellow lawyer. I’m glad you’ve chosen to join me in preparing to engage in legal battle. As you can see, I require your assistance in developing TypeScript projects to manage my files for this most important case.</p>
+</blockquote>
+
+<p>안녕, 동료 변호사야.<br />
+이번 법정 사건을 나와 함께 준비하기로 했다니 정말 기쁘다.<br />
+보다시피, 아주 중요한 케이스를 위한 파일을 관리하는 지금 개발중인 타입스크립트 프로젝트를 너가 도와줬음 좋겠다잉.</p>
+
+<ul>
+  <li>타입 인터페이스말고, 타입 객체를 사용하세요.</li>
+</ul>
+
+<h2 id="-step-1-aviary-classification">🎓 Step 1: Aviary Classification</h2>
+
+<blockquote>
+  <p>As a world-renowned expert in bird law, it is my duty to properly educate the court on the characteristics of various birds and related bird information. I cannot uphold my critical task if my bird files are not in proper order.<br /><br />I require you to write an object type describing a Bird type for my array of birds. Please be as specific as possible for types when possible. Any property other than name whose values are strings should be a union of unions of string literals.</p>
+</blockquote>
+
+<p><strong>▪ 요약: 새 정보가 들어있는 객체 타입을 가능한 구체적으로 만들어줘. name말고도 값이 string인 프로퍼티는 string 리터럴 유니언 타입이 되어야해</strong></p>
+
+<h3 id="-문제-코드">📄 문제 코드</h3>
+
+<p>birds배열의 속성들이 객체로 이루어져 있습니다. 이 객체들의 타입을 지정해주어야 합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Write your Bird type here! ✨</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">birds</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">dangerous</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">diet</span><span class="p">:</span> <span class="dl">"</span><span class="s2">omnivore</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">White-Throated Magpie-Jay</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">noisy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">diet</span><span class="p">:</span> <span class="dl">"</span><span class="s2">omnivore</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">intelligent</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Eurasian Magpie</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">diet</span><span class="p">:</span> <span class="dl">"</span><span class="s2">carnivore</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Yellow-Billed Blue Magpie</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">noisy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">intelligent</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">diet</span><span class="p">:</span> <span class="dl">"</span><span class="s2">omnivore</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">American Crow</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<h3 id="-풀이과정">📄 풀이과정</h3>
+
+<p>공통된 속성들을 빼주고 서로 다른 경우의 속성들을 유니언 타입으로 생성해 교차 타입으로 묶어주었습니다.</p>
+
+<p>error는 없어졌지만 이게 요구사항대로 한게 맞는지 모르겠습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Bird</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">diet</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span> <span class="o">&amp;</span> <span class="p">(</span>
+  <span class="o">|</span> <span class="p">{</span> <span class="na">dangerous</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span> <span class="nl">noisy</span><span class="p">:</span> <span class="nx">boolean</span> <span class="p">}</span>
+  <span class="o">|</span> <span class="p">{</span> <span class="na">diet</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span>
+  <span class="o">|</span> <span class="p">{</span> <span class="na">noisy</span><span class="p">:</span> <span class="nx">boolean</span> <span class="p">}</span>
+  <span class="o">|</span> <span class="p">{</span> <span class="na">intelligent</span><span class="p">:</span> <span class="nx">boolean</span> <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>✔ 정답</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">Bird</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">dangerous</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">,</span>
+  <span class="na">diet</span><span class="p">:</span> <span class="dl">"</span><span class="s2">carnivore</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">omnivore</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">intelligent</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+  <span class="nx">noisy</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>역시 틀렸습니다. 교차 타입말고 선택적 속성을 사용하니 훨씬 가독성있네요.</p>
+
+<p>교차 타입을 알기 전에는 이렇게 코드를 작성했었는데 교차 타입을 공부하니 애먼곳에 얶매여 생각했습니다.</p>
+
+<p>역시 코드는 사람이 눈으로 읽기 좋게 짜야합니다.</p>
+
+<h2 id="-step-2-case-management">🎓 Step 2: Case Management</h2>
+
+<blockquote>
+  <p>Very good, very good. My birds are classified correctly. I thank you.<br />
+Next, I have the opposite type of task for you to tackle. I have created a Case type for you and have a cases array. But, the elements in cases vary in format and do not always match up with the Case type. Please correct cases – without changing the Case type.</p>
+</blockquote>
+
+<p><strong>▪ 요약: 아주 맘에 드는구만. 이번엔 반대로 내주지. 타입 Case를 바꾸지 말고 배열 cases를 바꿔서 문제를 해결해 봐라!</strong></p>
+
+<h2 id="-문제-코드-1">📄 문제 코드</h2>
+
+<p>이번에는 타입을 수정하지 않고 주어진 배열 데이터인 cases를 고쳐야 합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">type</span> <span class="nx">Case</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">court</span><span class="p">:</span> <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">federal</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nl">decided</span><span class="p">:</span> <span class="nb">Date</span><span class="p">;</span>
+  <span class="nl">defendant</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kr">string</span><span class="p">[];</span>
+  <span class="nl">plaintiff</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">cases</span><span class="p">:</span> <span class="nx">Case</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">court</span><span class="p">:</span> <span class="dl">"</span><span class="s2">federal</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">decided</span><span class="p">:</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">February 18, 1986</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">defendant</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Glynn Batson</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">and</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Southplains Land Corporation</span><span class="dl">"</span><span class="p">],</span>
+    <span class="na">id</span><span class="p">:</span> <span class="mi">841710</span><span class="p">,</span>
+    <span class="na">plaintiff</span><span class="p">:</span> <span class="dl">"</span><span class="s2">United States of America</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">United States v. Batson</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">court</span><span class="p">:</span> <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">decided</span><span class="p">:</span> <span class="dl">"</span><span class="s2">April 17, 1992</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">defendant</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bradford Marine, Inc</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">id</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">90-6372-CIV</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">90-6599-CIV</span><span class="dl">"</span><span class="p">],</span>
+    <span class="na">plaintiff</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lyn C. Noble</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Noble v. Bradford Marine, Inc</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">amusing</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">court</span><span class="p">:</span> <span class="dl">"</span><span class="s2">NY state</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">defendant</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PepsiCo, Inc.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">decided</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">on</span><span class="p">:</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">August 5, 1999</span><span class="dl">"</span><span class="p">),</span>
+    <span class="p">},</span>
+    <span class="na">ids</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">96-cv-5320</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">96-cv-9069</span><span class="dl">"</span><span class="p">],</span>
+    <span class="na">plaintiff</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John Leonard</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Leonard v. Pepsico, Inc.</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<h3 id="-해결-과정">📄 해결 과정</h3>
+
+<p>주어진 타입 Case에 맞게 배열 cases를 바꾸어 주었습니다.</p>
+
+<p>Case에 없는 속성은 아예 삭제했습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">type</span> <span class="nx">Case</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">court</span><span class="p">:</span> <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">federal</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nl">decided</span><span class="p">:</span> <span class="nb">Date</span><span class="p">;</span>
+  <span class="nl">defendant</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kr">string</span><span class="p">[];</span>
+  <span class="nl">plaintiff</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">cases</span><span class="p">:</span> <span class="nx">Case</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">court</span><span class="p">:</span> <span class="dl">"</span><span class="s2">federal</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">decided</span><span class="p">:</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">February 18, 1986</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">defendant</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Glynn Batson and Southplains Land Corporation</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">841710</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">plaintiff</span><span class="p">:</span> <span class="dl">"</span><span class="s2">United States of America</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">United States v. Batson</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">court</span><span class="p">:</span> <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">decided</span><span class="p">:</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">1992-04-17</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">defendant</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bradford Marine, Inc</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">id</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">90-6372-CIV</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">90-6599-CIV</span><span class="dl">"</span><span class="p">],</span>
+    <span class="na">plaintiff</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lyn C. Noble</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Noble v. Bradford Marine, Inc</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">court</span><span class="p">:</span> <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">defendant</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PepsiCo, Inc.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">decided</span><span class="p">:</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">August 5, 1999</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">id</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">96-cv-5320</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">96-cv-9069</span><span class="dl">"</span><span class="p">],</span>
+    <span class="na">plaintiff</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John Leonard</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Leonard v. Pepsico, Inc.</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<p>정답 코드와 일치합니다 :)</p>
+
+<h2 id="-step-3-making-arguments">📄 Step 3: Making Arguments</h2>
+
+<blockquote>
+  <p>Well done, dear chap! Well done indeed.
+I have but one more file for you. It contains the many motions I have seen in cases involving my clients. I must admit, I’d grown quite weary while jotting down those motions. It is missing TypeScript types, and many elements in the motions array have typos in their data.
+The tricky thing is, there are a few different types of motions that can be filed. There should be some kind of discriminating indicator property on the types to distinguish between:</p>
+</blockquote>
+
+<ul>
+  <li>Status: allowed, denied, and pending. Within those types:
+    <ul>
+      <li>Allowed: it may also indicate how many hours it spent in deliberation</li>
+      <li>Denied: it may also indicate how many hours it spent in deliberation, and whether it annoyed the justice</li>
+      <li>Pending: it may also indicate how many hours it’s estimated to spent in deliberation</li>
+    </ul>
+  </li>
+  <li>Step: post-trial and pre-trial. Within those types:
+    <ul>
+      <li>Pre-trial: I only noted dismissals, suppressions, and venue changes</li>
+      <li>Post-trial: I only noted acquittals, corrections, and new trials</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>▪ 아주 잘했군, 녀석. 나 정말 피곤하다… 내 클라이언트 사건들에서 사라진 타입을 찾고 오타 좀 고쳐주라.. 여기 구별하기 위한 프로퍼티들이 있어.(망해버린 번역입니다.)</strong></p>
+
+<h2 id="-문제-코드-2">📄 문제 코드</h2>
+
+<p>배열 motions 요소를 이루는 객체의 타입을 지정해주어야 하네요.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Write your types here! ✨</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">motions</span><span class="p">:</span> <span class="nx">Motion</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">annoyedJustice</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">acquittal</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">deliberationHours</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">defendant</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">reason</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The heretofore document had dried ink on it.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">denied</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post-trial</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">annoyedJustice</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">correction</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">deliberationHours</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">plaintiff</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">reason</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The tenant has ninety days to vacate.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">denied</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post-trial</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">suppress</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">deliberationHours</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">plaintiff</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">reason</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Frank was never allowed in the house.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">allowed</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pre-trial</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">new trial</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">estimatedDeliberationHours</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">defendant</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">reason</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The duel's been accepted. There's no backing out. That's the law.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pending</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post-trial</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">annoyedJustice</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dismiss</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">deliberationHours</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">plaintiff</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">reason</span><span class="p">:</span>
+      <span class="dl">"</span><span class="s2">It seems like you have a tenuous grasp on the English language in general.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">denied</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pre-trial</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">annoyedJustice</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">correction</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">deliberationHours</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">defendant</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">reason</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Fillibuster?</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">denied</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post-trial</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">annoyedJustice</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">venue</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">deliberationHours</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">defendant</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">reason</span><span class="p">:</span> <span class="dl">"</span><span class="s2">A time was never specified for the duel.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">denied</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pre-trial</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">annoyedJustice</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">correction</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">deliberationHours</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">plaintiff</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">reason</span><span class="p">:</span> <span class="dl">"</span><span class="s2">He's making a few good points!</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">denied</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post-trial</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<h2 id="-풀이-과정">📄 풀이 과정</h2>
+
+<p>이번 문제는 제 영어 실력에 한계가 느껴졌습니다.</p>
+
+<p>주어진 지문을 보고 문제가 잘 이해가 가지 않았습니다.</p>
+
+<p>처음으로 못풀었던 문제입니다..</p>
+
+<p>우선 객체의 공통된 속성들을 가지고 베이스 타입을 만들어줍니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">type</span> <span class="nx">MotionBase</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">from</span><span class="p">:</span> <span class="dl">"</span><span class="s2">defendant</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">plaintiff</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nl">reason</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이후, 지문에서 주어진 요구사항에 맞게 두가지 타입을 분류합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">type</span> <span class="nx">PreTrialMotion</span> <span class="o">=</span> <span class="nx">MotionBase</span> <span class="o">&amp;</span> <span class="p">{</span>
+  <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dismiss</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">suppress</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">venue</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nl">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pre-trial</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">PostTrialMotion</span> <span class="o">=</span> <span class="nx">MotionBase</span> <span class="o">&amp;</span> <span class="p">{</span>
+  <span class="na">classification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">acquittal</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">correction</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">new trial</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nl">step</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post-trial</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이렇게 재판 유형에 따른 타입 TrialMotion을 유니언 타입으로 만들어주었습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">type</span> <span class="nx">TrialMotion</span> <span class="o">=</span> <span class="nx">PostTrialMotion</span> <span class="o">|</span> <span class="nx">PreTrialMotion</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이제 각 상태에 맞게 타입을 분류하고 유니언 타입으로 합쳐 최종 타입을 생성합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">type</span> <span class="nx">AllowedMotion</span> <span class="o">=</span> <span class="nx">TrialMotion</span> <span class="o">&amp;</span> <span class="p">{</span>
+  <span class="na">deliberationHours</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">allowed</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">DeniedMotion</span> <span class="o">=</span> <span class="nx">TrialMotion</span> <span class="o">&amp;</span> <span class="p">{</span>
+  <span class="na">annoyedJustice</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">deliberationHours</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">denied</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">PendingMotion</span> <span class="o">=</span> <span class="nx">TrialMotion</span> <span class="o">&amp;</span> <span class="p">{</span>
+  <span class="na">estimatedDeliberationHours</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pending</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">Motion</span> <span class="o">=</span> <span class="nx">AllowedMotion</span> <span class="o">|</span> <span class="nx">DeniedMotion</span> <span class="o">|</span> <span class="nx">PendingMotion</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>영어 공부를 좀 더 해야겠네요.</p>
+
+<p>정답 코드를 보기 전까진 어떻게 해야할지 사실 감이 잘 잡히지 않았습니다.</p>
+
+<p>역시 영어는 꼭 공부해야겠습니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li><a href="https://www.learningtypescript.com">learning typescript</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="learning typescript" /><category term="러닝 타입스크립트" /><category term="타입 객체" /><category term="various-lawyerings" /><summary type="html"><![CDATA[책 learning typescript 4장 타입 객체 실습 프로젝트 입니다.]]></summary></entry><entry><title type="html">[Lv 1] 정수 제곱근 판별</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%A0%95%EC%88%98-%EC%A0%9C%EA%B3%B1%EA%B7%BC-%ED%8C%90%EB%B3%84/" rel="alternate" type="text/html" title="[Lv 1] 정수 제곱근 판별" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%A0%95%EC%88%98%20%EC%A0%9C%EA%B3%B1%EA%B7%BC%20%ED%8C%90%EB%B3%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%A0%95%EC%88%98-%EC%A0%9C%EA%B3%B1%EA%B7%BC-%ED%8C%90%EB%B3%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다.
 n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요.</p>
@@ -548,65 +901,4 @@ x의 길이를 c라고 하면, x를 “c를 2진법으로 표현한 문자열”
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="올바른 괄호" /><category term="스택/큐" /><summary type="html"><![CDATA[프로그래머스 lv 2 올바른 괄호]]></summary></entry><entry><title type="html">👩‍💻 개발자의 글쓰기</title><link href="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/" rel="alternate" type="text/html" title="👩‍💻 개발자의 글쓰기" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-29T22:06:00+09:00</updated><id>http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98%20%EA%B8%80%EC%93%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/books/books-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/228564066-8ebc1f8d-a344-4bc5-8777-2dc39bd2a745.png" alt="image" /></p>
-
-<div style="background: #EEE9DA; padding: 1em">
-▪ 제목: 개발자의 글쓰기<br />
-▪ 작가: 김철수<br />
-▪ 출판사: 위키북스<br />
-▪ 독서 기간: 2023/03/29 ~ ing<br />
-▪ 읽은 방식: 종이책
-</div>
-
-<hr />
-
-<p>원래 독서기록을 쓸 때는 자유형식으로 쓰지만, 이 책은 글 쓰는 스킬을 정리해두면 두고두고 볼 것 같아 정리합니다. 전체 내용을 정리한 것이 아니라 글 작성자에게 필요한 개념을 주로 정리했습니다.</p>
-
-<h2 id="-1장-개발자가-알아야-할-글쓰기-기본">📄 1장 개발자가 알아야 할 글쓰기 기본</h2>
-
-<h3>문장을 구조화 하는 법</h3>
-
-<p>핵심을 말하고 부가 설명을 해라.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나는 김수진이다. 글쓰기를 좋아하는 웹 개발자 취준생이다.
-</code></pre></div></div>
-
-<h3>서술식, 개조식, 도식의 차이</h3>
-
-<ul>
-  <li>서술식
-    <ul>
-      <li>~다.</li>
-      <li>소설, 신문, 개발 가이드문서</li>
-    </ul>
-  </li>
-  <li>개조식
-    <ul>
-      <li>명사형 종결어미</li>
-      <li>릴리스 문서나 장애 보고서</li>
-      <li>글머리 기호를 활용</li>
-    </ul>
-  </li>
-  <li>도식
-    <ul>
-      <li>중복이나 누락이 많은 경우</li>
-      <li>각 항목이나 사항의 관계를 명확히 규정하고 싶은 경우</li>
-    </ul>
-  </li>
-</ul>
-
-<h3>변수나 함수 영어 단어 선택 팁</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">create</code>: 정해진 틀이 없을 때 틀을 만들기 위해 사용</li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">resister</code>: 정해진 틀에 값을 넣을 때 사용.</p>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">change</code>: 단순히 내용을 바꾸는 경우에 사용</li>
-  <li><code class="language-plaintext highlighter-rouge">modify</code>: 잘못된 것을 바로잡을 때 사용</li>
-  <li><code class="language-plaintext highlighter-rouge">revise</code>: 기존에 없던 새로운 정보나 아이디어를 덧붙일 때 사용</li>
-</ul>
-
-<h2 id="-2장-개발-시간을-줄여주는-이름-짓기와-주석-쓰기">📄 2장 개발 시간을 줄여주는 이름 짓기와 주석 쓰기</h2>
-
-<p>책 읽는 중… 📖</p>]]></content><author><name>Sujin Kim</name></author><category term="books" /><category term="개발자의 글쓰기" /><category term="IT서적" /><category term="김철수" /><category term="위키북스" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="올바른 괄호" /><category term="스택/큐" /><summary type="html"><![CDATA[프로그래머스 lv 2 올바른 괄호]]></summary></entry></feed>

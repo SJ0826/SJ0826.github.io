@@ -340,6 +340,6 @@ let clownsCount = 0;
 
 ---
 
-출처
+## 문제 출처
 
-- [learning typescript](https://www.learningtypescript.com/the-type-system/)
+- [learning typescript](https://www.learningtypescript.com)
