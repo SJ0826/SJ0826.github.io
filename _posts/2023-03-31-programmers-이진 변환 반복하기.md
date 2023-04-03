@@ -77,3 +77,7 @@ function solution(s) {
 <span style="background: #FFD966; padding: 1em">📌 String.prototype.replace(): 문자열을 치환할 수 있다. str.replace(해당 문자열 || 정규식, 치환할 문자열 || 함수) </span>
 
 이녀석도 기억해서 다음 문제에 사용하게 된다면 야무지게 써먹어보겠습니다.
+
+## 문제 출처
+
+- 프로그래머스

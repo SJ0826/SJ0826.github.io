@@ -461,6 +461,10 @@
 <lastmod>2023-04-03T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/programmers-lv2/programmers-%EC%A0%95%EC%88%98-%EC%A0%9C%EA%B3%B1%EA%B7%BC-%ED%8C%90%EB%B3%84/</loc>
+<lastmod>2023-04-03T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/books/</loc>
 </url>
 <url>
@@ -567,6 +571,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page23/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page24/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/googlea6c2338bb73092a7.html</loc>
