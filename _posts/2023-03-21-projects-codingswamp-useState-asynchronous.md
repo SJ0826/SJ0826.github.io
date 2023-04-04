@@ -1,6 +1,6 @@
 ---
 title: "[모여봐요 코딩의 늪] useState 비동기 에러 처리하기"
-excerpt: "redux에서 관리하는 state를 객체로 다시 구조화"
+excerpt: "모코숲 useState 비동기 관련 trouble shooting"
 toc: true
 toc_sticky: true
 sidebar:
