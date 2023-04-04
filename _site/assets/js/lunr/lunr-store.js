@@ -155,6 +155,12 @@ var store = [{
         "url": "/git/git-git/",
         "teaser": null
       },{
+        "title": "리눅스 터미널 명령어 정리",
+        "excerpt":"📄 Manual   man(manual)   매뉴얼(manual)을 뜻합니다.  나가고 싶을 때 q를 입력합니다.   clear   터미널에 있는 모든 텍스트를 깔끔하게 청소합니다.   📄 Navigating file system   pwd   현재 어떤 경로에 있는지 전체 경로를 프린트합니다.  윈도우버전 - Get-Location   ls(list)   현재 경로에 어떤 폴더와 파일들이 있는지 프린트합니다.  윈도우버전 - Dir        ls-l(list-long): 파일의 상세 속성을 확인합니다.    ls -a(list-all): 숨겨진 파일들도 모두 확인합니다.(윈도우버전 - ls -force)    open .   현재 경로를 파일 탐색기에서 엽니다.   윈도우버전 - explorer .     cd(change directory)   해당 폴더로 이동합니다.        cd..: 상위 경로로 이동합니다.    cd~ : 현재 설정된 사용자의 최상위 경로로 이동합니다.    cd - : 바로 이전 경로로 이동합니다.    find   특정한 파일이나 폴더를 찾습니다.   윈도우 버전- get-childitem       find . -type file -name “.text” : 파일 안의 모든 text파일을 찾습니다. 다양한 파일 유형으로 변경하여 활용가능합니다.  윈도우 버전 - get-childitem -File -Filter “.txt” -Recurse    find . -type directory -name “*2” : 이름이 2로 끝나는 폴더를 찾습니다.    which   실행하고자 하는 프로그램이 어디에 설치되어 있는지 경로를 확인할 때 사용합니다.  윈도우 버전 : get-command      📄 Create and manage files   touch 파일이름   파일을 생성합니다.  윈도우 버전 - new-item 파일이름     cat 파일이름   파일 안의 내용을 확인합니다.     echo “문자열” &gt; 파일   문자열을 파일에 작성합니다.       echo “문자열” » 파일 내용을 덮어 씌우지 않고 추가로 작성합니다.     mkdir   새로운 경로를 생성합니다.       mkdir -p 원하는경로/원하는경로/원하는경로 : 원하는 경로를 쭉 생성합니다.    cp 파일이름 경로/   파일을 복사합니다.     mv 파일이름 경로/   파일을 이동합니다.     rm 파일이름   파일을 삭제합니다.       rm -r 폴더이름 : 폴더 삭제     grep(Global Regular Expression Print)   특정 키워드를 검색합니다.  윈도우 버전 - select-string      grep “world” .txt    grep -n “world” *.txt : 모든 텍스트파일안의 word가 몇번째 줄에 있는지 검색합니다.    grep -nir “world” . : 현재경로를 포함한 모든 하위경로 내에서 검색합니다.     📄 Work with environment variables(환경 변수 설정하기)   export   ex. export MY_DIR=”dir1”   윈도우 버전 - $env:MU_DIR = “dir1”       cd $MY_DIR: 환경변수를 사용하고 작업 수행이 가능합니다.    unset MU_DIR: 환경변수를 제거합니다.  윈도우 버전 - $env:MY_DIR = ““     📄 vim   수정모드: i  나가기: esc + :W 수정 내용 저장 후 종료 / q: 저장하지 않고 종료     📄 새로 알게 된 용어   WSL   Windows Subsustem for Linux 윈도우 안에 리눅스시스템이 적용되어 있다.   alias   이미 정의된 데이터 오브젝트에 대해 좀더 이해하기 쉽고, 보다 의미있게 붙인 이름.   사용자가 명령어를 새로운 이름으로 정의할 수 있도록 허용한다.     학교다닐때 제일 어려워하고 싫어했던 리눅스 명령어를 제대로 파고들어봤다.  명령어 자체가 배울 땐 지루하고 따분하지만  사실 코딩을 하고 직접 경로를 다룰때는 이만큼 편한게 없는 듯 싶다.  공부를 하면 할 수록  맥북 사고 싶다ㅎㅎ  ","categories": ["Git"],
+        "tags": ["리눅스"],
+        "url": "/git/git-%EB%A6%AC%EB%88%85%EC%8A%A4-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC/",
+        "teaser": null
+      },{
         "title": "z-index",
         "excerpt":"📄 z-index   z-index 속성은 요소의 쌓임 순서(stack order)를 정의합니다.  정수 값을 지정하여 쌓임 맥락(stacking context)에서의 레벨을 정의하는 방식으로 적용됩니다.  위치 지정 요소에 대해 적용할 수 있는 속성입니다.    .first {   z-index: 1; } .second {   z-index: 2; } .third {   z-index: 3; } .fourth {   z-index: 1; }   간단히 말해, 요소들의 z축 순서를 결정해 주는 속성입니다.      z-index은 정해진 정수 값이 있는 것이 아니라, 상대적인 수로 쌓임 맥락이 결정됩니다.   z-index의 숫자가 같을 경우에는, 나중에 쌓은 요소가 위로 오게 됩니다.   출처      유노코딩  ","categories": ["CSS"],
         "tags": ["z-index"],
@@ -171,6 +177,12 @@ var store = [{
         "excerpt":"📄 커밋 리셋하기(reset)   리셋은 특정한 커밋으로 모든 것을 초기화 시키는 명령어 입니다.   📄 작업 내용 리셋하고 working directory로 가져오기   git reset HEAD~n   이와 같은 명령어를 이용하면 HEAD부터 n번째에 있는 커밋들을 reset합니다.  작업하던 내용은 사라지지 않고 working directory로 이동합니다.   📄 작업 내용 리셋하고 staging area로 가져오기   git reset --soft HEAD~n   이와 같은 명령어를 이용하면 HEAD부터 n번째에 있는 커밋들을 reset합니다.  작업하던 내용은 사라지지 않고 staging area로 이동합니다.     아직 작업 중인 내용이 있지만 커밋을 하지 않으면 불안하고 작업단위를 구분하고자 임시 저장 내용으로 커밋하고 자 할때 유용하게 사용할 수 있는 명령어 입니다.     이렇게 사용하면 무분별한 커밋메시지가 쌓이지 않게 됩니다.   📄 작업 내용 완전히 리셋하기   git reset --hard  작업내용을 working directory, staging area로 가져오지 않고 완전히 리셋하여 파일 내용이 완전히 삭제됩니다.   포인터가 첫 번쨰 commit을 가리키는데 이 상태로 초기화 하는 것은,  마지막으로 커밋한 이후에 수정한 모든 local의 파일들을 초기화하는 것을 뜻합니다.           working directory가 비워진 것을 확인할 수 있습니다.   ","categories": ["Git"],
         "tags": ["커밋 리셋","git reset"],
         "url": "/git/git-%EC%BB%A4%EB%B0%8B-%EB%A6%AC%EC%85%8B%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "Commit Head란?",
+        "excerpt":"📄 HEAD란?   파일을 commit할 때, 현재 commit한 파일은 이전 commit한 파일을 참조합니다.   a b c d 순으로 commit한다고 가정할 때, b는 a를 가리키고 c는 b를 가리킵니다.   이런식으로 commit을 해 나가는 기본 줄기를 master branch 라고 합니다.      a &lt;- b&lt;- c&lt;- d (시각적 표현)    이 master brach에서 HEAD는 마지막으로 commit한 d파일을 가리키게 됩니다.   이때 c는 head~1이 되어 head가 있는 곳에서 첫 번째 부모임을 설명합니다.   b도 마찬가지로 head~2가 됩니다.   만약, b로 돌아가고 싶다면   git checkout b해쉬태그   를 입력하여 b로 돌아갈 수 있습니다.      git checkout master   위와 같이 입력하면 다시 원상태로 돌아옵니다.   참고      드림코딩  ","categories": ["Git"],
+        "tags": ["commit","Head"],
+        "url": "/git/Commit-Head/",
         "teaser": null
       },{
         "title": "[flex-box] flex-direction & flex-wrap",
@@ -197,6 +209,12 @@ var store = [{
         "url": "/css/css-order/",
         "teaser": null
       },{
+        "title": "취소사항을 버전으로 남기기 (revert)",
+        "excerpt":"📄 취소사항을 버전으로 남기기   reset이나 restore같은 명령어들은 history에 돌아갔다는 기록이 남지 않습니다.   이떄 기록을 남기기 위해서 revert명령어를 사용합니다.   git revert 해쉬코드 또는 HEAD~n을 사용하여 커밋을 취소하고 기록을 남깁니다.        이렇게 커밋에서 변경했던 모든 내용을 다 삭제 해주는 새로운 커밋이 생긴 것을 확인할 수 있습니다.    📄 버전을 남기지 않고 revert하기   revert에 –no-commit이라는 옵션을 남깁니다.   git revert --no-commit 해쉬코드 또는 HEAD~n   위와 같은 명령어를 이용해 커밋을 취소하면 기록이 남지 않게 됩니다.   참고      드림코딩  ","categories": ["Git"],
+        "tags": ["commit","revert"],
+        "url": "/git/git-%EC%9E%91%EC%97%85%EC%83%81%ED%83%9C-%EB%90%98%EB%8F%8C%EB%A6%AC%EA%B8%B0/",
+        "teaser": "/assets%5Cimage%5Cgit%20logo.jpg"
+      },{
         "title": "[grid] 그리드 레이아웃",
         "excerpt":"📄 그리드(grid) 레이아웃   그리드 레이아웃은 그리드 컨테이너 안의 그리드 아이템을 행과 열을 통해 정렬해 주는 2차원 레이아웃 방식을 뜻합니다.   그리드 레이아웃은 기본적으로 블록라인 컨테이너 입니다.  display: inline-grid;로 인라인 레벨 요소로 만들어 줄 수 있습니다.       그리드 컨테이너: 그리드 방식으로 레이아웃을 결정할 요소   그리드 아이템: 그리드 컨테이너 내부에서 그리드 방식으로 배치되는 요소들   📄 grid-template-columns   그리드 컨테이너의 트랙 중 열트랙에 있는 아이템들의 크기를 정해주는 속성입니다.  트랙은 그리드 컨테이너의 행 또는 열을 뜻합니다.   grid-template-columns: 100px 1fr; /*열 크기&amp;개수를 지정한다.*/      fr: 남아있는 공간에서 비율로 나눈다.    📄 grid-template-rows   그리드 컨테이너의 트랙 중 행트랙에 있는 아이템들의 크기를 정해주는 속성입니다.   grid-template-rows: 200px 1fr 1fr; /*행 크기&amp;개수를 지정한다.*/   📄 gap(grid-gap)   gap은 그리드 아이템의 간격 사이사이의 간격을 결정해주는 속성입니다.  아래와 같이 단축속성으로도 작성가능합니다.   gap: 20px 10px; /*행사이의 간격은 20px, 열사이의 간격은 10px*/   📄 트랙 관련 함수   ▪ repeat(): 반복되는 값을 자동으로 처리하는 함수  ▪ minmax(): 최솟값과 최댓값을 각각 지정할 수 있는 함수  ▪ auto-fill &amp; auto-fit: 반응형을 고려해 사용할 수 있는 키워드들(함수x)     auto-fil: 컨테이너의 여백을 남긴다.   auto-fit: 컨테이너의 여백을 채워준다.   grid-template-columns: repeat(auto-fit, minmax(100px, auto)); /*컨테이너의 여백없이 그리드 아이템의 크기의 최솟값은 100px, 최댓값은 자동으로 만든다.*/      📄 grid-column &amp; row   그리드 컨테이너의 줄번호를 이용하여 아이템을 배치하고 크기를 지정합니다.    grid-row: 1 / 2; /*1번 아이템이 행의 1~2번까지 크기를 차지한다.*/ grid-column: 1 / 3; /*1번 아이템이 열의 1~3번까지 크기를 차지한다.*/   다른 방식으로도 크기를 지정할 수 있습니다.   grid-row-start: 1; /* 행의 1번줄부터 3번줄까지 크기 차지*/ grid-row-end: 3; grid-column-start: 2; /* 열의 2번줄부터 4번줄까지 크기 차지*/ grid-column-end: 4;   📄 align &amp; justify   ▪ align-items   그리드 아이템들을 수직(열) 정렬합니다.  그리드 컨테이너에 지정합니다.   align-items: stretch; /*기본값: 열의 높이만큼 늘어난다.*/ align-items: start; /*열의 시작부분에 붙는다.*/ align-items: end; /*열의 끝에 붙는다.*/   ▪ align-self   각각의 그리드 아이템이 어떤 식으로 배치될 것인지를 스스로 결정합니다.   li:nth-child(2) {   align-self: start; } /*2번 아이템에만 start적용*/   ▪ justify-items   그리드 아이템들을 수평(행) 정렬합니다. 그리드 컨테이너에 지정합니다.    justify-items: stretch; justify-items: start; /*행너비의 시작부분에 붙는다.*/ justify-items: end; /*행너비의 끝에 붙는다.*/   ▪ justify-self   수평축(행)을 따라 각각의 그리드 아이템이 어떤 식으로 배치될 것인지를 스스로 결정합니다.    li:nth-child(3) {   justify-items: end; } /*3q번 아이템에만 end적용*/   📄 align-content &amp; justify-content   align-content와 justify-content의 속성들은 진행방향만 다른채  같은 성격을 공유합니다.   ▪ align-content   그리드 컨테이너의 열방향의 정렬방식을 지정합니다.    align-content: start; /*기본값*/ align-content: end; /*컨테이너 전체의 공간 밑에 붙는다.*/ align-content: space-around; /*각각의 아이템이 진행방향으로의 여백을 동일하게 가진다.*/ align-content: space-between; /*컨테이너의 위, 아래에 붙인 상태의 여백이 동일하다.*/ align-content: space-evenly; /*모든 여백이 똑같다.*/   ▪ justify-content   그리드 컨테이너의 행방향의 정렬방식을 지정합니다.   justify-content: center; /* 행의 가운데에 정렬한다.*/ justify-content: space-between; /*컨테이너의 왼쪽, 오른쪽에 붙인 상태의 여백이 동일하다.*/   출처      유노코딩  ","categories": ["CSS"],
         "tags": ["grid"],
@@ -207,6 +225,18 @@ var store = [{
         "excerpt":"📄 브랜치(branch)란 무엇인가   브랜치는 하나의 줄기에서 뻗어나온 과정들을 의미합니다.  즉, 저장공간 하나에서 빠져나오는 또다른 가상의 저장공간들을 생성하는 것을 뜻합니다.   📄 브랜치 과정   별도로 브랜치를 따로 작성하지 않으면 master 브랜치에서 계속 작성됩니다.  만약 새로운 기능을 만든다면, 새로운 브랜치를 만들어서 작업을 해나아가는 것이 중요합니다.  이런식으로 커밋을 하면 다수의 개발자들이 다수의 작업을 병렬적으로 처리하는 것이 가능해집니다.  이후 master 브랜치 외 featureA브랜치에서 작업이 완료가 되었다면, featureA의 커밋들을 master브랜치에 merge를 하게 되어 master브랜치에 병합합니다.  이때 featureA의 커밋들을 모두 master 브랜치로 가져오는 것 보다는, 커밋들을 합해서 새로운 하나의 커밋을 만들어 준 후에 master 브랜치로 가지고 오는 방법도 있습니다.   이후 featureA 브랜치는 삭제를 하여 깔끔하게 정리합니다.   📄 브랜치 관련 명령어   브랜치 확인하기   ▪ git branch   생성된 모든 브랜치를 확인할 수 있습니다.        ▪ git branch -all   서버를 포함한 생성된 모든 브랜치를 확인할 수 있습니다.   브랜치 생성하기   ▪ git branch (브랜치명)   브랜치를 생성합니다. 다만, 생성한 브랜치는 만들어지기만 하고 현재의 브랜치는 변하지 않습니다.      브랜치 이동하기   ▪ git switch (브랜치명)   원하는 브랜치로 이동합니다.   ▪ git switch -C new-branch1   새로운 브랜치를 생성함과 동시에 바로 이동합니다.   브랜치 삭제하기   ▪ git branch -d (브랜치명)   해당 브랜치를 삭제합니다.   ▪ git push origin --delete (브랜치명)   원격 저장소의 브랜치를 삭제합니다.   브랜치 이름 변경하기   ▪ git branch --move (브랜치명) (변경할 브랜치명)   브랜치 이름을 새롭게 변경합니다.   ▪ git push --set-upstream origin (변경할 브랜치명)      변경할 브랜치명을 원격저장소에 업데이트 합니다.    출처      드림코딩  ","categories": ["Git"],
         "tags": ["브랜치"],
         "url": "/git/git-branch/",
+        "teaser": null
+      },{
+        "title": "log 관련 명령어",
+        "excerpt":"📄 log 관련 명령어   log는 커밋한 히스토리를 볼 수 있는 명령어입니다.   git log를 통해 확인할 수 있는 것은 다음과 같습니다.      commit 아이디   작성자   commit 시간   타이틀      ▪ git log oneline      해쉬코드의 앞자리 문자열과 간단한 커밋메세지를 간단하게 확인할 수 있습니다.       ▪ git log -3      최근 히스토리 3개를 보여줍니다.     ▪ git log --author=\"sujin\"       sujin이라는 이름의 사용자가 커밋한 히스토리를 보여줍니다.    ▪ git log --before=\"2020-07-24\"       2020-07-24 이전의 커밋한 히스토리를 보여줍니다.     ▪ git log --grep=\"project\"      project가 들어간 커밋 타이틀을 보여줍니다.     ▪ git log -S \"about\"      커밋 내용에 about이 들어간 히스토리를 보여줍니다.     ▪ git log about.txt      about.txt에 해당하는 히스토리를 볼 수 있습니다.     ▪ git log -p         patch 옵션을 사용하면 수정된 파일의 내용들도 확인할 수 있습니다.     ▪ git log -p \"about.txt\"       about.txt.에 해당하는 좀 더 자세한 히스토리를 볼 수 있습니다.     ▪ git log HEAD~1       git log의 HEAD에서 이전 부모부터 히스토리를 볼 수 있습니다.     ▪ git show (해당 해쉬코드)       해당하는 커밋의 내용을 볼 수 있습니다.    ▪ git diff (해쉬코드1) (해쉬코드2)       두가지 커밋 내용을 비교하며 내용을 확인 할 수 있습니다.    참고      드림코딩  ","categories": ["Git"],
+        "tags": ["log","show","diff"],
+        "url": "/git/git-log-%EA%B4%80%EB%A0%A8-%EB%AA%85%EB%A0%B9%EC%96%B4/",
+        "teaser": null
+      },{
+        "title": "머지(merge)",
+        "excerpt":"📄 머지(merge)   독립된 브랜치에서 작업이 끝나면 다시 원본 브랜치에 작업한 결과를 반영하는 것을 말합니다.   📄 fast-forward merges   새로운 브랜치를 생성했을 때 merge를 할 경우,  master 브랜치가 가리키던 포인터를 새로운 브랜치로 이동시키는 것을 말합니다..  이때, 히스토리에 merge가 되었다는 사실이 남지 않고 깔끔하게 merge를 할 수 있습니다.    순서      git checkout master   master 브랜치로 이동합니다.    git merge (독립된 브랜치명)  브랜치를 병합합니다.    git branch -d (병합된 브랜치명)  더이상 필요없게 된 브랜치를 삭제합니다.   📄 fast-forward가 하기 싫을 때   히스토리를 상세히 남기는 것을 선호할 경우  git merge --no-ff feature를 사용하면 자동으로 fast-forward merges가 되는것을 방지할 수 있습니다.     📄 fast-forward가 불가능할 때   새로운 브랜치가 생성이 되고 마스터 브랜치에 새로운 커밋이 발생한 경우, fast-forward가 불가능하게 됩니다.  이렇게 되면 Three-way merge를 이용해야 합니다.  master 브랜치와 파생된 브랜치의 변동사항을 모두 합해서 merge commit을 만든 다음,   master branch에 commit을 하게 됩니다.      이렇게 merge commit된 것을 확인할 수 있습니다.   참고      드림코딩  ","categories": ["Git"],
+        "tags": ["merge","머지"],
+        "url": "/git/git-merge/",
         "teaser": null
       },{
         "title": "cherry pick",
@@ -221,6 +251,12 @@ var store = [{
         "url": "/git/git-conflict-%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95/",
         "teaser": null
       },{
+        "title": "리베이스(Rebase)",
+        "excerpt":"📄 리베이스(Rebase)   리베이스는 파생된 브랜치의 기준이 되는 베이스 커밋을 변경하는 것입니다.   이런 방법으로 브랜치를 합칠 수 있습니다.   그렇다면 머지와 차이점이 뭘까요?   merge vs rebase      우선 rebase와 merge의 공통점은 브랜치를 합친다는 것입니다.   차이점은 rebase를 하는 경우는 merge보다 깨끗한 commit history를 만들 수 있다는 점입니다.   그림처럼 머지는 새로운 커밋을 생성해서 파생된 브랜치에 적용되지만,   리베이스는 베이스 커밋을 재설정 한 것이기 때문에 마치 처음부터 커밋된 것처럼 선형 브랜치 형태를 띄게 됩니다.   📄 주의할 점!   리베이스를 하는 경우 Base가 바뀐 커밋들은 복사되어 새로 만들어지는데, 이 과정에서 commit Id가 변경됩니다.   이때 다른 개발자와 함께 파생된 브랜치에서 작업을 할 경우, 리베이스를 하면 merge conflict가 발생할 수 있습니다.   그러므로 서버에 업로드된 히스토리는 절대 리베이스하면 안됩니다   📄 순서           git checkout (파생된 브랜치)를 이용해 파생된 브랜치로 이동합니다.            git rebase master를 입력해 master 브랜치의 최신버전으로 포인터를 이동시킵니다.              git merge (파생된 브랜치)를 이용하면 merge가 가능한 것을 확인할 수 있습니다.            이후 git branch -d (브랜치명)을 입력해 쓸모 없어진 브랜치를 삭제해 깔끔하게 정리해 줍니다.       📄 rebase –onto   파생된 브랜치에서 다시 파생된 브랜치의 포인터를 master 브랜치에 옮겨주는 것을 뜻합니다.  이때 rebase --onto옵션을 사용합니다.   위와 같이 포인터를 옮겨 준 후, merge를 하면 성공적으로 merge된 것을 확인할 수 있습니다.   참고      드림코딩  ","categories": ["Git"],
+        "tags": ["rebase"],
+        "url": "/git/git-%EB%A6%AC%EB%B2%A0%EC%9D%B4%EC%8A%A4/",
+        "teaser": null
+      },{
         "title": "뷰포트(viewport)",
         "excerpt":"📄 뷰포트(viewport)   현재 화면에 보여지고 있는 영역을 의미합니다.   기기별로 뷰포트가 다르기때문에 보여지는 화면의 배율에 따라 화면이 다르게 보입니다.   html문서에서 이름이 뷰포트인 메타태그 설정을 확인할 수 있습니다.   &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;      width=device-width : 너비를 기기의 너비 기준으로 초기화 한다. initial-scale=1.0 : 기기의 너비에 맞게 초기 scale를 지정한다.    이 메타태그 설정은 기기에 맞게 화면 배율을 조정해주기 때문에, 모바일 화면에서도 pc화면과 동일하게 콘텐츠의 크기가 유지되는 것을 확인할 수 있습니다.   📄 뷰포트 단위   뷰포트 크기를 기반으로 값을 계산하여 크기를 결정하는 가변단위들이 있습니다.   이는 반응형 웹을 만들 때 매우 유용하게 사용되는 단위들입니다.   ▪ font-size: 1vw;      화면 사이즈에서 너비의 100분의 1    화면 너비의 백분율을 계산해서 크기를 조정합니다.   ▪ font-size: 1vh;      화면 사이즈에서 높이의 100분의 1    화면 높이의 백분율을 계산해서 크기를 조정합니다.   ▪ font-size: 1vmin;      화면 사이즈에서 너비와 높이 중 작은것의 100분의 1 너비와 높이 중 작은 것에 백분율을 맞춘다    ▪ font-size: 1vmax;      화면 사이즈에서 너비와 높이 중 큰것의 100분의 1 너비와 높이 중 큰 것에 백분율을 맞춘다.   ","categories": ["HTML"],
         "tags": ["HTML","뷰포트"],
@@ -231,6 +267,30 @@ var store = [{
         "excerpt":"📄 미디어 쿼리(media query)   미디어 쿼리는 미디어 타입을 인식하고, 콘텐츠를 읽어들이는 기기나 브라우저의 물리적 속성을 감지할 수 있는 기능입니다.      @media: 미디어 쿼리문 선언   screen: 가장 자주 사용되는 미디어 타입 중 하나. 화면을 뜻합니다.   /*미디어 쿼리문*/ @media screen and (min-width: 800px) {   /*800px 보다 화면이 커졌을 경우에 적용한다.*/   img {     width: 400px;     height: 400px;   } }   📄 미디어 쿼리 적용의 다른 형태   ▪ link 태그에 미디어 쿼리 추가   &lt;link rel=\"stylesheet\" href=\"style.css\" media=\"screen and (max-width: 768px)\"&gt;   ▪ @import 구문을 이용한 추가   @import url(\"style.css\") screen and (max-width: 768px);   참조      유노코딩 초보자를 위한 반응형 웹 기초 강의  ","categories": ["CSS"],
         "tags": ["미디어 쿼리"],
         "url": "/css/css-media-query/",
+        "teaser": null
+      },{
+        "title": "git stash란?",
+        "excerpt":"📄 stash란?   working directory에서 작업 도중 깃 history에 저장하지 않고도 작업 내용을 저장해 놓을 수 있는 보관소를 뜻합니다.  임시보관소로 생각하면 이해하기 편합니다.    📄 stash stack에 파일을 push하기   ▪ git stash  파일을 stash stack에 push합니다.   ▪ git stash -m \"타이틀\"  타이틀을 지정해 stash stack에 push합니다.   이렇게 파일들을 stash하게 되면 working directory와 staging area에 파일이 남지 않게 됩니다.   ▪ git stash push -m \"타이틀\" --keep-indext  만약 staging area에 있는 것을 유지하면서 stash에 저장하고 싶을 때 위와 같은 명령어를 입력하면 작업하던 내용이 유지가 됩니다.     📄 untracking 파일 stash하기   tracking되지 않은 파일은 자동으로 stash에 저장되지 않습니다.    ▪ git stash -u  위와 같은 명령어를 입력하면 모두다 stash stack에 들어가게 됩니다.     📄 stash 이력 확인하기   ▪ git stash list  위와 같은 명령어를 입력하면 stash stack을 확인할 수 있습니다.          ▪ git stash show (stash 아이디)  stash list에서 확인할 수 있는 stash아이디를 입력하면 각각 stash에서 어떤 것이 수정되었는지 확인할 수 있습니다.       만약 powershell 사용자라면, 따옴표를 추가하여 `git stash show “(stash 아이디)”으로 입력해야합니다.    ▪ git stash show (stash 아이디) -p  p라는 옵션을 이용하면 더 자세한 내용을 확인할 수 있습니다.   📄 stash 에서 다시 가져오기   ▪ git stash apply stash stack의 가장 위에 있는 부분을 working directory에 가져옵니다.  목록은 그대로 유지됩니다.   ▪ git stash apply (stash 아이디)  특정한 stash를 적용하고 싶다면 stash 아이디를 지정하여 명령어를 입력해 주면 됩니다.     ▪ git stash branch (브랜치 이름)  stash를 적용하면서 새로운 브랜치를 만들게 됩니다.   ▪ git stash pop  stash stack의 가장 위에 있는 부분을 working directory에 가져옵니다.  가지고 나온 stash는 목록에서 삭제됩니다.     📄 stash 삭제하기   ▪ git stash drop (stash 아이디)  특정 stash를 삭제합니다.     ▪ git stash clear  전체 stash를 삭제합니다.    ","categories": ["Git"],
+        "tags": ["stash"],
+        "url": "/git/git-stash/",
+        "teaser": null
+      },{
+        "title": "이전 commit 수정하기",
+        "excerpt":"📄 이전 commit 수정하기   최신 커밋이 아닌 이전 커밋을 수정할 때는 rebase명령어를 사용합니다.    📄 순서   1. git rebase i 해쉬코드       i는 interactive의 약자 입니다.       위와 같이 명령어를 입력하면 아래처럼 설정해둔 vscode가 열립니다.    이렇게 업데이트 될 커밋 목록을 확인할 수 있습니다.    2. 변경사항 입력   Pick은 변경없이 커밋을 그래도 사용하겠다는 뜻이므로   변경을 원하는 커밋에 PICK 대신 R(Reword)를 작성해주면 커밋메세지 입력 창이 열립니다.        이렇게 원하는 명령으로 변경합니다.    3. 변경사항 확인   히스토리를 통해 변경내역이 적용된 것을 확인할 수 있습니다.     주의할 점      수정한 커밋 뒤로 이어진 모든 커밋들도 함께 업데이트 됩니다.   참조      드림코딩 GIT마스터 과정  ","categories": ["Git"],
+        "tags": ["commit","rebase"],
+        "url": "/git/git-%EC%9D%B4%EC%A0%84-%EC%BB%A4%EB%B0%8B-%EC%88%98%EC%A0%95%ED%95%98%EA%B8%B0/",
+        "teaser": "/assets%5Cimage%5Cgit%20logo.jpg"
+      },{
+        "title": "git 태그(tag)",
+        "excerpt":"📄 태그(tag)   태그는 특정 커밋을 북마크 해두고 싶을 때 사용하는 기능입니다.   📄 semantic versioning   숫자 세가지를 이용해서 major버전과 minor버전과 fix버전을 구분하여 나타냅니다.      major버전: 특정한 기능이 추가 되는 등 전체적인 변화가 일어났을 때 업데이트 되는 버전.   minor버전: 커다란 기능 중에서 조금의 기능이 업데이트 되거나 개선되었을 때 업데이트 되는 버전.   fix버전: 존재하는 기능 중 오류수정을 했을 때 업데이트 되는 버전.       📄 태그 확인하기   git tag (태그명)  위와 같은 명령어로 태그를 만들면 log내역을 통해서 확인 할 수 있습니다.          📄 태그 달기   git tag (태그명) (해쉬태그)  해쉬태그를 통해서 특정한 커밋에 태그를 달 수 있습니다.         📄 태그에 메세지 달기   git tag (태그명) (해쉬태그) -am (메세지)   해쉬태그를 통해 특정 커밋에 메세지를 작성 할 수 있습니다.      git show를 이용해 확인할 수 있습니다.      📄 태그 검색하기   git tag -l \"문자열\"   특정 문자열이 들어있는 모든 태그를 검색 할 수 있습니다.   📄 태그 삭제하기   git tag -d (태그명)   아래와 같이 태그를 삭제할 수 있습니다.      📄 새로운 브랜치에 태그 생성하기   git checkout -b (브랜치 이름) (태그명)   새로운 브랜치를 생성하여 태그를 만들어줍니다.      출처      드림코딩  ","categories": ["Git"],
+        "tags": ["tag"],
+        "url": "/git/git-%EC%B7%A8%EC%86%8C%EC%82%AC%ED%95%AD%EC%9D%84-%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EB%82%A8%EA%B8%B0%EA%B8%B0/",
+        "teaser": "/assets%5Cimage%5Cgit%20logo.jpg"
+      },{
+        "title": "커밋 수정하기",
+        "excerpt":"📄 commit 수정하기   열심히 여러가지 파일들을 커밋하다보면 커밋 메세지를 잘못 작성하는 등 커밋을 수정해야할 상황이 발생합니다.  이때 amend 명령어를 이용해 최신 커밋파일을 수정할 수 있습니다.    📄 커밋 메세지 수정하기   git commit --amend -m \"수정될 커밋 메세지\"  커밋 메세지를 수정할 경우 위와 같은 명령어를 통해 수정이 가능합니다.     📄 파일 내용 수정하기           vim 또는 직접 파일을 열어 내용을 수정합니다.              git commit amend를 이용해 커밋 파일에 수정내용을 적용합니다.         느낀점   오늘 이후로 깃을 다루는 방법이 많이 달라질 듯 하다.  commit파일 수정하는 법을 몰라서 그냥 push하고 수정파일을 다시 커밋하고 push했었는데  더 이상 번잡한 과정은 겪지 않게 되었다.   ","categories": ["Git"],
+        "tags": ["amend","commit"],
+        "url": "/git/git-%EC%BB%A4%EB%B0%8B-%EC%88%98%EC%A0%95%ED%95%98%EA%B8%B0/",
         "teaser": null
       },{
         "title": "가변 동영상",
@@ -261,6 +321,42 @@ var store = [{
         "excerpt":"🚨 Can’t push refs to remote. Try running ‘Pull’ first to integrate your changes      파일 저장 경로가 잘못 되어 수정했더니 해결되었다. 저장 경로는 항상 주의할 것.       눌렀더니 해결. 에러 메세지를 잘 읽어보자.  ","categories": ["Git"],
         "tags": ["Git"],
         "url": "/git/git-cant-push-refs-to-remote/",
+        "teaser": null
+      },{
+        "title": "fetch vs pull 차이점",
+        "excerpt":"📄 fetch vs pull 차이점   서버에서 commit이 발생하여 변경사항을 나의 로컬 저장소로 가져오는 상황에서 두 명령어는 차이점을 가지게 됩니다.     📄 fetch를 사용했을 경우   fetch를 사용하게 되면 나의 로컬 브랜치의 origin은 서버에서 가져온 커밋으로 위치를 바꾸지만      현재 작업중인 로컬 master 브랜치 즉, HEAD의 위치는 변하지 않습니다.     서버에 업데이트된 히스토리의 정보만 로컬로 가지고 올 때 fetch를 유용하게 사용할 수 있습니다.        git fetch origin 브랜치명  위와 같은 명령어 입력시 특정한 브랜치만 가지고 올 수 도 있습니다.     📄 pull을 사용했을 경우   pull을 사용하게 되면 origin은 물론, HEAD의 위치도 서버에서 가져온 커밋으로 위치를 변경합니다.    ","categories": ["Git"],
+        "tags": ["fetch","commit","pull"],
+        "url": "/git/git-fetch-vs-pull-%EC%B0%A8%EC%9D%B4%EC%A0%90/",
+        "teaser": null
+      },{
+        "title": "서버와 로컬의 커밋이 충돌할 때",
+        "excerpt":"📄 서버와 로컬의 커밋이 충돌할 때   서버와 로컬에서 동일한 파일을 수정해 커밋을 하는 경우 conflict가 발생하게 됩니다.   📄 git pull 명령어를 사용한 경우      git mergetool로 mergetool을 열어서 원하는 내용을 병합 후 저장합니다.   git add .로 모두 staging area로 이동시킵니다.   git merge --continue을 하면 로컬에서 작성한 커밋과 서버에서 작성한 커밋이 병합한 새로운 커밋을 생성하게 됩니다.   📄 git pull -rebase 명령어를 사용한 경우      git mergetool로 mergetool을 열어서 원하는 내용을 병합 후 저장합니다.   git rebase --continue로 rebase를 진행시킵니다.   기존 로컬의 커밋을 rebase했기 때문에 로컬의 커밋만 다시 새로운 커밋이 되었고 서버에서 가져온 커밋은 그대로 유지됩니다.   마지막으로 git push를 해서 로컬의 파일과 서버의 파일을 동일하게 만들어줍니다.   참고      드림코딩  ","categories": ["Git"],
+        "tags": ["commit","Head"],
+        "url": "/git/git-%EC%84%9C%EB%B2%84%EC%99%80-%EB%A1%9C%EC%BB%AC%EC%9D%98-%EC%BB%A4%EB%B0%8B%EC%9D%B4-%EC%B6%A9%EB%8F%8C%ED%95%A0-%EB%95%8C/",
+        "teaser": "/assets%5Cimage%5Cgit%20logo.jpg"
+      },{
+        "title": "커밋 분할하기",
+        "excerpt":"📄 커밋 분할하기   개발자들과 협업을 할 때는 하나의 커밋에는 하나의 내용이 있어야 합니다.   너무 많은 내용을 커밋하게 되었을 때는 커밋을 분할해야 합니다.   📄 순서   1. git rebase -i 해쉬코드 또는 HEAD~n   위와 같은 명령어를 입력하여 분할해야하는 커밋을 수정하기 위해 에디터를 띄웁니다.   에디터에서 해당 커밋의 명령어를 e(edit)로 고칩니다.   저장 후 히스토리 내역을 확인하면 HEAD가 해당 커밋으로 이동한 것을 확인할 수 있습니다.         2. git reset    명령어를 입력해 해당 커밋을 리셋시켜 파일을 working directory로 가져옵니다.       git status를 입력해 확인해 보면 rebase가 진행중이며 두개의 파일이 working directory로 온 것을 확인할 수 있습니다.   3. 각각 파일 하나씩 다시 커밋하기   파일들을 하나씩 staging area에 추가하고 다시 커밋합니다.   4. git rebase --continue   명령어를 입력해 rebase를 진행합니다.       이렇게 커밋이 분할 된 것을 확인할 수 있습니다.   참조      더 북   [강 의] 드림코딩  ","categories": ["Git"],
+        "tags": ["Git","rebase","reset"],
+        "url": "/git/git-%EC%BB%A4%EB%B0%8B-%EB%B6%84%ED%95%A0%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "커밋 삭제하기",
+        "excerpt":"📄 commit 삭제하기   커밋 삭제 순서           히스토리 내역에 삭제하기를 원하는 커밋을 확인합니다.              git rebase -i (해쉬코드 또는 HEAD~n)  rebase 명령어를 이용해 해당 커밋까지의 내역을 수정하는 창을 띄웁니다.              삭제를 원하는 커밋에 d(drop)옵션을 입력합니다.  이렇게 되면 삭제된 파일의 다음 커밋에서 수정사항이 발생했기 때문에 conflict가 생기게 됩니다.               git status를 입력해 상태를 확인해보면, 다음과 같이 출력된 것을 확인할 수 있습니다.                 interactive rebase가 진행중인데 payment-ui.txt(삭제된 커밋 다음 커밋의 파일)이 삭제되었다.                 git add . 를 통해 삭제된 파일을 다시 추가합니다.              git rebase --continue를 통해 rebase를 계속 진행합니다.              히스토리 내역을 확인하면 해당 커밋이 삭제된 것을 확인 할 수 있습니다.      ","categories": ["Git"],
+        "tags": ["Git","rebase","reset","커밋 삭제"],
+        "url": "/git/git-%EC%BB%A4%EB%B0%8B-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "커밋 전 취소하기",
+        "excerpt":"📄 working directory에 있는 파일 수정 취소하기(초기화 하기)   ▪ git restore .  working directory에 있는 전체 파일을 초기화 합니다.     ▪ git restore (파일 이름)  working directory에 있는 특정 파일을 초기화 합니다.     ▪ git restore --source=(해쉬코드 또는 HEAD~n) (파일명) 파일에 대해서 특정커밋 이전 상태로 초기화 합니다.     📄 staging area에 있는 파일 수정 취소하기(초기화 하기)   ▪ git restore --staged .  staging area에 있는 전체 파일을 초기화 합니다.     ▪ git restore --staged (파일 이름)  staging area에 있는 특정 파일을 초기화 합니다.       WIP(Working In Progress): 아직 작업이 진행 중인 것을 뜻합니다.    ","categories": ["Git"],
+        "tags": ["restore","commit","커밋 전 취소"],
+        "url": "/git/git-%EC%BB%A4%EB%B0%8B-%EC%A0%84-%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "커밋 합치기",
+        "excerpt":"📄 커밋 합치기 순서   1. git rebase -i 해쉬코드 또는 HEAD~n   rebase해서 에디터를 열어줍니다.   2. commit을 합칠 때는 squash   커밋 명령어를 s(squash)로 바꿉니다.   다만, 병합할 커밋들 중 제일 첫번째에 있는 커밋은 바꾸지 않고 그대로 pick으로 입력합니다.   간단하게 확인   history명령어를 이용해 커밋 내역을 확인하면 병합된 커밋들을 확인할 수 있습니다.   📄 주의할 점   커밋을 병합하게 되면 병합된 커밋뿐만 아니라 이후에 커밋들도 해쉬코드가 바뀝니다.   따라서 다른 개발자들과 협업을 할 경우에는 서버에 올라간 커밋들을 수정해서는 안됩니다.   참조      더 북   [강 의] 드림코딩  ","categories": ["Git"],
+        "tags": ["rebase","commit","squash"],
+        "url": "/git/git-%EC%BB%A4%EB%B0%8B-%ED%95%A9%EC%B9%98%EA%B8%B0/",
         "teaser": null
       },{
         "title": "가변 이미지",
