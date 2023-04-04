@@ -17,7 +17,7 @@ tags:
     ]
 last_modified_at: 2023-04-03T08:06:00-05:00
 header:
-  teaser: assets\image\learning typescript.PNG
+  teaser: assets\image\learning-typescript.PNG
 ---
 
 # 👩‍🎓 Various Lawyerings
