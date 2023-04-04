@@ -17,6 +17,9 @@ docs:
       - title: "CSS"
         url: /css/
         category: "CSS"
+      - title: "React"
+        url: /react/
+        category: "React"
       - title: "TypeScript"
         url: /typescript/
         category: "TypeScript"
