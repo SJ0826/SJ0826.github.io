@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-05T17:52:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">🚨 Could not resolve dependency + package maneger Error</title><link href="http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%B2%84%EC%A0%84-%EB%AC%B8%EC%A0%9C/" rel="alternate" type="text/html" title="🚨 Could not resolve dependency + package maneger Error" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%B2%84%EC%A0%84-%EB%AC%B8%EC%A0%9C/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-05T19:57:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">🚨 Could not resolve dependency + package maneger Error</title><link href="http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%B2%84%EC%A0%84-%EB%AC%B8%EC%A0%9C/" rel="alternate" type="text/html" title="🚨 Could not resolve dependency + package maneger Error" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%B2%84%EC%A0%84-%EB%AC%B8%EC%A0%9C/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
 
 <p>리액트 프로젝트를 github actions를 통해 배포하는데 문제가 발생했습니다.</p>
 
@@ -428,7 +428,81 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="reverse" /><category term="split" /><category term="스택/큐" /><summary type="html"><![CDATA[자연수 뒤집어 배열로 만들기]]></summary></entry><entry><title type="html">객체 타입</title><link href="http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/" rel="alternate" type="text/html" title="객체 타입" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4%20%ED%83%80%EC%9E%85</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/"><![CDATA[<h2 id="-객체-타입">📄 객체 타입</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="reverse" /><category term="split" /><category term="스택/큐" /><summary type="html"><![CDATA[자연수 뒤집어 배열로 만들기]]></summary></entry><entry><title type="html">[Lv 2] 숫자의 표현</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/" rel="alternate" type="text/html" title="[Lv 2] 숫자의 표현" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98%20%ED%91%9C%ED%98%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>Finn은 요즘 수학공부에 빠져 있습니다. 수학 공부를 하던 Finn은 자연수 n을 연속한 자연수들로 표현 하는 방법이 여러개라는 사실을 알게 되었습니다. 예를들어 15는 다음과 같이 4가지로 표현 할 수 있습니다.</p>
+
+<ul>
+  <li>1 + 2 + 3 + 4 + 5 = 15</li>
+  <li>4 + 5 + 6 = 15</li>
+  <li>7 + 8 = 15</li>
+  <li>15 = 15</li>
+</ul>
+
+<p>자연수 n이 매개변수로 주어질 때, 연속된 자연수들로 n을 표현하는 방법의 수를 return하는 solution를 완성해주세요.</p>
+
+<ul>
+  <li>n은 10,000 이하의 자연수 입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이-1">🙋‍♀️ 나의 풀이 1</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">j</span><span class="p">;</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">acc</span> <span class="o">&gt;</span> <span class="nx">n</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">acc</span> <span class="o">==</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+        <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>처음에 for문을 돌려 연속된 수의 합을 구했는데 정확성 테스트는 통과했지만 효율성 테스트에서 모두 막혔습니다.</p>
+
+<p>어떻게든 넘어가려고 if문에 i 조건까지 수정했는데 통과할 수 없어 풀이 과정 자체에 대해 다시 생각했습니다.</p>
+
+<h2 id="️-나의-풀이-2">🙋‍♀️ 나의 풀이 2</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>연속된 수의 합을 구하는 방법을 찾던 중 다음과 같은 방법을 찾았습니다.</p>
+
+<blockquote>
+  <p>자연수의 소수 중 홀수의 개수는 연속된 자연수의 합이 나올 수 있는 개수와 같다.</p>
+</blockquote>
+
+<p>예를 들어,</p>
+
+<p>15의 약수는 [1, 3, 5, 15]입니다.</p>
+
+<ul>
+  <li>1의 경우, 연속하는 1개의 자연수로 표현 가능 =&gt; 15</li>
+  <li>3의 경우, 연속하는 3개의 자연수로 표현 가능 =&gt; 3+4+5</li>
+  <li>5의 경우, 연속하는 5개의 자연수로 표현 가능 =&gt; 1+2+3+4+5</li>
+  <li>15의 경우, 모든 홀수는 n과 n+1로 표현가능 =&gt; 7+8</li>
+</ul>
+
+<p>이 풀이에서는 공식을 사용했기 때문에 for문이 한번만 돌아가 효율성 테스트를 모두 통과할 수 있었습니다.</p>
+
+<p>다른 문제보다 수학적 지식이 요구되었던 문제였던것 같은데 정답률(73%)이 높네요.</p>
+
+<p>원래 수학은 졸업하면 까먹는건데…</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="숫자의 표현" /><summary type="html"><![CDATA[연속된 숫자의 합]]></summary></entry><entry><title type="html">객체 타입</title><link href="http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/" rel="alternate" type="text/html" title="객체 타입" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4%20%ED%83%80%EC%9E%85</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/"><![CDATA[<h2 id="-객체-타입">📄 객체 타입</h2>
 
 <p>객체 타입이란 타입스크립트에서 <code class="language-plaintext highlighter-rouge">{속성명: 타입 명}</code>형식으로 이루어진 타입입니다.</p>
 
@@ -939,117 +1013,7 @@ n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양�
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="정수 제곱근 판별" /><category term="sqrt" /><category term="Number.isInteger" /><category term="pow" /><summary type="html"><![CDATA[정수 제곱근 판별]]></summary></entry><entry><title type="html">[Lv 2] 숫자의 표현</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/" rel="alternate" type="text/html" title="[Lv 2] 숫자의 표현" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98%20%ED%91%9C%ED%98%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>Finn은 요즘 수학공부에 빠져 있습니다. 수학 공부를 하던 Finn은 자연수 n을 연속한 자연수들로 표현 하는 방법이 여러개라는 사실을 알게 되었습니다. 예를들어 15는 다음과 같이 4가지로 표현 할 수 있습니다.</p>
-
-<ul>
-  <li>1 + 2 + 3 + 4 + 5 = 15</li>
-  <li>4 + 5 + 6 = 15</li>
-  <li>7 + 8 = 15</li>
-  <li>15 = 15</li>
-</ul>
-
-<p>자연수 n이 매개변수로 주어질 때, 연속된 자연수들로 n을 표현하는 방법의 수를 return하는 solution를 완성해주세요.</p>
-
-<ul>
-  <li>n은 10,000 이하의 자연수 입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이-1">🙋‍♀️ 나의 풀이 1</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">j</span><span class="p">;</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">acc</span> <span class="o">&gt;</span> <span class="nx">n</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">acc</span> <span class="o">==</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-        <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">break</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>처음에 for문을 돌려 연속된 수의 합을 구했는데 정확성 테스트는 통과했지만 효율성 테스트에서 모두 막혔습니다.</p>
-
-<p>어떻게든 넘어가려고 if문에 i 조건까지 수정했는데 통과할 수 없어 풀이 과정 자체에 대해 다시 생각했습니다.</p>
-
-<h2 id="️-나의-풀이-2">🙋‍♀️ 나의 풀이 2</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>연속된 수의 합을 구하는 방법을 찾던 중 다음과 같은 방법을 찾았습니다.</p>
-
-<blockquote>
-  <p>자연수의 소수 중 홀수의 개수는 연속된 자연수의 합이 나올 수 있는 개수와 같다.</p>
-</blockquote>
-
-<p>예를 들어,</p>
-
-<p>15의 약수는 [1, 3, 5, 15]입니다.</p>
-
-<ul>
-  <li>1의 경우, 연속하는 1개의 자연수로 표현 가능 =&gt; 15</li>
-  <li>3의 경우, 연속하는 3개의 자연수로 표현 가능 =&gt; 3+4+5</li>
-  <li>5의 경우, 연속하는 5개의 자연수로 표현 가능 =&gt; 1+2+3+4+5</li>
-  <li>15의 경우, 모든 홀수는 n과 n+1로 표현가능 =&gt; 7+8</li>
-</ul>
-
-<p>이 풀이에서는 공식을 사용했기 때문에 for문이 한번만 돌아가 효율성 테스트를 모두 통과할 수 있었습니다.</p>
-
-<p>다른 문제보다 수학적 지식이 요구되었던 문제였던것 같은데 정답률(73%)이 높네요.</p>
-
-<p>원래 수학은 졸업하면 까먹는건데…</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="숫자의 표현" /><summary type="html"><![CDATA[연속된 숫자의 합]]></summary></entry><entry><title type="html">[Lv 1] 나머지가 1이 되는 수 찾기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80-1%EC%9D%B4-%EB%90%98%EB%8A%94-%EC%88%98-%EC%B0%BE%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 1] 나머지가 1이 되는 수 찾기" /><published>2023-03-31T00:00:00+09:00</published><updated>2023-03-31T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80%201%EC%9D%B4%20%EB%90%98%EB%8A%94%20%EC%88%98%20%EC%B0%BE%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80-1%EC%9D%B4-%EB%90%98%EB%8A%94-%EC%88%98-%EC%B0%BE%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요. 답이 항상 존재함은 증명될 수 있습니다.</p>
-
-<ul>
-  <li>3 ≤ n ≤ 1,000,000</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>for문으로 반복문을 돌려 나머지가 1이 되면 바로 값을 반환했습니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">while </span><span class="p">(</span><span class="nx">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">x</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>증감연산자를 for문뿐만 아니라 while문에서 사용해 반복문을 돌릴 수 있다는 걸 배워갑니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/87389">프로그래머스 - 나머지가 1이 되는 수 찾기</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="나머지가 1이 되는 수 찾기" /><summary type="html"><![CDATA[프로그래머스 Lv1. x만큼 간격이 있는 n개의 숫자]]></summary></entry><entry><title type="html">[Lv 2] 이진 변환 반복하기</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84-%EB%B3%80%ED%99%98-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 2] 이진 변환 반복하기" /><published>2023-03-31T00:00:00+09:00</published><updated>2023-03-31T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84%20%EB%B3%80%ED%99%98%20%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84-%EB%B3%80%ED%99%98-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="정수 제곱근 판별" /><category term="sqrt" /><category term="Number.isInteger" /><category term="pow" /><summary type="html"><![CDATA[정수 제곱근 판별]]></summary></entry><entry><title type="html">[Lv 2] 이진 변환 반복하기</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84-%EB%B3%80%ED%99%98-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 2] 이진 변환 반복하기" /><published>2023-03-31T00:00:00+09:00</published><updated>2023-03-31T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84%20%EB%B3%80%ED%99%98%20%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84-%EB%B3%80%ED%99%98-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>0과 1로 이루어진 어떤 문자열 x에 대한 이진 변환을 다음과 같이 정의합니다.</p>
 
@@ -1120,4 +1084,40 @@ x의 길이를 c라고 하면, x를 “c를 2진법으로 표현한 문자열”
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /><category term="replace" /><summary type="html"><![CDATA[자연수 이진수 만드는 방법 & 문자열 치환하기 replace]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /><category term="replace" /><summary type="html"><![CDATA[자연수 이진수 만드는 방법 & 문자열 치환하기 replace]]></summary></entry><entry><title type="html">[Lv 1] 나머지가 1이 되는 수 찾기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80-1%EC%9D%B4-%EB%90%98%EB%8A%94-%EC%88%98-%EC%B0%BE%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 1] 나머지가 1이 되는 수 찾기" /><published>2023-03-31T00:00:00+09:00</published><updated>2023-03-31T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80%201%EC%9D%B4%20%EB%90%98%EB%8A%94%20%EC%88%98%20%EC%B0%BE%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80-1%EC%9D%B4-%EB%90%98%EB%8A%94-%EC%88%98-%EC%B0%BE%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요. 답이 항상 존재함은 증명될 수 있습니다.</p>
+
+<ul>
+  <li>3 ≤ n ≤ 1,000,000</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>for문으로 반복문을 돌려 나머지가 1이 되면 바로 값을 반환했습니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">while </span><span class="p">(</span><span class="nx">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">x</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>증감연산자를 for문뿐만 아니라 while문에서 사용해 반복문을 돌릴 수 있다는 걸 배워갑니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/87389">프로그래머스 - 나머지가 1이 되는 수 찾기</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="나머지가 1이 되는 수 찾기" /><summary type="html"><![CDATA[프로그래머스 Lv1. x만큼 간격이 있는 n개의 숫자]]></summary></entry></feed>

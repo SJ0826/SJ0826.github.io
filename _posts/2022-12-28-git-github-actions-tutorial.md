@@ -58,7 +58,7 @@ CI/CD를 위해 플랫폼을 사용하는데 설치형과 클라우드형이 있
 
 ---
 
-## 📄 :triangular_flag_on_post: Github Actions :triangular_flag_on_post:
+## 📄 What is Github Actions !
 
 : Github에서 제공하는 클라우드형 CI/CD 툴
 
