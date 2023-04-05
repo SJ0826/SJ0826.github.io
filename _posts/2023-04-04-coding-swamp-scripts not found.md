@@ -1,5 +1,5 @@
 ---
-title: "🚨 react-scripts: not found"
+title: "[모여봐요 코딩의 늪] 🚨 react-scripts: not found"
 excerpt: "github actions 배포 자동화 과정에서 발생"
 toc: true
 toc_sticky: true

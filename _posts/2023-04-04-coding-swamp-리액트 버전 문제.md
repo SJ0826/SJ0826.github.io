@@ -1,5 +1,5 @@
 ---
-title: "🚨 Could not resolve dependency + package maneger Error"
+title: "[모여봐요 코딩의 늪] 🚨 Could not resolve dependency + package maneger Error"
 excerpt: "리액트 꼬리에 꼬리를 무는 다운그레이드"
 toc: true
 toc_sticky: true
