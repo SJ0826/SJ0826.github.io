@@ -7,7 +7,7 @@ sidebar:
   nav: "docs"
 
 categories:
-  - programmers-lv2
+  - programmers-lv1
 tags:
   - ["reverse", "split", "스택/큐"]
 last_modified_at: 2023-04-04T08:06:00-05:00
