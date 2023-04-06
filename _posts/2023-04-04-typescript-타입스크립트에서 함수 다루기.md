@@ -11,7 +11,7 @@ categories:
 tags:
   - ["함수"]
 header:
-  teaser: assets\image\TS-logo.jpg
+  teaser: assets\image\TS-logo.png
 last_modified_at: 2023-04-04T08:06:00-05:00
 ---
 
