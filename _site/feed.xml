@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-05T21:04:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Lv 2] 다음 큰 숫자</title><link href="http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C-%ED%81%B0-%EC%88%AB%EC%9E%90/" rel="alternate" type="text/html" title="[Lv 2] 다음 큰 숫자" /><published>2023-04-05T00:00:00+09:00</published><updated>2023-04-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C%20%ED%81%B0%20%EC%88%AB%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C-%ED%81%B0-%EC%88%AB%EC%9E%90/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-06T11:24:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Lv 2] 다음 큰 숫자</title><link href="http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C-%ED%81%B0-%EC%88%AB%EC%9E%90/" rel="alternate" type="text/html" title="[Lv 2] 다음 큰 숫자" /><published>2023-04-05T00:00:00+09:00</published><updated>2023-04-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C%20%ED%81%B0%20%EC%88%AB%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C-%ED%81%B0-%EC%88%AB%EC%9E%90/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>자연수 n이 주어졌을 때, n의 다음 큰 숫자는 다음과 같이 정의 합니다.</p>
 
@@ -48,68 +48,7 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /><category term="알고리즘" /><summary type="html"><![CDATA[숫자 이진수 변환하기]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 🚨 react-scripts: not found</title><link href="http://localhost:4000/coding-swamp/coding-swamp-scripts-not-found/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 🚨 react-scripts: not found" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/coding-swamp-scripts%20not%20found</id><content type="html" xml:base="http://localhost:4000/coding-swamp/coding-swamp-scripts-not-found/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
-
-<p>모코늪 프로젝트에서 github actions를 통해 프로젝트를 배포하는데 <code class="language-plaintext highlighter-rouge">npm run build</code>명령어가 되질 않습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229796651-09a5dd5c-951d-4c6e-8ae5-fa01d747ea16.png" alt="image" /></p>
-
-<p>프로젝트에서 npm을 업데이트하고 설치해도 같은 문제가 발생해서 아예 <strong>package.lock</strong>파일과 <strong>node_modules</strong>폴더를 삭제하고 다시 npm을 설치해주었습니다.</p>
-
-<p>실패했습니다.</p>
-
-<h2 id="-문제-해결">🔨 문제 해결</h2>
-
-<p>구글링하면 왜 자꾸 사람들이 node_modules를 지워라, 다시 npm install을 해라 하는지 알았습니다.</p>
-
-<p>그런 케이스들은 로컬 환경에서 일어났던 에러였으니 당연히 다시 npm을 설치해 초기화 시켜주면 해결이 되었던 것입니다.</p>
-
-<p>저는 로컬 환경에서는 빌드가 되었지만 github actions에서 되지 않았던 것이었는데 말이죠.</p>
-
-<p>저의 CICD.yml파일입니다.</p>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">CICD</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@main</span>
-      <span class="c1"># - run: npm ci 이 부분을 실수로 삭제 해놓고 헤매고 있던 것이었습니다.</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">npm run build</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">deploy to s3</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">jakejarvis/s3-sync-action@master</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">args</span><span class="pi">:</span> <span class="s">--delete</span>
-        <span class="na">env</span><span class="pi">:</span>
-          <span class="na">AWS_S3_BUCKET</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_REGION</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ap-northeast-2"</span>
-          <span class="na">SOURCE_DIR</span><span class="pi">:</span> <span class="s2">"</span><span class="s">build"</span>
-</code></pre></div></div>
-
-<h3 id="-npm-ci-란">📌 npm ci 란?</h3>
-
-<p>npm ci는 package-lock.json에 있는 패키지 정보를 이용해 정확한 버전의 패키지들을 설치해서 node_modules에 적재합니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">npm run build</code>을 실행할 수 있는 파일은 node_modules에 있는데 node_modules를 설치하지 않았으니 에러가 발생할 수 밖에요.</p>
-
-<hr />
-
-<p>그런데 사실 에러가 완전히 끝나지 않았습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229803270-b3879941-04d0-4416-aaf1-6d94fb25fdae.png" alt="image" /></p>
-
-<p>@toast ui 라이브러리가 현재 사용중인 react 18버전과 맞지 않습니다.</p>
-
-<p>산넘어 산입니다.</p>
-
-<p>이거 리액트 버전을 낮추는거 밖에 답이 안보이네요.</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li>https://github.com/facebook/create-react-app/discussions/10220</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="리액트" /><category term="github actions" /><category term="에러" /><category term="npm ci" /><summary type="html"><![CDATA[github actions 배포 자동화 과정에서 발생]]></summary></entry><entry><title type="html">타입스크립트에서 함수 다루기</title><link href="http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C-%ED%95%A8%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0/" rel="alternate" type="text/html" title="타입스크립트에서 함수 다루기" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C%20%ED%95%A8%EC%88%98%20%EB%8B%A4%EB%A3%A8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C-%ED%95%A8%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0/"><![CDATA[<p>타입스크립트에서 함수를 사용할때 변수를 사용할때와 마찬가지로 타입을 지정해주어야 합니다.</p>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /><category term="알고리즘" /><summary type="html"><![CDATA[숫자 이진수 변환하기]]></summary></entry><entry><title type="html">타입스크립트에서 함수 다루기</title><link href="http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C-%ED%95%A8%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0/" rel="alternate" type="text/html" title="타입스크립트에서 함수 다루기" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C%20%ED%95%A8%EC%88%98%20%EB%8B%A4%EB%A3%A8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C-%ED%95%A8%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0/"><![CDATA[<p>타입스크립트에서 함수를 사용할때 변수를 사용할때와 마찬가지로 타입을 지정해주어야 합니다.</p>
 
 <p>함수에서는 크게 매개변수와 반환값에 타입을 지정합니다.</p>
 
@@ -478,7 +417,142 @@
   <li>
     <p><a href="https://stackoverflow.com/questions/69984660/npm-ci-can-only-install-packages-with-an-existing-package-lock-json-or-npm-shrin">npm-ci-can-only-install-packages-with-an-existing-package-lock-json-or-npm-shrin</a></p>
   </li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="리액트 버전" /><category term="toast-ui" /><category term="다운 그레이드" /><category term="testing-library" /><category term="에러" /><category term="npm" /><summary type="html"><![CDATA[리액트 꼬리에 꼬리를 무는 다운그레이드]]></summary></entry><entry><title type="html">객체 타입</title><link href="http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/" rel="alternate" type="text/html" title="객체 타입" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4%20%ED%83%80%EC%9E%85</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/"><![CDATA[<h2 id="-객체-타입">📄 객체 타입</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="리액트 버전" /><category term="toast-ui" /><category term="다운 그레이드" /><category term="testing-library" /><category term="에러" /><category term="npm" /><summary type="html"><![CDATA[리액트 꼬리에 꼬리를 무는 다운그레이드]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 🚨 react-scripts: not found</title><link href="http://localhost:4000/coding-swamp/coding-swamp-scripts-not-found/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 🚨 react-scripts: not found" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/coding-swamp-scripts%20not%20found</id><content type="html" xml:base="http://localhost:4000/coding-swamp/coding-swamp-scripts-not-found/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
+
+<p>모코늪 프로젝트에서 github actions를 통해 프로젝트를 배포하는데 <code class="language-plaintext highlighter-rouge">npm run build</code>명령어가 되질 않습니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/229796651-09a5dd5c-951d-4c6e-8ae5-fa01d747ea16.png" alt="image" /></p>
+
+<p>프로젝트에서 npm을 업데이트하고 설치해도 같은 문제가 발생해서 아예 <strong>package.lock</strong>파일과 <strong>node_modules</strong>폴더를 삭제하고 다시 npm을 설치해주었습니다.</p>
+
+<p>실패했습니다.</p>
+
+<h2 id="-문제-해결">🔨 문제 해결</h2>
+
+<p>구글링하면 왜 자꾸 사람들이 node_modules를 지워라, 다시 npm install을 해라 하는지 알았습니다.</p>
+
+<p>그런 케이스들은 로컬 환경에서 일어났던 에러였으니 당연히 다시 npm을 설치해 초기화 시켜주면 해결이 되었던 것입니다.</p>
+
+<p>저는 로컬 환경에서는 빌드가 되었지만 github actions에서 되지 않았던 것이었는데 말이죠.</p>
+
+<p>저의 CICD.yml파일입니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">CICD</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@main</span>
+      <span class="c1"># - run: npm ci 이 부분을 실수로 삭제 해놓고 헤매고 있던 것이었습니다.</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">npm run build</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">deploy to s3</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">jakejarvis/s3-sync-action@master</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">args</span><span class="pi">:</span> <span class="s">--delete</span>
+        <span class="na">env</span><span class="pi">:</span>
+          <span class="na">AWS_S3_BUCKET</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">AWS_REGION</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ap-northeast-2"</span>
+          <span class="na">SOURCE_DIR</span><span class="pi">:</span> <span class="s2">"</span><span class="s">build"</span>
+</code></pre></div></div>
+
+<h3 id="-npm-ci-란">📌 npm ci 란?</h3>
+
+<p>npm ci는 package-lock.json에 있는 패키지 정보를 이용해 정확한 버전의 패키지들을 설치해서 node_modules에 적재합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm run build</code>을 실행할 수 있는 파일은 node_modules에 있는데 node_modules를 설치하지 않았으니 에러가 발생할 수 밖에요.</p>
+
+<hr />
+
+<p>그런데 사실 에러가 완전히 끝나지 않았습니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/229803270-b3879941-04d0-4416-aaf1-6d94fb25fdae.png" alt="image" /></p>
+
+<p>@toast ui 라이브러리가 현재 사용중인 react 18버전과 맞지 않습니다.</p>
+
+<p>산넘어 산입니다.</p>
+
+<p>이거 리액트 버전을 낮추는거 밖에 답이 안보이네요.</p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li>https://github.com/facebook/create-react-app/discussions/10220</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="리액트" /><category term="github actions" /><category term="에러" /><category term="npm ci" /><summary type="html"><![CDATA[github actions 배포 자동화 과정에서 발생]]></summary></entry><entry><title type="html">[Lv 2] 숫자의 표현</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/" rel="alternate" type="text/html" title="[Lv 2] 숫자의 표현" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98%20%ED%91%9C%ED%98%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>Finn은 요즘 수학공부에 빠져 있습니다. 수학 공부를 하던 Finn은 자연수 n을 연속한 자연수들로 표현 하는 방법이 여러개라는 사실을 알게 되었습니다. 예를들어 15는 다음과 같이 4가지로 표현 할 수 있습니다.</p>
+
+<ul>
+  <li>1 + 2 + 3 + 4 + 5 = 15</li>
+  <li>4 + 5 + 6 = 15</li>
+  <li>7 + 8 = 15</li>
+  <li>15 = 15</li>
+</ul>
+
+<p>자연수 n이 매개변수로 주어질 때, 연속된 자연수들로 n을 표현하는 방법의 수를 return하는 solution를 완성해주세요.</p>
+
+<ul>
+  <li>n은 10,000 이하의 자연수 입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이-1">🙋‍♀️ 나의 풀이 1</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">j</span><span class="p">;</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">acc</span> <span class="o">&gt;</span> <span class="nx">n</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">acc</span> <span class="o">==</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+        <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>처음에 for문을 돌려 연속된 수의 합을 구했는데 정확성 테스트는 통과했지만 효율성 테스트에서 모두 막혔습니다.</p>
+
+<p>어떻게든 넘어가려고 if문에 i 조건까지 수정했는데 통과할 수 없어 풀이 과정 자체에 대해 다시 생각했습니다.</p>
+
+<h2 id="️-나의-풀이-2">🙋‍♀️ 나의 풀이 2</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>연속된 수의 합을 구하는 방법을 찾던 중 다음과 같은 방법을 찾았습니다.</p>
+
+<blockquote>
+  <p>자연수의 소수 중 홀수의 개수는 연속된 자연수의 합이 나올 수 있는 개수와 같다.</p>
+</blockquote>
+
+<p>예를 들어,</p>
+
+<p>15의 약수는 [1, 3, 5, 15]입니다.</p>
+
+<ul>
+  <li>1의 경우, 연속하는 1개의 자연수로 표현 가능 =&gt; 15</li>
+  <li>3의 경우, 연속하는 3개의 자연수로 표현 가능 =&gt; 3+4+5</li>
+  <li>5의 경우, 연속하는 5개의 자연수로 표현 가능 =&gt; 1+2+3+4+5</li>
+  <li>15의 경우, 모든 홀수는 n과 n+1로 표현가능 =&gt; 7+8</li>
+</ul>
+
+<p>이 풀이에서는 공식을 사용했기 때문에 for문이 한번만 돌아가 효율성 테스트를 모두 통과할 수 있었습니다.</p>
+
+<p>다른 문제보다 수학적 지식이 요구되었던 문제였던것 같은데 정답률(73%)이 높네요.</p>
+
+<p>원래 수학은 졸업하면 까먹는건데…</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="숫자의 표현" /><summary type="html"><![CDATA[연속된 숫자의 합]]></summary></entry><entry><title type="html">객체 타입</title><link href="http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/" rel="alternate" type="text/html" title="객체 타입" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4%20%ED%83%80%EC%9E%85</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85/"><![CDATA[<h2 id="-객체-타입">📄 객체 타입</h2>
 
 <p>객체 타입이란 타입스크립트에서 <code class="language-plaintext highlighter-rouge">{속성명: 타입 명}</code>형식으로 이루어진 타입입니다.</p>
 
@@ -989,114 +1063,75 @@ n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양�
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="정수 제곱근 판별" /><category term="sqrt" /><category term="Number.isInteger" /><category term="pow" /><summary type="html"><![CDATA[정수 제곱근 판별]]></summary></entry><entry><title type="html">[Lv 2] 숫자의 표현</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/" rel="alternate" type="text/html" title="[Lv 2] 숫자의 표현" /><published>2023-04-03T00:00:00+09:00</published><updated>2023-04-03T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98%20%ED%91%9C%ED%98%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%91%9C%ED%98%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="정수 제곱근 판별" /><category term="sqrt" /><category term="Number.isInteger" /><category term="pow" /><summary type="html"><![CDATA[정수 제곱근 판별]]></summary></entry><entry><title type="html">[Lv 2] 이진 변환 반복하기</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84-%EB%B3%80%ED%99%98-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 2] 이진 변환 반복하기" /><published>2023-03-31T00:00:00+09:00</published><updated>2023-03-31T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84%20%EB%B3%80%ED%99%98%20%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%9D%B4%EC%A7%84-%EB%B3%80%ED%99%98-%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
-<p>Finn은 요즘 수학공부에 빠져 있습니다. 수학 공부를 하던 Finn은 자연수 n을 연속한 자연수들로 표현 하는 방법이 여러개라는 사실을 알게 되었습니다. 예를들어 15는 다음과 같이 4가지로 표현 할 수 있습니다.</p>
+<p>0과 1로 이루어진 어떤 문자열 x에 대한 이진 변환을 다음과 같이 정의합니다.</p>
 
-<ul>
-  <li>1 + 2 + 3 + 4 + 5 = 15</li>
-  <li>4 + 5 + 6 = 15</li>
-  <li>7 + 8 = 15</li>
-  <li>15 = 15</li>
-</ul>
+<p>x의 모든 0을 제거합니다.
+x의 길이를 c라고 하면, x를 “c를 2진법으로 표현한 문자열”로 바꿉니다.
+예를 들어, x = “0111010”이라면, x에 이진 변환을 가하면 x = “0111010” -&gt; “1111” -&gt; “100” 이 됩니다.</p>
 
-<p>자연수 n이 매개변수로 주어질 때, 연속된 자연수들로 n을 표현하는 방법의 수를 return하는 solution를 완성해주세요.</p>
+<p>0과 1로 이루어진 문자열 s가 매개변수로 주어집니다. s가 “1”이 될 때까지 계속해서 s에 이진 변환을 가했을 때, 이진 변환의 횟수와 변환 과정에서 제거된 모든 0의 개수를 각각 배열에 담아 return 하도록 solution 함수를 완성해주세요.</p>
 
 <ul>
-  <li>n은 10,000 이하의 자연수 입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이-1">🙋‍♀️ 나의 풀이 1</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">j</span><span class="p">;</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">acc</span> <span class="o">&gt;</span> <span class="nx">n</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">acc</span> <span class="o">==</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-        <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">break</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>처음에 for문을 돌려 연속된 수의 합을 구했는데 정확성 테스트는 통과했지만 효율성 테스트에서 모두 막혔습니다.</p>
-
-<p>어떻게든 넘어가려고 if문에 i 조건까지 수정했는데 통과할 수 없어 풀이 과정 자체에 대해 다시 생각했습니다.</p>
-
-<h2 id="️-나의-풀이-2">🙋‍♀️ 나의 풀이 2</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>연속된 수의 합을 구하는 방법을 찾던 중 다음과 같은 방법을 찾았습니다.</p>
-
-<blockquote>
-  <p>자연수의 소수 중 홀수의 개수는 연속된 자연수의 합이 나올 수 있는 개수와 같다.</p>
-</blockquote>
-
-<p>예를 들어,</p>
-
-<p>15의 약수는 [1, 3, 5, 15]입니다.</p>
-
-<ul>
-  <li>1의 경우, 연속하는 1개의 자연수로 표현 가능 =&gt; 15</li>
-  <li>3의 경우, 연속하는 3개의 자연수로 표현 가능 =&gt; 3+4+5</li>
-  <li>5의 경우, 연속하는 5개의 자연수로 표현 가능 =&gt; 1+2+3+4+5</li>
-  <li>15의 경우, 모든 홀수는 n과 n+1로 표현가능 =&gt; 7+8</li>
-</ul>
-
-<p>이 풀이에서는 공식을 사용했기 때문에 for문이 한번만 돌아가 효율성 테스트를 모두 통과할 수 있었습니다.</p>
-
-<p>다른 문제보다 수학적 지식이 요구되었던 문제였던것 같은데 정답률(73%)이 높네요.</p>
-
-<p>원래 수학은 졸업하면 까먹는건데…</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="숫자의 표현" /><summary type="html"><![CDATA[연속된 숫자의 합]]></summary></entry><entry><title type="html">[Lv 1] 나머지가 1이 되는 수 찾기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80-1%EC%9D%B4-%EB%90%98%EB%8A%94-%EC%88%98-%EC%B0%BE%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 1] 나머지가 1이 되는 수 찾기" /><published>2023-03-31T00:00:00+09:00</published><updated>2023-03-31T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80%201%EC%9D%B4%20%EB%90%98%EB%8A%94%20%EC%88%98%20%EC%B0%BE%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%80-1%EC%9D%B4-%EB%90%98%EB%8A%94-%EC%88%98-%EC%B0%BE%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요. 답이 항상 존재함은 증명될 수 있습니다.</p>
-
-<ul>
-  <li>3 ≤ n ≤ 1,000,000</li>
+  <li>s의 길이는 1 이상 150,000 이하입니다.</li>
+  <li>s에는 ‘1’이 최소 하나 이상 포함되어 있습니다.</li>
 </ul>
 
 <h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">binaryTransforms</span> <span class="o">=</span> <span class="nx">s</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">NumberOfZero</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// NumberOfZero += binaryTransforms.match(/0/gi)?.length; 🚨 Error!</span>
+    <span class="nx">NumberOfZero</span> <span class="o">+=</span> <span class="nx">binaryTransforms</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">binaryTransforms</span> <span class="o">=</span> <span class="nx">binaryTransforms</span><span class="p">?.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/1/gi</span><span class="p">).</span><span class="nx">length</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="nf">if </span><span class="p">(</span><span class="nx">binaryTransforms</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">NumberOfZero</span><span class="p">];</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>for문으로 반복문을 돌려 나머지가 1이 되면 바로 값을 반환했습니다.</p>
+<p>저번에 공부한 <code class="language-plaintext highlighter-rouge">match()</code>라는 메소드를 야무지게 써먹어 보았습니다.</p>
+
+<p>그런데 문자열에서 0만 뽑아오는 binaryTransform이 0이 없을 때 null을 뱉어 NumberOfZero이 Nan이라는 결과를 뱉습니다.</p>
+
+<p>이를 해결하기 위해 <code class="language-plaintext highlighter-rouge">split()</code>메소드를 사용해 무조건 값이 나오게 만들어 length 속성을 사용할 수 있도록 작성했습니다.</p>
 
 <h2 id="-best-practice">👍 Best Practice</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">while </span><span class="p">(</span><span class="nx">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">x</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
-    <span class="p">}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+  <span class="nf">while </span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+    <span class="nx">answer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/0/g</span><span class="p">)</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/0/g</span><span class="p">,</span> <span class="dl">""</span><span class="p">).</span><span class="nx">length</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
   <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>증감연산자를 for문뿐만 아니라 while문에서 사용해 반복문을 돌릴 수 있다는 걸 배워갑니다.</p>
+<p>제가 많은 것들을 놓치고 있었네요.</p>
+
+<ul>
+  <li>명확한 조건이 있음에도 의미 없이 <code class="language-plaintext highlighter-rouge">for</code>문을 사용</li>
+  <li>OR 연산자를 사용해 조건을 걸어 length 사용 가능</li>
+  <li>답을 무조건 변수에 넣는다고 좋은 것이 아님</li>
+</ul>
+
+<p>저는 다른것보다 답을 배열에 넣어놓은 부분이 마음에 들었습니다.</p>
+
+<p>반환되는 값이 어떤 역할을 하는지 명확히 하려고 변수에 담았는데 오히려 여기서 보여주는 답안이 answer이 하는 역할을 더 잘 보여주는 것 같습니다.</p>
+
+<p>또하나 인상적인 점은 string 메소드인 <code class="language-plaintext highlighter-rouge">replace()</code>를 사용했다는 것입니다.</p>
+
+<p><span style="background: #FFD966; padding: 1em">📌 String.prototype.replace(): 문자열을 치환할 수 있다. str.replace(해당 문자열 || 정규식, 치환할 문자열 || 함수) </span></p>
+
+<p>이녀석도 기억해서 다음 문제에 사용하게 된다면 야무지게 써먹어보겠습니다.</p>
 
 <h2 id="문제-출처">문제 출처</h2>
 
 <ul>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/87389">프로그래머스 - 나머지가 1이 되는 수 찾기</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="나머지가 1이 되는 수 찾기" /><summary type="html"><![CDATA[프로그래머스 Lv1. x만큼 간격이 있는 n개의 숫자]]></summary></entry></feed>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /><category term="replace" /><summary type="html"><![CDATA[자연수 이진수 만드는 방법 & 문자열 치환하기 replace]]></summary></entry></feed>
