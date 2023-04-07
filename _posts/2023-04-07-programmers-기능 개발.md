@@ -33,16 +33,17 @@ function solution(progresses, speeds) {
   let answer = [];
   let hundreds = 0;
   while (progresses.length !== 0) {
+    // 1
     for (let i = 0; i < progresses.length; i++) {
       progresses[i] += speeds[i];
-    }
+    } // 2
     if (progresses[0] >= 100) {
       while (progresses[0] >= 100) {
         progresses.shift();
         speeds.shift();
         hundreds++;
-      }
-      answer.push(hundreds);
+      } // 3
+      answer.push(hundreds); // 4
       hundreds = 0;
     }
   }
@@ -50,4 +51,40 @@ function solution(progresses, speeds) {
 }
 ```
 
-한 문제에 반복문이 세개가 들어가 있어
+- 시간 복잡도: O(n^2)
+
+1. `progresses`의 길이가 0이 될 때까지 반복문을 실행합니다.
+2. `progresses`에 인덱스를 맞춰 `speeds`를 더해줍니다.
+3. 만약 `progresses`의 첫번째 인덱스의 값이 100보다 큰 경우 `shift`메소드를 사용해 각 각 배열들의 첫번째 원소를 추출하고, 추출된 횟수를 나타내는 변수 `hundreds`에 1을 더합니다.
+4. `progresses`의 첫번째 인덱스가 100보다 크지 않아 반복문을 나오면, 작업이 완료된 기능의 개수인 `hundreds`를 `answer`에 추가합니다.
+
+문제를 풀 때 중첩 반복문이 나오면 답은 나와도 성능상 좋지 않게 느껴져 아쉽습니다.<br>
+
+## 👍 Best Practice
+
+```js
+function solution(progresses, speeds) {
+  let answer = [0];
+  let days = progresses.map((progress, index) =>
+    Math.ceil((100 - progress) / speeds[index])
+  );
+  let maxDay = days[0];
+
+  for (let i = 0, j = 0; i < days.length; i++) {
+    if (days[i] <= maxDay) {
+      answer[j] += 1;
+    } else {
+      maxDay = days[i];
+      answer[++j] = 1;
+    }
+  }
+
+  return answer;
+}
+```
+
+각 기능들이 배포에 걸리는 시간을 배열로 만들어(`days`) 조건에 따라 `maxDay`를 바꿔가며 `days`를 순환합니다.
+
+아예 접근방식이 달라버리네요. 이럴수가 있다니..<br>
+속도나 성능을 떠나서 풀이 방식이 신기합니다.<br>
+처음에 눈으로 보고 이해가 안가서 종이에 하나하나 조건을 줘가면서 이해했습니다. 세상엔 똑똑한 사람이 많네요.
