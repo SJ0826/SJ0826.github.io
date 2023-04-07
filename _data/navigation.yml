@@ -39,6 +39,9 @@ docs:
       - title: "자료구조"
         url: /cs/structure/
         category: "structure"
+      - title: "알고리즘"
+        url: /cs/algorithm/
+        category: "Algorithm"
   - title: Projects
     children:
       - title: "TodoList-Project"

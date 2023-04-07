@@ -697,6 +697,17 @@
 <lastmod>2023-04-06T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</loc>
+<lastmod>2023-04-07T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/programmers-lv2/programmers-%EA%B8%B0%EB%8A%A5-%EA%B0%9C%EB%B0%9C/</loc>
+<lastmod>2023-04-07T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/cs/algorithm/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/books/</loc>
 </url>
 <url>
@@ -845,6 +856,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page35/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page36/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/googlea6c2338bb73092a7.html</loc>

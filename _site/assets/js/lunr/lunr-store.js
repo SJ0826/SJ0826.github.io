@@ -1042,4 +1042,16 @@ var store = [{
         "tags": ["내림차순","배열","문자열"],
         "url": "/programmers-lv1/programmers-%EC%A0%95%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "[알고리즘] 시간 복잡도와  빅오(Big O) 계산법",
+        "excerpt":"📄 시간 복잡도   프로그래머스 문제를 푸는데 이제 점점 성능을 고려해야할 필요성이 생겼습니다.  효율성 테스트를 넘어가야 하기 때문이죠. 🥶  똑같은 답일지라도 빨리 답이 나오는 코드가 더 좋은 성능을 가진 코드인데 이를 구별할 수 있게 하는 것이 시간 복잡도입니다.   시간 복잡도는   입력 값에 따라 연산을 실행할 때, 연산 횟수에 비해 시간이 얼마나 걸리는 지 알려주는 지표입니다.   이 시간 복잡도를 나타내주는 방법 중 하나가 빅오(Big O) 표기법입니다.   📄 빅오(Big O) 표기법의 종류      ▪ O(1) | Constant Complexity   O(1)는 입력값에 상관없이 정해진 스텝의 계산을 실행합니다.   콘솔을 한번만 찍는 함수는 아무리 큰 입력값이 오더라도 계산에 영향을 끼치지 않습니다.   const constantComplexity = (arr) =&gt; {   console.log(\"hello\"); };  constantComplexity([1, 2, 3, 4, 5]);      스택의 push, pop   ▪ O(n) | linear complexity   O(n)는 입력값이 증가함에 따라 시간이 같은 비율로 증가합니다.   const linearComplexity = (n) =&gt; {   for(let i = 0; i &lt; n; i++&gt;){     ...   } }      for 문   ▪ O(n²) | Quadratic Complexity   O(n)는 입력값이 증가함에 따라 시간이 n²으로 증가합니다.   const quadraticComplexity = () =&gt; {   for (let i = 0; i &lt; n; i++) {     for (let j =0; j &lt; n; j++) {       ...   } }      이중 for문   삽입정렬(insertion sort)   선택정렬(selection sort)   거품정렬(bubble sort)   ▪ O(log N) | Logarithmic Complexity   O(n)는 입력값에 따라 처리 시간이 증가합니다.   O(n)은 입력 값이 1이 될 때까지 절반으로 나누는 작업을 반복합니다.  따라서 입력값에 따라 처리 시간이 증가하지만, 비례해서 증가하는 것이 아니므로 O(1)다음으로 빠른 계산법입니다.      이진 트리 탐색   퀵 정렬(quick sort)   병합정렬(merge sort)   힙 정렬(heap Sort)   출처      노마드 코더 - 개발자라면 이제는 알아야하는 Big O 설명해드림. 10분컷.   shitai.koto - [Algorithm] 시간 복잡도(Time complexity) 학습  ","categories": ["Algorithm"],
+        "tags": ["시간 복잡도","빅오 계산법"],
+        "url": "/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스 / Lv 2] 기능 개발 by JS",
+        "excerpt":"📄 문제   프로그래머스 팀에서는 기능 개선 작업을 수행 중입니다. 각 기능은 진도가 100%일 때 서비스에 반영할 수 있습니다.   또, 각 기능의 개발속도는 모두 다르기 때문에 뒤에 있는 기능이 앞에 있는 기능보다 먼저 개발될 수 있고, 이때 뒤에 있는 기능은 앞에 있는 기능이 배포될 때 함께 배포됩니다.   먼저 배포되어야 하는 순서대로 작업의 진도가 적힌 정수 배열 progresses와 각 작업의 개발 속도가 적힌 정수 배열 speeds가 주어질 때 각 배포마다 몇 개의 기능이 배포되는지를 return 하도록 solution 함수를 완성하세요.      작업의 개수(progresses, speeds배열의 길이)는 100개 이하입니다.   작업 진도는 100 미만의 자연수입니다.   작업 속도는 100 이하의 자연수입니다.   배포는 하루에 한 번만 할 수 있으며, 하루의 끝에 이루어진다고 가정합니다. 예를 들어 진도율이 95%인 작업의 개발 속도가 하루에 4%라면 배포는 2일 뒤에 이루어집니다.   🙋‍♀️ 나의 풀이   function solution(progresses, speeds) {   let answer = [];   let hundreds = 0;   while (progresses.length !== 0) {     for (let i = 0; i &lt; progresses.length; i++) {       progresses[i] += speeds[i];     }     if (progresses[0] &gt;= 100) {       while (progresses[0] &gt;= 100) {         progresses.shift();         speeds.shift();         hundreds++;       }       answer.push(hundreds);       hundreds = 0;     }   }   return answer; }   한 문제에 반복문이 세개가 들어가 있어  ","categories": ["programmers-lv2"],
+        "tags": ["스택/큐","while"],
+        "url": "/programmers-lv2/programmers-%EA%B8%B0%EB%8A%A5-%EA%B0%9C%EB%B0%9C/",
+        "teaser": null
       }]
