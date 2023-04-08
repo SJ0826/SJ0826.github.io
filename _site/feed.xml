@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-08T15:22:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] 시간 복잡도와 빅오(Big O) 계산법</title><link href="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/" rel="alternate" type="text/html" title="[알고리즘] 시간 복잡도와 빅오(Big O) 계산법" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84%20%EB%B3%B5%EC%9E%A1%EB%8F%84</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/"><![CDATA[<h2 id="-시간-복잡도">📄 시간 복잡도</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-08T17:10:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] 정렬 (sorting)</title><link href="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/" rel="alternate" type="text/html" title="[알고리즘] 정렬 (sorting)" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/"><![CDATA[<h2 id="-정렬-알고리즘">📄 정렬 알고리즘</h2>
+
+<p>정렬 알고리즘은 물건을 정리하는 것 처럼 데이터를 <strong>정해진 순서대로 나열</strong>하는 알고리즘입니다.</p>
+
+<p>정렬 알고리즘에는 대표적으로 <span style="color: #FAAB78; font-weight: bold">버블 정렬</span>, <span style="color: #FAAB78; font-weight: bold">선택 정렬</span>, <span style="color: #FAAB78; font-weight: bold">삽입 정렬</span>이 있습니다.</p>
+
+<h2 id="-버블-정렬-bubble-sort">📄 버블 정렬 (Bubble Sort)</h2>
+
+<p>버블 정렬은 매 사이클마다 모든 배열 요소를 비교합니다.</p>
+
+<ol>
+  <li>0번째 원소와 1번째 원소를 비교 &amp; swap</li>
+  <li>1번째 원소와 2번째 원소를 비교 &amp; swap</li>
+  <li>n-1번째 원소와 n번째 원소를 비교 &amp; swap</li>
+</ol>
+
+<p>버블 정렬은 중첩 반복이 발생하므로 <strong>O(N^2)</strong>의 시간복잡도를 가집니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">bubble</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">// swap</span>
+        <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+        <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tmp</span><span class="p">;</span>
+        <span class="nx">tmp</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이때 최악의 경우 <strong>모든 요소를 swap</strong>해야 하기 때문에 직관적이지만 비효율적인 방식이라 자주 사용되진 않습니다.</p>
+
+<h2 id="-선택-정렬-selection-sort">📄 선택 정렬 (Selection Sort)</h2>
+
+<p>선택 정렬은 원소를 넣을 위치(인덱스)를 미리 정해놓고, 데이터셋을 순회하여 해당 원소를 찾습니다.</p>
+
+<p>쉽게 얘기하자면, 오름차순으로 정리할 때 가장 작은 수를 찾아 맨 앞과 교환한다는 뜻입니다.</p>
+
+<ol>
+  <li>주어진 데이터셋에서 최소값을 찾는다.</li>
+  <li>해당 값을 맨 앞의 요소와 swap한다.</li>
+  <li>두번째 요소부터 위 과정을 반복한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">selectionSort</span> <span class="p">(</span><span class="nx">array</span><span class="p">){</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">minIndex</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]){</span>
+        <span class="nx">minIndex</span> <span class="o">=</span> <span class="nx">j</span><span class="p">;</span> <span class="c1">// 1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">minIndex</span> <span class="o">!==</span> <span class="nx">i</span><span class="p">){</span> <span class="c1">// 2</span>
+      <span class="kd">let</span> <span class="nx">swamp</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">];</span>
+      <span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">swamp</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">array</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>선택 정렬은 정렬이 되어 있는 경우, 되어 있지 않은 경우 모든 <strong>O(N^2)</strong>의 시간 복잡도를 가집니다.</p>
+
+<h2 id="-삽입-정렬">📄 삽입 정렬</h2>
+
+<p>삽입 정렬은 한 사이클동안 모든 요소를 순환하지 않습니다.</p>
+
+<p>사이클마다 해당 요소를 왼쪽에 있는 값들과 비교하고 알맞은 자리에 해당 요소를 삽입합니다.</p>
+
+<ol>
+  <li>두번째 요소를 왼쪽 요소와 비교하고 데이터셋을 정렬한다.</li>
+  <li>세번째 요소를 첫번째 요소와 두번째 요소와 비교하고 데이터셋을 정렬한다.</li>
+  <li>배열의 크기만큼 위 과정을 반복한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="nf">while </span><span class="p">(</span><span class="nx">left</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">array</span><span class="p">[</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">left</span><span class="p">];</span>
+      <span class="nx">left</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">array</span><span class="p">[</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>삽입 정렬의 경우 정렬이 모두 되어 있는 최선의 경우에는 <strong>O(N)</strong>의 시간복잡도를 가지고,<br />
+정렬이 되어 있지 않은 최악의 경우에는 <strong>O(N^2)</strong>의 시간 복잡도를 가집니다.</p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=Bor_CRWEIXo">노마드 코더 - 어? 재밌네? 정렬 알고리즘, 한방에 이해하기!</a></li>
+  <li><a href="https://im-developer.tistory.com/133">Code Playground</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="버블 정렬" /><category term="선택 정렬" /><category term="삽입 정렬" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 하샤드 수</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 하샤드 수" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.</p>
+
+<ul>
+  <li>x는 1 이상, 10000 이하인 정수입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">x</span><span class="p">.</span><span class="nf">toString</span><span class="p">()].</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nc">Number</span><span class="p">(</span><span class="nx">cur</span><span class="p">));</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">%</span> <span class="nx">sum</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>주어진 숫자(x)를 문자열로 변환 후, 각 자릿값을 배열의 요소로 만든다.</li>
+  <li>배열의 요소를 reduce메소드를 사용해 더한 누적값을 변수 <code class="language-plaintext highlighter-rouge">sum</code>에 할당한다.</li>
+  <li>요구사항대로 주어진 숫자를 누적값으로 나누었을 때 0이 되는지에 대한 boolean값을 반환한다.</li>
+</ol>
+
+<p>처음으로 프로그래머스에서 reduce함수를 사용했습니다. <br />
+점점 응용하는 메소드가 생길수록 뿌듯합니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Harshad</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">+</span><span class="nx">b</span> <span class="o">+</span> <span class="o">+</span><span class="nx">a</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>반환값을 true/false가 아닌 0과 1을 통해 표현할 수도 있다는 것을 적용한 식입니다. 👍</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="하샤드 수" /><category term="reduce" /><summary type="html"><![CDATA[프로그래머스 Lv 1 하샤드 수 문제 풀이]]></summary></entry><entry><title type="html">[알고리즘] 시간 복잡도와 빅오(Big O) 계산법</title><link href="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/" rel="alternate" type="text/html" title="[알고리즘] 시간 복잡도와 빅오(Big O) 계산법" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84%20%EB%B3%B5%EC%9E%A1%EB%8F%84</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/"><![CDATA[<h2 id="-시간-복잡도">📄 시간 복잡도</h2>
 
 <p>프로그래머스 문제를 푸는데 이제 점점 성능을 고려해야할 필요성이 생겼습니다.<br />
 효율성 테스트를 넘어가야 하기 때문이죠. 🥶<br />
@@ -478,246 +622,4 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reverse" /><category term="split" /><category term="스택/큐" /><summary type="html"><![CDATA[자연수 뒤집어 배열로 만들기]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 🚨 Could not resolve dependency + package maneger Error</title><link href="http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%B2%84%EC%A0%84-%EB%AC%B8%EC%A0%9C/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 🚨 Could not resolve dependency + package maneger Error" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="http://localhost:4000/coding-swamp/coding-swamp-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%B2%84%EC%A0%84-%EB%AC%B8%EC%A0%9C/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
-
-<p>리액트 프로젝트를 github actions를 통해 배포하는데 문제가 발생했습니다.</p>
-
-<p>리액트 버전이 현재 18.2.0인데 @toast-ui라이브러리와 맞지 않습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229803270-b3879941-04d0-4416-aaf1-6d94fb25fdae.png" alt="image" /></p>
-
-<p>아무래도 리액트를 17로 버전을 낮춰야겠습니다.</p>
-
-<h2 id="-해결-과정">🔨 해결 과정</h2>
-
-<p>다음 명령어를 통해 리액트를 <code class="language-plaintext highlighter-rouge">17.0.2</code>버전으로 다운그레이드 합니다.</p>
-
-<p>당연히 react-dom도 함께 다운그레이드 합니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install react@^17.0.2 react-dom@17.0.2
-</code></pre></div></div>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229811519-a097a0b8-b098-48bd-a093-b54dcb5ef501.png" alt="image" /> 👍</p>
-
-<p>이제 로컬에서 잘 돌아가는지 테스트해보겠습니다.</p>
-
-<p>버전이 바뀌니 뭔가 문제가 발생하네요.</p>
-
-<p>내 이럴 줄 알았습니다.</p>
-
-<h3 id="-cant-resolve-react-domclient">▪ Can’t resolve ‘react-dom/client’</h3>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229812431-680ad17b-03e8-48ad-83b3-1fc99d62c4e3.png" alt="image" /></p>
-
-<h4>💾 [index.ts]</h4>
-
-<p>버전이 바뀌어 사용방법도 다릅니다.</p>
-
-<p>아래 코드처럼 수정해줍니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// import ReactDOM from "react-dom/client";</span>
-<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h3 id="-property-createroot-does-not-exist-on-type">▪ Property ‘createRoot’ does not exist on type</h3>
-
-<p>바뀐 버전은 렌더 방식도 다릅니다.</p>
-
-<p>마찬가지로 index.ts파일에서 진행됩니다.</p>
-
-<p>리액트 17버전은 ReactDOM이 직접 render하는 구조입니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// const root = ReactDOM.createRoot(</span>
-<span class="c1">//   document.getElementById("root") as HTMLElement</span>
-<span class="c1">// );</span>
-
-<span class="c1">// root.render(</span>
-<span class="c1">//   &lt;Provider store={store}&gt;</span>
-<span class="c1">//     &lt;PersistGate loading={null} persistor={persistor}&gt;</span>
-<span class="c1">//       &lt;ThemeProvider theme={theme}&gt;</span>
-<span class="c1">//         &lt;GlobalStyle /&gt;</span>
-<span class="c1">//         &lt;Page&gt;</span>
-<span class="c1">//           &lt;App /&gt;</span>
-<span class="c1">//         &lt;/Page&gt;</span>
-<span class="c1">//       &lt;/ThemeProvider&gt;</span>
-<span class="c1">//     &lt;/PersistGate&gt;</span>
-<span class="c1">//   &lt;/Provider&gt;,</span>
-<span class="c1">// );</span>
-
-<span class="nx">ReactDOM</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">PersistGate</span> <span class="nx">loading</span><span class="o">=</span><span class="p">{</span><span class="kc">null</span><span class="p">}</span> <span class="nx">persistor</span><span class="o">=</span><span class="p">{</span><span class="nx">persistor</span><span class="p">}</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">ThemeProvider</span> <span class="nx">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">GlobalStyle</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Page</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="sr">/Page</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/ThemeProvider</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/PersistGate</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/Provider&gt;</span><span class="err">,
-</span>  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)</span>
-<span class="p">);</span>
-</code></pre></div></div>
-
-<p>이제 문제 없이 프로젝트가 잘 돌아갑니다.</p>
-
-<p>과연 <code class="language-plaintext highlighter-rouge">npm ci</code>명령도 잘 통과할까요..</p>
-
-<h2 id="-문제-발생-2">🚨 문제 발생 #2</h2>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229816887-6d15af8c-000a-4d8b-90b6-d709b2c60a5d.png" alt="image" /></p>
-
-<p>이번엔 <strong>testing library</strong>가 문제네요.</p>
-
-<p>현재 설치되어 있는 testing-library 버전 @13.4.0은 react 버전 @18.0.0이랑 맞는답니다.</p>
-
-<p>라이브러리끼리 서로 합의 봐주면 안되는 것이었을까요.</p>
-
-<p>찾아보니 react-testing-libray 12버전은 react 18버전 아래로는 다 지원이 가능하다고 합니다.</p>
-
-<h2 id="-문제-해결">🔨 문제 해결</h2>
-
-<p>react-testing-library를 <code class="language-plaintext highlighter-rouge">12.1.5</code>버전으로 다운그레이드 하겠습니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install @testing-library/react@^12.1.5
-</code></pre></div></div>
-
-<h2 id="-문제-발생-3">🚨 문제 발생 #3</h2>
-
-<p><code class="language-plaintext highlighter-rouge">npm ci</code>명령에서 다시 문제가 발생했습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229825875-fb878b52-f944-4aed-a9b8-74372a902f04.png" alt="image" /></p>
-
-<p>package-lock.json파일을 삭제 후 다시 <code class="language-plaintext highlighter-rouge">npm install</code>해도 안되네요.</p>
-
-<p>npm install로 npm을 설치해서 package-lock.json파일도 생성되었는데 왜 안될까요.</p>
-
-<h2 id="-문제-해결-1">🔨 문제 해결</h2>
-
-<p>그것은 바로 제가 <strong>yarn.lock</strong>파일을 가지고 있었기 때문입니다.</p>
-
-<p>프로젝트를 계속 yarn으로 진행했는데 이게 문제가 될 줄 몰랐습니다.</p>
-
-<p>CI를 진행하는데 필요한 정보가 <code class="language-plaintext highlighter-rouge">package-lock.json</code>이 아니라 <code class="language-plaintext highlighter-rouge">yarn.lock</code>에 있었나 봅니다.</p>
-
-<p>그렇다면 이제부턴 정말 yarn뿐입니다.</p>
-
-<p>npm을 쓰든 yarn을 쓰든 하나의 매니저와 갑시다…</p>
-
-<p>npm은 보내주고 yarn을 사용해 CI를 진행하겠습니다.</p>
-
-<p>yarn으로 ci를 실행시키는 커맨드는 다음과 같습니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn install --immutable --immutable-cache --check-cache
-</code></pre></div></div>
-
-<h4>[💾 CICD.yml]</h4>
-
-<p>문제된 부분을 수정합니다.</p>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">CICD</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@main</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">yarn install --immutable --immutable-cache --check-cache // 🎉</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">yarn build // 🎉</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">deploy to s3</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">jakejarvis/s3-sync-action@master</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">args</span><span class="pi">:</span> <span class="s">--delete</span>
-        <span class="na">env</span><span class="pi">:</span>
-          <span class="na">AWS_S3_BUCKET</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_REGION</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ap-northeast-2"</span>
-          <span class="na">SOURCE_DIR</span><span class="pi">:</span> <span class="s2">"</span><span class="s">build"</span>
-</code></pre></div></div>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229835992-95140d01-cfc0-4276-9b10-e0890df94787.png" alt="image" /></p>
-
-<p>드디어…CICD 파이프라인이 완성되었습니다. 🎉</p>
-
-<hr />
-
-<h2 id="-오늘의-회고">🥶 오늘의 회고</h2>
-
-<p>공부를 하면 할수록 꼼수를 부리면 나중에 탈이 나고, 귀찮아서 넘기면 눈덩이처럼 커져 돌아오는것을 알았습니다.<br />
-그냥 애초에 눈에 보일 때 해결해야 뒤탈이 없습니다.<br />
-사실 toast-ui에 뭔가 버전이 안맞는 다는 걸 알았는데 개발환경에선 문제가 없길래 넘겼거든요.<br />
-인터스텔라가 흥행한 이유는 과거를 후회하는 인간이 많기 때문일까요.<br />
-이상 독학러의 주저리였습니다.</p>
-
-<hr />
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li>
-    <p><a href="https://stackoverflow.com/questions/72264785/what-are-the-corresponding-testing-library-react-versions-for-react-16-8-6">what-are-the-corresponding-testing-library-react-versions-for-react-16-8-6</a></p>
-  </li>
-  <li>
-    <p><a href="https://stackoverflow.com/questions/69984660/npm-ci-can-only-install-packages-with-an-existing-package-lock-json-or-npm-shrin">npm-ci-can-only-install-packages-with-an-existing-package-lock-json-or-npm-shrin</a></p>
-  </li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="리액트 버전" /><category term="toast-ui" /><category term="다운 그레이드" /><category term="testing-library" /><category term="에러" /><category term="npm" /><summary type="html"><![CDATA[리액트 꼬리에 꼬리를 무는 다운그레이드]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 🚨 react-scripts: not found</title><link href="http://localhost:4000/coding-swamp/coding-swamp-scripts-not-found/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 🚨 react-scripts: not found" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/coding-swamp-scripts%20not%20found</id><content type="html" xml:base="http://localhost:4000/coding-swamp/coding-swamp-scripts-not-found/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
-
-<p>모코늪 프로젝트에서 github actions를 통해 프로젝트를 배포하는데 <code class="language-plaintext highlighter-rouge">npm run build</code>명령어가 되질 않습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229796651-09a5dd5c-951d-4c6e-8ae5-fa01d747ea16.png" alt="image" /></p>
-
-<p>프로젝트에서 npm을 업데이트하고 설치해도 같은 문제가 발생해서 아예 <strong>package.lock</strong>파일과 <strong>node_modules</strong>폴더를 삭제하고 다시 npm을 설치해주었습니다.</p>
-
-<p>실패했습니다.</p>
-
-<h2 id="-문제-해결">🔨 문제 해결</h2>
-
-<p>구글링하면 왜 자꾸 사람들이 node_modules를 지워라, 다시 npm install을 해라 하는지 알았습니다.</p>
-
-<p>그런 케이스들은 로컬 환경에서 일어났던 에러였으니 당연히 다시 npm을 설치해 초기화 시켜주면 해결이 되었던 것입니다.</p>
-
-<p>저는 로컬 환경에서는 빌드가 되었지만 github actions에서 되지 않았던 것이었는데 말이죠.</p>
-
-<p>저의 CICD.yml파일입니다.</p>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">CICD</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@main</span>
-      <span class="c1"># - run: npm ci 이 부분을 실수로 삭제 해놓고 헤매고 있던 것이었습니다.</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">npm run build</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">deploy to s3</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">jakejarvis/s3-sync-action@master</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">args</span><span class="pi">:</span> <span class="s">--delete</span>
-        <span class="na">env</span><span class="pi">:</span>
-          <span class="na">AWS_S3_BUCKET</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_REGION</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ap-northeast-2"</span>
-          <span class="na">SOURCE_DIR</span><span class="pi">:</span> <span class="s2">"</span><span class="s">build"</span>
-</code></pre></div></div>
-
-<h3 id="-npm-ci-란">📌 npm ci 란?</h3>
-
-<p>npm ci는 package-lock.json에 있는 패키지 정보를 이용해 정확한 버전의 패키지들을 설치해서 node_modules에 적재합니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">npm run build</code>을 실행할 수 있는 파일은 node_modules에 있는데 node_modules를 설치하지 않았으니 에러가 발생할 수 밖에요.</p>
-
-<hr />
-
-<p>그런데 사실 에러가 완전히 끝나지 않았습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/229803270-b3879941-04d0-4416-aaf1-6d94fb25fdae.png" alt="image" /></p>
-
-<p>@toast ui 라이브러리가 현재 사용중인 react 18버전과 맞지 않습니다.</p>
-
-<p>산넘어 산입니다.</p>
-
-<p>이거 리액트 버전을 낮추는거 밖에 답이 안보이네요.</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li>https://github.com/facebook/create-react-app/discussions/10220</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="리액트" /><category term="github actions" /><category term="에러" /><category term="npm ci" /><summary type="html"><![CDATA[github actions 배포 자동화 과정에서 발생]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reverse" /><category term="split" /><category term="스택/큐" /><summary type="html"><![CDATA[자연수 뒤집어 배열로 만들기]]></summary></entry></feed>
