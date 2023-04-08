@@ -186,11 +186,18 @@ const spliced = 배열.splice(index number, n);
 
 ### slice함수 사용법
 
+slice메소드는 배열에서 특정 범위를 잘라내 새로운 배열로 반환합니다.
+
 ```js
-const sliced = 배열.slice(index number, n);
+const sliced = 배열.slice(start, end);
+
+let nums = [0, 1, 2, 3, 4, 5, 6, 7];
+nums.slice(2, 4);
+
+// nums = [2, 3]
 ```
 
-> index number인 원소부터 n개를 잘라내 새로운 배열을 생성한다.
+slice 메소드의 두번째 인자는 새로운 배열의 범위에 포함되지 않습니다.
 
 ### 공통점
 
