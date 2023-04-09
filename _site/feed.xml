@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-08T18:19:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] 정렬 (sorting)</title><link href="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/" rel="alternate" type="text/html" title="[알고리즘] 정렬 (sorting)" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/"><![CDATA[<h2 id="-정렬-알고리즘">📄 정렬 알고리즘</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-09T17:07:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 두 정수 사이의 합</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 두 정수 사이의 합" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%91%90%20%EC%A0%95%EC%88%98%20%EC%82%AC%EC%9D%B4%20%ED%95%A9</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>두 정수 a, b가 주어졌을 때 a와 b 사이에 속한 모든 정수의 합을 리턴하는 함수, solution을 완성하세요.
+예를 들어 a = 3, b = 5인 경우, 3 + 4 + 5 = 12이므로 12를 리턴합니다.</p>
+
+<ul>
+  <li>a와 b가 같은 경우는 둘 중 아무 수나 리턴하세요.</li>
+  <li>a와 b는 -10,000,000 이상 10,000,000 이하인 정수입니다.</li>
+  <li>a와 b의 대소관계는 정해져있지 않습니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">newA</span><span class="p">,</span> <span class="nx">newB</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">].</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span> <span class="c1">// 1</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">newA</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">newB</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 2</span>
+    <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>주어진 정수를 배열에 담아 정렬후 구조분해 할당을 사용해 새로운 값을 만들었다.</li>
+  <li>반복문으로 <code class="language-plaintext highlighter-rouge">newA</code>부터 <code class="language-plaintext highlighter-rouge">newB</code>까지의 합을 구해 답을 반환한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">adder</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">s</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="sort" /><summary type="html"><![CDATA[프로그래머스 Lv 1 두 정수 사이의 합 문제 풀이]]></summary></entry><entry><title type="html">[알고리즘] 정렬 (sorting)</title><link href="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/" rel="alternate" type="text/html" title="[알고리즘] 정렬 (sorting)" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/"><![CDATA[<h2 id="-정렬-알고리즘">📄 정렬 알고리즘</h2>
 
 <p>정렬 알고리즘은 물건을 정리하는 것 처럼 데이터를 <strong>정해진 순서대로 나열</strong>하는 알고리즘입니다.</p>
 
@@ -312,7 +347,83 @@
 
 <p>아예 접근방식이 달라버리네요. 이럴수가 있다니..<br />
 속도나 성능을 떠나서 풀이 방식이 신기합니다.<br />
-처음에 눈으로 보고 이해가 안가서 종이에 하나하나 조건을 줘가면서 이해했습니다. 세상엔 똑똑한 사람이 많네요.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택/큐" /><category term="while" /><summary type="html"><![CDATA[프로그래머스 Lv 2 기능 개발 문제 풀이]]></summary></entry><entry><title type="html">Javascript Math 메소드 정리</title><link href="http://localhost:4000/javascript-Math-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%A0%95%EB%A6%AC/" rel="alternate" type="text/html" title="Javascript Math 메소드 정리" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T00:00:00+09:00</updated><id>http://localhost:4000/javascript-Math%20%EB%A9%94%EC%86%8C%EB%93%9C%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="http://localhost:4000/javascript-Math-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%A0%95%EB%A6%AC/"><![CDATA[]]></content><author><name>Sujin Kim</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[알고리즘] 시간 복잡도와 빅오(Big O) 계산법</title><link href="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/" rel="alternate" type="text/html" title="[알고리즘] 시간 복잡도와 빅오(Big O) 계산법" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84%20%EB%B3%B5%EC%9E%A1%EB%8F%84</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/"><![CDATA[<h2 id="-시간-복잡도">📄 시간 복잡도</h2>
+처음에 눈으로 보고 이해가 안가서 종이에 하나하나 조건을 줘가면서 이해했습니다. 세상엔 똑똑한 사람이 많네요.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택/큐" /><category term="while" /><summary type="html"><![CDATA[프로그래머스 Lv 2 기능 개발 문제 풀이]]></summary></entry><entry><title type="html">Math 메소드 정리</title><link href="http://localhost:4000/javascript/javascript-Math-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%A0%95%EB%A6%AC/" rel="alternate" type="text/html" title="Math 메소드 정리" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-Math%20%EB%A9%94%EC%86%8C%EB%93%9C%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-Math-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%A0%95%EB%A6%AC/"><![CDATA[<h2 id="-mathabsnumber">📄 Math.abs(number)</h2>
+
+<p>▪ 용도: 인수의 <strong>절댓값</strong>을 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span> <span class="c1">// 0</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">([]);</span> <span class="c1">// 0</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span> <span class="c1">// 0</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+
+<h2 id="-mathroundnumber">📄 Math.round(number)</h2>
+
+<p>▪ 용도: 소수점 이하를 <strong>반올림</strong>한 정수를 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mf">1.2</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="o">-</span><span class="mf">1.6</span><span class="p">);</span> <span class="c1">// -2</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">();</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+
+<h2 id="-mathceilnumber">📄 Math.ceil(number)</h2>
+
+<p>▪ 용도: 소수점 이하를 <strong>올림</strong>한 정수를 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="mf">1.4</span><span class="p">);</span> <span class="c1">// 2</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">();</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+
+<h2 id="-mathfloornumber">📄 Math.floor(number)</h2>
+
+<p>▪ 용도: 소수점 이하를 <strong>내림</strong>한 정수를 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="mf">1.4</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">1.8</span><span class="p">);</span> <span class="c1">// -2</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">();</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+
+<h2 id="-mathsqrtnumber">📄 Math.sqrt(number)</h2>
+
+<p>▪ 용도: 인수의 <strong>제곱근</strong>을 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span> <span class="c1">// 3</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">);</span> <span class="c1">// NaN</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">();</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+
+<h2 id="-mathrandom">📄 Math.random()</h2>
+
+<p>▪ 용도: <strong>0에서 1미만의 랜덤 숫자</strong>를 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">();</span> <span class="c1">// 0.xxxxxxxx</span>
+</code></pre></div></div>
+
+<h2 id="-mathpownumber-number">📄 Math.pow(number, number)</h2>
+
+<p>▪ 용도: 첫번째 인수를 밑, 두번째 인수를 지수로한 <strong>거듭제곱근</strong>을 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// 256</span>
+
+<span class="c1">// ES7 거듭 제곱 연산자</span>
+<span class="mi">2</span> <span class="o">**</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// 256</span>
+</code></pre></div></div>
+
+<h2 id="-mathmaxnumbers">📄 Math.max(numbers)</h2>
+
+<p>▪ 용도: 인수 중 <strong>최댓값</strong>을 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<h2 id="-mathminnumbers">📄 Math.min(numbers)</h2>
+
+<p>▪ 용도: 인수 중 <strong>최솟값</strong>을 반환한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 1</span>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="Math" /></entry><entry><title type="html">[알고리즘] 시간 복잡도와 빅오(Big O) 계산법</title><link href="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/" rel="alternate" type="text/html" title="[알고리즘] 시간 복잡도와 빅오(Big O) 계산법" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84%20%EB%B3%B5%EC%9E%A1%EB%8F%84</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/"><![CDATA[<h2 id="-시간-복잡도">📄 시간 복잡도</h2>
 
 <p>프로그래머스 문제를 푸는데 이제 점점 성능을 고려해야할 필요성이 생겼습니다.<br />
 효율성 테스트를 넘어가야 하기 때문이죠. 🥶<br />
@@ -526,117 +637,4 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /><category term="알고리즘" /><summary type="html"><![CDATA[숫자 이진수 변환하기]]></summary></entry><entry><title type="html">타입스크립트에서 함수 다루기</title><link href="http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C-%ED%95%A8%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0/" rel="alternate" type="text/html" title="타입스크립트에서 함수 다루기" /><published>2023-04-04T00:00:00+09:00</published><updated>2023-04-04T22:06:00+09:00</updated><id>http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C%20%ED%95%A8%EC%88%98%20%EB%8B%A4%EB%A3%A8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/typescript/typescript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C-%ED%95%A8%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0/"><![CDATA[<p>타입스크립트에서 함수를 사용할때 변수를 사용할때와 마찬가지로 타입을 지정해주어야 합니다.</p>
-
-<p>함수에서는 크게 매개변수와 반환값에 타입을 지정합니다.</p>
-
-<h2 id="-함수-매개변수">📄 함수 매개변수</h2>
-
-<p>함수의 매개변수에 타입을 지정하면 그 매개변수는 <strong>필수 매개변수</strong>가 됩니다.</p>
-
-<p>그렇다면 반대로 <strong>선택적 매개변수</strong>는 어떻게 지정할까요?</p>
-
-<p>타입 애너테이션(<code class="language-plaintext highlighter-rouge">:</code>)앞에 <code class="language-plaintext highlighter-rouge">?</code>를 붙여주면 됩니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">announceSong</span><span class="p">(</span><span class="nx">song</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">singer</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Song: </span><span class="p">${</span><span class="nx">song</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">announceSong</code>함수의 매개변수인 <code class="language-plaintext highlighter-rouge">singer</code>은 선택적 매개변수가 되었습니다.</p>
-
-<p>singer의 구체적인 타입은 <code class="language-plaintext highlighter-rouge">string | undefined</code>입니다.</p>
-
-<p>이렇게 생성된 선택적 매개변수는 호출될때 생략해도 에러가 발생하지 않습니다.</p>
-
-<h3 id="-나머지-매개변수">▪ 나머지 매개변수</h3>
-
-<p>나머지 매개변수는 매개변수의 개수를 특정할 수 없을 때 사용합니다.</p>
-
-<p>스프레드 연산자(<code class="language-plaintext highlighter-rouge">...</code>)를 사용해 배열로 나타납니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">singAllTheSongs</span><span class="p">(</span><span class="nx">singer</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="p">...</span><span class="nx">song</span><span class="p">:</span> <span class="nx">string</span><span class="p">[])</span> <span class="p">{</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">song</span> <span class="k">of</span> <span class="nx">songs</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">song</span><span class="p">}</span><span class="s2">, by </span><span class="p">${</span><span class="nx">singer</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nf">singAllTheSongs</span><span class="p">(</span><span class="dl">"</span><span class="s2">Day6</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// ok</span>
-<span class="nf">singAllTheSongs</span><span class="p">(</span><span class="dl">"</span><span class="s2">Day6</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">예뻤어</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">한 페이지가 될 수 있게</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">때려쳐</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// ok</span>
-</code></pre></div></div>
-
-<h2 id="-반환-타입">📄 반환 타입</h2>
-
-<p>타입스크립트는 함수의 반환 타입도 유추할 수 있습니다.</p>
-
-<p>따라서 타입스크립트가 명확하게 타입을 유추할 수 있는 상황이라면, 타입을 명시적으로 지정하는 것은 중복된 타입 지정이므로 지양하는 것이 좋습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span><span class="p">():</span> <span class="nx">반환</span> <span class="nx">타입</span> <span class="p">{</span>
-  <span class="p">...</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="p">():</span> <span class="nx">반환</span> <span class="nx">타입</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="-함수-타입">📄 함수 타입</h2>
-
-<p>함수 타입은 함수를 매개변수에 값으로 넘겨줘야 하는 상황에 지정해야 합니다.</p>
-
-<p>마찬가지로 타입이 맞지 않으면 에러가 발생합니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">functions</span> <span class="nf">runOnSongs</span><span class="p">(</span><span class="nx">getSonAt</span><span class="p">:</span> <span class="p">(</span><span class="nx">index</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">string</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">getSongAt</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// Error.</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="-그-외-반환-타입">📄 그 외 반환 타입</h2>
-
-<h3 id="-void">▪ void</h3>
-
-<p>반환 타입이 <code class="language-plaintext highlighter-rouge">void</code>인 경우는 다음과 같습니다.</p>
-
-<ul>
-  <li>return문이 없는 함수인 경우</li>
-  <li>값을 반환하지 않는 return문인 경우</li>
-</ul>
-
-<p>반환 타입이 void인 경우 undefined와 잘 구분해야 합니다.</p>
-
-<p>반환 타입이 void인 경우는 반환 타입이 무시된다는 것을 의미하고 undefined는 반환되는 리터럴값이기 때문입니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">returnVoid</span><span class="p">(){</span>
-  <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">let</span> <span class="nx">lazyValue</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
-
-<span class="nx">lazyValue</span> <span class="o">=</span> <span class="nf">returnVoid</span><span class="p">()</span><span class="o">\</span>
-<span class="c1">// Error: Type 'void' is not assignable to type 'string | undefined'</span>
-</code></pre></div></div>
-
-<h3 id="-never">▪ never</h3>
-
-<p>never 반환 타입은 의도적으로 오류를 발생시킵니다.</p>
-
-<p>따라서 에러를 제어하는 경우에 사용합니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">fail</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">never</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`Invariant failure: </span><span class="p">${</span><span class="nx">message</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nf">workWithUnasafeParam</span><span class="p">(</span><span class="nx">param</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">param</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">fail</span><span class="p">(</span><span class="s2">`param should be a string, not </span><span class="p">${</span><span class="k">typeof</span> <span class="nx">param</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="nx">param</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li>learning typescript</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="TypeScript" /><category term="함수" /><summary type="html"><![CDATA[타입스크립트에서 함수를 사용하는 방법]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /><category term="알고리즘" /><summary type="html"><![CDATA[숫자 이진수 변환하기]]></summary></entry></feed>
