@@ -1115,6 +1115,12 @@ var store = [{
         "url": "/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/",
         "teaser": null
       },{
+        "title": "[프로그래머스 / Lv 2] 가장 큰 수",
+        "excerpt":"📄 문제   0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.   예를 들어, 주어진 정수가 [6, 10, 2]라면 [6102, 6210, 1062, 1026, 2610, 2106]를 만들 수 있고, 이중 가장 큰 수는 6210입니다.   0 또는 양의 정수가 담긴 배열 numbers가 매개변수로 주어질 때, 순서를 재배치하여 만들 수 있는 가장 큰 수를 문자열로 바꾸어 return 하도록 solution 함수를 작성해주세요.      numbers의 길이는 1 이상 100,000 이하입니다.   numbers의 원소는 0 이상 1,000 이하입니다.   정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.   🙋‍♀️ 나의 풀이   function solution(numbers) {   let answer = numbers     .map((value) =&gt; value + \"\")     .sort((a, b) =&gt; b + a - (a + b))     .join(\"\");    return answer[0] === \"0\" ? \"0\" : answer; }      주어진 배열 numbers를 순회해 sort()메소드를 적용한다.’   인접한 두 수를 순서를 바꿔 비교하고 내림차순한다.   완성된 배열을 join(““)으로 문자열로 바꾼다.   만약 [0, 0, 0]인경우 답이 “000”이 되므로 삼항연산자를 이용해 첫번째 자릿수가 0인경우 0을 바로 반환한다.  ","categories": ["programmers-lv2"],
+        "tags": ["가장 큰 수","정렬","sort"],
+        "url": "/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%88%98/",
+        "teaser": null
+      },{
         "title": "[프로그래머스 / Lv 1] 두 정수 사이의 합",
         "excerpt":"📄 문제   두 정수 a, b가 주어졌을 때 a와 b 사이에 속한 모든 정수의 합을 리턴하는 함수, solution을 완성하세요. 예를 들어 a = 3, b = 5인 경우, 3 + 4 + 5 = 12이므로 12를 리턴합니다.      a와 b가 같은 경우는 둘 중 아무 수나 리턴하세요.   a와 b는 -10,000,000 이상 10,000,000 이하인 정수입니다.   a와 b의 대소관계는 정해져있지 않습니다.   🙋‍♀️ 나의 풀이   function solution(a, b) {   let [newA, newB] = [a, b].sort((a, b) =&gt; a - b); // 1   let sum = 0;   for (let i = newA; i &lt;= newB; i++) {     // 2     sum += i;   }   return sum; }      주어진 정수를 배열에 담아 정렬후 구조분해 할당을 사용해 새로운 값을 만들었다.   반복문으로 newA부터 newB까지의 합을 구해 답을 반환한다.   👍 Best Practice   function adder(a, b, s = 0) {   for (var i = Math.min(a, b); i &lt;= Math.max(a, b); i++) s += i;   return s; }   Math 메소드를 적절히 활용한 풀이입니다. 👍  ","categories": ["programmers-lv1"],
         "tags": ["sort"],

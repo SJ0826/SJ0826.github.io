@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-09T17:09:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 두 정수 사이의 합</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 두 정수 사이의 합" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%91%90%20%EC%A0%95%EC%88%98%20%EC%82%AC%EC%9D%B4%20%ED%95%A9</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-09T19:43:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 2] 가장 큰 수</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 가장 큰 수" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5%20%ED%81%B0%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.</p>
+
+<p>예를 들어, 주어진 정수가 [6, 10, 2]라면 [6102, 6210, 1062, 1026, 2610, 2106]를 만들 수 있고, 이중 가장 큰 수는 6210입니다.</p>
+
+<p>0 또는 양의 정수가 담긴 배열 numbers가 매개변수로 주어질 때, 순서를 재배치하여 만들 수 있는 가장 큰 수를 문자열로 바꾸어 return 하도록 solution 함수를 작성해주세요.</p>
+
+<ul>
+  <li>numbers의 길이는 1 이상 100,000 이하입니다.</li>
+  <li>numbers의 원소는 0 이상 1,000 이하입니다.</li>
+  <li>정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">numbers</span>
+    <span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">+</span> <span class="dl">""</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">a</span> <span class="o">-</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="p">:</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>주어진 배열 <code class="language-plaintext highlighter-rouge">numbers</code>를 순회해 sort()메소드를 적용한다.’</li>
+  <li>인접한 두 수를 순서를 바꿔 비교하고 내림차순한다.</li>
+  <li>완성된 배열을 join(““)으로 문자열로 바꾼다.</li>
+  <li>만약 [0, 0, 0]인경우 답이 “000”이 되므로 삼항연산자를 이용해 첫번째 자릿수가 0인경우 0을 바로 반환한다.</li>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="가장 큰 수" /><category term="정렬" /><category term="sort" /><summary type="html"><![CDATA[프로그래머스 Lv 2 가장 큰 수]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 두 정수 사이의 합</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 두 정수 사이의 합" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%91%90%20%EC%A0%95%EC%88%98%20%EC%82%AC%EC%9D%B4%20%ED%95%A9</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>두 정수 a, b가 주어졌을 때 a와 b 사이에 속한 모든 정수의 합을 리턴하는 함수, solution을 완성하세요.
 예를 들어 a = 3, b = 5인 경우, 3 + 4 + 5 = 12이므로 12를 리턴합니다.</p>
@@ -35,111 +66,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Math 메소드를 적절히 활용한 풀이입니다. 👍</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="sort" /><summary type="html"><![CDATA[프로그래머스 Lv 1 두 정수 사이의 합 문제 풀이]]></summary></entry><entry><title type="html">[알고리즘] 정렬 (sorting)</title><link href="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/" rel="alternate" type="text/html" title="[알고리즘] 정렬 (sorting)" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/"><![CDATA[<h2 id="-정렬-알고리즘">📄 정렬 알고리즘</h2>
-
-<p>정렬 알고리즘은 물건을 정리하는 것 처럼 데이터를 <strong>정해진 순서대로 나열</strong>하는 알고리즘입니다.</p>
-
-<p>정렬 알고리즘에는 대표적으로 <span style="color: #FAAB78; font-weight: bold">버블 정렬</span>, <span style="color: #FAAB78; font-weight: bold">선택 정렬</span>, <span style="color: #FAAB78; font-weight: bold">삽입 정렬</span>이 있습니다.</p>
-
-<h2 id="-버블-정렬-bubble-sort">📄 버블 정렬 (Bubble Sort)</h2>
-
-<p>버블 정렬은 매 사이클마다 모든 배열 요소를 비교합니다.</p>
-
-<ol>
-  <li>0번째 원소와 1번째 원소를 비교 &amp; swap</li>
-  <li>1번째 원소와 2번째 원소를 비교 &amp; swap</li>
-  <li>n-1번째 원소와 n번째 원소를 비교 &amp; swap</li>
-</ol>
-
-<p>버블 정렬은 중첩 반복이 발생하므로 <strong>O(N^2)</strong>의 시간복잡도를 가집니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">bubble</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
-        <span class="c1">// swap</span>
-        <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
-        <span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tmp</span><span class="p">;</span>
-        <span class="nx">tmp</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>이때 최악의 경우 <strong>모든 요소를 swap</strong>해야 하기 때문에 직관적이지만 비효율적인 방식이라 자주 사용되진 않습니다.</p>
-
-<h2 id="-선택-정렬-selection-sort">📄 선택 정렬 (Selection Sort)</h2>
-
-<p>선택 정렬은 원소를 넣을 위치(인덱스)를 미리 정해놓고, 데이터셋을 순회하여 해당 원소를 찾습니다.</p>
-
-<p>쉽게 얘기하자면, 오름차순으로 정리할 때 가장 작은 수를 찾아 맨 앞과 교환한다는 뜻입니다.</p>
-
-<ol>
-  <li>주어진 데이터셋에서 최소값을 찾는다.</li>
-  <li>해당 값을 맨 앞의 요소와 swap한다.</li>
-  <li>두번째 요소부터 위 과정을 반복한다.</li>
-</ol>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">selectionSort</span> <span class="p">(</span><span class="nx">array</span><span class="p">){</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-    <span class="kd">let</span> <span class="nx">minIndex</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]){</span>
-        <span class="nx">minIndex</span> <span class="o">=</span> <span class="nx">j</span><span class="p">;</span> <span class="c1">// 1</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">minIndex</span> <span class="o">!==</span> <span class="nx">i</span><span class="p">){</span> <span class="c1">// 2</span>
-      <span class="kd">let</span> <span class="nx">swamp</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">];</span>
-      <span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-      <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">swamp</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">array</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>선택 정렬은 정렬이 되어 있는 경우, 되어 있지 않은 경우 모든 <strong>O(N^2)</strong>의 시간 복잡도를 가집니다.</p>
-
-<h2 id="-삽입-정렬">📄 삽입 정렬</h2>
-
-<p>삽입 정렬은 한 사이클동안 모든 요소를 순환하지 않습니다.</p>
-
-<p>사이클마다 해당 요소를 왼쪽에 있는 값들과 비교하고 알맞은 자리에 해당 요소를 삽입합니다.</p>
-
-<ol>
-  <li>두번째 요소를 왼쪽 요소와 비교하고 데이터셋을 정렬한다.</li>
-  <li>세번째 요소를 첫번째 요소와 두번째 요소와 비교하고 데이터셋을 정렬한다.</li>
-  <li>배열의 크기만큼 위 과정을 반복한다.</li>
-</ol>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-    <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-
-    <span class="nf">while </span><span class="p">(</span><span class="nx">left</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">array</span><span class="p">[</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">left</span><span class="p">];</span>
-      <span class="nx">left</span><span class="o">--</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">array</span><span class="p">[</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>삽입 정렬의 경우 정렬이 모두 되어 있는 최선의 경우에는 <strong>O(N)</strong>의 시간복잡도를 가지고,<br />
-정렬이 되어 있지 않은 최악의 경우에는 <strong>O(N^2)</strong>의 시간 복잡도를 가집니다.</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=Bor_CRWEIXo">노마드 코더 - 어? 재밌네? 정렬 알고리즘, 한방에 이해하기!</a></li>
-  <li><a href="https://im-developer.tistory.com/133">Code Playground</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="버블 정렬" /><category term="선택 정렬" /><category term="삽입 정렬" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 하샤드 수</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 하샤드 수" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<p>Math 메소드를 적절히 활용한 풀이입니다. 👍</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="sort" /><summary type="html"><![CDATA[프로그래머스 Lv 1 두 정수 사이의 합 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 하샤드 수</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 하샤드 수" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.</p>
 
@@ -271,7 +198,197 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="정렬" /><category term="k번째 수" /><summary type="html"><![CDATA[프로그래머스 Lv 1 k번째수 sort 메소드 대신 정렬 알고리즘으로 풀어보기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 기능 개발 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B8%B0%EB%8A%A5-%EA%B0%9C%EB%B0%9C/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 기능 개발 by JS" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B8%B0%EB%8A%A5%20%EA%B0%9C%EB%B0%9C</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B8%B0%EB%8A%A5-%EA%B0%9C%EB%B0%9C/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="정렬" /><category term="k번째 수" /><summary type="html"><![CDATA[프로그래머스 Lv 1 k번째수 sort 메소드 대신 정렬 알고리즘으로 풀어보기]]></summary></entry><entry><title type="html">[알고리즘] 정렬 (sorting)</title><link href="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/" rel="alternate" type="text/html" title="[알고리즘] 정렬 (sorting)" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%A0%95%EB%A0%AC/"><![CDATA[<h2 id="-정렬-알고리즘">📄 정렬 알고리즘</h2>
+
+<p>정렬 알고리즘은 물건을 정리하는 것 처럼 데이터를 <strong>정해진 순서대로 나열</strong>하는 알고리즘입니다.</p>
+
+<p>정렬 알고리즘에는 대표적으로 <span style="color: #FAAB78; font-weight: bold">버블 정렬</span>, <span style="color: #FAAB78; font-weight: bold">선택 정렬</span>, <span style="color: #FAAB78; font-weight: bold">삽입 정렬</span>이 있습니다.</p>
+
+<h2 id="-버블-정렬-bubble-sort">📄 버블 정렬 (Bubble Sort)</h2>
+
+<p>버블 정렬은 매 사이클마다 모든 배열 요소를 비교합니다.</p>
+
+<ol>
+  <li>0번째 원소와 1번째 원소를 비교 &amp; swap</li>
+  <li>1번째 원소와 2번째 원소를 비교 &amp; swap</li>
+  <li>n-1번째 원소와 n번째 원소를 비교 &amp; swap</li>
+</ol>
+
+<p>버블 정렬은 중첩 반복이 발생하므로 <strong>O(N^2)</strong>의 시간복잡도를 가집니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">bubble</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">// swap</span>
+        <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+        <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tmp</span><span class="p">;</span>
+        <span class="nx">tmp</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이때 최악의 경우 <strong>모든 요소를 swap</strong>해야 하기 때문에 직관적이지만 비효율적인 방식이라 자주 사용되진 않습니다.</p>
+
+<h2 id="-선택-정렬-selection-sort">📄 선택 정렬 (Selection Sort)</h2>
+
+<p>선택 정렬은 원소를 넣을 위치(인덱스)를 미리 정해놓고, 데이터셋을 순회하여 해당 원소를 찾습니다.</p>
+
+<p>쉽게 얘기하자면, 오름차순으로 정리할 때 가장 작은 수를 찾아 맨 앞과 교환한다는 뜻입니다.</p>
+
+<ol>
+  <li>주어진 데이터셋에서 최소값을 찾는다.</li>
+  <li>해당 값을 맨 앞의 요소와 swap한다.</li>
+  <li>두번째 요소부터 위 과정을 반복한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">selectionSort</span> <span class="p">(</span><span class="nx">array</span><span class="p">){</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">minIndex</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]){</span>
+        <span class="nx">minIndex</span> <span class="o">=</span> <span class="nx">j</span><span class="p">;</span> <span class="c1">// 1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">minIndex</span> <span class="o">!==</span> <span class="nx">i</span><span class="p">){</span> <span class="c1">// 2</span>
+      <span class="kd">let</span> <span class="nx">swamp</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">];</span>
+      <span class="nx">array</span><span class="p">[</span><span class="nx">minIndex</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">swamp</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">array</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>선택 정렬은 정렬이 되어 있는 경우, 되어 있지 않은 경우 모든 <strong>O(N^2)</strong>의 시간 복잡도를 가집니다.</p>
+
+<h2 id="-삽입-정렬">📄 삽입 정렬</h2>
+
+<p>삽입 정렬은 한 사이클동안 모든 요소를 순환하지 않습니다.</p>
+
+<p>사이클마다 해당 요소를 왼쪽에 있는 값들과 비교하고 알맞은 자리에 해당 요소를 삽입합니다.</p>
+
+<ol>
+  <li>두번째 요소를 왼쪽 요소와 비교하고 데이터셋을 정렬한다.</li>
+  <li>세번째 요소를 첫번째 요소와 두번째 요소와 비교하고 데이터셋을 정렬한다.</li>
+  <li>배열의 크기만큼 위 과정을 반복한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="nf">while </span><span class="p">(</span><span class="nx">left</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">array</span><span class="p">[</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">left</span><span class="p">];</span>
+      <span class="nx">left</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">array</span><span class="p">[</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>삽입 정렬의 경우 정렬이 모두 되어 있는 최선의 경우에는 <strong>O(N)</strong>의 시간복잡도를 가지고,<br />
+정렬이 되어 있지 않은 최악의 경우에는 <strong>O(N^2)</strong>의 시간 복잡도를 가집니다.</p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=Bor_CRWEIXo">노마드 코더 - 어? 재밌네? 정렬 알고리즘, 한방에 이해하기!</a></li>
+  <li><a href="https://im-developer.tistory.com/133">Code Playground</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="버블 정렬" /><category term="선택 정렬" /><category term="삽입 정렬" /></entry><entry><title type="html">[알고리즘] 시간 복잡도와 빅오(Big O) 계산법</title><link href="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/" rel="alternate" type="text/html" title="[알고리즘] 시간 복잡도와 빅오(Big O) 계산법" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84%20%EB%B3%B5%EC%9E%A1%EB%8F%84</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/"><![CDATA[<h2 id="-시간-복잡도">📄 시간 복잡도</h2>
+
+<p>프로그래머스 문제를 푸는데 이제 점점 성능을 고려해야할 필요성이 생겼습니다.<br />
+효율성 테스트를 넘어가야 하기 때문이죠. 🥶<br />
+똑같은 답일지라도 빨리 답이 나오는 코드가 더 좋은 성능을 가진 코드인데 이를 구별할 수 있게 하는 것이 시간 복잡도입니다.</p>
+
+<p>시간 복잡도는</p>
+
+<p><strong>입력 값에 따라 연산을 실행할 때, 연산 횟수에 비해 시간이 얼마나 걸리는 지 알려주는 지표</strong>입니다.</p>
+
+<p>이 시간 복잡도를 나타내주는 방법 중 하나가 <span style="color: #6096B4; font-weight: bold;">빅오(Big O) 표기법</span>입니다.</p>
+
+<h2 id="-빅오big-o-표기법의-종류">📄 빅오(Big O) 표기법의 종류</h2>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/230600786-4f4d7814-6fb9-4f3a-bf53-822590f98846.png" alt="image" /></p>
+
+<h3 id="-o1--constant-complexity">▪ O(1) | Constant Complexity</h3>
+
+<p>O(1)는 <span style="color: #FAAB78">입력값에 상관없이 정해진 스텝의 계산을 실행</span>합니다.</p>
+
+<p>콘솔을 한번만 찍는 함수는 아무리 큰 입력값이 오더라도 계산에 영향을 끼치지 않습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">constantComplexity</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nf">constantComplexity</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>스택의 push, pop</li>
+</ul>
+
+<h3 id="-on--linear-complexity">▪ O(n) | linear complexity</h3>
+
+<p>O(n)는 <span style="color: #FAAB78">입력값이 증가함에 따라 시간이 같은 비율로 증가</span>합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">linearComplexity</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++&gt;</span><span class="p">){</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>for 문</li>
+</ul>
+
+<h3 id="-on--quadratic-complexity">▪ O(n²) | Quadratic Complexity</h3>
+
+<p>O(n)는 <span style="color: #FAAB78">입력값이 증가함에 따라 시간이 n²으로 증가</span>합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">quadraticComplexity</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>이중 for문</li>
+  <li>삽입정렬(insertion sort)</li>
+  <li>선택정렬(selection sort)</li>
+  <li>거품정렬(bubble sort)</li>
+</ul>
+
+<h3 id="-olog-n--logarithmic-complexity">▪ O(log N) | Logarithmic Complexity</h3>
+
+<p>O(n)는 <span style="color: #FAAB78">입력값에 따라 처리 시간이 증가</span>합니다.</p>
+
+<p>O(n)은 입력 값이 1이 될 때까지 절반으로 나누는 작업을 반복합니다.<br />
+따라서 입력값에 따라 처리 시간이 증가하지만, 비례해서 증가하는 것이 아니므로 O(1)다음으로 빠른 계산법입니다.</p>
+
+<ul>
+  <li>이진 트리 탐색</li>
+  <li>퀵 정렬(quick sort)</li>
+  <li>병합정렬(merge sort)</li>
+  <li>힙 정렬(heap Sort)</li>
+</ul>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=BEVnxbxBqi8">노마드 코더 - 개발자라면 이제는 알아야하는 Big O 설명해드림. 10분컷.</a></li>
+  <li><a href="https://velog.io/@shitaikoto/Algorithm-Time-complexity">shitai.koto - [Algorithm] 시간 복잡도(Time complexity) 학습</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="시간 복잡도" /><category term="빅오 계산법" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 기능 개발 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B8%B0%EB%8A%A5-%EA%B0%9C%EB%B0%9C/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 기능 개발 by JS" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B8%B0%EB%8A%A5%20%EA%B0%9C%EB%B0%9C</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B8%B0%EB%8A%A5-%EA%B0%9C%EB%B0%9C/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>프로그래머스 팀에서는 기능 개선 작업을 수행 중입니다. 각 기능은 진도가 100%일 때 서비스에 반영할 수 있습니다.</p>
 
@@ -425,93 +542,7 @@
 <p>▪ 용도: 인수 중 <strong>최솟값</strong>을 반환한다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 1</span>
-</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="Math" /></entry><entry><title type="html">[알고리즘] 시간 복잡도와 빅오(Big O) 계산법</title><link href="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/" rel="alternate" type="text/html" title="[알고리즘] 시간 복잡도와 빅오(Big O) 계산법" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84%20%EB%B3%B5%EC%9E%A1%EB%8F%84</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/"><![CDATA[<h2 id="-시간-복잡도">📄 시간 복잡도</h2>
-
-<p>프로그래머스 문제를 푸는데 이제 점점 성능을 고려해야할 필요성이 생겼습니다.<br />
-효율성 테스트를 넘어가야 하기 때문이죠. 🥶<br />
-똑같은 답일지라도 빨리 답이 나오는 코드가 더 좋은 성능을 가진 코드인데 이를 구별할 수 있게 하는 것이 시간 복잡도입니다.</p>
-
-<p>시간 복잡도는</p>
-
-<p><strong>입력 값에 따라 연산을 실행할 때, 연산 횟수에 비해 시간이 얼마나 걸리는 지 알려주는 지표</strong>입니다.</p>
-
-<p>이 시간 복잡도를 나타내주는 방법 중 하나가 <span style="color: #6096B4; font-weight: bold;">빅오(Big O) 표기법</span>입니다.</p>
-
-<h2 id="-빅오big-o-표기법의-종류">📄 빅오(Big O) 표기법의 종류</h2>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/230600786-4f4d7814-6fb9-4f3a-bf53-822590f98846.png" alt="image" /></p>
-
-<h3 id="-o1--constant-complexity">▪ O(1) | Constant Complexity</h3>
-
-<p>O(1)는 <span style="color: #FAAB78">입력값에 상관없이 정해진 스텝의 계산을 실행</span>합니다.</p>
-
-<p>콘솔을 한번만 찍는 함수는 아무리 큰 입력값이 오더라도 계산에 영향을 끼치지 않습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">constantComplexity</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="nf">constantComplexity</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]);</span>
-</code></pre></div></div>
-
-<ul>
-  <li>스택의 push, pop</li>
-</ul>
-
-<h3 id="-on--linear-complexity">▪ O(n) | linear complexity</h3>
-
-<p>O(n)는 <span style="color: #FAAB78">입력값이 증가함에 따라 시간이 같은 비율로 증가</span>합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">linearComplexity</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nf">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++&gt;</span><span class="p">){</span>
-    <span class="p">...</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>for 문</li>
-</ul>
-
-<h3 id="-on--quadratic-complexity">▪ O(n²) | Quadratic Complexity</h3>
-
-<p>O(n)는 <span style="color: #FAAB78">입력값이 증가함에 따라 시간이 n²으로 증가</span>합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">quadraticComplexity</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="p">...</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>이중 for문</li>
-  <li>삽입정렬(insertion sort)</li>
-  <li>선택정렬(selection sort)</li>
-  <li>거품정렬(bubble sort)</li>
-</ul>
-
-<h3 id="-olog-n--logarithmic-complexity">▪ O(log N) | Logarithmic Complexity</h3>
-
-<p>O(n)는 <span style="color: #FAAB78">입력값에 따라 처리 시간이 증가</span>합니다.</p>
-
-<p>O(n)은 입력 값이 1이 될 때까지 절반으로 나누는 작업을 반복합니다.<br />
-따라서 입력값에 따라 처리 시간이 증가하지만, 비례해서 증가하는 것이 아니므로 O(1)다음으로 빠른 계산법입니다.</p>
-
-<ul>
-  <li>이진 트리 탐색</li>
-  <li>퀵 정렬(quick sort)</li>
-  <li>병합정렬(merge sort)</li>
-  <li>힙 정렬(heap Sort)</li>
-</ul>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=BEVnxbxBqi8">노마드 코더 - 개발자라면 이제는 알아야하는 Big O 설명해드림. 10분컷.</a></li>
-  <li><a href="https://velog.io/@shitaikoto/Algorithm-Time-complexity">shitai.koto - [Algorithm] 시간 복잡도(Time complexity) 학습</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="시간 복잡도" /><category term="빅오 계산법" /></entry><entry><title type="html">[Lv 1] 정수 내림차순으로 배치하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 1] 정수 내림차순으로 배치하기 by JS" /><published>2023-04-06T00:00:00+09:00</published><updated>2023-04-06T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="Math" /></entry><entry><title type="html">[Lv 1] 정수 내림차순으로 배치하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 1] 정수 내림차순으로 배치하기 by JS" /><published>2023-04-06T00:00:00+09:00</published><updated>2023-04-06T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다.</p>
 
@@ -589,54 +620,4 @@
 </code></pre></div></div>
 <p>매 연산에 <code class="language-plaintext highlighter-rouge">%1234567</code>을 해주어 너무 큰 값이 발생하지 않게 하는 것이었습니다.</p>
 
-<p>이는 자바스크립트의 특징으로 파이썬의 경우에는 해당되지 않는다고 합니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="피보나치 수" /><category term="알고리즘" /><category term="스택" /><summary type="html"><![CDATA[피보나치 수 스택 적용해서 풀기]]></summary></entry><entry><title type="html">[Lv 2] 다음 큰 숫자</title><link href="http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C-%ED%81%B0-%EC%88%AB%EC%9E%90/" rel="alternate" type="text/html" title="[Lv 2] 다음 큰 숫자" /><published>2023-04-05T00:00:00+09:00</published><updated>2023-04-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C%20%ED%81%B0%20%EC%88%AB%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EB%8B%A4%EC%9D%8C-%ED%81%B0-%EC%88%AB%EC%9E%90/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>자연수 n이 주어졌을 때, n의 다음 큰 숫자는 다음과 같이 정의 합니다.</p>
-
-<ul>
-  <li>조건 1. n의 다음 큰 숫자는 n보다 큰 자연수 입니다.</li>
-  <li>조건 2. n의 다음 큰 숫자와 n은 2진수로 변환했을 때 1의 갯수가 같습니다.</li>
-  <li>조건 3. n의 다음 큰 숫자는 조건 1, 2를 만족하는 수 중 가장 작은 수 입니다.
-예를 들어서 78(1001110)의 다음 큰 숫자는 83(1010011)입니다.</li>
-</ul>
-
-<p>자연수 n이 매개변수로 주어질 때, n의 다음 큰 숫자를 return 하는 solution 함수를 완성해주세요.</p>
-
-<ul>
-  <li>n은 1,000,000 이하의 자연수 입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">numberOfOne</span> <span class="o">=</span> <span class="nx">n</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-
-  <span class="nf">while </span><span class="p">(</span><span class="nx">answer</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">answer</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="nx">numberOfOne</span><span class="p">)</span> <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>저는 주어진 숫자에서 1을 더해가며 이진수로 변환 후 1의 개수를 <code class="language-plaintext highlighter-rouge">split()</code>메소드로 계산해 조건을 걸었습니다.</p>
-
-<p>항상 익숙한 for문만 쓰다가 처음으로 while문을 써보았습니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">n</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">match</span><span class="p">(</span><span class="sr">/1/g</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">a</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">match</span><span class="p">(</span><span class="sr">/1/g</span><span class="p">).</span><span class="nx">length</span>
-    <span class="p">?</span> <span class="nx">a</span>
-    <span class="p">:</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>주어진 문제 함수가 재귀함수가 되었네요.</p>
-
-<p>조건이 맞을 때까지 계속 자기 자신을 호출하는 형태입니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /><category term="알고리즘" /><summary type="html"><![CDATA[숫자 이진수 변환하기]]></summary></entry></feed>
+<p>이는 자바스크립트의 특징으로 파이썬의 경우에는 해당되지 않는다고 합니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="피보나치 수" /><category term="알고리즘" /><category term="스택" /><summary type="html"><![CDATA[피보나치 수 스택 적용해서 풀기]]></summary></entry></feed>
