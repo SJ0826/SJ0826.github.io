@@ -602,7 +602,7 @@
 </url>
 <url>
 <loc>http://localhost:4000/structure/structure-hash/</loc>
-<lastmod>2023-03-07T22:06:00+09:00</lastmod>
+<lastmod>2023-04-10T22:06:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/coding-swamp/projects-coding-swamp/</loc>
@@ -751,6 +751,10 @@
 <url>
 <loc>http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/</loc>
 <lastmod>2023-04-09T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/programmers-lv2/programmers-%EC%9C%84%EC%9E%A5/</loc>
+<lastmod>2023-04-10T22:06:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/programmers-lv1/programmers-%EC%BD%9C%EB%9D%BC%EC%B8%A0-%EC%B6%94%EC%B8%A1/</loc>
