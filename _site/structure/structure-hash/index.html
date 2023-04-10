@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>해시(Hash) - Sometimes we fall, then we rise ⛵</title>
+<!-- begin _includes/seo.html --><title>[자료구조] 해시(Hash) by JS - Sometimes we fall, then we rise ⛵</title>
 <meta name="description" content="해시 테이블은 (Key, Value)로 데이터를 저장하는 자료구조입니다.">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
-<meta property="og:title" content="해시(Hash)">
+<meta property="og:title" content="[자료구조] 해시(Hash) by JS">
 <meta property="og:url" content="http://localhost:4000/structure/structure-hash/">
 
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-03-07T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-03-07T00:00:00+09:00">
 
 
 
@@ -382,13 +382,13 @@
   >
     <meta
       itemprop="headline"
-      content="해시(Hash)"
+      content="[자료구조] 해시(Hash) by JS"
     /> <meta
       itemprop="description"
       content="해시 테이블은 (Key, Value)로 데이터를 저장하는 자료구조입니다."
     /> <meta
       itemprop="datePublished"
-      content="2022-03-07T00:00:00+09:00"
+      content="2023-03-07T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
       content="2023-03-07T22:06:00+09:00"
@@ -399,7 +399,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>해시(Hash)</p>
+          <p>[자료구조] 해시(Hash) by JS</p>
 
         </h1>
          
@@ -416,7 +416,7 @@
                 On this page
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#-해시hash">📄 해시(Hash)</a></li><li><a href="#참고">참고</a></li></ul>
+            <ul class="toc__menu"><li><a href="#-해시hash">📄 해시(Hash)</a></li><li><a href="#-장점">📄 장점</a></li><li><a href="#-자바스크립트로-해시-함수-구현하기">📄 자바스크립트로 해시 함수 구현하기</a></li><li><a href="#-해시-충돌">📄 해시 충돌</a><ul><li><a href="#-대처-방법">▪ 대처 방법</a></li></ul></li><li><a href="#참고">참고</a></li></ul>
 
           </nav>
         </aside>
@@ -424,16 +424,146 @@
 
 <p><img src="https://camo.githubusercontent.com/4e48be3863145cbf9c6ba79ce9ed561f91756b24157426980398351df34bf228/68747470733a2f2f696d67312e6461756d63646e2e6e65742f7468756d622f523132383078302f3f73636f64653d6d746973746f72793226666e616d653d6874747073253341253246253246626c6f672e6b616b616f63646e2e6e6574253246646e25324662317a4f77312532466274714c36484157376a792532466a7042413570506b51466e66695a63504c616b673030253246696d672e706e67" alt="해시" /></p>
 
-<p>해시는 (Key, Value)로 데이터를 저장하는 자료구조입니다.</p>
+<p>해시는 <strong>(Key, Value)</strong>로 데이터를 저장하는 자료구조입니다.</p>
 
-<p>해시 함수는 임이의 길이를 갖는 데이터를 고정된 길이의 데이터로 변환시켜주는 함수를 뜻합니다.</p>
+<p>주어진 데이터를 <strong>해시함수</strong>에 적용하면 데이터를 기반으로 key를 만들어 해시 테이블에 저장합니다.</p>
 
-<p>해시 함수를 사용하면 한 배열의 키에 해시함수를 적용해 고유한 인덱스를 생성할 수 있습니다.</p>
+<p>해시 함수는 <strong>똑같은</strong> 데이터들을 <strong>똑같이</strong>분류하는 기능을 담당합니다.</p>
+
+<h2 id="-장점">📄 장점</h2>
+
+<p>인덱스를 통한 검색이 이루어져 <strong>속도가 빠르다</strong>는 장점을 가지고 있습니다.</p>
+
+<p>검색이 상수시간에 이루어지므로 <strong>O(1)</strong>의 시간복잡도를 가집니다.</p>
+
+<h2 id="-자바스크립트로-해시-함수-구현하기">📄 자바스크립트로 해시 함수 구현하기</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">hashStringToInt</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">tableSize</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">hash</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 인덱스의 크기가 커질 경우를 대비해 tableSize로 나눈 값을 쓴다.</span>
+    <span class="nx">hash</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span> <span class="o">*</span> <span class="nx">hash</span> <span class="o">*</span> <span class="nx">s</span><span class="p">.</span><span class="nf">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="o">%</span> <span class="nx">tableSize</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">hash</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">HashTable</span> <span class="p">{</span>
+  <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// 크기가 100인 Hash Table</span>
+
+  <span class="nx">setItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nf">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="nx">getItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nf">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-해시-충돌">📄 해시 충돌</h2>
+
+<p>해시 충돌은 같은 인덱스에 데이터들이 들어오는 현상입니다.</p>
+
+<h3 id="-대처-방법">▪ 대처 방법</h3>
+
+<h4>✔ Separate Caining</h4>
+
+<p>해당 인덱스의 value에 배열이나 연결리스트를 사용해 값을 <strong>중첩</strong>으로 저장하는 방법입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nf">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">].</span><span class="nf">push</span><span class="p">([</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]];</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">getItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nf">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">])</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+
+  <span class="c1">// O(n)</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">].</span><span class="nf">find</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">el</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="nx">key</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4>✔ Linear Probing</h4>
+
+<p>선형 탐색 데이터는 <strong>다음 버켓(인덱스)자리</strong>에 밀어넣는 방법입니다.</p>
+
+<p>이 방법을 사용하면 최대 테이블 길이만큼만 저장할 수 있다는 단점이 있습니다.</p>
+
+<h4>✔ Resizing</h4>
+
+<p>테이블의 크기를 늘린 후 전체 데이터를 <strong>재정렬</strong>한다.</p>
+
+<p>테이블의 길이가 데이터의 크기에 따라 늘어난다는 특징을 가지고 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">hashStringToInt</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">tableSize</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">hash</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">hash</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span> <span class="o">*</span> <span class="nx">hash</span> <span class="o">*</span> <span class="nx">s</span><span class="p">.</span><span class="nf">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="o">%</span> <span class="nx">tableSize</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">hash</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">HashTable</span> <span class="p">{</span>
+  <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+  <span class="nx">numItems</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="c1">// resizing</span>
+  <span class="nx">resize</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">newTable</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// 새로 만들어진 해시테이블의 모든 요소 재정렬</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">item</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(([</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nf">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">newTable</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+          <span class="nf">if </span><span class="p">(</span><span class="nx">newTable</span><span class="p">[</span><span class="nx">idx</span><span class="p">])</span> <span class="p">{</span>
+            <span class="nx">newTable</span><span class="p">[</span><span class="nx">idx</span><span class="p">].</span><span class="nf">push</span><span class="p">([</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">newTable</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]];</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span> <span class="o">=</span> <span class="nx">newTable</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="nx">setItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">numItems</span><span class="o">++</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">loadFactor</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">numItems</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">loadFactor</span> <span class="o">&gt;=</span> <span class="mf">0.8</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 해시 테이블이 80%이상 차있으면 재정렬한다.</span>
+      <span class="k">this</span><span class="p">.</span><span class="nf">resize</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nf">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="nf">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">].</span><span class="nf">push</span><span class="p">([</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]];</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="참고">참고</h2>
 
 <ul>
-  <li><a href="https://upbitcare.com/academy/education/blockchain/52">업비트 투자자보호센터</a></li>
+  <li>
+    <p><a href="https://upbitcare.com/academy/education/blockchain/52">업비트 투자자보호센터</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.youtube.com/watch?v=HraOg7W3VAM">노마드 코더 - 개발자라면 꼭 알아야할 Hash table의 모든 것!</a></p>
+  </li>
 </ul>
  
       </section>
@@ -484,7 +614,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%ED%95%B4%EC%8B%9C%28Hash%29%20http%3A%2F%2Flocalhost%3A4000%2Fstructure%2Fstructure-hash%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%5D+%ED%95%B4%EC%8B%9C%28Hash%29+by+JS%20http%3A%2F%2Flocalhost%3A4000%2Fstructure%2Fstructure-hash%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstructure%2Fstructure-hash%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -493,11 +623,11 @@
  
   <nav class="pagination">
     
-      <a href="/javascript/javascript-cannot-use-import-statement-outside-a-module/" class="pagination--pager" title="🚨 Cannot use import statement outside a module
+      <a href="/programmers-lv1/programmers-notcolpletedplayer/" class="pagination--pager" title="완주하지 못한 선수
 ">Previous</a>
     
     
-      <a href="/javascript/javascript-logical-operator/" class="pagination--pager" title="논리 연산자를 이용한 조건문
+      <a href="/coding-swamp/projects-coding-swamp/" class="pagination--pager" title="[모여봐요 코딩의 늪] 사용자 폼 관련 Slice 리팩토링 (state 객체로 관리하기)
 ">Next</a>
     
   </nav>

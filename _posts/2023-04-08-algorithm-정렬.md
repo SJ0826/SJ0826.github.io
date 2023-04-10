@@ -34,7 +34,7 @@ function bubble(input) {
   const len = input.length;
   let tmp = null;
   for (let i = 0; i < len; i++) {
-    for (let j = 0; j < len; j++) {
+    for (let j = 0; j < len - i - 1; j++) {
       if (input[j] > input[j + 1]) {
         // swap
         tmp = input[j];

@@ -11,7 +11,7 @@ categories:
 tags:
   - ["에러", "Navigate"]
 header:
-  teaser: assets\image\TS-logo.png
+  teaser: assets\image\TS-logo.PNG
 last_modified_at: 2022-11-04T08:06:00-05:00
 ---
 

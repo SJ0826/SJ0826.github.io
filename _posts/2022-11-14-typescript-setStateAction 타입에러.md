@@ -11,7 +11,7 @@ categories:
 tags:
   - ["에러", "setStateAction"]
 header:
-  teaser: assets\image\TS-logo.jpg
+  teaser: assets\image\TS-logo.PNG
 last_modified_at: 2023-02-27T08:06:00-05:00
 ---
 
