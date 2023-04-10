@@ -753,6 +753,10 @@
 <lastmod>2023-04-09T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/programmers-lv1/programmers-%EC%BD%9C%EB%9D%BC%EC%B8%A0-%EC%B6%94%EC%B8%A1/</loc>
+<lastmod>2023-04-10T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/cs/algorithm/</loc>
 </url>
 <url>
@@ -787,6 +791,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/projects/#projects</loc>
+</url>
+<url>
+<loc>http://localhost:4000/project/random-message/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/react/</loc>
@@ -916,10 +923,10 @@
 </url>
 <url>
 <loc>http://localhost:4000/googlea6c2338bb73092a7.html</loc>
-<lastmod>2023-03-06T22:10:01+09:00</lastmod>
+<lastmod>2023-04-09T21:20:05+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/naver23cc0f816c4004d8788f32bf1cb35a66.html</loc>
-<lastmod>2023-03-06T22:10:01+09:00</lastmod>
+<lastmod>2023-04-09T21:20:05+09:00</lastmod>
 </url>
 </urlset>

@@ -50,6 +50,9 @@ docs:
       - title: "모여봐요 코딩의 숲"
         url: /project/coding-swamp/
         category: "coding-swamp"
+      - title: "메세지가 도착했습니다"
+        url: /project/random-message/
+        category: "random-message"
   - title: 일상
     children:
       - title: "books"

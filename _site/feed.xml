@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-09T19:43:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 2] 가장 큰 수</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 가장 큰 수" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5%20%ED%81%B0%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-10T14:21:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 콜라츠 추측</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%BD%9C%EB%9D%BC%EC%B8%A0-%EC%B6%94%EC%B8%A1/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 콜라츠 추측" /><published>2023-04-10T00:00:00+09:00</published><updated>2023-04-10T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%BD%9C%EB%9D%BC%EC%B8%A0%20%EC%B6%94%EC%B8%A1</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%BD%9C%EB%9D%BC%EC%B8%A0-%EC%B6%94%EC%B8%A1/"><![CDATA[<h2 id="-문제-출처">📄 문제 출처</h2>
+
+<p>1937년 Collatz란 사람에 의해 제기된 이 추측은, 주어진 수가 1이 될 때까지 다음 작업을 반복하면, 모든 수를 1로 만들 수 있다는 추측입니다. 작업은 다음과 같습니다.</p>
+
+<p>예를 들어, 주어진 수가 6이라면 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1 이 되어 총 8번 만에 1이 됩니다. 위 작업을 몇 번이나 반복해야 하는지 반환하는 함수, solution을 완성해 주세요. 단, 주어진 수가 1인 경우에는 0을, 작업을 500번 반복할 때까지 1이 되지 않는다면 –1을 반환해 주세요.</p>
+
+<ul>
+  <li>입력된 수, num은 1 이상 8,000,000 미만인 정수입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">while </span><span class="p">(</span><span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">num</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">num</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">:</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">answer</span> <span class="o">===</span> <span class="mi">500</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>재귀함수를 사용해 볼까 하다가 성능상 반복문이 더 좋을 것 같아 <code class="language-plaintext highlighter-rouge">while</code>문에 조건을 걸어 <code class="language-plaintext highlighter-rouge">num</code>가 1이 될때 까지 반복했습니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">collatz</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="p">?</span> <span class="nx">count</span> <span class="o">&gt;=</span> <span class="mi">500</span>
+      <span class="p">?</span> <span class="o">-</span><span class="mi">1</span>
+      <span class="p">:</span> <span class="nx">count</span>
+    <span class="p">:</span> <span class="nf">collatz</span><span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">num</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">:</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">++</span><span class="nx">count</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>그래도 재귀함수를 사용한 풀이는 멋있네요.</p>
+
+<p>삼항 연산자를 중첩으로 사용할 수 있다는 것도 처음 알아갑니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="콜라츠 추측" /><summary type="html"><![CDATA[프로그래머스 Lv 1 콜라츠 추측 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 가장 큰 수</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 가장 큰 수" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5%20%ED%81%B0%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.</p>
 
@@ -542,32 +580,7 @@
 <p>▪ 용도: 인수 중 <strong>최솟값</strong>을 반환한다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 1</span>
-</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="Math" /></entry><entry><title type="html">[Lv 1] 정수 내림차순으로 배치하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[Lv 1] 정수 내림차순으로 배치하기 by JS" /><published>2023-04-06T00:00:00+09:00</published><updated>2023-04-06T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%A0%95%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다.</p>
-
-<ul>
-  <li>n은 1이상 8000000000 이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nc">Number</span><span class="p">([...</span><span class="nc">String</span><span class="p">(</span><span class="nx">n</span><span class="p">)].</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">).</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>저는 주어진 숫자를 문자열 배열로 만들어 내림차순 한 뒤, 다시 문자열로 바꾸고 숫자로 반환했습니다.</p>
-
-<p>배열 요소를 다 합해 문자열로 바꾸는 방법이 생각이 안나서 조금 헤맸습니다.</p>
-
-<div style="background: #FFD966; padding: 1em;">📌 배열 요소를 이어서 문자열로 바꾸는 방법: arr.join("")</div>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="내림차순" /><category term="배열" /><category term="문자열" /><summary type="html"><![CDATA[배열 요소를 합쳐 문자열로 바꾸는 방법]]></summary></entry><entry><title type="html">[Lv 2] 피보나치 수</title><link href="http://localhost:4000/programmers-lv2/programmers-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EC%88%98/" rel="alternate" type="text/html" title="[Lv 2] 피보나치 수" /><published>2023-04-06T00:00:00+09:00</published><updated>2023-04-06T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="Math" /></entry><entry><title type="html">[Lv 2] 피보나치 수</title><link href="http://localhost:4000/programmers-lv2/programmers-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EC%88%98/" rel="alternate" type="text/html" title="[Lv 2] 피보나치 수" /><published>2023-04-06T00:00:00+09:00</published><updated>2023-04-06T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>피보나치 수는 F(0) = 0, F(1) = 1일 때, 1 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 수 입니다.</p>
 
