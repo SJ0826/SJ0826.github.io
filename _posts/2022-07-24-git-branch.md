@@ -58,6 +58,12 @@ git branch -b (브랜치명)
 git push origin (브랜치명)
 ```
 
+매번 브런치 명을 입력하기 번거로우므로 config설정을 해줍니다.
+
+```
+git config --global push.default current // 현재 브랜치를 기준으로 같은 이름의 브랜치에 push한다.
+```
+
 ### 브랜치 이동하기
 
 ▪ `git switch (브랜치명)`
