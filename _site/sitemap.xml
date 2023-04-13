@@ -309,6 +309,10 @@
 <lastmod>2022-08-05T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/web/web-WEB-API%EB%9E%80/</loc>
+<lastmod>2022-08-06T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/javascript/javascript-destructuringAssignment/</loc>
 <lastmod>2022-08-09T22:06:00+09:00</lastmod>
 </url>
@@ -789,6 +793,10 @@
 <lastmod>2023-04-11T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/</loc>
+<lastmod>2023-04-13T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/cs/algorithm/</loc>
 </url>
 <url>
@@ -841,6 +849,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/typescript/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/web/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>

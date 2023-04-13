@@ -26,6 +26,9 @@ docs:
       - title: "Git"
         url: /git/
         category: "Git"
+      - title: "WEB"
+        url: /web/
+        category: "WEB"
   - title: 프로그래머스
     children:
       - title: "Lv1"
