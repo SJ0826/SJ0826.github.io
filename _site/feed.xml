@@ -1,4 +1,253 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-13T16:49:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4%20%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-14T01:53:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점</title><link href="http://localhost:4000/coding-swamp/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/random-message-styled-component%EC%99%80%20scss%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/coding-swamp/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-scss-scss">📄 SCSS? SCSS!</h2>
+
+<p>처음으로 프로젝트에 SCSS를 사용했다.<br />
+두가지 사용경험에 우선 차이점이 있다면 styled-components는 일단 다른 코드를 보며 무작정 사용하고 SCSS는 인강을 보고 공부했다는 점이다.<br />
+styled-component를 계속 사용하다보니 CSS-in-CSS문법에 둔해져 그냥 구글링과 공식문서를 보고 사용하기엔 감이 잘 오지 않아 인강을 들을 수 밖에 없었다.<br />
+빨리 SCSS를 사용해 보고 싶어서 인강은 하루만에 다 들었다.<br /></p>
+
+<h2 id="-scss-사용하니-좋았던-점">📄 SCSS 사용하니 좋았던 점</h2>
+
+<h3>1. 좀 더 나은 스타일 구조화</h3>
+
+<p>아주 객관적이지만 SCSS를 사용했을 때 프로젝트 구조를 잡기가 더 쉬웠다.<br />
+styled-component의 경우 베이스 코드를 작성하기 위해 <strong>createGlobalStyle</strong>을 사용해 <code class="language-plaintext highlighter-rouge">index</code>파일에서 import하고 태그를 생성하는 과정이 있는 반면, SCSS에서는 베이스 코들르 작성하고 <strong>import하면 바로 사용</strong>할 수 있었다.<br />
+큰 차이는 아니지만 처음 styled-components를 사용했을 때 createGlobalStyle 태그를 생성해야하는 위치가 헷갈려 애먹었던 적이 있다.</p>
+
+<p><strong>💾 base.scss</strong></p>
+
+<ul>
+  <li>프로젝트를 진행하며 점점 추가될 예정인 내 base 코드</li>
+</ul>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">"NanumBarunpen"</span><span class="p">;</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">html</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">button</span> <span class="p">{</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>좀더 시각적으로 나았던 부분이 하나 더 있다.<br />
+SCSS는 <strong>파일 아이콘</strong>이 있어 좀더 확실히 구분되는 느낌을 준다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/231812925-e84556cd-f856-4035-8050-e392303937a9.png" alt="image" /></p>
+
+<p>styled-components는 어떤게 스타일 파일인지 직관적으로 눈에 들어오지 않는다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/231813201-baa363ba-65ec-4c32-a9d6-6951f1c306a0.png" alt="image" /></p>
+
+<h3>2. 매번 설치할 필요가 없다.</h3>
+
+<p>저번에 인강들으면서 전역으로 한번 설치해놓으니 매번 설치할 필요가 없다.<br />
+왠지 프로젝트가 가벼워진 기분이든다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g sass // 요거 한번만 설치하면 끝
+</code></pre></div></div>
+
+<h3>3. 코드 재사용 문법이 더 잘되어 있다.</h3>
+
+<ul>
+  <li>변수
+    <ul>
+      <li>theme color를 지정할 때 유용</li>
+      <li>media-query에도 사용할 예정</li>
+    </ul>
+  </li>
+  <li>중첩</li>
+  <li>mixin</li>
+  <li>extend</li>
+</ul>
+
+<p>styled-component도 물론 중복 코드를 처리할 수 있지만, styled-component 고유 문법이 아니다.<br />
+styled-component를 사용했을 때는 그냥 이렇게 보통 객체를 생성해 key-value형태로 사용했다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// styled-component</span>
+
+<span class="kd">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mainColor</span><span class="p">:</span> <span class="s2">`#CCD6A6`</span><span class="p">,</span>
+  <span class="na">bgGroundColor1</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FFFFFF</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">bgGroundColor2</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#F8F9FA</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">bgGroundColor3</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#E9ECEF</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">bgGroundColor4</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#F4EAD5</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>SCSS에서는 따로 스타일을 위한 변수 선언 및 사용이 가능하다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// scss</span>
+
+<span class="nv">$main-color</span><span class="p">:</span> <span class="mh">#39b5e0</span><span class="p">;</span>
+
+<span class="nv">$back-ground-light</span><span class="p">:</span> <span class="mh">#ffffff</span><span class="p">;</span>
+<span class="nv">$back-ground-light2</span><span class="p">:</span> <span class="mh">#f6f1f1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>뿐만 아니라 mixin문법으로 자주 사용하는 스타일을 저장해 꺼내쓰고, extend문법으로 부모 스타일을 상속받아 사용할 수 있다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.messageList__content</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">wheat</span><span class="p">;</span>
+  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$point-blue1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.messageList__header</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.messageList__content</span> <span class="nc">...</span><span class="p">;</span> <span class="c1">// 💡</span>
+<span class="p">}</span>
+
+<span class="nc">.messageList_list</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.messageList__content</span> <span class="nc">...</span><span class="p">;</span> <span class="c1">// 💡</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3>4. 코드가 색이 칠해져 있다 🤩</h3>
+
+<p>사실 이게 styled-componets의 가장 큰 단점이라고 생각한다.<br />
+코드가 한 색깔로 되어 있다는 것이다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">HeaderWrapper</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: inherit;
+  height: 100%;
+
+  @media (max-width: 1920px) {
+    width: calc(100% - 20rem);
+  }
+
+  @media (max-width: 1080px) {
+    width: calc(100% - 8rem);
+  }
+
+  @media (max-width: 600px) {
+    width: calc(100% - 3rem);
+  }
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>혹시 바로 몰라 찾아 보니 vscode에 vscode-styled-components이라는 extension이 있다고 한다.<br />
+진작 찾아봤으면 좋았을껄…</p>
+
+<h2 id="-scss-사용하니-불편했던-점">📄 SCSS 사용하니 불편했던 점</h2>
+
+<h3>1. 처치 곤란한 CSS파일들</h3>
+
+<p>작성은 SCSS로 하지만 컴파일되면 모두 CSS로 변환되어 새로운 CSS파일이 자동으로 생긴다.<br />
+나에게 가장 큰 진입장벽이 CSS파일을 관리하는 것이었다.<br /></p>
+
+<ol>
+  <li>SCSS파일이 위치한 곳마다 CSS파일을 둔다.</li>
+  <li>CSS파일 경로를 설정해 한 폴더에 몰아버린다.</li>
+</ol>
+
+<p>여기까지 알아 뒀는데 인강을 듣고 한가지 방법을 더 알게 되었고 프로젝트에 도입했다.</p>
+
+<ol>
+  <li>main.scss에 모든 scss파일을 import해 컴파일 되는 파일은 main.scss파일 하나만 되게 만든다.</li>
+</ol>
+
+<p>3번의 방법을 사용하면 결국 나오는 .CSS확장자를 가진 파일은 main.css하나만 존재한다.<br />
+아마 프로젝트가 큰 경우에는 main.scss 파일이 너무 무거워져 사용하면 안될 것 같다.<br /></p>
+
+<p>이렇게 하면 또 번거로운 점이 생긴다.</p>
+
+<ul>
+  <li>Styled-Components의 경우: styled.js –(<strong>import</strong>)–&gt; index.tsx</li>
+  <li>SCSS의 경우: _index.scss –(<strong>import</strong>)–&gt; main.scss –(<strong>compile</strong>)–&gt; main.css –(<strong>import</strong>)–&gt; (root경로의)index.tsx</li>
+</ul>
+
+<p>일단 인강에서 배운대로만 하면 이렇게 징검다리가 생기는데 분명 더 나은 방법이 있을 것이다.<br />
+요즘 프로젝트 구조를 참고하는 <a href="https://github.com/sendbird/sendbird-uikit-react">sendbird Github</a>는 나처럼 한번에 모아서 컴파일 하지도 않고 CSS파일이 숨겨져 있는지 보이지도 않는다.<br />
+검색해도 방법 찾기가 쉽지 않다.</p>
+
+<h3>2. 컴파일로 인한 속도 저하</h3>
+
+<p>Scss파일을 컴파일하기 위해 터미널말고 <strong>Watch Sass</strong> extension을 사용하고 있다.<br />
+문제는 파일이 변경(저장)되면 즉시 컴파일 한다는 점이다. <br />
+ctrl + s가 습관인 나는 굉장히 여러번 컴파일을 하는데 OUTPUT창이 계속 움직인다…<br />
+만약 프로젝트 크기가 굉장히 큰 경우에는 적용한 스타일을 바로바로 빠르게 확인하기 어려울듯 싶다.</p>
+
+<h3>3. props 참조가 안된다.</h3>
+
+<p>이 부분은 styled-component의 가장 큰 장점인듯 싶다.<br />
+styled-component를 사용할 때 매우 유용하게 사용해 이 부분도 굉장히 불편하게 느껴졌다.<br /></p>
+
+<p>SCSS에서 props를 설정하는 방법은 여러가지가 있다.</p>
+
+<ol>
+  <li>className을 배열로 선언해 사용</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./Button.scss</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nf">Button</span><span class="p">({</span> <span class="nx">children</span><span class="p">,</span> <span class="nx">size</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="p">{[</span><span class="dl">"</span><span class="s2">Button</span><span class="dl">"</span><span class="p">,</span> <span class="nx">size</span><span class="p">].</span><span class="nf">join</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="nx">Button</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">size</span><span class="p">:</span> <span class="dl">"</span><span class="s2">medium</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Button</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>className을 리터럴로 만들어 사용</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./Button.scss</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nf">Button</span><span class="p">({</span> <span class="nx">children</span><span class="p">,</span> <span class="nx">size</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="s2">`Button </span><span class="p">${</span><span class="nx">size</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="nx">Button</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">size</span><span class="p">:</span> <span class="dl">"</span><span class="s2">medium</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Button</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이를 보완하기 위해 <strong>classnames</strong>라는 라이브러리를 많이 사용한다고 한다.<br /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">classNames</span><span class="p">(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bar</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// =&gt; 'foo bar'</span>
+<span class="nf">classNames</span><span class="p">(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">bar</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span> <span class="c1">// =&gt; 'foo bar'</span>
+<span class="nf">classNames</span><span class="p">({</span> <span class="dl">"</span><span class="s2">foo-bar</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span> <span class="c1">// =&gt; 'foo-bar'</span>
+<span class="nf">classNames</span><span class="p">({</span> <span class="dl">"</span><span class="s2">foo-bar</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span> <span class="p">});</span> <span class="c1">// =&gt; ''</span>
+<span class="nf">classNames</span><span class="p">({</span> <span class="na">foo</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="p">{</span> <span class="na">bar</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span> <span class="c1">// =&gt; 'foo bar'</span>
+<span class="nf">classNames</span><span class="p">({</span> <span class="na">foo</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">bar</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span> <span class="c1">// =&gt; 'foo bar'</span>
+<span class="nf">classNames</span><span class="p">([</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bar</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">// =&gt; 'foo bar'</span>
+
+<span class="c1">// 동시에 여러개의 타입으로 받아올 수 도 있습니다.</span>
+<span class="nf">classNames</span><span class="p">(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">bar</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">duck</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span> <span class="dl">"</span><span class="s2">baz</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">quux</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span> <span class="c1">// =&gt; 'foo bar baz quux'</span>
+
+<span class="c1">// false, null, 0, undefined 는 무시됩니다.</span>
+<span class="nf">classNames</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bar</span><span class="dl">"</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{</span> <span class="na">baz</span><span class="p">:</span> <span class="kc">null</span> <span class="p">},</span> <span class="dl">""</span><span class="p">);</span> <span class="c1">// =&gt; 'bar 1'</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>SCSS와 Styled-Component는 둘다 CSS 스타일링에 많이 사용되는 언어이고 장단점이 있어 사용자 특성에 따라 사용되는 것 같다.<br />
+SCSS를 꼭 사용해보고 싶었는데 하루 써보고 신나서 바로 블로그에 포스팅하러 달려왔다.<br />
+계속 사용해볼 예정인데 아마 오늘 알게 된 내용보다 더 많은 걸 알게 될 것 같다.</p>
+
+<h2 id="코드-참고">코드 참고</h2>
+
+<ul>
+  <li><a href="https://react.vlpt.us/styling/01-sass.html">벨로퍼트와 함께하는 모던 리액트</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="Styled-Components" /><category term="SCSS" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4%20%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요.
 divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.</p>
@@ -37,7 +286,41 @@ divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="" /><summary type="html"><![CDATA[프로그래머스 Lv 1 나누어 떨어지는 숫자 배열 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 영어 끝말잇기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%98%81%EC%96%B4-%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 영어 끝말잇기 by JS" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%98%81%EC%96%B4%20%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%98%81%EC%96%B4-%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="" /><summary type="html"><![CDATA[프로그래머스 Lv 1 나누어 떨어지는 숫자 배열 문제 풀이]]></summary></entry><entry><title type="html">[React] 줄글 props로 넘겨 줄바꿈하기</title><link href="http://localhost:4000/javascript/react-%EC%A4%84%EA%B8%80-props%EB%A1%9C-%EB%84%98%EA%B2%A8-%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React] 줄글 props로 넘겨 줄바꿈하기" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/javascript/react-%EC%A4%84%EA%B8%80%20props%EB%A1%9C%20%EB%84%98%EA%B2%A8%20%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/javascript/react-%EC%A4%84%EA%B8%80-props%EB%A1%9C-%EB%84%98%EA%B2%A8-%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-줄글-props로-넘겨-줄바꿈하는-방법">📄 줄글 props로 넘겨 줄바꿈하는 방법</h2>
+
+<ol>
+  <li>줄바꿈하는 곳에 <code class="language-plaintext highlighter-rouge">\n</code>을 입력한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">GetStart</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">description</span> <span class="o">=</span> <span class="s2">`메세지가 도착했습니다는 익명 렌덤 메신저 💌 입니다.\n쉽게 뱉을 수 없었던 비밀 또는 모르는 누군가에게 보낼 응원의 메세지
+					모두 좋아요.\n 💡 rule 1 메세지는 단 한명에게만 전달됩니다.\n 💡 rule 2 먼저 메세지를 보내야 익명의 누군가에게 메세지를 받을
+					수 있습니다.\n 💡 rule 3 메세지의 상대방은 매번 바뀝니다.`</span><span class="p">;</span>
+  <span class="nf">return </span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">start__container</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Logo</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">SpeechBubble</span> <span class="nx">text</span><span class="o">=</span><span class="p">{</span><span class="nx">description</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">GetStart</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>텍스트가 들어가는 태그 css에 <code class="language-plaintext highlighter-rouge">white-space: pre-line</code>을 설정한다.</li>
+</ol>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.start__description__content</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="err">$</span><span class="n">back-ground-light</span><span class="p">;</span>
+  <span class="nl">white-space</span><span class="p">:</span> <span class="n">pre-line</span><span class="p">;</span> <span class="err">//</span> <span class="err">💡</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+  <span class="nl">border-top-right-radius</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+  <span class="nl">border-top-left-radius</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+  <span class="nl">border-bottom-right-radius</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="JavaScript" /><category term="props" /><category term="줄바꿈" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 영어 끝말잇기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%98%81%EC%96%B4-%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 영어 끝말잇기 by JS" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%98%81%EC%96%B4%20%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%98%81%EC%96%B4-%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>1부터 n까지 번호가 붙어있는 n명의 사람이 영어 끝말잇기를 하고 있습니다. 영어 끝말잇기는 다음과 같은 규칙으로 진행됩니다.</p>
 
@@ -427,81 +710,4 @@ divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을
   <li>인접한 두 수를 순서를 바꿔 비교하고 내림차순한다.</li>
   <li>완성된 배열을 join(““)으로 문자열로 바꾼다.</li>
   <li>만약 [0, 0, 0]인경우 답이 “000”이 되므로 삼항연산자를 이용해 첫번째 자릿수가 0인경우 0을 바로 반환한다.</li>
-</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="가장 큰 수" /><category term="정렬" /><category term="sort" /><summary type="html"><![CDATA[프로그래머스 Lv 2 가장 큰 수]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 두 정수 사이의 합</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 두 정수 사이의 합" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%91%90%20%EC%A0%95%EC%88%98%20%EC%82%AC%EC%9D%B4%20%ED%95%A9</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4-%ED%95%A9/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>두 정수 a, b가 주어졌을 때 a와 b 사이에 속한 모든 정수의 합을 리턴하는 함수, solution을 완성하세요.
-예를 들어 a = 3, b = 5인 경우, 3 + 4 + 5 = 12이므로 12를 리턴합니다.</p>
-
-<ul>
-  <li>a와 b가 같은 경우는 둘 중 아무 수나 리턴하세요.</li>
-  <li>a와 b는 -10,000,000 이상 10,000,000 이하인 정수입니다.</li>
-  <li>a와 b의 대소관계는 정해져있지 않습니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="p">[</span><span class="nx">newA</span><span class="p">,</span> <span class="nx">newB</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">].</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span> <span class="c1">// 1</span>
-  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">newA</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">newB</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 2</span>
-    <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>주어진 정수를 배열에 담아 정렬후 구조분해 할당을 사용해 새로운 값을 만들었다.</li>
-  <li>반복문으로 <code class="language-plaintext highlighter-rouge">newA</code>부터 <code class="language-plaintext highlighter-rouge">newB</code>까지의 합을 구해 답을 반환한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">adder</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">s</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Math 메소드를 적절히 활용한 풀이입니다. 👍</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="sort" /><summary type="html"><![CDATA[프로그래머스 Lv 1 두 정수 사이의 합 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 하샤드 수</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 하샤드 수" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C%20%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.</p>
-
-<ul>
-  <li>x는 1 이상, 10000 이하인 정수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">x</span><span class="p">.</span><span class="nf">toString</span><span class="p">()].</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nc">Number</span><span class="p">(</span><span class="nx">cur</span><span class="p">));</span>
-  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">x</span> <span class="o">%</span> <span class="nx">sum</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>주어진 숫자(x)를 문자열로 변환 후, 각 자릿값을 배열의 요소로 만든다.</li>
-  <li>배열의 요소를 reduce메소드를 사용해 더한 누적값을 변수 <code class="language-plaintext highlighter-rouge">sum</code>에 할당한다.</li>
-  <li>요구사항대로 주어진 숫자를 누적값으로 나누었을 때 0이 되는지에 대한 boolean값을 반환한다.</li>
-</ol>
-
-<p>처음으로 프로그래머스에서 reduce함수를 사용했습니다. <br />
-점점 응용하는 메소드가 생길수록 뿌듯합니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Harshad</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">+</span><span class="nx">b</span> <span class="o">+</span> <span class="o">+</span><span class="nx">a</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>반환값을 true/false가 아닌 0과 1을 통해 표현할 수도 있다는 것을 적용한 식입니다. 👍</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="하샤드 수" /><category term="reduce" /><summary type="html"><![CDATA[프로그래머스 Lv 1 하샤드 수 문제 풀이]]></summary></entry></feed>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="가장 큰 수" /><category term="정렬" /><category term="sort" /><summary type="html"><![CDATA[프로그래머스 Lv 2 가장 큰 수]]></summary></entry></feed>
