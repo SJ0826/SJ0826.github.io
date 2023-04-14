@@ -7,7 +7,7 @@ sidebar:
   nav: "docs"
 
 categories:
-  - JavaScript
+  - React
 tags:
   - ["props", "줄바꿈"]
 last_modified_at: 2023-04-13T08:06:00-05:00

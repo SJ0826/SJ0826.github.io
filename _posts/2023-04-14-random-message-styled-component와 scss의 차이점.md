@@ -7,7 +7,7 @@ sidebar:
   nav: "docs"
 
 categories:
-  - coding-swamp
+  - random-message
 tags:
   - ["Styled-Components", "SCSS"]
 last_modified_at: 2023-04-14T08:06:00-05:00
