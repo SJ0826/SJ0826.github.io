@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-15T17:32:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 2] 카펫</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%B9%B4%ED%8E%AB/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 카펫" /><published>2023-04-15T00:00:00+09:00</published><updated>2023-04-15T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%B9%B4%ED%8E%AB</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%B9%B4%ED%8E%AB/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-16T16:05:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 음양 더하기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 음양 더하기" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91%20%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>어떤 정수들이 있습니다. 이 정수들의 절댓값을 차례대로 담은 정수 배열 absolutes와 이 정수들의 부호를 차례대로 담은 불리언 배열 signs가 매개변수로 주어집니다. 실제 정수들의 합을 구하여 return 하도록 solution 함수를 완성해주세요.</p>
+
+<ul>
+  <li>absolutes의 길이는 1 이상 1,000 이하입니다.
+    <ul>
+      <li>absolutes의 모든 수는 각각 1 이상 1,000 이하입니다.</li>
+    </ul>
+  </li>
+  <li>signs의 길이는 absolutes의 길이와 같습니다.
+    <ul>
+      <li>signs[i] 가 참이면 absolutes[i] 의 실제 정수가 양수임을, 그렇지 않으면 음수임을 의미합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">absolutes</span><span class="p">,</span> <span class="nx">signs</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">absolutes</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">signs</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">?</span> <span class="nx">cur</span> <span class="p">:</span> <span class="o">-</span><span class="nx">cur</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 반복문을 사용하게 되는 문제에서는 항상 고민을 하게 됩니다.</p>
+
+<p>언제 for문을 사용하고 언제 배열 메소드를 사용할까요?</p>
+
+<p>속도는 for문이 빠르지만 가독성은 배열 메소드들이 좋기 때문입니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/232277740-badc3e98-fe25-4f05-90cf-c4b09f759c90.png" alt="image" /></p>
+
+<p>참고한 포스팅을 읽고 정리한 저의 생각은 다음과 같습니다.</p>
+
+<ol>
+  <li>
+    <p>성능이 중요한 경우에 for 문(명령형 프로그래밍)을 사용한다. 예를들어, 프로그래머스 효율성 테스트 혹은 계산이 너무 많아 느려지는 함수등이 그렇다.</p>
+  </li>
+  <li>
+    <p>병목 현상은 사실상 다른곳에서 일어나는 경우다. 따라서 성급한 최적화는 오히려 독이 되는 경우가 많다.</p>
+  </li>
+  <li>
+    <p>만약 배열 메소드를 사용해도 가독성이 좋지 않으면, 다시 고려해본다.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p>병목 현상이란? PC에서 병목 현상이라고 하면 두 구성 요소의 최대 성능의 차이로 인해 한 구성 요소가 다른 하드웨어의 잠재 성능을 제한하는 것을 말합니다. by. intel</p>
+</blockquote>
+
+<p>항상 고민하던 문제였는데 이제 나름 기준이 생겨 가고 있습니다 :)</p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li>프로그래머스</li>
+  <li>
+    <p><a href="https://leanylabs.com/blog/js-forEach-map-reduce-vs-for-for_of/">Leany Labs</a></p>
+  </li>
+  <li><a href="https://www.intel.co.kr/content/www/kr/ko/gaming/resources/what-is-bottlenecking-my-pc.html">intel - 구성 요소의 균형을 적절하게 조정하는 방법</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reduce" /><category term="for" /><summary type="html"><![CDATA[for문과 배열 메소드 성능 비교 고민]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 카펫</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%B9%B4%ED%8E%AB/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 카펫" /><published>2023-04-15T00:00:00+09:00</published><updated>2023-04-15T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%B9%B4%ED%8E%AB</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%B9%B4%ED%8E%AB/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>Leo는 카펫을 사러 갔다가 아래 그림과 같이 중앙에는 노란색으로 칠해져 있고 테두리 1줄은 갈색으로 칠해져 있는 격자 모양 카펫을 봤습니다.</p>
 
@@ -651,48 +714,4 @@ divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><summary type="html"><![CDATA[프로그래머스 Lv 2 짝지어 제거하기 찾기 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 콜라츠 추측</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%BD%9C%EB%9D%BC%EC%B8%A0-%EC%B6%94%EC%B8%A1/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 콜라츠 추측" /><published>2023-04-10T00:00:00+09:00</published><updated>2023-04-10T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%BD%9C%EB%9D%BC%EC%B8%A0%20%EC%B6%94%EC%B8%A1</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%BD%9C%EB%9D%BC%EC%B8%A0-%EC%B6%94%EC%B8%A1/"><![CDATA[<h2 id="-문제-출처">📄 문제 출처</h2>
-
-<p>1937년 Collatz란 사람에 의해 제기된 이 추측은, 주어진 수가 1이 될 때까지 다음 작업을 반복하면, 모든 수를 1로 만들 수 있다는 추측입니다. 작업은 다음과 같습니다.</p>
-
-<p>예를 들어, 주어진 수가 6이라면 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1 이 되어 총 8번 만에 1이 됩니다. 위 작업을 몇 번이나 반복해야 하는지 반환하는 함수, solution을 완성해 주세요. 단, 주어진 수가 1인 경우에는 0을, 작업을 500번 반복할 때까지 1이 되지 않는다면 –1을 반환해 주세요.</p>
-
-<ul>
-  <li>입력된 수, num은 1 이상 8,000,000 미만인 정수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">while </span><span class="p">(</span><span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">num</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">num</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">:</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">answer</span> <span class="o">===</span> <span class="mi">500</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>재귀함수를 사용해 볼까 하다가 성능상 반복문이 더 좋을 것 같아 <code class="language-plaintext highlighter-rouge">while</code>문에 조건을 걸어 <code class="language-plaintext highlighter-rouge">num</code>가 1이 될때 까지 반복했습니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">collatz</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">num</span> <span class="o">==</span> <span class="mi">1</span>
-    <span class="p">?</span> <span class="nx">count</span> <span class="o">&gt;=</span> <span class="mi">500</span>
-      <span class="p">?</span> <span class="o">-</span><span class="mi">1</span>
-      <span class="p">:</span> <span class="nx">count</span>
-    <span class="p">:</span> <span class="nf">collatz</span><span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">num</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">:</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">++</span><span class="nx">count</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>그래도 재귀함수를 사용한 풀이는 멋있네요.</p>
-
-<p>삼항 연산자를 중첩으로 사용할 수 있다는 것도 처음 알아갑니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="콜라츠 추측" /><summary type="html"><![CDATA[프로그래머스 Lv 1 콜라츠 추측 문제 풀이]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><summary type="html"><![CDATA[프로그래머스 Lv 2 짝지어 제거하기 찾기 문제 풀이]]></summary></entry></feed>
