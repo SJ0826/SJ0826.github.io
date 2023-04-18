@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-16T16:05:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 음양 더하기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 음양 더하기" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91%20%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-18T10:08:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다. numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하도록 solution 함수를 완성해주세요.</p>
+
+<ul>
+  <li>1 ≤ numbers의 길이 ≤ 9
+    <ul>
+      <li>0 ≤ numbers의 모든 원소 ≤ 9</li>
+      <li>numbers의 모든 원소는 서로 다릅니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">numbers</span><span class="p">.</span><span class="nf">find</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">===</span> <span class="nx">i</span><span class="p">)</span> <span class="p">?</span> <span class="dl">""</span> <span class="p">:</span> <span class="p">(</span><span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>0부터 9까지 for문을 돌려 <code class="language-plaintext highlighter-rouge">find</code>메소드로 <code class="language-plaintext highlighter-rouge">number</code>에 해당하는 정수가 있는지 확인하고 <code class="language-plaintext highlighter-rouge">answer</code>에 더한다.</li>
+</ol>
+
+<h2 id="-best-practice-1">👍 Best Practice 1</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="mi">45</span> <span class="o">-</span> <span class="nx">numbers</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">cur</span><span class="p">,</span> <span class="nx">acc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">cur</span> <span class="o">+</span> <span class="nx">acc</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>45에서 주어진 배열 요소를 합한 값을 뺀다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">numbers</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>0부터 9까지 for문을 돌려 <code class="language-plaintext highlighter-rouge">include</code>메소드로 <code class="language-plaintext highlighter-rouge">number</code>에 해당하는 정수가 있는지 확인하고 <code class="language-plaintext highlighter-rouge">answer</code>에 더한다.</li>
+</ol>
+
+<p>콜백함수를 받는 <code class="language-plaintext highlighter-rouge">find</code>대신 <code class="language-plaintext highlighter-rouge">include</code>를 사용하는 것이 더 좋아보입니다 :)</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="find" /><category term="include" /><summary type="html"><![CDATA[배열에서 특정 값 찾기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 제일 작은 수 제거하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%A0%9C%EC%9D%BC-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 제일 작은 수 제거하기 by JS" /><published>2023-04-17T00:00:00+09:00</published><updated>2023-04-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%A0%9C%EC%9D%BC%20%EC%9E%91%EC%9D%80%20%EC%88%98%20%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%A0%9C%EC%9D%BC-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.</p>
+
+<ul>
+  <li>arr은 길이 1 이상인 배열입니다.</li>
+  <li>인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">arr</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">arr</span> <span class="o">==</span> <span class="nx">target</span> <span class="p">?</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">!==</span> <span class="nx">target</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Math 메소드를 사용해 주어진 배열에서 가장 작은 수를 구한다.</li>
+  <li>찾은 가장 작은수 (<code class="language-plaintext highlighter-rouge">target</code>)이 처음 값과 같다면 <code class="language-plaintext highlighter-rouge">[-1]</code>을, 아니라면 filter함수를 사용해 해당 값을 제거한 배열을 리턴한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">arr</span><span class="p">.</span><span class="nf">splice</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(...</span><span class="nx">arr</span><span class="p">)),</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>제가 푼 문제에서는 apply메소드를 사용해서 속도가 느렸는데 이 풀이는 스프레드 연산자를 사용해 이를 보완했습니다.</p>
+
+<p>스프레드 연산자를 문자열을 배열로 만들때만 생각했는데 다양한 방법으로 활용해 문제에 접근해보는 시각을 넓혀야겠습니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="Math" /><summary type="html"><![CDATA[배열에서 가장 작은 수 추출하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 음양 더하기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 음양 더하기" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91%20%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>어떤 정수들이 있습니다. 이 정수들의 절댓값을 차례대로 담은 정수 배열 absolutes와 이 정수들의 부호를 차례대로 담은 불리언 배열 signs가 매개변수로 주어집니다. 실제 정수들의 합을 구하여 return 하도록 solution 함수를 완성해주세요.</p>
 
@@ -94,42 +189,7 @@
 <ol>
   <li>직사각형의 최소길이는 3이므로 3부터 <code class="language-plaintext highlighter-rouge">brown/2</code>까지 반복문을 돌린다.</li>
   <li><code class="language-plaintext highlighter-rouge">sum</code>을 <code class="language-plaintext highlighter-rouge">height</code>로 나누어 0이 떨어지는 경우는 직사각형의 가로, 세로 길이가 정수가 되는 경우이므로 <code class="language-plaintext highlighter-rouge">width</code>를 구해서 답을 반환한다.</li>
-</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="완전탐색" /><summary type="html"><![CDATA[프로그래머스 Lv 2 카펫]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 핸드폰 번호 가리기</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 핸드폰 번호 가리기" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0%20%EB%B2%88%ED%98%B8%20%EA%B0%80%EB%A6%AC%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
-전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.</p>
-
-<ul>
-  <li>phone_number는 길이 4 이상, 20이하인 문자열입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">phone_number</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">.</span><span class="nf">repeat</span><span class="p">(</span><span class="nx">phone_number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="nx">phone_number</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>문자열 메소드인 <code class="language-plaintext highlighter-rouge">repeat</code>으로 보여질 숫자 4개를 제외한 개수로 “*“을 만든다.</li>
-  <li>주어진 <code class="language-plaintext highlighter-rouge">phone_number</code>를 뒤에서 4개로 잘라 붙여서 반환한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">hide_numbers</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\d(?=\d{4})</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>정규식을 이용한 풀이입니다.<br />
-<code class="language-plaintext highlighter-rouge">?=</code>가 숫자 앞에오면 그 뒤에있는 숫자가 일치하는지 확인하는 정규식 문법입니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="repeat" /><category term="정규식" /><summary type="html"><![CDATA[프로그래머스 Lv 1 핸드폰 번호 가리기]]></summary></entry><entry><title type="html">[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점</title><link href="http://localhost:4000/random-message/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-styled-component%EC%99%80%20scss%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-scss-scss">📄 SCSS? SCSS!</h2>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="완전탐색" /><summary type="html"><![CDATA[프로그래머스 Lv 2 카펫]]></summary></entry><entry><title type="html">[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점</title><link href="http://localhost:4000/random-message/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-styled-component%EC%99%80%20scss%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-scss-scss">📄 SCSS? SCSS!</h2>
 
 <p>처음으로 프로젝트에 SCSS를 사용했다.<br />
 두가지 사용경험에 우선 차이점이 있다면 styled-components는 일단 다른 코드를 보며 무작정 사용하고 SCSS는 인강을 보고 공부했다는 점이다.<br />
@@ -378,7 +438,81 @@ SCSS를 꼭 사용해보고 싶었는데 하루 써보고 신나서 바로 블�
 
 <ul>
   <li><a href="https://react.vlpt.us/styling/01-sass.html">벨로퍼트와 함께하는 모던 리액트</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="Styled-Components" /><category term="SCSS" /></entry><entry><title type="html">[React] 줄글 props로 넘겨 줄바꿈하기</title><link href="http://localhost:4000/react/react-%EC%A4%84%EA%B8%80-props%EB%A1%9C-%EB%84%98%EA%B2%A8-%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React] 줄글 props로 넘겨 줄바꿈하기" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/react/react-%EC%A4%84%EA%B8%80%20props%EB%A1%9C%20%EB%84%98%EA%B2%A8%20%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-%EC%A4%84%EA%B8%80-props%EB%A1%9C-%EB%84%98%EA%B2%A8-%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-줄글-props로-넘겨-줄바꿈하는-방법">📄 줄글 props로 넘겨 줄바꿈하는 방법</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="Styled-Components" /><category term="SCSS" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 핸드폰 번호 가리기</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 핸드폰 번호 가리기" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0%20%EB%B2%88%ED%98%B8%20%EA%B0%80%EB%A6%AC%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
+전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.</p>
+
+<ul>
+  <li>phone_number는 길이 4 이상, 20이하인 문자열입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">phone_number</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">.</span><span class="nf">repeat</span><span class="p">(</span><span class="nx">phone_number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="nx">phone_number</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>문자열 메소드인 <code class="language-plaintext highlighter-rouge">repeat</code>으로 보여질 숫자 4개를 제외한 개수로 “*“을 만든다.</li>
+  <li>주어진 <code class="language-plaintext highlighter-rouge">phone_number</code>를 뒤에서 4개로 잘라 붙여서 반환한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">hide_numbers</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\d(?=\d{4})</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>정규식을 이용한 풀이입니다.<br />
+<code class="language-plaintext highlighter-rouge">?=</code>가 숫자 앞에오면 그 뒤에있는 숫자가 일치하는지 확인하는 정규식 문법입니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="repeat" /><category term="정규식" /><summary type="html"><![CDATA[프로그래머스 Lv 1 핸드폰 번호 가리기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4%20%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요.
+divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.</p>
+
+<ul>
+  <li>arr은 자연수를 담은 배열입니다.</li>
+  <li>정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.</li>
+  <li>divisor는 자연수입니다.</li>
+  <li>array는 길이 1 이상인 배열입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">divisor</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">%</span> <span class="nx">divisor</span> <span class="o">===</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">)</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>filter 메소드로 <code class="language-plaintext highlighter-rouge">divisor</code>로 나누어 떨어지는 수를 배열 <code class="language-plaintext highlighter-rouge">answer</code>에 담는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">answer</code>의 길이가 0이면 [-1], 0이 아니면 true를 반환하므로 <code class="language-plaintext highlighter-rouge">answer</code>을 오름차순한 값을 반환한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">divisor</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="p">(</span><span class="nx">e</span> <span class="o">%</span> <span class="nx">divisor</span><span class="p">));</span>
+  <span class="k">return</span> <span class="nx">_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="nx">_</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">$</span><span class="p">,</span> <span class="nx">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">$</span> <span class="o">-</span> <span class="nx">_</span><span class="p">)</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>filter연산을 좀더 간소화한 풀이입니다. 👍</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="" /><summary type="html"><![CDATA[프로그래머스 Lv 1 나누어 떨어지는 숫자 배열 문제 풀이]]></summary></entry><entry><title type="html">[React] 줄글 props로 넘겨 줄바꿈하기</title><link href="http://localhost:4000/react/react-%EC%A4%84%EA%B8%80-props%EB%A1%9C-%EB%84%98%EA%B2%A8-%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React] 줄글 props로 넘겨 줄바꿈하기" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/react/react-%EC%A4%84%EA%B8%80%20props%EB%A1%9C%20%EB%84%98%EA%B2%A8%20%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-%EC%A4%84%EA%B8%80-props%EB%A1%9C-%EB%84%98%EA%B2%A8-%EC%A4%84%EB%B0%94%EA%BF%88%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-줄글-props로-넘겨-줄바꿈하는-방법">📄 줄글 props로 넘겨 줄바꿈하는 방법</h2>
 
 <ol>
   <li>줄바꿈하는 곳에 <code class="language-plaintext highlighter-rouge">\n</code>을 입력한다.</li>
@@ -513,46 +647,7 @@ SCSS를 꼭 사용해보고 싶었는데 하루 써보고 신나서 바로 블�
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><summary type="html"><![CDATA[프로그래머스 Lv 2 영어 끝말잇기 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4%20%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요.
-divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.</p>
-
-<ul>
-  <li>arr은 자연수를 담은 배열입니다.</li>
-  <li>정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.</li>
-  <li>divisor는 자연수입니다.</li>
-  <li>array는 길이 1 이상인 배열입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">divisor</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">%</span> <span class="nx">divisor</span> <span class="o">===</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">)</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>filter 메소드로 <code class="language-plaintext highlighter-rouge">divisor</code>로 나누어 떨어지는 수를 배열 <code class="language-plaintext highlighter-rouge">answer</code>에 담는다.</li>
-  <li><code class="language-plaintext highlighter-rouge">answer</code>의 길이가 0이면 [-1], 0이 아니면 true를 반환하므로 <code class="language-plaintext highlighter-rouge">answer</code>을 오름차순한 값을 반환한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">divisor</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="p">(</span><span class="nx">e</span> <span class="o">%</span> <span class="nx">divisor</span><span class="p">));</span>
-  <span class="k">return</span> <span class="nx">_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="nx">_</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">$</span><span class="p">,</span> <span class="nx">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">$</span> <span class="o">-</span> <span class="nx">_</span><span class="p">)</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>filter연산을 좀더 간소화한 풀이입니다. 👍</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="" /><summary type="html"><![CDATA[프로그래머스 Lv 1 나누어 떨어지는 숫자 배열 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 서울에서 김서방 찾기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 서울에서 김서방 찾기" /><published>2023-04-11T00:00:00+09:00</published><updated>2023-04-11T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%20%EA%B9%80%EC%84%9C%EB%B0%A9%20%EC%B0%BE%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><summary type="html"><![CDATA[프로그래머스 Lv 2 영어 끝말잇기 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 서울에서 김서방 찾기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 서울에서 김서방 찾기" /><published>2023-04-11T00:00:00+09:00</published><updated>2023-04-11T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%20%EA%B9%80%EC%84%9C%EB%B0%A9%20%EC%B0%BE%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>String형 배열 seoul의 element중 “Kim”의 위치 x를 찾아, “김서방은 x에 있다”는 String을 반환하는 함수, solution을 완성하세요. seoul에 “Kim”은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.</p>
 
@@ -575,143 +670,4 @@ divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="indexOf" /><summary type="html"><![CDATA[프로그래머스 Lv 1 서울에서 김서방 찾기 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 최소직사각형 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EC%86%8C-%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 최소직사각형 by JS" /><published>2023-04-11T00:00:00+09:00</published><updated>2023-04-11T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EC%86%8C%20%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EC%86%8C-%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 이러한 요건을 만족하는 지갑을 만들기 위해 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다.</p>
-
-<p>아래 표는 4가지 명함의 가로 길이와 세로 길이를 나타냅니다.</p>
-
-<p>명함 번호 가로 길이 세로 길이</p>
-
-<ul>
-  <li>1 60 50</li>
-  <li>2 30 70</li>
-  <li>3 60 30</li>
-  <li>4 80 40</li>
-</ul>
-
-<p>가장 긴 가로 길이와 세로 길이가 각각 80, 70이기 때문에 80(가로) x 70(세로) 크기의 지갑을 만들면 모든 명함들을 수납할 수 있습니다. 하지만 2번 명함을 가로로 눕혀 수납한다면 80(가로) x 50(세로) 크기의 지갑으로 모든 명함들을 수납할 수 있습니다. 이때의 지갑 크기는 4000(=80 x 50)입니다.</p>
-
-<p>모든 명함의 가로 길이와 세로 길이를 나타내는 2차원 배열 sizes가 매개변수로 주어집니다. 모든 명함을 수납할 수 있는 가장 작은 지갑을 만들 때, 지갑의 크기를 return 하도록 solution 함수를 완성해주세요.</p>
-
-<ul>
-  <li>sizes의 길이는 1 이상 10,000 이하입니다.
-    <ul>
-      <li>sizes의 원소는 [w, h] 형식입니다.</li>
-      <li>w는 명함의 가로 길이를 나타냅니다.</li>
-      <li>h는 명함의 세로 길이를 나타냅니다.</li>
-      <li>w와 h는 1 이상 1,000 이하인 자연수입니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">sizes</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sortedSizes</span> <span class="o">=</span> <span class="nx">sizes</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">));</span> <span class="c1">// 1</span>
-  <span class="kd">let</span> <span class="nx">card</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 2</span>
-    <span class="nx">card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">sortedSizes</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="nx">sortedSizes</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span> <span class="nx">card</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-    <span class="nx">card</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">sortedSizes</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">card</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">?</span> <span class="nx">sortedSizes</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span> <span class="nx">card</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nx">card</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// 3</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>주어진 배열 <code class="language-plaintext highlighter-rouge">sizes</code>를 순회하여 가로길이에 더 큰 값이 가도록 정렬한다.</li>
-  <li>정렬한 배열 <code class="language-plaintext highlighter-rouge">sortedSizes</code>를 반복문을 돌려 가로, 세로 각 최댓값을 구한다.</li>
-  <li>구한 최댓값끼리 곱해 답을 반환한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">sizes</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">rotated</span> <span class="o">=</span> <span class="nx">sizes</span><span class="p">.</span><span class="nf">map</span><span class="p">(([</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">w</span> <span class="o">&lt;</span> <span class="nx">h</span> <span class="p">?</span> <span class="p">[</span><span class="nx">h</span><span class="p">,</span> <span class="nx">w</span><span class="p">]</span> <span class="p">:</span> <span class="p">[</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span><span class="p">]));</span>
-
-  <span class="kd">let</span> <span class="nx">maxSize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
-  <span class="nx">rotated</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(([</span><span class="nx">w</span><span class="p">,</span> <span class="nx">h</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">w</span> <span class="o">&gt;</span> <span class="nx">maxSize</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="nx">maxSize</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">w</span><span class="p">;</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">h</span> <span class="o">&gt;</span> <span class="nx">maxSize</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="nx">maxSize</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">h</span><span class="p">;</span>
-  <span class="p">});</span>
-  <span class="k">return</span> <span class="nx">maxSize</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nx">maxSize</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>비슷한 방식으로 풀었지만 개인적으로 삼항연산자보다 if문을 사용한게 더 깔끔하다고 느꼈습니다.</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="완전 탐색" /><summary type="html"><![CDATA[프로그래머스 Lv 1 최소직사각형 찾기 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 짝지어 제거하기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%A7%9D%EC%A7%80%EC%96%B4-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 짝지어 제거하기 by JS" /><published>2023-04-11T00:00:00+09:00</published><updated>2023-04-11T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%A7%9D%EC%A7%80%EC%96%B4%20%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%A7%9D%EC%A7%80%EC%96%B4-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>짝지어 제거하기는, 알파벳 소문자로 이루어진 문자열을 가지고 시작합니다. 먼저 문자열에서 같은 알파벳이 2개 붙어 있는 짝을 찾습니다. 그다음, 그 둘을 제거한 뒤, 앞뒤로 문자열을 이어 붙입니다. 이 과정을 반복해서 문자열을 모두 제거한다면 짝지어 제거하기가 종료됩니다. 문자열 S가 주어졌을 때, 짝지어 제거하기를 성공적으로 수행할 수 있는지 반환하는 함수를 완성해 주세요. 성공적으로 수행할 수 있으면 1을, 아닐 경우 0을 리턴해주면 됩니다.</p>
-
-<p>예를 들어, 문자열 S = baabaa 라면</p>
-
-<p>b aa baa → bb aa → aa →</p>
-
-<p>의 순서로 문자열을 모두 제거할 수 있으므로 1을 반환합니다.</p>
-
-<ul>
-  <li>문자열의 길이 : 1,000,000이하의 자연수</li>
-  <li>문자열은 모두 소문자로 이루어져 있습니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이-1">🙋‍♀️ 나의 풀이 1</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">s</span><span class="p">];</span> <span class="c1">// 0</span>
-  <span class="nf">while </span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 1</span>
-    <span class="nx">arr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span>
-      <span class="c1">// 2</span>
-      <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span>
-        <span class="nx">arr</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="p">);</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span> <span class="c1">// 3</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 4</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>주어진 문자열을 배열 <code class="language-plaintext highlighter-rouge">arr</code>로 바꾼다.</li>
-  <li>while문 배열의 길이가 0이될 때까지 반복한다.</li>
-  <li>배열 요소의 앞 뒤 인덱스가 모두 다른 것만 남도록 조건을 주어 <code class="language-plaintext highlighter-rouge">arr</code>를 바꿔준다.</li>
-  <li>만약 바꾼 <code class="language-plaintext highlighter-rouge">arr</code>의 길이와 처음 주어진 문자열 <code class="language-plaintext highlighter-rouge">s</code>의 길이가 같다면 반복문을 나온다.</li>
-  <li><code class="language-plaintext highlighter-rouge">arr</code>의 값이 있으면 0 없으면 1을 반환한다.</li>
-</ol>
-
-<p>이 코드는 문제가 있습니다.</p>
-
-<p>O(N^2)의 시간복잡도를 가지고 있어 몇개의 테스트코드를 통과하지 못했습니다.</p>
-
-<p>좀 더 나은 시간복잡도를 내기 위해 스택개념을 사용해보기로 했습니다.</p>
-
-<h2 id="️-나의-풀이-2">🙋‍♀️ 나의 풀이 2</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span> <span class="p">{</span>
-      <span class="nx">stack</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span>
-      <span class="nx">stack</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>문자열 s를 순서대로 stack에 넣는다.</li>
-  <li>만약 들어온 문자열이 중복으로 또 들어오면 내보낸다. <code class="language-plaintext highlighter-rouge">pop() pop()</code>!!!</li>
-</ol>
-
-<p>다른 풀이를 보니 모두 스택 개념을 적용했네요.</p>
-
-<p>스택을 이용해 푸니 시간복잡도가 O(N)이 되어 모든 테스트코드를 통과할 수 있었습니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><summary type="html"><![CDATA[프로그래머스 Lv 2 짝지어 제거하기 찾기 문제 풀이]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="indexOf" /><summary type="html"><![CDATA[프로그래머스 Lv 1 서울에서 김서방 찾기 문제 풀이]]></summary></entry></feed>

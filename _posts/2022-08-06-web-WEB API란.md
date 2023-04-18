@@ -1,5 +1,5 @@
 ---
-title: "WEB API란?"
+title: "[WEB] WEB API란?"
 excerpt: "API와 WEB API"
 toc: true
 toc_sticky: true
