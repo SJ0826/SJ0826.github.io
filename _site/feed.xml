@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-18T10:08:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-18T20:29:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 2] 구명보트 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 구명보트 by JS" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>무인도에 갇힌 사람들을 구명보트를 이용하여 구출하려고 합니다. 구명보트는 작아서 한 번에 최대 2명씩 밖에 탈 수 없고, 무게 제한도 있습니다.</p>
+
+<p>예를 들어, 사람들의 몸무게가 [70kg, 50kg, 80kg, 50kg]이고 구명보트의 무게 제한이 100kg이라면 2번째 사람과 4번째 사람은 같이 탈 수 있지만 1번째 사람과 3번째 사람의 무게의 합은 150kg이므로 구명보트의 무게 제한을 초과하여 같이 탈 수 없습니다.</p>
+
+<p>구명보트를 최대한 적게 사용하여 모든 사람을 구출하려고 합니다.</p>
+
+<p>사람들의 몸무게를 담은 배열 people과 구명보트의 무게 제한 limit가 매개변수로 주어질 때, 모든 사람을 구출하기 위해 필요한 구명보트 개수의 최솟값을 return 하도록 solution 함수를 작성해주세요.</p>
+
+<ul>
+  <li>무인도에 갇힌 사람은 1명 이상 50,000명 이하입니다.</li>
+  <li>각 사람의 몸무게는 40kg 이상 240kg 이하입니다.</li>
+  <li>구명보트의 무게 제한은 40kg 이상 240kg 이하입니다.</li>
+  <li>구명보트의 무게 제한은 항상 사람들의 몸무게 중 최댓값보다 크게 주어지므로 사람들을 구출할 수 없는 경우는 없습니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">people</span><span class="p">,</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">sortedPeople</span> <span class="o">=</span> <span class="nx">people</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="nf">while </span><span class="p">(</span><span class="nx">sortedPeople</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">sortedPeople</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nx">sortedPeople</span><span class="p">[</span><span class="nx">sortedPeople</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">sortedPeople</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span>
+      <span class="nx">sortedPeople</span><span class="p">.</span><span class="nf">shift</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">sortedPeople</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>🎲 key point</td>
+      <td>최선의 상황은 가장 몸무게가 많은 사람 + 가장 몸무게가 적은 사람</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>처음에 몸무게가 가장 적은 순서대로 배에 태웠더니 자꾸 테스트 에러가 발생해서 몸무게 조합을 바꾸어서 생각하니 통과할 수 있었습니다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">people</code>을 내림차순으로 정렬한 배열 <code class="language-plaintext highlighter-rouge">sortedPeople</code>을 생성한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">sortedPeople</code>에 요소가 없을 때까지 반복문을 돌린다.</li>
+  <li>요소의 맨 앞(가장 가벼운 사람) + 요소의 맨 뒤(가장 무거운 사람)의 합이 제한 무게 보다 적으면 배열에서 제거하고 <code class="language-plaintext highlighter-rouge">answer</code>에 1을 추가한다.</li>
+  <li>요소의 맨 앞(가장 가벼운 사람) + 요소의 맨 뒤(가장 무거운 사람)의 합이 제한 무게 보다 많으면 맨 뒷사람만 배열에서 제거하고 <code class="language-plaintext highlighter-rouge">answer</code>에 1을 추가한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">people</span><span class="p">,</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">people</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">people</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">people</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">people</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">limit</span><span class="p">)</span> <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">people</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="nx">i</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>for문 조건으로 4개가 들어가는건 처음 봅니다. 신기하네요.</p>
+
+<p>이 풀이에서는 i가 맨 앞사람, j가 맨 뒷사람이 됩니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><category term="큐" /><category term="그리디" /><summary type="html"><![CDATA[스택/큐 개념으로 그리디 알고리즘 작성하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다. numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하도록 solution 함수를 완성해주세요.</p>
 
@@ -189,7 +263,42 @@
 <ol>
   <li>직사각형의 최소길이는 3이므로 3부터 <code class="language-plaintext highlighter-rouge">brown/2</code>까지 반복문을 돌린다.</li>
   <li><code class="language-plaintext highlighter-rouge">sum</code>을 <code class="language-plaintext highlighter-rouge">height</code>로 나누어 0이 떨어지는 경우는 직사각형의 가로, 세로 길이가 정수가 되는 경우이므로 <code class="language-plaintext highlighter-rouge">width</code>를 구해서 답을 반환한다.</li>
-</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="완전탐색" /><summary type="html"><![CDATA[프로그래머스 Lv 2 카펫]]></summary></entry><entry><title type="html">[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점</title><link href="http://localhost:4000/random-message/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-styled-component%EC%99%80%20scss%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-scss-scss">📄 SCSS? SCSS!</h2>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="완전탐색" /><summary type="html"><![CDATA[프로그래머스 Lv 2 카펫]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 핸드폰 번호 가리기</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 핸드폰 번호 가리기" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0%20%EB%B2%88%ED%98%B8%20%EA%B0%80%EB%A6%AC%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
+전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.</p>
+
+<ul>
+  <li>phone_number는 길이 4 이상, 20이하인 문자열입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">phone_number</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">.</span><span class="nf">repeat</span><span class="p">(</span><span class="nx">phone_number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="nx">phone_number</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>문자열 메소드인 <code class="language-plaintext highlighter-rouge">repeat</code>으로 보여질 숫자 4개를 제외한 개수로 “*“을 만든다.</li>
+  <li>주어진 <code class="language-plaintext highlighter-rouge">phone_number</code>를 뒤에서 4개로 잘라 붙여서 반환한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">hide_numbers</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\d(?=\d{4})</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>정규식을 이용한 풀이입니다.<br />
+<code class="language-plaintext highlighter-rouge">?=</code>가 숫자 앞에오면 그 뒤에있는 숫자가 일치하는지 확인하는 정규식 문법입니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="repeat" /><category term="정규식" /><summary type="html"><![CDATA[프로그래머스 Lv 1 핸드폰 번호 가리기]]></summary></entry><entry><title type="html">[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점</title><link href="http://localhost:4000/random-message/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 둘다 사용해보고 작성하는 Styled-Components와 SCSS의 차이점" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-styled-component%EC%99%80%20scss%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-styled-component%EC%99%80-scss%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-scss-scss">📄 SCSS? SCSS!</h2>
 
 <p>처음으로 프로젝트에 SCSS를 사용했다.<br />
 두가지 사용경험에 우선 차이점이 있다면 styled-components는 일단 다른 코드를 보며 무작정 사용하고 SCSS는 인강을 보고 공부했다는 점이다.<br />
@@ -438,42 +547,7 @@ SCSS를 꼭 사용해보고 싶었는데 하루 써보고 신나서 바로 블�
 
 <ul>
   <li><a href="https://react.vlpt.us/styling/01-sass.html">벨로퍼트와 함께하는 모던 리액트</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="Styled-Components" /><category term="SCSS" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 핸드폰 번호 가리기</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 핸드폰 번호 가리기" /><published>2023-04-14T00:00:00+09:00</published><updated>2023-04-14T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0%20%EB%B2%88%ED%98%B8%20%EA%B0%80%EB%A6%AC%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
-전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.</p>
-
-<ul>
-  <li>phone_number는 길이 4 이상, 20이하인 문자열입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">phone_number</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">.</span><span class="nf">repeat</span><span class="p">(</span><span class="nx">phone_number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="nx">phone_number</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>문자열 메소드인 <code class="language-plaintext highlighter-rouge">repeat</code>으로 보여질 숫자 4개를 제외한 개수로 “*“을 만든다.</li>
-  <li>주어진 <code class="language-plaintext highlighter-rouge">phone_number</code>를 뒤에서 4개로 잘라 붙여서 반환한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">hide_numbers</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\d(?=\d{4})</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>정규식을 이용한 풀이입니다.<br />
-<code class="language-plaintext highlighter-rouge">?=</code>가 숫자 앞에오면 그 뒤에있는 숫자가 일치하는지 확인하는 정규식 문법입니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="repeat" /><category term="정규식" /><summary type="html"><![CDATA[프로그래머스 Lv 1 핸드폰 번호 가리기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4%20%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="Styled-Components" /><category term="SCSS" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 나누어 떨어지는 숫자 배열 by JS" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4%20%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%98%EB%88%84%EC%96%B4-%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요.
 divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.</p>
@@ -647,27 +721,4 @@ divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><summary type="html"><![CDATA[프로그래머스 Lv 2 영어 끝말잇기 문제 풀이]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 서울에서 김서방 찾기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 서울에서 김서방 찾기" /><published>2023-04-11T00:00:00+09:00</published><updated>2023-04-11T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%20%EA%B9%80%EC%84%9C%EB%B0%A9%20%EC%B0%BE%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>String형 배열 seoul의 element중 “Kim”의 위치 x를 찾아, “김서방은 x에 있다”는 String을 반환하는 함수, solution을 완성하세요. seoul에 “Kim”은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.</p>
-
-<ul>
-  <li>seoul은 길이 1 이상, 1000 이하인 배열입니다.</li>
-  <li>seoul의 원소는 길이 1 이상, 20 이하인 문자열입니다.</li>
-  <li>“Kim”은 반드시 seoul 안에 포함되어 있습니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">seoul</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="s2">`김서방은 </span><span class="p">${</span><span class="nx">seoul</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">Kim</span><span class="dl">"</span><span class="p">)}</span><span class="s2">에 있다`</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>배열 내장 메소드인 <code class="language-plaintext highlighter-rouge">indexOf()</code>를 사용했습니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="indexOf" /><summary type="html"><![CDATA[프로그래머스 Lv 1 서울에서 김서방 찾기 문제 풀이]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><summary type="html"><![CDATA[프로그래머스 Lv 2 영어 끝말잇기 문제 풀이]]></summary></entry></feed>

@@ -479,6 +479,18 @@ var store = [{
         "url": "/web/web-%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%82%AC%EC%9D%B4%EC%A6%88-%ED%91%9C%EA%B8%B0/",
         "teaser": null
       },{
+        "title": "[WEB] 브라우저 좌표",
+        "excerpt":"📄 브라우저 좌표   브라우저는 엑스축과 와이축으로 나뉘어져 있습니다.   좌표는 왼쪽 제일 최상위에서 시작합니다.   📄 Element.getBoundingclientRect()   Element.getBoundingclientRect()는 Elment오브젝트안에 들어있는 API함수입니다.   Elment오브젝트이기 때문에 코드안에 있는 모든 요소들이 getBoundingclientRect를 가지고 있습니다.   📄 기능   Element.getBoundingClientRect() 메서드는 엘리먼트의 크기와 뷰포트의 상대적인 위치 정보를 제공하는 DOMRect 객체를 반환합니다.   domRect = element.getBoundingClientRect();   요소에 관련된 사이즈나 위치에 관련된 정보를 얻을 수 있습니다.   x축과 y축을 통해 요소가 윈도우 위에서 얼마나 멀리 떨어져 있는지, 크기는 얼마인지 알아낼 수 있습니다.   📄 주의할 점   좌표의 시작점이 CSS는 오른쪽 아래이지만, JavaScript는 좌표의 시작점이 왼쪽 위입니다.      출처           드림코딩            MDN      ","categories": ["WEB"],
+        "tags": ["getBoundingclientRect"],
+        "url": "/web/web-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%A2%8C%ED%91%9C/",
+        "teaser": null
+      },{
+        "title": "[WEB] 윈도우 스크롤링",
+        "excerpt":"📄 Window.scroll()   window.scroll() 함수는 윈도우의 원하는 위치로 스크롤하게 해주는 API입니다.   &lt;button onclick=\"scroll(0,100);\"&gt;button&lt;/button&gt;      창 상단에 수직 100번째 픽셀을 배치한다.    OPTION들   window.scroll({   top: 100,   left: 100,   behavior: \"smooth\", });      top: Y축을 따라 픽셀 수를 지정   left: X축을 따라 픽셀 수를 지정   behavior: smooth를 지정하면 스크롤이 부드럽게 애니메이션 된다.   📄 Window.scrollBy()   주어진 값만큼 윈도우에서 스크롤링하는 함수입니다.   사용방법은 window.scrollBy()와 크게 다르지 않습니다.   window.scrollBy(0, 100); // 페이지 아래로 스크롤 할때 window.scrollBy(0, -100); // 페이비 위로 스크롤 할때   OPTION들   window.scroll({   top: 100,   left: 100,   behavior: \"smooth\", });      top: Y축을 따라 픽셀 수를 지정   left: X축을 따라 픽셀 수를 지정   behavior: smooth를 지정하면 스크롤이 부드럽게 애니메이션 되고, instant를 지정하면 즉시 해당 위치로 점프하게 됩니다.   출처      드림코딩  ","categories": ["WEB"],
+        "tags": ["scroll","scrollBy"],
+        "url": "/web/web-%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%8A%A4%ED%81%AC%EB%A1%A4%EB%A7%81/",
+        "teaser": null
+      },{
         "title": "비구조화 할당",
         "excerpt":"📄 비구조화 할당   비구조화 할당을 다른 말로 표현하면 객체 구조 분해라고 할 수 있습니다. 말 그대로 객체의 구조를 분해해서 특정값을 추출하는 과정을 비구조화 할당이라고 합니다.   const ironMan = {   name: \"토니 스타크\",   actor: \"로버트 다우니 주니어\",   alias: \"아이언맨\", };  const { name } = ironMan; //객체 ironMan에서 name이란 값을 추출함. console.log(name);   결과   토니 스타크   중괄호({})를 사용해서 선언한 객체의 원하는 키를 뽑아냅니다.   객체뿐만아니라 배열에서도 비구조화 할당을 할수 있습니다.   const array = [1, 2];  const [one, two = 2] = array;  console.log(one); console.log(two);   출처      패스트캠퍼스 프론트엔드 강의  ","categories": ["JavaScript"],
         "tags": ["JavaScript","객체","비구조화 할당"],
@@ -1245,6 +1257,12 @@ var store = [{
         "excerpt":"📄 문제   정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.      arr은 길이 1 이상인 배열입니다.   인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.   🙋‍♀️ 나의 풀이   function solution(arr) {   let target = Math.min.apply(Math, arr);   return arr == target ? [-1] : arr.filter((value) =&gt; value !== target); }      Math 메소드를 사용해 주어진 배열에서 가장 작은 수를 구한다.   찾은 가장 작은수 (target)이 처음 값과 같다면 [-1]을, 아니라면 filter함수를 사용해 해당 값을 제거한 배열을 리턴한다.   👍 Best Practice   function solution(arr) {   arr.splice(arr.indexOf(Math.min(...arr)), 1);   if (arr.length &lt; 1) return [-1];   return arr; }   제가 푼 문제에서는 apply메소드를 사용해서 속도가 느렸는데 이 풀이는 스프레드 연산자를 사용해 이를 보완했습니다.   스프레드 연산자를 문자열을 배열로 만들때만 생각했는데 다양한 방법으로 활용해 문제에 접근해보는 시각을 넓혀야겠습니다.   문제 출처      프로그래머스  ","categories": ["programmers-lv1"],
         "tags": ["Math"],
         "url": "/programmers-lv1/programmers-%EC%A0%9C%EC%9D%BC-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스 / Lv 2] 구명보트 by JS",
+        "excerpt":"📄 문제   무인도에 갇힌 사람들을 구명보트를 이용하여 구출하려고 합니다. 구명보트는 작아서 한 번에 최대 2명씩 밖에 탈 수 없고, 무게 제한도 있습니다.   예를 들어, 사람들의 몸무게가 [70kg, 50kg, 80kg, 50kg]이고 구명보트의 무게 제한이 100kg이라면 2번째 사람과 4번째 사람은 같이 탈 수 있지만 1번째 사람과 3번째 사람의 무게의 합은 150kg이므로 구명보트의 무게 제한을 초과하여 같이 탈 수 없습니다.   구명보트를 최대한 적게 사용하여 모든 사람을 구출하려고 합니다.   사람들의 몸무게를 담은 배열 people과 구명보트의 무게 제한 limit가 매개변수로 주어질 때, 모든 사람을 구출하기 위해 필요한 구명보트 개수의 최솟값을 return 하도록 solution 함수를 작성해주세요.      무인도에 갇힌 사람은 1명 이상 50,000명 이하입니다.   각 사람의 몸무게는 40kg 이상 240kg 이하입니다.   구명보트의 무게 제한은 40kg 이상 240kg 이하입니다.   구명보트의 무게 제한은 항상 사람들의 몸무게 중 최댓값보다 크게 주어지므로 사람들을 구출할 수 없는 경우는 없습니다.   🙋‍♀️ 나의 풀이   function solution(people, limit) {   let answer = 0;   let sortedPeople = people.sort((a, b) =&gt; a - b);   while (sortedPeople.length !== 0) {     if (sortedPeople[0] + sortedPeople[sortedPeople.length - 1] &lt;= limit) {       sortedPeople.pop();       sortedPeople.shift();     } else {       sortedPeople.pop();     }     answer++;   }   return answer; }                  🎲 key point       최선의 상황은 가장 몸무게가 많은 사람 + 가장 몸무게가 적은 사람           처음에 몸무게가 가장 적은 순서대로 배에 태웠더니 자꾸 테스트 에러가 발생해서 몸무게 조합을 바꾸어서 생각하니 통과할 수 있었습니다.      people을 내림차순으로 정렬한 배열 sortedPeople을 생성한다.   sortedPeople에 요소가 없을 때까지 반복문을 돌린다.   요소의 맨 앞(가장 가벼운 사람) + 요소의 맨 뒤(가장 무거운 사람)의 합이 제한 무게 보다 적으면 배열에서 제거하고 answer에 1을 추가한다.   요소의 맨 앞(가장 가벼운 사람) + 요소의 맨 뒤(가장 무거운 사람)의 합이 제한 무게 보다 많으면 맨 뒷사람만 배열에서 제거하고 answer에 1을 추가한다.   👍 Best Practice   function solution(people, limit) {   people.sort(function (a, b) {     return a - b;   });   for (var i = 0, j = people.length - 1; i &lt; j; j--) {     if (people[i] + people[j] &lt;= limit) i++;   }   return people.length - i; }   for문 조건으로 4개가 들어가는건 처음 봅니다. 신기하네요.   이 풀이에서는 i가 맨 앞사람, j가 맨 뒷사람이 됩니다.   문제 출처      프로그래머스  ","categories": ["programmers-lv2"],
+        "tags": ["스택","큐","그리디"],
+        "url": "/programmers-lv2/programmers-%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8/",
         "teaser": null
       },{
         "title": "[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS",
