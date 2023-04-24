@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T15:02:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T17:30:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
 
 <p>여러개체들이 연결되어 있는 자료구조에서 특정 개체를 찾는 알고리즘을 그래프 탐색 알고리즘이라고 합니다.</p>
 
@@ -186,7 +186,57 @@
 
 <span class="c1">// BFS 실행 예시</span>
 <span class="nf">bfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 1 2 3 4 5 6 순서로 출력 또는 원하는 작업 수행</span>
-</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="DFS" /><category term="BPS" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98%20%EA%B0%9C%EC%88%98%EC%99%80%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="DFS" /><category term="BPS" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 타겟 넘버 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 타겟 넘버 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F%20%EB%84%98%EB%B2%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다. 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1+1+1+1+1 = 3
++1-1+1+1+1 = 3
++1+1-1+1+1 = 3
++1+1+1-1+1 = 3
++1+1+1+1-1 = 3
+</code></pre></div></div>
+
+<p>사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<ul>
+  <li>주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
+  <li>각 숫자는 1 이상 50 이하인 자연수입니다.</li>
+  <li>타겟 넘버는 1 이상 1000 이하인 자연수입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span><span class="p">,</span> <span class="nx">sum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">depth</span> <span class="o">===</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">sum</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">depth</span><span class="p">]);</span>
+    <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">-</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">depth</span><span class="p">]);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이번 문제는 dfs알고리즘을 이용해서 재귀함수를 만들어 풀었습니다.</p>
+
+<ol>
+  <li>함수 dfs는 주어진 숫자의 개수만큼 깊이가 길어지면 리턴한다. 이때 노드의 충합이 target과 같다면 answer에 1을 더한다.</li>
+  <li>1번의 조건과 만족하지 않는다면 <code class="language-plaintext highlighter-rouge">depth</code>에 1을 더하고 number의 요소가 음수인 경우를 포함해 구하기 때문에 재귀함수를 두번 호출한다.</li>
+</ol>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="DFS" /><summary type="html"><![CDATA[모든 경로의 수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98%20%EA%B0%9C%EC%88%98%EC%99%80%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>두 정수 left와 right가 매개변수로 주어집니다. left부터 right까지의 모든 수들 중에서, 약수의 개수가 짝수인 수는 더하고, 약수의 개수가 홀수인 수는 뺀 수를 return 하도록 solution 함수를 완성해주세요.</p>
 
@@ -576,43 +626,4 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
   <li>0부터 9까지 for문을 돌려 <code class="language-plaintext highlighter-rouge">include</code>메소드로 <code class="language-plaintext highlighter-rouge">number</code>에 해당하는 정수가 있는지 확인하고 <code class="language-plaintext highlighter-rouge">answer</code>에 더한다.</li>
 </ol>
 
-<p>콜백함수를 받는 <code class="language-plaintext highlighter-rouge">find</code>대신 <code class="language-plaintext highlighter-rouge">include</code>를 사용하는 것이 더 좋아보입니다 :)</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="find" /><category term="include" /><summary type="html"><![CDATA[배열에서 특정 값 찾기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 제일 작은 수 제거하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%A0%9C%EC%9D%BC-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 제일 작은 수 제거하기 by JS" /><published>2023-04-17T00:00:00+09:00</published><updated>2023-04-17T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%A0%9C%EC%9D%BC%20%EC%9E%91%EC%9D%80%20%EC%88%98%20%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%A0%9C%EC%9D%BC-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.</p>
-
-<ul>
-  <li>arr은 길이 1 이상인 배열입니다.</li>
-  <li>인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">arr</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">arr</span> <span class="o">==</span> <span class="nx">target</span> <span class="p">?</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">filter</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">!==</span> <span class="nx">target</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>Math 메소드를 사용해 주어진 배열에서 가장 작은 수를 구한다.</li>
-  <li>찾은 가장 작은수 (<code class="language-plaintext highlighter-rouge">target</code>)이 처음 값과 같다면 <code class="language-plaintext highlighter-rouge">[-1]</code>을, 아니라면 filter함수를 사용해 해당 값을 제거한 배열을 리턴한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">arr</span><span class="p">.</span><span class="nf">splice</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(...</span><span class="nx">arr</span><span class="p">)),</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>제가 푼 문제에서는 apply메소드를 사용해서 속도가 느렸는데 이 풀이는 스프레드 연산자를 사용해 이를 보완했습니다.</p>
-
-<p>스프레드 연산자를 문자열을 배열로 만들때만 생각했는데 다양한 방법으로 활용해 문제에 접근해보는 시각을 넓혀야겠습니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="Math" /><summary type="html"><![CDATA[배열에서 가장 작은 수 추출하기]]></summary></entry></feed>
+<p>콜백함수를 받는 <code class="language-plaintext highlighter-rouge">find</code>대신 <code class="language-plaintext highlighter-rouge">include</code>를 사용하는 것이 더 좋아보입니다 :)</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="find" /><category term="include" /><summary type="html"><![CDATA[배열에서 특정 값 찾기]]></summary></entry></feed>
