@@ -345,6 +345,10 @@
 <lastmod>2022-08-10T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/web/web-innerHTMLvselement/</loc>
+<lastmod>2022-08-11T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/javascript/javascript-immutableObject/</loc>
 <lastmod>2022-08-25T22:06:00+09:00</lastmod>
 </url>
@@ -877,6 +881,10 @@
 <lastmod>2023-04-21T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/</loc>
+<lastmod>2023-04-24T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/</loc>
 <lastmod>2023-04-24T22:06:00+09:00</lastmod>
 </url>
@@ -1065,6 +1073,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page44/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page45/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/googlea6c2338bb73092a7.html</loc>

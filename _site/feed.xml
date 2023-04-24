@@ -1,4 +1,192 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T13:18:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98%20%EA%B0%9C%EC%88%98%EC%99%80%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T15:02:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
+
+<p>여러개체들이 연결되어 있는 자료구조에서 특정 개체를 찾는 알고리즘을 그래프 탐색 알고리즘이라고 합니다.</p>
+
+<p>✔ 대표 문제</p>
+
+<ol>
+  <li>경로탐색 유형 (최단거리, 시간)</li>
+  <li>네트워크 유형 (연결)</li>
+  <li>조합 유형 (모든 조합 만들기)</li>
+</ol>
+
+<p>이 알고리즘들의 대표 유형이 DFS(깊이 우선 탐색)/BFS(너비 우선 탐색)입니다.</p>
+
+<h2 id="-dfs--깊이-우선-탐색-알고리즘">📄 DFS | 깊이 우선 탐색 알고리즘</h2>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/233902499-8794557a-888f-4073-8feb-dfc611ecdec0.png" alt="image" /></p>
+
+<p>DFS는 임이의 노드에서 시작해서 그 경로를 완벽히 탐색해야 다음 분기로 넘어가는 특징이 있습니다.</p>
+
+<ul>
+  <li>장점: 운이 좋으면 처음부터 최적의 탐색 경로를 알 수 있다</li>
+  <li>단점: 처음 경로가 복잡하고 아주 길면 시간이 오래걸릴 수 있다.</li>
+</ul>
+
+<p>예시 코드입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 그래프 정의 (인접 리스트 형태)</span>
+<span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">A</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">B</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">D</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">C</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">F</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">G</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">D</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">E</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">H</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">F</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">G</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">H</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">],</span>
+<span class="p">};</span>
+
+<span class="c1">// DFS 알고리즘</span>
+<span class="kd">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">start</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">();</span> <span class="c1">// 방문한 노드를 저장하는 Set</span>
+  <span class="kd">const</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[</span><span class="nx">start</span><span class="p">];</span> <span class="c1">// 스택을 사용하여 탐색할 노드를 저장</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 탐색 결과를 저장할 배열</span>
+
+  <span class="nf">while </span><span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span> <span class="c1">// 스택에서 하나의 노드를 꺼냄</span>
+
+    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">visited</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">node</span><span class="p">))</span> <span class="p">{</span>
+      <span class="c1">// 해당 노드를 방문하지 않았다면</span>
+      <span class="nx">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span> <span class="c1">// 노드를 방문 처리</span>
+      <span class="nx">result</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span> <span class="c1">// 결과 배열에 노드를 추가</span>
+
+      <span class="kd">const</span> <span class="nx">neighbors</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">node</span><span class="p">];</span> <span class="c1">// 현재 노드의 인접 노드들</span>
+      <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">neighbor</span> <span class="k">of</span> <span class="nx">neighbors</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">visited</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">))</span> <span class="p">{</span>
+          <span class="c1">// 방문하지 않은 인접 노드들을 스택에 추가</span>
+          <span class="nx">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// DFS 실행</span>
+<span class="kd">const</span> <span class="nx">startNode</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 시작 노드 설정</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">startNode</span><span class="p">);</span> <span class="c1">// DFS 실행</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// DFS 결과 출력</span>
+</code></pre></div></div>
+
+<p>위 코드는 인접 리스트 형태로 그래프를 정의하고, DFS알고리즘을 사용하여 시작 노드에서 출발해 깊이 우선 탐색을 수행합니다.</p>
+
+<p>방문한 노드는 <code class="language-plaintext highlighter-rouge">visited</code> Set에 저장되고, 탐색 결과는 <code class="language-plaintext highlighter-rouge">result</code>배열에 추가됩니다.</p>
+
+<p>작성한 함수를 재귀함수로 만들면 다음과 같습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 그래프 정의 (인접 리스트 형태)</span>
+<span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">A</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">B</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">D</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">C</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">F</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">G</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">D</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">E</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">H</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">F</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">G</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">H</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">],</span>
+<span class="p">};</span>
+
+<span class="c1">// DFS 알고리즘 (재귀 함수)</span>
+<span class="kd">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">node</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span> <span class="c1">// 현재 노드를 방문 처리</span>
+  <span class="nx">result</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span> <span class="c1">// 결과 배열에 노드를 추가</span>
+
+  <span class="kd">const</span> <span class="nx">neighbors</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">node</span><span class="p">];</span> <span class="c1">// 현재 노드의 인접 노드들</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">neighbor</span> <span class="k">of</span> <span class="nx">neighbors</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">visited</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">))</span> <span class="p">{</span>
+      <span class="c1">// 방문하지 않은 인접 노드들에 대해 재귀 호출</span>
+      <span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">neighbor</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// DFS 실행</span>
+<span class="kd">const</span> <span class="nx">startNode</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 시작 노드 설정</span>
+<span class="kd">const</span> <span class="nx">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">();</span> <span class="c1">// 방문한 노드를 저장하는 Set</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 탐색 결과를 저장할 배열</span>
+
+<span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">startNode</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span> <span class="c1">// DFS 실행</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// DFS 결과 출력</span>
+</code></pre></div></div>
+
+<p>✔ 재귀함수를 사용했을 때 장점</p>
+
+<ul>
+  <li>더 간결하고 직관적이다</li>
+  <li>스택의 개념을 명시적으로 사용하지 않아도 된다</li>
+</ul>
+
+<p>✔ 재귀함수를 사용했을 때 단점</p>
+
+<ul>
+  <li>스택의 크기가 커질 수 있고 스택 오버플로우가 발생할 수 있다</li>
+  <li>깊이 가 매우 깊은 트리 구조의 경우 재귀 함수를 사용하면 성능이 저하될 수 있다.</li>
+</ul>
+
+<p>따라서 더 간단하고 직관적인 구현이 필요하거나 스택 오버플로우 등의 문제가 발생할 가능성이 낮은 경우에는 재귀 함수를 사용하는 것이 좋습니다.</p>
+
+<p>하지만 성능이 중요하거나 스택의 크기가 커질 수 있는 경우에는 반복문 기반의 구현이 우선적으로 고려되어야 합니다.</p>
+
+<h2 id="-bfs--너비-우선-탐색-알고리즘">📄 BFS | 너비 우선 탐색 알고리즘</h2>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/233904191-5cb143d6-b194-4426-a8ac-4384f1680df5.png" alt="image" /></p>
+
+<p>DFS는 깊게 탐색하기 전에 먼저 넓게 탐색해보는 알고리즘입니다.</p>
+
+<p>✔ BFS 알고리즘의 장점</p>
+
+<ul>
+  <li>시작 노드에서 레벨별로 탐색을 진행하기 때문에 <strong>최단 경로 탐색</strong>에 유용하다.</li>
+  <li>각 레벨별로 탐색을 진행하기 때문에 같은 노드를 중복 방문하지 않아 <strong>무한 루프 회피</strong>가 가능하다.</li>
+  <li>레벨 기반으로 탐색을 진행하기 때문에 그래프의 균형을 잡아주는 특징이 있어 <strong>균형 잡힌 탐색</strong>이 가능해 노드가 균등하게 분포된 경우 유용하다.</li>
+</ul>
+
+<p>✔ BFS 알고리즘의 단점</p>
+
+<ul>
+  <li>BPS는 큐를 사용해 탐색을 진행하는데, 현재 레벨의 모든 노드를 큐에 저장해야 하므로 그래프의 너비가 큰 경우 <strong>메모리에 부담</strong>이 커질 수 있다.</li>
+  <li>무방향 그래프일 경우 같은 노드를 중복 방문할 수 있다.</li>
+  <li>그래프가 복잡할 경우 <strong>경로의 복잡성</strong>이 커진다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 그래프의 인접 리스트를 표현한 예시</span>
+<span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+  <span class="mi">3</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="mi">4</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span>
+  <span class="mi">6</span><span class="p">:</span> <span class="p">[],</span>
+<span class="p">};</span>
+
+<span class="c1">// BFS 알고리즘 함수</span>
+<span class="kd">function</span> <span class="nf">bfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">start</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">queue</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 큐</span>
+  <span class="kd">const</span> <span class="nx">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">();</span> <span class="c1">// 방문한 노드를 저장할 Set</span>
+  <span class="nx">queue</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">start</span><span class="p">);</span> <span class="c1">// 시작 노드를 큐에 넣음</span>
+  <span class="nx">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">start</span><span class="p">);</span> <span class="c1">// 시작 노드를 방문 처리</span>
+
+  <span class="nf">while </span><span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 큐가 빌 때까지 반복</span>
+    <span class="kd">const</span> <span class="nx">currentNode</span> <span class="o">=</span> <span class="nx">queue</span><span class="p">.</span><span class="nf">shift</span><span class="p">();</span> <span class="c1">// 큐에서 노드를 꺼냄</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">currentNode</span><span class="p">);</span> <span class="c1">// 현재 노드를 출력 또는 원하는 작업 수행</span>
+
+    <span class="kd">const</span> <span class="nx">neighbors</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">currentNode</span><span class="p">];</span> <span class="c1">// 현재 노드의 인접 노드들</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">neighbor</span> <span class="k">of</span> <span class="nx">neighbors</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">visited</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// 방문하지 않은 노드라면</span>
+        <span class="nx">queue</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">);</span> <span class="c1">// 큐에 넣음</span>
+        <span class="nx">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">);</span> <span class="c1">// 방문 처리</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// BFS 실행 예시</span>
+<span class="nf">bfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 1 2 3 4 5 6 순서로 출력 또는 원하는 작업 수행</span>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="DFS" /><category term="BPS" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98%20%EA%B0%9C%EC%88%98%EC%99%80%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>두 정수 left와 right가 매개변수로 주어집니다. left부터 right까지의 모든 수들 중에서, 약수의 개수가 짝수인 수는 더하고, 약수의 개수가 홀수인 수는 뺀 수를 return 하도록 solution 함수를 완성해주세요.</p>
 
@@ -134,42 +322,7 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 내적 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 내적 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.</p>
-
-<p>이때, a와 b의 내적은 a[0]<em>b[0] + a[1]</em>b[1] + … + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)</p>
-
-<ul>
-  <li>a, b의 길이는 1 이상 1,000 이하입니다.</li>
-  <li>a, b의 모든 수는 -1,000 이상 1,000 이하입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">cur</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span>
-  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>reduce함수를 사용해 배열 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">b</code>의 같은 인덱스끼리의 합을 구해 반환했습니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">]),</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>reduce 함수를 사용할때 사용하지 않는 인자일 경우 <code class="language-plaintext highlighter-rouge">_</code>를 사용해 표현해주는 방법도 있습니다 :)</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reduce" /><summary type="html"><![CDATA[reduce함수 활용해 두 배열의 합 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 예상 대진표 by JS</title><link href="http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81-%EB%8C%80%EC%A7%84%ED%91%9C/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 예상 대진표 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81%20%EB%8C%80%EC%A7%84%ED%91%9C</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81-%EB%8C%80%EC%A7%84%ED%91%9C/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 예상 대진표 by JS</title><link href="http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81-%EB%8C%80%EC%A7%84%ED%91%9C/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 예상 대진표 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81%20%EB%8C%80%EC%A7%84%ED%91%9C</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81-%EB%8C%80%EC%A7%84%ED%91%9C/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>△△ 게임대회가 개최되었습니다. 이 대회는 N명이 참가하고, 토너먼트 형식으로 진행됩니다. N명의 참가자는 각각 1부터 N번을 차례대로 배정받습니다. 그리고, 1번↔2번, 3번↔4번, … , N-1번↔N번의 참가자끼리 게임을 진행합니다. 각 게임에서 이긴 사람은 다음 라운드에 진출할 수 있습니다. 이때, 다음 라운드에 진출할 참가자의 번호는 다시 1번부터 N/2번을 차례대로 배정받습니다. 만약 1번↔2번 끼리 겨루는 게임에서 2번이 승리했다면 다음 라운드에서 1번을 부여받고, 3번↔4번에서 겨루는 게임에서 3번이 승리했다면 다음 라운드에서 2번을 부여받게 됩니다. 게임은 최종 한 명이 남을 때까지 진행됩니다.</p>
 
@@ -218,7 +371,42 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="ceil" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS" /><published>2023-04-19T00:00:00+09:00</published><updated>2023-04-19T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="ceil" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 내적 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 내적 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.</p>
+
+<p>이때, a와 b의 내적은 a[0]<em>b[0] + a[1]</em>b[1] + … + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)</p>
+
+<ul>
+  <li>a, b의 길이는 1 이상 1,000 이하입니다.</li>
+  <li>a, b의 모든 수는 -1,000 이상 1,000 이하입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">cur</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>reduce함수를 사용해 배열 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">b</code>의 같은 인덱스끼리의 합을 구해 반환했습니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">]),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>reduce 함수를 사용할때 사용하지 않는 인자일 경우 <code class="language-plaintext highlighter-rouge">_</code>를 사용해 표현해주는 방법도 있습니다 :)</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reduce" /><summary type="html"><![CDATA[reduce함수 활용해 두 배열의 합 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS" /><published>2023-04-19T00:00:00+09:00</published><updated>2023-04-19T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>길이가 n이고, “수박수박수박수….”와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 “수박수박”을 리턴하고 3이라면 “수박수”를 리턴하면 됩니다.</p>
 
@@ -427,67 +615,4 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="Math" /><summary type="html"><![CDATA[배열에서 가장 작은 수 추출하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 음양 더하기</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 음양 더하기" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91%20%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>어떤 정수들이 있습니다. 이 정수들의 절댓값을 차례대로 담은 정수 배열 absolutes와 이 정수들의 부호를 차례대로 담은 불리언 배열 signs가 매개변수로 주어집니다. 실제 정수들의 합을 구하여 return 하도록 solution 함수를 완성해주세요.</p>
-
-<ul>
-  <li>absolutes의 길이는 1 이상 1,000 이하입니다.
-    <ul>
-      <li>absolutes의 모든 수는 각각 1 이상 1,000 이하입니다.</li>
-    </ul>
-  </li>
-  <li>signs의 길이는 absolutes의 길이와 같습니다.
-    <ul>
-      <li>signs[i] 가 참이면 absolutes[i] 의 실제 정수가 양수임을, 그렇지 않으면 음수임을 의미합니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">absolutes</span><span class="p">,</span> <span class="nx">signs</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">absolutes</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">signs</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">?</span> <span class="nx">cur</span> <span class="p">:</span> <span class="o">-</span><span class="nx">cur</span><span class="p">);</span>
-  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>이렇게 반복문을 사용하게 되는 문제에서는 항상 고민을 하게 됩니다.</p>
-
-<p>언제 for문을 사용하고 언제 배열 메소드를 사용할까요?</p>
-
-<p>속도는 for문이 빠르지만 가독성은 배열 메소드들이 좋기 때문입니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/232277740-badc3e98-fe25-4f05-90cf-c4b09f759c90.png" alt="image" /></p>
-
-<p>참고한 포스팅을 읽고 정리한 저의 생각은 다음과 같습니다.</p>
-
-<ol>
-  <li>
-    <p>성능이 중요한 경우에 for 문(명령형 프로그래밍)을 사용한다. 예를들어, 프로그래머스 효율성 테스트 혹은 계산이 너무 많아 느려지는 함수등이 그렇다.</p>
-  </li>
-  <li>
-    <p>병목 현상은 사실상 다른곳에서 일어나는 경우다. 따라서 성급한 최적화는 오히려 독이 되는 경우가 많다.</p>
-  </li>
-  <li>
-    <p>만약 배열 메소드를 사용해도 가독성이 좋지 않으면, 다시 고려해본다.</p>
-  </li>
-</ol>
-
-<blockquote>
-  <p>병목 현상이란? PC에서 병목 현상이라고 하면 두 구성 요소의 최대 성능의 차이로 인해 한 구성 요소가 다른 하드웨어의 잠재 성능을 제한하는 것을 말합니다. by. intel</p>
-</blockquote>
-
-<p>항상 고민하던 문제였는데 이제 나름 기준이 생겨 가고 있습니다 :)</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li>프로그래머스</li>
-  <li>
-    <p><a href="https://leanylabs.com/blog/js-forEach-map-reduce-vs-for-for_of/">Leany Labs</a></p>
-  </li>
-  <li><a href="https://www.intel.co.kr/content/www/kr/ko/gaming/resources/what-is-bottlenecking-my-pc.html">intel - 구성 요소의 균형을 적절하게 조정하는 방법</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reduce" /><category term="for" /><summary type="html"><![CDATA[for문과 배열 메소드 성능 비교 고민]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="Math" /><summary type="html"><![CDATA[배열에서 가장 작은 수 추출하기]]></summary></entry></feed>
