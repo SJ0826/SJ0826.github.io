@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T17:30:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T18:41:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
 
 <p>여러개체들이 연결되어 있는 자료구조에서 특정 개체를 찾는 알고리즘을 그래프 탐색 알고리즘이라고 합니다.</p>
 
@@ -186,7 +186,61 @@
 
 <span class="c1">// BFS 실행 예시</span>
 <span class="nf">bfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 1 2 3 4 5 6 순서로 출력 또는 원하는 작업 수행</span>
-</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="DFS" /><category term="BPS" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 타겟 넘버 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 타겟 넘버 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F%20%EB%84%98%EB%B2%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="DFS" /><category term="BPS" /></entry><entry><title type="html">[메세지가 도착했습니다] 컴포넌트 겹침 현상 해결하기</title><link href="http://localhost:4000/random-message/random-message-CSS-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 컴포넌트 겹침 현상 해결하기" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-CSS%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-CSS-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-css-레이아웃-문제-발생">🚨 CSS 레이아웃 문제 발생</h2>
+
+<p>데스크탑 환경에서는 몰랐지만 배포하고 모바일에서 테스트해보니 Footer가 되는 컴포넌트가 다른 컴포넌트와 겹치는 현상이 발생했습니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/233956639-26067272-4798-4e1b-ba34-077c7a0d73a4.png" alt="image" /></p>
+
+<p>아무래도 Footer컴포넌트가 항상 밑에만 있으면 된다는 생각에 position설정을 absolute로 줘서 그런것 같습니다.</p>
+
+<p>뷰포트 높이의 길이는 한정되어 있는데 모바일 화면은 데스크탑보다 작으니 자리가 고정되어 있는 Footer컴포넌트가 밀리지 않고 겹쳐지게 됩니다.</p>
+
+<h2 id="-문제를-해결해보자">🔨 문제를 해결해보자</h2>
+
+<p>우선 Footer CSS를 변경하겠습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.footer</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">650px</span><span class="p">;</span>
+  <span class="err">//</span> <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span> <span class="err">🔨</span>
+  <span class="err">//</span> <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="err">🔨</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+
+  <span class="err">.github__link</span> <span class="err">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">text-decoration-line</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="err">$</span><span class="n">text-dark1</span><span class="p">;</span>
+    <span class="err">&amp;:hover</span> <span class="err">{</span>
+      <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<p>해당 부분을 주석으로 없앴더니 다른 문제가 발생합니다.</p>
+
+<p>아예 페이지 바깥으로 컨텐츠가 탈출해버렸습니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/233959070-e5a521ab-884f-4545-aece-65fcf4294a50.png" alt="image" /></p>
+
+<p>이렇게 컨텐츠가 넘치는 현상을 막기 위해 페이지 컴포넌트에 <code class="language-plaintext highlighter-rouge">overflow: auto</code>를 추가합니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.start__container</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">set-box-size</span><span class="p">();</span>
+  <span class="k">@include</span> <span class="nd">set-center-aligned</span><span class="p">;</span>
+  <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$main-color</span><span class="p">;</span>
+
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="c1">// 🎉</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/233959941-dcbd1bc5-3670-4072-bb87-ffa6391c33cd.png" alt="image" /></p>
+
+<p>이제 더이상 컴포넌트끼리 겹치지도, 컨텐츠가 페이지 밖으로 튀어나오지도 않습니다 :)</p>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="CSS" /><category term="레이아웃" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 타겟 넘버 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 타겟 넘버 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F%20%EB%84%98%EB%B2%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다. 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
 
@@ -284,36 +338,7 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="약수" /><summary type="html"><![CDATA[약수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 문자열 내림차순으로 배치하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 문자열 내림차순으로 배치하기 by JS" /><published>2023-04-21T00:00:00+09:00</published><updated>2023-04-21T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>문자열 s에 나타나는 문자를 큰것부터 작은 순으로 정렬해 새로운 문자열을 리턴하는 함수, solution을 완성해주세요.
-s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보다 작은 것으로 간주합니다.</p>
-
-<ul>
-  <li>str은 길이 1 이상인 문자열입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">[...</span><span class="nx">s</span><span class="p">].</span><span class="nf">sort</span><span class="p">().</span><span class="nf">reverse</span><span class="p">().</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>구조분해 + 메소드 체이닝을 통해 풀었습니다.</p>
-
-<ol>
-  <li>문자열을 배열로 바꾼다. <code class="language-plaintext highlighter-rouge">[...s]</code></li>
-  <li>정렬한다. <code class="language-plaintext highlighter-rouge">sort()</code></li>
-  <li>역순으로 배치한다. <code class="language-plaintext highlighter-rouge">reverse()</code></li>
-  <li>다시 문자열로 바꿔 리턴한다. <code class="language-plaintext highlighter-rouge">join()</code></li>
-</ol>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="ceil" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 점프와 순간 이동 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 점프와 순간 이동 by JS" /><published>2023-04-21T00:00:00+09:00</published><updated>2023-04-21T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80%20%EC%88%9C%EA%B0%84%20%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="약수" /><summary type="html"><![CDATA[약수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 점프와 순간 이동 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 점프와 순간 이동 by JS" /><published>2023-04-21T00:00:00+09:00</published><updated>2023-04-21T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80%20%EC%88%9C%EA%B0%84%20%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>OO 연구소는 한 번에 K 칸을 앞으로 점프하거나, (현재까지 온 거리) x 2 에 해당하는 위치로 순간이동을 할 수 있는 특수한 기능을 가진 아이언 슈트를 개발하여 판매하고 있습니다. 이 아이언 슈트는 건전지로 작동되는데, 순간이동을 하면 건전지 사용량이 줄지 않지만, 앞으로 K 칸을 점프하면 K 만큼의 건전지 사용량이 듭니다. 그러므로 아이언 슈트를 착용하고 이동할 때는 순간 이동을 하는 것이 더 효율적입니다. 아이언 슈트 구매자는 아이언 슈트를 착용하고 거리가 N 만큼 떨어져 있는 장소로 가려고 합니다. 단, 건전지 사용량을 줄이기 위해 점프로 이동하는 것은 최소로 하려고 합니다. 아이언 슈트 구매자가 이동하려는 거리 N이 주어졌을 때, 사용해야 하는 건전지 사용량의 최솟값을 return하는 solution 함수를 만들어 주세요.</p>
 
@@ -372,7 +397,71 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 예상 대진표 by JS</title><link href="http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81-%EB%8C%80%EC%A7%84%ED%91%9C/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 예상 대진표 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81%20%EB%8C%80%EC%A7%84%ED%91%9C</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81-%EB%8C%80%EC%A7%84%ED%91%9C/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 문자열 내림차순으로 배치하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 문자열 내림차순으로 배치하기 by JS" /><published>2023-04-21T00:00:00+09:00</published><updated>2023-04-21T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>문자열 s에 나타나는 문자를 큰것부터 작은 순으로 정렬해 새로운 문자열을 리턴하는 함수, solution을 완성해주세요.
+s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보다 작은 것으로 간주합니다.</p>
+
+<ul>
+  <li>str은 길이 1 이상인 문자열입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">[...</span><span class="nx">s</span><span class="p">].</span><span class="nf">sort</span><span class="p">().</span><span class="nf">reverse</span><span class="p">().</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>구조분해 + 메소드 체이닝을 통해 풀었습니다.</p>
+
+<ol>
+  <li>문자열을 배열로 바꾼다. <code class="language-plaintext highlighter-rouge">[...s]</code></li>
+  <li>정렬한다. <code class="language-plaintext highlighter-rouge">sort()</code></li>
+  <li>역순으로 배치한다. <code class="language-plaintext highlighter-rouge">reverse()</code></li>
+  <li>다시 문자열로 바꿔 리턴한다. <code class="language-plaintext highlighter-rouge">join()</code></li>
+</ol>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="ceil" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 내적 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 내적 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.</p>
+
+<p>이때, a와 b의 내적은 a[0]<em>b[0] + a[1]</em>b[1] + … + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)</p>
+
+<ul>
+  <li>a, b의 길이는 1 이상 1,000 이하입니다.</li>
+  <li>a, b의 모든 수는 -1,000 이상 1,000 이하입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">cur</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>reduce함수를 사용해 배열 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">b</code>의 같은 인덱스끼리의 합을 구해 반환했습니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">]),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>reduce 함수를 사용할때 사용하지 않는 인자일 경우 <code class="language-plaintext highlighter-rouge">_</code>를 사용해 표현해주는 방법도 있습니다 :)</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reduce" /><summary type="html"><![CDATA[reduce함수 활용해 두 배열의 합 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 예상 대진표 by JS</title><link href="http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81-%EB%8C%80%EC%A7%84%ED%91%9C/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 예상 대진표 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81%20%EB%8C%80%EC%A7%84%ED%91%9C</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmes-%EC%98%88%EC%83%81-%EB%8C%80%EC%A7%84%ED%91%9C/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>△△ 게임대회가 개최되었습니다. 이 대회는 N명이 참가하고, 토너먼트 형식으로 진행됩니다. N명의 참가자는 각각 1부터 N번을 차례대로 배정받습니다. 그리고, 1번↔2번, 3번↔4번, … , N-1번↔N번의 참가자끼리 게임을 진행합니다. 각 게임에서 이긴 사람은 다음 라운드에 진출할 수 있습니다. 이때, 다음 라운드에 진출할 참가자의 번호는 다시 1번부터 N/2번을 차례대로 배정받습니다. 만약 1번↔2번 끼리 겨루는 게임에서 2번이 승리했다면 다음 라운드에서 1번을 부여받고, 3번↔4번에서 겨루는 게임에서 3번이 승리했다면 다음 라운드에서 2번을 부여받게 됩니다. 게임은 최종 한 명이 남을 때까지 진행됩니다.</p>
 
@@ -421,42 +510,7 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="ceil" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 내적 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 내적 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.</p>
-
-<p>이때, a와 b의 내적은 a[0]<em>b[0] + a[1]</em>b[1] + … + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)</p>
-
-<ul>
-  <li>a, b의 길이는 1 이상 1,000 이하입니다.</li>
-  <li>a, b의 모든 수는 -1,000 이상 1,000 이하입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">cur</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span>
-  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>reduce함수를 사용해 배열 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">b</code>의 같은 인덱스끼리의 합을 구해 반환했습니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">]),</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>reduce 함수를 사용할때 사용하지 않는 인자일 경우 <code class="language-plaintext highlighter-rouge">_</code>를 사용해 표현해주는 방법도 있습니다 :)</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reduce" /><summary type="html"><![CDATA[reduce함수 활용해 두 배열의 합 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS" /><published>2023-04-19T00:00:00+09:00</published><updated>2023-04-19T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="ceil" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS" /><published>2023-04-19T00:00:00+09:00</published><updated>2023-04-19T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>길이가 n이고, “수박수박수박수….”와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 “수박수박”을 리턴하고 3이라면 “수박수”를 리턴하면 됩니다.</p>
 
@@ -570,60 +624,4 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><category term="큐" /><category term="그리디" /><summary type="html"><![CDATA[스택/큐 개념으로 그리디 알고리즘 작성하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 없는 숫자 더하기 by JS" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%97%86%EB%8A%94-%EC%88%AB%EC%9E%90-%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다. numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하도록 solution 함수를 완성해주세요.</p>
-
-<ul>
-  <li>1 ≤ numbers의 길이 ≤ 9
-    <ul>
-      <li>0 ≤ numbers의 모든 원소 ≤ 9</li>
-      <li>numbers의 모든 원소는 서로 다릅니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">numbers</span><span class="p">.</span><span class="nf">find</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">===</span> <span class="nx">i</span><span class="p">)</span> <span class="p">?</span> <span class="dl">""</span> <span class="p">:</span> <span class="p">(</span><span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>0부터 9까지 for문을 돌려 <code class="language-plaintext highlighter-rouge">find</code>메소드로 <code class="language-plaintext highlighter-rouge">number</code>에 해당하는 정수가 있는지 확인하고 <code class="language-plaintext highlighter-rouge">answer</code>에 더한다.</li>
-</ol>
-
-<h2 id="-best-practice-1">👍 Best Practice 1</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="mi">45</span> <span class="o">-</span> <span class="nx">numbers</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">cur</span><span class="p">,</span> <span class="nx">acc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">cur</span> <span class="o">+</span> <span class="nx">acc</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>45에서 주어진 배열 요소를 합한 값을 뺀다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">numbers</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>0부터 9까지 for문을 돌려 <code class="language-plaintext highlighter-rouge">include</code>메소드로 <code class="language-plaintext highlighter-rouge">number</code>에 해당하는 정수가 있는지 확인하고 <code class="language-plaintext highlighter-rouge">answer</code>에 더한다.</li>
-</ol>
-
-<p>콜백함수를 받는 <code class="language-plaintext highlighter-rouge">find</code>대신 <code class="language-plaintext highlighter-rouge">include</code>를 사용하는 것이 더 좋아보입니다 :)</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="find" /><category term="include" /><summary type="html"><![CDATA[배열에서 특정 값 찾기]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><category term="큐" /><category term="그리디" /><summary type="html"><![CDATA[스택/큐 개념으로 그리디 알고리즘 작성하기]]></summary></entry></feed>
