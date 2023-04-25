@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T18:41:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-25T12:01:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 2] N개의 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] N개의 최소공배수 by JS" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>두 수의 최소공배수(Least Common Multiple)란 입력된 두 수의 배수 중 공통이 되는 가장 작은 숫자를 의미합니다. 예를 들어 2와 7의 최소공배수는 14가 됩니다. 정의를 확장해서, n개의 수의 최소공배수는 n 개의 수들의 배수 중 공통이 되는 가장 작은 숫자가 됩니다. n개의 숫자를 담은 배열 arr이 입력되었을 때 이 수들의 최소공배수를 반환하는 함수, solution을 완성해 주세요.</p>
+
+<ul>
+  <li>arr은 길이 1이상, 15이하인 배열입니다.</li>
+  <li>arr의 원소는 100 이하인 자연수입니다.</li>
+</ul>
+
+<h2 id="-나의-풀이">📄 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">gcd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">));</span>
+  <span class="kd">const</span> <span class="nx">lcm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">sortedArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span> <span class="o">=</span> <span class="nf">lcm</span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span> <span class="nx">sortedArr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>📌 유클리드 호제법이란?</strong>
+유클리드 호제법은 나눗셈을 반복해서 두 수의 최대공약수를 구하는 알고리즘입니다.
+두 수 A와 B의 나머지가 r일때, gcd(A, B) = gcd(B, r)입니다.
+r이 0이라면 최대공약수는 B가 되고, 아니라면 gcd(B, r)을 계산합니다.</p>
+</blockquote>
+
+<ol>
+  <li>최대공배수는 <code class="language-plaintext highlighter-rouge">두수를 곱한 값 / 최대 공약수</code>이다.</li>
+  <li>주어진 배열을 오름차순으로 정렬한다.(<code class="language-plaintext highlighter-rouge">sortedArr</code>)</li>
+  <li>초기값이 1인 <code class="language-plaintext highlighter-rouge">answer</code>와 <code class="language-plaintext highlighter-rouge">sortedArr</code>의 요소의 최대공배수를 구해 answer의 값을 변경해준다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">nlcm</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="p">?</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">)</span> <span class="p">:</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>for문 대신 reduce 메소드를 사용해 가독성을 높인 풀이입니다.</p>
+
+<p>이 풀이에서는 누적값 <code class="language-plaintext highlighter-rouge">a</code>가 answer이 되었습니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="유클리드 호제법" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법을 이용해 최소공배수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 부족한 금액 계산하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%B6%80%EC%A1%B1%ED%95%9C-%EA%B8%88%EC%95%A1-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 부족한 금액 계산하기 by JS" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%B6%80%EC%A1%B1%ED%95%9C%20%EA%B8%88%EC%95%A1%20%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%B6%80%EC%A1%B1%ED%95%9C-%EA%B8%88%EC%95%A1-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>새로 생긴 놀이기구는 인기가 매우 많아 줄이 끊이질 않습니다. 이 놀이기구의 원래 이용료는 price원 인데, 놀이기구를 N 번 째 이용한다면 원래 이용료의 N배를 받기로 하였습니다. 즉, 처음 이용료가 100이었다면 2번째에는 200, 3번째에는 300으로 요금이 인상됩니다.
+놀이기구를 count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가 모자라는지를 return 하도록 solution 함수를 완성하세요.
+단, 금액이 부족하지 않으면 0을 return 하세요.</p>
+
+<ul>
+  <li>놀이기구의 이용료 price : 1 ≤ price ≤ 2,500, price는 자연수</li>
+  <li>처음 가지고 있던 금액 money : 1 ≤ money ≤ 1,000,000,000, money는 자연수</li>
+  <li>놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">money</span><span class="p">,</span> <span class="nx">count</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="nx">price</span> <span class="o">*</span> <span class="p">((</span><span class="nx">count</span> <span class="o">*</span> <span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">total</span> <span class="o">-</span> <span class="nx">money</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">total</span> <span class="o">-</span> <span class="nx">money</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>📌 정수 1부터 N까지 합: (N(N+1))/2</strong></p>
+
+<ol>
+  <li>등차수열 공식을 이용해 요금 합계(<code class="language-plaintext highlighter-rouge">total</code>)를 구한다.</li>
+  <li>요금 합계(<code class="language-plaintext highlighter-rouge">total</code>)에서 돈이 모자라면 부족한 금액을 아니라면 0을 반환한다.</li>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="등차수열" /><summary type="html"><![CDATA[등차수열 공식을 이용해 정수 1부터 N까지 합 구하기]]></summary></entry><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
 
 <p>여러개체들이 연결되어 있는 자료구조에서 특정 개체를 찾는 알고리즘을 그래프 탐색 알고리즘이라고 합니다.</p>
 
@@ -510,118 +591,4 @@ s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="ceil" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 수박수박수박수박수박수? by JS" /><published>2023-04-19T00:00:00+09:00</published><updated>2023-04-19T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>길이가 n이고, “수박수박수박수….”와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 “수박수박”을 리턴하고 3이라면 “수박수”를 리턴하면 됩니다.</p>
-
-<ul>
-  <li>n은 길이 10,000이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">?</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">수</span><span class="dl">"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">박</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>빈배열을 생성해 홀수번째 인덱스에는 “수”, 짝수번째 인덱스에는 “박”을 push한다.</li>
-  <li>반환할때는 문자열로 바꾼다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">waterMelon</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">수박</span><span class="dl">"</span><span class="p">.</span><span class="nf">repeat</span><span class="p">(</span><span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">수</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">""</span><span class="p">);</span>
-</code></pre></div></div>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">repeat</code> 메소드를 사용해 수박을 주어진 수를 글자 수로 나눈 값만큼 반복한다.</li>
-  <li>마지막에 자릿수가 하나 남으면 “수”를 채워준다.</li>
-</ol>
-
-<p>아무래도 배열보다 문자열이 메모리 소비를 덜할 것 같아 좋은 풀이로 느껴집니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="수박" /><category term="repeat" /><summary type="html"><![CDATA[무한 문자열 생성 함수 만들기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 구명보트 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 구명보트 by JS" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>무인도에 갇힌 사람들을 구명보트를 이용하여 구출하려고 합니다. 구명보트는 작아서 한 번에 최대 2명씩 밖에 탈 수 없고, 무게 제한도 있습니다.</p>
-
-<p>예를 들어, 사람들의 몸무게가 [70kg, 50kg, 80kg, 50kg]이고 구명보트의 무게 제한이 100kg이라면 2번째 사람과 4번째 사람은 같이 탈 수 있지만 1번째 사람과 3번째 사람의 무게의 합은 150kg이므로 구명보트의 무게 제한을 초과하여 같이 탈 수 없습니다.</p>
-
-<p>구명보트를 최대한 적게 사용하여 모든 사람을 구출하려고 합니다.</p>
-
-<p>사람들의 몸무게를 담은 배열 people과 구명보트의 무게 제한 limit가 매개변수로 주어질 때, 모든 사람을 구출하기 위해 필요한 구명보트 개수의 최솟값을 return 하도록 solution 함수를 작성해주세요.</p>
-
-<ul>
-  <li>무인도에 갇힌 사람은 1명 이상 50,000명 이하입니다.</li>
-  <li>각 사람의 몸무게는 40kg 이상 240kg 이하입니다.</li>
-  <li>구명보트의 무게 제한은 40kg 이상 240kg 이하입니다.</li>
-  <li>구명보트의 무게 제한은 항상 사람들의 몸무게 중 최댓값보다 크게 주어지므로 사람들을 구출할 수 없는 경우는 없습니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">people</span><span class="p">,</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">sortedPeople</span> <span class="o">=</span> <span class="nx">people</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
-  <span class="nf">while </span><span class="p">(</span><span class="nx">sortedPeople</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">sortedPeople</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nx">sortedPeople</span><span class="p">[</span><span class="nx">sortedPeople</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">sortedPeople</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span>
-      <span class="nx">sortedPeople</span><span class="p">.</span><span class="nf">shift</span><span class="p">();</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">sortedPeople</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span>
-    <span class="p">}</span>
-    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<table>
-  <tbody>
-    <tr>
-      <td>🎲 key point</td>
-      <td>최선의 상황은 가장 몸무게가 많은 사람 + 가장 몸무게가 적은 사람</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>처음에 몸무게가 가장 적은 순서대로 배에 태웠더니 자꾸 테스트 에러가 발생해서 몸무게 조합을 바꾸어서 생각하니 통과할 수 있었습니다.</p>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">people</code>을 내림차순으로 정렬한 배열 <code class="language-plaintext highlighter-rouge">sortedPeople</code>을 생성한다.</li>
-  <li><code class="language-plaintext highlighter-rouge">sortedPeople</code>에 요소가 없을 때까지 반복문을 돌린다.</li>
-  <li>요소의 맨 앞(가장 가벼운 사람) + 요소의 맨 뒤(가장 무거운 사람)의 합이 제한 무게 보다 적으면 배열에서 제거하고 <code class="language-plaintext highlighter-rouge">answer</code>에 1을 추가한다.</li>
-  <li>요소의 맨 앞(가장 가벼운 사람) + 요소의 맨 뒤(가장 무거운 사람)의 합이 제한 무게 보다 많으면 맨 뒷사람만 배열에서 제거하고 <code class="language-plaintext highlighter-rouge">answer</code>에 1을 추가한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">people</span><span class="p">,</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">people</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
-  <span class="p">});</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">people</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">people</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">people</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">limit</span><span class="p">)</span> <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">people</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="nx">i</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>for문 조건으로 4개가 들어가는건 처음 봅니다. 신기하네요.</p>
-
-<p>이 풀이에서는 i가 맨 앞사람, j가 맨 뒷사람이 됩니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="스택" /><category term="큐" /><category term="그리디" /><summary type="html"><![CDATA[스택/큐 개념으로 그리디 알고리즘 작성하기]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="ceil" /></entry></feed>
