@@ -1,5 +1,4 @@
 ---
-
 title: "[프로그래머스 / Lv 1] 행렬의 덧셈 by JS"
 excerpt: "배열 더하기"
 toc: true
@@ -8,12 +7,10 @@ sidebar:
 nav: "docs"
 
 categories:
-
-- programmers-lv1
-  tags:
-- ["배열"]
-  last_modified_at: 2023-04-27T08:06:00-05:00
-
+  - programmers-lv1
+tags:
+  - ["배열"]
+last_modified_at: 2023-04-27T08:06:00-05:00
 ---
 
 ## 📄 문제

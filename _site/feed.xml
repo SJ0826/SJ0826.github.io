@@ -1,60 +1,195 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-25T14:37:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 2] N개의 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] N개의 최소공배수 by JS" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-28T19:34:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
-<p>두 수의 최소공배수(Least Common Multiple)란 입력된 두 수의 배수 중 공통이 되는 가장 작은 숫자를 의미합니다. 예를 들어 2와 7의 최소공배수는 14가 됩니다. 정의를 확장해서, n개의 수의 최소공배수는 n 개의 수들의 배수 중 공통이 되는 가장 작은 숫자가 됩니다. n개의 숫자를 담은 배열 arr이 입력되었을 때 이 수들의 최소공배수를 반환하는 함수, solution을 완성해 주세요.</p>
+<p>두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.</p>
 
 <ul>
-  <li>arr은 길이 1이상, 15이하인 배열입니다.</li>
-  <li>arr의 원소는 100 이하인 자연수입니다.</li>
+  <li>두 수는 1이상 1000000이하의 자연수입니다.</li>
 </ul>
 
-<h2 id="-나의-풀이">📄 나의 풀이</h2>
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">gcd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">));</span>
   <span class="kd">const</span> <span class="nx">lcm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
 
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">sortedArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">answer</span> <span class="o">=</span> <span class="nf">lcm</span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span> <span class="nx">sortedArr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nf">gcd</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">),</span> <span class="nf">lcm</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)];</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<blockquote>
-  <p><strong>📌 유클리드 호제법이란?</strong>
-유클리드 호제법은 나눗셈을 반복해서 두 수의 최대공약수를 구하는 알고리즘입니다.
-두 수 A와 B의 나머지가 r일때, gcd(A, B) = gcd(B, r)입니다.
-r이 0이라면 최대공약수는 B가 되고, 아니라면 gcd(B, r)을 계산합니다.</p>
-</blockquote>
-
-<ol>
-  <li>최대공배수는 <code class="language-plaintext highlighter-rouge">두수를 곱한 값 / 최대 공약수</code>이다.</li>
-  <li>주어진 배열을 오름차순으로 정렬한다.(<code class="language-plaintext highlighter-rouge">sortedArr</code>)</li>
-  <li>초기값이 1인 <code class="language-plaintext highlighter-rouge">answer</code>와 <code class="language-plaintext highlighter-rouge">sortedArr</code>의 요소의 최대공배수를 구해 answer의 값을 변경해준다.</li>
-</ol>
+<p>저번 문제에서 공부한 유클리드호제법으로 최대공약수(<code class="language-plaintext highlighter-rouge">gcd</code>)와 최소공배수(<code class="language-plaintext highlighter-rouge">lcm</code>)을 계산해 풀었습니다.</p>
 
 <h2 id="-best-practice">👍 Best Practice</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">nlcm</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">num</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">));</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="p">?</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">)</span> <span class="p">:</span> <span class="nx">b</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">gcdlcm</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">r</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">ab</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span> <span class="p">(</span><span class="nx">r</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">);</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">r</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">ab</span> <span class="o">/</span> <span class="nx">b</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>for문 대신 reduce 메소드를 사용해 가독성을 높인 풀이입니다.</p>
+<p>재귀함수가 아닌 for문을 사용해 최대공약수를 찾는 풀이입니다.</p>
 
-<p>이 풀이에서는 누적값 <code class="language-plaintext highlighter-rouge">a</code>가 answer이 되었습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">a % b</code>가 0이 될 때까지 반복문을 실행합니다.</p>
+
+<p>재귀함수로만 풀릴 줄 알았는데 for문으로 풀려서 신기하네요:)</p>
 
 <h2 id="문제-출처">문제 출처</h2>
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="유클리드 호제법" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법을 이용해 최소공배수 구하기]]></summary></entry><entry><title type="html">[메세지가 도착했습니다] Firestore를 사용해 원격으로 DB관리하기</title><link href="http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C-DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] Firestore를 사용해 원격으로 DB관리하기" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C%20DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C-DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-사용-계기">📄 사용 계기</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="최대공약수" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법으로 최대공약수와 최소공배수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 행렬의 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 행렬의 덧셈 by JS" /><published>2023-04-27T00:00:00+09:00</published><updated>2023-04-27T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.</p>
+
+<ul>
+  <li>행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">arr1</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nf">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr1</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">index</span><span class="p">]</span> <span class="o">+</span> <span class="nx">arr2</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">index</span><span class="p">]));</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>for문으로 주어진 배열의 인덱스만큼 반복문을 돌린다.</li>
+  <li>배열의 요소가 배열이니 다시한번 map을 사용해 값을 더해준 후 <code class="language-plaintext highlighter-rouge">answer</code>에 값을 삽입한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">sumMatrix</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">A</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">idx1</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr1</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">val</span><span class="p">,</span> <span class="nx">idx2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">val</span> <span class="o">+</span> <span class="nx">B</span><span class="p">[</span><span class="nx">idx1</span><span class="p">][</span><span class="nx">idx2</span><span class="p">]));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>map을 두번 사용해 배열의 값을 더한 풀이입니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="배열" /><summary type="html"><![CDATA[배열 더하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 멀리 뛰기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EB%A9%80%EB%A6%AC-%EB%9B%B0%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 멀리 뛰기 by JS" /><published>2023-04-26T00:00:00+09:00</published><updated>2023-04-26T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EB%A9%80%EB%A6%AC%20%EB%9B%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EB%A9%80%EB%A6%AC-%EB%9B%B0%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>효진이는 멀리 뛰기를 연습하고 있습니다. 효진이는 한번에 1칸, 또는 2칸을 뛸 수 있습니다. 칸이 총 4개 있을 때, 효진이는
+(1칸, 1칸, 1칸, 1칸)
+(1칸, 2칸, 1칸)
+(1칸, 1칸, 2칸)
+(2칸, 1칸, 1칸)
+(2칸, 2칸)
+의 5가지 방법으로 맨 끝 칸에 도달할 수 있습니다. 멀리뛰기에 사용될 칸의 수 n이 주어질 때, 효진이가 끝에 도달하는 방법이 몇 가지인지 알아내, 여기에 1234567를 나눈 나머지를 리턴하는 함수, solution을 완성하세요. 예를 들어 4가 입력된다면, 5를 return하면 됩니다.</p>
+
+<ul>
+  <li>n은 1 이상, 2000 이하인 정수입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">||</span> <span class="nx">n</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">dp</span> <span class="o">=</span> <span class="nc">Array</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nf">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="nx">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="nx">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">dp</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dp</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="nx">dp</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span> <span class="o">%</span> <span class="mi">1234567</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">dp</span><span class="p">[</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>처음 문제를 보고 DFS로 접근했더니 시간 초과가 되어 동적 계산법(DP)로 다시 생각했습니다.</p>
+
+<p>n이 1일 경우 -&gt; 1<br />
+n이 2일 경우 -&gt; 2<br />
+n이 3일 경우 -&gt; 3<br />
+n이 4일 경우 -&gt; 5<br />
+n이 5일 경우 -&gt; 8<br />
+n이 6일 경우 -&gt; 13<br /></p>
+
+<p>문제의 답이 피보나치 수열로 이루어져 있습니다.</p>
+
+<p>따라서 배열 (<code class="language-plaintext highlighter-rouge">dp</code>)의 맨 앞과 두번째 수를 1과 2로 만들고 그 뒤의 값들을 구하면 답을 알 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">% 1234567</code>연산을 for문 안에서 한 이유는 dp[n - 1]의 크기가 커져 오버 플로우가 발생하기 때문입니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">jumpCase</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nx">num</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nf">jumpCase</span><span class="p">(</span><span class="nx">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">jumpCase</span><span class="p">(</span><span class="nx">num</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>같은 방식을 재귀함수로 풀어낸 풀이입니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 문자열 다루기 기본 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0-%EA%B8%B0%EB%B3%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 문자열 다루기 기본 by JS" /><published>2023-04-26T00:00:00+09:00</published><updated>2023-04-26T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%8B%A4%EB%A3%A8%EA%B8%B0%20%EA%B8%B0%EB%B3%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0-%EA%B8%B0%EB%B3%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>문자열 s의 길이가 4 혹은 6이고, 숫자로만 구성돼있는지 확인해주는 함수, solution을 완성하세요. 예를 들어 s가 “a234”이면 False를 리턴하고 “1234”라면 True를 리턴하면 됩니다.</p>
+
+<ul>
+  <li>s는 길이 1 이상, 길이 8 이하인 문자열입니다.</li>
+  <li>s는 영문 알파벳 대소문자 또는 0부터 9까지 숫자로 이루어져 있습니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">4</span> <span class="o">||</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">6</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nc">Number</span><span class="p">(</span><span class="nx">s</span><span class="p">));</span>
+  <span class="k">return</span> <span class="o">!</span><span class="nf">isNaN</span><span class="p">(</span><span class="nc">Number</span><span class="p">(</span><span class="nx">s</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>처음에 주어진 문자열 전체를 숫자로 바꿨는데 테스트 케이스 오류가 발생했습니다.</p>
+
+<p>알고보니 문자 <code class="language-plaintext highlighter-rouge">e</code>가 포함되면 Number()가 지수로 인식해 <code class="language-plaintext highlighter-rouge">e</code>를 숫자로 판별했던 것이었습니다.</p>
+
+<p>따라서 for문을 돌려 문자 하나하나에 Number()를 적용해주어야 했습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">6</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nf">isNaN</span><span class="p">(</span><span class="nc">Number</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">])))</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>문자열에 Number() 메소드를 적용하면 NAN이 되니, isNaN()을 사용해 이를 판별했습니다.</p>
+
+<p>isNaN을 !!isNaN으로 사용하면 더 간결하겠지만, 주어진 문자열이 “0000”인 경우에는 0도 false로 인식하므로 사용할 수 없었습니다.</p>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">alpha_string46</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/^</span><span class="se">\d{6}</span><span class="sr">$|^</span><span class="se">\d{4}</span><span class="sr">$/</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nx">regex</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>정규식을 이용한 풀이입니다.</p>
+
+<p>주어진 문자열이 6개 혹은 4개의 숫자(d)로 이루어져 있는지 바로 확인할 수 있습니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="문자열" /><summary type="html"><![CDATA[문자열이 숫자로만 이루어져 있는지 확인하기]]></summary></entry><entry><title type="html">[메세지가 도착했습니다] Firestore를 사용해 원격으로 DB관리하기</title><link href="http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C-DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] Firestore를 사용해 원격으로 DB관리하기" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C%20DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C-DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-사용-계기">📄 사용 계기</h2>
 
 <p>혼자 간단한 토이프로젝트를 만들게 되었는데, 이때 사용할 REST API를 만들기에는 시간이 부족했습니다.</p>
 
@@ -206,159 +341,63 @@ r이 0이라면 최대공약수는 B가 되고, 아니라면 gcd(B, r)을 계산
 <ol>
   <li>등차수열 공식을 이용해 요금 합계(<code class="language-plaintext highlighter-rouge">total</code>)를 구한다.</li>
   <li>요금 합계(<code class="language-plaintext highlighter-rouge">total</code>)에서 돈이 모자라면 부족한 금액을 아니라면 0을 반환한다.</li>
-</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="등차수열" /><summary type="html"><![CDATA[등차수열 공식을 이용해 정수 1부터 N까지 합 구하기]]></summary></entry><entry><title type="html">[메세지가 도착했습니다] 컴포넌트 겹침 현상 해결하기</title><link href="http://localhost:4000/random-message/random-message-CSS-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 컴포넌트 겹침 현상 해결하기" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-CSS%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-CSS-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-css-레이아웃-문제-발생">🚨 CSS 레이아웃 문제 발생</h2>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="등차수열" /><summary type="html"><![CDATA[등차수열 공식을 이용해 정수 1부터 N까지 합 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] N개의 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] N개의 최소공배수 by JS" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
-<p>데스크탑 환경에서는 몰랐지만 배포하고 모바일에서 테스트해보니 Footer가 되는 컴포넌트가 다른 컴포넌트와 겹치는 현상이 발생했습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/233956639-26067272-4798-4e1b-ba34-077c7a0d73a4.png" alt="image" /></p>
-
-<p>아무래도 Footer컴포넌트가 항상 밑에만 있으면 된다는 생각에 position설정을 absolute로 줘서 그런것 같습니다.</p>
-
-<p>뷰포트 높이의 길이는 한정되어 있는데 모바일 화면은 데스크탑보다 작으니 자리가 고정되어 있는 Footer컴포넌트가 밀리지 않고 겹쳐지게 됩니다.</p>
-
-<h2 id="-문제를-해결해보자">🔨 문제를 해결해보자</h2>
-
-<p>우선 Footer CSS를 변경하겠습니다.</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.footer</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">max-width</span><span class="p">:</span> <span class="m">650px</span><span class="p">;</span>
-  <span class="err">//</span> <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span> <span class="err">🔨</span>
-  <span class="err">//</span> <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="err">🔨</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-
-  <span class="err">.github__link</span> <span class="err">{</span>
-    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
-    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-    <span class="nl">text-decoration-line</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="err">$</span><span class="n">text-dark1</span><span class="p">;</span>
-    <span class="err">&amp;:hover</span> <span class="err">{</span>
-      <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</code></pre></div></div>
-
-<p>해당 부분을 주석으로 없앴더니 다른 문제가 발생합니다.</p>
-
-<p>아예 페이지 바깥으로 컨텐츠가 탈출해버렸습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/233959070-e5a521ab-884f-4545-aece-65fcf4294a50.png" alt="image" /></p>
-
-<p>이렇게 컨텐츠가 넘치는 현상을 막기 위해 페이지 컴포넌트에 <code class="language-plaintext highlighter-rouge">overflow: auto</code>를 추가합니다.</p>
-
-<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.start__container</span> <span class="p">{</span>
-  <span class="k">@include</span> <span class="nd">set-box-size</span><span class="p">();</span>
-  <span class="k">@include</span> <span class="nd">set-center-aligned</span><span class="p">;</span>
-  <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$main-color</span><span class="p">;</span>
-
-  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="c1">// 🎉</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/233959941-dcbd1bc5-3670-4072-bb87-ffa6391c33cd.png" alt="image" /></p>
-
-<p>이제 더이상 컴포넌트끼리 겹치지도, 컨텐츠가 페이지 밖으로 튀어나오지도 않습니다 :)</p>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="CSS" /><category term="레이아웃" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 타겟 넘버 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 타겟 넘버 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F%20%EB%84%98%EB%B2%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다. 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1+1+1+1+1 = 3
-+1-1+1+1+1 = 3
-+1+1-1+1+1 = 3
-+1+1+1-1+1 = 3
-+1+1+1+1-1 = 3
-</code></pre></div></div>
-
-<p>사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.</p>
+<p>두 수의 최소공배수(Least Common Multiple)란 입력된 두 수의 배수 중 공통이 되는 가장 작은 숫자를 의미합니다. 예를 들어 2와 7의 최소공배수는 14가 됩니다. 정의를 확장해서, n개의 수의 최소공배수는 n 개의 수들의 배수 중 공통이 되는 가장 작은 숫자가 됩니다. n개의 숫자를 담은 배열 arr이 입력되었을 때 이 수들의 최소공배수를 반환하는 함수, solution을 완성해 주세요.</p>
 
 <ul>
-  <li>주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
-  <li>각 숫자는 1 이상 50 이하인 자연수입니다.</li>
-  <li>타겟 넘버는 1 이상 1000 이하인 자연수입니다.</li>
+  <li>arr은 길이 1이상, 15이하인 배열입니다.</li>
+  <li>arr의 원소는 100 이하인 자연수입니다.</li>
 </ul>
 
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+<h2 id="-나의-풀이">📄 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">gcd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">));</span>
+  <span class="kd">const</span> <span class="nx">lcm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
 
-  <span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-
-  <span class="kd">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span><span class="p">,</span> <span class="nx">sum</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">depth</span> <span class="o">===</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">sum</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-      <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">depth</span><span class="p">]);</span>
-    <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">-</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">depth</span><span class="p">]);</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">sortedArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span> <span class="o">=</span> <span class="nf">lcm</span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span> <span class="nx">sortedArr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>이번 문제는 dfs알고리즘을 이용해서 재귀함수를 만들어 풀었습니다.</p>
+<blockquote>
+  <p><strong>📌 유클리드 호제법이란?</strong>
+유클리드 호제법은 나눗셈을 반복해서 두 수의 최대공약수를 구하는 알고리즘입니다.
+두 수 A와 B의 나머지가 r일때, gcd(A, B) = gcd(B, r)입니다.
+r이 0이라면 최대공약수는 B가 되고, 아니라면 gcd(B, r)을 계산합니다.</p>
+</blockquote>
 
 <ol>
-  <li>함수 dfs는 주어진 숫자의 개수만큼 깊이가 길어지면 리턴한다. 이때 노드의 충합이 target과 같다면 answer에 1을 더한다.</li>
-  <li>1번의 조건과 만족하지 않는다면 <code class="language-plaintext highlighter-rouge">depth</code>에 1을 더하고 number의 요소가 음수인 경우를 포함해 구하기 때문에 재귀함수를 두번 호출한다.</li>
+  <li>최대공배수는 <code class="language-plaintext highlighter-rouge">두수를 곱한 값 / 최대 공약수</code>이다.</li>
+  <li>주어진 배열을 오름차순으로 정렬한다.(<code class="language-plaintext highlighter-rouge">sortedArr</code>)</li>
+  <li>초기값이 1인 <code class="language-plaintext highlighter-rouge">answer</code>와 <code class="language-plaintext highlighter-rouge">sortedArr</code>의 요소의 최대공배수를 구해 answer의 값을 변경해준다.</li>
 </ol>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="DFS" /><summary type="html"><![CDATA[모든 경로의 수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 약수의 개수와 덧셈 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98%20%EA%B0%9C%EC%88%98%EC%99%80%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%95%BD%EC%88%98%EC%9D%98-%EA%B0%9C%EC%88%98%EC%99%80-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>두 정수 left와 right가 매개변수로 주어집니다. left부터 right까지의 모든 수들 중에서, 약수의 개수가 짝수인 수는 더하고, 약수의 개수가 홀수인 수는 뺀 수를 return 하도록 solution 함수를 완성해주세요.</p>
-
-<ul>
-  <li>1 ≤ left ≤ right ≤ 1,000</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">left</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="nx">j</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">answer</span> <span class="o">=</span> <span class="nx">count</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">answer</span> <span class="o">+</span> <span class="nx">i</span> <span class="p">:</span> <span class="nx">answer</span> <span class="o">-</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>중첩 반복문을 생성해 모든 경우를 계산하고,</p>
-
-<p>약수의 개수가 짝수일 경우에는 합, 홀수인 경우에는 차를 계산해 answer를 반환했습니다.</p>
 
 <h2 id="-best-practice">👍 Best Practice</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">left</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nf">isInteger</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="nx">i</span><span class="p">)))</span> <span class="p">{</span>
-      <span class="nx">answer</span> <span class="o">-=</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">nlcm</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="p">?</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">)</span> <span class="p">:</span> <span class="nx">b</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>이 풀이는 <strong>제곱근이 정수이면, 약수의 개수는 홀수이다</strong>라는 공식을 이용한 풀이입니다.</p>
+<p>for문 대신 reduce 메소드를 사용해 가독성을 높인 풀이입니다.</p>
+
+<p>이 풀이에서는 누적값 <code class="language-plaintext highlighter-rouge">a</code>가 answer이 되었습니다.</p>
 
 <h2 id="문제-출처">문제 출처</h2>
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="약수" /><summary type="html"><![CDATA[약수 구하기]]></summary></entry><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="유클리드 호제법" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법을 이용해 최소공배수 구하기]]></summary></entry><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
 
 <p>여러개체들이 연결되어 있는 자료구조에서 특정 개체를 찾는 알고리즘을 그래프 탐색 알고리즘이라고 합니다.</p>
 
@@ -546,127 +585,108 @@ r이 0이라면 최대공약수는 B가 되고, 아니라면 gcd(B, r)을 계산
 
 <span class="c1">// BFS 실행 예시</span>
 <span class="nf">bfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 1 2 3 4 5 6 순서로 출력 또는 원하는 작업 수행</span>
-</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="DFS" /><category term="BPS" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 문자열 내림차순으로 배치하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 문자열 내림차순으로 배치하기 by JS" /><published>2023-04-21T00:00:00+09:00</published><updated>2023-04-21T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="DFS" /><category term="BPS" /></entry><entry><title type="html">[메세지가 도착했습니다] 컴포넌트 겹침 현상 해결하기</title><link href="http://localhost:4000/random-message/random-message-CSS-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 컴포넌트 겹침 현상 해결하기" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-CSS%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-CSS-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-css-레이아웃-문제-발생">🚨 CSS 레이아웃 문제 발생</h2>
 
-<p>문자열 s에 나타나는 문자를 큰것부터 작은 순으로 정렬해 새로운 문자열을 리턴하는 함수, solution을 완성해주세요.
-s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보다 작은 것으로 간주합니다.</p>
+<p>데스크탑 환경에서는 몰랐지만 배포하고 모바일에서 테스트해보니 Footer가 되는 컴포넌트가 다른 컴포넌트와 겹치는 현상이 발생했습니다.</p>
 
-<ul>
-  <li>str은 길이 1 이상인 문자열입니다.</li>
-</ul>
+<p><img src="https://user-images.githubusercontent.com/56298540/233956639-26067272-4798-4e1b-ba34-077c7a0d73a4.png" alt="image" /></p>
 
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+<p>아무래도 Footer컴포넌트가 항상 밑에만 있으면 된다는 생각에 position설정을 absolute로 줘서 그런것 같습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">[...</span><span class="nx">s</span><span class="p">].</span><span class="nf">sort</span><span class="p">().</span><span class="nf">reverse</span><span class="p">().</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+<p>뷰포트 높이의 길이는 한정되어 있는데 모바일 화면은 데스크탑보다 작으니 자리가 고정되어 있는 Footer컴포넌트가 밀리지 않고 겹쳐지게 됩니다.</p>
+
+<h2 id="-문제를-해결해보자">🔨 문제를 해결해보자</h2>
+
+<p>우선 Footer CSS를 변경하겠습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.footer</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">650px</span><span class="p">;</span>
+  <span class="err">//</span> <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span> <span class="err">🔨</span>
+  <span class="err">//</span> <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="err">🔨</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+
+  <span class="err">.github__link</span> <span class="err">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">text-decoration-line</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="err">$</span><span class="n">text-dark1</span><span class="p">;</span>
+    <span class="err">&amp;:hover</span> <span class="err">{</span>
+      <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<p>해당 부분을 주석으로 없앴더니 다른 문제가 발생합니다.</p>
+
+<p>아예 페이지 바깥으로 컨텐츠가 탈출해버렸습니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/233959070-e5a521ab-884f-4545-aece-65fcf4294a50.png" alt="image" /></p>
+
+<p>이렇게 컨텐츠가 넘치는 현상을 막기 위해 페이지 컴포넌트에 <code class="language-plaintext highlighter-rouge">overflow: auto</code>를 추가합니다.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.start__container</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">set-box-size</span><span class="p">();</span>
+  <span class="k">@include</span> <span class="nd">set-center-aligned</span><span class="p">;</span>
+  <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$main-color</span><span class="p">;</span>
+
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="c1">// 🎉</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>구조분해 + 메소드 체이닝을 통해 풀었습니다.</p>
+<p><img src="https://user-images.githubusercontent.com/56298540/233959941-dcbd1bc5-3670-4072-bb87-ffa6391c33cd.png" alt="image" /></p>
 
-<ol>
-  <li>문자열을 배열로 바꾼다. <code class="language-plaintext highlighter-rouge">[...s]</code></li>
-  <li>정렬한다. <code class="language-plaintext highlighter-rouge">sort()</code></li>
-  <li>역순으로 배치한다. <code class="language-plaintext highlighter-rouge">reverse()</code></li>
-  <li>다시 문자열로 바꿔 리턴한다. <code class="language-plaintext highlighter-rouge">join()</code></li>
-</ol>
+<p>이제 더이상 컴포넌트끼리 겹치지도, 컨텐츠가 페이지 밖으로 튀어나오지도 않습니다 :)</p>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="CSS" /><category term="레이아웃" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 타겟 넘버 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 타겟 넘버 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F%20%EB%84%98%EB%B2%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
-<h2 id="문제-출처">문제 출처</h2>
+<p>n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다. 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
 
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="ceil" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 점프와 순간 이동 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 점프와 순간 이동 by JS" /><published>2023-04-21T00:00:00+09:00</published><updated>2023-04-21T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80%20%EC%88%9C%EA%B0%84%20%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1+1+1+1+1 = 3
++1-1+1+1+1 = 3
++1+1-1+1+1 = 3
++1+1+1-1+1 = 3
++1+1+1+1-1 = 3
+</code></pre></div></div>
 
-<p>OO 연구소는 한 번에 K 칸을 앞으로 점프하거나, (현재까지 온 거리) x 2 에 해당하는 위치로 순간이동을 할 수 있는 특수한 기능을 가진 아이언 슈트를 개발하여 판매하고 있습니다. 이 아이언 슈트는 건전지로 작동되는데, 순간이동을 하면 건전지 사용량이 줄지 않지만, 앞으로 K 칸을 점프하면 K 만큼의 건전지 사용량이 듭니다. 그러므로 아이언 슈트를 착용하고 이동할 때는 순간 이동을 하는 것이 더 효율적입니다. 아이언 슈트 구매자는 아이언 슈트를 착용하고 거리가 N 만큼 떨어져 있는 장소로 가려고 합니다. 단, 건전지 사용량을 줄이기 위해 점프로 이동하는 것은 최소로 하려고 합니다. 아이언 슈트 구매자가 이동하려는 거리 N이 주어졌을 때, 사용해야 하는 건전지 사용량의 최솟값을 return하는 solution 함수를 만들어 주세요.</p>
-
-<p>예를 들어 거리가 5만큼 떨어져 있는 장소로 가려고 합니다.
-아이언 슈트를 입고 거리가 5만큼 떨어져 있는 장소로 갈 수 있는 경우의 수는 여러 가지입니다.</p>
+<p>사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.</p>
 
 <ul>
-  <li>처음 위치 0 에서 5 칸을 앞으로 점프하면 바로 도착하지만, 건전지 사용량이 5 만큼 듭니다.</li>
-  <li>처음 위치 0 에서 2 칸을 앞으로 점프한 다음 순간이동 하면 (현재까지 온 거리 : 2) x 2에 해당하는 위치로 이동할 수 있으므로 위치 4로 이동합니다. 이때 1 칸을 앞으로 점프하면 도착하므로 건전지 사용량이 3 만큼 듭니다.</li>
-  <li>처음 위치 0 에서 1 칸을 앞으로 점프한 다음 순간이동 하면 (현재까지 온 거리 : 1) x 2에 해당하는 위치로 이동할 수 있으므로 위치 2로 이동됩니다. 이때 다시 순간이동 하면 (현재까지 온 거리 : 2) x 2 만큼 이동할 수 있으므로 위치 4로 이동합니다. 이때 1 칸을 앞으로 점프하면 도착하므로 건전지 사용량이 2 만큼 듭니다.</li>
-</ul>
-
-<p>위의 3가지 경우 거리가 5만큼 떨어져 있는 장소로 가기 위해서 3번째 경우가 건전지 사용량이 가장 적으므로 답은 2가 됩니다.</p>
-
-<ul>
-  <li>숫자 N: 1 이상 10억 이하의 자연수</li>
-  <li>숫자 K: 1 이상의 자연수</li>
+  <li>주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
+  <li>각 숫자는 1 이상 50 이하인 자연수입니다.</li>
+  <li>타겟 넘버는 1 이상 1000 이하인 자연수입니다.</li>
 </ul>
 
 <h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">while </span><span class="p">(</span><span class="nx">n</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">n</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-      <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+
+  <span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span><span class="p">,</span> <span class="nx">sum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">depth</span> <span class="o">===</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="nx">sum</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
+
+    <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">depth</span><span class="p">]);</span>
+    <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">-</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">depth</span><span class="p">]);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>시각을 시작점이 아닌 도착점으로 돌려 시작했습니다.</p>
+<p>이번 문제는 dfs알고리즘을 이용해서 재귀함수를 만들어 풀었습니다.</p>
 
 <ol>
-  <li>순간이동 =&gt; 2로 나눌 수 있음</li>
-  <li>점프 &gt; 순간이동으로 안되는 거리 = 2로 나누어 나머지가 나오는 경우 =&gt; 다시 남은 거리에 +1을 해준다.</li>
-  <li>남은 거리가 0이 될때까지 반복</li>
+  <li>함수 dfs는 주어진 숫자의 개수만큼 깊이가 길어지면 리턴한다. 이때 노드의 충합이 target과 같다면 answer에 1을 더한다.</li>
+  <li>1번의 조건과 만족하지 않는다면 <code class="language-plaintext highlighter-rouge">depth</code>에 1을 더하고 number의 요소가 음수인 경우를 포함해 구하기 때문에 재귀함수를 두번 호출한다.</li>
 </ol>
 
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">n</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">match</span><span class="p">(</span><span class="sr">/1/g</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>어떤 값을 2로 계속 나누었을 때 나오는 나머지의 모든 합 = 어떤 값을 이진수로 변환한 수의 1의 개수</p>
-
-<p>위 공식을 이용하면 더 간단히 풀 수 있는 문제였습니다.</p>
-
 <h2 id="문제-출처">문제 출처</h2>
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="이진수" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 내적 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 내적 by JS" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%82%B4%EC%A0%81/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.</p>
-
-<p>이때, a와 b의 내적은 a[0]<em>b[0] + a[1]</em>b[1] + … + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)</p>
-
-<ul>
-  <li>a, b의 길이는 1 이상 1,000 이하입니다.</li>
-  <li>a, b의 모든 수는 -1,000 이상 1,000 이하입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">return </span><span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">cur</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span>
-  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>reduce함수를 사용해 배열 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">b</code>의 같은 인덱스끼리의 합을 구해 반환했습니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">acc</span> <span class="o">+=</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">]),</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>reduce 함수를 사용할때 사용하지 않는 인자일 경우 <code class="language-plaintext highlighter-rouge">_</code>를 사용해 표현해주는 방법도 있습니다 :)</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="reduce" /><summary type="html"><![CDATA[reduce함수 활용해 두 배열의 합 구하기]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="DFS" /><summary type="html"><![CDATA[모든 경로의 수 구하기]]></summary></entry></feed>
