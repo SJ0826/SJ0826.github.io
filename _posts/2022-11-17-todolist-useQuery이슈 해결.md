@@ -7,7 +7,7 @@ sidebar:
   nav: "docs"
 
 categories:
-  - TodoList-Project
+  - React
 tags:
   - ["TodoList", "react-query", "useQuery", "에러"]
 last_modified_at: 2022-11-27T08:06:00-05:00
