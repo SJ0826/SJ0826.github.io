@@ -1,4 +1,394 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-28T19:34:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-05T19:13:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 시저 암호 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 시저 암호 by JS" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.</p>
+
+<ul>
+  <li>공백은 아무리 밀어도 공백입니다.</li>
+  <li>s는 알파벳 소문자, 대문자, 공백으로만 이루어져 있습니다.</li>
+  <li>s의 길이는 8000이하입니다.</li>
+  <li>n은 1 이상, 25이하인 자연수입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">MINCODE</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">MAXCODE</span> <span class="o">=</span> <span class="mi">122</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="kd">let</span> <span class="nx">store</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
+      <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()[</span><span class="nx">i</span><span class="p">].</span><span class="nf">charCodeAt</span><span class="p">()</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">store</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">)</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span> <span class="o">-</span> <span class="nx">MAXCODE</span> <span class="o">+</span> <span class="nx">MINCODE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nf">fromCharCode</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nf">toUpperCase</span><span class="p">())</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span>
+    <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>문자열의 아스키 코드를 구하고 n만큼 더한다.</li>
+  <li>만약 더한 값이 122보다 크다면 더한 값 - 122 + 97 - 1 을 해준다.</li>
+  <li>해당 문자열이 대문자인지 확인 후 값을 변환한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">upper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">lower</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abcdefghijklmnopqrstuvwxyz</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">answer</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">;</span>
+      <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">textArr</span> <span class="o">=</span> <span class="nx">upper</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">?</span> <span class="nx">upper</span> <span class="p">:</span> <span class="nx">lower</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">index</span> <span class="o">&gt;=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="nx">index</span> <span class="o">-=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">textArr</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>아스키코드가 아닌 배열로 작성한 풀이입니다.</p>
+
+<ol>
+  <li>우선, 주어진 문자열을 순환할때 해당 문자열이 소문자인지 대문자인지 확인합니다. (<code class="language-plaintext highlighter-rouge">textArr</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">textArr</code>에 해당 문자열의 인덱스를 구한 후 n만큼 더합니다.</li>
+  <li>만약 <code class="language-plaintext highlighter-rouge">textArr</code>의 길이보다 길어질 경우 그만큼 값을 빼서 정확한 위치를 구합니다.</li>
+</ol>
+
+<p>아스키코드를 사용한 풀이보다 오히려 가독성이 좋은 것 같습니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="아스키 코드" /><category term="배열" /></entry><entry><title type="html">[React] 리액트 쿼리</title><link href="http://localhost:4000/react/react-reactquery/" rel="alternate" type="text/html" title="[React] 리액트 쿼리" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/react/react-reactquery</id><content type="html" xml:base="http://localhost:4000/react/react-reactquery/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/236417752-b3d3dad8-8f8d-472b-b553-9254d4ff4ddc.png" alt="image" /></p>
+
+<h2 id="-리액트-쿼리-공부를-시작한-이유">📄 리액트 쿼리 공부를 시작한 이유</h2>
+
+<p>프로젝트를 진행할 때, 상태관리를 위해 redux를 사용하는데 서버 데이터를 위한 로직이 과도하게 커져 상태를 관리하기가 어려웠습니다.</p>
+
+<p>Redux-thunk를 사용하긴 했지만 이또한 store가 비대해져 한번에 관리하는게 맞는지 의문이 들었습니다.</p>
+
+<p>그래서 리액트 쿼리를 이용해 서버에서 오는 데이터는 따로 관리해보고자 공부를 시작하게 되었습니다.</p>
+
+<h2 id="-리액트-쿼리란">📄 리액트 쿼리란?</h2>
+
+<ul>
+  <li>
+    <p>역할: <strong>서버의 상태를 관리</strong>하는 리액트 라이브러리</p>
+  </li>
+  <li>
+    <p>특징</p>
+    <ul>
+      <li>서버에서 오는 데이터 전송 결과에 따라 비동기 처리 로직이 가능하다.</li>
+      <li>서버의 데이터에 변경이 생기면 클라이언트가 다시 데이터를 가져오지 않아도 알아서 업데이트 된다.</li>
+      <li>데이터를 캐시해서 전달할 수 있다.</li>
+      <li>데이터에 만료시간을 정할 수 있다. -&gt; 만료되지 않은 데이터는 refetching해도 변경이 적용되지 않을 수 있게 설정할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="-리액트-쿼리-개발자-도구-사용하기">📄 리액트 쿼리 개발자 도구 사용하기</h2>
+
+<ul>
+  <li>방법: <code class="language-plaintext highlighter-rouge">QueryClientProvider</code>태그 안에 <code class="language-plaintext highlighter-rouge">ReactQueryDevtools</code>를 작성한다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">return </span><span class="p">(</span>
+    <span class="c1">// provide React Query client to App</span>
+    <span class="o">&lt;</span><span class="nx">QueryClientProvider</span> <span class="nx">client</span><span class="o">=</span><span class="p">{</span><span class="nx">qeuryClient</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Blog</span> <span class="nx">Posts</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Posts</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">ReactQueryDevtools</span> <span class="o">/&gt;</span> <span class="c1">// 🎉</span>
+    <span class="o">&lt;</span><span class="sr">/QueryClientProvider</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">ReactQueryDevtools</code>를 추가하면 해당 태그가 있는 페이지의 위치에 리액트 쿼리 개발자 도구가 생성됩니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/236421070-48da8913-b162-4769-8bae-7ea6a2b7e876.png" alt="image" /></p>
+
+<p>개발자 도구를 통해 데이터가 서버로부터 로딩중인지, 만료된 데이터인지 등등 다양한 정보를 제공받고, Actions 탭에서는 데이터관련 작업을 실행할 수 있습니다.</p>
+
+<h2 id="-리액트-쿼리-시작하기">📄 리액트 쿼리 시작하기</h2>
+
+<p>리액트 쿼리를 사용하기 위해서는 여느 상태관리 라이브러리처럼 최상단 컴포넌트인 App.jsx에서 Provider 컴포넌트를 설정해야 합니다.</p>
+
+<ul>
+  <li>QueryClient: 캐싱기능과 기본 옵션을 자녀 컴포넌트에서도 사용할 수 있게 해준다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">qeuryClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">QueryClient</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">return </span><span class="p">(</span>
+    <span class="c1">// provide React Query client to App</span>
+    <span class="o">&lt;</span><span class="nx">QueryClientProvider</span> <span class="nx">client</span><span class="o">=</span><span class="p">{</span><span class="nx">qeuryClient</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Blog</span> <span class="nx">Posts</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Posts</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">ReactQueryDevtools</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/QueryClientProvider</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-stale-time">📄 stale Time?</h2>
+
+<ul>
+  <li>뜻: 리액트 쿼리가 가져오는 데이터의 만료 시간 (기본 값: 0)</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>🎲 key point</td>
+      <td>데이터는 만료되었을 때만 리페칭이 가능하다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>리액트 쿼리는 만료 시간을 기본 값으로 0을 설정해 클라이언트가 만료된 데이터를 제공받을 가능성을 낮추어 줍니다.</p>
+
+<p>만약 데이터의 만료시간을 5초로 설정했을 경우, 처음 데이터를 fetching 한 후 5초안에 데이터를 refetching했을 때 만료시간이 다 되지 않았으므로 데이터는 update되지 않습니다.</p>
+
+<h2 id="-로딩-상태와-에러상태-처리하기">📄 로딩 상태와 에러상태 처리하기</h2>
+
+<p>리액트 쿼리로 서버의 데이터를 가져오기 위해 <code class="language-plaintext highlighter-rouge">useQeury</code>라는 키워드를 사용합니다.</p>
+
+<ul>
+  <li>인자 1: 쿼리 키 (<code class="language-plaintext highlighter-rouge">post</code>): 서버에서 가져오는 데이터에 이름을 부여</li>
+  <li>인자 2: 쿼리 함수 (<code class="language-plaintext highlighter-rouge">fetchPosts</code>): 서버에서 데이터를 가져오는 로직을 작성 (비동기)</li>
+  <li>인자 3: 옵션 (<code class="language-plaintext highlighter-rouge">{ staleTime: 2000}</code>): 만료시간을 2초로 설정</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">isError</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchPosts</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">staleTime</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3>▪ 로딩 상태 처리하기</h3>
+
+<p>useQuery로 가져온 쿼리 데이터 posts를 구조분해해서 나온 isLoading을 활용하여 로딩이 되는 중이라면, <code class="language-plaintext highlighter-rouge">Loading...</code>을 화면에 보여줍니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h3&gt;</span><span class="err">;
+</span></code></pre></div></div>
+
+<h4>📌 isLoading과 isFetching의 차이점</h4>
+
+<ul>
+  <li>isFetching: 비동기 쿼리 함수가 해결되지 않았을 때 (데이터를 가져오는 중일 때)</li>
+  <li>isLoading: 비동기 쿼리 함수가 해결되지 않았을 때 (데이터를 가져오는 중일 때) + 쿼리에 대해 캐시된 데이터가 없을 때 (isFetching의 하위 집합)</li>
+</ul>
+
+<h3>▪ 에러 상태 처리하기</h3>
+
+<p>리액트 쿼리는 데이터를 가져올 때 fetching이 성공될 때까지 <strong>세번의 로딩 시도</strong>후 안되면 에러라고 판단합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="nx">isError</span><span class="p">)</span>
+  <span class="nf">return </span><span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Oops</span><span class="p">,</span> <span class="nx">something</span> <span class="nx">went</span> <span class="nx">wrong</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nf">toString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="react-query" /><summary type="html"><![CDATA[유데미 리액트 쿼리 인강 듣고 정리한 기록]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 예산 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 예산 by JS" /><published>2023-05-04T00:00:00+09:00</published><updated>2023-05-04T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>S사에서는 각 부서에 필요한 물품을 지원해 주기 위해 부서별로 물품을 구매하는데 필요한 금액을 조사했습니다. 그러나, 전체 예산이 정해져 있기 때문에 모든 부서의 물품을 구매해 줄 수는 없습니다. 그래서 최대한 많은 부서의 물품을 구매해 줄 수 있도록 하려고 합니다.</p>
+
+<p>물품을 구매해 줄 때는 각 부서가 신청한 금액만큼을 모두 지원해 줘야 합니다. 예를 들어 1,000원을 신청한 부서에는 정확히 1,000원을 지원해야 하며, 1,000원보다 적은 금액을 지원해 줄 수는 없습니다.</p>
+
+<p>부서별로 신청한 금액이 들어있는 배열 d와 예산 budget이 매개변수로 주어질 때, 최대 몇 개의 부서에 물품을 지원할 수 있는지 return 하도록 solution 함수를 완성해주세요.</p>
+
+<ul>
+  <li>d는 부서별로 신청한 금액이 들어있는 배열이며, 길이(전체 부서의 개수)는 1 이상 100 이하입니다.</li>
+  <li>d의 각 원소는 부서별로 신청한 금액을 나타내며, 부서별 신청 금액은 1 이상 100,000 이하의 자연수입니다.</li>
+  <li>budget은 예산을 나타내며, 1 이상 10,000,000 이하의 자연수입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">budget</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">d</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">budget</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">budget</span> <span class="o">-</span> <span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+    <span class="nx">budget</span> <span class="o">=</span> <span class="nx">budget</span> <span class="o">-</span> <span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>배열을 오름차순으로 정리한다.</li>
+  <li>budget이 0이 될 때까지 배열 d의 값을 하나씩 뺀다.</li>
+  <li>예산을 뺀 값이 마이너스가 되면 for문을 종료한다.</li>
+  <li>부서가 한개인 경우 조건(<code class="language-plaintext highlighter-rouge">budget - d[i] &lt; 0</code>)을 걸어 for문을 종료한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">budget</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">d</span>
+    <span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">count</span><span class="p">,</span> <span class="nx">price</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">count</span> <span class="o">+</span> <span class="p">((</span><span class="nx">budget</span> <span class="o">-=</span> <span class="nx">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>sort와 reduce 메소드를 연달아 사용한 풀이입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">((budget -= price) &gt;= 0)</code>결과에 따라 0 또는 1이 되네요.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 이상한 문자 만들기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 이상한 문자 만들기 by JS" /><published>2023-04-30T00:00:00+09:00</published><updated>2023-04-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%9D%B4%EC%83%81%ED%95%9C%20%EB%AC%B8%EC%9E%90%20%EB%A7%8C%EB%93%A4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다. 각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요.</p>
+
+<ul>
+  <li>문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다.</li>
+  <li>첫 번째 글자는 0번째 인덱스로 보아 짝수번째 알파벳으로 처리해야 합니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">newS</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">).</span><span class="nf">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[...</span><span class="nx">value</span><span class="p">]</span>
+      <span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">char</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nf">return </span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">char</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()</span> <span class="p">:</span> <span class="nx">char</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">newS</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>단어 <code class="language-plaintext highlighter-rouge">s</code>를 공백을 기준으로 잘라 배열을 생성한다.(<code class="language-plaintext highlighter-rouge">newS</code>)</li>
+  <li>주어진 조건에 맞게 단어를 배열로 만든 후 각 글자를 대문자 또는 소문자로 변환하고 다시 문자열로 만든다.</li>
+</ol>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toUpperCase()" /><category term="toLowerCase()" /><summary type="html"><![CDATA[문자열 홀짝 기준으로 대문자/소문자 만들기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 3진법 뒤집기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95-%EB%92%A4%EC%A7%91%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 3진법 뒤집기 by JS" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95%20%EB%92%A4%EC%A7%91%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95-%EB%92%A4%EC%A7%91%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.</p>
+
+<ul>
+  <li>n은 1 이상 100,000,000 이하인 자연수입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">parseInt</span><span class="p">([...</span><span class="nx">n</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">3</span><span class="p">)].</span><span class="nf">reverse</span><span class="p">().</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">),</span> <span class="mi">3</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>toString에 들어가는 인자는 적용한 숫자를 n진법으로 나타낼 때 사용합니다.</p>
+
+<p>n.toString(3)은 숫자 n을 3진법으로 변환한다는 뜻입니다.</p>
+
+<p>3진법으로 변환한 숫자 n을 spread연산자로 배열에 담아 뒤집은뒤 다시 문자열로 변환했습니다.</p>
+
+<p>parseInt의 두번째 인자에는 해당 값이 몇진법인지 나타내는 숫자를 입력합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">parseInt([...n.toString(3)].reverse().join(""), 3)</code>는 앞뒤 반전한 3진법을 다시 10진법으로 변환해주는 역할을 합니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toString" /><category term="parseInt" /><summary type="html"><![CDATA[toString()으로 n진법 나타내기]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 모코숲 뜯어고치기 시작</title><link href="http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0-%EC%8B%9C%EC%9E%91/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 모코숲 뜯어고치기 시작" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2%20%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%8B%9C%EC%9E%91</id><content type="html" xml:base="http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0-%EC%8B%9C%EC%9E%91/"><![CDATA[<h2 id="-나는-왜-이-프로젝트를-처음부터-뜯어고치는-재공사를-시작하는가">📄 나는 왜 이 프로젝트를 처음부터 뜯어고치는 재공사를 시작하는가</h2>
+
+<p>모코숲은 나의 애증의 프로젝트..</p>
+
+<p>백엔드를 담당하시는 분과 todolist이후 처음으로 진행하는 프로젝트이다.</p>
+
+<p>처음으로 여러가지 기능을 만들다보니 제대로 꼬여버렸다.</p>
+
+<p>신나서 막 짓고 쌓다보니 새로운 기능을 추가하기도 참 어렵게 되었다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/235301875-9cc90398-e28a-4f67-b5c8-ac450e3f989e.png" alt="image" /></p>
+
+<p><img src="https://user-images.githubusercontent.com/56298540/235301888-c1f717a4-06e2-4c6f-98d3-08774df69fe5.png" alt="image" /></p>
+
+<p>굉장히 많은 오류들이 있었다.</p>
+
+<p>cors 에러 + 레이아웃 우장창 + 알 수 없는 렌더링 등등…</p>
+
+<p>할 건 많은데 다른 일까지 겹쳐서 다시 손대기가 굉장히 두려운 프로젝트다.</p>
+
+<p>일단 프로젝트를 다시 시작해야하는 이유는 다음과 같다</p>
+
+<h3 id="1-꼬여버린-레이아웃">1. 꼬여버린 레이아웃</h3>
+
+<p>사실 레이아웃 같은걸 투두리스트말고 만들어봤어야지 아무것도 모르는 상태에서 제대로 된 틀을 설정하지 않고 시작해 페이지를 받쳐주는 틀이 엉망이 되었다. 사실 그래서 모 인강사이트에서 개발자도구를 켜서 참고하면서 했는데 하다보니 내 코드가 아니게 되어 스타일이 이상해졌을 때 어떻게 손대야 할지 감이 안잡혔다.</p>
+
+<h3 id="2-사용자-접근성-고려">2. 사용자 접근성 고려</h3>
+
+<p>현재 진행되어 있는 프로젝트는 로그인/회원가입이 안되어 있으면 메인페이지에 접근하지 못한다. URL로 접근하더라도 라우터가 튕겨보낸다.</p>
+
+<p>백엔드 개발자 분에게 웹 성격 특성상 서비스를 먼저 둘러보는 것이 사용자 접근에 더 좋을 것이라는 피드백을 들었다. 맨 처음 접속한 페이지를 로그인페이지가 아니라 메인 페이지로 변경하고 public/private 라우터도 싹다 바꿔줄 예정이다.</p>
+
+<h3 id="3-꼬여버린-전역-상태-관리">3. 꼬여버린 전역 상태 관리</h3>
+
+<p>전역 상태 관리가 제대로 꼬였다. 각 state의 성격대로 잘 구분한줄 알았는데 그렇지 않더랬다…
+서버에서 받아온 하나의 데이터를 여러 slice에서 관리하게 되고 이걸 고치자니 아예 로직이 엉켜버렸다.</p>
+
+<h3 id="4-디자인이-마음에-아주-안든다">4. 디자인이 마음에 아주 안든다</h3>
+
+<p>왜 디자인을 이렇게 한건지 모르겠다. 처음 만들때 simple is the best 인것을… 욕심이 과했는지 아니면 너무 많이 봐서 그러는지 모르겠고 프로젝트한테 미안하지만 살짝 어디 내놓기 창피하다.</p>
+
+<h3 id="5-전혀-재사용되고-있지-않는-컴포넌트들">5. 전혀 재사용되고 있지 않는 컴포넌트들</h3>
+
+<p>컴포넌트를 재사용하지 않으면 리액트를 왜 사용할까…🥶 props나 state다루는 것이 익숙하지 않으니 컴포넌트를 재사용하는 것이 거의 없다. 지금은 이걸 좀 공부하기 위해 다른 사람이 만든 프로젝트(예. sendbird)를 열어보며 어렵지만 감을 잡아가고 있는 중이다. 이것을 토대로 프로젝트 설계를 다시 할 예정이다.</p>
+
+<h2 id="️-결론">🏃‍♀️ 결론!</h2>
+
+<p>조급하지 말자.</p>
+
+<p>할게 쌓여 있으면 불안한 내 성격이 프로젝트를 망쳤다.</p>
+
+<p>하나의 기능을 만들더라도 차분하게 설계하고 시작하자.</p>
+
+<h2 id="-목표">🍀 목표</h2>
+
+<ol>
+  <li>피그마로 스타일 설계 진행하기</li>
+  <li>디자인은 심플하게. 난 디자인 전공이 아니다. 슬프다.</li>
+  <li>버그를 미루지 말자. 미루면 눈덩이처럼 증가해서 굉장히 힘들다.</li>
+  <li>구글링하고 남의 코드를 참고하되 된다고 끝내지말고 공부해서 내것으로 만들어 나중에 오류가 발생해도 당황하지 말자.</li>
+  <li>힘내자…</li>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="재시작" /><summary type="html"><![CDATA[애증의 프로젝트 모코숲 다시 뜯어고치기 시작]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.</p>
 
@@ -37,7 +427,60 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="최대공약수" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법으로 최대공약수와 최소공배수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 행렬의 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 행렬의 덧셈 by JS" /><published>2023-04-27T00:00:00+09:00</published><updated>2023-04-27T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="최대공약수" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법으로 최대공약수와 최소공배수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 멀리 뛰기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 멀리 뛰기 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-26T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4%20%EA%B3%A0%EB%A5%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>경화는 과수원에서 귤을 수확했습니다. 경화는 수확한 귤 중 ‘k’개를 골라 상자 하나에 담아 판매하려고 합니다. 그런데 수확한 귤의 크기가 일정하지 않아 보기에 좋지 않다고 생각한 경화는 귤을 크기별로 분류했을 때 서로 다른 종류의 수를 최소화하고 싶습니다.</p>
+
+<p>예를 들어, 경화가 수확한 귤 8개의 크기가 [1, 3, 2, 5, 4, 5, 2, 3] 이라고 합시다. 경화가 귤 6개를 판매하고 싶다면, 크기가 1, 4인 귤을 제외한 여섯 개의 귤을 상자에 담으면, 귤의 크기의 종류가 2, 3, 5로 총 3가지가 되며 이때가 서로 다른 종류가 최소일 때입니다.</p>
+
+<p>경화가 한 상자에 담으려는 귤의 개수 k와 귤의 크기를 담은 배열 tangerine이 매개변수로 주어집니다. 경화가 귤 k개를 고를 때 크기가 서로 다른 종류의 수의 최솟값을 return 하도록 solution 함수를 작성해주세요.</p>
+
+<ul>
+  <li>1 ≤ k ≤ tangerine의 길이 ≤ 100,000</li>
+  <li>1 ≤ tangerine의 원소 ≤ 10,000,000</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">tangerine</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">tangerineObject</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nx">tangerine</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">tangerineObject</span><span class="p">[</span><span class="nx">value</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">tangerineObject</span><span class="p">[</span><span class="nx">value</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">tangerineNum</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">values</span><span class="p">(</span><span class="nx">tangerineObject</span><span class="p">).</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">);</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">acc</span> <span class="o">&lt;</span> <span class="nx">k</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+    <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">tangerineNum</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">tangerine</code>배열에서 과일이름이 중복된 횟수를 계산해 새로운 객체 <code class="language-plaintext highlighter-rouge">tangerineObject</code>에 이름과 과일의 개수를 매칭해 저장한다.</li>
+  <li>과일 개수를 내림차순으로 정렬해 배열에 저장한다.(<code class="language-plaintext highlighter-rouge">tangerineNum</code>)</li>
+  <li>정렬된 배열에서 앞에서부터 k개의 요소를 더하여, 그 합이 k이상이되는 최소값을 구한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">tangerine</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">tDict</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nx">tangerine</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">tDict</span><span class="p">[</span><span class="nx">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">tDict</span><span class="p">[</span><span class="nx">t</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+  <span class="kd">const</span> <span class="nx">tArr</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">values</span><span class="p">(</span><span class="nx">tDict</span><span class="p">).</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">);</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">t</span> <span class="k">of</span> <span class="nx">tArr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">k</span> <span class="o">&gt;</span> <span class="nx">t</span><span class="p">)</span> <span class="nx">k</span> <span class="o">-=</span> <span class="nx">t</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>최솟값을 구할때 저는 변수(<code class="language-plaintext highlighter-rouge">acc</code>)를 선언해 누적값을 구했는데, 이 풀이에서는 따로 변수를 선언하지 않고 주어진 <code class="language-plaintext highlighter-rouge">k</code>에서 값을 빼주며 0이 되었을 때 반복문을 나오게 했습니다 👍</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 행렬의 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 행렬의 덧셈 by JS" /><published>2023-04-27T00:00:00+09:00</published><updated>2023-04-27T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.</p>
 
@@ -134,559 +577,4 @@ n이 6일 경우 -&gt; 13<br /></p>
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 문자열 다루기 기본 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0-%EA%B8%B0%EB%B3%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 문자열 다루기 기본 by JS" /><published>2023-04-26T00:00:00+09:00</published><updated>2023-04-26T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%8B%A4%EB%A3%A8%EA%B8%B0%20%EA%B8%B0%EB%B3%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0-%EA%B8%B0%EB%B3%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>문자열 s의 길이가 4 혹은 6이고, 숫자로만 구성돼있는지 확인해주는 함수, solution을 완성하세요. 예를 들어 s가 “a234”이면 False를 리턴하고 “1234”라면 True를 리턴하면 됩니다.</p>
-
-<ul>
-  <li>s는 길이 1 이상, 길이 8 이하인 문자열입니다.</li>
-  <li>s는 영문 알파벳 대소문자 또는 0부터 9까지 숫자로 이루어져 있습니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">4</span> <span class="o">||</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">6</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nc">Number</span><span class="p">(</span><span class="nx">s</span><span class="p">));</span>
-  <span class="k">return</span> <span class="o">!</span><span class="nf">isNaN</span><span class="p">(</span><span class="nc">Number</span><span class="p">(</span><span class="nx">s</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>처음에 주어진 문자열 전체를 숫자로 바꿨는데 테스트 케이스 오류가 발생했습니다.</p>
-
-<p>알고보니 문자 <code class="language-plaintext highlighter-rouge">e</code>가 포함되면 Number()가 지수로 인식해 <code class="language-plaintext highlighter-rouge">e</code>를 숫자로 판별했던 것이었습니다.</p>
-
-<p>따라서 for문을 돌려 문자 하나하나에 Number()를 적용해주어야 했습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">6</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nf">isNaN</span><span class="p">(</span><span class="nc">Number</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">])))</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>문자열에 Number() 메소드를 적용하면 NAN이 되니, isNaN()을 사용해 이를 판별했습니다.</p>
-
-<p>isNaN을 !!isNaN으로 사용하면 더 간결하겠지만, 주어진 문자열이 “0000”인 경우에는 0도 false로 인식하므로 사용할 수 없었습니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">alpha_string46</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/^</span><span class="se">\d{6}</span><span class="sr">$|^</span><span class="se">\d{4}</span><span class="sr">$/</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="nx">regex</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>정규식을 이용한 풀이입니다.</p>
-
-<p>주어진 문자열이 6개 혹은 4개의 숫자(d)로 이루어져 있는지 바로 확인할 수 있습니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="문자열" /><summary type="html"><![CDATA[문자열이 숫자로만 이루어져 있는지 확인하기]]></summary></entry><entry><title type="html">[메세지가 도착했습니다] Firestore를 사용해 원격으로 DB관리하기</title><link href="http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C-DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] Firestore를 사용해 원격으로 DB관리하기" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C%20DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-FireStore%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EC%9B%90%EA%B2%A9%EC%9C%BC%EB%A1%9C-DB%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-사용-계기">📄 사용 계기</h2>
-
-<p>혼자 간단한 토이프로젝트를 만들게 되었는데, 이때 사용할 REST API를 만들기에는 시간이 부족했습니다.</p>
-
-<p>Firestore를 사용하면 어렵지 않고 빠르게 DB를 만들어 통신할 수 있어 사용하게 되었습니다.</p>
-
-<h2 id="-firestore-db-구조">📄 Firestore DB 구조</h2>
-
-<p>Firebase 페이지에서 Firestore를 생성하면 다음과 같은 DB를 만들 수 있습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/234165551-86d0b88f-9ea8-4214-95a2-2a7dfd35cc7a.png" alt="image" /></p>
-
-<p>제가 사용하고 싶던 기능은 다음과 같습니다.</p>
-
-<ul>
-  <li>메세지 가져오기 (GET)</li>
-  <li>메세지 생성하기 (CREATE)</li>
-  <li>메세지 삭제하기 (DELETE)</li>
-</ul>
-
-<h2 id="-vscode에서-firestore와-통신하기">📄 VSCode에서 Firestore와 통신하기</h2>
-
-<p>프로젝트 설정탭에서 <strong>SDK 설정 및 구성</strong>을 확인하면 제품의 SDK를 확인할 수 있습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/234166648-2d3b993c-fed2-480c-a3fe-77039dbdd355.png" alt="image" /></p>
-
-<h4 id="0-npm-install-firebase">0. npm install firebase</h4>
-
-<h4 id="1-src폴더-내에-firebasejs-파일-생성">1. src폴더 내에 firebase.js 파일 생성</h4>
-
-<p>firestore를 사용해주기 위해 firebase를 초기화 합니다.</p>
-
-<p>저는 SDK를 환경변수로 설정해 가려줬습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">initializeApp</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/app</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">getFirestore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/firestore</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">firebaseConfig</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">apiKey</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_FB_API_KEY</span><span class="p">,</span>
-  <span class="na">authDomain</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_FB_AUTH_DOMAIN</span><span class="p">,</span>
-  <span class="na">projectId</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_FB_PROJECT_ID</span><span class="p">,</span>
-  <span class="na">storageBucket</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_FB_STORAGE_BUCKET</span><span class="p">,</span>
-  <span class="na">messagingSenderId</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_FB_MESSAGING_SENDER_ID</span><span class="p">,</span>
-  <span class="na">appId</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_FB_API_ID</span><span class="p">,</span>
-  <span class="na">measurementId</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_FB_MEASUREMENT_ID</span><span class="p">,</span>
-<span class="p">};</span>
-
-<span class="kd">const</span> <span class="nx">firebaseApp</span> <span class="o">=</span> <span class="nf">initializeApp</span><span class="p">(</span><span class="nx">firebaseConfig</span><span class="p">);</span>
-
-<span class="kd">const</span> <span class="nx">firebaseDB</span> <span class="o">=</span> <span class="nf">getFirestore</span><span class="p">(</span><span class="nx">firebaseApp</span><span class="p">);</span>
-
-<span class="k">export</span> <span class="p">{</span> <span class="nx">firebaseDB</span> <span class="p">};</span>
-</code></pre></div></div>
-
-<h4 id="2-basedb-설정하기">2. baseDB 설정하기</h4>
-
-<p>DB를 사용하는 작업에서 공통으로 사용되는 부분을 따로 만들었습니다.</p>
-
-<p>💾 lib/db/baseDB.ts</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">firebaseDB</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../../firebase</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">collection</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/firestore</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">baseDB</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nf">collection</span><span class="p">(</span><span class="nx">firebaseDB</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Messages</span><span class="dl">"</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">db</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">baseDB</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">collection</code>은 Firestore에서 생성했던 컬렉션 이름을 기준으로 데이터를 관리합니다.</p>
-
-<h4 id="3-데이터-가져오기--삭제하기">3. 데이터 가져오기 + 삭제하기</h4>
-
-<p>저는 가져오자마자 삭제하는 작업을 해야했기 때문에 함수 하나에 동시에 작업했습니다.</p>
-
-<p>💾 lib/db/getMessages.ts</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getMessage</span> <span class="o">=</span> <span class="nf">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">getDocs</span><span class="p">(</span><span class="nf">baseDB</span><span class="p">());</span> <span class="c1">// Get 🎉</span>
-    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">docs</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">doc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
-      <span class="p">...(</span><span class="nx">doc</span><span class="p">.</span><span class="nf">data</span><span class="p">()</span> <span class="k">as</span> <span class="nx">docInterface</span><span class="p">),</span>
-      <span class="na">id</span><span class="p">:</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
-    <span class="p">}));</span>
-    <span class="kd">const</span> <span class="nx">selectedData</span> <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="nf">getRandomNum</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)];</span>
-    <span class="k">await</span> <span class="nf">deleteDoc</span><span class="p">(</span><span class="nf">doc</span><span class="p">(</span><span class="nx">firebaseDB</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Messages</span><span class="dl">"</span><span class="p">,</span> <span class="nx">selectedData</span><span class="p">.</span><span class="nx">id</span><span class="p">));</span> <span class="c1">// Delete 🎉</span>
-    <span class="k">return</span> <span class="nx">selectedData</span><span class="p">;</span>
-  <span class="p">}</span> <span class="nf">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error in getMessage:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-    <span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>baseDB에서 Docs를 가져와서 데이터를 가져왔습니다.</p>
-
-<p>단점은 Get을 사용하면 모든 데이터를 가져옵니다.</p>
-
-<p>그래서 데이터가 큰 경우에는 성능이 저하 될 수 있습니다.</p>
-
-<p>Firestore은 데이터가 크지 않은 경우에만 사용하는 것이 좋은 것 같습니다.</p>
-
-<p>delete명령을 사용할 때는 인수가 추가 됩니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">deleteDoc</span><span class="p">(</span><span class="nf">doc</span><span class="p">(</span><span class="nx">db</span><span class="p">,</span> <span class="nx">컬렉션</span> <span class="nx">이름</span><span class="p">,</span> <span class="nx">해당</span> <span class="nx">id</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>가져온 데이터의 아이디를 통해 해당 데이터를 삭제할 수 있습니다.</p>
-
-<h3 id="데이터-생성추가하기">데이터 생성(추가)하기</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">createMessage</span> <span class="o">=</span> <span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="nx">MessageFormInterface</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nf">addDoc</span><span class="p">(</span><span class="nf">baseDB</span><span class="p">(),</span> <span class="nx">message</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>데이터 생성은 addDoc라는 명령을 통해 이루어집니다.</p>
-
-<hr />
-
-<h2 id="느낀점">느낀점</h2>
-
-<p>생각보다 사용법이 간편해서 수월했습니다.</p>
-
-<p>다만, 언급했던 것처럼 데이터를 한번에 가져와야하니 비효율적으로 느껴졌지만 해당 프로젝트는 많은 데이터 를 요구하는게 아니니 쓸만했습니다.</p>
-
-<p>다음엔 Firebase로 REST API를 만들거나 mongoDB를 배워 직접 API를 만들어 보고 싶습니다:)</p>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="Firestore" /><category term="DB" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 부족한 금액 계산하기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%B6%80%EC%A1%B1%ED%95%9C-%EA%B8%88%EC%95%A1-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 부족한 금액 계산하기 by JS" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%B6%80%EC%A1%B1%ED%95%9C%20%EA%B8%88%EC%95%A1%20%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%B6%80%EC%A1%B1%ED%95%9C-%EA%B8%88%EC%95%A1-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>새로 생긴 놀이기구는 인기가 매우 많아 줄이 끊이질 않습니다. 이 놀이기구의 원래 이용료는 price원 인데, 놀이기구를 N 번 째 이용한다면 원래 이용료의 N배를 받기로 하였습니다. 즉, 처음 이용료가 100이었다면 2번째에는 200, 3번째에는 300으로 요금이 인상됩니다.
-놀이기구를 count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가 모자라는지를 return 하도록 solution 함수를 완성하세요.
-단, 금액이 부족하지 않으면 0을 return 하세요.</p>
-
-<ul>
-  <li>놀이기구의 이용료 price : 1 ≤ price ≤ 2,500, price는 자연수</li>
-  <li>처음 가지고 있던 금액 money : 1 ≤ money ≤ 1,000,000,000, money는 자연수</li>
-  <li>놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">money</span><span class="p">,</span> <span class="nx">count</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="nx">price</span> <span class="o">*</span> <span class="p">((</span><span class="nx">count</span> <span class="o">*</span> <span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">total</span> <span class="o">-</span> <span class="nx">money</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">total</span> <span class="o">-</span> <span class="nx">money</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><strong>📌 정수 1부터 N까지 합: (N(N+1))/2</strong></p>
-
-<ol>
-  <li>등차수열 공식을 이용해 요금 합계(<code class="language-plaintext highlighter-rouge">total</code>)를 구한다.</li>
-  <li>요금 합계(<code class="language-plaintext highlighter-rouge">total</code>)에서 돈이 모자라면 부족한 금액을 아니라면 0을 반환한다.</li>
-</ol>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="등차수열" /><summary type="html"><![CDATA[등차수열 공식을 이용해 정수 1부터 N까지 합 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] N개의 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] N개의 최소공배수 by JS" /><published>2023-04-25T00:00:00+09:00</published><updated>2023-04-25T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-N%EA%B0%9C%EC%9D%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>두 수의 최소공배수(Least Common Multiple)란 입력된 두 수의 배수 중 공통이 되는 가장 작은 숫자를 의미합니다. 예를 들어 2와 7의 최소공배수는 14가 됩니다. 정의를 확장해서, n개의 수의 최소공배수는 n 개의 수들의 배수 중 공통이 되는 가장 작은 숫자가 됩니다. n개의 숫자를 담은 배열 arr이 입력되었을 때 이 수들의 최소공배수를 반환하는 함수, solution을 완성해 주세요.</p>
-
-<ul>
-  <li>arr은 길이 1이상, 15이하인 배열입니다.</li>
-  <li>arr의 원소는 100 이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="-나의-풀이">📄 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">gcd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">));</span>
-  <span class="kd">const</span> <span class="nx">lcm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
-
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">sortedArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">answer</span> <span class="o">=</span> <span class="nf">lcm</span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span> <span class="nx">sortedArr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p><strong>📌 유클리드 호제법이란?</strong>
-유클리드 호제법은 나눗셈을 반복해서 두 수의 최대공약수를 구하는 알고리즘입니다.
-두 수 A와 B의 나머지가 r일때, gcd(A, B) = gcd(B, r)입니다.
-r이 0이라면 최대공약수는 B가 되고, 아니라면 gcd(B, r)을 계산합니다.</p>
-</blockquote>
-
-<ol>
-  <li>최대공배수는 <code class="language-plaintext highlighter-rouge">두수를 곱한 값 / 최대 공약수</code>이다.</li>
-  <li>주어진 배열을 오름차순으로 정렬한다.(<code class="language-plaintext highlighter-rouge">sortedArr</code>)</li>
-  <li>초기값이 1인 <code class="language-plaintext highlighter-rouge">answer</code>와 <code class="language-plaintext highlighter-rouge">sortedArr</code>의 요소의 최대공배수를 구해 answer의 값을 변경해준다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">nlcm</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">num</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">));</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="p">?</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">)</span> <span class="p">:</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>for문 대신 reduce 메소드를 사용해 가독성을 높인 풀이입니다.</p>
-
-<p>이 풀이에서는 누적값 <code class="language-plaintext highlighter-rouge">a</code>가 answer이 되었습니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="유클리드 호제법" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법을 이용해 최소공배수 구하기]]></summary></entry><entry><title type="html">[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘</title><link href="http://localhost:4000/algorithm/algorithm-DFS&BFS/" rel="alternate" type="text/html" title="[알고리즘] DFS/BPS 깊이/너비 우선 탐색 알고리즘" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/algorithm/algorithm-DFS&amp;BFS</id><content type="html" xml:base="http://localhost:4000/algorithm/algorithm-DFS&amp;BFS/"><![CDATA[<h2 id="-그래프-탐색-알고리즘">📄 그래프 탐색 알고리즘</h2>
-
-<p>여러개체들이 연결되어 있는 자료구조에서 특정 개체를 찾는 알고리즘을 그래프 탐색 알고리즘이라고 합니다.</p>
-
-<p>✔ 대표 문제</p>
-
-<ol>
-  <li>경로탐색 유형 (최단거리, 시간)</li>
-  <li>네트워크 유형 (연결)</li>
-  <li>조합 유형 (모든 조합 만들기)</li>
-</ol>
-
-<p>이 알고리즘들의 대표 유형이 DFS(깊이 우선 탐색)/BFS(너비 우선 탐색)입니다.</p>
-
-<h2 id="-dfs--깊이-우선-탐색-알고리즘">📄 DFS | 깊이 우선 탐색 알고리즘</h2>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/233902499-8794557a-888f-4073-8feb-dfc611ecdec0.png" alt="image" /></p>
-
-<p>DFS는 임이의 노드에서 시작해서 그 경로를 완벽히 탐색해야 다음 분기로 넘어가는 특징이 있습니다.</p>
-
-<ul>
-  <li>장점: 운이 좋으면 처음부터 최적의 탐색 경로를 알 수 있다</li>
-  <li>단점: 처음 경로가 복잡하고 아주 길면 시간이 오래걸릴 수 있다.</li>
-</ul>
-
-<p>예시 코드입니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 그래프 정의 (인접 리스트 형태)</span>
-<span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">A</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">B</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">D</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">C</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">F</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">G</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">D</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">E</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">H</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">F</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">G</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">H</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">],</span>
-<span class="p">};</span>
-
-<span class="c1">// DFS 알고리즘</span>
-<span class="kd">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">start</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">();</span> <span class="c1">// 방문한 노드를 저장하는 Set</span>
-  <span class="kd">const</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[</span><span class="nx">start</span><span class="p">];</span> <span class="c1">// 스택을 사용하여 탐색할 노드를 저장</span>
-  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 탐색 결과를 저장할 배열</span>
-
-  <span class="nf">while </span><span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nf">pop</span><span class="p">();</span> <span class="c1">// 스택에서 하나의 노드를 꺼냄</span>
-
-    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">visited</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">node</span><span class="p">))</span> <span class="p">{</span>
-      <span class="c1">// 해당 노드를 방문하지 않았다면</span>
-      <span class="nx">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span> <span class="c1">// 노드를 방문 처리</span>
-      <span class="nx">result</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span> <span class="c1">// 결과 배열에 노드를 추가</span>
-
-      <span class="kd">const</span> <span class="nx">neighbors</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">node</span><span class="p">];</span> <span class="c1">// 현재 노드의 인접 노드들</span>
-      <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">neighbor</span> <span class="k">of</span> <span class="nx">neighbors</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">visited</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">))</span> <span class="p">{</span>
-          <span class="c1">// 방문하지 않은 인접 노드들을 스택에 추가</span>
-          <span class="nx">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// DFS 실행</span>
-<span class="kd">const</span> <span class="nx">startNode</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 시작 노드 설정</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">startNode</span><span class="p">);</span> <span class="c1">// DFS 실행</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// DFS 결과 출력</span>
-</code></pre></div></div>
-
-<p>위 코드는 인접 리스트 형태로 그래프를 정의하고, DFS알고리즘을 사용하여 시작 노드에서 출발해 깊이 우선 탐색을 수행합니다.</p>
-
-<p>방문한 노드는 <code class="language-plaintext highlighter-rouge">visited</code> Set에 저장되고, 탐색 결과는 <code class="language-plaintext highlighter-rouge">result</code>배열에 추가됩니다.</p>
-
-<p>작성한 함수를 재귀함수로 만들면 다음과 같습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 그래프 정의 (인접 리스트 형태)</span>
-<span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">A</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">B</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">D</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">C</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">F</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">G</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">D</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">E</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">H</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">F</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">G</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">H</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">],</span>
-<span class="p">};</span>
-
-<span class="c1">// DFS 알고리즘 (재귀 함수)</span>
-<span class="kd">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">node</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span> <span class="c1">// 현재 노드를 방문 처리</span>
-  <span class="nx">result</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span> <span class="c1">// 결과 배열에 노드를 추가</span>
-
-  <span class="kd">const</span> <span class="nx">neighbors</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">node</span><span class="p">];</span> <span class="c1">// 현재 노드의 인접 노드들</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">neighbor</span> <span class="k">of</span> <span class="nx">neighbors</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">visited</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">))</span> <span class="p">{</span>
-      <span class="c1">// 방문하지 않은 인접 노드들에 대해 재귀 호출</span>
-      <span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">neighbor</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// DFS 실행</span>
-<span class="kd">const</span> <span class="nx">startNode</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 시작 노드 설정</span>
-<span class="kd">const</span> <span class="nx">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">();</span> <span class="c1">// 방문한 노드를 저장하는 Set</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 탐색 결과를 저장할 배열</span>
-
-<span class="nf">dfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">startNode</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span> <span class="c1">// DFS 실행</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// DFS 결과 출력</span>
-</code></pre></div></div>
-
-<p>✔ 재귀함수를 사용했을 때 장점</p>
-
-<ul>
-  <li>더 간결하고 직관적이다</li>
-  <li>스택의 개념을 명시적으로 사용하지 않아도 된다</li>
-</ul>
-
-<p>✔ 재귀함수를 사용했을 때 단점</p>
-
-<ul>
-  <li>스택의 크기가 커질 수 있고 스택 오버플로우가 발생할 수 있다</li>
-  <li>깊이 가 매우 깊은 트리 구조의 경우 재귀 함수를 사용하면 성능이 저하될 수 있다.</li>
-</ul>
-
-<p>따라서 더 간단하고 직관적인 구현이 필요하거나 스택 오버플로우 등의 문제가 발생할 가능성이 낮은 경우에는 재귀 함수를 사용하는 것이 좋습니다.</p>
-
-<p>하지만 성능이 중요하거나 스택의 크기가 커질 수 있는 경우에는 반복문 기반의 구현이 우선적으로 고려되어야 합니다.</p>
-
-<h2 id="-bfs--너비-우선-탐색-알고리즘">📄 BFS | 너비 우선 탐색 알고리즘</h2>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/233904191-5cb143d6-b194-4426-a8ac-4384f1680df5.png" alt="image" /></p>
-
-<p>DFS는 깊게 탐색하기 전에 먼저 넓게 탐색해보는 알고리즘입니다.</p>
-
-<p>✔ BFS 알고리즘의 장점</p>
-
-<ul>
-  <li>시작 노드에서 레벨별로 탐색을 진행하기 때문에 <strong>최단 경로 탐색</strong>에 유용하다.</li>
-  <li>각 레벨별로 탐색을 진행하기 때문에 같은 노드를 중복 방문하지 않아 <strong>무한 루프 회피</strong>가 가능하다.</li>
-  <li>레벨 기반으로 탐색을 진행하기 때문에 그래프의 균형을 잡아주는 특징이 있어 <strong>균형 잡힌 탐색</strong>이 가능해 노드가 균등하게 분포된 경우 유용하다.</li>
-</ul>
-
-<p>✔ BFS 알고리즘의 단점</p>
-
-<ul>
-  <li>BPS는 큐를 사용해 탐색을 진행하는데, 현재 레벨의 모든 노드를 큐에 저장해야 하므로 그래프의 너비가 큰 경우 <strong>메모리에 부담</strong>이 커질 수 있다.</li>
-  <li>무방향 그래프일 경우 같은 노드를 중복 방문할 수 있다.</li>
-  <li>그래프가 복잡할 경우 <strong>경로의 복잡성</strong>이 커진다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 그래프의 인접 리스트를 표현한 예시</span>
-<span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-  <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-  <span class="mi">3</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="mi">4</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span>
-  <span class="mi">6</span><span class="p">:</span> <span class="p">[],</span>
-<span class="p">};</span>
-
-<span class="c1">// BFS 알고리즘 함수</span>
-<span class="kd">function</span> <span class="nf">bfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">start</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">queue</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 큐</span>
-  <span class="kd">const</span> <span class="nx">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">();</span> <span class="c1">// 방문한 노드를 저장할 Set</span>
-  <span class="nx">queue</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">start</span><span class="p">);</span> <span class="c1">// 시작 노드를 큐에 넣음</span>
-  <span class="nx">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">start</span><span class="p">);</span> <span class="c1">// 시작 노드를 방문 처리</span>
-
-  <span class="nf">while </span><span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 큐가 빌 때까지 반복</span>
-    <span class="kd">const</span> <span class="nx">currentNode</span> <span class="o">=</span> <span class="nx">queue</span><span class="p">.</span><span class="nf">shift</span><span class="p">();</span> <span class="c1">// 큐에서 노드를 꺼냄</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">currentNode</span><span class="p">);</span> <span class="c1">// 현재 노드를 출력 또는 원하는 작업 수행</span>
-
-    <span class="kd">const</span> <span class="nx">neighbors</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">currentNode</span><span class="p">];</span> <span class="c1">// 현재 노드의 인접 노드들</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">neighbor</span> <span class="k">of</span> <span class="nx">neighbors</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">visited</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">))</span> <span class="p">{</span>
-        <span class="c1">// 방문하지 않은 노드라면</span>
-        <span class="nx">queue</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">);</span> <span class="c1">// 큐에 넣음</span>
-        <span class="nx">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">neighbor</span><span class="p">);</span> <span class="c1">// 방문 처리</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// BFS 실행 예시</span>
-<span class="nf">bfs</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 1 2 3 4 5 6 순서로 출력 또는 원하는 작업 수행</span>
-</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="Algorithm" /><category term="DFS" /><category term="BPS" /></entry><entry><title type="html">[메세지가 도착했습니다] 컴포넌트 겹침 현상 해결하기</title><link href="http://localhost:4000/random-message/random-message-CSS-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[메세지가 도착했습니다] 컴포넌트 겹침 현상 해결하기" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/random-message/random-message-CSS%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/random-message/random-message-CSS-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-css-레이아웃-문제-발생">🚨 CSS 레이아웃 문제 발생</h2>
-
-<p>데스크탑 환경에서는 몰랐지만 배포하고 모바일에서 테스트해보니 Footer가 되는 컴포넌트가 다른 컴포넌트와 겹치는 현상이 발생했습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/233956639-26067272-4798-4e1b-ba34-077c7a0d73a4.png" alt="image" /></p>
-
-<p>아무래도 Footer컴포넌트가 항상 밑에만 있으면 된다는 생각에 position설정을 absolute로 줘서 그런것 같습니다.</p>
-
-<p>뷰포트 높이의 길이는 한정되어 있는데 모바일 화면은 데스크탑보다 작으니 자리가 고정되어 있는 Footer컴포넌트가 밀리지 않고 겹쳐지게 됩니다.</p>
-
-<h2 id="-문제를-해결해보자">🔨 문제를 해결해보자</h2>
-
-<p>우선 Footer CSS를 변경하겠습니다.</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.footer</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">max-width</span><span class="p">:</span> <span class="m">650px</span><span class="p">;</span>
-  <span class="err">//</span> <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span> <span class="err">🔨</span>
-  <span class="err">//</span> <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="err">🔨</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-
-  <span class="err">.github__link</span> <span class="err">{</span>
-    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
-    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-    <span class="nl">text-decoration-line</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="err">$</span><span class="n">text-dark1</span><span class="p">;</span>
-    <span class="err">&amp;:hover</span> <span class="err">{</span>
-      <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</code></pre></div></div>
-
-<p>해당 부분을 주석으로 없앴더니 다른 문제가 발생합니다.</p>
-
-<p>아예 페이지 바깥으로 컨텐츠가 탈출해버렸습니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/233959070-e5a521ab-884f-4545-aece-65fcf4294a50.png" alt="image" /></p>
-
-<p>이렇게 컨텐츠가 넘치는 현상을 막기 위해 페이지 컴포넌트에 <code class="language-plaintext highlighter-rouge">overflow: auto</code>를 추가합니다.</p>
-
-<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.start__container</span> <span class="p">{</span>
-  <span class="k">@include</span> <span class="nd">set-box-size</span><span class="p">();</span>
-  <span class="k">@include</span> <span class="nd">set-center-aligned</span><span class="p">;</span>
-  <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$main-color</span><span class="p">;</span>
-
-  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="c1">// 🎉</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/233959941-dcbd1bc5-3670-4072-bb87-ffa6391c33cd.png" alt="image" /></p>
-
-<p>이제 더이상 컴포넌트끼리 겹치지도, 컨텐츠가 페이지 밖으로 튀어나오지도 않습니다 :)</p>]]></content><author><name>Sujin Kim</name></author><category term="random-message" /><category term="CSS" /><category term="레이아웃" /></entry><entry><title type="html">[프로그래머스 / Lv 2] 타겟 넘버 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 타겟 넘버 by JS" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F%20%EB%84%98%EB%B2%84</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다. 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1+1+1+1+1 = 3
-+1-1+1+1+1 = 3
-+1+1-1+1+1 = 3
-+1+1+1-1+1 = 3
-+1+1+1+1-1 = 3
-</code></pre></div></div>
-
-<p>사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.</p>
-
-<ul>
-  <li>주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
-  <li>각 숫자는 1 이상 50 이하인 자연수입니다.</li>
-  <li>타겟 넘버는 1 이상 1000 이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-  <span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-
-  <span class="kd">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span><span class="p">,</span> <span class="nx">sum</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">depth</span> <span class="o">===</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">sum</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-      <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">depth</span><span class="p">]);</span>
-    <span class="nf">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">-</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">depth</span><span class="p">]);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>이번 문제는 dfs알고리즘을 이용해서 재귀함수를 만들어 풀었습니다.</p>
-
-<ol>
-  <li>함수 dfs는 주어진 숫자의 개수만큼 깊이가 길어지면 리턴한다. 이때 노드의 충합이 target과 같다면 answer에 1을 더한다.</li>
-  <li>1번의 조건과 만족하지 않는다면 <code class="language-plaintext highlighter-rouge">depth</code>에 1을 더하고 number의 요소가 음수인 경우를 포함해 구하기 때문에 재귀함수를 두번 호출한다.</li>
-</ol>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="DFS" /><summary type="html"><![CDATA[모든 경로의 수 구하기]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="" /></entry></feed>
