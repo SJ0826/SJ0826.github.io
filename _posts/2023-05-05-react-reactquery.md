@@ -1,5 +1,5 @@
 ---
-title: "[React] 리액트 쿼리"
+title: "[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기"
 excerpt: "유데미 리액트 쿼리 인강 듣고 정리한 기록"
 toc: true
 toc_sticky: true

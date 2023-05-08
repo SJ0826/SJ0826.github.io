@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-05T19:13:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 시저 암호 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 시저 암호 by JS" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-08T19:44:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[React-Query 02] 리액트 쿼리로 페이지네이션 작업하기</title><link href="http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React-Query 02] 리액트 쿼리로 페이지네이션 작업하기" /><published>2023-05-08T00:00:00+09:00</published><updated>2023-05-08T22:06:00+09:00</updated><id>http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8%20%EC%BF%BC%EB%A6%AC%EB%A1%9C%20%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98%20%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-페이지네이션-작업에-리액트-쿼리가-하는-일">📄 페이지네이션 작업에 리액트 쿼리가 하는 일</h2>
+
+<p>페이지네이션 작업에서 다음 페이지 버튼을 눌렀을 경우에 리액트는 새로운 데이터를 불러오기 위해 api를 호출합니다.</p>
+
+<p>이때 사용자는 데이터를 불러오는 시간만큼 기다려야 하기 때문에 사용자 경험이 안좋아지는 결과를 초래합니다.</p>
+
+<p>리액트 쿼리를 사용해 호출 가능성이 있는 데이터를 미리 불러오는 작업, 즉 <strong>프리페칭(Prefetching)</strong>을 사용해 미리 다음 페이지의 데이터를 불러온다면 사용자는 페이지에 나타날 정보를 위해 기다릴 필요성이 사라지게 됩니다.</p>
+
+<blockquote>
+  <p>📌 프리페칭(Prefetching)이란?
+호출 가능성이 있는 데이터를 미리 불러오는 작업. 데이터를 미리 불러와 캐시에 데이터를 저장한다.</p>
+</blockquote>
+
+<h2 id="-리액트-쿼리로-페이지네이션-구현하기">📄 리액트 쿼리로 페이지네이션 구현하기</h2>
+
+<h3 id="1-쿼리-설정하기">1. 쿼리 설정하기</h3>
+
+<p>페이지네이션을 위해 쿼리를 설정합니다.</p>
+
+<p>페이지 별 게시글을 불러오는 함수를 쿼리함수로 설정했는데 이때 쿼리키를 동일하게 한다면 모든 페이지가 같은 정보를 표시하게 됩니다.</p>
+
+<p>쿼리키를 동일하게 했을 경우 어떤 트리거가 있어야만 데이터를 리페칭할 수 있는데 다음 페이지 버튼을 클릭한다고 트리거가 발생하지 않습니다.</p>
+
+<p>트리거가 발생하는 기준은 다음과 같습니다.</p>
+
+<ol>
+  <li>컴포넌트 리마운트</li>
+  <li>윈도우 리포커징</li>
+  <li>리페칭함수 실행</li>
+  <li>자동 리페칭</li>
+  <li>mutation 이후 쿼리 무효화</li>
+</ol>
+
+<p>이전/다음 버튼을 클릭했을 때 트리거가 발생하도록 <strong>쿼리키를 배열로</strong>작성했습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">isError</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">useQuery</span><span class="p">(</span>
+  <span class="p">[</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">currentPage</span><span class="p">],</span> <span class="c1">// 🎉</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">fetchPosts</span><span class="p">(</span><span class="nx">currentPage</span><span class="p">),</span>
+  <span class="p">{</span>
+    <span class="na">staleTime</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+    <span class="na">keepPreviousData</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+<span class="nf">if </span><span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h3&gt;</span><span class="err">;
+</span><span class="nf">if </span><span class="p">(</span><span class="nx">isError</span><span class="p">)</span>
+  <span class="nf">return </span><span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Oops</span><span class="p">,</span> <span class="nx">something</span> <span class="nx">went</span> <span class="nx">wrong</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nf">toString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>📌 keepPreviousData: 새 데이터가 요청되는 동안 마지막으로 성공한 fetch Data로 유지해 사용자 경험을 향상시킬 수 있다.</p>
+</blockquote>
+
+<h3 id="2-프리페칭-함수-설정하기">2. 프리페칭 함수 설정하기</h3>
+
+<p>현재 페이지가 변경될 때마다 프리페칭 함수를 실행시키기 위해 <strong>useEffect</strong>함수를 사용합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">currentPage</span> <span class="o">&lt;</span> <span class="nx">maxPostPage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">nextPage</span> <span class="o">=</span> <span class="nx">currentPage</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">queryClient</span><span class="p">.</span><span class="nf">prefetchQuery</span><span class="p">([</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">nextPage</span><span class="p">],</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">fetchPosts</span><span class="p">(</span><span class="nx">nextPage</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">currentPage</span><span class="p">,</span> <span class="nx">queryClient</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>최대 페이지 (<code class="language-plaintext highlighter-rouge">maxPostPage</code>)에서는 실행되지 않도록 if 조건문을 사용했습니다.</p>
+
+<p>쿼리를 설정했을 때와 마찬가지로 쿼리키를 배열로 설정합니다.</p>
+
+<h3 id="3-return-함수-작성하기">3. return 함수 작성하기</h3>
+
+<p>각 버튼의 <code class="language-plaintext highlighter-rouge">disabled</code> 속성을 이용해 페이지가 1일 경우, 최대 페이지일 경우에 버튼이 비활성화 되도록 설정합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">pages</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">button</span>
+    <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">currentPage</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">}</span>
+    <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">setCurrentPage</span><span class="p">((</span><span class="nx">previosValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">previosValue</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}}</span>
+  <span class="o">&gt;</span>
+    <span class="nx">Previous</span> <span class="nx">page</span>
+  <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Page</span> <span class="p">{</span><span class="nx">currentPage</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">button</span>
+    <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">currentPage</span> <span class="o">&gt;=</span> <span class="nx">maxPostPage</span><span class="p">}</span>
+    <span class="c1">// onClick함수에 프리페칭 작업을 하지 않는 이유: setState함수는 비동기로 실행되기 때문에 현재 페이지가 무엇인지 정확히 알 방법이 없다.</span>
+    <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">setCurrentPage</span><span class="p">((</span><span class="nx">previousValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">previousValue</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}}</span>
+  <span class="o">&gt;</span>
+    <span class="nx">Next</span> <span class="nx">page</span>
+  <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>프리페칭 함수를 onClick함수에 바로 작성하지 않은 이유가 있습니다.</p>
+
+<p>setState함수는 비동기로 실행되기 때문에 프리페칭이 진행될 시점에는 현재 페이지가 무엇인지 정확히 알 방법이 없기 때문입니다.</p>
+
+<p>따라서 useEffect의 의존성 배열에 조건을 걸어 프리페칭이 실행되도록 하는 것이 적합합니다.</p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li><a href="https://www.udemy.com/course/react-query-react/">udemy - React Query: React로 서버 상태 관리하기</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="prefetching" /><category term="keepPreviousData" /><summary type="html"><![CDATA[다음 페이지 데이터 프리페칭하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 시저 암호 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 시저 암호 by JS" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.</p>
 
@@ -75,7 +184,7 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="아스키 코드" /><category term="배열" /></entry><entry><title type="html">[React] 리액트 쿼리</title><link href="http://localhost:4000/react/react-reactquery/" rel="alternate" type="text/html" title="[React] 리액트 쿼리" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/react/react-reactquery</id><content type="html" xml:base="http://localhost:4000/react/react-reactquery/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/236417752-b3d3dad8-8f8d-472b-b553-9254d4ff4ddc.png" alt="image" /></p>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="아스키 코드" /><category term="배열" /></entry><entry><title type="html">[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기</title><link href="http://localhost:4000/react/react-reactquery/" rel="alternate" type="text/html" title="[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/react/react-reactquery</id><content type="html" xml:base="http://localhost:4000/react/react-reactquery/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/236417752-b3d3dad8-8f8d-472b-b553-9254d4ff4ddc.png" alt="image" /></p>
 
 <h2 id="-리액트-쿼리-공부를-시작한-이유">📄 리액트 쿼리 공부를 시작한 이유</h2>
 
@@ -211,7 +320,13 @@
 </span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nf">toString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
 </span>  <span class="p">);</span>
-</code></pre></div></div>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="react-query" /><summary type="html"><![CDATA[유데미 리액트 쿼리 인강 듣고 정리한 기록]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 예산 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 예산 by JS" /><published>2023-05-04T00:00:00+09:00</published><updated>2023-05-04T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</code></pre></div></div>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li><a href="https://www.udemy.com/course/react-query-react/">udemy - React Query: React로 서버 상태 관리하기</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="react-query" /><summary type="html"><![CDATA[유데미 리액트 쿼리 인강 듣고 정리한 기록]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 예산 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 예산 by JS" /><published>2023-05-04T00:00:00+09:00</published><updated>2023-05-04T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>S사에서는 각 부서에 필요한 물품을 지원해 주기 위해 부서별로 물품을 구매하는데 필요한 금액을 조사했습니다. 그러나, 전체 예산이 정해져 있기 때문에 모든 부서의 물품을 구매해 줄 수는 없습니다. 그래서 최대한 많은 부서의 물품을 구매해 줄 수 있도록 하려고 합니다.</p>
 
@@ -519,62 +634,4 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="배열" /><summary type="html"><![CDATA[배열 더하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 멀리 뛰기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EB%A9%80%EB%A6%AC-%EB%9B%B0%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 멀리 뛰기 by JS" /><published>2023-04-26T00:00:00+09:00</published><updated>2023-04-26T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EB%A9%80%EB%A6%AC%20%EB%9B%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EB%A9%80%EB%A6%AC-%EB%9B%B0%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>효진이는 멀리 뛰기를 연습하고 있습니다. 효진이는 한번에 1칸, 또는 2칸을 뛸 수 있습니다. 칸이 총 4개 있을 때, 효진이는
-(1칸, 1칸, 1칸, 1칸)
-(1칸, 2칸, 1칸)
-(1칸, 1칸, 2칸)
-(2칸, 1칸, 1칸)
-(2칸, 2칸)
-의 5가지 방법으로 맨 끝 칸에 도달할 수 있습니다. 멀리뛰기에 사용될 칸의 수 n이 주어질 때, 효진이가 끝에 도달하는 방법이 몇 가지인지 알아내, 여기에 1234567를 나눈 나머지를 리턴하는 함수, solution을 완성하세요. 예를 들어 4가 입력된다면, 5를 return하면 됩니다.</p>
-
-<ul>
-  <li>n은 1 이상, 2000 이하인 정수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">||</span> <span class="nx">n</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">dp</span> <span class="o">=</span> <span class="nc">Array</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nf">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-  <span class="nx">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="nx">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">dp</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dp</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="nx">dp</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span> <span class="o">%</span> <span class="mi">1234567</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">dp</span><span class="p">[</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>처음 문제를 보고 DFS로 접근했더니 시간 초과가 되어 동적 계산법(DP)로 다시 생각했습니다.</p>
-
-<p>n이 1일 경우 -&gt; 1<br />
-n이 2일 경우 -&gt; 2<br />
-n이 3일 경우 -&gt; 3<br />
-n이 4일 경우 -&gt; 5<br />
-n이 5일 경우 -&gt; 8<br />
-n이 6일 경우 -&gt; 13<br /></p>
-
-<p>문제의 답이 피보나치 수열로 이루어져 있습니다.</p>
-
-<p>따라서 배열 (<code class="language-plaintext highlighter-rouge">dp</code>)의 맨 앞과 두번째 수를 1과 2로 만들고 그 뒤의 값들을 구하면 답을 알 수 있습니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">% 1234567</code>연산을 for문 안에서 한 이유는 dp[n - 1]의 크기가 커져 오버 플로우가 발생하기 때문입니다.</p>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">jumpCase</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nx">num</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="nf">jumpCase</span><span class="p">(</span><span class="nx">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">jumpCase</span><span class="p">(</span><span class="nx">num</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>같은 방식을 재귀함수로 풀어낸 풀이입니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="" /></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="배열" /><summary type="html"><![CDATA[배열 더하기]]></summary></entry></feed>
