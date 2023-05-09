@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-08T19:44:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[React-Query 02] 리액트 쿼리로 페이지네이션 작업하기</title><link href="http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React-Query 02] 리액트 쿼리로 페이지네이션 작업하기" /><published>2023-05-08T00:00:00+09:00</published><updated>2023-05-08T22:06:00+09:00</updated><id>http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8%20%EC%BF%BC%EB%A6%AC%EB%A1%9C%20%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98%20%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-페이지네이션-작업에-리액트-쿼리가-하는-일">📄 페이지네이션 작업에 리액트 쿼리가 하는 일</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-09T15:04:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[프로그래머스 / Lv 1] 삼총사 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 삼총사 by JS" /><published>2023-05-09T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로 세 학생은 삼총사입니다. 또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 0이므로 세 학생도 삼총사입니다. 따라서 이 경우 한국중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다.</p>
+
+<p>한국중학교 학생들의 번호를 나타내는 정수 배열 number가 매개변수로 주어질 때, 학생들 중 삼총사를 만들 수 있는 방법의 수를 return 하도록 solution 함수를 완성하세요.</p>
+
+<ul>
+  <li>3 ≤ number의 길이 ≤ 13</li>
+  <li>-1,000 ≤ number의 각 원소 ≤ 1,000</li>
+  <li>서로 다른 학생의 정수 번호가 같을 수 있습니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">l</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">if </span><span class="p">(</span><span class="nx">number</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>자바스크립트를 공부하면서 삼중 for문은 처음 사용해보았습니다.</p>
+
+<p>이중 for문도 불안한데 삼중으로 중첩되니 달달 떨리네요.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="for문" /><summary type="html"><![CDATA[삼중 for문으로 가능한 조합의 수 구하기]]></summary></entry><entry><title type="html">[React-Query 02] 리액트 쿼리로 페이지네이션 작업하기</title><link href="http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React-Query 02] 리액트 쿼리로 페이지네이션 작업하기" /><published>2023-05-08T00:00:00+09:00</published><updated>2023-05-08T22:06:00+09:00</updated><id>http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8%20%EC%BF%BC%EB%A6%AC%EB%A1%9C%20%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98%20%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%BF%BC%EB%A6%AC%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%84%A4%EC%9D%B4%EC%85%98-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-페이지네이션-작업에-리액트-쿼리가-하는-일">📄 페이지네이션 작업에 리액트 쿼리가 하는 일</h2>
 
 <p>페이지네이션 작업에서 다음 페이지 버튼을 눌렀을 경우에 리액트는 새로운 데이터를 불러오기 위해 api를 호출합니다.</p>
 
@@ -413,36 +448,7 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toUpperCase()" /><category term="toLowerCase()" /><summary type="html"><![CDATA[문자열 홀짝 기준으로 대문자/소문자 만들기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 3진법 뒤집기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95-%EB%92%A4%EC%A7%91%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 3진법 뒤집기 by JS" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95%20%EB%92%A4%EC%A7%91%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95-%EB%92%A4%EC%A7%91%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.</p>
-
-<ul>
-  <li>n은 1 이상 100,000,000 이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nf">parseInt</span><span class="p">([...</span><span class="nx">n</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">3</span><span class="p">)].</span><span class="nf">reverse</span><span class="p">().</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">),</span> <span class="mi">3</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>toString에 들어가는 인자는 적용한 숫자를 n진법으로 나타낼 때 사용합니다.</p>
-
-<p>n.toString(3)은 숫자 n을 3진법으로 변환한다는 뜻입니다.</p>
-
-<p>3진법으로 변환한 숫자 n을 spread연산자로 배열에 담아 뒤집은뒤 다시 문자열로 변환했습니다.</p>
-
-<p>parseInt의 두번째 인자에는 해당 값이 몇진법인지 나타내는 숫자를 입력합니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">parseInt([...n.toString(3)].reverse().join(""), 3)</code>는 앞뒤 반전한 3진법을 다시 10진법으로 변환해주는 역할을 합니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toString" /><category term="parseInt" /><summary type="html"><![CDATA[toString()으로 n진법 나타내기]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 모코숲 뜯어고치기 시작</title><link href="http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0-%EC%8B%9C%EC%9E%91/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 모코숲 뜯어고치기 시작" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2%20%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%8B%9C%EC%9E%91</id><content type="html" xml:base="http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0-%EC%8B%9C%EC%9E%91/"><![CDATA[<h2 id="-나는-왜-이-프로젝트를-처음부터-뜯어고치는-재공사를-시작하는가">📄 나는 왜 이 프로젝트를 처음부터 뜯어고치는 재공사를 시작하는가</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toUpperCase()" /><category term="toLowerCase()" /><summary type="html"><![CDATA[문자열 홀짝 기준으로 대문자/소문자 만들기]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 모코숲 뜯어고치기 시작</title><link href="http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0-%EC%8B%9C%EC%9E%91/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 모코숲 뜯어고치기 시작" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2%20%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%8B%9C%EC%9E%91</id><content type="html" xml:base="http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0-%EC%8B%9C%EC%9E%91/"><![CDATA[<h2 id="-나는-왜-이-프로젝트를-처음부터-뜯어고치는-재공사를-시작하는가">📄 나는 왜 이 프로젝트를 처음부터 뜯어고치는 재공사를 시작하는가</h2>
 
 <p>모코숲은 나의 애증의 프로젝트..</p>
 
@@ -503,46 +509,36 @@
   <li>버그를 미루지 말자. 미루면 눈덩이처럼 증가해서 굉장히 힘들다.</li>
   <li>구글링하고 남의 코드를 참고하되 된다고 끝내지말고 공부해서 내것으로 만들어 나중에 오류가 발생해도 당황하지 말자.</li>
   <li>힘내자…</li>
-</ol>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="재시작" /><summary type="html"><![CDATA[애증의 프로젝트 모코숲 다시 뜯어고치기 시작]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="재시작" /><summary type="html"><![CDATA[애증의 프로젝트 모코숲 다시 뜯어고치기 시작]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 3진법 뒤집기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95-%EB%92%A4%EC%A7%91%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 3진법 뒤집기 by JS" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95%20%EB%92%A4%EC%A7%91%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95-%EB%92%A4%EC%A7%91%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
-<p>두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.</p>
+<p>자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.</p>
 
 <ul>
-  <li>두 수는 1이상 1000000이하의 자연수입니다.</li>
+  <li>n은 1 이상 100,000,000 이하인 자연수입니다.</li>
 </ul>
 
 <h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">gcd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">));</span>
-  <span class="kd">const</span> <span class="nx">lcm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
-
-  <span class="k">return</span> <span class="p">[</span><span class="nf">gcd</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">),</span> <span class="nf">lcm</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)];</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">parseInt</span><span class="p">([...</span><span class="nx">n</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">3</span><span class="p">)].</span><span class="nf">reverse</span><span class="p">().</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">),</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>저번 문제에서 공부한 유클리드호제법으로 최대공약수(<code class="language-plaintext highlighter-rouge">gcd</code>)와 최소공배수(<code class="language-plaintext highlighter-rouge">lcm</code>)을 계산해 풀었습니다.</p>
+<p>toString에 들어가는 인자는 적용한 숫자를 n진법으로 나타낼 때 사용합니다.</p>
 
-<h2 id="-best-practice">👍 Best Practice</h2>
+<p>n.toString(3)은 숫자 n을 3진법으로 변환한다는 뜻입니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">gcdlcm</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">r</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">ab</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span> <span class="p">(</span><span class="nx">r</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">);</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">r</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="k">return</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">ab</span> <span class="o">/</span> <span class="nx">b</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>3진법으로 변환한 숫자 n을 spread연산자로 배열에 담아 뒤집은뒤 다시 문자열로 변환했습니다.</p>
 
-<p>재귀함수가 아닌 for문을 사용해 최대공약수를 찾는 풀이입니다.</p>
+<p>parseInt의 두번째 인자에는 해당 값이 몇진법인지 나타내는 숫자를 입력합니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">a % b</code>가 0이 될 때까지 반복문을 실행합니다.</p>
-
-<p>재귀함수로만 풀릴 줄 알았는데 for문으로 풀려서 신기하네요:)</p>
+<p><code class="language-plaintext highlighter-rouge">parseInt([...n.toString(3)].reverse().join(""), 3)</code>는 앞뒤 반전한 3진법을 다시 10진법으로 변환해주는 역할을 합니다.</p>
 
 <h2 id="문제-출처">문제 출처</h2>
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="최대공약수" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법으로 최대공약수와 최소공배수 구하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 멀리 뛰기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 멀리 뛰기 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-26T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4%20%EA%B3%A0%EB%A5%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toString" /><category term="parseInt" /><summary type="html"><![CDATA[toString()으로 n진법 나타내기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 멀리 뛰기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 멀리 뛰기 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-26T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4%20%EA%B3%A0%EB%A5%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>경화는 과수원에서 귤을 수확했습니다. 경화는 수확한 귤 중 ‘k’개를 골라 상자 하나에 담아 판매하려고 합니다. 그런데 수확한 귤의 크기가 일정하지 않아 보기에 좋지 않다고 생각한 경화는 귤을 크기별로 분류했을 때 서로 다른 종류의 수를 최소화하고 싶습니다.</p>
 
@@ -595,43 +591,43 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>최솟값을 구할때 저는 변수(<code class="language-plaintext highlighter-rouge">acc</code>)를 선언해 누적값을 구했는데, 이 풀이에서는 따로 변수를 선언하지 않고 주어진 <code class="language-plaintext highlighter-rouge">k</code>에서 값을 빼주며 0이 되었을 때 반복문을 나오게 했습니다 👍</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 행렬의 덧셈 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98-%EB%8D%A7%EC%85%88/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 행렬의 덧셈 by JS" /><published>2023-04-27T00:00:00+09:00</published><updated>2023-04-27T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98%20%EB%8D%A7%EC%85%88</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%ED%96%89%EB%A0%AC%EC%9D%98-%EB%8D%A7%EC%85%88/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<p>최솟값을 구할때 저는 변수(<code class="language-plaintext highlighter-rouge">acc</code>)를 선언해 누적값을 구했는데, 이 풀이에서는 따로 변수를 선언하지 않고 주어진 <code class="language-plaintext highlighter-rouge">k</code>에서 값을 빼주며 0이 되었을 때 반복문을 나오게 했습니다 👍</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 최대공약수와 최소공배수 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%20%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
-<p>행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.</p>
+<p>두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.</p>
 
 <ul>
-  <li>행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다.</li>
+  <li>두 수는 1이상 1000000이하의 자연수입니다.</li>
 </ul>
 
 <h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">gcd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">));</span>
+  <span class="kd">const</span> <span class="nx">lcm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">)</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
 
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">arr1</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nf">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr1</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">index</span><span class="p">]</span> <span class="o">+</span> <span class="nx">arr2</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">index</span><span class="p">]));</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nf">gcd</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">),</span> <span class="nf">lcm</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)];</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<ol>
-  <li>for문으로 주어진 배열의 인덱스만큼 반복문을 돌린다.</li>
-  <li>배열의 요소가 배열이니 다시한번 map을 사용해 값을 더해준 후 <code class="language-plaintext highlighter-rouge">answer</code>에 값을 삽입한다.</li>
-</ol>
+<p>저번 문제에서 공부한 유클리드호제법으로 최대공약수(<code class="language-plaintext highlighter-rouge">gcd</code>)와 최소공배수(<code class="language-plaintext highlighter-rouge">lcm</code>)을 계산해 풀었습니다.</p>
 
 <h2 id="-best-practice">👍 Best Practice</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">sumMatrix</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">A</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">idx1</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr1</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">val</span><span class="p">,</span> <span class="nx">idx2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">val</span> <span class="o">+</span> <span class="nx">B</span><span class="p">[</span><span class="nx">idx1</span><span class="p">][</span><span class="nx">idx2</span><span class="p">]));</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">gcdlcm</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">r</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">ab</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span> <span class="p">(</span><span class="nx">r</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">);</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">r</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">ab</span> <span class="o">/</span> <span class="nx">b</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>map을 두번 사용해 배열의 값을 더한 풀이입니다.</p>
+<p>재귀함수가 아닌 for문을 사용해 최대공약수를 찾는 풀이입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">a % b</code>가 0이 될 때까지 반복문을 실행합니다.</p>
+
+<p>재귀함수로만 풀릴 줄 알았는데 for문으로 풀려서 신기하네요:)</p>
 
 <h2 id="문제-출처">문제 출처</h2>
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="배열" /><summary type="html"><![CDATA[배열 더하기]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="최대공약수" /><category term="최소공배수" /><summary type="html"><![CDATA[유클리드 호제법으로 최대공약수와 최소공배수 구하기]]></summary></entry></feed>
