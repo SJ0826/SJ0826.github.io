@@ -20,6 +20,9 @@ docs:
       - title: "React"
         url: /react/
         category: "React"
+      - title: "Next.js"
+        url: /nextjs/
+        category: "Nextjs"
       - title: "TypeScript"
         url: /typescript/
         category: "TypeScript"
