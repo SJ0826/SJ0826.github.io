@@ -845,6 +845,12 @@ var store = [{
         "url": "/nextjs/nextjs-nextjs%EA%B0%80-%EB%9D%BC%EC%9A%B0%ED%8C%85%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/",
         "teaser": null
       },{
+        "title": "[Next.js] configuration",
+        "excerpt":"configuration   Next.js의 configuration을 커스텀하려면 next.config.js나 next.config.mjs를 생성해야 한다.   next.config.js는 Node.js의 모듈이다. (JSON 아님)   next.config.js는 Next.js의 서버로 사용되지만 브라우저 build 에 포함되지 않는다.   // next.config.js  /**  * @type {import('next').NextConfig}  */ const nextConfig = {   /* config options here */ }  module.exports = nextConfig   만약 ECMAScript 모듈이 필요하다면 next.config.mjs를 사용한다.   /**  * @type {import('next').NextConfig}  */ const nextConfig = {   /* config options here */ }  export default nextConfig   출처      Next.js 공식문서  ","categories": ["Nextjs"],
+        "tags": ["configuration"],
+        "url": "/nextjs/nextjs-configuration/",
+        "teaser": null
+      },{
         "title": "🚨 Component cannot be used as a JSX component. Its return type is not a valid JSX element",
         "excerpt":"🚨 에러 발생   프로젝트 진행 중 Layout 컴포넌트에서 에러가 발생했다.      ❔ 에러 원인   해당 컴포넌트를 함수형으로 작성했는데 return 문이 없었다.   🔨 에러 해결   // Page.tsx ... export default function Page({ children }: Props) {   return &lt;Container&gt;{children}&lt;/Container&gt; } ...   출처      stack overflow  ","categories": ["JavaScript"],
         "tags": ["에러"],
