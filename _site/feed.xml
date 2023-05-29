@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-11T21:06:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Next.js] Next.js란?</title><link href="http://localhost:4000/nextjs/nextjs-Nextjs%EB%9E%80/" rel="alternate" type="text/html" title="[Next.js] Next.js란?" /><published>2023-05-11T00:00:00+09:00</published><updated>2023-05-11T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-Nextjs%EB%9E%80</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-Nextjs%EB%9E%80/"><![CDATA[]]></content><author><name>Sujin Kim</name></author><category term="Nextjs" /><category term="Next.js" /><summary type="html"><![CDATA[Next.js 이해하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 삼총사 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 삼총사 by JS" /><published>2023-05-09T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-29T12:34:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Next.js] Next.js의 페이지 사전렌더링</title><link href="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/" rel="alternate" type="text/html" title="[Next.js] Next.js의 페이지 사전렌더링" /><published>2023-05-29T00:00:00+09:00</published><updated>2023-05-29T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/"><![CDATA[<h2 id="-nextjs가-페이지를-준비하고-사전-렌더링을-하는-방법">📄 Next.js가 페이지를 준비하고 사전 렌더링을 하는 방법</h2>
+
+<blockquote>
+  <p>💡 Hydration이란? HTML을 미리 렌더링하고, 그 뒤에 요청이 오면 chunk단위로 js를 보내주어 이벤트가 작동하는 것</p>
+</blockquote>
+
+<p>Next.js의 사전렌더링은 기존 리액트의 CRA와 다르게 완성된 HTML을 브라우저에 보내주는 방법이다.</p>
+
+<p>사전 렌더링은 첫번째 페이지에만 적용되며, 첫번째 페이지 렌더링이 끝아면 다시 SPA로 돌아간다.</p>
+
+<p>이렇게 미리 완성된 HTML 페이지를 가져오면 두가지 이점이 생긴다.</p>
+
+<ol>
+  <li>사용자는 데이터가 실질적으로 로딩될때까지 기다리지 않아도 된다. =&gt; <strong>사용자 경험 최적화</strong></li>
+  <li>구글 검색엔진이 실질적 데이터가 들어있는 HTML코드를 읽고 해석한다. =&gt; <strong>SEO 최적화</strong></li>
+</ol>
+
+<p>Next.js 가 사전렌더링을 구현하는 방법은 <strong>SSG, SSR</strong>이 있다.</p>
+
+<p>⭐ 중요한 사실은 Next.js는 어떤 작업을 하지 않아도 기본적으로 사전렌더링을 한다는 점이다. SSG, SSR은 사전렌더링을 하는 방식을 정하기 위한 요소라는 점을 이해해야한다.</p>
+
+<h3 id="-ssgserver-side-generation-static-site-generation">🔴 SSG(Server-Side-Generation, Static-Site-Generation)</h3>
+
+<ul>
+  <li>사용 방법: 페이지에 <code class="language-plaintext highlighter-rouge">getStaticProps</code>함수를 추가한다.</li>
+  <li>사용 목적
+    <ol>
+      <li>페이지가 사전 생성되어야 하는 것을 Next.js에게 알려준다.</li>
+      <li>만약 Next.js가 사전렌더링을 하지 않도록 설정되었을 때, getStaticProps함수로 특정 페이지를 사전렌더링 하도록 지정할 수 있다.</li>
+    </ol>
+  </li>
+  <li>페이지 생성 시기: 프로젝트 빌드시</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">HomePage</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">products</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="nf">return </span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">products</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">product</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>      <span class="p">))}</span>
+    <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="c1">// 항상 객체를 반환한다.</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">products</span><span class="p">:</span> <span class="p">[{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">p1</span><span class="dl">"</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Product 1</span><span class="dl">"</span> <span class="p">}],</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">HomePage</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">getStaticProp</code>가 포함된 페이지 파일이 실행되면 발생하는 순서를 다음과 같다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">getStaticProps</code>함수를 먼저 호출한다. 함수안에 컴포넌트에서 사용될 데이터를 페칭해오는 작업을 한다.</li>
+  <li>컴포넌트 함수를 실행한다.</li>
+</ol>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li>
+    <p><a href="https://www.udemy.com/course/nextjs-react-incl-two-paths">유데미 Nextjs.&amp;React - 완전 정복 가이드</a></p>
+  </li>
+  <li>
+    <p><a href="https://nextjs.org/docs">Next.js 공식 문서</a></p>
+  </li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="Nextjs" /><category term="SSG" /><category term="SSR" /><summary type="html"><![CDATA[Next.js가 페이지를 사전 렌더링하고 데이터를 페칭하는 방법]]></summary></entry><entry><title type="html">[Next.js] Next.js란?</title><link href="http://localhost:4000/nextjs/nextjs-Nextjs%EB%9E%80/" rel="alternate" type="text/html" title="[Next.js] Next.js란?" /><published>2023-05-17T00:00:00+09:00</published><updated>2023-05-17T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-Nextjs%EB%9E%80</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-Nextjs%EB%9E%80/"><![CDATA[<h2 id="-nextjs는-무엇일까">📄 Next.js는 무엇일까?</h2>
+
+<ul>
+  <li>리액트 프레임 워크</li>
+  <li>리액트JS의 풀스택 프레임 워크</li>
+</ul>
+
+<p>🎲 리액트를 더 잘 사용하기 위해 만들어진 리액트 프레임워크</p>
+
+<h2 id="-주요-기능">📄 주요 기능</h2>
+
+<ul>
+  <li>서버 사이드 렌더링 (사전 렌더링)
+    <ul>
+      <li>풀스택 프레임워크라 불리는 이유</li>
+      <li>리액트 페이지, 컴포넌트를 서버 측에서 미리 렌더링</li>
+      <li>SEO에 유리 + 로딩 경험 유리 -&gt; 서버로부터 받은 모든 정보가 html에 포함되어 있기 때문</li>
+    </ul>
+  </li>
+  <li>파일 기반 라우팅
+    <ul>
+      <li>기존 리액트는 라우터가 아예 없음. 리액트 라우터 사용했음.</li>
+      <li>페이지 폴더의 이름으로 url을 결정한다.</li>
+    </ul>
+  </li>
+  <li>⭐ 풀스택 쌉가능
+    <ul>
+      <li>백엔드 API를 리액트 프로젝트에 추가할 수 있다.</li>
+      <li>독립적인 REST API 프로젝트를 구축하지 않아도 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li>
+    <p><a href="https://www.udemy.com/course/nextjs-react-incl-two-paths">유데미 Nextjs.&amp;React - 완전 정복 가이드</a></p>
+  </li>
+  <li>
+    <p><a href="https://nextjs.org/docs">Next.js 공식 문서</a></p>
+  </li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="Nextjs" /><category term="Next.js" /><summary type="html"><![CDATA[Next.js 이해하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 삼총사 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 삼총사 by JS" /><published>2023-05-09T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로 세 학생은 삼총사입니다. 또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 0이므로 세 학생도 삼총사입니다. 따라서 이 경우 한국중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다.</p>
 
@@ -538,57 +653,4 @@
   <li>버그를 미루지 말자. 미루면 눈덩이처럼 증가해서 굉장히 힘들다.</li>
   <li>구글링하고 남의 코드를 참고하되 된다고 끝내지말고 공부해서 내것으로 만들어 나중에 오류가 발생해도 당황하지 말자.</li>
   <li>힘내자…</li>
-</ol>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="재시작" /><summary type="html"><![CDATA[애증의 프로젝트 모코숲 다시 뜯어고치기 시작]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 2] 멀리 뛰기 by JS</title><link href="http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 2] 멀리 뛰기 by JS" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-26T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4%20%EA%B3%A0%EB%A5%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv2/programmers-%EA%B7%A4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>경화는 과수원에서 귤을 수확했습니다. 경화는 수확한 귤 중 ‘k’개를 골라 상자 하나에 담아 판매하려고 합니다. 그런데 수확한 귤의 크기가 일정하지 않아 보기에 좋지 않다고 생각한 경화는 귤을 크기별로 분류했을 때 서로 다른 종류의 수를 최소화하고 싶습니다.</p>
-
-<p>예를 들어, 경화가 수확한 귤 8개의 크기가 [1, 3, 2, 5, 4, 5, 2, 3] 이라고 합시다. 경화가 귤 6개를 판매하고 싶다면, 크기가 1, 4인 귤을 제외한 여섯 개의 귤을 상자에 담으면, 귤의 크기의 종류가 2, 3, 5로 총 3가지가 되며 이때가 서로 다른 종류가 최소일 때입니다.</p>
-
-<p>경화가 한 상자에 담으려는 귤의 개수 k와 귤의 크기를 담은 배열 tangerine이 매개변수로 주어집니다. 경화가 귤 k개를 고를 때 크기가 서로 다른 종류의 수의 최솟값을 return 하도록 solution 함수를 작성해주세요.</p>
-
-<ul>
-  <li>1 ≤ k ≤ tangerine의 길이 ≤ 100,000</li>
-  <li>1 ≤ tangerine의 원소 ≤ 10,000,000</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">tangerine</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">tangerineObject</span> <span class="o">=</span> <span class="p">{};</span>
-  <span class="nx">tangerine</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">tangerineObject</span><span class="p">[</span><span class="nx">value</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">tangerineObject</span><span class="p">[</span><span class="nx">value</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="p">});</span>
-  <span class="kd">const</span> <span class="nx">tangerineNum</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">values</span><span class="p">(</span><span class="nx">tangerineObject</span><span class="p">).</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">);</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">acc</span> <span class="o">&lt;</span> <span class="nx">k</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-    <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">tangerineNum</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">tangerine</code>배열에서 과일이름이 중복된 횟수를 계산해 새로운 객체 <code class="language-plaintext highlighter-rouge">tangerineObject</code>에 이름과 과일의 개수를 매칭해 저장한다.</li>
-  <li>과일 개수를 내림차순으로 정렬해 배열에 저장한다.(<code class="language-plaintext highlighter-rouge">tangerineNum</code>)</li>
-  <li>정렬된 배열에서 앞에서부터 k개의 요소를 더하여, 그 합이 k이상이되는 최소값을 구한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">tangerine</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">tDict</span> <span class="o">=</span> <span class="p">{};</span>
-  <span class="nx">tangerine</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">tDict</span><span class="p">[</span><span class="nx">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">tDict</span><span class="p">[</span><span class="nx">t</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
-  <span class="kd">const</span> <span class="nx">tArr</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">values</span><span class="p">(</span><span class="nx">tDict</span><span class="p">).</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">);</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">t</span> <span class="k">of</span> <span class="nx">tArr</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">k</span> <span class="o">&gt;</span> <span class="nx">t</span><span class="p">)</span> <span class="nx">k</span> <span class="o">-=</span> <span class="nx">t</span><span class="p">;</span>
-    <span class="k">else</span> <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>최솟값을 구할때 저는 변수(<code class="language-plaintext highlighter-rouge">acc</code>)를 선언해 누적값을 구했는데, 이 풀이에서는 따로 변수를 선언하지 않고 주어진 <code class="language-plaintext highlighter-rouge">k</code>에서 값을 빼주며 0이 되었을 때 반복문을 나오게 했습니다 👍</p>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv2" /><category term="" /></entry></feed>
+</ol>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="재시작" /><summary type="html"><![CDATA[애증의 프로젝트 모코숲 다시 뜯어고치기 시작]]></summary></entry></feed>

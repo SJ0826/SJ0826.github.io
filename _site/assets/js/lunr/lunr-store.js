@@ -839,6 +839,12 @@ var store = [{
         "url": "/react/react-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%99%80-Context-API-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0/",
         "teaser": null
       },{
+        "title": "[Next.js] Next.j가 라우팅하는 방법",
+        "excerpt":"📄 Next.js가 Routing 방법      💡 라우팅이란? 특정 주소에 도달해서 주소가 제공하는 데이터를 받아서 사용하는 과정    리액트에서 react-router-dom을 이용했다면, Next.js는 자체적인 router기능이 있다.   page폴더에 들어가는 파일과 폴더의 이름에 따라 URL이 정해진다.   폴더명으로 접근한다면 index.js파일로 접근해야한다.   📄 1. 정적 라우팅(Link)      💡 정적 라우팅이란? 사전에 지정된 주소로 이동하는 방법    13버전 이전에는 Link태그 안에 a태그를 사용해야 했지만 13버전 이후로 Link태그 하나로 라우팅이 가능하다.   &lt;Link href=\"해당경로\"&gt;...&lt;/Link&gt;   📄 2. 동적라우팅(slug)      💡 동적 라우팅이란? 페이지가 상황에 따라 동적으로 경로가 지정된다.    본래 slug는 중요한 의미를 포함하는 단어만을 이용해 제목을 작성하는 방법이다.   slug에 어떤 값을 넣어도 해당 파일로 이동한다.   파일뿐만 아니라 폴더에도 slug를 쓸 수 있다.   page/category/[slug].js =&gt; /category/:slug (ex. /category/food) pages/[username]/info.js =&gt; /:username/info (ex. /jimmy/info)   ⭐ slug의 값은 Next.js에서 제공하는 useRouter을 사용해 Router의 query로 컨트롤한다.   import { useRouter } from 'next/router' ... const router = useRouter() const {slug} = router.query ...   ▪ 다중 slug   ...을 쓰면 무한 경로로 사용할 수 있다.   ⭐ 슬래시가 하나 이상이면 slug페이지가 트리거 된다.   const router = useRouter();  const findEventHandler = (year, month) =&gt; {   const fullPath = `/events/${year}/${month}`;   router.push(fullPath); };   ▪ 옵셔널 slug   slug 값이 없어도 동작하게 만드려면 [[...slug]]처럼 대괄호를 두번씩 사용하면 된다.   📄 3. Shallow Routing   : getServerSideProps / getStaticProps 등을 다시 실행시키지 않으면서 현재 상태를 잃지 않고 url을 바꾸는 방법   Shallow의 뜻은 ‘얉은’이라는 뜻을 가지고 있다.   Shllow Routing을 사용하는 경우는 상태를 유지하면서 url을 바꾸고 싶을 때 이다.   예를 들어 사용자가 어떤 동작을 했고, 그 기록을 query로 남기고 싶을때, query로 남기면 사용자가 새로고침을 해도 유지된다.   url을 바꾸는 3가지 방법      location.replace(\"url\"): 로컬 state는 유지 안됨(리렌더)   router.push(url): 로컬 state는 유지 / data fetching은 일어남   router.push(url, as, {shallow: true }): 로컬 state 유지 / data fetching은 일어나지 않음   출처           패스트 캠퍼스 Next.js 완전 정복            https://merrily-code.tistory.com/52      ","categories": ["Nextjs"],
+        "tags": ["Link","slug"],
+        "url": "/nextjs/nextjs-nextjs%EA%B0%80-%EB%9D%BC%EC%9A%B0%ED%8C%85%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/",
+        "teaser": null
+      },{
         "title": "🚨 Component cannot be used as a JSX component. Its return type is not a valid JSX element",
         "excerpt":"🚨 에러 발생   프로젝트 진행 중 Layout 컴포넌트에서 에러가 발생했다.      ❔ 에러 원인   해당 컴포넌트를 함수형으로 작성했는데 return 문이 없었다.   🔨 에러 해결   // Page.tsx ... export default function Page({ children }: Props) {   return &lt;Container&gt;{children}&lt;/Container&gt; } ...   출처      stack overflow  ","categories": ["JavaScript"],
         "tags": ["에러"],
@@ -1584,8 +1590,14 @@ var store = [{
         "teaser": null
       },{
         "title": "[Next.js] Next.js란?",
-        "excerpt":" ","categories": ["Nextjs"],
+        "excerpt":"📄 Next.js는 무엇일까?      리액트 프레임 워크   리액트JS의 풀스택 프레임 워크   🎲 리액트를 더 잘 사용하기 위해 만들어진 리액트 프레임워크   📄 주요 기능      서버 사이드 렌더링 (사전 렌더링)            풀스택 프레임워크라 불리는 이유       리액트 페이지, 컴포넌트를 서버 측에서 미리 렌더링       SEO에 유리 + 로딩 경험 유리 -&gt; 서버로부터 받은 모든 정보가 html에 포함되어 있기 때문           파일 기반 라우팅            기존 리액트는 라우터가 아예 없음. 리액트 라우터 사용했음.       페이지 폴더의 이름으로 url을 결정한다.           ⭐ 풀스택 쌉가능            백엔드 API를 리액트 프로젝트에 추가할 수 있다.       독립적인 REST API 프로젝트를 구축하지 않아도 된다.           참고           유데미 Nextjs.&amp;React - 완전 정복 가이드            Next.js 공식 문서      ","categories": ["Nextjs"],
         "tags": ["Next.js"],
         "url": "/nextjs/nextjs-Nextjs%EB%9E%80/",
+        "teaser": null
+      },{
+        "title": "[Next.js] Next.js의 페이지 사전렌더링",
+        "excerpt":"📄 Next.js가 페이지를 준비하고 사전 렌더링을 하는 방법      💡 Hydration이란? HTML을 미리 렌더링하고, 그 뒤에 요청이 오면 chunk단위로 js를 보내주어 이벤트가 작동하는 것    Next.js의 사전렌더링은 기존 리액트의 CRA와 다르게 완성된 HTML을 브라우저에 보내주는 방법이다.   사전 렌더링은 첫번째 페이지에만 적용되며, 첫번째 페이지 렌더링이 끝아면 다시 SPA로 돌아간다.   이렇게 미리 완성된 HTML 페이지를 가져오면 두가지 이점이 생긴다.      사용자는 데이터가 실질적으로 로딩될때까지 기다리지 않아도 된다. =&gt; 사용자 경험 최적화   구글 검색엔진이 실질적 데이터가 들어있는 HTML코드를 읽고 해석한다. =&gt; SEO 최적화   Next.js 가 사전렌더링을 구현하는 방법은 SSG, SSR이 있다.   ⭐ 중요한 사실은 Next.js는 어떤 작업을 하지 않아도 기본적으로 사전렌더링을 한다는 점이다. SSG, SSR은 사전렌더링을 하는 방식을 정하기 위한 요소라는 점을 이해해야한다.   🔴 SSG(Server-Side-Generation, Static-Site-Generation)      사용 방법: 페이지에 getStaticProps함수를 추가한다.   사용 목적            페이지가 사전 생성되어야 하는 것을 Next.js에게 알려준다.       만약 Next.js가 사전렌더링을 하지 않도록 설정되었을 때, getStaticProps함수로 특정 페이지를 사전렌더링 하도록 지정할 수 있다.           페이지 생성 시기: 프로젝트 빌드시   function HomePage(props) {   const { products } = props;   return (     &lt;ul&gt;       {products.map((product) =&gt; (         &lt;li key={product.id}&gt;{product.title}&lt;/li&gt;       ))}     &lt;/ul&gt;   ); }  export async function getStaticProps() {   return {     // 항상 객체를 반환한다.     props: {       products: [{ id: \"p1\", title: \"Product 1\" }],     },   }; }  export default HomePage;   getStaticProp가 포함된 페이지 파일이 실행되면 발생하는 순서를 다음과 같다.      getStaticProps함수를 먼저 호출한다. 함수안에 컴포넌트에서 사용될 데이터를 페칭해오는 작업을 한다.   컴포넌트 함수를 실행한다.   참고           유데미 Nextjs.&amp;React - 완전 정복 가이드            Next.js 공식 문서      ","categories": ["Nextjs"],
+        "tags": ["SSG","SSR"],
+        "url": "/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/",
         "teaser": null
       }]
