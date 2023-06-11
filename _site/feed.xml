@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-29T12:56:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Next.js] Next.js의 페이지 사전렌더링</title><link href="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/" rel="alternate" type="text/html" title="[Next.js] Next.js의 페이지 사전렌더링" /><published>2023-05-29T00:00:00+09:00</published><updated>2023-05-29T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/"><![CDATA[<h2 id="-nextjs가-페이지를-준비하고-사전-렌더링을-하는-방법">📄 Next.js가 페이지를 준비하고 사전 렌더링을 하는 방법</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-03T15:56:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</title><link href="http://localhost:4000/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기" /><published>2023-06-01T00:00:00+09:00</published><updated>2023-06-01T22:06:00+09:00</updated><id>http://localhost:4000/react/react-fowardRef%EB%A1%9C%20%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20DOM%EC%97%90%20%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-리액트-폼-관리하기">📄 리액트 폼 관리하기</h2>
+
+<p>하나의 폼을 관리할 때 input이 각각 파일로 나뉘어져 있다면 관리할 수 있는 방법은 여러가지가 있다.</p>
+
+<ol>
+  <li>부모-자식 컴포넌트간 통신</li>
+  <li>상태 관리 라이브러리 사용</li>
+  <li>Context API 사용</li>
+  <li>폼 라이브러리 사용</li>
+</ol>
+
+<p>원래는 상태 관리 라이브러리로 form을 관리했지만 해당 state를 구독하는 컴포넌트가 타이핑마다 리렌더링되어 비효율적이라는 생각이 들었다.</p>
+
+<p>그래서 다른 방법이 있나 찾아보던 중 <code class="language-plaintext highlighter-rouge">forwardRef</code>라는 react 훅을 알게 되었다.</p>
+
+<h2 id="-forwardref를-써보자">📄 forwardRef를 써보자</h2>
+
+<ul>
+  <li>
+    <p>역할: 부모컴포넌트가 자녀 컴포넌트에 ref를 전달할 수 있다.</p>
+  </li>
+  <li>
+    <p>사용법: 자식 컴포넌트를 forwardRef로 감싸준다.</p>
+  </li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nf">useRef</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">focus</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">inputRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nf">focus</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="nf">return </span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">MyInput</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">inputRef</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">focus</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">포커스</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Input</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ref</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
+</span><span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nf">forwardRef</span><span class="p">(</span><span class="nx">MyInput</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="-주의할-점">📄 주의할 점</h3>
+
+<p>자녀 컴포넌트가 가진 DOM노드를 외부로 노출시키는 일이므로 캡슐화를 방해할 수 있다.</p>
+
+<p>필요하다면 사용하지만 굳이 필요없다면 최선책으로 사용할만한 방법은 아니다.</p>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=LtYzjv2yXHE&amp;list=PLZ5oZ2KmQEYjVH2ie-sZJnbEE6B-uCVIh&amp;index=6">별코딩 Youtube - React의 ForwardRef란?</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="forwardRef" /><summary type="html"><![CDATA[각각 파일로 나뉘어져 있는 input을 어떻게 관리하면 좋을까]]></summary></entry><entry><title type="html">[Next.js] Next.js의 페이지 사전렌더링</title><link href="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/" rel="alternate" type="text/html" title="[Next.js] Next.js의 페이지 사전렌더링" /><published>2023-05-29T00:00:00+09:00</published><updated>2023-05-29T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/"><![CDATA[<h2 id="-nextjs가-페이지를-준비하고-사전-렌더링을-하는-방법">📄 Next.js가 페이지를 준비하고 사전 렌더링을 하는 방법</h2>
 
 <blockquote>
   <p>💡 Hydration이란? HTML을 미리 렌더링하고, 그 뒤에 요청이 오면 chunk단위로 js를 보내주어 이벤트가 작동하는 것</p>
@@ -257,84 +314,7 @@
 
 <ul>
   <li><a href="https://www.udemy.com/course/react-query-react/">udemy - React Query: React로 서버 상태 관리하기</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="prefetching" /><category term="keepPreviousData" /><summary type="html"><![CDATA[다음 페이지 데이터 프리페칭하기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 시저 암호 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 시저 암호 by JS" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.</p>
-
-<ul>
-  <li>공백은 아무리 밀어도 공백입니다.</li>
-  <li>s는 알파벳 소문자, 대문자, 공백으로만 이루어져 있습니다.</li>
-  <li>s의 길이는 8000이하입니다.</li>
-  <li>n은 1 이상, 25이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">MINCODE</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">MAXCODE</span> <span class="o">=</span> <span class="mi">122</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
-
-  <span class="kd">let</span> <span class="nx">store</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
-      <span class="k">continue</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()[</span><span class="nx">i</span><span class="p">].</span><span class="nf">charCodeAt</span><span class="p">()</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">store</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">)</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span> <span class="o">-</span> <span class="nx">MAXCODE</span> <span class="o">+</span> <span class="nx">MINCODE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nf">fromCharCode</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nf">toUpperCase</span><span class="p">())</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span>
-    <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>문자열의 아스키 코드를 구하고 n만큼 더한다.</li>
-  <li>만약 더한 값이 122보다 크다면 더한 값 - 122 + 97 - 1 을 해준다.</li>
-  <li>해당 문자열이 대문자인지 확인 후 값을 변환한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">upper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><span class="dl">"</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">lower</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abcdefghijklmnopqrstuvwxyz</span><span class="dl">"</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-
-  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">answer</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">;</span>
-      <span class="k">continue</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kd">var</span> <span class="nx">textArr</span> <span class="o">=</span> <span class="nx">upper</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">?</span> <span class="nx">upper</span> <span class="p">:</span> <span class="nx">lower</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">index</span> <span class="o">&gt;=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="nx">index</span> <span class="o">-=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">textArr</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>아스키코드가 아닌 배열로 작성한 풀이입니다.</p>
-
-<ol>
-  <li>우선, 주어진 문자열을 순환할때 해당 문자열이 소문자인지 대문자인지 확인합니다. (<code class="language-plaintext highlighter-rouge">textArr</code>)</li>
-  <li><code class="language-plaintext highlighter-rouge">textArr</code>에 해당 문자열의 인덱스를 구한 후 n만큼 더합니다.</li>
-  <li>만약 <code class="language-plaintext highlighter-rouge">textArr</code>의 길이보다 길어질 경우 그만큼 값을 빼서 정확한 위치를 구합니다.</li>
-</ol>
-
-<p>아스키코드를 사용한 풀이보다 오히려 가독성이 좋은 것 같습니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="아스키 코드" /><category term="배열" /></entry><entry><title type="html">[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기</title><link href="http://localhost:4000/react/react-reactquery/" rel="alternate" type="text/html" title="[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/react/react-reactquery</id><content type="html" xml:base="http://localhost:4000/react/react-reactquery/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/236417752-b3d3dad8-8f8d-472b-b553-9254d4ff4ddc.png" alt="image" /></p>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="prefetching" /><category term="keepPreviousData" /><summary type="html"><![CDATA[다음 페이지 데이터 프리페칭하기]]></summary></entry><entry><title type="html">[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기</title><link href="http://localhost:4000/react/react-reactquery/" rel="alternate" type="text/html" title="[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/react/react-reactquery</id><content type="html" xml:base="http://localhost:4000/react/react-reactquery/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/236417752-b3d3dad8-8f8d-472b-b553-9254d4ff4ddc.png" alt="image" /></p>
 
 <h2 id="-리액트-쿼리-공부를-시작한-이유">📄 리액트 쿼리 공부를 시작한 이유</h2>
 
@@ -476,7 +456,84 @@
 
 <ul>
   <li><a href="https://www.udemy.com/course/react-query-react/">udemy - React Query: React로 서버 상태 관리하기</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="react-query" /><summary type="html"><![CDATA[유데미 리액트 쿼리 인강 듣고 정리한 기록]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 예산 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 예산 by JS" /><published>2023-05-04T00:00:00+09:00</published><updated>2023-05-04T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="react-query" /><summary type="html"><![CDATA[유데미 리액트 쿼리 인강 듣고 정리한 기록]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 시저 암호 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 시저 암호 by JS" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p>어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.</p>
+
+<ul>
+  <li>공백은 아무리 밀어도 공백입니다.</li>
+  <li>s는 알파벳 소문자, 대문자, 공백으로만 이루어져 있습니다.</li>
+  <li>s의 길이는 8000이하입니다.</li>
+  <li>n은 1 이상, 25이하인 자연수입니다.</li>
+</ul>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">MINCODE</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">MAXCODE</span> <span class="o">=</span> <span class="mi">122</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="kd">let</span> <span class="nx">store</span><span class="p">;</span>
+  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
+      <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()[</span><span class="nx">i</span><span class="p">].</span><span class="nf">charCodeAt</span><span class="p">()</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">store</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">)</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span> <span class="o">-</span> <span class="nx">MAXCODE</span> <span class="o">+</span> <span class="nx">MINCODE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nf">fromCharCode</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nf">toUpperCase</span><span class="p">())</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span>
+    <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>문자열의 아스키 코드를 구하고 n만큼 더한다.</li>
+  <li>만약 더한 값이 122보다 크다면 더한 값 - 122 + 97 - 1 을 해준다.</li>
+  <li>해당 문자열이 대문자인지 확인 후 값을 변환한다.</li>
+</ol>
+
+<h2 id="-best-practice">👍 Best Practice</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">upper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">lower</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abcdefghijklmnopqrstuvwxyz</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+
+  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">answer</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">;</span>
+      <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">textArr</span> <span class="o">=</span> <span class="nx">upper</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">?</span> <span class="nx">upper</span> <span class="p">:</span> <span class="nx">lower</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">index</span> <span class="o">&gt;=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="nx">index</span> <span class="o">-=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">textArr</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>아스키코드가 아닌 배열로 작성한 풀이입니다.</p>
+
+<ol>
+  <li>우선, 주어진 문자열을 순환할때 해당 문자열이 소문자인지 대문자인지 확인합니다. (<code class="language-plaintext highlighter-rouge">textArr</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">textArr</code>에 해당 문자열의 인덱스를 구한 후 n만큼 더합니다.</li>
+  <li>만약 <code class="language-plaintext highlighter-rouge">textArr</code>의 길이보다 길어질 경우 그만큼 값을 빼서 정확한 위치를 구합니다.</li>
+</ol>
+
+<p>아스키코드를 사용한 풀이보다 오히려 가독성이 좋은 것 같습니다.</p>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li>프로그래머스</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="아스키 코드" /><category term="배열" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 예산 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 예산 by JS" /><published>2023-05-04T00:00:00+09:00</published><updated>2023-05-04T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
 
 <p>S사에서는 각 부서에 필요한 물품을 지원해 주기 위해 부서별로 물품을 구매하는데 필요한 금액을 조사했습니다. 그러나, 전체 예산이 정해져 있기 때문에 모든 부서의 물품을 구매해 줄 수는 없습니다. 그래서 최대한 많은 부서의 물품을 구매해 줄 수 있도록 하려고 합니다.</p>
 
@@ -592,65 +649,4 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toString" /><category term="parseInt" /><summary type="html"><![CDATA[toString()으로 n진법 나타내기]]></summary></entry><entry><title type="html">[모여봐요 코딩의 늪] 모코숲 뜯어고치기 시작</title><link href="http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0-%EC%8B%9C%EC%9E%91/" rel="alternate" type="text/html" title="[모여봐요 코딩의 늪] 모코숲 뜯어고치기 시작" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T22:06:00+09:00</updated><id>http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2%20%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%8B%9C%EC%9E%91</id><content type="html" xml:base="http://localhost:4000/coding-swamp/%EB%AA%A8%EC%BD%94%EC%88%B2-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0-%EC%8B%9C%EC%9E%91/"><![CDATA[<h2 id="-나는-왜-이-프로젝트를-처음부터-뜯어고치는-재공사를-시작하는가">📄 나는 왜 이 프로젝트를 처음부터 뜯어고치는 재공사를 시작하는가</h2>
-
-<p>모코숲은 나의 애증의 프로젝트..</p>
-
-<p>백엔드를 담당하시는 분과 todolist이후 처음으로 진행하는 프로젝트이다.</p>
-
-<p>처음으로 여러가지 기능을 만들다보니 제대로 꼬여버렸다.</p>
-
-<p>신나서 막 짓고 쌓다보니 새로운 기능을 추가하기도 참 어렵게 되었다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/235301875-9cc90398-e28a-4f67-b5c8-ac450e3f989e.png" alt="image" /></p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/235301888-c1f717a4-06e2-4c6f-98d3-08774df69fe5.png" alt="image" /></p>
-
-<p>굉장히 많은 오류들이 있었다.</p>
-
-<p>cors 에러 + 레이아웃 우장창 + 알 수 없는 렌더링 등등…</p>
-
-<p>할 건 많은데 다른 일까지 겹쳐서 다시 손대기가 굉장히 두려운 프로젝트다.</p>
-
-<p>일단 프로젝트를 다시 시작해야하는 이유는 다음과 같다</p>
-
-<h3 id="1-꼬여버린-레이아웃">1. 꼬여버린 레이아웃</h3>
-
-<p>사실 레이아웃 같은걸 투두리스트말고 만들어봤어야지 아무것도 모르는 상태에서 제대로 된 틀을 설정하지 않고 시작해 페이지를 받쳐주는 틀이 엉망이 되었다. 사실 그래서 모 인강사이트에서 개발자도구를 켜서 참고하면서 했는데 하다보니 내 코드가 아니게 되어 스타일이 이상해졌을 때 어떻게 손대야 할지 감이 안잡혔다.</p>
-
-<h3 id="2-사용자-접근성-고려">2. 사용자 접근성 고려</h3>
-
-<p>현재 진행되어 있는 프로젝트는 로그인/회원가입이 안되어 있으면 메인페이지에 접근하지 못한다. URL로 접근하더라도 라우터가 튕겨보낸다.</p>
-
-<p>백엔드 개발자 분에게 웹 성격 특성상 서비스를 먼저 둘러보는 것이 사용자 접근에 더 좋을 것이라는 피드백을 들었다. 맨 처음 접속한 페이지를 로그인페이지가 아니라 메인 페이지로 변경하고 public/private 라우터도 싹다 바꿔줄 예정이다.</p>
-
-<h3 id="3-꼬여버린-전역-상태-관리">3. 꼬여버린 전역 상태 관리</h3>
-
-<p>전역 상태 관리가 제대로 꼬였다. 각 state의 성격대로 잘 구분한줄 알았는데 그렇지 않더랬다…
-서버에서 받아온 하나의 데이터를 여러 slice에서 관리하게 되고 이걸 고치자니 아예 로직이 엉켜버렸다.</p>
-
-<h3 id="4-디자인이-마음에-아주-안든다">4. 디자인이 마음에 아주 안든다</h3>
-
-<p>왜 디자인을 이렇게 한건지 모르겠다. 처음 만들때 simple is the best 인것을… 욕심이 과했는지 아니면 너무 많이 봐서 그러는지 모르겠고 프로젝트한테 미안하지만 살짝 어디 내놓기 창피하다.</p>
-
-<h3 id="5-전혀-재사용되고-있지-않는-컴포넌트들">5. 전혀 재사용되고 있지 않는 컴포넌트들</h3>
-
-<p>컴포넌트를 재사용하지 않으면 리액트를 왜 사용할까…🥶 props나 state다루는 것이 익숙하지 않으니 컴포넌트를 재사용하는 것이 거의 없다. 지금은 이걸 좀 공부하기 위해 다른 사람이 만든 프로젝트(예. sendbird)를 열어보며 어렵지만 감을 잡아가고 있는 중이다. 이것을 토대로 프로젝트 설계를 다시 할 예정이다.</p>
-
-<h2 id="️-결론">🏃‍♀️ 결론!</h2>
-
-<p>조급하지 말자.</p>
-
-<p>할게 쌓여 있으면 불안한 내 성격이 프로젝트를 망쳤다.</p>
-
-<p>하나의 기능을 만들더라도 차분하게 설계하고 시작하자.</p>
-
-<h2 id="-목표">🍀 목표</h2>
-
-<ol>
-  <li>피그마로 스타일 설계 진행하기</li>
-  <li>디자인은 심플하게. 난 디자인 전공이 아니다. 슬프다.</li>
-  <li>버그를 미루지 말자. 미루면 눈덩이처럼 증가해서 굉장히 힘들다.</li>
-  <li>구글링하고 남의 코드를 참고하되 된다고 끝내지말고 공부해서 내것으로 만들어 나중에 오류가 발생해도 당황하지 말자.</li>
-  <li>힘내자…</li>
-</ol>]]></content><author><name>Sujin Kim</name></author><category term="coding-swamp" /><category term="모코늪" /><category term="재시작" /><summary type="html"><![CDATA[애증의 프로젝트 모코숲 다시 뜯어고치기 시작]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toString" /><category term="parseInt" /><summary type="html"><![CDATA[toString()으로 n진법 나타내기]]></summary></entry></feed>

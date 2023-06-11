@@ -1606,4 +1606,10 @@ var store = [{
         "tags": ["SSG","SSR"],
         "url": "/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/",
         "teaser": null
+      },{
+        "title": "[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기",
+        "excerpt":"📄 리액트 폼 관리하기   하나의 폼을 관리할 때 input이 각각 파일로 나뉘어져 있다면 관리할 수 있는 방법은 여러가지가 있다.      부모-자식 컴포넌트간 통신   상태 관리 라이브러리 사용   Context API 사용   폼 라이브러리 사용   원래는 상태 관리 라이브러리로 form을 관리했지만 해당 state를 구독하는 컴포넌트가 타이핑마다 리렌더링되어 비효율적이라는 생각이 들었다.   그래서 다른 방법이 있나 찾아보던 중 forwardRef라는 react 훅을 알게 되었다.   📄 forwardRef를 써보자           역할: 부모컴포넌트가 자녀 컴포넌트에 ref를 전달할 수 있다.            사용법: 자식 컴포넌트를 forwardRef로 감싸준다.       const inputRef = useRef();  const focus = () =&gt; {   inputRef.current.focus(); };  return (   &lt;div&gt;     &lt;MyInput ref={inputRef} /&gt;     &lt;button onClick={focus}&gt;포커스&lt;/button&gt;   &lt;/div&gt; );   const Input = (ref) =&gt; {   return &lt;input ref={ref} /&gt;; };  export default forwardRef(MyInput);   📄 주의할 점   자녀 컴포넌트가 가진 DOM노드를 외부로 노출시키는 일이므로 캡슐화를 방해할 수 있다.   필요하다면 사용하지만 굳이 필요없다면 최선책으로 사용할만한 방법은 아니다.   출처      별코딩 Youtube - React의 ForwardRef란?  ","categories": ["React"],
+        "tags": ["forwardRef"],
+        "url": "/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/",
+        "teaser": null
       }]

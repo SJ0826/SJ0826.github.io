@@ -67,6 +67,53 @@ export default HomePage;
 1. `getStaticProps`함수를 먼저 호출한다. 함수안에 컴포넌트에서 사용될 데이터를 페칭해오는 작업을 한다.
 2. 컴포넌트 함수를 실행한다.
 
+#### 🗨 SSG를 통해 JSON데이터 가져오기
+
+- SSG를 하면서 모든 데이터를 파일 내에 저장하지 않고, JSON파일을 불러와 사용하는 방법
+
+1. data 폴더를 생성해 json 파일을 만들어 데이터를 저장한다.
+
+```js
+{
+"products": [
+  { "id": "p1", "title": "Product 1", "description": "This is product 1" },
+  { "id": "p2", "title": "Product 2", "description": "This is product 2" },
+  { "id": "p3", "title": "Product 3", "description": "This is product 3" }
+]
+}
+```
+
+2. 데이터를 사용할 페이지의 `getStaticProps`함수에서 데이터를 가져와 return한다.
+
+```js
+import path from "path";
+import fs from "fs/promises"; // Node.js 로 부터 파일 시스템 모듈을 임포트
+
+function HomePage(props) {
+  //getStaticProps를 통해 가져온 json데이터를 props를 통해 전달
+  const { products } = props;
+  return (
+    <ul>
+      {products.map((product) => (
+        <li key={product.id}>{product.title}</li>
+      ))}
+    </ul>
+  );
+}
+
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
+  const jsonData = await fs.readFile(filePath);
+  const data = JSON.parse(jsonData);
+
+  return {
+    props: {
+      products: data.products,
+    },
+  };
+}
+```
+
 ## 참고
 
 - [유데미 Nextjs.&React - 완전 정복 가이드](https://www.udemy.com/course/nextjs-react-incl-two-paths)
