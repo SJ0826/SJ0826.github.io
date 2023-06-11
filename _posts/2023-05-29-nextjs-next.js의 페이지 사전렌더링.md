@@ -10,7 +10,7 @@ categories:
   - Nextjs
 tags:
   - ["SSG", "SSR"]
-last_modified_at: 2023-05-29T08:06:00-05:00
+last_modified_at: 2023-06-11T08:06:00-05:00
 ---
 
 ## 📄 Next.js가 페이지를 준비하고 사전 렌더링을 하는 방법
@@ -113,6 +113,30 @@ export async function getStaticProps() {
   };
 }
 ```
+
+### 🗨 ISR (증분 정적 생성) 활용하기
+
+- 사용 목적: 사전 생성하는 페이지에서 데이터가 계속 **업데이트** 되는 경우에 사용
+
+- 장점: 페이지를 빌드할 때 한 번만 생성하는 것이 아닌 재배포 없이 업데이트 할 수 있다.
+
+```js
+export async function getStaticProps() {
+  console.log("(RE-)Generating...");
+  const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
+  const jsonData = await fs.readFile(filePath);
+  const data = JSON.parse(jsonData);
+
+  return {
+    props: {
+      products: data.products,
+    },
+    revalidate: 10, // 🎉 ISR: 10초마다 주어진 페이지를 Next.js가 재생성한다.
+  };
+}
+```
+
+![image](https://github.com/SJ0826/next-bnb/assets/56298540/0128068d-b7d6-410c-8990-5d3fc7ea2c0c)
 
 ## 참고
 
