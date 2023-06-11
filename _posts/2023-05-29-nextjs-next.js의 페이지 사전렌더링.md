@@ -114,7 +114,7 @@ export async function getStaticProps() {
 }
 ```
 
-### 🗨 ISR (증분 정적 생성) 활용하기
+#### 🗨 ISR (증분 정적 생성) 활용하기
 
 - 사용 목적: 사전 생성하는 페이지에서 데이터가 계속 **업데이트** 되는 경우에 사용
 
@@ -137,6 +137,28 @@ export async function getStaticProps() {
 ```
 
 ![image](https://github.com/SJ0826/next-bnb/assets/56298540/0128068d-b7d6-410c-8990-5d3fc7ea2c0c)
+
+#### 🗨 getStaticProps 구성 옵션 활용하기
+
+1. `notFound`: 페이지가 일반 페이지 대신 404 오류 페이지를 렌더링
+
+```js
+if (data.products.length === 0) {
+  return { notFound: true };
+}
+```
+
+2. `redirect`: 데이터베이스에 엑세스할 수 없을 경우 주로 사용 (데이터 자체가 없을 때)
+
+```js
+if (!data) {
+  return {
+    redirect: {
+      destination: "/no-data",
+    },
+  };
+}
+```
 
 ## 참고
 
