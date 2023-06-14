@@ -17,7 +17,7 @@ last_modified_at: 2022-10-24T08:06:00-05:00
 
 Next.js는 에서 Image 컴포넌트를 제공한다.
 
-```
+```js
 <Image src="/images/profile.jpg" width={144} height={144} alt="Jimmy" /> // Image 태그
 
 <Img src="/images/profile.jpg" alt="Jimmy" /> // img 태그
