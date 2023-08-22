@@ -283,10 +283,10 @@
             <li><a href="/css/">CSS (32)</a></li>
           
           
-            <li><a href="/react/">React (25)</a></li>
+            <li><a href="/react/">React (26)</a></li>
           
           
-            <li><a href="/nextjs/">Next.js (4)</a></li>
+            <li><a href="/nextjs/">Next.js (6)</a></li>
           
           
             <li><a href="/typescript/">TypeScript (25)</a></li>
@@ -334,7 +334,7 @@
             <li><a href="/cs/algorithm/">알고리즘 (3)</a></li>
           
           
-            <li><a href="/cs/network/">네트워크 (7)</a></li>
+            <li><a href="/cs/network/">네트워크 (8)</a></li>
           
         </ul>
         
@@ -447,13 +447,13 @@
 </span><span class="o">&lt;</span><span class="sr">/body&gt;</span><span class="err">;
 </span>
 <span class="c1">// js</span>
-<span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">divs</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">div</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="kd">function</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -480,15 +480,15 @@
 </span><span class="o">&lt;</span><span class="sr">/body&gt;</span><span class="err">;
 </span>
 <span class="c1">// js</span>
-<span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">divs</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">div</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">,</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">capture</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// default 값은 false입니다.</span>
   <span class="p">});</span>
 <span class="p">});</span>
 
-<span class="kd">function</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -508,25 +508,25 @@
 <code class="language-plaintext highlighter-rouge">event.stopPropagation()</code>을 사용하면 이벤트의 진행과정을 중단시킬 수 있습니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 이벤트 버블링 예제</span>
-<span class="nx">divs</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">div</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">);</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="kd">function</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span> <span class="c1">// three</span>
+<span class="kd">function</span> <span class="nx">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span> <span class="c1">// three</span>
 <span class="p">}</span>
 
 <span class="c1">// 이벤트 캡쳐 예제</span>
-<span class="nx">divs</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">div</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">capture</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// default 값은 false입니다.</span>
   <span class="p">});</span>
 <span class="p">});</span>
 
-<span class="kd">function</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span> <span class="c1">// one</span>
+<span class="kd">function</span> <span class="nx">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span> <span class="c1">// one</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -548,24 +548,24 @@
 </code></pre></div></div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 새 리스트 아이템을 추가하는 코드</span>
-<span class="kd">var</span> <span class="nx">itemList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.itemList</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">itemList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.itemList</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">labelText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createTextNode</span><span class="p">(</span><span class="dl">"</span><span class="s2">이벤트 위임 학습</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">labelText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="dl">"</span><span class="s2">이벤트 위임 학습</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="nx">input</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">input</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">item3</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">label</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">for</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">item3</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">label</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">labelText</span><span class="p">);</span>
-<span class="nx">li</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
-<span class="nx">li</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
-<span class="nx">itemList</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<span class="nx">input</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">input</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">item3</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">label</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">for</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">item3</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">label</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">labelText</span><span class="p">);</span>
+<span class="nx">li</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
+<span class="nx">li</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+<span class="nx">itemList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">itemList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.itemList</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">itemList</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">clicked</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">itemList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.itemList</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">itemList</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">clicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -670,6 +670,58 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+      <a href="/nextjs/nextjs-app-routing/" rel="permalink"><p>[Next.js] Next.js의 App router</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 08 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      Next.js page router와 app router
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/react/react-react-portal/" rel="permalink"><p>[React] React Portal</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> June 14 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      리액트 포탈을 사용한 모달 관리법
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
       <a href="/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="permalink"><p>[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</a>
       
     </h2>
@@ -706,58 +758,6 @@
      
     <p class="archive__item-excerpt" itemprop="description">
       Next.js가 페이지를 사전 렌더링하고 데이터를 페칭하는 방법
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/nextjs/nextjs-Nextjs%EB%9E%80/" rel="permalink"><p>[Next.js] Next.js란?</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      Next.js 이해하기
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="permalink"><p>[프로그래머스 / Lv 1] 삼총사 by JS</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 09 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      삼중 for문으로 가능한 조합의 수 구하기
 
     </p>
     

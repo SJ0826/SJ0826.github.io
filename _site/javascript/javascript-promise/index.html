@@ -283,10 +283,10 @@
             <li><a href="/css/">CSS (32)</a></li>
           
           
-            <li><a href="/react/">React (25)</a></li>
+            <li><a href="/react/">React (26)</a></li>
           
           
-            <li><a href="/nextjs/">Next.js (4)</a></li>
+            <li><a href="/nextjs/">Next.js (6)</a></li>
           
           
             <li><a href="/typescript/">TypeScript (25)</a></li>
@@ -334,7 +334,7 @@
             <li><a href="/cs/algorithm/">알고리즘 (3)</a></li>
           
           
-            <li><a href="/cs/network/">네트워크 (7)</a></li>
+            <li><a href="/cs/network/">네트워크 (8)</a></li>
           
         </ul>
         
@@ -443,28 +443,28 @@
 
 <p><strong>1. 프로미스가 생성자를 통해서 생성되면 pending(대기)상태가 됩니다.</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span> <span class="c1">//pending</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span> <span class="c1">//pending</span>
 </code></pre></div></div>
 
 <p><strong>2-1. pending상태로 돌입한 후 excutor 함수 인자 중 하나인 resolve 함수를 실행하면, fulfilled(이행)상태가 됩니다.</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// pending상태</span>
   <span class="c1">// ... 비동기적인 상황이 되는 처리가 벌어짐.</span>
-  <span class="nf">resolve</span><span class="p">();</span> <span class="c1">// fulfilled</span>
+  <span class="nx">resolve</span><span class="p">();</span> <span class="c1">// fulfilled</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
 <p><strong>2-2. excutor 함수 인자 중 하나인 reject 함수를 실행하면, rejected (거부) 상태가 됩니다.</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nf">reject</span><span class="p">();</span> <span class="c1">//rejected</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">reject</span><span class="p">();</span> <span class="c1">//rejected</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
 <p><strong>3-1. 프로미스 객체가 fulfilled 되는 시점에 .then 안에 설정한 callback 함수가 실행됩니다.</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">p</span><span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="cm">/*callback*/</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">p</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="cm">/*callback*/</span><span class="p">);</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -473,32 +473,32 @@
 
 <p>excutor의 resolve함수를 실행할 때 인자를 넣어 실행하면, then의 callback 함수의 인자로 받을 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">);</span>
-<span class="nf">then</span><span class="p">((</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{...})</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">then</span><span class="p">((</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{...})</span>
 </code></pre></div></div>
 
 <p><strong>3-2. 마찬가지로 프로미스 객체가 rejected되는 시점에 .catch안에 설정한 callback함수가 실행됩니다.</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">/*callback*/</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">/*callback*/</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
 <p>executor의 reject 함수를 실행할 때 인자를 넣어 실행하면, catch의 callback함수의 인자로 받을 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">reject</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">);</span>
-<span class="nf">catch</span><span class="p">((</span><span class="nx">reason</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{...})</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">reject</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">);</span>
+<span class="k">catch</span><span class="p">((</span><span class="nx">reason</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{...})</span>
 </code></pre></div></div>
 
 <p>보통 reject 함수를 실행하며 rejected 되는 이유를 넘기는데, 표준 내장 객체인 Error의 생성자를 이용하여 Error 객체를 만들 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">reject</span><span class="p">(</span><span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">bad</span><span class="dl">'</span><span class="p">));</span>
-<span class="nf">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{...});</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">bad</span><span class="dl">'</span><span class="p">));</span>
+<span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{...});</span>
 </code></pre></div></div>
 
 <p><strong>4. fulfilled 되거나 rejected 된 후에 최종적으로 실행할 것이 있다면, <code class="language-plaintext highlighter-rouge">.finally()</code>를 설정하고, 함수를 인자로 넣습니다.</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">finally</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{...});</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">finally</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{...});</span>
 </code></pre></div></div>
 
 <h2 id="-callback-vs-promise">📄 callback vs promise</h2>
@@ -511,20 +511,20 @@
 
 <p>이런 경우 함수가 아래로 진행되지 않고, callback 함수 안으로 진행됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">c</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">callback</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">c</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">callback</span><span class="p">();</span>
   <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nf">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">1000ms 후에 callback 함수가 실행됩니다.</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">1000ms 후에 callback 함수가 실행됩니다.</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nf">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nf">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3000ms 후에 callback 함수가 실행됩니다</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3000ms 후에 callback 함수가 실행됩니다</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
 <span class="p">});</span> <span class="c1">//callback hell (콜백 지옥)</span>
@@ -534,22 +534,22 @@
 
 <p>promise방식에서는 then 함수에서 다시 프로미스 객체를 리턴하는 방법을 통해 체이닝하면, 비동기 적업을 순차적으로 아래로 표현할 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">p</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nf">resolve</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">p</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">resolve</span><span class="p">();</span>
     <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">}</span>
 
-<span class="nf">p</span><span class="p">()</span>
-  <span class="p">.</span><span class="nf">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">p</span><span class="p">();</span> <span class="c1">// 다시 새로운 프로미스 객체를 만들어서 리턴한다.</span>
+<span class="nx">p</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">p</span><span class="p">();</span> <span class="c1">// 다시 새로운 프로미스 객체를 만들어서 리턴한다.</span>
   <span class="p">})</span>
-  <span class="p">.</span><span class="nf">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nf">p</span><span class="p">())</span>
-  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">4000ms 후에 fulfilled 됩니다.</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">p</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">4000ms 후에 fulfilled 됩니다.</span><span class="dl">"</span><span class="p">);</span>
   <span class="p">});</span>
 </code></pre></div></div>
 
@@ -561,35 +561,35 @@
 
 <p>value가 프로미스 객체가 아니면, value를 인자로 보내면서 then메서드를 실행합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="cm">/* value */</span><span class="p">);</span> <span class="c1">//프로미스라는 전역객체의 resolve함수를 실행하면서 동시에 promise를 만들어낸다.</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="cm">/* value */</span><span class="p">);</span> <span class="c1">//프로미스라는 전역객체의 resolve함수를 실행하면서 동시에 promise를 만들어낸다.</span>
 
-<span class="nb">Promise</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span>
-  <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">// 비동기 프로미스 객체를 생성해서 resolve의 인자인 value값으로 설정.</span>
-    <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nf">resolve</span><span class="p">();</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">resolve</span><span class="p">();</span>
     <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
   <span class="p">})</span>
-<span class="p">).</span><span class="nf">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span>
+<span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
     <span class="dl">"</span><span class="s2">프로미스 객체인 경우, resolve 된 결과를 받아 then이 실행됩니다.</span><span class="dl">"</span><span class="p">,</span>
     <span class="nx">data</span>
   <span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nb">Promise</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">bar</span><span class="dl">"</span><span class="p">).</span><span class="nf">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">then 메서드가 없는 경우, fulfilled됩니다.</span><span class="dl">"</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">bar</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">then 메서드가 없는 경우, fulfilled됩니다.</span><span class="dl">"</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
 <p>promise.reject를 사용하면, catch로 연결된 rejected 상태로 변경됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">reject</span><span class="p">(</span><span class="cm">/* */</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="cm">/* */</span><span class="p">);</span>
 
-<span class="nb">Promise</span><span class="p">.</span><span class="nf">reject</span><span class="p">(</span><span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">reason</span><span class="dl">"</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{})</span>
-  <span class="p">.</span><span class="nf">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">reason</span><span class="dl">"</span><span class="p">))</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
   <span class="p">});</span>
 </code></pre></div></div>
 
@@ -605,7 +605,7 @@
 
 <p>then의 함수의 인자로 프로미스 객체들의 resolve 인자값을 배열로 돌려줍니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">all</span><span class="p">([</span><span class="nx">프로미스</span> <span class="nx">객체들</span><span class="p">]);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">프로미스</span> <span class="nx">객체들</span><span class="p">]);</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">promise.all</code>에 전달되는 프라미스 중 하나라도 거부되면, <code class="language-plaintext highlighter-rouge">Promise.all</code>이 반환하는 프라미스는 에러와 함께 바로 거부됩니다.</p>
@@ -627,13 +627,13 @@
   <span class="dl">"</span><span class="s2">https://no-such-url</span><span class="dl">"</span><span class="p">,</span>
 <span class="p">];</span>
 
-<span class="nb">Promise</span><span class="p">.</span><span class="nf">allSettled</span><span class="p">(</span><span class="nx">urls</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">))).</span><span class="nf">then</span><span class="p">((</span><span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">results</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">result</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">fulfilled</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">urls</span><span class="p">[</span><span class="nx">num</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">allSettled</span><span class="p">(</span><span class="nx">urls</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">))).</span><span class="nx">then</span><span class="p">((</span><span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">results</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">result</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">fulfilled</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">urls</span><span class="p">[</span><span class="nx">num</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">urls</span><span class="p">[</span><span class="nx">num</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">reason</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">urls</span><span class="p">[</span><span class="nx">num</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">reason</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">});</span>
 <span class="p">});</span>
@@ -658,7 +658,7 @@
 
 <p>then의 함수의 인자로 가장 먼저 fulfilled 된 프로미스 개체의 resolve 인자값을 돌려줍니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nf">race</span><span class="p">([</span><span class="nx">프로미스</span> <span class="nx">객체들</span><span class="p">]);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">프로미스</span> <span class="nx">객체들</span><span class="p">]);</span>
 </code></pre></div></div>
 
 <h2 id="출처">출처</h2>
@@ -760,6 +760,58 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+      <a href="/nextjs/nextjs-app-routing/" rel="permalink"><p>[Next.js] Next.js의 App router</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 08 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      Next.js page router와 app router
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/react/react-react-portal/" rel="permalink"><p>[React] React Portal</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> June 14 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      리액트 포탈을 사용한 모달 관리법
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
       <a href="/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="permalink"><p>[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</a>
       
     </h2>
@@ -796,58 +848,6 @@
      
     <p class="archive__item-excerpt" itemprop="description">
       Next.js가 페이지를 사전 렌더링하고 데이터를 페칭하는 방법
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/nextjs/nextjs-Nextjs%EB%9E%80/" rel="permalink"><p>[Next.js] Next.js란?</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      Next.js 이해하기
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="permalink"><p>[프로그래머스 / Lv 1] 삼총사 by JS</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 09 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      삼중 for문으로 가능한 조합의 수 구하기
 
     </p>
     

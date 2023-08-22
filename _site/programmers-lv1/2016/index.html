@@ -283,10 +283,10 @@
             <li><a href="/css/">CSS (32)</a></li>
           
           
-            <li><a href="/react/">React (25)</a></li>
+            <li><a href="/react/">React (26)</a></li>
           
           
-            <li><a href="/nextjs/">Next.js (4)</a></li>
+            <li><a href="/nextjs/">Next.js (6)</a></li>
           
           
             <li><a href="/typescript/">TypeScript (25)</a></li>
@@ -334,7 +334,7 @@
             <li><a href="/cs/algorithm/">알고리즘 (3)</a></li>
           
           
-            <li><a href="/cs/network/">네트워크 (7)</a></li>
+            <li><a href="/cs/network/">네트워크 (8)</a></li>
           
         </ul>
         
@@ -442,24 +442,24 @@
 
 <h2 id="나의-풀이-️">나의 풀이 🙋‍♀️</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">dayOfTheWeek</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">FRI</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">SAT</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">SUN</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">MON</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">TUE</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">WED</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">THU</span><span class="dl">"</span><span class="p">];</span>
   <span class="kd">const</span> <span class="nx">daysOfMonth</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">];</span>
   <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-  <span class="nf">if </span><span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">sum</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// 1</span>
       <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">daysOfMonth</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-      <span class="nf">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">;</span> <span class="c1">//2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nx">sum</span> <span class="o">/</span> <span class="mi">7</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// 3</span>
+  <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">sum</span> <span class="o">/</span> <span class="mi">7</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// 3</span>
 
   <span class="k">return</span> <span class="nx">index</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">dayOfTheWeek</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="p">:</span> <span class="nx">dayOfTheWeek</span><span class="p">[</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
 <span class="p">}</span>
@@ -477,9 +477,9 @@
 
 <h4 id="처음-코드">처음 코드</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">daysOfMonth</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -487,12 +487,12 @@
 
 <h4 id="수정한-코드">수정한 코드</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">sum</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">daysOfMonth</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">;</span> <span class="c1">//2</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -529,14 +529,14 @@
 
 <h2 id="best-practice-1-">Best Practice #1 👍</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">getDayName</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">tempDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getDayName</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">tempDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
 
-  <span class="k">return</span> <span class="nx">tempDate</span><span class="p">.</span><span class="nf">toString</span><span class="p">().</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nf">toUpperCase</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">tempDate</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="c1">//아래 코드는 테스트를 위한 코드입니다.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">getDayName</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">24</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getDayName</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">24</span><span class="p">));</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">Date</code>가 있는 걸 알긴 했지만 그러면 너무 단순해질것같아서 사용하지 않았다.</p>
@@ -545,12 +545,12 @@
 
 <h2 id="best-practice-2-">Best Practice #2 👍</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">monthDay</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">];</span>
   <span class="kd">const</span> <span class="nx">weekDay</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">THU</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">FRI</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">SAT</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">SUN</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">MON</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">TUE</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">WED</span><span class="dl">"</span><span class="p">];</span>
 
   <span class="kd">let</span> <span class="nx">days</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">days</span> <span class="o">+=</span> <span class="nx">monthDay</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">days</span> <span class="o">+=</span> <span class="nx">monthDay</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
 
   <span class="k">return</span> <span class="nx">weekDay</span><span class="p">[</span><span class="nx">days</span> <span class="o">%</span> <span class="mi">7</span><span class="p">];</span>
 <span class="p">}</span>
@@ -658,6 +658,58 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+      <a href="/nextjs/nextjs-app-routing/" rel="permalink"><p>[Next.js] Next.js의 App router</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 08 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      Next.js page router와 app router
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/react/react-react-portal/" rel="permalink"><p>[React] React Portal</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> June 14 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      리액트 포탈을 사용한 모달 관리법
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
       <a href="/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="permalink"><p>[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</a>
       
     </h2>
@@ -694,58 +746,6 @@
      
     <p class="archive__item-excerpt" itemprop="description">
       Next.js가 페이지를 사전 렌더링하고 데이터를 페칭하는 방법
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/nextjs/nextjs-Nextjs%EB%9E%80/" rel="permalink"><p>[Next.js] Next.js란?</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      Next.js 이해하기
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="permalink"><p>[프로그래머스 / Lv 1] 삼총사 by JS</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 09 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      삼중 for문으로 가능한 조합의 수 구하기
 
     </p>
     

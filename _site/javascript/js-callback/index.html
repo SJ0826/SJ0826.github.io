@@ -283,10 +283,10 @@
             <li><a href="/css/">CSS (32)</a></li>
           
           
-            <li><a href="/react/">React (25)</a></li>
+            <li><a href="/react/">React (26)</a></li>
           
           
-            <li><a href="/nextjs/">Next.js (4)</a></li>
+            <li><a href="/nextjs/">Next.js (6)</a></li>
           
           
             <li><a href="/typescript/">TypeScript (25)</a></li>
@@ -334,7 +334,7 @@
             <li><a href="/cs/algorithm/">알고리즘 (3)</a></li>
           
           
-            <li><a href="/cs/network/">네트워크 (7)</a></li>
+            <li><a href="/cs/network/">네트워크 (8)</a></li>
           
         </ul>
         
@@ -437,33 +437,33 @@
 
 <h2 id="-콜백은-어떤-경우에-사용될까">📄 콜백은 어떤 경우에 사용될까?</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// &lt;script&gt; 태그를 만들고 페이지에 태그를 추가합니다.</span>
   <span class="c1">// 태그가 페이지에 추가되면 src에 있는 스크립트를 로딩하고 실행합니다.</span>
-  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">script</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">script</span><span class="dl">"</span><span class="p">);</span>
   <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nf">loadScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">/my/script.js</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// script.js엔 "function newFunction() {…}"이 있습니다.</span>
+<span class="nx">loadScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">/my/script.js</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// script.js엔 "function newFunction() {…}"이 있습니다.</span>
 
-<span class="nf">newFunction</span><span class="p">();</span> <span class="c1">// 함수가 존재하지 않는다는 에러가 발생합니다!</span>
+<span class="nx">newFunction</span><span class="p">();</span> <span class="c1">// 함수가 존재하지 않는다는 에러가 발생합니다!</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">new Function()</code>에서 에러가 발생하는 이유는 브라우저가 스크립트를 읽어올 수 있는 시간을 충분히 확보하지 못했기 때문이다.<br /></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
   <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
 
-  <span class="nx">script</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">callback</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+  <span class="nx">script</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
 
-  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nf">loadScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">/my/script.js</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">loadScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">/my/script.js</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// 콜백 함수는 스크립트 로드가 끝나면 실행됩니다.</span>
-  <span class="nf">newFunction</span><span class="p">();</span> <span class="c1">// 이제 함수 호출이 제대로 동작합니다.</span>
+  <span class="nx">newFunction</span><span class="p">();</span> <span class="c1">// 이제 함수 호출이 제대로 동작합니다.</span>
   <span class="p">...</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -478,19 +478,19 @@
 
 <p>콜백함수를 이용해서 에러를 핸들링할 수 있다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">script</span><span class="dl">"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">script</span><span class="dl">"</span><span class="p">);</span>
   <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
 
-  <span class="nx">script</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">script</span><span class="p">);</span>
+  <span class="nx">script</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">script</span><span class="p">);</span>
   <span class="nx">script</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span>
-    <span class="nf">callback</span><span class="p">(</span><span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">src</span><span class="p">}</span><span class="s2">를 불러오는 도중에 에러가 발생했습니다.`</span><span class="p">));</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">src</span><span class="p">}</span><span class="s2">를 불러오는 도중에 에러가 발생했습니다.`</span><span class="p">));</span>
 
-  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nf">loadScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">/my/script.js</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">script</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">loadScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">/my/script.js</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">script</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// 에러 처리</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="c1">// 스크립트 로딩이 성공적으로 끝남</span>
@@ -604,6 +604,58 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+      <a href="/nextjs/nextjs-app-routing/" rel="permalink"><p>[Next.js] Next.js의 App router</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 08 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      Next.js page router와 app router
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/react/react-react-portal/" rel="permalink"><p>[React] React Portal</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> June 14 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      리액트 포탈을 사용한 모달 관리법
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
       <a href="/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="permalink"><p>[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</a>
       
     </h2>
@@ -640,58 +692,6 @@
      
     <p class="archive__item-excerpt" itemprop="description">
       Next.js가 페이지를 사전 렌더링하고 데이터를 페칭하는 방법
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/nextjs/nextjs-Nextjs%EB%9E%80/" rel="permalink"><p>[Next.js] Next.js란?</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      Next.js 이해하기
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="permalink"><p>[프로그래머스 / Lv 1] 삼총사 by JS</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 09 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      삼중 for문으로 가능한 조합의 수 구하기
 
     </p>
     

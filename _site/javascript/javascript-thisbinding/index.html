@@ -283,10 +283,10 @@
             <li><a href="/css/">CSS (32)</a></li>
           
           
-            <li><a href="/react/">React (25)</a></li>
+            <li><a href="/react/">React (26)</a></li>
           
           
-            <li><a href="/nextjs/">Next.js (4)</a></li>
+            <li><a href="/nextjs/">Next.js (6)</a></li>
           
           
             <li><a href="/typescript/">TypeScript (25)</a></li>
@@ -334,7 +334,7 @@
             <li><a href="/cs/algorithm/">알고리즘 (3)</a></li>
           
           
-            <li><a href="/cs/network/">네트워크 (7)</a></li>
+            <li><a href="/cs/network/">네트워크 (8)</a></li>
           
         </ul>
         
@@ -439,7 +439,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">call</code>메서드는 <strong>호출 주체인 함수를 즉시 실행</strong>하도록 합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="nx">thisArg</span><span class="p">[,</span> <span class="nx">arg1</span><span class="p">[,</span> <span class="nx">arg2</span><span class="p">[,</span> <span class="p">...]]])</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">thisArg</span><span class="p">[,</span> <span class="nx">arg1</span><span class="p">[,</span> <span class="nx">arg2</span><span class="p">[,</span> <span class="p">...]]])</span>
 </code></pre></div></div>
 
 <ul>
@@ -449,13 +449,13 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="na">method</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+  <span class="na">method</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
   <span class="p">},</span>
 <span class="p">};</span>
 
-<span class="nx">obj</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-<span class="nx">obj</span><span class="p">.</span><span class="nx">method</span><span class="p">.</span><span class="nf">call</span><span class="p">({</span> <span class="na">a</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">method</span><span class="p">.</span><span class="nx">call</span><span class="p">({</span> <span class="na">a</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">call</code>메서드의 첫번째 인자로 <code class="language-plaintext highlighter-rouge">this</code>가 가리키는 <code class="language-plaintext highlighter-rouge">a</code>값을 4로 변경합니다.</p>
@@ -468,7 +468,7 @@
 
 <h2 id="-apply-메서드">📄 apply 메서드</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nx">thisArg</span><span class="p">[,</span> <span class="nx">argsArray</span><span class="p">])</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">thisArg</span><span class="p">[,</span> <span class="nx">argsArray</span><span class="p">])</span>
 </code></pre></div></div>
 
 <ul>
@@ -476,18 +476,18 @@
   <li>두 번째 인자를 배열로 받아 그 배열의 요소들을 호출할 함수의 매개변수로 지정한다.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">);</span>
 <span class="p">};</span>
-<span class="nx">func</span><span class="p">.</span><span class="nf">apply</span><span class="p">({</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]);</span>
+<span class="nx">func</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]);</span>
 
 <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="na">method</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+  <span class="na">method</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
   <span class="p">},</span>
 <span class="p">};</span>
-<span class="nx">obj</span><span class="p">.</span><span class="nx">method</span><span class="p">.</span><span class="nf">apply</span><span class="p">({</span> <span class="na">a</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]);</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">method</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span> <span class="na">a</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]);</span>
 </code></pre></div></div>
 
 <p>✔ 결과</p>
@@ -501,7 +501,7 @@
 
 <h2 id="-bind-메서드">📄 bind 메서드</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">thisArg</span><span class="p">[,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">,</span> <span class="p">...])</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">thisArg</span><span class="p">[,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">,</span> <span class="p">...])</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">bind</code>메서드는 <code class="language-plaintext highlighter-rouge">call</code>과 비슷하지만,<br />
@@ -512,17 +512,17 @@
   <li>부분 적용 함수를 구현한다.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
 <span class="p">};</span>
-<span class="nf">func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// Window{...} 1 2 3 4</span>
+<span class="nx">func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// Window{...} 1 2 3 4</span>
 
-<span class="kd">var</span> <span class="nx">bindFunc1</span> <span class="o">=</span> <span class="nx">func</span><span class="p">.</span><span class="nf">bind</span><span class="p">({</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span> <span class="p">});</span>
-<span class="nf">bindFunc1</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// (1) {x: 1} 5 6 7 8</span>
+<span class="kd">var</span> <span class="nx">bindFunc1</span> <span class="o">=</span> <span class="nx">func</span><span class="p">.</span><span class="nx">bind</span><span class="p">({</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span> <span class="p">});</span>
+<span class="nx">bindFunc1</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// (1) {x: 1} 5 6 7 8</span>
 
-<span class="kd">var</span> <span class="nx">bindFunc2</span> <span class="o">=</span> <span class="nx">func</span><span class="p">.</span><span class="nf">bind</span><span class="p">({</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
-<span class="nf">bindFunc2</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span> <span class="c1">// (2) {x: 1} 4 5 6 7</span>
-<span class="nf">bindFunc2</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span> <span class="c1">// {x: 1} 4 5 8 9</span>
+<span class="kd">var</span> <span class="nx">bindFunc2</span> <span class="o">=</span> <span class="nx">func</span><span class="p">.</span><span class="nx">bind</span><span class="p">({</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="nx">bindFunc2</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span> <span class="c1">// (2) {x: 1} 4 5 6 7</span>
+<span class="nx">bindFunc2</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span> <span class="c1">// {x: 1} 4 5 8 9</span>
 </code></pre></div></div>
 
 <ol>
@@ -624,6 +624,58 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+      <a href="/nextjs/nextjs-app-routing/" rel="permalink"><p>[Next.js] Next.js의 App router</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 08 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      Next.js page router와 app router
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/react/react-react-portal/" rel="permalink"><p>[React] React Portal</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> June 14 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      리액트 포탈을 사용한 모달 관리법
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
       <a href="/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="permalink"><p>[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</a>
       
     </h2>
@@ -660,58 +712,6 @@
      
     <p class="archive__item-excerpt" itemprop="description">
       Next.js가 페이지를 사전 렌더링하고 데이터를 페칭하는 방법
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/nextjs/nextjs-Nextjs%EB%9E%80/" rel="permalink"><p>[Next.js] Next.js란?</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      Next.js 이해하기
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="permalink"><p>[프로그래머스 / Lv 1] 삼총사 by JS</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 09 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      삼중 for문으로 가능한 조합의 수 구하기
 
     </p>
     

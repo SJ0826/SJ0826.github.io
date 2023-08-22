@@ -307,9 +307,9 @@
 
 <h2 id="-1-원하는-feild의-위치를-파악한다">📄 1. 원하는 feild의 위치를 파악한다.</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fieldRect</span> <span class="o">=</span> <span class="nx">field</span><span class="p">.</span><span class="nf">getBoundingClientRect</span><span class="p">();</span>
-<span class="kd">function</span> <span class="nf">initGame</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">fieldRect</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fieldRect</span> <span class="o">=</span> <span class="nx">field</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">();</span>
+<span class="kd">function</span> <span class="nx">initGame</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fieldRect</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -318,37 +318,37 @@
 <h2 id="-2-feild에-추가하기-전에-이미지를-생성하는-함수를-만들어준다">📄 2. feild에 추가하기 전에 이미지를 생성하는 함수를 만들어준다.</h2>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 랜덤으로 숫자를 생성하는 함수</span>
-<span class="kd">function</span> <span class="nf">randomNumber</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span><span class="p">)</span> <span class="o">+</span> <span class="nx">min</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">randomNumber</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span><span class="p">)</span> <span class="o">+</span> <span class="nx">min</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// 아이템을 생성하는 함수</span>
-<span class="kd">function</span> <span class="nf">addItem</span><span class="p">(</span><span class="nx">className</span><span class="p">,</span> <span class="nx">count</span><span class="p">,</span> <span class="nx">imgPath</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">addItem</span><span class="p">(</span><span class="nx">className</span><span class="p">,</span> <span class="nx">count</span><span class="p">,</span> <span class="nx">imgPath</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">x1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">y1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="c1">// 이미지가 feild에서 벗어나는 것을 막기 위해 최댓값을 조정한다.</span>
   <span class="kd">const</span> <span class="nx">x2</span> <span class="o">=</span> <span class="nx">fieldRect</span><span class="p">.</span><span class="nx">width</span> <span class="o">-</span> <span class="nx">CARROT_SIZE</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">y2</span> <span class="o">=</span> <span class="nx">fieldRect</span><span class="p">.</span><span class="nx">height</span> <span class="o">-</span> <span class="nx">CARROT_SIZE</span><span class="p">;</span>
 
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 이미지 추가!</span>
-    <span class="nx">item</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="nx">className</span><span class="p">);</span> <span class="c1">// 이미지에 클래스 속성추가!</span>
-    <span class="nx">item</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">src</span><span class="dl">"</span><span class="p">,</span> <span class="nx">imgPath</span><span class="p">);</span> <span class="c1">// 이미지 경로 추가!</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 이미지 추가!</span>
+    <span class="nx">item</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="nx">className</span><span class="p">);</span> <span class="c1">// 이미지에 클래스 속성추가!</span>
+    <span class="nx">item</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">src</span><span class="dl">"</span><span class="p">,</span> <span class="nx">imgPath</span><span class="p">);</span> <span class="c1">// 이미지 경로 추가!</span>
     <span class="nx">item</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">absolute</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// feild에 상대적으로 오프셋 적용</span>
-    <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nf">randomNumber</span><span class="p">(</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">);</span> <span class="c1">// 최솟값 x1와 최댓값 x2 사이에서 랜덤으로 숫자를 받아 상수 x에 할당!</span>
-    <span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nf">randomNumber</span><span class="p">(</span><span class="nx">y1</span><span class="p">,</span> <span class="nx">y2</span><span class="p">);</span> <span class="c1">// 최솟값 y1와 최댓값 y2 사이에서 랜덤으로 숫자를 받아 상수 y에 할당!</span>
+    <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">randomNumber</span><span class="p">(</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">);</span> <span class="c1">// 최솟값 x1와 최댓값 x2 사이에서 랜덤으로 숫자를 받아 상수 x에 할당!</span>
+    <span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">randomNumber</span><span class="p">(</span><span class="nx">y1</span><span class="p">,</span> <span class="nx">y2</span><span class="p">);</span> <span class="c1">// 최솟값 y1와 최댓값 y2 사이에서 랜덤으로 숫자를 받아 상수 y에 할당!</span>
     <span class="nx">item</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">x</span><span class="p">}</span><span class="s2">px`</span><span class="p">;</span> <span class="c1">// 추가한 이미지의 left값에 x값 할당!</span>
     <span class="nx">item</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">y</span><span class="p">}</span><span class="s2">px`</span><span class="p">;</span> <span class="c1">// 추가한 이미지의 top에 y값 할당!</span>
-    <span class="nx">field</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span> <span class="c1">// field에 해당 이미지를 추가</span>
+    <span class="nx">field</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span> <span class="c1">// field에 해당 이미지를 추가</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="-3-additem함수에-값을-지정한다">📄 3. addItem함수에 값을 지정한다.</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">initGame</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">addItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">carrot</span><span class="dl">"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">"</span><span class="s2">carrot.png</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 당근 이미지 5개!</span>
-  <span class="nf">addItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">bug</span><span class="dl">"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bug.png</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 벌레 이미지 5개!</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">initGame</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">addItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">carrot</span><span class="dl">"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">"</span><span class="s2">carrot.png</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 당근 이미지 5개!</span>
+  <span class="nx">addItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">bug</span><span class="dl">"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bug.png</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 벌레 이미지 5개!</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -459,6 +459,58 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+      <a href="/nextjs/nextjs-app-routing/" rel="permalink"><p>[Next.js] Next.js의 App router</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 08 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      Next.js page router와 app router
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/react/react-react-portal/" rel="permalink"><p>[React] React Portal</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> June 14 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      리액트 포탈을 사용한 모달 관리법
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
       <a href="/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="permalink"><p>[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</a>
       
     </h2>
@@ -495,58 +547,6 @@
      
     <p class="archive__item-excerpt" itemprop="description">
       Next.js가 페이지를 사전 렌더링하고 데이터를 페칭하는 방법
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/nextjs/nextjs-Nextjs%EB%9E%80/" rel="permalink"><p>[Next.js] Next.js란?</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      Next.js 이해하기
-
-    </p>
-    
-  </article>
-</div>
-   
-
-<div class="grid__item">
-  <article
-    class="archive__item"
-    itemscope
-    itemtype="https://schema.org/CreativeWork"
-  >
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-      <a href="/programmers-lv1/programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="permalink"><p>[프로그래머스 / Lv 1] 삼총사 by JS</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 09 2023
-    </p>
-     
-    <p class="archive__item-excerpt" itemprop="description">
-      삼중 for문으로 가능한 조합의 수 구하기
 
     </p>
     

@@ -1,4 +1,201 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-03T15:56:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</title><link href="http://localhost:4000/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기" /><published>2023-06-01T00:00:00+09:00</published><updated>2023-06-01T22:06:00+09:00</updated><id>http://localhost:4000/react/react-fowardRef%EB%A1%9C%20%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20DOM%EC%97%90%20%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-리액트-폼-관리하기">📄 리액트 폼 관리하기</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-08T15:48:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>프론트엔드 엔지니어가 되기까지</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Next.js] Next.js의 App router</title><link href="http://localhost:4000/nextjs/nextjs-app-routing/" rel="alternate" type="text/html" title="[Next.js] Next.js의 App router" /><published>2023-08-08T00:00:00+09:00</published><updated>2023-08-08T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-app%20routing</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-app-routing/"><![CDATA[<h2 id="-nextjs-의-라우팅-방식">📄 Next.js 의 라우팅 방식</h2>
+
+<h2 id="-app-router">📄 App router</h2>
+
+<h2 id="-app-router-사용-후기">📄 App router 사용 후기</h2>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li>
+    <p><a href="https://javascript.plainenglish.io/next-jss-new-app-vs-pages-router-a-detailed-comparison-46f846963af5">Next.js’s New App Vs. Pages Router: A Detailed Comparison</a></p>
+  </li>
+  <li>
+    <p><a href="https://nextjs.org/docs">Next.js 공식 문서</a></p>
+  </li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="Nextjs" /><category term="app router" /><category term="page router" /><summary type="html"><![CDATA[Next.js page router와 app router]]></summary></entry><entry><title type="html">[React] React Portal</title><link href="http://localhost:4000/react/react-react-portal/" rel="alternate" type="text/html" title="[React] React Portal" /><published>2023-06-14T00:00:00+09:00</published><updated>2023-06-14T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20portal</id><content type="html" xml:base="http://localhost:4000/react/react-react-portal/"><![CDATA[<h2 id="️-react-potal-이란">🗒️ React Potal 이란?</h2>
+
+<ul>
+  <li>다른 곳에 있는 element를 렌더링할 수 있다.</li>
+  <li>컴포넌트가 종속되어 있는 돔 트리를 벗어나 외부의 다른 돔으로 렌더한다. (어플리케이션은 하나지만 부분적으로 다른 돔에 마운트)</li>
+</ul>
+
+<h2 id="️-usemodal-hook">🗒️ useModal hook</h2>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useRef</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createPortal</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">styled</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">useModal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">modalOpened</span><span class="p">,</span> <span class="nx">setModalOpened</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">openModal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setModalOpened</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">closeModal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setModalOpened</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kr">interface</span> <span class="nx">IProps</span> <span class="p">{</span>
+    <span class="na">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="na">ModalPortal</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="nx">IProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">children</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">useRef</span><span class="o">&lt;</span><span class="nx">Element</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">mounted</span><span class="p">,</span> <span class="nx">setMounted</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setMounted</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// dom에 root-modal이 있으면 가져오기</span>
+        <span class="kd">const</span> <span class="nx">dom</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#root-modal</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">ref</span><span class="p">.</span><span class="nx">current</span> <span class="o">=</span> <span class="nx">dom</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="p">[]);</span> <span class="c1">// mount</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">ref</span><span class="p">.</span><span class="nx">current</span> <span class="o">&amp;&amp;</span> <span class="nx">mounted</span> <span class="o">&amp;&amp;</span> <span class="nx">modalOpened</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">createPortal</span><span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">div</span>
+            <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">modal-background</span><span class="dl">"</span>
+            <span class="nx">role</span><span class="o">=</span><span class="dl">"</span><span class="s2">presentation</span><span class="dl">"</span>
+            <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">closeModal</span><span class="p">}</span>
+          <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/Container&gt;</span><span class="err">,
+</span>        <span class="nx">ref</span><span class="p">.</span><span class="nx">current</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">openModal</span><span class="p">,</span>
+    <span class="nx">closeModal</span><span class="p">,</span>
+    <span class="nx">ModalPortal</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">useModal</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Container</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  .modal-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="️-usemodal-hook-사용하기">🗒️ useModal hook 사용하기</h2>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">styled</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">AirbnbLogoIcon</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../public/static/svg/logo/logo.svg</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">AirbnbLogoTextIcon</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../public/static/svg/logo/logo_text.svg</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/link</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">palette</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../styles/palette</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">useModal</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../hooks/useModal</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">SignUpModal</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./auth/SignUpModal</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Header</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">openModal</span><span class="p">,</span> <span class="nx">ModalPortal</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useModal</span><span class="p">();</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-logo-wrapper</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">AirbnbLogoIcon</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-logo</span><span class="dl">"</span> <span class="o">/&gt;</span>
+          <span class="o">&lt;</span><span class="nx">AirbnbLogoTextIcon</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-auth-buttons</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span>
+          <span class="kd">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span>
+          <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-sign-up-button</span><span class="dl">"</span>
+          <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">openModal</span><span class="p">}</span>
+        <span class="o">&gt;</span>
+          <span class="nx">회원가입</span>
+        <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="kd">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-login-button</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="nx">로그인</span>
+        <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">ModalPortal</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">SignUpModal</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/ModalPortal</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Container</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Header</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Container</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+  z-index: 10;
+  .header-logo-wrapper {
+    display: flex;
+    align-items: center;
+    .header-logo {
+      margin-right: 6px;
+    }
+  }
+
+  .header-auth-buttons {
+    .header-sign-up-button {
+      height: 42px;
+      margin-right: 8px;
+      padding: 0 16px;
+      border: 0;
+      border-radius: 21px;
+      background-color: white;
+      cursor: pointer;
+      outline: none;
+      &amp;:hover {
+        background-color: </span><span class="p">${</span><span class="nx">palette</span><span class="p">.</span><span class="nx">gray_f7</span><span class="p">}</span><span class="s2">;
+      }
+    }
+    .header-login-button {
+      height: 42px;
+      padding: 0 16px;
+      border: 0;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
+      border-radius: 21px;
+      background-color: white;
+      cursor: pointer;
+      outline: none;
+      :hover {
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li>클론 코딩으로 시작하는 Next.js</li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="portal" /><category term="modal" /><summary type="html"><![CDATA[리액트 포탈을 사용한 모달 관리법]]></summary></entry><entry><title type="html">[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</title><link href="http://localhost:4000/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기" /><published>2023-06-01T00:00:00+09:00</published><updated>2023-06-01T22:06:00+09:00</updated><id>http://localhost:4000/react/react-fowardRef%EB%A1%9C%20%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20DOM%EC%97%90%20%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-리액트-폼-관리하기">📄 리액트 폼 관리하기</h2>
 
 <p>하나의 폼을 관리할 때 input이 각각 파일로 나뉘어져 있다면 관리할 수 있는 방법은 여러가지가 있다.</p>
 
@@ -24,13 +221,13 @@
   </li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nf">useRef</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
 
 <span class="kd">const</span> <span class="nx">focus</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">inputRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nf">focus</span><span class="p">();</span>
+  <span class="nx">inputRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
 <span class="p">};</span>
 
-<span class="nf">return </span><span class="p">(</span>
+<span class="k">return</span> <span class="p">(</span>
   <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">MyInput</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">inputRef</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">focus</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">포커스</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
@@ -42,7 +239,7 @@
   <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
 </span><span class="p">};</span>
 
-<span class="k">export</span> <span class="k">default</span> <span class="nf">forwardRef</span><span class="p">(</span><span class="nx">MyInput</span><span class="p">);</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">forwardRef</span><span class="p">(</span><span class="nx">MyInput</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h3 id="-주의할-점">📄 주의할 점</h3>
@@ -55,7 +252,7 @@
 
 <ul>
   <li><a href="https://www.youtube.com/watch?v=LtYzjv2yXHE&amp;list=PLZ5oZ2KmQEYjVH2ie-sZJnbEE6B-uCVIh&amp;index=6">별코딩 Youtube - React의 ForwardRef란?</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="forwardRef" /><summary type="html"><![CDATA[각각 파일로 나뉘어져 있는 input을 어떻게 관리하면 좋을까]]></summary></entry><entry><title type="html">[Next.js] Next.js의 페이지 사전렌더링</title><link href="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/" rel="alternate" type="text/html" title="[Next.js] Next.js의 페이지 사전렌더링" /><published>2023-05-29T00:00:00+09:00</published><updated>2023-05-29T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/"><![CDATA[<h2 id="-nextjs가-페이지를-준비하고-사전-렌더링을-하는-방법">📄 Next.js가 페이지를 준비하고 사전 렌더링을 하는 방법</h2>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="forwardRef" /><summary type="html"><![CDATA[각각 파일로 나뉘어져 있는 input을 어떻게 관리하면 좋을까]]></summary></entry><entry><title type="html">[Next.js] Next.js의 페이지 사전렌더링</title><link href="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/" rel="alternate" type="text/html" title="[Next.js] Next.js의 페이지 사전렌더링" /><published>2023-05-29T00:00:00+09:00</published><updated>2023-06-11T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-next.js%EC%9D%98-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%A0%84%EB%A0%8C%EB%8D%94%EB%A7%81/"><![CDATA[<h2 id="-nextjs가-페이지를-준비하고-사전-렌더링을-하는-방법">📄 Next.js가 페이지를 준비하고 사전 렌더링을 하는 방법</h2>
 
 <blockquote>
   <p>💡 Hydration이란? HTML을 미리 렌더링하고, 그 뒤에 요청이 오면 chunk단위로 js를 보내주어 이벤트가 작동하는 것</p>
@@ -89,18 +286,18 @@
   <li>페이지 생성 시기: 프로젝트 빌드시</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">HomePage</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">HomePage</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">products</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
-  <span class="nf">return </span><span class="p">(</span>
+  <span class="k">return</span> <span class="p">(</span>
     <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
-      <span class="p">{</span><span class="nx">products</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">product</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+      <span class="p">{</span><span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">product</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
         <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
 </span>      <span class="p">))}</span>
     <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
 </span>  <span class="p">);</span>
 <span class="p">}</span>
 
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">{</span>
     <span class="c1">// 항상 객체를 반환한다.</span>
     <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
@@ -118,6 +315,109 @@
   <li><code class="language-plaintext highlighter-rouge">getStaticProps</code>함수를 먼저 호출한다. 함수안에 컴포넌트에서 사용될 데이터를 페칭해오는 작업을 한다.</li>
   <li>컴포넌트 함수를 실행한다.</li>
 </ol>
+
+<h4 id="-ssg를-통해-json데이터-가져오기">🗨 SSG를 통해 JSON데이터 가져오기</h4>
+
+<ul>
+  <li>SSG를 하면서 모든 데이터를 파일 내에 저장하지 않고, JSON파일을 불러와 사용하는 방법</li>
+</ul>
+
+<ol>
+  <li>data 폴더를 생성해 json 파일을 만들어 데이터를 저장한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+<span class="dl">"</span><span class="s2">products</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">p1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Product 1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">This is product 1</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">p2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Product 2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">This is product 2</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">p3</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Product 3</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">This is product 3</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>데이터를 사용할 페이지의 <code class="language-plaintext highlighter-rouge">getStaticProps</code>함수에서 데이터를 가져와 return한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">path</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">fs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fs/promises</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// Node.js 로 부터 파일 시스템 모듈을 임포트</span>
+
+<span class="kd">function</span> <span class="nx">HomePage</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//getStaticProps를 통해 가져온 json데이터를 props를 통해 전달</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">products</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">product</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>      <span class="p">))}</span>
+    <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">filePath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dummy-backend.json</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">products</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="-isr-증분-정적-생성-활용하기">🗨 ISR (증분 정적 생성) 활용하기</h4>
+
+<ul>
+  <li>
+    <p>사용 목적: 사전 생성하는 페이지에서 데이터가 계속 <strong>업데이트</strong> 되는 경우에 사용</p>
+  </li>
+  <li>
+    <p>장점: 페이지를 빌드할 때 한 번만 생성하는 것이 아닌 재배포 없이 업데이트 할 수 있다.</p>
+  </li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">(RE-)Generating...</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">filePath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dummy-backend.json</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">products</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">revalidate</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 🎉 ISR: 10초마다 주어진 페이지를 Next.js가 재생성한다.</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://github.com/SJ0826/next-bnb/assets/56298540/0128068d-b7d6-410c-8990-5d3fc7ea2c0c" alt="image" /></p>
+
+<h4 id="-getstaticprops-구성-옵션-활용하기">🗨 getStaticProps 구성 옵션 활용하기</h4>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">notFound</code>: 페이지가 일반 페이지 대신 404 오류 페이지를 렌더링</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">notFound</span><span class="p">:</span> <span class="kc">true</span> <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">redirect</code>: 데이터베이스에 엑세스할 수 없을 경우 주로 사용 (데이터 자체가 없을 때)</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">redirect</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">destination</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/no-data</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="참고">참고</h2>
 
@@ -184,12 +484,12 @@
 
 <h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">l</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">if </span><span class="p">(</span><span class="nx">number</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">l</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">number</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -240,20 +540,20 @@
 
 <p>이전/다음 버튼을 클릭했을 때 트리거가 발생하도록 <strong>쿼리키를 배열로</strong>작성했습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">isError</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">useQuery</span><span class="p">(</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">isError</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span>
   <span class="p">[</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">currentPage</span><span class="p">],</span> <span class="c1">// 🎉</span>
-  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">fetchPosts</span><span class="p">(</span><span class="nx">currentPage</span><span class="p">),</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">fetchPosts</span><span class="p">(</span><span class="nx">currentPage</span><span class="p">),</span>
   <span class="p">{</span>
     <span class="na">staleTime</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
     <span class="na">keepPreviousData</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="p">);</span>
-<span class="nf">if </span><span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h3&gt;</span><span class="err">;
-</span><span class="nf">if </span><span class="p">(</span><span class="nx">isError</span><span class="p">)</span>
-  <span class="nf">return </span><span class="p">(</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h3&gt;</span><span class="err">;
+</span><span class="k">if</span> <span class="p">(</span><span class="nx">isError</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span>
     <span class="o">&lt;&gt;</span>
       <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Oops</span><span class="p">,</span> <span class="nx">something</span> <span class="nx">went</span> <span class="nx">wrong</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nf">toString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
 </span>  <span class="p">);</span>
 </code></pre></div></div>
@@ -266,10 +566,10 @@
 
 <p>현재 페이지가 변경될 때마다 프리페칭 함수를 실행시키기 위해 <strong>useEffect</strong>함수를 사용합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nx">currentPage</span> <span class="o">&lt;</span> <span class="nx">maxPostPage</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">currentPage</span> <span class="o">&lt;</span> <span class="nx">maxPostPage</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">nextPage</span> <span class="o">=</span> <span class="nx">currentPage</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">queryClient</span><span class="p">.</span><span class="nf">prefetchQuery</span><span class="p">([</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">nextPage</span><span class="p">],</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">fetchPosts</span><span class="p">(</span><span class="nx">nextPage</span><span class="p">));</span>
+    <span class="nx">queryClient</span><span class="p">.</span><span class="nx">prefetchQuery</span><span class="p">([</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">nextPage</span><span class="p">],</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">fetchPosts</span><span class="p">(</span><span class="nx">nextPage</span><span class="p">));</span>
   <span class="p">}</span>
 <span class="p">},</span> <span class="p">[</span><span class="nx">currentPage</span><span class="p">,</span> <span class="nx">queryClient</span><span class="p">]);</span>
 </code></pre></div></div>
@@ -286,7 +586,7 @@
   <span class="o">&lt;</span><span class="nx">button</span>
     <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">currentPage</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">}</span>
     <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nf">setCurrentPage</span><span class="p">((</span><span class="nx">previosValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">previosValue</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="nx">setCurrentPage</span><span class="p">((</span><span class="nx">previosValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">previosValue</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
     <span class="p">}}</span>
   <span class="o">&gt;</span>
     <span class="nx">Previous</span> <span class="nx">page</span>
@@ -296,7 +596,7 @@
     <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">currentPage</span> <span class="o">&gt;=</span> <span class="nx">maxPostPage</span><span class="p">}</span>
     <span class="c1">// onClick함수에 프리페칭 작업을 하지 않는 이유: setState함수는 비동기로 실행되기 때문에 현재 페이지가 무엇인지 정확히 알 방법이 없다.</span>
     <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nf">setCurrentPage</span><span class="p">((</span><span class="nx">previousValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">previousValue</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="nx">setCurrentPage</span><span class="p">((</span><span class="nx">previousValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">previousValue</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
     <span class="p">}}</span>
   <span class="o">&gt;</span>
     <span class="nx">Next</span> <span class="nx">page</span>
@@ -347,8 +647,8 @@
   <li>방법: <code class="language-plaintext highlighter-rouge">QueryClientProvider</code>태그 안에 <code class="language-plaintext highlighter-rouge">ReactQueryDevtools</code>를 작성한다.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
     <span class="c1">// provide React Query client to App</span>
     <span class="o">&lt;</span><span class="nx">QueryClientProvider</span> <span class="nx">client</span><span class="o">=</span><span class="p">{</span><span class="nx">qeuryClient</span><span class="p">}</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
@@ -375,10 +675,10 @@
   <li>QueryClient: 캐싱기능과 기본 옵션을 자녀 컴포넌트에서도 사용할 수 있게 해준다.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">qeuryClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">QueryClient</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">qeuryClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">();</span>
 
-<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
     <span class="c1">// provide React Query client to App</span>
     <span class="o">&lt;</span><span class="nx">QueryClientProvider</span> <span class="nx">client</span><span class="o">=</span><span class="p">{</span><span class="nx">qeuryClient</span><span class="p">}</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
@@ -420,7 +720,7 @@
   <li>인자 3: 옵션 (<code class="language-plaintext highlighter-rouge">{ staleTime: 2000}</code>): 만료시간을 2초로 설정</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">isError</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchPosts</span><span class="p">,</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">isError</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchPosts</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">staleTime</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -429,7 +729,7 @@
 
 <p>useQuery로 가져온 쿼리 데이터 posts를 구조분해해서 나온 isLoading을 활용하여 로딩이 되는 중이라면, <code class="language-plaintext highlighter-rouge">Loading...</code>을 화면에 보여줍니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h3&gt;</span><span class="err">;
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h3&gt;</span><span class="err">;
 </span></code></pre></div></div>
 
 <h4>📌 isLoading과 isFetching의 차이점</h4>
@@ -443,11 +743,11 @@
 
 <p>리액트 쿼리는 데이터를 가져올 때 fetching이 성공될 때까지 <strong>세번의 로딩 시도</strong>후 안되면 에러라고 판단합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if </span><span class="p">(</span><span class="nx">isError</span><span class="p">)</span>
-  <span class="nf">return </span><span class="p">(</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">isError</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span>
     <span class="o">&lt;&gt;</span>
       <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Oops</span><span class="p">,</span> <span class="nx">something</span> <span class="nx">went</span> <span class="nx">wrong</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nf">toString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
 </span>  <span class="p">);</span>
 </code></pre></div></div>
@@ -469,25 +769,25 @@
 
 <h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">MINCODE</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">MAXCODE</span> <span class="o">=</span> <span class="mi">122</span><span class="p">;</span>
   <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
 
   <span class="kd">let</span> <span class="nx">store</span><span class="p">;</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
       <span class="k">continue</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()[</span><span class="nx">i</span><span class="p">].</span><span class="nf">charCodeAt</span><span class="p">()</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">store</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">)</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span> <span class="o">-</span> <span class="nx">MAXCODE</span> <span class="o">+</span> <span class="nx">MINCODE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nf">fromCharCode</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nf">toUpperCase</span><span class="p">())</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span>
-    <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()[</span><span class="nx">i</span><span class="p">].</span><span class="nx">charCodeAt</span><span class="p">()</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">store</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">)</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span> <span class="o">-</span> <span class="nx">MAXCODE</span> <span class="o">+</span> <span class="nx">MINCODE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">())</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+    <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
     <span class="nx">store</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -499,20 +799,20 @@
 
 <h2 id="-best-practice">👍 Best Practice</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">upper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><span class="dl">"</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">lower</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abcdefghijklmnopqrstuvwxyz</span><span class="dl">"</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
 
-  <span class="nf">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">answer</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">;</span>
       <span class="k">continue</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="kd">var</span> <span class="nx">textArr</span> <span class="o">=</span> <span class="nx">upper</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">?</span> <span class="nx">upper</span> <span class="p">:</span> <span class="nx">lower</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">index</span> <span class="o">&gt;=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="nx">index</span> <span class="o">-=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">textArr</span> <span class="o">=</span> <span class="nx">upper</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">?</span> <span class="nx">upper</span> <span class="p">:</span> <span class="nx">lower</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">&gt;=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="nx">index</span> <span class="o">-=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
     <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">textArr</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
@@ -549,12 +849,12 @@
 
 <h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">budget</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">budget</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nx">d</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
-  <span class="nf">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">budget</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">budget</span> <span class="o">-</span> <span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+  <span class="nx">d</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">budget</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">budget</span> <span class="o">-</span> <span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
     <span class="nx">budget</span> <span class="o">=</span> <span class="nx">budget</span> <span class="o">-</span> <span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
     <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
   <span class="p">}</span>
@@ -571,10 +871,10 @@
 
 <h2 id="-best-practice">👍 Best Practice</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">budget</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">budget</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">d</span>
-    <span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">)</span>
-    <span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">count</span><span class="p">,</span> <span class="nx">price</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">count</span><span class="p">,</span> <span class="nx">price</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">count</span> <span class="o">+</span> <span class="p">((</span><span class="nx">budget</span> <span class="o">-=</span> <span class="nx">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span>
     <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
@@ -588,65 +888,4 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 이상한 문자 만들기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 이상한 문자 만들기 by JS" /><published>2023-04-30T00:00:00+09:00</published><updated>2023-04-30T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%9D%B4%EC%83%81%ED%95%9C%20%EB%AC%B8%EC%9E%90%20%EB%A7%8C%EB%93%A4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다. 각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요.</p>
-
-<ul>
-  <li>문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다.</li>
-  <li>첫 번째 글자는 0번째 인덱스로 보아 짝수번째 알파벳으로 처리해야 합니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">newS</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">).</span><span class="nf">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[...</span><span class="nx">value</span><span class="p">]</span>
-      <span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">char</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nf">return </span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">char</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()</span> <span class="p">:</span> <span class="nx">char</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="p">});</span>
-  <span class="k">return</span> <span class="nx">newS</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>단어 <code class="language-plaintext highlighter-rouge">s</code>를 공백을 기준으로 잘라 배열을 생성한다.(<code class="language-plaintext highlighter-rouge">newS</code>)</li>
-  <li>주어진 조건에 맞게 단어를 배열로 만든 후 각 글자를 대문자 또는 소문자로 변환하고 다시 문자열로 만든다.</li>
-</ol>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toUpperCase()" /><category term="toLowerCase()" /><summary type="html"><![CDATA[문자열 홀짝 기준으로 대문자/소문자 만들기]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 3진법 뒤집기 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95-%EB%92%A4%EC%A7%91%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 3진법 뒤집기 by JS" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95%20%EB%92%A4%EC%A7%91%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-3%EC%A7%84%EB%B2%95-%EB%92%A4%EC%A7%91%EA%B8%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.</p>
-
-<ul>
-  <li>n은 1 이상 100,000,000 이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nf">parseInt</span><span class="p">([...</span><span class="nx">n</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="mi">3</span><span class="p">)].</span><span class="nf">reverse</span><span class="p">().</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">),</span> <span class="mi">3</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>toString에 들어가는 인자는 적용한 숫자를 n진법으로 나타낼 때 사용합니다.</p>
-
-<p>n.toString(3)은 숫자 n을 3진법으로 변환한다는 뜻입니다.</p>
-
-<p>3진법으로 변환한 숫자 n을 spread연산자로 배열에 담아 뒤집은뒤 다시 문자열로 변환했습니다.</p>
-
-<p>parseInt의 두번째 인자에는 해당 값이 몇진법인지 나타내는 숫자를 입력합니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">parseInt([...n.toString(3)].reverse().join(""), 3)</code>는 앞뒤 반전한 3진법을 다시 10진법으로 변환해주는 역할을 합니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="toString" /><category term="parseInt" /><summary type="html"><![CDATA[toString()으로 n진법 나타내기]]></summary></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="" /></entry></feed>
