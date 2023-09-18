@@ -1631,9 +1631,9 @@ var store = [{
         "url": "/react/react-react-portal/",
         "teaser": null
       },{
-        "title": "[Next.js] Next.js의 App router",
-        "excerpt":"📄 Next.js 의 라우팅 방식   📄 App router   📄 App router 사용 후기   참고           Next.js’s New App Vs. Pages Router: A Detailed Comparison            Next.js 공식 문서      ","categories": ["Nextjs"],
-        "tags": ["app router","page router"],
-        "url": "/nextjs/nextjs-app-routing/",
+        "title": "[JavaScript] 내쓰내정 카카오톡 api 사용 후기 및 정리",
+        "excerpt":"📄 사용한 카카오톡 api   프로젝트를 진행하며 카카오톡 api를 사용했다. 주 기능은 공유하기 기능과 카카오 싱크. 깃허브 로그인은 구현한적이 있는데 기록을 안해서 기억이 하나도 안나더랬다. 그래서 이번엔 또 같은 어려움을 겪기 전에 그리고 또 까먹기 전에 기록한다.   📄 카카오톡 api를 사용하며 내가 겪었던 삽질들   1. 환경별로 .env파일을 따로 관리하자   이번 프로젝트를 진행한 브랜치는 세가지였다.      main   dev   test   각 브랜치에서 사용한 환경변수는 다음과 같다.   NEXT_PUBLIC_KAKAO_REST_API_KEY = \"비밀이지롱\"; NEXT_PUBLIC_KAKAO_REDIRECT_URL =   \"http://localhost:3000/카카오 로그인성공하면 이동할 리다이렉트 페이지\"; NEXT_PUBLIC_API_BASE_URL = \"비밀이지롱\"; NEXT_PUBLIC_JS_API_KEY = \"비밀이지롱\";   ⭐️ 브랜치별로 사용하는 uri가 다르기 때문에 리다이렉트 uri를 다르게 관리해야한다.           카카오톡에 등록한 uri 주소로 리다이렉트 해야하기 때문에 배포되는 브랜치 작업의 주소를 기준으로 환경변수를 설정한다.            카카오톡 로그인 페이지에서 로그인에 성공하면 등록한 리다이렉트 페이지로 이동하는데 이때 쿼리로 auth code를 받는다.            프론트는 이 auth code를 백엔드에게 보내고 나머지 로직 (home으로 이동 등)을 리다이렉트 페이지에 작성해서 로그인 과정을 진행한다.            백엔드는 받은 auth code로 token을 요청하는데 이때 로그인페이지로 라우팅될 때 사용한 리다이렉트 uri가 같아야 한다.       2. authorization code not found for code (500 Error)   카카오톡에서 날려주는 500 error.   ⭐️ 이 에러가 발생한 이유는 동일한 인증코드를 여러번 사용했기 때문이다.   앞서 사용한 auth code를 두번이상 사용하면 카카오는 500에러를 전송한다.   이때 아마 로그인 요청이 두번 가게되어 에러가 발생했는데 꽤나 고생했던 것 같다.   📄 마무리   처음 사용하면서 봤을 때는 꽤 어려웠는데 정리하다보니 생각보다 별거 아닌 것 같아서 괜히 허무한 것 같다.   카카오 공식문서 짱~  ","categories": ["JavaScript"],
+        "tags": ["카카오톡","API"],
+        "url": "/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-api-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0/",
         "teaser": null
       }]

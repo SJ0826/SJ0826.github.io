@@ -25,7 +25,7 @@ last_modified_at: 2023-08-22T08:06:00-05:00
 
 1. main
 2. dev
-3. build
+3. test
 
 각 브랜치에서 사용한 환경변수는 다음과 같다.
 

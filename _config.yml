@@ -20,7 +20,7 @@ title: "Sometimes we fall, then we rise ⛵"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
 name: "Sujin Kim"
-description: "프론트엔드 엔지니어가 되기까지"
+description: "주니어 개발자의 꼼질꼼질 성장일지 👻"
 url: "https://sj0826.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -105,7 +105,7 @@ analytics:
 author:
   name: "Sujin Kim"
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "프론트엔드 엔지니어가 되기까지"
+  bio: "👻 주니어 개발자의 꼼질꼼질 성장일지  <br />👻 저는 제 일이 좋아요 <br />👻 같은 일을 좋아하는 사람들과 즐겁게 살아갑니다"
   location: "South Korea"
   email:
   links:
@@ -115,18 +115,12 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/SJ0826"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/susupow_er"
-
 # Site Footer
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/SJ0826"
-    - label: "Instagram"
-      url: "https://instagram.com/susupow_er"
 
 # Reading Files
 include:
