@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-18T10:35:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[JavaScript] 내쓰내정 카카오톡 api 사용 후기 및 정리</title><link href="http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-api-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0/" rel="alternate" type="text/html" title="[JavaScript] 내쓰내정 카카오톡 api 사용 후기 및 정리" /><published>2023-08-22T00:00:00+09:00</published><updated>2023-08-22T22:06:00+09:00</updated><id>http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1%20api%20%EC%82%AC%EC%9A%A9%20%ED%9B%84%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-api-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0/"><![CDATA[<h2 id="-사용한-카카오톡-api">📄 사용한 카카오톡 api</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-18T13:34:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[React] return null vs return false</title><link href="http://localhost:4000/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[React] return null vs return false" /><published>2023-09-18T00:00:00+09:00</published><updated>2023-09-18T22:06:00+09:00</updated><id>http://localhost:4000/react/react-return%20null%20%EA%B3%BC%20false%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-return-null-vs-return-false">📄 return null vs return false</h2>
+
+<p>지금까지 진행했던 프로젝트에서 자바스크립트는 null을 false로 인식해 boolean 체킹을 하기 때문에, boolean타입으로 형변환을 거치지 않고 그대로 null를 반환해서 사용했다.</p>
+
+<p>하지만 리액트의 성능 최적화를 고려한다면, 이 둘을 명확히 구분해서 사용할 필요가 있다.</p>
+
+<h3 id="-null-보다는-false를-사용하자">✅ null 보다는 false를 사용하자!</h3>
+
+<p>null과 false를 반환하는 것에 대한 차이점을 바로 말하자면, <span style="color: #FAAB78; font-weight: bold">리렌더링의 유무</span>이다.</p>
+
+<p>리액트는 null를 유효한 값으로 취급한다.</p>
+
+<p>이말인 즉슨 리액트의 가상 돔이 null을 인식하여 null을 반환하는 하위 컴포넌트를 가진 컴포넌트들이 강제로 리렌더링 된다는 뜻이다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Parent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Child</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Child</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Child rendered</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;-&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="p">{</span><span class="nx">count</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;+&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>하위 컴포넌트인 Children이 null을 반환할 때, 상위 컴포넌트인 Parent가 강제로 리렌더링 된다.</li>
+</ul>
+
+<p>이 현상을 방지하기 위한 방법이 false를 반환하는 것이다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Parent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Child</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Child</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Child rendered</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;-&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="p">{</span><span class="nx">count</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;+&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>하위 컴포넌트인 Children이 false를 반환할 때, 상위 컴포넌트인 Parent가 리렌더링 되지 않는다.</li>
+</ul>
+
+<p>리액트의 가상돔이 false를 인식하지 않기 떄문에, 상위 컴포넌트에서 리렌더링이 발생하지 않는다는 것을 알 수 있다.</p>
+
+<h2 id="-정리">📄 정리</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>return</th>
+      <th style="text-align: center">null</th>
+      <th style="text-align: center">false</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>차이점</td>
+      <td style="text-align: center">상위 컴포넌트 리렌더링 O</td>
+      <td style="text-align: center">상위 컴포넌트 리렌더링 X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>비지니스로직이 아닌 뷰로직으로서 <span style="color: #FAAB78; font-weight: bold">아무것도 반환하지 않겠다</span>는 뜻으로 사용할 때는<span style="color: #FAAB78; font-weight: bold"> false</span>를 사용해 리렌더링을 방지할 수 있다.</p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li><a href="https://medium.com/@davidkelley87/stop-using-return-null-in-react-a2ebf08fc9cd">stop using “return null” in React</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="null" /><category term="false" /><category term="return" /><summary type="html"><![CDATA[null 과 false를 반환하는 것에 대한 차이점]]></summary></entry><entry><title type="html">[JavaScript] 내쓰내정 카카오톡 api 사용 후기 및 정리</title><link href="http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-api-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0/" rel="alternate" type="text/html" title="[JavaScript] 내쓰내정 카카오톡 api 사용 후기 및 정리" /><published>2023-08-22T00:00:00+09:00</published><updated>2023-08-22T22:06:00+09:00</updated><id>http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1%20api%20%EC%82%AC%EC%9A%A9%20%ED%9B%84%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-api-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0/"><![CDATA[<h2 id="-사용한-카카오톡-api">📄 사용한 카카오톡 api</h2>
 
 <p>프로젝트를 진행하며 카카오톡 api를 사용했다. 주 기능은 <strong>공유하기</strong> 기능과 <strong>카카오 싱크</strong>. 깃허브 로그인은 구현한적이 있는데 기록을 안해서 기억이 하나도 안나더랬다. 그래서 이번엔 또 같은 어려움을 겪기 전에 그리고 또 까먹기 전에 기록한다.</p>
 
@@ -874,59 +983,4 @@
 
 <ul>
   <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="아스키 코드" /><category term="배열" /></entry><entry><title type="html">[프로그래머스 / Lv 1] 예산 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 예산 by JS" /><published>2023-05-04T00:00:00+09:00</published><updated>2023-05-04T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%98%88%EC%82%B0/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>S사에서는 각 부서에 필요한 물품을 지원해 주기 위해 부서별로 물품을 구매하는데 필요한 금액을 조사했습니다. 그러나, 전체 예산이 정해져 있기 때문에 모든 부서의 물품을 구매해 줄 수는 없습니다. 그래서 최대한 많은 부서의 물품을 구매해 줄 수 있도록 하려고 합니다.</p>
-
-<p>물품을 구매해 줄 때는 각 부서가 신청한 금액만큼을 모두 지원해 줘야 합니다. 예를 들어 1,000원을 신청한 부서에는 정확히 1,000원을 지원해야 하며, 1,000원보다 적은 금액을 지원해 줄 수는 없습니다.</p>
-
-<p>부서별로 신청한 금액이 들어있는 배열 d와 예산 budget이 매개변수로 주어질 때, 최대 몇 개의 부서에 물품을 지원할 수 있는지 return 하도록 solution 함수를 완성해주세요.</p>
-
-<ul>
-  <li>d는 부서별로 신청한 금액이 들어있는 배열이며, 길이(전체 부서의 개수)는 1 이상 100 이하입니다.</li>
-  <li>d의 각 원소는 부서별로 신청한 금액을 나타내며, 부서별 신청 금액은 1 이상 100,000 이하의 자연수입니다.</li>
-  <li>budget은 예산을 나타내며, 1 이상 10,000,000 이하의 자연수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">budget</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="nx">d</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">budget</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">budget</span> <span class="o">-</span> <span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-    <span class="nx">budget</span> <span class="o">=</span> <span class="nx">budget</span> <span class="o">-</span> <span class="nx">d</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>배열을 오름차순으로 정리한다.</li>
-  <li>budget이 0이 될 때까지 배열 d의 값을 하나씩 뺀다.</li>
-  <li>예산을 뺀 값이 마이너스가 되면 for문을 종료한다.</li>
-  <li>부서가 한개인 경우 조건(<code class="language-plaintext highlighter-rouge">budget - d[i] &lt; 0</code>)을 걸어 for문을 종료한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">budget</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">d</span>
-    <span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">count</span><span class="p">,</span> <span class="nx">price</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">count</span> <span class="o">+</span> <span class="p">((</span><span class="nx">budget</span> <span class="o">-=</span> <span class="nx">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>sort와 reduce 메소드를 연달아 사용한 풀이입니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">((budget -= price) &gt;= 0)</code>결과에 따라 0 또는 1이 되네요.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="" /></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="아스키 코드" /><category term="배열" /></entry></feed>
