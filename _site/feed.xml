@@ -1,4 +1,206 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-18T13:34:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[React] return null vs return false</title><link href="http://localhost:4000/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[React] return null vs return false" /><published>2023-09-18T00:00:00+09:00</published><updated>2023-09-18T22:06:00+09:00</updated><id>http://localhost:4000/react/react-return%20null%20%EA%B3%BC%20false%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-return-null-vs-return-false">📄 return null vs return false</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-21T10:12:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sometimes we fall, then we rise ⛵</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>Sujin Kim</name></author><entry><title type="html">[Next.js] Next.js 13.5 update!</title><link href="http://localhost:4000/nextjs/nextjs-nextjs-13.5-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/" rel="alternate" type="text/html" title="[Next.js] Next.js 13.5 update!" /><published>2023-09-20T00:00:00+09:00</published><updated>2023-09-20T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-nextjs%2013.5%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-nextjs-13.5-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/"><![CDATA[<h2 id="-nextjs-135-realize">📄 Next.js 13.5 realize!</h2>
+
+<p>Next.js 13.5 버전이 릴리즈 되었다.</p>
+
+<p>어떤 기능이 향상되었는지 확인 겸 정리한다.</p>
+
+<h3 id="1-시작-및-새로고침-시간-단축">1. 시작 및 새로고침 시간 단축</h3>
+
+<ul>
+  <li>로컬 서버 시작 시간 22% 단축</li>
+  <li>HMR 시간 29% 단축</li>
+  <li>메모리 사용량 40% 감소</li>
+</ul>
+
+<blockquote>
+  <p>💡 HMR(Hot Module Replacement)? 브라우저를 새로고침하지 않아도 Webpack으로 빌드한 결과물이 웹 애플리케이션에 실시간으로 반영</p>
+</blockquote>
+
+<h3 id="2-nextimage-기능-향상">2. next/image 기능 향상</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">unstable_getImgProps</code> 함수 추가</li>
+</ul>
+
+<p>기존에 next/image 를 사용하려면 <code class="language-plaintext highlighter-rouge">&lt;Image&gt;</code> 컴포넌트를 사용해야했다. 이번 업데이트 버전에 따르면 <code class="language-plaintext highlighter-rouge">&lt;Image&gt;</code> 컴포넌트를 사용하지 않아도, 이미지를 렌더링 할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">unstable_getImgProps</span> <span class="k">as</span> <span class="nx">getImgProps</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/image</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">common</span> <span class="o">=</span> <span class="p">{</span> <span class="na">alt</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hero</span><span class="dl">"</span><span class="p">,</span> <span class="na">width</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">400</span> <span class="p">};</span>
+  <span class="kd">const</span> <span class="p">{</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="na">srcSet</span><span class="p">:</span> <span class="nx">dark</span> <span class="p">},</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="nx">getImgProps</span><span class="p">({</span> <span class="p">...</span><span class="nx">common</span><span class="p">,</span> <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/dark.png</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="p">{</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="na">srcSet</span><span class="p">:</span> <span class="nx">light</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">},</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="nx">getImgProps</span><span class="p">({</span> <span class="p">...</span><span class="nx">common</span><span class="p">,</span> <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/light.png</span><span class="dl">"</span> <span class="p">});</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">picture</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">source</span> <span class="nx">media</span><span class="o">=</span><span class="dl">"</span><span class="s2">(prefers-color-scheme: dark)</span><span class="dl">"</span> <span class="nx">srcSet</span><span class="o">=</span><span class="p">{</span><span class="nx">dark</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">source</span> <span class="nx">media</span><span class="o">=</span><span class="dl">"</span><span class="s2">(prefers-color-scheme: light)</span><span class="dl">"</span> <span class="nx">srcSet</span><span class="o">=</span><span class="p">{</span><span class="nx">light</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">img</span> <span class="p">{...</span><span class="nx">rest</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/picture</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>이 외에도 Import 최적화 등 자잘한 업데이트 사항이 있지만, 이 두가지가 가장 크게 눈에 들어왔다.</p>
+
+<p>더 확실한건 vercel이 page 라우팅 보다 app 라우팅에 중점을 두고 업데이트를 진행했다는 느낌을 받았다.</p>
+
+<p>app 라우팅의 사용량도 점점 늘고 있는만큼 app 라우팅 기능을 잘 활용할 수 있도록 꾸준히 사용해 보아야겠다.</p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li><a href="https://dev-redcat.tistory.com/12">Next.js란?</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="Nextjs" /><category term="nextjs" /><category term="업데이트" /><summary type="html"><![CDATA[Next.js 13.5 버전에서 어떤 부분이 달라졌을까?]]></summary></entry><entry><title type="html">[React] react hook, 언제 사용해야 할까?</title><link href="http://localhost:4000/react/react-react-hook-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C/" rel="alternate" type="text/html" title="[React] react hook, 언제 사용해야 할까?" /><published>2023-09-19T00:00:00+09:00</published><updated>2023-09-19T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20hook%20%EC%96%B8%EC%A0%9C%20%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C</id><content type="html" xml:base="http://localhost:4000/react/react-react-hook-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C/"><![CDATA[<h2 id="-react-hook">📄 react hook?</h2>
+
+<p>리액트 훅 (React hook)은 함수형 컴포넌트에서도 클래스형 컴포넌트의 기능을 사용할 수 있게 해주는 기능이다.</p>
+
+<p>자주 사용되는 리액트 훅의 종류는 다음과 같다.</p>
+
+<ul>
+  <li>
+    <p>useCallback</p>
+
+    <ul>
+      <li>의존성 배열안의 인자가 변경될 때까지 함수를 저장</li>
+      <li>하위 컴포넌트의 무의미한 렌더링을 방지할 수 있어 유용</li>
+    </ul>
+  </li>
+  <li>
+    <p>useMemo</p>
+
+    <ul>
+      <li>의존성 배열안의 인자가 변경될 때까지 계산된 값(value) 저장</li>
+      <li>매 렌더링마다 복잡한 계산을 해야하는 상황을 피할 수 있다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>useEffect</p>
+    <ul>
+      <li>모든 컴포넌트가 렌더링 (처음 렌더링) 된 후, 실행</li>
+      <li>의존성 배열안의 인자가 변경될 때마다, 첫번째 인자로 등록된 함수가 실행</li>
+    </ul>
+  </li>
+</ul>
+
+<p>리액트 훅은 매우 유용하지만 데이터를 메모리에 저장하는 메모이제이션 기능을 담당하기 때문에, 무분별하게 사용한다면 <span style="text-decoration: underline">의미없는 메모리 낭비</span>가 발생하게 된다.</p>
+
+<p>리액트 훅을 어느 상황에서 사용하는 것이 적절한 것인지 정리해보았다.</p>
+
+<h2 id="-usecallback--리렌더링될-때마다-함수-호출하기-싫어요">📄 useCallback | 리렌더링될 때마다 함수 호출하기 싫어요</h2>
+
+<p><code class="language-plaintext highlighter-rouge">useCallback</code>은 함수를 저장하는 리액트 훅이다.</p>
+
+<p>이때 함수를 저장하다는 것은 함수의 실행 여부를 정한다는 뜻이다.</p>
+
+<p>컴포넌트가 리렌더링된다면 그 안에 종속되어 있는 함수는 매번 호출된다. 간단한 함수라면 문제없지만 api를 통해 데이터를 fetching하는 함수라면 의미없는 api 호출이 계속 발생하게 될 수 있다.</p>
+
+<h3 id="-appjs">💾 App.js</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">getItem()</code>: 데이터 fetching 함수. List에 props로 전달한다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">List</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./List</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">input</span><span class="p">,</span> <span class="nx">setInput</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">light</span><span class="p">,</span> <span class="nx">setLight</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nx">input</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">input</span> <span class="o">+</span> <span class="mi">100</span><span class="p">];</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">backgroundColor</span><span class="p">:</span> <span class="nx">light</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">White</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">grey</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">color</span><span class="p">:</span> <span class="nx">light</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">grey</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">};</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">number</span><span class="dl">"</span>
+          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">input</span><span class="p">}</span>
+          <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setInput</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">))}</span>
+        <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setLight</span><span class="p">((</span><span class="nx">prevLight</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">prevLight</span><span class="p">)}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">light</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">dark mode</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">light mode</span><span class="dl">"</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">List</span> <span class="nx">getItems</span><span class="o">=</span><span class="p">{</span><span class="nx">getItems</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="-listjs">💾 List.js</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">List</span><span class="p">({</span> <span class="nx">getItems</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">items</span><span class="p">,</span> <span class="nx">setItems</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Fetching items</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">setItems</span><span class="p">(</span><span class="nx">getItems</span><span class="p">());</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">getItems</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">))}</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">List</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>🔍 문제 상황: theme을 바꾸는 버튼을 눌렀을 때 컴포넌트 리렌더링 -&gt; 매 렌더링마다 <code class="language-plaintext highlighter-rouge">getItem()</code>호출되어 계속되는 무의미한 api 호출 <br /></p>
+
+<p>🔦 해결 방법: useCallback 함수로 <code class="language-plaintext highlighter-rouge">getItem()</code>을 저장해 의존성 배열안의 값이 바뀔 때만 함수가 실행되도록 하자!</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">input</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">input</span> <span class="o">+</span> <span class="mi">100</span><span class="p">];</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">input</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>useCallback함수로 <code class="language-plaintext highlighter-rouge">getItem()</code>는 input값이 변경될 때만 호출되어 무의미한 data fetching을 없애 주었다.</p>
+
+<h2 id="-usememo--usestate-값이-변경될-때마다-발생하는-리렌더링을-막고-싶어요">📄 useMemo | useState 값이 변경될 때마다 발생하는 리렌더링을 막고 싶어요</h2>
+
+<h3 id="-mycomponentjs">💾 MyComponent.js</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">setData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">number</span> <span class="o">=</span> <span class="nx">verySlowFunction</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">number</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">verySlowFunction</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span><span class="nx">heavy</span> <span class="nx">work</span> <span class="nx">done</span> <span class="nx">here</span>
+    <span class="k">return</span> <span class="nx">value</span><span class="p">;</span><span class="nx">s</span>
+<span class="p">}</span><span class="nx">a</span>
+</code></pre></div></div>
+
+<p>🔍 문제 상황: MyComponent가 호출될 때마다, <code class="language-plaintext highlighter-rouge">verySlowFunction()</code>가 호출</p>
+
+<p>🔦 해결 방법: z</p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li><a href="https://www.geeksforgeeks.org/when-to-use-usecallback-usememo-and-useeffect/">When to use useCallback, useMemo and useEffect ?</a></li>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="useEffect" /><category term="useCallback" /><category term="useMemo" /><summary type="html"><![CDATA[react hook을 사용하는 본격적인 이유]]></summary></entry><entry><title type="html">[React] return null vs return false</title><link href="http://localhost:4000/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[React] return null vs return false" /><published>2023-09-18T00:00:00+09:00</published><updated>2023-09-18T22:06:00+09:00</updated><id>http://localhost:4000/react/react-return%20null%20%EA%B3%BC%20false%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-return-null-vs-return-false">📄 return null vs return false</h2>
 
 <p>지금까지 진행했던 프로젝트에서 자바스크립트는 null을 false로 인식해 boolean 체킹을 하기 때문에, boolean타입으로 형변환을 거치지 않고 그대로 null를 반환해서 사용했다.</p>
 
@@ -764,223 +966,4 @@
 
 <ul>
   <li><a href="https://www.udemy.com/course/react-query-react/">udemy - React Query: React로 서버 상태 관리하기</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="prefetching" /><category term="keepPreviousData" /><summary type="html"><![CDATA[다음 페이지 데이터 프리페칭하기]]></summary></entry><entry><title type="html">[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기</title><link href="http://localhost:4000/react/react-reactquery/" rel="alternate" type="text/html" title="[React-Query 01] 쿼리 생성 및 로딩/에러 상태 관리하기" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/react/react-reactquery</id><content type="html" xml:base="http://localhost:4000/react/react-reactquery/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/56298540/236417752-b3d3dad8-8f8d-472b-b553-9254d4ff4ddc.png" alt="image" /></p>
-
-<h2 id="-리액트-쿼리-공부를-시작한-이유">📄 리액트 쿼리 공부를 시작한 이유</h2>
-
-<p>프로젝트를 진행할 때, 상태관리를 위해 redux를 사용하는데 서버 데이터를 위한 로직이 과도하게 커져 상태를 관리하기가 어려웠습니다.</p>
-
-<p>Redux-thunk를 사용하긴 했지만 이또한 store가 비대해져 한번에 관리하는게 맞는지 의문이 들었습니다.</p>
-
-<p>그래서 리액트 쿼리를 이용해 서버에서 오는 데이터는 따로 관리해보고자 공부를 시작하게 되었습니다.</p>
-
-<h2 id="-리액트-쿼리란">📄 리액트 쿼리란?</h2>
-
-<ul>
-  <li>
-    <p>역할: <strong>서버의 상태를 관리</strong>하는 리액트 라이브러리</p>
-  </li>
-  <li>
-    <p>특징</p>
-    <ul>
-      <li>서버에서 오는 데이터 전송 결과에 따라 비동기 처리 로직이 가능하다.</li>
-      <li>서버의 데이터에 변경이 생기면 클라이언트가 다시 데이터를 가져오지 않아도 알아서 업데이트 된다.</li>
-      <li>데이터를 캐시해서 전달할 수 있다.</li>
-      <li>데이터에 만료시간을 정할 수 있다. -&gt; 만료되지 않은 데이터는 refetching해도 변경이 적용되지 않을 수 있게 설정할 수 있다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="-리액트-쿼리-개발자-도구-사용하기">📄 리액트 쿼리 개발자 도구 사용하기</h2>
-
-<ul>
-  <li>방법: <code class="language-plaintext highlighter-rouge">QueryClientProvider</code>태그 안에 <code class="language-plaintext highlighter-rouge">ReactQueryDevtools</code>를 작성한다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="c1">// provide React Query client to App</span>
-    <span class="o">&lt;</span><span class="nx">QueryClientProvider</span> <span class="nx">client</span><span class="o">=</span><span class="p">{</span><span class="nx">qeuryClient</span><span class="p">}</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Blog</span> <span class="nx">Posts</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">Posts</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">ReactQueryDevtools</span> <span class="o">/&gt;</span> <span class="c1">// 🎉</span>
-    <span class="o">&lt;</span><span class="sr">/QueryClientProvider</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">ReactQueryDevtools</code>를 추가하면 해당 태그가 있는 페이지의 위치에 리액트 쿼리 개발자 도구가 생성됩니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56298540/236421070-48da8913-b162-4769-8bae-7ea6a2b7e876.png" alt="image" /></p>
-
-<p>개발자 도구를 통해 데이터가 서버로부터 로딩중인지, 만료된 데이터인지 등등 다양한 정보를 제공받고, Actions 탭에서는 데이터관련 작업을 실행할 수 있습니다.</p>
-
-<h2 id="-리액트-쿼리-시작하기">📄 리액트 쿼리 시작하기</h2>
-
-<p>리액트 쿼리를 사용하기 위해서는 여느 상태관리 라이브러리처럼 최상단 컴포넌트인 App.jsx에서 Provider 컴포넌트를 설정해야 합니다.</p>
-
-<ul>
-  <li>QueryClient: 캐싱기능과 기본 옵션을 자녀 컴포넌트에서도 사용할 수 있게 해준다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">qeuryClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">();</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="c1">// provide React Query client to App</span>
-    <span class="o">&lt;</span><span class="nx">QueryClientProvider</span> <span class="nx">client</span><span class="o">=</span><span class="p">{</span><span class="nx">qeuryClient</span><span class="p">}</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Blog</span> <span class="nx">Posts</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">Posts</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">ReactQueryDevtools</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="sr">/QueryClientProvider</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="-stale-time">📄 stale Time?</h2>
-
-<ul>
-  <li>뜻: 리액트 쿼리가 가져오는 데이터의 만료 시간 (기본 값: 0)</li>
-</ul>
-
-<table>
-  <tbody>
-    <tr>
-      <td>🎲 key point</td>
-      <td>데이터는 만료되었을 때만 리페칭이 가능하다.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>리액트 쿼리는 만료 시간을 기본 값으로 0을 설정해 클라이언트가 만료된 데이터를 제공받을 가능성을 낮추어 줍니다.</p>
-
-<p>만약 데이터의 만료시간을 5초로 설정했을 경우, 처음 데이터를 fetching 한 후 5초안에 데이터를 refetching했을 때 만료시간이 다 되지 않았으므로 데이터는 update되지 않습니다.</p>
-
-<h2 id="-로딩-상태와-에러상태-처리하기">📄 로딩 상태와 에러상태 처리하기</h2>
-
-<p>리액트 쿼리로 서버의 데이터를 가져오기 위해 <code class="language-plaintext highlighter-rouge">useQeury</code>라는 키워드를 사용합니다.</p>
-
-<ul>
-  <li>인자 1: 쿼리 키 (<code class="language-plaintext highlighter-rouge">post</code>): 서버에서 가져오는 데이터에 이름을 부여</li>
-  <li>인자 2: 쿼리 함수 (<code class="language-plaintext highlighter-rouge">fetchPosts</code>): 서버에서 데이터를 가져오는 로직을 작성 (비동기)</li>
-  <li>인자 3: 옵션 (<code class="language-plaintext highlighter-rouge">{ staleTime: 2000}</code>): 만료시간을 2초로 설정</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">isError</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">posts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchPosts</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">staleTime</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<h3>▪ 로딩 상태 처리하기</h3>
-
-<p>useQuery로 가져온 쿼리 데이터 posts를 구조분해해서 나온 isLoading을 활용하여 로딩이 되는 중이라면, <code class="language-plaintext highlighter-rouge">Loading...</code>을 화면에 보여줍니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h3&gt;</span><span class="err">;
-</span></code></pre></div></div>
-
-<h4>📌 isLoading과 isFetching의 차이점</h4>
-
-<ul>
-  <li>isFetching: 비동기 쿼리 함수가 해결되지 않았을 때 (데이터를 가져오는 중일 때)</li>
-  <li>isLoading: 비동기 쿼리 함수가 해결되지 않았을 때 (데이터를 가져오는 중일 때) + 쿼리에 대해 캐시된 데이터가 없을 때 (isFetching의 하위 집합)</li>
-</ul>
-
-<h3>▪ 에러 상태 처리하기</h3>
-
-<p>리액트 쿼리는 데이터를 가져올 때 fetching이 성공될 때까지 <strong>세번의 로딩 시도</strong>후 안되면 에러라고 판단합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">isError</span><span class="p">)</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Oops</span><span class="p">,</span> <span class="nx">something</span> <span class="nx">went</span> <span class="nx">wrong</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-</code></pre></div></div>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li><a href="https://www.udemy.com/course/react-query-react/">udemy - React Query: React로 서버 상태 관리하기</a></li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="react-query" /><summary type="html"><![CDATA[유데미 리액트 쿼리 인강 듣고 정리한 기록]]></summary></entry><entry><title type="html">[프로그래머스 / Lv 1] 시저 암호 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 시저 암호 by JS" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h2 id="-문제">📄 문제</h2>
-
-<p>어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.</p>
-
-<ul>
-  <li>공백은 아무리 밀어도 공백입니다.</li>
-  <li>s는 알파벳 소문자, 대문자, 공백으로만 이루어져 있습니다.</li>
-  <li>s의 길이는 8000이하입니다.</li>
-  <li>n은 1 이상, 25이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">MINCODE</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">MAXCODE</span> <span class="o">=</span> <span class="mi">122</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
-
-  <span class="kd">let</span> <span class="nx">store</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
-      <span class="k">continue</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()[</span><span class="nx">i</span><span class="p">].</span><span class="nx">charCodeAt</span><span class="p">()</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">store</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">)</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span> <span class="o">-</span> <span class="nx">MAXCODE</span> <span class="o">+</span> <span class="nx">MINCODE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">())</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
-    <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li>문자열의 아스키 코드를 구하고 n만큼 더한다.</li>
-  <li>만약 더한 값이 122보다 크다면 더한 값 - 122 + 97 - 1 을 해준다.</li>
-  <li>해당 문자열이 대문자인지 확인 후 값을 변환한다.</li>
-</ol>
-
-<h2 id="-best-practice">👍 Best Practice</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">upper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><span class="dl">"</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">lower</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">abcdefghijklmnopqrstuvwxyz</span><span class="dl">"</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-
-  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">answer</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">;</span>
-      <span class="k">continue</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kd">var</span> <span class="nx">textArr</span> <span class="o">=</span> <span class="nx">upper</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">?</span> <span class="nx">upper</span> <span class="p">:</span> <span class="nx">lower</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">+</span> <span class="nx">n</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">&gt;=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="nx">index</span> <span class="o">-=</span> <span class="nx">textArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">textArr</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>아스키코드가 아닌 배열로 작성한 풀이입니다.</p>
-
-<ol>
-  <li>우선, 주어진 문자열을 순환할때 해당 문자열이 소문자인지 대문자인지 확인합니다. (<code class="language-plaintext highlighter-rouge">textArr</code>)</li>
-  <li><code class="language-plaintext highlighter-rouge">textArr</code>에 해당 문자열의 인덱스를 구한 후 n만큼 더합니다.</li>
-  <li>만약 <code class="language-plaintext highlighter-rouge">textArr</code>의 길이보다 길어질 경우 그만큼 값을 빼서 정확한 위치를 구합니다.</li>
-</ol>
-
-<p>아스키코드를 사용한 풀이보다 오히려 가독성이 좋은 것 같습니다.</p>
-
-<h2 id="문제-출처">문제 출처</h2>
-
-<ul>
-  <li>프로그래머스</li>
-</ul>]]></content><author><name>Sujin Kim</name></author><category term="programmers-lv1" /><category term="아스키 코드" /><category term="배열" /></entry></feed>
+</ul>]]></content><author><name>Sujin Kim</name></author><category term="React" /><category term="prefetching" /><category term="keepPreviousData" /><summary type="html"><![CDATA[다음 페이지 데이터 프리페칭하기]]></summary></entry></feed>
