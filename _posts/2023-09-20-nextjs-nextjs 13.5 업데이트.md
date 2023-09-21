@@ -10,7 +10,7 @@ categories:
   - Nextjs
 tags:
   - ["nextjs", "업데이트"]
-last_modified_at: 2023-09-20T08:06:00-05:00
+last_modified_at: 2023-09-21T08:06:00-05:00
 ---
 
 ## 📄 Next.js 13.5 realize!
