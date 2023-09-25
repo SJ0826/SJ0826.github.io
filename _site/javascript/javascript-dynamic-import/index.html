@@ -1,0 +1,724 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>동적 임포트(Dynamic import) - Sometimes we fall, then we rise ⛵</title>
+<meta name="description" content="주니어 개발자의 꼼질꼼질 성장일지 👻">
+
+
+  <meta name="author" content="Sujin Kim">
+  
+  <meta property="article:author" content="Sujin Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sometimes we fall, then we rise ⛵">
+<meta property="og:title" content="동적 임포트(Dynamic import)">
+<meta property="og:url" content="http://localhost:4000/javascript/javascript-dynamic-import/">
+
+
+  <meta property="og:description" content="주니어 개발자의 꼼질꼼질 성장일지 👻">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-01-01T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-01-01T22:06:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/javascript-dynamic-import/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sujin Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sometimes we fall, then we rise ⛵ Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7662177111410384"
+  crossorigin="anonymous"
+></script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sometimes we fall, then we rise ⛵
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sujin Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>👻 주니어 개발자의 꼼질꼼질 성장일지  <br />👻 저는 제 일이 좋아요 <br />👻 같은 일을 좋아하는 사람들과 즐겁게 살아갑니다</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ikosdu60@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Front</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/javascript/">JavaScript (42)</a></li>
+          
+          
+            <li><a href="/html/">HTML (13)</a></li>
+          
+          
+            <li><a href="/css/">CSS (32)</a></li>
+          
+          
+            <li><a href="/react/">React (28)</a></li>
+          
+          
+            <li><a href="/nextjs/">Next.js (6)</a></li>
+          
+          
+            <li><a href="/typescript/">TypeScript (25)</a></li>
+          
+          
+            <li><a href="/git/">Git (27)</a></li>
+          
+          
+            <li><a href="/web/">WEB (14)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">프로그래머스</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/programmers/lv1/">Lv1 (37)</a></li>
+          
+          
+            <li><a href="/programmers/lv2/">Lv2 (22)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CS</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/cs/structure/">자료구조 (5)</a></li>
+          
+          
+            <li><a href="/cs/algorithm/">알고리즘 (3)</a></li>
+          
+          
+            <li><a href="/cs/network/">네트워크 (8)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Projects</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/project/todolist/">TodoList-Project (2)</a></li>
+          
+          
+            <li><a href="/project/coding-swamp/">모여봐요 코딩의 숲 (6)</a></li>
+          
+          
+            <li><a href="/project/random-message/">메세지가 도착했습니다 (3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">일상</span>
+        
+
+        
+        <ul>
+          
+          
+            <li><a href="/books/">books (2)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="동적 임포트(Dynamic import)"
+    /> <meta
+      itemprop="description"
+      content=""
+    /> <meta
+      itemprop="datePublished"
+      content="2023-01-01T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-01-01T22:06:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>동적 임포트(Dynamic import)</p>
+
+        </h1>
+         
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                On this page
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#-동적-임포트dynamic-import">📄 동적 임포트(Dynamic import)</a></li><li><a href="#-동적으로-모듈-import-하는-방법">📄 동적으로 모듈 import 하는 방법</a></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="-동적-임포트dynamic-import">📄 동적 임포트(Dynamic import)</h2>
+
+<p>보통 코드의 최상단에서 <code class="language-plaintext highlighter-rouge">import</code>문을 사용해 클래스나 함수를 가져오는 것을 <strong>정적 import</strong>라고 합니다.</p>
+
+<p>정적으로 모듈을 import한다면</p>
+
+<ol>
+  <li>import문에 동적 매개 변수를 사용할 수 없습니다. = 원시 문자열만 가능하기 때문에 함수 호출 결과값을 경로로 사용할 수 없습니다.</li>
+  <li>런타임이나 조건부로 모듈을 불러올 수 없습니다. = if문, 코드 블록에서 사용할 수 없습니다.</li>
+</ol>
+
+<h2 id="-동적으로-모듈-import-하는-방법">📄 동적으로 모듈 import 하는 방법</h2>
+
+<p>동적으로 모듈을 import한다면</p>
+
+<ol>
+  <li>프로미스 객체를 반환합니다. 프로미스 객체의 반환값은 불러온 모듈입니다.</li>
+  <li>코드의 위치에 관계없이 사용이 가능하기 때문에, 모듈들을 사용자가 필요로 할 때 불러올 수 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">import()</code>를 호출하는 순간부터 로딩이 되기 때문에 성능을 향상시킬 수 있습니다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./sum</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">sum</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div></div>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#import" class="page__taxonomy-item p-category" rel="tag">import</a><span class="sep">, </span>
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EB%8F%99%EC%A0%81-%EC%9E%84%ED%8F%AC%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">동적 임포트</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+    
+    </span>
+  </p>
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-01-01">January 1, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EB%8F%99%EC%A0%81+%EC%9E%84%ED%8F%AC%ED%8A%B8%28Dynamic+import%29%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-dynamic-import%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-dynamic-import%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjavascript-dynamic-import%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/git/git-github-actions-tutorial/" class="pagination--pager" title="github-actions-tutorial
+">Previous</a>
+    
+    
+      <a href="/react/react-React.lazy/" class="pagination--pager" title="[React] 리액트에서 컴포넌트 동적으로 불러오기 with React.lazy
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+      You may also enjoy
+    </h2>
+    <div class="grid__wrapper">
+        
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/nextjs/nextjs-nextjs-13.5-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/" rel="permalink"><p>[Next.js] Next.js 13.5 update!</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 20 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      Next.js 13.5 버전에서 어떤 부분이 달라졌을까?
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/react/react-react-hook-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C/" rel="permalink"><p>[React] react hook, 언제 사용해야 할까?</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 19 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      react hook을 사용하는 본격적인 이유
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="permalink"><p>[React] return null vs return false</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 18 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      null 과 false를 반환하는 것에 대한 차이점
+
+    </p>
+    
+  </article>
+</div>
+   
+
+<div class="grid__item">
+  <article
+    class="archive__item"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+      <a href="/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-api-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0/" rel="permalink"><p>[JavaScript] 내쓰내정 카카오톡 api 사용 후기 및 정리</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 22 2023
+    </p>
+     
+    <p class="archive__item-excerpt" itemprop="description">
+      카카오톡 api를 사용하며 헷갈렸던 점들
+
+    </p>
+    
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/SJ0826" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Sujin Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/javascript/javascript-dynamic-import/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/javascript/javascript-dynamic import"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sj0826-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
