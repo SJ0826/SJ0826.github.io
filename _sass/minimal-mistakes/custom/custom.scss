@@ -130,3 +130,47 @@ code, pre {
     max-width: 100%;  /* 본문이 꽉 차도록 */
   }
 }
+
+/**
+ ARCHIVE PAGE (카테고리별 페이지)
+ */
+
+// item title
+.archive-item > div > span > a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.archive-item > div > span > a:hover {
+  color: #0078ff; /* 모던한 파란색 강조 */
+}
+
+.archive-item > div > small {
+  font-size: 14px;
+  color: #888;
+  //display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.archive-item > div > small > i {
+  margin-left: 4px;
+  margin-right: 4px;
+  color: #aaa;
+}
+
+.page__taxonomy > span {
+  display: flex;
+  gap: 4px;
+}
+
+.page__taxonomy > span > a {
+  color:  #aaa
+}
+
+.archive .list__item {
+  padding-top: 8px;
+}
