@@ -62,8 +62,3 @@ docs:
       - title: "메세지가 도착했습니다"
         url: /project/random-message/
         category: "random-message"
-  - title: 일상
-    children:
-      - title: "books"
-        url: /books/
-        category: "books"

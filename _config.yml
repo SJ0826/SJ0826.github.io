@@ -16,7 +16,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale: "en-US"
-title: "Sometimes we fall, then we rise ⛵"
+title: "SUJIN DEV NOTE 📝"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
 name: "Sujin Kim"
@@ -103,9 +103,9 @@ analytics:
 
 # Site Author
 author:
-  name: "Sujin Kim"
+  name: "수진‍ (水珍)"
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "👻 주니어 개발자의 꼼질꼼질 성장일지  <br />👻 저는 제 일이 좋아요 <br />👻 같은 일을 좋아하는 사람들과 즐겁게 살아갑니다"
+  bio: "웹 프론트엔드로 일하고 있어요 <br /> 백엔드 공부도 해요"
   location: "South Korea"
   email:
   links:
