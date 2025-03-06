@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T13:23:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[React] 리액트팀은 왜 가상 돔을 만들었을까?</title><link href="http://localhost:4000/react/react-react-virtual-dom/" rel="alternate" type="text/html" title="[React] 리액트팀은 왜 가상 돔을 만들었을까?" /><published>2023-12-26T00:00:00+09:00</published><updated>2023-09-25T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20virtual%20dom</id><content type="html" xml:base="http://localhost:4000/react/react-react-virtual-dom/"><![CDATA[<h2 id="사용자가-브라우저-주소창에-주소를-입력하면-어떤-일이-발생할까">사용자가 브라우저 주소창에 주소를 입력하면 어떤 일이 발생할까?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T17:36:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
+
+<h2 id="️-책을-완독하고-나서">◾️ 책을 완독하고 나서</h2>
+<p><a href="https://polyester-archduke-ab6.notion.site/NestJS-NestJS-191f73e111b3809a8d32ffa142b53c2d?pvs=4">📒노션 스터디 노트</a></p>
+
+<p><a href="https://github.com/SJ0826/nestjs-auth">🐱 실습 프로젝트 Github</a></p>
+
+<h3 id="-추천-대상">😀 추천 대상</h3>
+<ul>
+  <li>공식문서읽는게 힘들다.</li>
+  <li>Nestjs의 기본 핵심개념을 한권으로 정리하고 싶다.</li>
+  <li>Typescript 문법에 익숙하다.</li>
+</ul>
+
+<h3 id="-비추천-대상">🤨 비추천 대상</h3>
+<ul>
+  <li>개발이 아예 처음이다.</li>
+  <li>Typescript를 전혀 모른다.</li>
+  <li>Nestjs의 심화 개념을 공부하고 싶다.</li>
+</ul>
+
+<p>NestJS는 먼저 공식문서로 접했습니다.<br />
+공식문서가 워낙 잘되어있는터라 기본개념을 쌓기에는 문제가 없지만 한글로 정리된 문서로 개념을 읽고싶어 책을 찾아보게 되었습니다.<br />
+책의 구조는 개념 -&gt; 프로젝트 적용 -&gt; 심화 개념 순서로 이루어져 있습니다.<br />
+가장 좋았던 점은 책을 완독하면 유저 (인증) 프로젝트를 완성할 수 있어 성취감을 느낄 수 있다는 것이었습니다.<br />
+다만 타입스크립트를 다루는 책이 아니기에 어느정도 개발경험이 있어야 속도감있게 책을 읽을 수 있어 개발 입문자에게는 다소 버거울 수 있을 것 같습니다.</p>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="공부" /></entry><entry><title type="html">[NestJS] NestJS가 env 파일을 읽어오지 못했을 때</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EA%B0%80-env-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%BD%EC%96%B4%EC%98%A4%EC%A7%80-%EB%AA%BB%ED%96%88%EC%9D%84-%EB%95%8C/" rel="alternate" type="text/html" title="[NestJS] NestJS가 env 파일을 읽어오지 못했을 때" /><published>2025-02-08T00:00:00+09:00</published><updated>2025-02-08T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EA%B0%80%20env%20%ED%8C%8C%EC%9D%BC%EC%9D%84%20%EC%9D%BD%EC%96%B4%EC%98%A4%EC%A7%80%20%EB%AA%BB%ED%96%88%EC%9D%84%20%EB%95%8C</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EA%B0%80-env-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%BD%EC%96%B4%EC%98%A4%EC%A7%80-%EB%AA%BB%ED%96%88%EC%9D%84-%EB%95%8C/"><![CDATA[<h2 id="-문제상황-프로젝트가-env-파일에-접근을-하지-못한다">🪹 문제상황: 프로젝트가 env 파일에 접근을 하지 못한다.</h2>
+
+<p>🐞 error message</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">ERROR</span> <span class="p">[</span><span class="nx">ExceptionHandler</span><span class="p">]</span> <span class="nb">Error</span><span class="p">:</span> <span class="nx">Config</span> <span class="nx">validation</span> <span class="nx">error</span><span class="p">:</span> <span class="dl">"</span><span class="s2">EMAIL_SERVICE</span><span class="dl">"</span> <span class="k">is</span> <span class="nx">required</span><span class="p">.</span> <span class="dl">"</span><span class="s2">EMAIL_AUTH_USER</span><span class="dl">"</span> <span class="k">is</span> <span class="nx">required</span><span class="p">.</span> <span class="dl">"</span><span class="s2">EMAIL_AUTH_PASSWORD</span><span class="dl">"</span> <span class="k">is</span> <span class="nx">required</span><span class="p">.</span> <span class="dl">"</span><span class="s2">EMAIL_BASE_URL</span><span class="dl">"</span> <span class="k">is</span> <span class="nx">required</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>💾 app.module.ts</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Module</span><span class="p">({</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">UsersModule</span><span class="p">,</span>
+    <span class="nx">EmailModule</span><span class="p">,</span>
+    <span class="nx">ConfigModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">({</span>
+      <span class="na">envFilePath</span><span class="p">:</span> <span class="p">[</span><span class="s2">`</span><span class="p">${</span><span class="nx">__dirname</span><span class="p">}</span><span class="s2">/config/env/.</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">}</span><span class="s2">.env`</span><span class="p">],</span> 
+      <span class="na">load</span><span class="p">:</span> <span class="p">[</span><span class="nx">emailConfig</span><span class="p">],</span>
+      <span class="na">isGlobal</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 전역모듈로 설정</span>
+      <span class="nx">validationSchema</span><span class="p">,</span> <span class="c1">// joi를 이용해 유효성검사</span>
+    <span class="p">}),</span>
+    <span class="nx">TypeOrmModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">({</span>
+      <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mysql</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">host</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATABASE_HOST</span><span class="p">,</span>
+      <span class="na">port</span><span class="p">:</span> <span class="mi">3306</span><span class="p">,</span>
+      <span class="na">username</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATABASE_USERNAME</span><span class="p">,</span>
+      <span class="na">password</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATABASE_PASSWORD</span><span class="p">,</span>
+      <span class="na">database</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">entities</span><span class="p">:</span> <span class="p">[</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/**/*.entity{.ts,.js}</span><span class="dl">'</span><span class="p">],</span> <span class="c1">// TypeORM이 구동될 때 인식하도록 할 엔티티 클래스 경로</span>
+      <span class="na">synchronize</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATABASE_SYNCHRONIZE</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// dev | 서비스가 실행될 때 DB가 초기화된다.</span>
+    <span class="p">}),</span>
+  <span class="p">],</span>
+  <span class="na">controllers</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[],</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>nest-auth 프로젝트 실행 도중 프로젝트가 env파일을 읽어오지 못했습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">cat src/config/env/.development.env</code> ⇒ 성공 <br />
+<code class="language-plaintext highlighter-rouge">echo $NODE_ENV</code> ⇒ 성공 (development)</p>
+
+<p>터미널을 통해 env파일을 읽는 것은 성공했지만 ConfigModule에서 env파일에 접근을 하지 못해 경로문제일 것이라 판단했습니다.</p>
+
+<p><br /></p>
+
+<h2 id="-문제-이유-env-파일-경로-문제">🪹 문제 이유: .env 파일 경로 문제</h2>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">envFilePath</span><span class="p">:</span> <span class="p">[</span><span class="s2">`</span><span class="p">${</span><span class="nx">__dirname</span><span class="p">}</span><span class="s2">/config/env/.</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">}</span><span class="s2">.env`</span><span class="p">]</span>
+</code></pre></div></div>
+<p><strong>ts-node</strong>를 사용할 경우 <strong>__dirname</strong>은 각각 다음과 같은 위치를 가리킵니다.</p>
+
+<ul>
+  <li>빌드 전: src 폴더</li>
+  <li>빌드 후: dist 폴더</li>
+</ul>
+
+<p>빌드 후 src폴더일 것이라는 예상과 달리  <strong>__dirname</strong>가 dist 폴더를 가리키게 되어 env파일을 찾지 못하고 에러가 발생한 것입니다.</p>
+
+<p><br /></p>
+
+<h2 id="-문제-해결-envfilepath-경로-재설정">🪺 문제 해결: envFilePath 경로 재설정</h2>
+<p>envFilePath 경로를 재설정해 현재 작업 디렉토리(process.cwd())를 기준으로 경로를 지정하겠습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">envFilePath</span><span class="p">:</span> <span class="p">[</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="s2">`src/config/env/.</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">}</span><span class="s2">.env`</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<p>문제없이 프로젝트가 실행되었습니다.</p>
+
+<p><img src="/assets/image/posts/nextjs-env-bug.png" alt="image" /></p>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="env" /><category term="error" /><summary type="html"><![CDATA[빌드 전 envFilePath 경로와 빌드 후 envFilePath 경로가 달라요]]></summary></entry><entry><title type="html">[React] 리액트팀은 왜 가상 돔을 만들었을까?</title><link href="http://localhost:4000/react/react-react-virtual-dom/" rel="alternate" type="text/html" title="[React] 리액트팀은 왜 가상 돔을 만들었을까?" /><published>2023-12-26T00:00:00+09:00</published><updated>2023-09-25T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20virtual%20dom</id><content type="html" xml:base="http://localhost:4000/react/react-react-virtual-dom/"><![CDATA[<h2 id="사용자가-브라우저-주소창에-주소를-입력하면-어떤-일이-발생할까">사용자가 브라우저 주소창에 주소를 입력하면 어떤 일이 발생할까?</h2>
 
 <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/cc5d46e7-ab57-462d-8b26-582a91f86f80/9fe21a7c-7ed2-4caa-82d0-cf0dcff5a192/Untitled.png" alt="Untitled" /></p>
 
@@ -795,243 +886,4 @@ npm install webpack webpack-cli --save-dev
 
 <p>처음 사용하면서 봤을 때는 꽤 어려웠는데 정리하다보니 생각보다 별거 아닌 것 같아서 괜히 허무한 것 같다.</p>
 
-<p>카카오 공식문서 짱~</p>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="카카오톡" /><category term="API" /><summary type="html"><![CDATA[카카오톡 api를 사용하며 헷갈렸던 점들]]></summary></entry><entry><title type="html">[React] React Portal</title><link href="http://localhost:4000/react/react-react-portal/" rel="alternate" type="text/html" title="[React] React Portal" /><published>2023-06-14T00:00:00+09:00</published><updated>2023-06-14T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20portal</id><content type="html" xml:base="http://localhost:4000/react/react-react-portal/"><![CDATA[<h2 id="️-react-potal-이란">🗒️ React Potal 이란?</h2>
-
-<ul>
-  <li>다른 곳에 있는 element를 렌더링할 수 있다.</li>
-  <li>컴포넌트가 종속되어 있는 돔 트리를 벗어나 외부의 다른 돔으로 렌더한다. (어플리케이션은 하나지만 부분적으로 다른 돔에 마운트)</li>
-</ul>
-
-<h2 id="️-usemodal-hook">🗒️ useModal hook</h2>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useRef</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">createPortal</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">styled</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">useModal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">modalOpened</span><span class="p">,</span> <span class="nx">setModalOpened</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">openModal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setModalOpened</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="kd">const</span> <span class="nx">closeModal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setModalOpened</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="kr">interface</span> <span class="nx">IProps</span> <span class="p">{</span>
-    <span class="na">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="kd">const</span> <span class="na">ModalPortal</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="nx">IProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">children</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">useRef</span><span class="o">&lt;</span><span class="nx">Element</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">mounted</span><span class="p">,</span> <span class="nx">setMounted</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-
-    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">setMounted</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// dom에 root-modal이 있으면 가져오기</span>
-        <span class="kd">const</span> <span class="nx">dom</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#root-modal</span><span class="dl">"</span><span class="p">);</span>
-        <span class="nx">ref</span><span class="p">.</span><span class="nx">current</span> <span class="o">=</span> <span class="nx">dom</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">},</span> <span class="p">[]);</span> <span class="c1">// mount</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">ref</span><span class="p">.</span><span class="nx">current</span> <span class="o">&amp;&amp;</span> <span class="nx">mounted</span> <span class="o">&amp;&amp;</span> <span class="nx">modalOpened</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">createPortal</span><span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">div</span>
-            <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">modal-background</span><span class="dl">"</span>
-            <span class="nx">role</span><span class="o">=</span><span class="dl">"</span><span class="s2">presentation</span><span class="dl">"</span>
-            <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">closeModal</span><span class="p">}</span>
-          <span class="sr">/</span><span class="err">&gt;
-</span>          <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="sr">/Container&gt;</span><span class="err">,
-</span>        <span class="nx">ref</span><span class="p">.</span><span class="nx">current</span>
-      <span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">openModal</span><span class="p">,</span>
-    <span class="nx">closeModal</span><span class="p">,</span>
-    <span class="nx">ModalPortal</span><span class="p">,</span>
-  <span class="p">};</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">useModal</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">Container</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 11;
-  .modal-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-  }
-`</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h2 id="️-usemodal-hook-사용하기">🗒️ useModal hook 사용하기</h2>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">styled</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">AirbnbLogoIcon</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../public/static/svg/logo/logo.svg</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">AirbnbLogoTextIcon</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../public/static/svg/logo/logo_text.svg</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/link</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">palette</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../styles/palette</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">useModal</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../hooks/useModal</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">SignUpModal</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./auth/SignUpModal</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">Header</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">openModal</span><span class="p">,</span> <span class="nx">ModalPortal</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useModal</span><span class="p">();</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-logo-wrapper</span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">AirbnbLogoIcon</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-logo</span><span class="dl">"</span> <span class="o">/&gt;</span>
-          <span class="o">&lt;</span><span class="nx">AirbnbLogoTextIcon</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-auth-buttons</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">button</span>
-          <span class="kd">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span>
-          <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-sign-up-button</span><span class="dl">"</span>
-          <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">openModal</span><span class="p">}</span>
-        <span class="o">&gt;</span>
-          <span class="nx">회원가입</span>
-        <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="kd">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header-login-button</span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="nx">로그인</span>
-        <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">ModalPortal</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">SignUpModal</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="sr">/ModalPortal</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/Container</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Header</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">Container</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 80px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
-  z-index: 10;
-  .header-logo-wrapper {
-    display: flex;
-    align-items: center;
-    .header-logo {
-      margin-right: 6px;
-    }
-  }
-
-  .header-auth-buttons {
-    .header-sign-up-button {
-      height: 42px;
-      margin-right: 8px;
-      padding: 0 16px;
-      border: 0;
-      border-radius: 21px;
-      background-color: white;
-      cursor: pointer;
-      outline: none;
-      &amp;:hover {
-        background-color: </span><span class="p">${</span><span class="nx">palette</span><span class="p">.</span><span class="nx">gray_f7</span><span class="p">}</span><span class="s2">;
-      }
-    }
-    .header-login-button {
-      height: 42px;
-      padding: 0 16px;
-      border: 0;
-      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
-      border-radius: 21px;
-      background-color: white;
-      cursor: pointer;
-      outline: none;
-      :hover {
-        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
-      }
-    }
-  }
-`</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li>클론 코딩으로 시작하는 Next.js</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="portal" /><category term="modal" /><summary type="html"><![CDATA[리액트 포탈을 사용한 모달 관리법]]></summary></entry><entry><title type="html">[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기</title><link href="http://localhost:4000/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[React] forwardRef로 부모컴포넌트에서 자식컴포넌트 DOM에 접근하기" /><published>2023-06-01T00:00:00+09:00</published><updated>2023-06-01T22:06:00+09:00</updated><id>http://localhost:4000/react/react-fowardRef%EB%A1%9C%20%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20DOM%EC%97%90%20%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/react/react-fowardRef%EB%A1%9C-%EB%B6%80%EB%AA%A8%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9E%90%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-DOM%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/"><![CDATA[<h2 id="-리액트-폼-관리하기">📄 리액트 폼 관리하기</h2>
-
-<p>하나의 폼을 관리할 때 input이 각각 파일로 나뉘어져 있다면 관리할 수 있는 방법은 여러가지가 있다.</p>
-
-<ol>
-  <li>부모-자식 컴포넌트간 통신</li>
-  <li>상태 관리 라이브러리 사용</li>
-  <li>Context API 사용</li>
-  <li>폼 라이브러리 사용</li>
-</ol>
-
-<p>원래는 상태 관리 라이브러리로 form을 관리했지만 해당 state를 구독하는 컴포넌트가 타이핑마다 리렌더링되어 비효율적이라는 생각이 들었다.</p>
-
-<p>그래서 다른 방법이 있나 찾아보던 중 <code class="language-plaintext highlighter-rouge">forwardRef</code>라는 react 훅을 알게 되었다.</p>
-
-<h2 id="-forwardref를-써보자">📄 forwardRef를 써보자</h2>
-
-<ul>
-  <li>
-    <p>역할: 부모컴포넌트가 자녀 컴포넌트에 ref를 전달할 수 있다.</p>
-  </li>
-  <li>
-    <p>사용법: 자식 컴포넌트를 forwardRef로 감싸준다.</p>
-  </li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
-
-<span class="kd">const</span> <span class="nx">focus</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">inputRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
-<span class="p">};</span>
-
-<span class="k">return</span> <span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">MyInput</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">inputRef</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">focus</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">포커스</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="p">);</span>
-</code></pre></div></div>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Input</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ref</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
-</span><span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">forwardRef</span><span class="p">(</span><span class="nx">MyInput</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h3 id="-주의할-점">📄 주의할 점</h3>
-
-<p>자녀 컴포넌트가 가진 DOM노드를 외부로 노출시키는 일이므로 캡슐화를 방해할 수 있다.</p>
-
-<p>필요하다면 사용하지만 굳이 필요없다면 최선책으로 사용할만한 방법은 아니다.</p>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=LtYzjv2yXHE&amp;list=PLZ5oZ2KmQEYjVH2ie-sZJnbEE6B-uCVIh&amp;index=6">별코딩 Youtube - React의 ForwardRef란?</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="forwardRef" /><summary type="html"><![CDATA[각각 파일로 나뉘어져 있는 input을 어떻게 관리하면 좋을까]]></summary></entry></feed>
+<p>카카오 공식문서 짱~</p>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="카카오톡" /><category term="API" /><summary type="html"><![CDATA[카카오톡 api를 사용하며 헷갈렸던 점들]]></summary></entry></feed>

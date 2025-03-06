@@ -1678,4 +1678,16 @@ var store = [{
         "tags": ["브라우저","virtual dom","가상돔"],
         "url": "/react/react-react-virtual-dom/",
         "teaser": null
+      },{
+        "title": "[NestJS] NestJS가 env 파일을 읽어오지 못했을 때",
+        "excerpt":"🪹 문제상황: 프로젝트가 env 파일에 접근을 하지 못한다.   🐞 error message   ERROR [ExceptionHandler] Error: Config validation error: \"EMAIL_SERVICE\" is required. \"EMAIL_AUTH_USER\" is required. \"EMAIL_AUTH_PASSWORD\" is required. \"EMAIL_BASE_URL\" is required      💾 app.module.ts  @Module({   imports: [     UsersModule,     EmailModule,     ConfigModule.forRoot({       envFilePath: [`${__dirname}/config/env/.${process.env.NODE_ENV}.env`],        load: [emailConfig],       isGlobal: true, // 전역모듈로 설정       validationSchema, // joi를 이용해 유효성검사     }),     TypeOrmModule.forRoot({       type: 'mysql',       host: process.env.DATABASE_HOST,       port: 3306,       username: process.env.DATABASE_USERNAME,       password: process.env.DATABASE_PASSWORD,       database: 'test',       entities: [__dirname + '/**/*.entity{.ts,.js}'], // TypeORM이 구동될 때 인식하도록 할 엔티티 클래스 경로       synchronize: process.env.DATABASE_SYNCHRONIZE === 'true', // dev | 서비스가 실행될 때 DB가 초기화된다.     }),   ],   controllers: [],   providers: [], }) export class AppModule {}   nest-auth 프로젝트 실행 도중 프로젝트가 env파일을 읽어오지 못했습니다.   cat src/config/env/.development.env ⇒ 성공   echo $NODE_ENV ⇒ 성공 (development)   터미널을 통해 env파일을 읽는 것은 성공했지만 ConfigModule에서 env파일에 접근을 하지 못해 경로문제일 것이라 판단했습니다.       🪹 문제 이유: .env 파일 경로 문제  envFilePath: [`${__dirname}/config/env/.${process.env.NODE_ENV}.env`]  ts-node를 사용할 경우 __dirname은 각각 다음과 같은 위치를 가리킵니다.      빌드 전: src 폴더   빌드 후: dist 폴더   빌드 후 src폴더일 것이라는 예상과 달리  __dirname가 dist 폴더를 가리키게 되어 env파일을 찾지 못하고 에러가 발생한 것입니다.       🪺 문제 해결: envFilePath 경로 재설정  envFilePath 경로를 재설정해 현재 작업 디렉토리(process.cwd())를 기준으로 경로를 지정하겠습니다.   envFilePath: [path.resolve(process.cwd(), `src/config/env/.${process.env.NODE_ENV}.env`)]   문제없이 프로젝트가 실행되었습니다.     ","categories": ["NestJS"],
+        "tags": ["NestJS","env","error"],
+        "url": "/nestjs/nestjs-NestJS%EA%B0%80-env-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%BD%EC%96%B4%EC%98%A4%EC%A7%80-%EB%AA%BB%ED%96%88%EC%9D%84-%EB%95%8C/",
+        "teaser": null
+      },{
+        "title": "[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기",
+        "excerpt":"   ◾️ 책을 완독하고 나서  📒노션 스터디 노트   🐱 실습 프로젝트 Github   😀 추천 대상     공식문서읽는게 힘들다.   Nestjs의 기본 핵심개념을 한권으로 정리하고 싶다.   Typescript 문법에 익숙하다.   🤨 비추천 대상     개발이 아예 처음이다.   Typescript를 전혀 모른다.   Nestjs의 심화 개념을 공부하고 싶다.   NestJS는 먼저 공식문서로 접했습니다.  공식문서가 워낙 잘되어있는터라 기본개념을 쌓기에는 문제가 없지만 한글로 정리된 문서로 개념을 읽고싶어 책을 찾아보게 되었습니다.  책의 구조는 개념 -&gt; 프로젝트 적용 -&gt; 심화 개념 순서로 이루어져 있습니다.  가장 좋았던 점은 책을 완독하면 유저 (인증) 프로젝트를 완성할 수 있어 성취감을 느낄 수 있다는 것이었습니다.  다만 타입스크립트를 다루는 책이 아니기에 어느정도 개발경험이 있어야 속도감있게 책을 읽을 수 있어 개발 입문자에게는 다소 버거울 수 있을 것 같습니다.  ","categories": ["NestJS"],
+        "tags": ["NestJS","공부"],
+        "url": "/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/",
+        "teaser": null
       }]

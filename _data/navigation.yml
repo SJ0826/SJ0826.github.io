@@ -6,7 +6,12 @@ main:
     url: /tags/
 
 docs:
-  - title: Front
+  - title: Backend
+    children:
+      - title: "NestJS"
+        url: /nestjs/
+        category: "NestJS"
+  - title: Frontend
     children:
       - title: "JavaScript"
         url: /javascript/
