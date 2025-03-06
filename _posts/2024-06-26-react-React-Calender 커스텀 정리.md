@@ -9,7 +9,7 @@ sidebar:
 categories:
   - React
 tags:
-  - ["React Hooks", "useReducer", "성능 최적화"]
+  - ["React Calendar", "커스텀"]
 last_modified_at: 2024-06-26T08:06:00-05:00
 ---
 
