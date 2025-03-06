@@ -28,12 +28,12 @@ code, pre {
   max-width: 190px;
 }
 
-@media (min-width: 80em) {
-  .page {
-    width: calc(100% - 200px);
-    padding-right: 200px;
-  }
-}
+//@media (min-width: 80em) {
+//  .page {
+//    width: calc(100% - 200px);
+//    padding-right: 200px;
+//  }
+//}
 
 .sidebar__right {
   max-width: 190px;
@@ -97,10 +97,6 @@ code, pre {
 
 // layout
 
-.page {
-  max-width: 1100px;  /* 전체 컨텐츠 영역 너비 조정 */
-  margin: 0 auto;
-}
 
 .page__content {
   max-width: 800px;  /* 본문 너비 키우기 */
@@ -164,6 +160,7 @@ code, pre {
 
 .page__taxonomy > span {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
 }
 
