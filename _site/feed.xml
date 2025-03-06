@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T17:36:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T18:22:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
 
 <h2 id="️-책을-완독하고-나서">◾️ 책을 완독하고 나서</h2>
 <p><a href="https://polyester-archduke-ab6.notion.site/NestJS-NestJS-191f73e111b3809a8d32ffa142b53c2d?pvs=4">📒노션 스터디 노트</a></p>
@@ -89,7 +89,145 @@
 
 <p>문제없이 프로젝트가 실행되었습니다.</p>
 
-<p><img src="/assets/image/posts/nextjs-env-bug.png" alt="image" /></p>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="env" /><category term="error" /><summary type="html"><![CDATA[빌드 전 envFilePath 경로와 빌드 후 envFilePath 경로가 달라요]]></summary></entry><entry><title type="html">[React] 리액트팀은 왜 가상 돔을 만들었을까?</title><link href="http://localhost:4000/react/react-react-virtual-dom/" rel="alternate" type="text/html" title="[React] 리액트팀은 왜 가상 돔을 만들었을까?" /><published>2023-12-26T00:00:00+09:00</published><updated>2023-09-25T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20virtual%20dom</id><content type="html" xml:base="http://localhost:4000/react/react-react-virtual-dom/"><![CDATA[<h2 id="사용자가-브라우저-주소창에-주소를-입력하면-어떤-일이-발생할까">사용자가 브라우저 주소창에 주소를 입력하면 어떤 일이 발생할까?</h2>
+<p><img src="/assets/image/posts/nextjs-env-bug.png" alt="image" /></p>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="env" /><category term="error" /><summary type="html"><![CDATA[빌드 전 envFilePath 경로와 빌드 후 envFilePath 경로가 달라요]]></summary></entry><entry><title type="html">[React] React-Calender 커스텀 정리</title><link href="http://localhost:4000/react/react-React-Calender-%EC%BB%A4%EC%8A%A4%ED%85%80-%EC%A0%95%EB%A6%AC/" rel="alternate" type="text/html" title="[React] React-Calender 커스텀 정리" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T22:06:00+09:00</updated><id>http://localhost:4000/react/react-React-Calender%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="http://localhost:4000/react/react-React-Calender-%EC%BB%A4%EC%8A%A4%ED%85%80-%EC%A0%95%EB%A6%AC/"><![CDATA[<p><img src="/assets/image/posts/react-calender.png" alt="image" /></p>
+
+<h2 id="-react-calendar란">📄 React-Calendar란?</h2>
+
+<p>React 애플리케이션에서 사용 가능한 캘린더 컴포넌트 라이브러리입니다. <br />
+사용량도 많고 꾸준히 업데이트되는 라이브러리라 주로 사용합니다.</p>
+
+<p><a href="https://www.npmjs.com/package/react-calendar">npm - React-Calender</a></p>
+
+<p><br /></p>
+
+<h2 id="-react-calendar-사용하기">📄 React-Calendar 사용하기</h2>
+
+<h3 id="1-설치하기">1. 설치하기</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">react</span><span class="o">-</span><span class="nx">calendar</span>
+</code></pre></div></div>
+
+<h3 id="2-사용하기">2. 사용하기</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Calendar</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-calendar</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">react-calendar/dist/Calendar.css</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">MyApp</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+
+  <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">newDate</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setDate</span><span class="p">(</span><span class="nx">newDate</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Calendar</span>
+        <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
+        <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">선택된</span> <span class="na">날짜</span><span class="p">:</span> <span class="p">{</span><span class="nx">date</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyApp</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="-react-calendar-커스텀화하기">📄 React-Calendar 커스텀화하기</h2>
+
+<h3 id="-시작-날짜-마지막-날짜-정하기">🍄 시작 날짜, 마지막 날짜 정하기</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">minDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2024-06-01</span><span class="dl">'</span><span class="p">)</span>
+ 
+ <span class="o">&lt;</span><span class="nx">Calendar</span>     
+    <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-auto</span><span class="dl">"</span>
+    <span class="nx">calendarType</span><span class="o">=</span><span class="dl">"</span><span class="s2">gregory</span><span class="dl">"</span>
+    <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
+    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
+    <span class="nx">minDate</span><span class="o">=</span><span class="p">{</span><span class="nx">minDate</span><span class="p">}</span>
+    <span class="nx">maxDate</span><span class="o">=</span><span class="p">{</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()}</span> <span class="c1">// 오늘 날짜</span>
+  <span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h3 id="-연월-일-형식-변경하기">🍄 연,월, 일 형식 변경하기</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">Calendar</span>     
+    <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-auto</span><span class="dl">"</span>
+    <span class="nx">calendarType</span><span class="o">=</span><span class="dl">"</span><span class="s2">gregory</span><span class="dl">"</span>
+    <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
+    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
+    <span class="nx">formatMonthYear</span><span class="o">=</span><span class="p">{(</span><span class="nx">locale</span><span class="p">,</span> <span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="dl">'</span><span class="s1">yyyy.MM</span><span class="dl">'</span><span class="p">)}</span> <span class="c1">// ex. 2024.06</span>
+    <span class="nx">formatDay</span><span class="o">=</span><span class="p">{(</span><span class="nx">locale</span><span class="p">,</span> <span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">)}</span>
+  <span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h3 id="-날짜-이동-화살표-커스텀">🍄 날짜 이동 화살표 커스텀</h3>
+<ul>
+  <li>이전달, 다음달에 활성화 날짜가 포함되지 않은경우 비활성화 처리</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">minDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2024-06-01</span><span class="dl">'</span><span class="p">)</span>
+ <span class="kd">const</span> <span class="nx">maxDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">isPrevDisabled</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">currentDate</span><span class="p">).</span><span class="nx">isSameOrBefore</span><span class="p">(</span><span class="nx">minDate</span><span class="p">,</span> <span class="dl">'</span><span class="s1">month</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">isNextDisabled</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">currentDate</span><span class="p">).</span><span class="nx">isSameOrAfter</span><span class="p">(</span><span class="nx">maxDate</span><span class="p">,</span> <span class="dl">'</span><span class="s1">month</span><span class="dl">'</span><span class="p">);</span>
+ 
+<span class="o">&lt;</span><span class="nx">Calendar</span>     
+  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-auto</span><span class="dl">"</span>
+  <span class="nx">calendarType</span><span class="o">=</span><span class="dl">"</span><span class="s2">gregory</span><span class="dl">"</span>
+  <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
+  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
+  <span class="nx">nextLabel</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">images/button_arrow_right.svg</span><span class="dl">'</span><span class="p">).</span><span class="k">default</span><span class="p">}</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">캘린더 다음 달 선택</span><span class="dl">"</span>
+                  <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">cls</span><span class="p">(</span><span class="nx">isNextDisabled</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">opacity-50 cursor-not-allowed</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span><span class="p">)}</span>
+             <span class="sr">/&gt;</span><span class="err">}
+</span>  <span class="nx">prevLabel</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">images/button_arrow_right.svg</span><span class="dl">'</span><span class="p">).</span><span class="k">default</span><span class="p">}</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">캘린더 이전 달 선택</span><span class="dl">"</span>
+                  <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">cls</span><span class="p">(</span><span class="dl">'</span><span class="s1">rotate-180</span><span class="dl">'</span><span class="p">,</span> <span class="nx">isPrevDisabled</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">opacity-50 cursor-not-allowed</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span><span class="p">)}</span>
+             <span class="sr">/&gt;</span><span class="err">}
+</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="-날짜-타일-커스텀">🍄 날짜 타일 커스텀</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getMonthDate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dateString</span><span class="p">:</span> <span class="nb">Date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">dateString</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">month</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">month</span><span class="p">}</span><span class="s2">-</span><span class="p">${</span><span class="nx">day</span><span class="p">}</span><span class="s2">`</span>
+  <span class="p">};</span>
+  
+<span class="kd">const</span> <span class="nx">customTile</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">date</span><span class="p">,</span> <span class="nx">view</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">date</span><span class="p">:</span> <span class="nb">Date</span><span class="p">;</span> <span class="nl">view</span><span class="p">:</span> <span class="kr">string</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">view</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">month</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isSameDay</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="nx">today</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">p</span>
+          <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">cls</span><span class="p">(</span><span class="dl">'</span><span class="s1">absolute right-[0px] bottom-[2px] w-full mb-0 </span><span class="dl">'</span><span class="p">,</span>
+                           <span class="nx">getMonthDate</span><span class="p">(</span><span class="nx">currentDate</span><span class="p">)</span> <span class="o">===</span> <span class="nx">getMonthDate</span><span class="p">(</span><span class="nx">today</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">text-white</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">text-purple-500</span><span class="dl">'</span><span class="p">,</span>
+                     <span class="p">)}</span><span class="o">&gt;</span>
+                       <span class="nx">오늘</span>
+         <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>       <span class="p">);</span>
+     <span class="p">}</span>
+     
+     <span class="k">if</span> <span class="p">(</span><span class="nx">recordedMonth</span><span class="p">?.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">moment</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">'</span><span class="s1">YYYY-MM-DD</span><span class="dl">'</span><span class="p">)))</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-[5px] h-[5px] bg-[#C454AD] mb-0 rounded-[100%] mx-auto</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/p&gt;</span><span class="err">;
+</span>     <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+ 
+<span class="o">&lt;</span><span class="nx">Calendar</span>     
+  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-auto</span><span class="dl">"</span>
+  <span class="nx">calendarType</span><span class="o">=</span><span class="dl">"</span><span class="s2">gregory</span><span class="dl">"</span>
+  <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
+  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
+  <span class="nx">tileContent</span><span class="o">=</span><span class="p">{</span><span class="nx">customTile</span><span class="p">}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="React Hooks" /><category term="useReducer" /><category term="성능 최적화" /><summary type="html"><![CDATA[React-Calender 라이브러리 커스텀해서 사용하기]]></summary></entry><entry><title type="html">[React] 리액트팀은 왜 가상 돔을 만들었을까?</title><link href="http://localhost:4000/react/react-react-virtual-dom/" rel="alternate" type="text/html" title="[React] 리액트팀은 왜 가상 돔을 만들었을까?" /><published>2023-12-26T00:00:00+09:00</published><updated>2023-09-25T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20virtual%20dom</id><content type="html" xml:base="http://localhost:4000/react/react-react-virtual-dom/"><![CDATA[<h2 id="사용자가-브라우저-주소창에-주소를-입력하면-어떤-일이-발생할까">사용자가 브라우저 주소창에 주소를 입력하면 어떤 일이 발생할까?</h2>
 
 <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/cc5d46e7-ab57-462d-8b26-582a91f86f80/9fe21a7c-7ed2-4caa-82d0-cf0dcff5a192/Untitled.png" alt="Untitled" /></p>
 
@@ -830,60 +968,4 @@ npm install webpack webpack-cli --save-dev
 
 <ul>
   <li><a href="https://medium.com/@davidkelley87/stop-using-return-null-in-react-a2ebf08fc9cd">stop using “return null” in React</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="null" /><category term="false" /><category term="return" /><summary type="html"><![CDATA[null 과 false를 반환하는 것에 대한 차이점]]></summary></entry><entry><title type="html">[JavaScript] 내쓰내정 카카오톡 api 사용 후기 및 정리</title><link href="http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-api-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0/" rel="alternate" type="text/html" title="[JavaScript] 내쓰내정 카카오톡 api 사용 후기 및 정리" /><published>2023-08-22T00:00:00+09:00</published><updated>2023-08-22T22:06:00+09:00</updated><id>http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1%20api%20%EC%82%AC%EC%9A%A9%20%ED%9B%84%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/javascript/nextjs-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-api-%EC%82%AC%EC%9A%A9-%ED%9B%84%EA%B8%B0/"><![CDATA[<h2 id="-사용한-카카오톡-api">📄 사용한 카카오톡 api</h2>
-
-<p>프로젝트를 진행하며 카카오톡 api를 사용했다. 주 기능은 <strong>공유하기</strong> 기능과 <strong>카카오 싱크</strong>. 깃허브 로그인은 구현한적이 있는데 기록을 안해서 기억이 하나도 안나더랬다. 그래서 이번엔 또 같은 어려움을 겪기 전에 그리고 또 까먹기 전에 기록한다.</p>
-
-<h2 id="-카카오톡-api를-사용하며-내가-겪었던-삽질들">📄 카카오톡 api를 사용하며 내가 겪었던 삽질들</h2>
-
-<h3 id="1-환경별로-env파일을-따로-관리하자">1. 환경별로 <code class="language-plaintext highlighter-rouge">.env</code>파일을 따로 관리하자</h3>
-
-<p>이번 프로젝트를 진행한 브랜치는 세가지였다.</p>
-
-<ol>
-  <li>main</li>
-  <li>dev</li>
-  <li>test</li>
-</ol>
-
-<p>각 브랜치에서 사용한 환경변수는 다음과 같다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">NEXT_PUBLIC_KAKAO_REST_API_KEY</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">비밀이지롱</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">NEXT_PUBLIC_KAKAO_REDIRECT_URL</span> <span class="o">=</span>
-  <span class="dl">"</span><span class="s2">http://localhost:3000/카카오 로그인성공하면 이동할 리다이렉트 페이지</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">NEXT_PUBLIC_API_BASE_URL</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">비밀이지롱</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">NEXT_PUBLIC_JS_API_KEY</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">비밀이지롱</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>⭐️ <strong>브랜치별로 사용하는 uri</strong>가 다르기 때문에 리다이렉트 uri를 다르게 관리해야한다.</p>
-
-<ol>
-  <li>
-    <p>카카오톡에 등록한 uri 주소로 리다이렉트 해야하기 때문에 배포되는 브랜치 작업의 주소를 기준으로 환경변수를 설정한다.</p>
-  </li>
-  <li>
-    <p>카카오톡 로그인 페이지에서 로그인에 성공하면 등록한 리다이렉트 페이지로 이동하는데 이때 쿼리로 <code class="language-plaintext highlighter-rouge">auth code</code>를 받는다.</p>
-  </li>
-  <li>
-    <p>프론트는 이 <code class="language-plaintext highlighter-rouge">auth code</code>를 백엔드에게 보내고 나머지 로직 (home으로 이동 등)을 리다이렉트 페이지에 작성해서 로그인 과정을 진행한다.</p>
-  </li>
-  <li>
-    <p>백엔드는 받은 <code class="language-plaintext highlighter-rouge">auth code</code>로 token을 요청하는데 이때 로그인페이지로 라우팅될 때 사용한 리다이렉트 uri가 같아야 한다.</p>
-  </li>
-</ol>
-
-<h3 id="2-authorization-code-not-found-for-code-500-error">2. authorization code not found for code (500 Error)</h3>
-
-<p>카카오톡에서 날려주는 500 error.</p>
-
-<p>⭐️ 이 에러가 발생한 이유는 <strong>동일한 인증코드를 여러번 사용</strong>했기 때문이다.</p>
-
-<p>앞서 사용한 <code class="language-plaintext highlighter-rouge">auth code</code>를 두번이상 사용하면 카카오는 500에러를 전송한다.</p>
-
-<p>이때 아마 로그인 요청이 두번 가게되어 에러가 발생했는데 꽤나 고생했던 것 같다.</p>
-
-<h2 id="-마무리">📄 마무리</h2>
-
-<p>처음 사용하면서 봤을 때는 꽤 어려웠는데 정리하다보니 생각보다 별거 아닌 것 같아서 괜히 허무한 것 같다.</p>
-
-<p>카카오 공식문서 짱~</p>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="카카오톡" /><category term="API" /><summary type="html"><![CDATA[카카오톡 api를 사용하며 헷갈렸던 점들]]></summary></entry></feed>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="null" /><category term="false" /><category term="return" /><summary type="html"><![CDATA[null 과 false를 반환하는 것에 대한 차이점]]></summary></entry></feed>
