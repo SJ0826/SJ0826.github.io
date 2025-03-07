@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T18:22:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-07T09:57:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
 
 <h2 id="️-책을-완독하고-나서">◾️ 책을 완독하고 나서</h2>
 <p><a href="https://polyester-archduke-ab6.notion.site/NestJS-NestJS-191f73e111b3809a8d32ffa142b53c2d?pvs=4">📒노션 스터디 노트</a></p>
@@ -89,145 +89,478 @@
 
 <p>문제없이 프로젝트가 실행되었습니다.</p>
 
-<p><img src="/assets/image/posts/nextjs-env-bug.png" alt="image" /></p>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="env" /><category term="error" /><summary type="html"><![CDATA[빌드 전 envFilePath 경로와 빌드 후 envFilePath 경로가 달라요]]></summary></entry><entry><title type="html">[React] React-Calender 커스텀 정리</title><link href="http://localhost:4000/react/react-React-Calender-%EC%BB%A4%EC%8A%A4%ED%85%80-%EC%A0%95%EB%A6%AC/" rel="alternate" type="text/html" title="[React] React-Calender 커스텀 정리" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T22:06:00+09:00</updated><id>http://localhost:4000/react/react-React-Calender%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="http://localhost:4000/react/react-React-Calender-%EC%BB%A4%EC%8A%A4%ED%85%80-%EC%A0%95%EB%A6%AC/"><![CDATA[<p><img src="/assets/image/posts/react-calender.png" alt="image" /></p>
+<p><img src="/assets/image/posts/nextjs-env-bug.png" alt="image" /></p>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="env" /><category term="error" /><summary type="html"><![CDATA[빌드 전 envFilePath 경로와 빌드 후 envFilePath 경로가 달라요]]></summary></entry><entry><title type="html">[Next.js 14] npm 패키지 배포 가이드</title><link href="http://localhost:4000/nextjs/nextjs-npm-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%B0%B0%ED%8F%AC-%EA%B0%80%EC%9D%B4%EB%93%9C/" rel="alternate" type="text/html" title="[Next.js 14] npm 패키지 배포 가이드" /><published>2024-11-25T00:00:00+09:00</published><updated>2024-07-10T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-npm%20%ED%8C%A8%ED%82%A4%EC%A7%80%20%EB%B0%B0%ED%8F%AC%20%EA%B0%80%EC%9D%B4%EB%93%9C</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-npm-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%B0%B0%ED%8F%AC-%EA%B0%80%EC%9D%B4%EB%93%9C/"><![CDATA[<h2 id="-목적">■ 목적</h2>
+<ul>
+  <li>어드민 디자인 시스템 컴포넌트와 에셋을 패키지로 배포해 관리</li>
+  <li>아토믹 디자인 패턴을 사용해 컴포넌트를 체계적으로 설계 및 개발</li>
+  <li>컴포넌트 유지보수성을 높이고, 일관된 UI/UX를 제공하며, 개발 속도를 향상</li>
+</ul>
 
-<h2 id="-react-calendar란">📄 React-Calendar란?</h2>
+<h2 id="-프로젝트-환경">■ 프로젝트 환경</h2>
+<ul>
+  <li>next.js 14</li>
+  <li>react 18</li>
+  <li>tailwindcss 3.4.1</li>
+</ul>
 
-<p>React 애플리케이션에서 사용 가능한 캘린더 컴포넌트 라이브러리입니다. <br />
-사용량도 많고 꾸준히 업데이트되는 라이브러리라 주로 사용합니다.</p>
+<h2 id="-배포-순서">■ 배포 순서</h2>
 
-<p><a href="https://www.npmjs.com/package/react-calendar">npm - React-Calender</a></p>
+<h3 id="1-srcexportts-를-생성합니다">1. src/export.ts 를 생성합니다</h3>
 
-<p><br /></p>
+<p>패키지로 배포할 컴포넌트를 export.ts 파일에 선언합니다. (파일 경로와 이름은 변경가능합니다)</p>
 
-<h2 id="-react-calendar-사용하기">📄 React-Calendar 사용하기</h2>
-
-<h3 id="1-설치하기">1. 설치하기</h3>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">react</span><span class="o">-</span><span class="nx">calendar</span>
+<p><strong>💾 src/export.ts</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span><span class="k">default</span> <span class="k">as</span> <span class="nx">SujinButton</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app/components/common/Button</span><span class="dl">'</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h3 id="2-사용하기">2. 사용하기</h3>
+<h3 id="2-tsconfigbuildjson-을-생성합니다">2. tsconfig.build.json 을 생성합니다.</h3>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Calendar</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-calendar</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">'</span><span class="s1">react-calendar/dist/Calendar.css</span><span class="dl">'</span><span class="p">;</span>
+<ul>
+  <li>(기존) tsconfig.json: Next.js 어플리케이션 코드 빌드용</li>
+  <li>(생성) tsconfig.build.json: 패키지 배포 코드 빌드용</li>
+</ul>
 
-<span class="kd">const</span> <span class="nx">MyApp</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<p><strong>💾 tsconfig.build.json</strong></p>
 
-  <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">newDate</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setDate</span><span class="p">(</span><span class="nx">newDate</span><span class="p">);</span>
-  <span class="p">};</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">compilerOptions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">lib</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">dom</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dom.iterable</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">esnext</span><span class="dl">"</span><span class="p">],</span> <span class="c1">// 프로젝트에서 사용할 JavaScript 표준 라이브러리</span>
+    <span class="dl">"</span><span class="s2">target</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ESNext</span><span class="dl">"</span><span class="p">,</span>  <span class="c1">// 컴파일 대상 ECMAScript 버전</span>
+    <span class="dl">"</span><span class="s2">allowJs</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// JavaScript 파일을 TypeScript 코드로 포함할 수 있도록 허용</span>
+    <span class="dl">"</span><span class="s2">skipLibCheck</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 외부 라이브러리 타입 검사 건너뛰기</span>
+    <span class="dl">"</span><span class="s2">strict</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">// 엄격 모드 활성화</span>
+    <span class="dl">"</span><span class="s2">noEmit</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 컴파일된 출력 파일 생성 여부</span>
+    <span class="dl">"</span><span class="s2">allowSyntheticDefaultImports</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 기본(default) 내보내기를 허용할지 여부</span>
+    <span class="dl">"</span><span class="s2">esModuleInterop</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// CommonJS(require)와 ES Module(import) 간의 호환성 설정</span>
+    <span class="dl">"</span><span class="s2">forceConsistentCasingInFileNames</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 파일 이름 대소문자 불일치를 방지</span>
+    <span class="dl">"</span><span class="s2">noFallthroughCasesInSwitch</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// switch 문에서 case가 누락되지 않도록 방지</span>
+    <span class="dl">"</span><span class="s2">module</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">esnext</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 사용할 모듈 시스템</span>
+    <span class="dl">"</span><span class="s2">moduleResolution</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 모듈 해석 방식을 정의</span>
+    <span class="dl">"</span><span class="s2">resolveJsonModule</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// JSON 파일을 모듈로 가져오기 허용</span>
+    <span class="dl">"</span><span class="s2">isolatedModules</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 개별 파일을 독립적으로 컴파일</span>
+    <span class="dl">"</span><span class="s2">jsx</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-jsx</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// React JSX 구문 설정 - React 17+의 새로운 JSX 변환 방식 사용</span>
+    <span class="dl">"</span><span class="s2">incremental</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// TypeScript 이전 빌드 결과를 재사용하여 빌드 속도 향상(증분 빌드)</span>
+    <span class="dl">"</span><span class="s2">outDir</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 컴파일된 파일의 출력 디렉토리</span>
+    <span class="dl">"</span><span class="s2">declaration</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 타입 정의 파일 생성 여부 (.d.ts)</span>
+    <span class="dl">"</span><span class="s2">plugins</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next</span><span class="dl">"</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">paths</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">@/*</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">./src/*</span><span class="dl">"</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">include</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span> <span class="dl">"</span><span class="s2">**/tailwind.config.ts</span><span class="dl">"</span><span class="p">,</span>  <span class="dl">"</span><span class="s2">src/export.ts</span><span class="dl">"</span><span class="p">],</span>
+  <span class="dl">"</span><span class="s2">exclude</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">node_modules</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">}</span>
 
+</code></pre></div></div>
+<ul>
+  <li>include
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">**/tailwind.config.ts</code> : tailwind 설정 (asset, font) 공유</li>
+      <li><code class="language-plaintext highlighter-rouge">src/export.ts</code> : 컴포넌트 공유</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-packagejson을-수정합니다">3. package.json을 수정합니다.</h3>
+
+<p><strong>💾 package.json</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sujin-design-system</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.1.5</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 패키지를 새로 배포할 때마다 버전을 업그레이드 해야합니다.</span>
+  <span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/src/export.js</span><span class="dl">"</span><span class="p">,</span> 
+  <span class="dl">"</span><span class="s2">types</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/src/export.d.ts</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">files</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="dl">"</span><span class="s2">dist</span><span class="dl">"</span>
+  <span class="p">],</span>
+  <span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next dev</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">next:build</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next build</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next start</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">lint</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next lint</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">build</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rm -rf dist &amp;&amp; tsc -p tsconfig.build.json</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">prepublishOnly</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">npm run build</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">dependencies</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^18</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^18</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">next</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">14.2.18</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">devDependencies</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">typescript</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^5</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">@types/node</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^20</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">@types/react</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^18</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">@types/react-dom</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^18</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">postcss</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^8</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">tailwindcss</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^3.4.1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">eslint</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^8</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">eslint-config-next</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">14.2.18</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">main</code>: 패키지를 설치한 후 패키지를 사용할 때 진입점. 가장 먼저 로드되는 파일을 지정.</li>
+  <li><code class="language-plaintext highlighter-rouge">types</code> : 타입스크립트 타입 정의 파일</li>
+</ul>
+
+<p>package.json을 수정하고 npm run build 스크립트를 실행하면 dist폴더가 생성됩니다.</p>
+
+<p><img src="/assets/image/posts/nextjs-npm-deploy.png" alt="image" /></p>
+
+<h3 id="4-npm에-패키지-배포하기">4. npm에 패키지 배포하기</h3>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">npm login</code> : 스크립트를 실행하고 브라우저에서 로그인합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">npm build</code> : 패키지에 필요한 빌드파일을 생성합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">npm publish</code> : 생성한 빌드 파일을 npm에 배포합니다.</li>
+</ol>
+
+<p>배포에 성공하면 <a href="https://www.npmjs.com/">npm</a>에서 배포한 패키지를 확인 할 수 있습니다.</p>
+
+<p><img src="/assets/image/posts/nextjs-npm-deploy-2.png" alt="image" /></p>
+
+<h3 id="5-배포한-패키지-사용하기">5. 배포한 패키지 사용하기</h3>
+
+<p>먼저 배포한 패키지를 사용할 프로젝트에서 패키지를 다운받습니다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">sujin</span><span class="o">-</span><span class="nx">design</span><span class="o">-</span><span class="nx">system</span>
+</code></pre></div></div>
+
+<p>tailwind.config.ts 파일에서 패키지를 presets에 적용합니다.</p>
+
+<p><strong>💾 tailwind.config.ts</strong></p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">sujin</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">sujin-design-system/dist/tailwind.config</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kr">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">presets</span><span class="p">:</span> <span class="p">[</span><span class="nx">sujin</span><span class="p">],</span> <span class="c1">// ✅ preset으로 패키지의 tailwind 설정 적용</span>
+  <span class="na">content</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./src/**/*.{js,jsx,ts,tsx}</span><span class="dl">'</span><span class="p">],</span>
+
+</code></pre></div></div>
+
+<p>설정을 완료하면 패키지의 에셋과 컴포넌트를 사용할 수 있습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">SujinButton</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">sujin-design-system</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// 👍</span>
+</code></pre></div></div>
+<h2 id="참고">참고</h2>
+<ul>
+  <li><a href="https://blacksheepcode.com/posts/publish_a_react_package_using_nextjs_as_a_base">blacksheepcode - publish_a_react_package_using_nextjs_as_a_base</a></li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="prerendering" /><category term="서버 컴포넌트" /><category term="use client" /><category term="에러" /></entry><entry><title type="html">[Next.js 13] 클라이언트 컴포넌트가 정말 클라이언트 사이드에서만 렌더링 될까 ?</title><link href="http://localhost:4000/nextjs/nextjs-Error-occured-prerendering-page/" rel="alternate" type="text/html" title="[Next.js 13] 클라이언트 컴포넌트가 정말 클라이언트 사이드에서만 렌더링 될까 ?" /><published>2024-07-10T00:00:00+09:00</published><updated>2024-07-10T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-Error%20occured%20prerendering%20page</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-Error-occured-prerendering-page/"><![CDATA[<h2 id="️문제-발생">◾️문제 발생</h2>
+
+<p>react-draft-wysiwyg 를 사용한 컴포넌트를 페이지 컴포넌트에 import했습니다.
+페이지는 성공적으로 렌더링 되었지만 터미널에서 에러를 확인할 수 있었습니다. 빌드시에도 동일한 에러가 발생합니다.</p>
+
+<p><img src="/assets/image/posts/nextjs-prerendering-error.png" alt="image" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">use client</code>를 최상단에 선언했었기에, 클리이언트 컴포넌라고 생각했고 서버 컴포넌트에서 날 법한 프리렌더링 에러가 발생하는 것이 이해가 가지 않았습니다.</p>
+
+<h2 id="️-문제-원인">◾️ 문제 원인</h2>
+
+<p>문제가 발생한 이유는 다음과 같습니다.</p>
+
+<ul>
+  <li>Next.js 13 컴포넌트는 <strong>서버에서 사전 렌더링</strong>되고 <strong>클라이언트에서 하이드레이션</strong>된다.</li>
+  <li>따라서 <code class="language-plaintext highlighter-rouge">use client</code> 를 선언한다고해서 클라이언트에서만 렌더링 되는 것은 아니다.</li>
+</ul>
+
+<p>컴포넌트에서 window객체에 접근하는데, 서버에서 사전 렌더링되는 과정에서 window객체를 찾지 못해 에러가 발생한 것이었습니다.
+클라이언트 단에서만 실행되어야하는 코드는 서버에서 실행되지 않도록 설정이 필요합니다.</p>
+
+<h2 id="️-문제-해결">◾️ 문제 해결</h2>
+
+<h3 id="️-방법-1-dynamic-import-동적-임포트로-ssr-옵션-끄기">✔️ 방법 1. dynamic import (동적 임포트)로 SSR 옵션 끄기</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">NoticeForm</span> <span class="o">=</span> <span class="nx">dynamic</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">@/components/notice/NoticeForm</span><span class="dl">'</span><span class="p">),</span> <span class="p">{</span>
+  <span class="na">ssr</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Next.js 의 <strong>dynamic import</strong> 기능을 활용해 <strong>서버 측 렌더링을 비활성화</strong>했습니다.
+dynamic import는 컴포넌트 외부에서 선언해야합니다.</p>
+
+<p>다만 이 방법은 해당 에러가 발생하는 모든 컴포넌트를 동적으로 import해야하는 번거로움이 있었고, 에러 원인을 찾던 중 전역으로 설정해주는 방법이 있었습니다.</p>
+
+<h3 id="️-방법-2-컨텍스트를-사용한-custom-hook-만들기">✔️ 방법 2. 컨텍스트를 사용한 custom hook 만들기</h3>
+
+<p>동적 임포트 매커니즘을 컴포넌트마다 반복적으로 구현하는 대신, <strong>컨텍스트를 사용해 전역에서 관리</strong>하는 방법도 있습니다.</p>
+
+<p>useEffect와 useState 훅을 사용한 커스텀 훅을 통해 클라이언트 환경을 실행조건으로 설정할 수 있었습니다.</p>
+
+<p>이렇게하면 서버에서의 사전렌더링과 클라이언트의 첫번째 렌더링이 일치해 하이드레이션 오류도 방지할 수 있습니다.</p>
+
+<p><strong>💾 useIsClient.tsx</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use client</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createContext</span><span class="p">,</span> <span class="nx">useContext</span><span class="p">,</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">IsClientCtx</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">IsClientCtxProvider</span> <span class="o">=</span> <span class="p">({</span>
+  <span class="nx">children</span><span class="p">,</span>
+<span class="p">}:</span> <span class="p">{</span>
+  <span class="nl">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isClient</span><span class="p">,</span> <span class="nx">setIsClient</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">setIsClient</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span> <span class="p">[]);</span>
   <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Calendar</span>
-        <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
-        <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-      <span class="sr">/</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">선택된</span> <span class="na">날짜</span><span class="p">:</span> <span class="p">{</span><span class="nx">date</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+    <span class="o">&lt;</span><span class="nx">IsClientCtx</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">isClient</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/IsClientCtx.Provider</span><span class="err">&gt;
 </span>  <span class="p">);</span>
 <span class="p">};</span>
 
-<span class="k">export</span> <span class="k">default</span> <span class="nx">MyApp</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">useIsClient</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">IsClientCtx</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
+<p><strong>💾 app/layout.tsx</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Metadata</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./globals.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">IsClientCtxProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/hooks/useIsClient</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">metadata</span><span class="p">:</span> <span class="nx">Metadata</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Project</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Generated by create next app</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">RootLayout</span><span class="p">({</span>
+  <span class="nx">children</span><span class="p">,</span>
+<span class="p">}:</span> <span class="nb">Readonly</span><span class="o">&lt;</span><span class="p">{</span>
+  <span class="na">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+<span class="p">}</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">IsClientCtxProvider</span><span class="o">&gt;</span>
+					<span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/IsClientCtxProvider</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>💾 사용예시</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useIsClient</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./is-client-ctx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">isClient</span> <span class="o">=</span> <span class="nx">useIsClient</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">scrollPosition</span> <span class="o">=</span> <span class="nx">useScrollPosition</span><span class="p">();</span> <span class="c1">// 예시를 위한 가상 훅</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="p">{</span><span class="nx">scrollPosition</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">FirstModule</span> <span class="o">/&gt;</span><span class="p">}</span>
+      <span class="p">{</span><span class="nx">isClient</span> <span class="o">&amp;&amp;</span> <span class="nx">scrollPosition</span> <span class="o">&gt;=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">SecondModule</span> <span class="o">/&gt;</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>useIsClient.tsx 훅을 통해 서버에서 렌더링할 수 있는 부분을 먼저 렌더링 후, 클라이언트 조건에 따라 업데이트 (두번째 렌더링)을 실행합니다. 이 방식을 통해 하이드레이션 오류를 피하면서 필요한 경우 클라이언트 측 업데이트를 수행할 수 있었습니다.</p>
+
+<h2 id="참고">참고</h2>
+<ul>
+  <li><a href="https://stackoverflow.com/questions/75692116/next-js-13-window-is-not-defined">stackoverflow - next-js-13-window-is-not-defined</a></li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="prerendering" /><category term="서버 컴포넌트" /><category term="use client" /><category term="에러" /><summary type="html"><![CDATA[클라이언트 컴포넌트에서 prerendering 에러가 발생한 이유]]></summary></entry><entry><title type="html">[Next.js] 클라이언트 컴포넌트에서 서버 컴포넌트 유지하는 방법</title><link href="http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/" rel="alternate" type="text/html" title="[Next.js] 클라이언트 컴포넌트에서 서버 컴포넌트 유지하는 방법" /><published>2024-04-01T00:00:00+09:00</published><updated>2024-04-01T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%84%9C%EB%B2%84%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/"><![CDATA[<h2 id="-클라이언트-컴포넌트-내에서-서버-컴포넌트-다루기">📄 클라이언트 컴포넌트 내에서 서버 컴포넌트 다루기</h2>
+
+<p>컴포넌트를 구현할 때마다 여러 난관에 부딪힌 경험이 있습니다.</p>
+
+<p>서버 컴포넌트를 작성한 후에도 이벤트 리스너를 추가하거나 훅을 적용해야 하는 경우, 결국 클라이언트 컴포넌트로 전환해야 했습니다.</p>
+
+<p>여러가지 방법을 찾아보다가 클라이언트 컴포넌트 내부에서도 서버 컴포넌트를 충분히 활용할 수 있다는 점을 발견했습니다.</p>
+
+<h3 id="-서버-컴포넌트를-children으로-받아오기">◾ 서버 컴포넌트를 children으로 받아오기</h3>
+
+<p>단순한 방법이지만 큰 차이였습니다. 
+<strong>import</strong>문으로 컴포넌트를 서버 컴포넌트를 가져오면 클라이언트 컴포넌트로 자동 변환됩니다.</p>
+
+<p>서버 컴포넌트를 <strong>children</strong>으로 받아오면 클라이언트 컴포넌트를 유지하면서 서버컴포넌트를 사용할 수 있습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use client</span><span class="dl">'</span>
+ 
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+ 
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">ClientComponent</span><span class="p">({</span>
+  <span class="nx">children</span><span class="p">,</span>
+<span class="p">}:</span> <span class="p">{</span>
+  <span class="nl">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+ 
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">ClientComponent</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./client-component</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">ServerComponent</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./server-component</span><span class="dl">'</span>
+ 
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ClientComponent</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">ServerComponent</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/ClientComponent</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 하면 굳이 전체 컴포넌트를 클라이언트 컴포넌트로 전환할 필요 없이 서버 컴포넌트를 children으로 전달하여 활용할 수 있습니다.</p>
+
+<h2 id="참고">참고</h2>
+<ul>
+  <li><a href="https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns">Next.js 공식 문서 - Server and Client Composition Patterns</a></li>
+  <li>Next.js + ReactQuery로 SNS 서비스 만들기 (인프런)</li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="middleware" /><category term="서버 컴포넌트" /><summary type="html"><![CDATA[클라이언트 컴포넌트로 서버 컴포넌트를 감싸보자]]></summary></entry><entry><title type="html">[Next.js] 서버 컴포넌트에서 Redirect 구현하기 with middleware</title><link href="http://localhost:4000/nextjs/nextjs-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-Redirect-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-with-middleware/" rel="alternate" type="text/html" title="[Next.js] 서버 컴포넌트에서 Redirect 구현하기 with middleware" /><published>2024-02-07T00:00:00+09:00</published><updated>2025-03-07T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-%EC%84%9C%EB%B2%84%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20Redirect%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0%20with%20middleware</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-Redirect-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-with-middleware/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
+
+<p>페이지 인증 로직을 구현하면서 권한이 없는 사용자를 로그인 페이지로 리다이렉트하는 기능이 필요했습니다.</p>
+
+<p>클라이언트 컴포넌트에서는 useRouter를 사용하여 리다이렉트할 수 있었지만, 서버 컴포넌트에서는 useRouter를 사용할 수 없었습니다. 따라서 서버에서 인증을 처리하는 적절한 방법을 찾아야 했습니다.</p>
+
+<p><img src="/assets/image/posts/nextjs-middleware.png" alt="image" /></p>
+
+<h2 id="시도-1--redirect">시도 1 | redirect</h2>
+
+<p>가장 간단하게 사용할 수 있어보이는 redirect를 사용해 보았습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">reissueTokenAPI</span><span class="p">(</span><span class="nx">REFRESH_TOKEN</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">accessToken</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">cookieStore</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">REFRESH_TOKEN</span><span class="p">,</span> <span class="nx">res</span><span class="p">.</span><span class="nx">refreshToken</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">redirect</span><span class="p">(</span><span class="nx">Url</span><span class="p">.</span><span class="nx">SignIn</span><span class="p">);</span>
+      <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
 <p><br /></p>
 
-<h2 id="-react-calendar-커스텀화하기">📄 React-Calendar 커스텀화하기</h2>
+<p>문제가 없을 줄 알았지만 콘솔에서 에러가 발생했습니다.</p>
 
-<h3 id="-시작-날짜-마지막-날짜-정하기">🍄 시작 날짜, 마지막 날짜 정하기</h3>
+<p><img src="/assets/image/posts/nextjs-middleware-error.png" alt="image" /></p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">minDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2024-06-01</span><span class="dl">'</span><span class="p">)</span>
- 
- <span class="o">&lt;</span><span class="nx">Calendar</span>     
-    <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-auto</span><span class="dl">"</span>
-    <span class="nx">calendarType</span><span class="o">=</span><span class="dl">"</span><span class="s2">gregory</span><span class="dl">"</span>
-    <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
-    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-    <span class="nx">minDate</span><span class="o">=</span><span class="p">{</span><span class="nx">minDate</span><span class="p">}</span>
-    <span class="nx">maxDate</span><span class="o">=</span><span class="p">{</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()}</span> <span class="c1">// 오늘 날짜</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span></code></pre></div></div>
+<blockquote>
+  <p>Invoking the redirect() function throws a NEXT_REDIRECT error and terminates rendering of the route segment in which it was thrown. by Next.js</p>
+</blockquote>
 
-<h3 id="-연월-일-형식-변경하기">🍄 연,월, 일 형식 변경하기</h3>
+<p><del>왜 redirect api 표에서는 severcomponet가 포함되어있는지 잘 모르겠지만 아무래도 서버 컴포넌트에서는 redirect()를 사용할 수 없는 것 같습니다.</del> <br />
+(2025.03.07 수정) 
+서버 컴포넌트임에도 redirect()를 사용할 수 없었던 이유는 await을 사용하는 비동기 코드 내부에서 redirect()를 호출했기 때문입니다. 
+redirect() 함수는 페이지가 서버에서 렌더링되는 도중에 실행되어야합니다.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">Calendar</span>     
-    <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-auto</span><span class="dl">"</span>
-    <span class="nx">calendarType</span><span class="o">=</span><span class="dl">"</span><span class="s2">gregory</span><span class="dl">"</span>
-    <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
-    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-    <span class="nx">formatMonthYear</span><span class="o">=</span><span class="p">{(</span><span class="nx">locale</span><span class="p">,</span> <span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="dl">'</span><span class="s1">yyyy.MM</span><span class="dl">'</span><span class="p">)}</span> <span class="c1">// ex. 2024.06</span>
-    <span class="nx">formatDay</span><span class="o">=</span><span class="p">{(</span><span class="nx">locale</span><span class="p">,</span> <span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">)}</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span></code></pre></div></div>
+<h2 id="시도-2--nextresponseredirect-in-middleware">시도 2 | NextResponse.redirect in Middleware</h2>
 
-<h3 id="-날짜-이동-화살표-커스텀">🍄 날짜 이동 화살표 커스텀</h3>
-<ul>
-  <li>이전달, 다음달에 활성화 날짜가 포함되지 않은경우 비활성화 처리</li>
-</ul>
+<p>미들웨어는 페이지 요청이 완료되기 전에 실행되므로, 페이지가 서버에서 렌더링되기 전에 필요한 로직을 처리할 수 있습니다.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">minDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2024-06-01</span><span class="dl">'</span><span class="p">)</span>
- <span class="kd">const</span> <span class="nx">maxDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<p>그러나 미들웨어에서는 axios의 기본 설정으로 AJAX 요청을 보낼 수 없었으며, 이를 사용하려고 하면 다음과 같은 에러가 발생했습니다.</p>
 
-<span class="kd">const</span> <span class="nx">isPrevDisabled</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">currentDate</span><span class="p">).</span><span class="nx">isSameOrBefore</span><span class="p">(</span><span class="nx">minDate</span><span class="p">,</span> <span class="dl">'</span><span class="s1">month</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">isNextDisabled</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">currentDate</span><span class="p">).</span><span class="nx">isSameOrAfter</span><span class="p">(</span><span class="nx">maxDate</span><span class="p">,</span> <span class="dl">'</span><span class="s1">month</span><span class="dl">'</span><span class="p">);</span>
- 
-<span class="o">&lt;</span><span class="nx">Calendar</span>     
-  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-auto</span><span class="dl">"</span>
-  <span class="nx">calendarType</span><span class="o">=</span><span class="dl">"</span><span class="s2">gregory</span><span class="dl">"</span>
-  <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
-  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-  <span class="nx">nextLabel</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">images/button_arrow_right.svg</span><span class="dl">'</span><span class="p">).</span><span class="k">default</span><span class="p">}</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">캘린더 다음 달 선택</span><span class="dl">"</span>
-                  <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">cls</span><span class="p">(</span><span class="nx">isNextDisabled</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">opacity-50 cursor-not-allowed</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span><span class="p">)}</span>
-             <span class="sr">/&gt;</span><span class="err">}
-</span>  <span class="nx">prevLabel</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">images/button_arrow_right.svg</span><span class="dl">'</span><span class="p">).</span><span class="k">default</span><span class="p">}</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">캘린더 이전 달 선택</span><span class="dl">"</span>
-                  <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">cls</span><span class="p">(</span><span class="dl">'</span><span class="s1">rotate-180</span><span class="dl">'</span><span class="p">,</span> <span class="nx">isPrevDisabled</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">opacity-50 cursor-not-allowed</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span><span class="p">)}</span>
-             <span class="sr">/&gt;</span><span class="err">}
-</span><span class="o">/&gt;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">TypeError</span><span class="p">]</span> <span class="nx">adapter</span> <span class="k">is</span> <span class="nx">not</span> <span class="nx">a</span> <span class="kd">function</span>
 </code></pre></div></div>
 
-<h3 id="-날짜-타일-커스텀">🍄 날짜 타일 커스텀</h3>
+<p>따라서 fetch 함수를 사용하여 API 요청을 처리하는 방식으로 해결했습니다.
+저의 경우에는 미들웨어에서 사용하는 인증관련 로직을 분리했습니다.
+<br /></p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getMonthDate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dateString</span><span class="p">:</span> <span class="nb">Date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">dateString</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">month</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+<p><strong>💾 withAuth.ts</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NextRequest</span><span class="p">,</span> <span class="nx">NextResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/server</span><span class="dl">'</span><span class="p">;</span>
 
-  <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">month</span><span class="p">}</span><span class="s2">-</span><span class="p">${</span><span class="nx">day</span><span class="p">}</span><span class="s2">`</span>
-  <span class="p">};</span>
-  
-<span class="kd">const</span> <span class="nx">customTile</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">date</span><span class="p">,</span> <span class="nx">view</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">date</span><span class="p">:</span> <span class="nb">Date</span><span class="p">;</span> <span class="nl">view</span><span class="p">:</span> <span class="kr">string</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">view</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">month</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">isSameDay</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="nx">today</span><span class="p">))</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">p</span>
-          <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">cls</span><span class="p">(</span><span class="dl">'</span><span class="s1">absolute right-[0px] bottom-[2px] w-full mb-0 </span><span class="dl">'</span><span class="p">,</span>
-                           <span class="nx">getMonthDate</span><span class="p">(</span><span class="nx">currentDate</span><span class="p">)</span> <span class="o">===</span> <span class="nx">getMonthDate</span><span class="p">(</span><span class="nx">today</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">text-white</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">text-purple-500</span><span class="dl">'</span><span class="p">,</span>
-                     <span class="p">)}</span><span class="o">&gt;</span>
-                       <span class="nx">오늘</span>
-         <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>       <span class="p">);</span>
-     <span class="p">}</span>
-     
-     <span class="k">if</span> <span class="p">(</span><span class="nx">recordedMonth</span><span class="p">?.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">moment</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">'</span><span class="s1">YYYY-MM-DD</span><span class="dl">'</span><span class="p">)))</span> <span class="p">{</span>
-       <span class="k">return</span> <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-[5px] h-[5px] bg-[#C454AD] mb-0 rounded-[100%] mx-auto</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/p&gt;</span><span class="err">;
-</span>     <span class="p">}</span>
-   <span class="p">}</span>
-   <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">withAuth</span><span class="p">(</span><span class="nx">request</span><span class="p">:</span> <span class="nx">NextRequest</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">redirectUrl</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">nextUrl</span><span class="p">.</span><span class="nx">clone</span><span class="p">();</span> <span class="c1">// 1</span>
+    <span class="nx">redirectUrl</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">리다이렉트</span> <span class="nx">경로</span><span class="p">}</span><span class="s2">`</span>
+
+    <span class="kd">const</span> <span class="nx">refreshToken</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">refreshToken</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 2</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">refreshToken</span><span class="p">)</span> <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">redirectUrl</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">refreshToken</span> <span class="nx">갱신</span> <span class="nx">api</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span> <span class="c1">// 3</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">refreshToken</span><span class="p">:</span> <span class="nx">refreshToken</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+    <span class="p">};</span>
+    <span class="kd">const</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
+    <span class="p">};</span>
+
+    <span class="kd">const</span> <span class="nx">apiResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="na">responseData</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">apiResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">responseData</span><span class="p">.</span><span class="nx">resultCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 4</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">succeed</span><span class="dl">'</span><span class="p">)</span>
+
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+
+      <span class="nx">response</span><span class="p">.</span><span class="nx">cookies</span><span class="p">?.</span><span class="kd">set</span><span class="p">(</span>
+        <span class="dl">'</span><span class="s1">refreshToken</span><span class="dl">'</span><span class="p">,</span>
+        <span class="nx">responseData</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">refreshToken</span>
+      <span class="p">);</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">cookies</span><span class="p">?.</span><span class="kd">set</span><span class="p">(</span>
+        <span class="dl">'</span><span class="s1">accessToken</span><span class="dl">'</span><span class="p">,</span>
+        <span class="nx">responseData</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">accessToken</span>
+      <span class="p">);</span>
+
+      <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">failed</span><span class="dl">'</span><span class="p">);</span>
+
+      <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">redirectUrl</span><span class="p">);</span> <span class="c1">// 5</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">err: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ol>
+  <li>객체의 참조를 공유하지 않고 안전하게 nextUrl를 사용하고자 clone 메서드를 사용해 값을 복사한다.</li>
+  <li>서버에 요청 (request)할때 브라우저 쿠키에 저장된 refreshToken을 가져온다.</li>
+  <li>서버에서 api요청을 처리해 refreshToken을 갱신한다.</li>
+  <li>refreshToken 갱신 성공시, 쿠키에 새로운 토큰을 저장해 클라이언트에 응답 (response)을 내려보낸다.</li>
+  <li>refreshToken 갱신 실패시, 설정한 경로로 리다이렉트 한다.</li>
+</ol>
+
+<p>이전에는 서버에서 쿠키를 다루기 위해 별도의 라이브러리를 설치하거나, 각 페이지 컴포넌트에서 getServerSideProps의 request를 통해 관리해야 했습니다.</p>
+
+<p>그러나 이번에 미들웨어를 사용하면서, 원하는 페이지를 요청할 때 공통된 비즈니스 로직을 처리할 수 있게 되었고, 쿠키를 다루는 과정이 번거롭지 않아 작업이 훨씬 간편해졌습니다.</p>
+
+<p>또한, 서버에서 인증을 처리할 수 있기 때문에, 브라우저에서 추가적인 화면을 렌더링하지 않고 즉시 로그인 페이지로 리다이렉트할 수 있어, 사용자는 바로 로그인을 진행할 수 있습니다.</p>
+
+<p>만약 리다이렉트 후 사용자에게 추가적인 메시지를 전달하고 싶다면, 응답(Response)을 커스텀하여 메시지를 포함할 수도 있습니다.</p>
+
+<p><strong>💾 middleware.ts</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NextRequest</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/server</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">isAuthenticated</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@lib/auth</span><span class="dl">'</span>
  
-<span class="o">&lt;</span><span class="nx">Calendar</span>     
-  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-auto</span><span class="dl">"</span>
-  <span class="nx">calendarType</span><span class="o">=</span><span class="dl">"</span><span class="s2">gregory</span><span class="dl">"</span>
-  <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span>
-  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-  <span class="nx">tileContent</span><span class="o">=</span><span class="p">{</span><span class="nx">customTile</span><span class="p">}</span>
-<span class="sr">/</span><span class="err">&gt;
-</span></code></pre></div></div>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="React Hooks" /><category term="useReducer" /><category term="성능 최적화" /><summary type="html"><![CDATA[React-Calender 라이브러리 커스텀해서 사용하기]]></summary></entry><entry><title type="html">[React] 리액트팀은 왜 가상 돔을 만들었을까?</title><link href="http://localhost:4000/react/react-react-virtual-dom/" rel="alternate" type="text/html" title="[React] 리액트팀은 왜 가상 돔을 만들었을까?" /><published>2023-12-26T00:00:00+09:00</published><updated>2023-09-25T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20virtual%20dom</id><content type="html" xml:base="http://localhost:4000/react/react-react-virtual-dom/"><![CDATA[<h2 id="사용자가-브라우저-주소창에-주소를-입력하면-어떤-일이-발생할까">사용자가 브라우저 주소창에 주소를 입력하면 어떤 일이 발생할까?</h2>
+<span class="c1">// Limit the middleware to paths starting with `/api/`</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">matcher</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/api/:function*</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">}</span>
+ 
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">middleware</span><span class="p">(</span><span class="nx">request</span><span class="p">:</span> <span class="nx">NextRequest</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Call our authentication function to check the request</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isAuthenticated</span><span class="p">(</span><span class="nx">request</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// Respond with JSON indicating an error message</span>
+    <span class="k">return</span> <span class="nx">Response</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span>
+      <span class="p">{</span> <span class="na">success</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authentication failed</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">401</span> <span class="p">}</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>공식 문서를 참고하며 작업을 진행하는 과정에서, 현재까지 Next.js의 기능을 절반 정도만 활용하고 있었다는 것을 깨달았습니다.</p>
+
+<p>미들웨어는 단순히 리다이렉트를 처리하는 용도뿐만 아니라, 다양한 기능을 제공하고 있습니다. 이를 적극적으로 활용하여 프로젝트를 더욱 효율적으로 진행하고 싶습니다.</p>
+
+<h2 id="참고">참고</h2>
+<ul>
+  <li><a href="https://nextjs.org/docs/app/building-your-application/routing/middleware">Next.js 공식 문서 - middleware</a></li>
+  <li><a href="https://www.reddit.com/r/nextjs/comments/tx1pcp/using_axios_in_middleware_not_working/">reddit - using_axios_in_middleware_not_working</a></li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="middleware" /><category term="서버 컴포넌트" /><summary type="html"><![CDATA[권한이 없는 페이지 미들웨어로 리다이렉트 시키기]]></summary></entry><entry><title type="html">[React] 리액트팀은 왜 가상 돔을 만들었을까?</title><link href="http://localhost:4000/react/react-react-virtual-dom/" rel="alternate" type="text/html" title="[React] 리액트팀은 왜 가상 돔을 만들었을까?" /><published>2023-12-26T00:00:00+09:00</published><updated>2023-09-25T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20virtual%20dom</id><content type="html" xml:base="http://localhost:4000/react/react-react-virtual-dom/"><![CDATA[<h2 id="사용자가-브라우저-주소창에-주소를-입력하면-어떤-일이-발생할까">사용자가 브라우저 주소창에 주소를 입력하면 어떤 일이 발생할까?</h2>
 
 <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/cc5d46e7-ab57-462d-8b26-582a91f86f80/9fe21a7c-7ed2-4caa-82d0-cf0dcff5a192/Untitled.png" alt="Untitled" /></p>
 
@@ -626,346 +959,4 @@ npm install webpack webpack-cli --save-dev
 
 <ul>
   <li><a href="https://tailwindcss.com/docs/guides/create-react-app">tailwind 공식문서</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="CSS" /><category term="tailwind" /></entry><entry><title type="html">[React] react hook, 언제 사용해야 할까?</title><link href="http://localhost:4000/react/react-react-hook-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C/" rel="alternate" type="text/html" title="[React] react hook, 언제 사용해야 할까?" /><published>2023-09-25T00:00:00+09:00</published><updated>2023-09-25T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20hook%20%EC%96%B8%EC%A0%9C%20%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C</id><content type="html" xml:base="http://localhost:4000/react/react-react-hook-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C/"><![CDATA[<h2 id="-react-hook">📄 react hook?</h2>
-
-<p>리액트 훅 (React hook)은 함수형 컴포넌트에서도 클래스형 컴포넌트의 기능을 사용할 수 있게 해주는 기능이다.</p>
-
-<p>자주 사용되는 리액트 훅의 종류는 다음과 같다.</p>
-
-<ul>
-  <li>
-    <p>useCallback</p>
-
-    <ul>
-      <li>의존성 배열안의 인자가 변경될 때까지 함수를 저장</li>
-      <li>하위 컴포넌트의 무의미한 렌더링을 방지할 수 있어 유용</li>
-    </ul>
-  </li>
-  <li>
-    <p>useMemo</p>
-
-    <ul>
-      <li>의존성 배열안의 인자가 변경될 때까지 계산된 값(value) 저장</li>
-      <li>매 렌더링마다 복잡한 계산을 해야하는 상황을 피할 수 있다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>useEffect</p>
-    <ul>
-      <li>모든 컴포넌트가 렌더링 (처음 렌더링) 된 후, 실행</li>
-      <li>의존성 배열안의 인자가 변경될 때마다, 첫번째 인자로 등록된 함수가 실행</li>
-    </ul>
-  </li>
-</ul>
-
-<p>리액트 훅은 매우 유용하지만 데이터를 메모리에 저장하는 메모이제이션 기능을 담당하기 때문에, 무분별하게 사용한다면 <span style="text-decoration: underline">의미없는 메모리 낭비</span>가 발생하게 된다.</p>
-
-<p>리액트 훅을 어느 상황에서 사용하는 것이 적절한 것인지 정리해보았다.</p>
-
-<h2 id="-usecallback--리렌더링될-때마다-함수-호출하기-싫어요">📄 useCallback | 리렌더링될 때마다 함수 호출하기 싫어요</h2>
-
-<ul>
-  <li>목적: 함수 생성 최적화</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">useCallback</code>은 함수를 저장하는 리액트 훅이다.</p>
-
-<p>이때 함수를 저장하다는 것은 함수의 실행 여부를 정한다는 뜻이다.</p>
-
-<p>컴포넌트가 리렌더링된다면 그 안에 종속되어 있는 함수는 매번 호출된다. 간단한 함수라면 문제없지만 api를 통해 데이터를 fetching하는 함수라면 의미없는 api 호출이 계속 발생하게 될 수 있다.</p>
-
-<h3 id="-appjs">💾 App.js</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">getItem()</code>: 데이터 fetching 함수. List에 props로 전달한다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">List</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./List</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">input</span><span class="p">,</span> <span class="nx">setInput</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">light</span><span class="p">,</span> <span class="nx">setLight</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[</span><span class="nx">input</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">input</span> <span class="o">+</span> <span class="mi">100</span><span class="p">];</span>
-  <span class="p">};</span>
-
-  <span class="kd">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">backgroundColor</span><span class="p">:</span> <span class="nx">light</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">White</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">grey</span><span class="dl">"</span><span class="p">,</span>
-    <span class="na">color</span><span class="p">:</span> <span class="nx">light</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">grey</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">};</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">input</span>
-          <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">number</span><span class="dl">"</span>
-          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">input</span><span class="p">}</span>
-          <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setInput</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">))}</span>
-        <span class="sr">/</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setLight</span><span class="p">((</span><span class="nx">prevLight</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">prevLight</span><span class="p">)}</span><span class="o">&gt;</span>
-          <span class="p">{</span><span class="nx">light</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">dark mode</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">light mode</span><span class="dl">"</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">List</span> <span class="nx">getItems</span><span class="o">=</span><span class="p">{</span><span class="nx">getItems</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h3 id="-listjs">💾 List.js</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">List</span><span class="p">({</span> <span class="nx">getItems</span> <span class="p">})</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">items</span><span class="p">,</span> <span class="nx">setItems</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Fetching items</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">setItems</span><span class="p">(</span><span class="nx">getItems</span><span class="p">());</span>
-  <span class="p">},</span> <span class="p">[</span><span class="nx">getItems</span><span class="p">]);</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="p">{</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="p">))}</span>
-    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-<span class="k">export</span> <span class="k">default</span> <span class="nx">List</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>🔍 문제 상황: theme을 바꾸는 버튼을 눌렀을 때 컴포넌트 리렌더링 -&gt; 매 렌더링마다 <code class="language-plaintext highlighter-rouge">getItem()</code>호출되어 계속되는 무의미한 api 호출 <br /></p>
-
-<p>🔦 해결 방법: useCallback 함수로 <code class="language-plaintext highlighter-rouge">getItem()</code>을 저장해 의존성 배열안의 값이 바뀔 때만 함수가 실행되도록 하자!</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">[</span><span class="nx">input</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">input</span> <span class="o">+</span> <span class="mi">100</span><span class="p">];</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">input</span><span class="p">]);</span>
-</code></pre></div></div>
-
-<p>useCallback함수로 <code class="language-plaintext highlighter-rouge">getItem()</code>는 input값이 변경될 때만 호출되어 무의미한 data fetching을 없애 주었다.</p>
-
-<h2 id="-usememo--stateful한-값이-변경될-때마다-발생하는-리렌더링을-막고-싶어요">📄 useMemo | stateful한 값이 변경될 때마다 발생하는 리렌더링을 막고 싶어요</h2>
-
-<ul>
-  <li>목적: 값 계산 최적화</li>
-</ul>
-
-<h3 id="-mycomponentjs">💾 MyComponent.js</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">setData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">number</span> <span class="o">=</span> <span class="nx">verySlowFunction</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">number</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
-</span><span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">verySlowFunction</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span><span class="nx">heavy</span> <span class="nx">work</span> <span class="nx">done</span> <span class="nx">here</span>
-    <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>🔍 문제 상황: MyComponent가 호출될 때마다, <code class="language-plaintext highlighter-rouge">verySlowFunction()</code>가 호출</p>
-
-<p>🔦 해결 방법: useState 값을 저장해 무의미한 컴포넌트 호출을 막을 수 있다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">setData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-	<span class="kd">const</span> <span class="nx">number</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">verySlowFunction</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-	<span class="p">},</span> <span class="p">[</span><span class="nx">data</span><span class="p">]);</span>
-
-	<span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">number</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
-</span><span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">verySlowFunction</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
-	<span class="p">...</span><span class="nx">heavy</span> <span class="nx">work</span> <span class="nx">done</span> <span class="nx">here</span>
-	<span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre></div></div>
-
-<hr />
-
-<p>useCallback 과 useMemo는 리액트 컴포넌트 내에서 렌더링과 관련된 함수와 값의 최적화를 달성하기 위해 사용된다.
-이로써 불필요한 렌더링을 방지하고 애플리케이션의 성능을 향상 시킬 수 있다.
-목적은 의존성 배열을 올바르게 설정하여 효율적인 최적화를 도출하는 것이다.
-하지만 무작정 사용하는 것보다 “왜” 사용하는지를 중요시하며, 무의미한 메모리 낭비를 줄이기 위해 신중하게 확인해야 한다.</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li><a href="https://www.geeksforgeeks.org/when-to-use-usecallback-usememo-and-useeffect/">When to use useCallback, useMemo and useEffect?</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="useEffect" /><category term="useCallback" /><category term="useMemo" /><summary type="html"><![CDATA[react hook을 사용하는 본격적인 이유]]></summary></entry><entry><title type="html">[Next.js] Next.js 13.5 update!</title><link href="http://localhost:4000/nextjs/nextjs-nextjs-13.5-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/" rel="alternate" type="text/html" title="[Next.js] Next.js 13.5 update!" /><published>2023-09-20T00:00:00+09:00</published><updated>2023-09-21T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-nextjs%2013.5%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-nextjs-13.5-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/"><![CDATA[<h2 id="-nextjs-135-realize">📄 Next.js 13.5 realize!</h2>
-
-<p>Next.js 13.5 버전이 릴리즈 되었다.</p>
-
-<p>어떤 기능이 향상되었는지 확인 겸 정리한다.</p>
-
-<h3 id="1-시작-및-새로고침-시간-단축">1. 시작 및 새로고침 시간 단축</h3>
-
-<ul>
-  <li>로컬 서버 시작 시간 22% 단축</li>
-  <li>HMR 시간 29% 단축</li>
-  <li>메모리 사용량 40% 감소</li>
-</ul>
-
-<blockquote>
-  <p>💡 HMR(Hot Module Replacement)? 브라우저를 새로고침하지 않아도 Webpack으로 빌드한 결과물이 웹 애플리케이션에 실시간으로 반영</p>
-</blockquote>
-
-<h3 id="2-nextimage-기능-향상">2. next/image 기능 향상</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">unstable_getImgProps</code> 함수 추가</li>
-</ul>
-
-<p>기존에 next/image 를 사용하려면 <code class="language-plaintext highlighter-rouge">&lt;Image&gt;</code> 컴포넌트를 사용해야했다. 이번 업데이트 버전에 따르면 <code class="language-plaintext highlighter-rouge">&lt;Image&gt;</code> 컴포넌트를 사용하지 않아도, 이미지를 렌더링 할 수 있다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">unstable_getImgProps</span> <span class="k">as</span> <span class="nx">getImgProps</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/image</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">common</span> <span class="o">=</span> <span class="p">{</span> <span class="na">alt</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hero</span><span class="dl">"</span><span class="p">,</span> <span class="na">width</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">400</span> <span class="p">};</span>
-  <span class="kd">const</span> <span class="p">{</span>
-    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="na">srcSet</span><span class="p">:</span> <span class="nx">dark</span> <span class="p">},</span>
-  <span class="p">}</span> <span class="o">=</span> <span class="nx">getImgProps</span><span class="p">({</span> <span class="p">...</span><span class="nx">common</span><span class="p">,</span> <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/dark.png</span><span class="dl">"</span> <span class="p">});</span>
-  <span class="kd">const</span> <span class="p">{</span>
-    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="na">srcSet</span><span class="p">:</span> <span class="nx">light</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">},</span>
-  <span class="p">}</span> <span class="o">=</span> <span class="nx">getImgProps</span><span class="p">({</span> <span class="p">...</span><span class="nx">common</span><span class="p">,</span> <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/light.png</span><span class="dl">"</span> <span class="p">});</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">picture</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">source</span> <span class="nx">media</span><span class="o">=</span><span class="dl">"</span><span class="s2">(prefers-color-scheme: dark)</span><span class="dl">"</span> <span class="nx">srcSet</span><span class="o">=</span><span class="p">{</span><span class="nx">dark</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">source</span> <span class="nx">media</span><span class="o">=</span><span class="dl">"</span><span class="s2">(prefers-color-scheme: light)</span><span class="dl">"</span> <span class="nx">srcSet</span><span class="o">=</span><span class="p">{</span><span class="nx">light</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">img</span> <span class="p">{...</span><span class="nx">rest</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/picture</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<hr />
-
-<p>이 외에도 Import 최적화 등 자잘한 업데이트 사항이 있지만, 이 두가지가 가장 크게 눈에 들어왔다.</p>
-
-<p>더 확실한건 vercel이 page 라우팅 보다 app 라우팅에 중점을 두고 업데이트를 진행했다는 느낌을 받았다.</p>
-
-<p>app 라우팅의 사용량도 점점 늘고 있는만큼 app 라우팅 기능을 잘 활용할 수 있도록 꾸준히 사용해 보아야겠다.</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li><a href="https://dev-redcat.tistory.com/12">Next.js란?</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="nextjs" /><category term="업데이트" /><summary type="html"><![CDATA[Next.js 13.5 버전에서 어떤 부분이 달라졌을까?]]></summary></entry><entry><title type="html">[React] return null vs return false</title><link href="http://localhost:4000/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/" rel="alternate" type="text/html" title="[React] return null vs return false" /><published>2023-09-18T00:00:00+09:00</published><updated>2023-09-18T22:06:00+09:00</updated><id>http://localhost:4000/react/react-return%20null%20%EA%B3%BC%20false%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/react/react-return-null-%EA%B3%BC-false%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/"><![CDATA[<h2 id="-return-null-vs-return-false">📄 return null vs return false</h2>
-
-<p>지금까지 진행했던 프로젝트에서 자바스크립트는 null을 false로 인식해 boolean 체킹을 하기 때문에, boolean타입으로 형변환을 거치지 않고 그대로 null를 반환해서 사용했다.</p>
-
-<p>하지만 리액트의 성능 최적화를 고려한다면, 이 둘을 명확히 구분해서 사용할 필요가 있다.</p>
-
-<h3 id="-null-보다는-false를-사용하자">✅ null 보다는 false를 사용하자!</h3>
-
-<p>null과 false를 반환하는 것에 대한 차이점을 바로 말하자면, <span style="color: #FAAB78; font-weight: bold">리렌더링의 유무</span>이다.</p>
-
-<p>리액트는 null를 유효한 값으로 취급한다.</p>
-
-<p>이말인 즉슨 리액트의 가상 돔이 null을 인식하여 null을 반환하는 하위 컴포넌트를 가진 컴포넌트들이 강제로 리렌더링 된다는 뜻이다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Parent</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Child</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">Child</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Child rendered</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">});</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;-&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="nx">count</span><span class="p">}</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;+&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>하위 컴포넌트인 Children이 null을 반환할 때, 상위 컴포넌트인 Parent가 강제로 리렌더링 된다.</li>
-</ul>
-
-<p>이 현상을 방지하기 위한 방법이 false를 반환하는 것이다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Parent</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Child</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">Child</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Child rendered</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">});</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;-&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="nx">count</span><span class="p">}</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;+&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>하위 컴포넌트인 Children이 false를 반환할 때, 상위 컴포넌트인 Parent가 리렌더링 되지 않는다.</li>
-</ul>
-
-<p>리액트의 가상돔이 false를 인식하지 않기 떄문에, 상위 컴포넌트에서 리렌더링이 발생하지 않는다는 것을 알 수 있다.</p>
-
-<h2 id="-정리">📄 정리</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>return</th>
-      <th style="text-align: center">null</th>
-      <th style="text-align: center">false</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>차이점</td>
-      <td style="text-align: center">상위 컴포넌트 리렌더링 O</td>
-      <td style="text-align: center">상위 컴포넌트 리렌더링 X</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>비지니스로직이 아닌 뷰로직으로서 <span style="color: #FAAB78; font-weight: bold">아무것도 반환하지 않겠다</span>는 뜻으로 사용할 때는<span style="color: #FAAB78; font-weight: bold"> false</span>를 사용해 리렌더링을 방지할 수 있다.</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li><a href="https://medium.com/@davidkelley87/stop-using-return-null-in-react-a2ebf08fc9cd">stop using “return null” in React</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="null" /><category term="false" /><category term="return" /><summary type="html"><![CDATA[null 과 false를 반환하는 것에 대한 차이점]]></summary></entry></feed>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="CSS" /><category term="tailwind" /></entry></feed>

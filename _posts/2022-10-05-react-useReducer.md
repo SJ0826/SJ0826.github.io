@@ -20,7 +20,7 @@ useReducer는 useState처럼 **State를 관리하고 업데이트 할 수 있는
 `useReducer`를 사용하면 컴포넌트 상태 업데이트 로직을 컴포넌트에서 분리시킬 수 있습니다.
 
 ## 📄 useReducer 구조
-
+ 
 ```js
 const [number, dispath] = useReducer(reducer, initialState, init);
 
