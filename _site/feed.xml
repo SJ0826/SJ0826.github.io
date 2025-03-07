@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-07T09:57:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-07T16:19:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
 
 <h2 id="️-책을-완독하고-나서">◾️ 책을 완독하고 나서</h2>
 <p><a href="https://polyester-archduke-ab6.notion.site/NestJS-NestJS-191f73e111b3809a8d32ffa142b53c2d?pvs=4">📒노션 스터디 노트</a></p>
@@ -247,7 +247,7 @@
 <h2 id="참고">참고</h2>
 <ul>
   <li><a href="https://blacksheepcode.com/posts/publish_a_react_package_using_nextjs_as_a_base">blacksheepcode - publish_a_react_package_using_nextjs_as_a_base</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="prerendering" /><category term="서버 컴포넌트" /><category term="use client" /><category term="에러" /></entry><entry><title type="html">[Next.js 13] 클라이언트 컴포넌트가 정말 클라이언트 사이드에서만 렌더링 될까 ?</title><link href="http://localhost:4000/nextjs/nextjs-Error-occured-prerendering-page/" rel="alternate" type="text/html" title="[Next.js 13] 클라이언트 컴포넌트가 정말 클라이언트 사이드에서만 렌더링 될까 ?" /><published>2024-07-10T00:00:00+09:00</published><updated>2024-07-10T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-Error%20occured%20prerendering%20page</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-Error-occured-prerendering-page/"><![CDATA[<h2 id="️문제-발생">◾️문제 발생</h2>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="npm" /><category term="배포" /><summary type="html"><![CDATA[컴포넌트를 패키지로 배포해 다른 프로젝트에 공유하기]]></summary></entry><entry><title type="html">[Next.js 13] 클라이언트 컴포넌트가 정말 클라이언트 사이드에서만 렌더링 될까 ?</title><link href="http://localhost:4000/nextjs/nextjs-Error-occured-prerendering-page/" rel="alternate" type="text/html" title="[Next.js 13] 클라이언트 컴포넌트가 정말 클라이언트 사이드에서만 렌더링 될까 ?" /><published>2024-07-10T00:00:00+09:00</published><updated>2024-07-10T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-Error%20occured%20prerendering%20page</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-Error-occured-prerendering-page/"><![CDATA[<h2 id="️문제-발생">◾️문제 발생</h2>
 
 <p>react-draft-wysiwyg 를 사용한 컴포넌트를 페이지 컴포넌트에 import했습니다.
 페이지는 성공적으로 렌더링 되었지만 터미널에서 에러를 확인할 수 있었습니다. 빌드시에도 동일한 에러가 발생합니다.</p>
@@ -364,7 +364,420 @@ dynamic import는 컴포넌트 외부에서 선언해야합니다.</p>
 <h2 id="참고">참고</h2>
 <ul>
   <li><a href="https://stackoverflow.com/questions/75692116/next-js-13-window-is-not-defined">stackoverflow - next-js-13-window-is-not-defined</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="prerendering" /><category term="서버 컴포넌트" /><category term="use client" /><category term="에러" /><summary type="html"><![CDATA[클라이언트 컴포넌트에서 prerendering 에러가 발생한 이유]]></summary></entry><entry><title type="html">[Next.js] 클라이언트 컴포넌트에서 서버 컴포넌트 유지하는 방법</title><link href="http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/" rel="alternate" type="text/html" title="[Next.js] 클라이언트 컴포넌트에서 서버 컴포넌트 유지하는 방법" /><published>2024-04-01T00:00:00+09:00</published><updated>2024-04-01T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%84%9C%EB%B2%84%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/"><![CDATA[<h2 id="-클라이언트-컴포넌트-내에서-서버-컴포넌트-다루기">📄 클라이언트 컴포넌트 내에서 서버 컴포넌트 다루기</h2>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="prerendering" /><category term="서버 컴포넌트" /><category term="use client" /><category term="에러" /><summary type="html"><![CDATA[클라이언트 컴포넌트에서 prerendering 에러가 발생한 이유]]></summary></entry><entry><title type="html">[JS] 이벤트 루프와 비동기 통신</title><link href="http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/" rel="alternate" type="text/html" title="[JS] 이벤트 루프와 비동기 통신" /><published>2024-06-29T00:00:00+09:00</published><updated>2024-06-29T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%A3%A8%ED%94%84%EC%99%80%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%86%B5%EC%8B%A0</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/"><![CDATA[<h2 id="-싱글-스레드-자바스크립트">📝 싱글 스레드 자바스크립트</h2>
+
+<p>자바스크립트는 <strong>싱글 스레드 언어</strong>다.</p>
+
+<p>하나의 프로세스안에 여러개의 스레드가 있을 수 있다. 하지만 자바스크립트는 싱글 스레드 언어이므로 하나의 스레드만 존재한다.</p>
+
+<p>여러개의 스레드가 있다면 메모리를 공유해 동시에 여러작업이 가능하지만 하나의 스레드만 가지고 있는 자바스크립트 엔진은 작업을 병렬로 처리할 수 없다.</p>
+
+<p>자바스크립트 코드는 한줄한줄 순서대로 처리되며 하나의 작업이 끝나기전까지 다음 작업이 실행되지 않는다.</p>
+
+<p>만약 하나의 작업이 너무 오래걸리면 뒤에 있는 작업이 실행되지 않는데, 이는 <strong>Run-to-Completion</strong>이라고 불리는 자바스크립트의 특징이다.</p>
+
+<ul>
+  <li>프로세스
+    <ul>
+      <li>메모리를 사용하는 독립적인 실행 단위</li>
+      <li>다른 프로세스와 자원을 공유하지 않는다.</li>
+    </ul>
+  </li>
+  <li>스레드
+    <ul>
+      <li>하나의 프로세스 안에 존재하는 작은 실행 단위</li>
+      <li>스레드끼리 자원을 공유할 수 있다.</li>
+      <li>하나의 프로세스가 병렬로 작업을 처리할 수 있게 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="-메모리-힙과-콜-스택---자바스크립트가-작업을-수행하는-방법">◆ 메모리 힙과 콜 스택  | 자바스크립트가 작업을 수행하는 방법</h3>
+
+<p>■ 메모리 힙 (Memory Heap)</p>
+<ul>
+  <li>선언된 변수들의 메모리 할당이 이루어진다.</li>
+  <li>비구조적으로 데이터가 저장된다.</li>
+</ul>
+
+<p>■ 콜 스택 (Call Stack)</p>
+<ul>
+  <li>함수들이 실행 순서에 따라 쌓인다.</li>
+  <li>LIFO(선입후출)의 구조로 진행된다.</li>
+</ul>
+
+<p><img src="/assets/image/posts/js-event-loop.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h2 id="-이벤트-루프--자바스크립트가-비동기-통신을-하는-방법">📝 이벤트 루프 | 자바스크립트가 비동기 통신을 하는 방법</h2>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">bar</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">baz</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">baz</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">bar</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="nx">baz</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li>출력 순서: foo → baz → bar</li>
+</ul>
+
+<p>bar의 실행을 기다리지 않고 다음줄인 baz가 실행된 이유는 setTimeout 함수는 바로 콜스택에 들어가는 것이아니라 태스크큐에 들어가기 때문이다.</p>
+<ul>
+  <li>태스크큐에 저장되는 작업들: setTimeout, setInterval, setImmediate</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="-브라우저-이벤트-동작-순서">◆ 브라우저 이벤트 동작 순서</h3>
+<p><img src="/assets/image/posts/js-event-loop-2.png" alt="image" /></p>
+
+<ol>
+  <li><strong>콜스택</strong> 실행</li>
+  <li>콜스택이 비어있으면 <strong>마이크로 태스크 큐</strong> 확인. 큐가 빌 때까지 모든 마이크로 태스크 실행
+    <ul>
+      <li>프로미스의 <code class="language-plaintext highlighter-rouge">then</code>이나 <code class="language-plaintext highlighter-rouge">catch</code>, <code class="language-plaintext highlighter-rouge">MutationObserver</code> 등</li>
+    </ul>
+  </li>
+  <li><strong>태스크 큐</strong> 확인. 큐가 빌 때까지 모든 태스크 실행
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">setTimeout</code>, <code class="language-plaintext highlighter-rouge">setInterval</code>, I/O 작업, DOM 이벤트 등</li>
+    </ul>
+  </li>
+  <li><strong>Request Animation Frame</strong>에서 대기중인 콜백 실행
+    <ul>
+      <li>Request Animation Frame: 애니메이션을 효율적으로 실행하기 위해 제공하는 함수로 브라우저가 다음 리페인트(Repaint) 전에 지정된 콜백 함수를 실행하도록 예약</li>
+    </ul>
+  </li>
+  <li>모든 작업이 완료되면 브라우저는 <strong>렌더링</strong>을 수행해 화면을 업데이트한다.</li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="-함수가-마이크로-태스크-큐에-저장될-경우">◆ 함수가 마이크로 태스크 큐에 저장될 경우</h3>
+
+<ol>
+  <li>콜 스택에서 프로미스를 만들고 프로미스에 등록된 콜백, 즉 프로미스가 다 수행이 되고나면 실행되는 <code class="language-plaintext highlighter-rouge">then</code>과 <code class="language-plaintext highlighter-rouge">mutation observer</code>라는 웹 API에 등록된 콜백이 마이크로 큐에 들어온다.</li>
+  <li>이벤트루프는 마이크로 태스크 큐에 있는 프로미스 then 콜백을 비어있는 콜스택으로 가져간다.</li>
+  <li>프로미스 <code class="language-plaintext highlighter-rouge">then</code>이 끝나면 <code class="language-plaintext highlighter-rouge">mutation obsever</code>를 콜 스택으로 가져간다.</li>
+</ol>
+
+<p><strong>⭐️ 포인트 1</strong> 이 과정에서 마이크로 태스크 큐에 새로운 함수가 들어온다면, 나중에 들어온 함수도 모두 끝날때까지 계속 콜스택으로 가지고 와서 수행한다. <br />
+<strong>⭐️ 포인트 2</strong> 마이크로 태스크 큐가 텅텅비면 테스크 큐로 넘어간다.(태스크 큐와의 차이점: 태스크 큐에서는 아이템 하나만 콜스택으로 보내고 기다린다.)</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">handleClick</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">// promise 의 콜백은 Microtask que를 이용한다.</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">then</span><span class="dl">"</span><span class="p">);</span>
+      <span class="nx">handleClick</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">handleClick</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>이벤트루프는 마이크로태스크 큐에 등록된 콜백이 모두 빌때까지 기다리기때문에 이벤트루프가 멈춰 브라우저가 반응하지 않는다.</p>
+
+<p><br /></p>
+
+<h3 id="-함수가-태스크-큐에-저장될-경우">◆ 함수가 태스크 큐에 저장될 경우</h3>
+
+<ol>
+  <li>브라우저에서 지정된 이벤트가 발생한다.</li>
+  <li>웹 API는 콜백함수를 태스크 큐에 넣어준다.</li>
+  <li>이벤트 루프는 계속 관찰을 하다가 콜 스택에 할일이 남아 있으면 콜스택이 비워질 떄까지 기다린다.</li>
+  <li>콜스택이 비어서 자바스크립트 엔진이 더이상 일을 하지 않을 때 태스크 큐에 있는 함수를 콜 스택으로 가져온다.</li>
+  <li>자바스크립트 엔진이 콜 스택에 들어온 콜백함수를 실행한다.</li>
+</ol>
+
+<p><strong>⭐️ 포인트 1</strong> 이벤트 루프는 콜스택에 있는 함수를 <strong>하나씩만</strong> 가져온다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">handleClick</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">setTimeout</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">handleClick</span><span class="p">();</span> <span class="c1">// 콜스택에 무한으로 추가되어 동일한 내용의 이벤트루프가 반복된다.</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">handleClick</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>콜백함수 내에서 다시 콜백함수를 호출하기 때문에 Task Queue에 무한으로 함수가 추가된다.</p>
+
+<p><br /></p>
+
+<h3 id="-함수가-request-animation-frame-queue에-저장될-경우">◆ 함수가 Request Animation Frame Queue에 저장될 경우</h3>
+
+<p>브라우저를 다시 업데이트 할 때는 render안의 request Animation Frame 에 등록된 콜백들을 거친 후 렌더 트리를 만들고 그 트리를 이용해서 레이아웃을 계산한 뒤에 페인트를 통해서 브라우저에 업데이트를 한 다음에 이벤트루프가 재개된다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">requestAnimationFrame</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 렌더링이 되기 전 브라우저가 콜백함수를 실행하는 것을 보장해준다.</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">beige</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="nx">requestAnimationFrame</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">orange</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="nx">requestAnimationFrame</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>큐는 FIFO의 구조를 가지고 있기 때문에 마지막에 들어온 코드가 가장 먼저 적용되기 때문에 최종적으로 빨간색이 적용된 상태에서 렌더트리가 만들어지고 브라우저에 표기가 완료된다.</p>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li>드림코딩</li>
+  <li>모던 리액트 딥다이브</li>
+  <li>모던 자바스크립트 딥다이브</li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="비동기" /><category term="이벤트루프" /><summary type="html"><![CDATA[자바스크립트가 비동기 통신을 하는 방법]]></summary></entry><entry><title type="html">[JS] MSW(Mock Service Worker, v 2.0) - API Mocking 하기</title><link href="http://localhost:4000/javascript/javascript-MSW(Mock-Service-Worker,-v-2.0)/" rel="alternate" type="text/html" title="[JS] MSW(Mock Service Worker, v 2.0) - API Mocking 하기" /><published>2024-06-24T00:00:00+09:00</published><updated>2024-06-24T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-MSW(Mock%20Service%20Worker,%20v%202.0)</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-MSW(Mock-Service-Worker,-v-2.0)/"><![CDATA[<h2 id="-msw란">📄 MSW란?</h2>
+
+<p><a href="https://mswjs.io/">MSW</a>는 Mock Service Worker의 약자로 <strong>API 모킹</strong>을 위한 자바스크립트 라이브러리 입니다.</p>
+
+<p>다음과 같은 상황에서 사용할 수 있습니다.</p>
+
+<ul>
+  <li>백엔드 API가 미완성일 경우 미리 로직을 구성해야할 때</li>
+  <li>특정 에러를 발생시켜 에러 핸들링 테스트 할 때</li>
+</ul>
+
+<p>MSW는 <strong>Service Worker API</strong>를 사용하여 브라우저에서 발생하는 네트워크 요청을 가로챕니다. 실제 서버 대신 가짜 응답을 만들어 프론트엔드 개발자가 API 테스트를 할 수 있는 환경을 만들어줍니다.</p>
+
+<p>사내 프로젝트에서 API 전달이 늦어지며 프론트엔드에서 API 요청 로직을 미리 구현하고 테스트하기 위해 MSW를 도입했습니다. 미리 DTO를 전달받으면 추후 실제 API를 전달받았을 때 큰 공수없이 바로 API를 연결 할 수 있었습니다. 다만, 리액트 쿼리처럼 전역으로 설정을 해 예상치 못한 네트워크를 가로채는 상황을 피하기 위해 개발 환경에서만 사용하고 실제 릴리즈되는 브랜치에서는 사용하지 않았습니다.</p>
+
+<p><br /></p>
+
+<h2 id="msw-설치-nextjs-app-router-환경-기준">📄MSW 설치 (Next.js App Router 환경 기준)</h2>
+
+<p>Next.js에서 MSW를 사용할 경우 클라이언트/서버 환경 모두 요구되는데, 글 작성 시점 기준 서버 사이드에서 msw과 매끄럽게 호환하는 방법이 없어 node 서버와 함께 사용합니다.</p>
+
+<div style="border-left: 5px solid #3498db; padding: 10px; background: #f0f8ff;">
+<strong>ℹ️ Notice:</strong> Next.js에서 MSW를 사용할 경우 클라이언트/서버 환경 모두 요구되는데, 글 작성 시점 기준 서버 사이드에서 msw과 매끄럽게 호환하는 방법이 없어 node 서버와 함께 사용합니다.
+</div>
+
+<h3 id="1-설치하기">1. 설치하기</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span> <span class="nx">npm</span> <span class="nx">install</span> <span class="nx">msw</span><span class="p">@</span><span class="nd">latest</span> <span class="o">--</span><span class="nx">save</span><span class="o">-</span><span class="nx">dev</span>
+</code></pre></div></div>
+
+<h3 id="2-public-폴더에-초기화">2. public 폴더에 초기화</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span> <span class="nx">npx</span> <span class="nx">msw</span> <span class="nx">init</span> <span class="k">public</span><span class="sr">/ --sav</span><span class="err">e
+</span></code></pre></div></div>
+<ul>
+  <li>public 폴더에 설치</li>
+  <li><strong>mockServiceWorker.js</strong> 가 자동으로 생성
+    <ul>
+      <li>http 요청을 가로채 서버와의 통신을 모방한다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">--save</code> : package.json 에 등록되어 msw를 업데이트 할 때마다 자동으로 업데이트</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="-msw-세팅">📄 MSW 세팅</h2>
+
+<h3 id="-srcmocksbrowserts">💾 src/mocks/browser.ts</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setupWorker</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">msw/browser</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">handlers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./handlers</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// This configures a Service Worker with the given request handlers.</span>
+<span class="kd">const</span> <span class="nx">worker</span> <span class="o">=</span> <span class="nx">setupWorker</span><span class="p">(...</span><span class="nx">handlers</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">worker</span><span class="p">;</span>
+</code></pre></div></div>
+<ul>
+  <li>CSR 네트워크 요청용</li>
+  <li>serviceWorker가 가로챈 브라우저 요청을 전달받는다.</li>
+</ul>
+
+<h3 id="-srcmockshttpts">💾 src/mocks/http.ts</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createMiddleware</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@mswjs/http-middleware</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">express</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">cors</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">cors</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">handlers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./handlers</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">9090</span><span class="p">;</span> <span class="c1">// 서버 포트</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">({</span> <span class="na">origin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span> <span class="na">optionsSuccessStatus</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">createMiddleware</span><span class="p">(...</span><span class="nx">handlers</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Mock server is running on port: </span><span class="p">${</span><span class="nx">port</span><span class="p">}</span><span class="s2">`</span><span class="p">));</span>
+</code></pre></div></div>
+<ul>
+  <li>SSR 네트워크 요청용 =  서버 컴포넌트에서 사용</li>
+  <li>CSR만 사용할 경우 필수는 아님</li>
+</ul>
+
+<h3 id="-srcmockshandlerts">💾 src/mocks/handler.ts</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">http</span><span class="p">,</span> <span class="nx">HttpResponse</span><span class="p">,</span> <span class="nx">StrictResponse</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">msw</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">faker</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@faker-js/faker</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">generateDate</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">lastWeek</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">());</span>
+  <span class="nx">lastWeek</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">lastWeek</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">-</span> <span class="mi">7</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">between</span><span class="p">({</span>
+    <span class="na">from</span><span class="p">:</span> <span class="nx">lastWeek</span><span class="p">,</span>
+    <span class="na">to</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">elonmusk</span><span class="dl">'</span><span class="p">,</span> <span class="na">nickname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Elon Musk</span><span class="dl">'</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/yRsRRjGO.jpg</span><span class="dl">'</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">zerohch0</span><span class="dl">'</span><span class="p">,</span> <span class="na">nickname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">제로초</span><span class="dl">'</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/5Udwvqim.jpg</span><span class="dl">'</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">leoturtle</span><span class="dl">'</span><span class="p">,</span> <span class="na">nickname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">레오</span><span class="dl">'</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">avatar</span><span class="p">()},</span>
+<span class="p">]</span>
+<span class="kd">const</span> <span class="nx">Posts</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">handlers</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/login</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">로그인</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">HttpResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">User</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">{</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">Set-Cookie</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">connect.sid=msw-cookie;HttpOnly;Path=/</span><span class="dl">'</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">}),</span>
+  <span class="nx">http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/logout</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">로그아웃</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">HttpResponse</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">Set-Cookie</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">connect.sid=;HttpOnly;Path=/;Max-Age=0</span><span class="dl">'</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">}),</span>
+<span class="c1">// ...</span>
+<span class="p">];</span>
+</code></pre></div></div>
+<ul>
+  <li>API 요청과 응답 정의</li>
+</ul>
+
+<h3 id="쿼리-파라미터-처리하기">쿼리 파라미터 처리하기</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/test/search</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">request</span><span class="p">,</span> <span class="nx">params</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">keword</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">keyword</span><span class="dl">'</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">page</span><span class="dl">'</span><span class="p">));</span>
+        <span class="kd">const</span> <span class="nx">size</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">size</span><span class="dl">'</span><span class="p">));</span>
+        <span class="kd">const</span> <span class="nx">totalCount</span> <span class="o">=</span> <span class="nx">searchParams</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">totalPages</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">totalCount</span> <span class="o">/</span> <span class="nx">size</span><span class="p">);</span>
+
+
+        <span class="k">return</span> <span class="nx">HttpResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
+            <span class="na">result</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SUCCESS</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">resultCode</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+            <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">성공</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">contents</span><span class="p">:</span> <span class="nx">test</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">page</span> <span class="o">*</span> <span class="nx">size</span><span class="p">,</span> <span class="p">(</span><span class="nx">page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">size</span><span class="p">),</span>
+            <span class="na">pageNumber</span><span class="p">:</span> <span class="nx">page</span><span class="p">,</span>
+            <span class="na">pageSize</span><span class="p">:</span> <span class="nx">size</span><span class="p">,</span>
+            <span class="nx">totalPages</span><span class="p">,</span>
+            <span class="nx">totalCount</span><span class="p">,</span>
+            <span class="na">isLastPage</span><span class="p">:</span> <span class="nx">totalPages</span> <span class="o">&lt;=</span> <span class="nx">page</span><span class="p">,</span>
+            <span class="na">isFirstPage</span><span class="p">:</span> <span class="nx">page</span> <span class="o">===</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="p">});</span>
+
+    <span class="p">})</span>
+</code></pre></div></div>
+<ul>
+  <li>url 객체 생성 후 searchParams을 통해 처리합니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="-msw-서버-실행">📄 MSW 서버 실행</h2>
+
+<h3 id="1-packagejson-스크립트-추가">1. package.json 스크립트 추가</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next dev</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">build</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next build</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next start</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">lint</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next lint</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">mock</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">npx tsx watch ./src/mocks/http.ts</span><span class="dl">"</span>
+<span class="p">},</span>
+</code></pre></div></div>
+<ul>
+  <li>watch : 서버 코드가 수정되면 자동으로 재시작</li>
+</ul>
+
+<h3 id="2-실행">2. 실행</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span> <span class="nx">npm</span> <span class="nx">run</span> <span class="nx">mock</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="-msw-사용-분기처리">📄 MSW 사용 분기처리</h2>
+
+<h3 id="-srcapp_componentmswcoponenttsx">💾 src\app_component\MSWCoponent.tsx</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">MSWComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nb">window</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_API_MOCKING</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+			 <span class="nx">worker</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span> <span class="na">onUnhandledRequest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bypass</span><span class="dl">"</span> <span class="p">});</span> <span class="c1">// msw 핸들러로 요청하지 않은 request는 무시. console 경고를 없앨 수 있다</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<ul>
+  <li>MSW는 개발환경에서만 사용한다</li>
+</ul>
+
+<h3 id="-envlocal">💾 env.local</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">NEXT_PUBLIC_API_MOCKING</span><span class="o">=</span><span class="nx">enabled</span> 
+</code></pre></div></div>
+<ul>
+  <li>로컬 환경에서만 돌아가는 환경변수 파일</li>
+  <li>개발 환경에서만 읽어올 수 있는 브라우저 환경 변수를 설정하여 배포환경일때는 MSW를 사용하지 않는다.</li>
+</ul>
+
+<h3 id="-srcapplayouttsx">💾 src\app\layout.tsx</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">RootLayout</span><span class="p">({</span> <span class="nx">children</span> <span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">body</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">inter</span><span class="p">.</span><span class="nx">className</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">MSWComponent</span> <span class="o">/&gt;</span> <span class="c1">// ✅</span>
+          <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li>Next.js + ReactQuery로 SNS 서비스 만들기 (인프런)</li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="MSW" /><category term="Mock" /><summary type="html"><![CDATA[프론트 작업을 완료했는데 백엔드 API 작업이 늦어질 때]]></summary></entry><entry><title type="html">[Next.js] 클라이언트 컴포넌트에서 서버 컴포넌트 유지하는 방법</title><link href="http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/" rel="alternate" type="text/html" title="[Next.js] 클라이언트 컴포넌트에서 서버 컴포넌트 유지하는 방법" /><published>2024-04-01T00:00:00+09:00</published><updated>2024-04-01T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%84%9C%EB%B2%84%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/"><![CDATA[<h2 id="-클라이언트-컴포넌트-내에서-서버-컴포넌트-다루기">📄 클라이언트 컴포넌트 내에서 서버 컴포넌트 다루기</h2>
 
 <p>컴포넌트를 구현할 때마다 여러 난관에 부딪힌 경험이 있습니다.</p>
 
@@ -733,230 +1146,4 @@ redirect() 함수는 페이지가 서버에서 렌더링되는 도중에 실행�
   <li>
     <p><a href="https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns">Next.js 공식문서 - composition-patterns</a></p>
   </li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="nextjs" /><category term="props" /><category term="error" /><category term="함수의 직렬화" /><category term="서버 컴포넌트" /><category term="클라이언트 컴포넌트" /><summary type="html"><![CDATA[Event handlers cannot be passed to Client Component props]]></summary></entry><entry><title type="html">[JavaScript] 모듈 번들러, 웹팩(Webpack)</title><link href="http://localhost:4000/javascript/javascript-webpack/" rel="alternate" type="text/html" title="[JavaScript] 모듈 번들러, 웹팩(Webpack)" /><published>2023-11-08T00:00:00+09:00</published><updated>2023-11-08T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-webpack</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-webpack/"><![CDATA[<h1 id="webpack---js-모듈-번들링-도구">Webpack - JS 모듈 번들링 도구</h1>
-
-<p>보통 CRA 또는 CNA로만 프로젝트를 빌드해왔기 때문에 “번들링”이라는 개념을 몰라도 프로젝트를 진행하는데 문제가 없었다. 최근 최적화에 관심을 가지게 되면서 평소에 그냥 지나쳤던 웹팩에 대해 관심을 가지게 되었고, 역시 공식문서가 제일 정리가 잘 되어 있다는 것을 알고 전체적으로 읽어 보았다.</p>
-
-<h2 id="-웹팩이란">🟣 웹팩이란?</h2>
-
-<p>웹팩은 <strong>자바스크립트 모듈 번들러</strong>이다.그렇다면 모듈과 번들링의 의미는 무엇일까.</p>
-
-<ul>
-  <li>모듈: 프로그래밍 관점에서 특정 기능을 갖는 가장 작은 단위.</li>
-  <li>번들링: 웹 애플리케이션을 구성하는 자원을 하나의 파일로 병합, 압축하는 과정</li>
-</ul>
-
-<p>즉, 웹팩이 하는 일은 특정 기능을 가지는 작은 코드 뭉치를 하나의 파일로 병합하는 것이다.</p>
-
-<h3 id="웹팩-사용-이유">웹팩 사용 이유</h3>
-
-<ol>
-  <li>파일 단위로 변수를 관리할 수 있다. <br />
-웹팩은 자바스크립트 파일을 모듈로 관리한다. 모듈로 관리하지 않으면 두개의 파일에서 전역으로 선언된 변수 <code class="language-plaintext highlighter-rouge">example</code>이 중복선언되는 일이 생긴다. 웹팩을 사용하면 같은 이름으로 선언된 전역 변수를 다른 취급으로 관리할 수 있다.</li>
-  <li>모듈 번들링을 통해 브라우저에서 서버로 요청하는 파일 숫자를 줄일 수 있다.<br />
-브라우저에서 서버로 보낼 수 있는 HTTP요청 수는 정해져있다. 모듈 번들링을 통해 HTTP요청을 줄임으로써 사용자 경험을 높일 수 있다.</li>
-  <li>웹팩의 code splitting 기능을 통해 동적으로 모듈을 로딩할 수 있다. <br />
-자바스크립트 코드가 모듈로 관리되어 있어 필요한 부분만 동적으로 로딩한다.</li>
-</ol>
-
-<h2 id="-웹팩-설치하기">🟣 웹팩 설치하기</h2>
-
-<p>기본 프로젝트에 웹팩을 설치하는 방법이다.</p>
-
-<ol>
-  <li>webpack 설치</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init -y
-npm install webpack webpack-cli --save-dev
-</code></pre></div></div>
-
-<ol>
-  <li>index.html 분리
-배포코드(<code class="language-plaintext highlighter-rouge">/dist</code>)와 개발자가 작성하는 소스코드(<code class="language-plaintext highlighter-rouge">/src</code>)를 분리하는 작업이다.</li>
-</ol>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">webpack</span><span class="o">-</span><span class="nx">demo</span>
-  <span class="o">|-</span> <span class="kr">package</span><span class="p">.</span><span class="nx">json</span>
-  <span class="o">|-</span> <span class="kr">package</span><span class="o">-</span><span class="nx">lock</span><span class="p">.</span><span class="nx">json</span>
- <span class="o">|-</span> <span class="sr">/dis</span><span class="err">t
-</span>   <span class="o">|-</span> <span class="nx">index</span><span class="p">.</span><span class="nx">html</span>
-  <span class="o">|-</span> <span class="sr">/sr</span><span class="err">c
-</span>    <span class="o">|-</span> <span class="nx">index</span><span class="p">.</span><span class="nx">js</span>
-</code></pre></div></div>
-
-<ol>
-  <li>webpack.config.js 설정</li>
-</ol>
-
-<ul>
-  <li>번들링된 코드를 <code class="language-plaintext highlighter-rouge">/dist</code> 경로의 <code class="language-plaintext highlighter-rouge">main.js</code>에서 관리</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.js</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">main.js</span><span class="dl">"</span><span class="p">,</span>
-    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dist</span><span class="dl">"</span><span class="p">),</span>
-  <span class="p">},</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<ol>
-  <li>번들링 실행 명령어</li>
-</ol>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">webpack</span> <span class="o">--</span><span class="nx">config</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">js</span>
-</code></pre></div></div>
-
-<ol>
-  <li>package.json 에서 script 명령어 설정</li>
-</ol>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">webpack-test</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1.0.0</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index.js</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">echo </span><span class="se">\"</span><span class="s2">Error: no test specified</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">build</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span> <span class="c1">// 👀</span>
-  <span class="p">},</span>
-  <span class="dl">"</span><span class="s2">keywords</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">license</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ISC</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">devDependencies</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^5.89.0</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">webpack-cli</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^5.1.4</span><span class="dl">"</span>
-  <span class="p">},</span>
-  <span class="dl">"</span><span class="s2">dependencies</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">lodash</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^4.17.21</span><span class="dl">"</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="-웹팩으로-asset-관련-코드-관리하기">🟣 웹팩으로 Asset 관련 코드 관리하기</h2>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li><a href="https://webpack.kr/">웹팩 공식문서</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Webpack" /><category term="번들링" /><category term="웹팩" /><summary type="html"><![CDATA[웹팩 공식문서 읽고 정리하기]]></summary></entry><entry><title type="html">tailwind를 사용해보자</title><link href="http://localhost:4000/css/css-tailwind-%EC%82%AC%EC%9A%A9%EB%B2%95/" rel="alternate" type="text/html" title="tailwind를 사용해보자" /><published>2023-11-03T00:00:00+09:00</published><updated>2023-11-03T22:06:00+09:00</updated><id>http://localhost:4000/css/css-tailwind%20%EC%82%AC%EC%9A%A9%EB%B2%95</id><content type="html" xml:base="http://localhost:4000/css/css-tailwind-%EC%82%AC%EC%9A%A9%EB%B2%95/"><![CDATA[<h2 id="-tailwind란">📝 Tailwind란?</h2>
-
-<ul>
-  <li>CSS 프레임워크</li>
-  <li>미리 세팅된 유틸리티 클래스 활용</li>
-</ul>
-
-<h2 id="-tailwind-사용하기">📝 tailwind 사용하기</h2>
-
-<h3 id="1-설치-및-환경-세팅">1. 설치 및 환경 세팅</h3>
-
-<ul>
-  <li>tailwind를 설치한다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="o">-</span><span class="nx">D</span> <span class="nx">tailwindcss</span>
-<span class="nx">npx</span> <span class="nx">tailwindcss</span> <span class="nx">init</span>
-</code></pre></div></div>
-
-<ul>
-  <li>tailwind.config.js파일에서 경로를 설정한다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/** @type {import('tailwindcss').Config} */</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">content</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">./src/**/*.{html,js}</span><span class="dl">"</span><span class="p">],</span>
-  <span class="na">theme</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">extend</span><span class="p">:</span> <span class="p">{},</span>
-  <span class="p">},</span>
-  <span class="na">plugins</span><span class="p">:</span> <span class="p">[],</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<ul>
-  <li>메인 CSS파일에서 tailwind 지시자를 설정한다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">tailwind</span> <span class="nx">base</span><span class="p">;</span>
-<span class="p">@</span><span class="nd">tailwind</span> <span class="nx">components</span><span class="p">;</span>
-<span class="p">@</span><span class="nd">tailwind</span> <span class="nx">utilities</span><span class="p">;</span>
-</code></pre></div></div>
-
-<ul>
-  <li>CLI도구를 설치해 메인 CSS 파일을 빌드시켜준다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">tailwindcss</span> <span class="o">-</span><span class="nx">i</span> <span class="p">.</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">input</span><span class="p">.</span><span class="nx">css</span> <span class="o">-</span><span class="nx">o</span> <span class="p">.</span><span class="o">/</span><span class="nx">dist</span><span class="o">/</span><span class="nx">output</span><span class="p">.</span><span class="nx">css</span> <span class="o">--</span><span class="nx">watch</span>
-</code></pre></div></div>
-
-<ul>
-  <li>HTML파일에 빌드된 css파일을 연결한다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">doctype</span> <span class="nx">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">UTF-8</span><span class="dl">"</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">viewport</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">width=device-width, initial-scale=1.0</span><span class="dl">"</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">/dist/output.css</span><span class="dl">"</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">stylesheet</span><span class="dl">"</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">h1</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-3xl font-bold underline</span><span class="dl">"</span><span class="o">&gt;</span>
-    <span class="nx">Hello</span> <span class="nx">world</span><span class="o">!</span>
-  <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<h3 id="2-vscode에-맞는-에디터-설치하기">2. vsCode에 맞는 에디터 설치하기</h3>
-
-<ul>
-  <li>Tailwind CSS IntelliSense
-    <ul>
-      <li>클래스 이름, css 함수, 지시자 이름 자동 완성</li>
-      <li>린팅기능</li>
-      <li>호버시 미리보기 기능</li>
-    </ul>
-  </li>
-  <li>Prettier
-    <ul>
-      <li>prettier는 공식적으로 tailwind css 코드 sorting기능을 제공</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="3-element-classname에-스타일-설정하기">3. element className에 스타일 설정하기</h3>
-
-<ul>
-  <li>리액트에서 사용할 경우, class가 아닌 className을 사용한다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-3xl font-bold underline</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">world</span><span class="o">!&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
-</span><span class="p">}</span>
-</code></pre></div></div>
-
-<p><img src="https://github.com/SJ0826/coding-swamp-/assets/56298540/a65faddb-1761-4e8e-b731-a476de915f71" alt="image" /></p>
-
-<hr />
-
-<p>다음에 또 보기 위해 tailwind 사용법을 간단하게 정리했다. 짧게 써보고 남기는 후기는 다음과 같다.</p>
-
-<ul>
-  <li>장) 컴포넌트 이름을 신경쓰지 않아도 괜찮다.</li>
-  <li>장) 이미 구현된 유틸리티 클래스 덕에 빠른 구현이 가능하다</li>
-  <li>단) 아무래도 클래스 이름이 스타일 코드로 인해 길어져 코드가 혼잡해 보인다.</li>
-</ul>
-
-<p>사용하며 더 알게 되는 점이나 기록할 부분이 생기면 추가할 예정이다.</p>
-
-<p>부트스트랩도 사용해본 경험이 없어 css framework는 꽤 생소했다. 잘 쓰면 약, 못쓰면 독일테니 적절하게 잘 사용해 퀄리티를 높이는 연습을 해야겠다.</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li><a href="https://tailwindcss.com/docs/guides/create-react-app">tailwind 공식문서</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="CSS" /><category term="tailwind" /></entry></feed>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="nextjs" /><category term="props" /><category term="error" /><category term="함수의 직렬화" /><category term="서버 컴포넌트" /><category term="클라이언트 컴포넌트" /><summary type="html"><![CDATA[Event handlers cannot be passed to Client Component props]]></summary></entry></feed>

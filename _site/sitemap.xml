@@ -1129,6 +1129,14 @@
 <lastmod>2024-04-01T22:06:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/javascript/javascript-MSW(Mock-Service-Worker,-v-2.0)/</loc>
+<lastmod>2024-06-24T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/</loc>
+<lastmod>2024-06-29T22:06:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/nextjs/nextjs-Error-occured-prerendering-page/</loc>
 <lastmod>2024-07-10T22:06:00+09:00</lastmod>
 </url>
@@ -1203,9 +1211,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/typescript/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>
