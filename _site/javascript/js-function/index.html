@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>함수 - SUJIN DEV NOTE 📝</title>
-<meta name="description" content="JavaScript 함수">
+<!-- begin _includes/seo.html --><title>            [JS] CJS와 ESM      자바스크립트의 모듈화 - SUJIN DEV NOTE 📝      </title>
+<meta name="description" content="주니어 개발자의 꼼질꼼질 성장일지 👻">
 
 
   <meta name="author" content="수진‍ (水珍)">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="SUJIN DEV NOTE 📝">
-<meta property="og:title" content="함수">
+<meta property="og:title" content="            [JS] CJS와 ESM      자바스크립트의 모듈화      ">
 <meta property="og:url" content="http://localhost:4000/javascript/js-function/">
 
 
-  <meta property="og:description" content="JavaScript 함수">
+  <meta property="og:description" content="주니어 개발자의 꼼질꼼질 성장일지 👻">
 
 
 
@@ -34,11 +34,11 @@
 
 
 
-  <meta property="article:published_time" content="2022-08-05T00:00:00+09:00">
+  <meta property="article:published_time" content="2024-07-09T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2022-08-05T22:06:00+09:00">
+  <meta property="article:modified_time" content="2024-07-09T22:06:00+09:00">
 
 
 
@@ -293,7 +293,7 @@
         <ul>
           
           
-            <li><a href="/javascript/">JavaScript (45)</a></li>
+            <li><a href="/javascript/">JavaScript (46)</a></li>
           
           
             <li><a href="/html/">HTML (13)</a></li>
@@ -392,16 +392,16 @@
   >
     <meta
       itemprop="headline"
-      content="함수"
+      content="            [JS] CJS와 ESM      자바스크립트의 모듈화      "
     /> <meta
       itemprop="description"
-      content="JavaScript 함수"
+      content=""
     /> <meta
       itemprop="datePublished"
-      content="2022-08-05T00:00:00+09:00"
+      content="2024-07-09T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2022-08-05T22:06:00+09:00"
+      content="2024-07-09T22:06:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -409,7 +409,14 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>함수</p>
+          <table>
+  <tbody>
+    <tr>
+      <td>[JS] CJS와 ESM</td>
+      <td>자바스크립트의 모듈화</td>
+    </tr>
+  </tbody>
+</table>
 
         </h1>
          
@@ -426,125 +433,123 @@
                 On this page
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#-함수">📄 함수</a></li><li><a href="#-선언방법">📄 선언방법</a></li><li><a href="#-선언적-함수">📄 선언적 함수</a></li><li><a href="#-익명함수">📄 익명함수</a></li><li><a href="#-선언적-함수와-익명함수의-차이점">📄 선언적 함수와 익명함수의 차이점</a></li><li><a href="#-리턴">📄 리턴</a><ul><li><a href="#함수-안에서-함수를-만들어-리턴">함수 안에서 함수를 만들어 리턴</a></li></ul></li><li><a href="#-인자로-함수를-사용">📄 인자로 함수를 사용</a></li><li><a href="#출처">출처</a></li></ul>
+            <ul class="toc__menu"><li><a href="#-자바스크립트의-모듈화">📝 자바스크립트의 모듈화</a></li><li><a href="#-cjs와-esm--자바스크립트를-모듈화-하는-방식">📝 CJS와 ESM | 자바스크립트를 모듈화 하는 방식</a><ul><li><a href="#-cjs-commonjs-방식">■ CJS (CommonJS) 방식</a></li><li><a href="#-esm-ecmascript-modules-방식">■ ESM (ECMAScript Modules) 방식</a></li><li><a href="#-cjs와-esm-비교">■ CJS와 ESM 비교</a></li></ul></li><li><a href="#출처">출처</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="-함수">📄 함수</h2>
+         <h2 id="-자바스크립트의-모듈화">📝 자바스크립트의 모듈화</h2>
 
-<p>함수는 특정코드를 하나의 명령으로 실행할 수 있게 해주는 기능입니다.</p>
+<p>모듈화는 코드를 작은 조각 또는 파일로 나누어 관리하는 방법입니다. <br />
+초기 자바스크립트는 하나의 자바스크립트 파일에 모든 기능을 담아야 했습니다. 이로인해 가독성이 떨어지고 복잡성이 증가되는 등 문제가 발생하였습니다. <br />
+자바스크립트의 역할이 커지며 모듈화의 필요성이 증가했고 CJS, ESM 등의 방법이 등장했습니다.</p>
 
-<p>함수는 파라미터가 주어졌을 때 파라미터를 처리해서 결과를 만듭니다.</p>
+<h2 id="-cjs와-esm--자바스크립트를-모듈화-하는-방식">📝 CJS와 ESM | 자바스크립트를 모듈화 하는 방식</h2>
 
-<h2 id="-선언방법">📄 선언방법</h2>
-
-<p>함수를 선언할 때는 <code class="language-plaintext highlighter-rouge">functions</code>이라는 키워드를 사용합니다.</p>
-
-<p>함수의 결과 값을 나타낼 때는 <code class="language-plaintext highlighter-rouge">return</code>이라는 키워드를 사용합니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">return</code>되는 순간 함수는 종료됩니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">functions</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// add라는 이름의 함수에 파라미터값으로 a와 b를 받아서, a + b의 결과값을 return시키는 함수.</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="-선언적-함수">📄 선언적 함수</h2>
-
-<p>선언적 함수는 함수에 이름을 붙여서 선언합니다.<br /></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">hello1</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// 함수 선언</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello1</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">hello1</span><span class="p">();</span> <span class="c1">//함수 호출</span>
-</code></pre></div></div>
-
-<p>결과<br />
-<img src="https://user-images.githubusercontent.com/56298540/182019797-18e22be2-0b8b-4963-a122-8adfb8f7d885.PNG" alt="function1" /></p>
-
-<h2 id="-익명함수">📄 익명함수</h2>
-
-<p>함수의 이름을 만들어주지 않고 특정 변수에 함수를 할당하는 방식입니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">hello1</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello1</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>결과<br />
-<img src="https://user-images.githubusercontent.com/56298540/182019797-18e22be2-0b8b-4963-a122-8adfb8f7d885.PNG" alt="function1" /></p>
-
-<h2 id="-선언적-함수와-익명함수의-차이점">📄 선언적 함수와 익명함수의 차이점</h2>
-
-<p>선언적 함수는 호출이 먼저 나와있어도 문제없이 실행되지만,<br />
-익명함수는 호출이 먼저 나오면 에러가 발생합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">hello1</span><span class="p">();</span> <span class="c1">// 선언적 함수는 호출이 먼저 나와있어도 문제없이 실행.</span>
-<span class="nx">hello2</span><span class="p">();</span> <span class="c1">// 익명함수는 호출이 먼저나오면 문제 발생</span>
-<span class="kd">function</span> <span class="nx">hello1</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">//선언적 함수</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello1</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">var</span> <span class="nx">hello2</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello2</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>결과<br />
-<img src="https://user-images.githubusercontent.com/56298540/182019952-beeb8889-0e9b-459f-a61c-b566579249c5.PNG" alt="function3" /></p>
-
-<h2 id="-리턴">📄 리턴</h2>
-
-<p>리턴은 함수를 실행하면 얻는 값입니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">hello3</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="s2">`hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>작은따옴표(‘)가 아닌 백틱(`)를 써야 합니다.</p>
-
-<h3 id="함수-안에서-함수를-만들어-리턴">함수 안에서 함수를 만들어 리턴</h3>
-
-<p>리턴값으로 함수를 지정하여 리턴할 수 있습니다.<br /></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">plus</span><span class="p">(</span><span class="nx">base</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">base</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">plus5</span> <span class="o">=</span> <span class="nx">plus</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">plus5</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
-</code></pre></div></div>
-
-<h2 id="-인자로-함수를-사용">📄 인자로 함수를 사용</h2>
-
-<p>함수를 호출하는 경우 인자로 함수를 사용할 수 있습니다.<br /></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">);</span>
-  <span class="nx">c</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="nx">hello</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">콜백</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<p>결과</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">hello</span><span class="p">;</span>
-<span class="nx">콜백</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h2 id="출처">출처</h2>
+<h3 id="-cjs-commonjs-방식">■ CJS (CommonJS) 방식</h3>
 
 <ul>
-  <li>패스트캠퍼스 프론트엔드 강의</li>
+  <li><strong>require</strong>과 <strong>module.exports</strong>를 사용</li>
+  <li>Node.js 환경에서 사용 (오직 서버사이드에서만 활용)</li>
+  <li>동기적으로 로드
+    <ul>
+      <li>모듈이 완전히 로드되어 실행될 때까지 코드 차단</li>
+      <li>실행전 모든 종속성이 로드되었는지 확인하고싶은 서버 측 애플리케이션에 적합</li>
+    </ul>
+  </li>
+  <li>확장자: <code class="language-plaintext highlighter-rouge">.cjs</code></li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// moduleA.js</span>
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, from Module A!</span><span class="dl">"</span><span class="p">;</span>
+<span class="kr">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">message</span><span class="p">;</span>
+
+<span class="c1">// moduleB.js</span>
+<span class="kd">const</span> <span class="nx">messageA</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./moduleA</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="-esm-ecmascript-modules-방식">■ ESM (ECMAScript Modules) 방식</h3>
+
+<ul>
+  <li><strong>import</strong>와 <strong>export</strong>를 사용</li>
+  <li>Node.js 환경에서 사용하며 최신 브라우저에서도 사용 가능 (서버사이드와 브라우저 환경 모두 활용)</li>
+  <li>동기적으로 로드 되나 비동기 가능
+    <ul>
+      <li>ESM은 <a href="https://nodejs.org/api/esm.html#top-level-await">Top-level await</a>를 지원하기 때문에 가능</li>
+    </ul>
+  </li>
+  <li>three shaking 가능
+    <ul>
+      <li>정적 분석을 통해 빌드 단계에서(= 번들링된 코드에서) 사용하지 않는 코드를 제거</li>
+      <li>웹페이지 로딩속도를 개선할 수 있어 프론트엔드 개발에 적합</li>
+    </ul>
+  </li>
+  <li>확장자: <code class="language-plaintext highlighter-rouge">.mjs</code></li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// moduleA.mjs</span>
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, from Module A!</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">message</span><span class="p">;</span>
+
+<span class="c1">// moduleB.mjs</span>
+<span class="k">import</span> <span class="nx">messageA</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./moduleA</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+<h3 id="-cjs와-esm-비교">■ CJS와 ESM 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>CJS</th>
+      <th>ESM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>문법</td>
+      <td>require, export.module</td>
+      <td>import, export</td>
+    </tr>
+    <tr>
+      <td>적합도</td>
+      <td>서버측 개발에 적합</td>
+      <td>모던 웹 애플리케이션 개발에 적합</td>
+    </tr>
+    <tr>
+      <td>동적 가져오기</td>
+      <td>가능하나 일반적이지 않음</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <td>비동기</td>
+      <td>x</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <td>정적 분석</td>
+      <td>x</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <td>three shaking</td>
+      <td>x</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <td>브라우저 지원</td>
+      <td>x</td>
+      <td>o</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="출처">출처</h2>
+<ul>
+  <li><a href="https://dev.to/nipu/js-cjs-and-mjs-defference-5f21"><strong>.js, .cjs and .mjs defference</strong></a></li>
+  <li>https://tech.kakao.com/posts/605</li>
 </ul>
  
       </section>
@@ -560,9 +565,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a><span class="sep">, </span>
+      <a href="/tags/#cjs" class="page__taxonomy-item p-category" rel="tag">CJS</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%95%A8%EC%88%98" class="page__taxonomy-item p-category" rel="tag">함수</a>
+      <a href="/tags/#esm" class="page__taxonomy-item p-category" rel="tag">ESM</a><span class="sep">, </span>
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
     
     </span>
   </p>
@@ -586,7 +593,7 @@
 
  
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-08-05">August 5, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-07-09">July 9, 2024</time></p>
 
       </footer>
 
@@ -595,7 +602,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%ED%95%A8%EC%88%98%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-function%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BJS%5D+CJS%EC%99%80+ESM+%7C+%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98+%EB%AA%A8%EB%93%88%ED%99%94%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-function%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs-function%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -604,11 +611,11 @@
  
   <nav class="pagination">
     
-      <a href="/javascript/javascript-get&set/" class="pagination--pager" title="get &amp; set 함수
+      <a href="/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/" class="pagination--pager" title="[JS] 이벤트 루프와 비동기 통신
 ">Previous</a>
     
     
-      <a href="/web/web-WEB-API%EB%9E%80/" class="pagination--pager" title="[WEB] WEB API란?
+      <a href="/nextjs/nextjs-Error-occured-prerendering-page/" class="pagination--pager" title="[Next.js 13] 클라이언트 컴포넌트가 정말 클라이언트 사이드에서만 렌더링 될까 ?
 ">Next</a>
     
   </nav>

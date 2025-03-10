@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-07T16:19:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-10T09:20:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
 
 <h2 id="️-책을-완독하고-나서">◾️ 책을 완독하고 나서</h2>
 <p><a href="https://polyester-archduke-ab6.notion.site/NestJS-NestJS-191f73e111b3809a8d32ffa142b53c2d?pvs=4">📒노션 스터디 노트</a></p>
@@ -364,7 +364,120 @@ dynamic import는 컴포넌트 외부에서 선언해야합니다.</p>
 <h2 id="참고">참고</h2>
 <ul>
   <li><a href="https://stackoverflow.com/questions/75692116/next-js-13-window-is-not-defined">stackoverflow - next-js-13-window-is-not-defined</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="prerendering" /><category term="서버 컴포넌트" /><category term="use client" /><category term="에러" /><summary type="html"><![CDATA[클라이언트 컴포넌트에서 prerendering 에러가 발생한 이유]]></summary></entry><entry><title type="html">[JS] 이벤트 루프와 비동기 통신</title><link href="http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/" rel="alternate" type="text/html" title="[JS] 이벤트 루프와 비동기 통신" /><published>2024-06-29T00:00:00+09:00</published><updated>2024-06-29T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%A3%A8%ED%94%84%EC%99%80%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%86%B5%EC%8B%A0</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/"><![CDATA[<h2 id="-싱글-스레드-자바스크립트">📝 싱글 스레드 자바스크립트</h2>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="prerendering" /><category term="서버 컴포넌트" /><category term="use client" /><category term="에러" /><summary type="html"><![CDATA[클라이언트 컴포넌트에서 prerendering 에러가 발생한 이유]]></summary></entry><entry><title type="html">[JS] CJS와 ESM | 자바스크립트의 모듈화</title><link href="http://localhost:4000/javascript/js-function/" rel="alternate" type="text/html" title="[JS] CJS와 ESM | 자바스크립트의 모듈화" /><published>2024-07-09T00:00:00+09:00</published><updated>2024-07-09T22:06:00+09:00</updated><id>http://localhost:4000/javascript/js-function</id><content type="html" xml:base="http://localhost:4000/javascript/js-function/"><![CDATA[<h2 id="-자바스크립트의-모듈화">📝 자바스크립트의 모듈화</h2>
+
+<p>모듈화는 코드를 작은 조각 또는 파일로 나누어 관리하는 방법입니다. <br />
+초기 자바스크립트는 하나의 자바스크립트 파일에 모든 기능을 담아야 했습니다. 이로인해 가독성이 떨어지고 복잡성이 증가되는 등 문제가 발생하였습니다. <br />
+자바스크립트의 역할이 커지며 모듈화의 필요성이 증가했고 CJS, ESM 등의 방법이 등장했습니다.</p>
+
+<h2 id="-cjs와-esm--자바스크립트를-모듈화-하는-방식">📝 CJS와 ESM | 자바스크립트를 모듈화 하는 방식</h2>
+
+<h3 id="-cjs-commonjs-방식">■ CJS (CommonJS) 방식</h3>
+
+<ul>
+  <li><strong>require</strong>과 <strong>module.exports</strong>를 사용</li>
+  <li>Node.js 환경에서 사용 (오직 서버사이드에서만 활용)</li>
+  <li>동기적으로 로드
+    <ul>
+      <li>모듈이 완전히 로드되어 실행될 때까지 코드 차단</li>
+      <li>실행전 모든 종속성이 로드되었는지 확인하고싶은 서버 측 애플리케이션에 적합</li>
+    </ul>
+  </li>
+  <li>확장자: <code class="language-plaintext highlighter-rouge">.cjs</code></li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// moduleA.js</span>
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, from Module A!</span><span class="dl">"</span><span class="p">;</span>
+<span class="kr">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">message</span><span class="p">;</span>
+
+<span class="c1">// moduleB.js</span>
+<span class="kd">const</span> <span class="nx">messageA</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./moduleA</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="-esm-ecmascript-modules-방식">■ ESM (ECMAScript Modules) 방식</h3>
+
+<ul>
+  <li><strong>import</strong>와 <strong>export</strong>를 사용</li>
+  <li>Node.js 환경에서 사용하며 최신 브라우저에서도 사용 가능 (서버사이드와 브라우저 환경 모두 활용)</li>
+  <li>동기적으로 로드 되나 비동기 가능
+    <ul>
+      <li>ESM은 <a href="https://nodejs.org/api/esm.html#top-level-await">Top-level await</a>를 지원하기 때문에 가능</li>
+    </ul>
+  </li>
+  <li>three shaking 가능
+    <ul>
+      <li>정적 분석을 통해 빌드 단계에서(= 번들링된 코드에서) 사용하지 않는 코드를 제거</li>
+      <li>웹페이지 로딩속도를 개선할 수 있어 프론트엔드 개발에 적합</li>
+    </ul>
+  </li>
+  <li>확장자: <code class="language-plaintext highlighter-rouge">.mjs</code></li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// moduleA.mjs</span>
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, from Module A!</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">message</span><span class="p">;</span>
+
+<span class="c1">// moduleB.mjs</span>
+<span class="k">import</span> <span class="nx">messageA</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./moduleA</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+<h3 id="-cjs와-esm-비교">■ CJS와 ESM 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>CJS</th>
+      <th>ESM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>문법</td>
+      <td>require, export.module</td>
+      <td>import, export</td>
+    </tr>
+    <tr>
+      <td>적합도</td>
+      <td>서버측 개발에 적합</td>
+      <td>모던 웹 애플리케이션 개발에 적합</td>
+    </tr>
+    <tr>
+      <td>동적 가져오기</td>
+      <td>가능하나 일반적이지 않음</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <td>비동기</td>
+      <td>x</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <td>정적 분석</td>
+      <td>x</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <td>three shaking</td>
+      <td>x</td>
+      <td>o</td>
+    </tr>
+    <tr>
+      <td>브라우저 지원</td>
+      <td>x</td>
+      <td>o</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="출처">출처</h2>
+<ul>
+  <li><a href="https://dev.to/nipu/js-cjs-and-mjs-defference-5f21"><strong>.js, .cjs and .mjs defference</strong></a></li>
+  <li>https://tech.kakao.com/posts/605</li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="CJS" /><category term="ESM" /></entry><entry><title type="html">[JS] 이벤트 루프와 비동기 통신</title><link href="http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/" rel="alternate" type="text/html" title="[JS] 이벤트 루프와 비동기 통신" /><published>2024-06-29T00:00:00+09:00</published><updated>2024-06-29T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%A3%A8%ED%94%84%EC%99%80%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%86%B5%EC%8B%A0</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/"><![CDATA[<h2 id="-싱글-스레드-자바스크립트">📝 싱글 스레드 자바스크립트</h2>
 
 <p>자바스크립트는 <strong>싱글 스레드 언어</strong>다.</p>
 
@@ -829,321 +942,434 @@ dynamic import는 컴포넌트 외부에서 선언해야합니다.</p>
 <ul>
   <li><a href="https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns">Next.js 공식 문서 - Server and Client Composition Patterns</a></li>
   <li>Next.js + ReactQuery로 SNS 서비스 만들기 (인프런)</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="middleware" /><category term="서버 컴포넌트" /><summary type="html"><![CDATA[클라이언트 컴포넌트로 서버 컴포넌트를 감싸보자]]></summary></entry><entry><title type="html">[Next.js] 서버 컴포넌트에서 Redirect 구현하기 with middleware</title><link href="http://localhost:4000/nextjs/nextjs-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-Redirect-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-with-middleware/" rel="alternate" type="text/html" title="[Next.js] 서버 컴포넌트에서 Redirect 구현하기 with middleware" /><published>2024-02-07T00:00:00+09:00</published><updated>2025-03-07T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-%EC%84%9C%EB%B2%84%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20Redirect%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0%20with%20middleware</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-Redirect-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-with-middleware/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="middleware" /><category term="서버 컴포넌트" /><summary type="html"><![CDATA[클라이언트 컴포넌트로 서버 컴포넌트를 감싸보자]]></summary></entry><entry><title type="html">[JS] JavaScript의 다양한 함수 형태</title><link href="http://localhost:4000/javascript/js-function/" rel="alternate" type="text/html" title="[JS] JavaScript의 다양한 함수 형태" /><published>2024-03-10T00:00:00+09:00</published><updated>2024-03-10T22:06:00+09:00</updated><id>http://localhost:4000/javascript/js-function</id><content type="html" xml:base="http://localhost:4000/javascript/js-function/"><![CDATA[<h2 id="-자바스크립의-함수">📄 자바스크립의 함수</h2>
 
-<p>페이지 인증 로직을 구현하면서 권한이 없는 사용자를 로그인 페이지로 리다이렉트하는 기능이 필요했습니다.</p>
+<p>함수는 특정한 작업을 수행하는 과정을 표현하고, 하나의 블록으로 감싸 실행단위로 만들어 놓은 것입니다. <br />
+다음은 함수의 기본적 형태입니다. 함수의 결과 값을 나타낼 때는 return이라는 키워드를 사용합니다. return되는 순간 함수는 종료됩니다.</p>
 
-<p>클라이언트 컴포넌트에서는 useRouter를 사용하여 리다이렉트할 수 있었지만, 서버 컴포넌트에서는 useRouter를 사용할 수 없었습니다. 따라서 서버에서 인증을 처리하는 적절한 방법을 찾아야 했습니다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
 
-<p><img src="/assets/image/posts/nextjs-middleware.png" alt="image" /></p>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</code></pre></div></div>
 
-<h2 id="시도-1--redirect">시도 1 | redirect</h2>
+<h2 id="-선언방법">📄 선언방법</h2>
 
-<p>가장 간단하게 사용할 수 있어보이는 redirect를 사용해 보았습니다.</p>
+<p>함수를 선언할 때는 function이라는 키워드를 사용합니다.
+함수의 결과 값을 나타낼 때는 return이라는 키워드를 사용합니다.
+return되는 순간 함수는 종료됩니다.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">reissueTokenAPI</span><span class="p">(</span><span class="nx">REFRESH_TOKEN</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">accessToken</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">cookieStore</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">REFRESH_TOKEN</span><span class="p">,</span> <span class="nx">res</span><span class="p">.</span><span class="nx">refreshToken</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">redirect</span><span class="p">(</span><span class="nx">Url</span><span class="p">.</span><span class="nx">SignIn</span><span class="p">);</span>
-      <span class="p">}</span>
-<span class="p">})</span>
+<p><strong>💡  매개변수와 인수</strong> <br /></p>
+<ul>
+  <li>공통점: 함수에 넘겨주는 값</li>
+  <li>차이점:
+    <ul>
+      <li>매개변수: 함수를 선언할 때 받는 입력값</li>
+      <li>인수: 함수를 호출할 때 받는 입력값</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="-함수를-정의하는-방법">📄 함수를 정의하는 방법</h2>
+
+<h3 id="1-함수-선언문">1. 함수 선언문</h3>
+
+<p>함수 선언문을 사용할 때는 <strong>function</strong>이라는 키워드를 사용해 이름을 붙여서 선언합니다.<br />
+가장 기본적인 함수를 사용하는 방법입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// add라는 이름의 함수에 파라미터값으로 a와 b를 받아서, a + b의 결과값을 return시키는 함수.</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></div>
 <p><br /></p>
 
-<p>문제가 없을 줄 알았지만 콘솔에서 에러가 발생했습니다.</p>
+<h3 id="2-함수-표현식-익명함수">2. 함수 표현식 (익명함수)</h3>
 
-<p><img src="/assets/image/posts/nextjs-middleware-error.png" alt="image" /></p>
+<p>함수 표현식은 함수의 이름을 만들어주지 않고 <strong>특정 변수에 함수를 할당</strong>하는 방식입니다.</p>
 
-<blockquote>
-  <p>Invoking the redirect() function throws a NEXT_REDIRECT error and terminates rendering of the route segment in which it was thrown. by Next.js</p>
-</blockquote>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">hello1</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello1</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
 
-<p><del>왜 redirect api 표에서는 severcomponet가 포함되어있는지 잘 모르겠지만 아무래도 서버 컴포넌트에서는 redirect()를 사용할 수 없는 것 같습니다.</del> <br />
-(2025.03.07 수정) 
-서버 컴포넌트임에도 redirect()를 사용할 수 없었던 이유는 await을 사용하는 비동기 코드 내부에서 redirect()를 호출했기 때문입니다. 
-redirect() 함수는 페이지가 서버에서 렌더링되는 도중에 실행되어야합니다.</p>
-
-<h2 id="시도-2--nextresponseredirect-in-middleware">시도 2 | NextResponse.redirect in Middleware</h2>
-
-<p>미들웨어는 페이지 요청이 완료되기 전에 실행되므로, 페이지가 서버에서 렌더링되기 전에 필요한 로직을 처리할 수 있습니다.</p>
-
-<p>그러나 미들웨어에서는 axios의 기본 설정으로 AJAX 요청을 보낼 수 없었으며, 이를 사용하려고 하면 다음과 같은 에러가 발생했습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">TypeError</span><span class="p">]</span> <span class="nx">adapter</span> <span class="k">is</span> <span class="nx">not</span> <span class="nx">a</span> <span class="kd">function</span>
 </code></pre></div></div>
+<p><br /></p>
 
-<p>따라서 fetch 함수를 사용하여 API 요청을 처리하는 방식으로 해결했습니다.
-저의 경우에는 미들웨어에서 사용하는 인증관련 로직을 분리했습니다.
-<br /></p>
+<p>자바스크립트에서 함수는 일급 객체입니다. 따라서 함수를 변수에 할당하는 것이 가능합니다.</p>
 
-<p><strong>💾 withAuth.ts</strong></p>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NextRequest</span><span class="p">,</span> <span class="nx">NextResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/server</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">withAuth</span><span class="p">(</span><span class="nx">request</span><span class="p">:</span> <span class="nx">NextRequest</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">redirectUrl</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">nextUrl</span><span class="p">.</span><span class="nx">clone</span><span class="p">();</span> <span class="c1">// 1</span>
-    <span class="nx">redirectUrl</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">리다이렉트</span> <span class="nx">경로</span><span class="p">}</span><span class="s2">`</span>
-
-    <span class="kd">const</span> <span class="nx">refreshToken</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">refreshToken</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 2</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">refreshToken</span><span class="p">)</span> <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">redirectUrl</span><span class="p">);</span>
-
-    <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">refreshToken</span> <span class="nx">갱신</span> <span class="nx">api</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span> <span class="c1">// 3</span>
-    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">refreshToken</span><span class="p">:</span> <span class="nx">refreshToken</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
-    <span class="p">};</span>
-    <span class="kd">const</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
-    <span class="p">};</span>
-
-    <span class="kd">const</span> <span class="nx">apiResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="na">responseData</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">apiResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">responseData</span><span class="p">.</span><span class="nx">resultCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 4</span>
-			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">succeed</span><span class="dl">'</span><span class="p">)</span>
-
-      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
-
-      <span class="nx">response</span><span class="p">.</span><span class="nx">cookies</span><span class="p">?.</span><span class="kd">set</span><span class="p">(</span>
-        <span class="dl">'</span><span class="s1">refreshToken</span><span class="dl">'</span><span class="p">,</span>
-        <span class="nx">responseData</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">refreshToken</span>
-      <span class="p">);</span>
-      <span class="nx">response</span><span class="p">.</span><span class="nx">cookies</span><span class="p">?.</span><span class="kd">set</span><span class="p">(</span>
-        <span class="dl">'</span><span class="s1">accessToken</span><span class="dl">'</span><span class="p">,</span>
-        <span class="nx">responseData</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">accessToken</span>
-      <span class="p">);</span>
-
-      <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">failed</span><span class="dl">'</span><span class="p">);</span>
-
-      <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">redirectUrl</span><span class="p">);</span> <span class="c1">// 5</span>
-    <span class="p">}</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">err: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p><strong>💡 [일급 객체란?]</strong></p>
 <ol>
-  <li>객체의 참조를 공유하지 않고 안전하게 nextUrl를 사용하고자 clone 메서드를 사용해 값을 복사한다.</li>
-  <li>서버에 요청 (request)할때 브라우저 쿠키에 저장된 refreshToken을 가져온다.</li>
-  <li>서버에서 api요청을 처리해 refreshToken을 갱신한다.</li>
-  <li>refreshToken 갱신 성공시, 쿠키에 새로운 토큰을 저장해 클라이언트에 응답 (response)을 내려보낸다.</li>
-  <li>refreshToken 갱신 실패시, 설정한 경로로 리다이렉트 한다.</li>
+  <li>변수에 할당할 수 있어야 합니다.</li>
+  <li>인자로 전달할 수 있어야 합니다.</li>
+  <li>다른 함수의 반환값으로 사용할 수 있어야 합니다.</li>
 </ol>
 
-<p>이전에는 서버에서 쿠키를 다루기 위해 별도의 라이브러리를 설치하거나, 각 페이지 컴포넌트에서 getServerSideProps의 request를 통해 관리해야 했습니다.</p>
+<p><br /></p>
 
-<p>그러나 이번에 미들웨어를 사용하면서, 원하는 페이지를 요청할 때 공통된 비즈니스 로직을 처리할 수 있게 되었고, 쿠키를 다루는 과정이 번거롭지 않아 작업이 훨씬 간편해졌습니다.</p>
+<h3 id="2-1-함수-선언문과-함수-표현식의-차이점">2-1. 함수 선언문과 함수 표현식의 차이점</h3>
 
-<p>또한, 서버에서 인증을 처리할 수 있기 때문에, 브라우저에서 추가적인 화면을 렌더링하지 않고 즉시 로그인 페이지로 리다이렉트할 수 있어, 사용자는 바로 로그인을 진행할 수 있습니다.</p>
+<p>함수 선언문은 호출문이 먼저 나와있어도 문제없이 실행되지만, 함수 표현식은 호출문이 먼저 나오면 에러가 발생합니다.</p>
 
-<p>만약 리다이렉트 후 사용자에게 추가적인 메시지를 전달하고 싶다면, 응답(Response)을 커스텀하여 메시지를 포함할 수도 있습니다.</p>
-
-<p><strong>💾 middleware.ts</strong></p>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NextRequest</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/server</span><span class="dl">'</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">isAuthenticated</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@lib/auth</span><span class="dl">'</span>
- 
-<span class="c1">// Limit the middleware to paths starting with `/api/`</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">matcher</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/api/:function*</span><span class="dl">'</span><span class="p">,</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">hello1</span><span class="p">();</span> <span class="c1">// 함수 선언문은 호출이 먼저 나와있어도 문제없이 실행.</span>
+<span class="nx">hello2</span><span class="p">();</span> <span class="c1">// 함수 표현식은 호출이 먼저나오면 문제 발생</span>
+<span class="kd">function</span> <span class="nx">hello1</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">//선언적 함수</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello1</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">}</span>
- 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">middleware</span><span class="p">(</span><span class="nx">request</span><span class="p">:</span> <span class="nx">NextRequest</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Call our authentication function to check the request</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isAuthenticated</span><span class="p">(</span><span class="nx">request</span><span class="p">))</span> <span class="p">{</span>
-    <span class="c1">// Respond with JSON indicating an error message</span>
-    <span class="k">return</span> <span class="nx">Response</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span>
-      <span class="p">{</span> <span class="na">success</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authentication failed</span><span class="dl">'</span> <span class="p">},</span>
-      <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">401</span> <span class="p">}</span>
-    <span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">hello2</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello2</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<p>⬇️ 결과</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TypeError: hello2 is not a function
+</code></pre></div></div>
+
+<p>이는 <strong>호이스팅</strong>으로 발생하는 이슈입니다.<br />
+호이스팅은 함수에 대한 선언을 실행하기 이전에 미리 메모리에 등록하는 작업입니다. 함수 선언문은 호이스팅으로 인해 실행 이전 메모리에 저장되어 코드 순서에 영향을 받지 않고 실행됩니다.<br />
+위 코드에서 hello2는 var에 할당되었는데, var는 호이스팅이 되는 시점에 undefined로 초기화되어 타입에러가 발생한 것입니다.</p>
+
+<p><br /></p>
+
+<h3 id="3-function-생성자">3. Function 생성자</h3>
+
+<p>Function 생성자는 <strong>new 키워드</strong>를 통해 함수를 생성합니다.<br />
+함수의 블록을 모두 문자열로 작성해야 하기 때문에 현재는 잘 사용하지 않는 방법입니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">return a + b;</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="4-화살표-함수-arrow-function">4. 화살표 함수 (Arrow Function)</h3>
+
+<p>화살표 함수는 <strong>ES6문법</strong>에서 소개되었습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>화살표 함수의 특징은 다음과 같습니다.</p>
+
+<ol>
+  <li>contructor를 사용할 수 없다.</li>
+  <li>arguments가 존재하지 않는다.</li>
+  <li>함수 자체에 this를 바인딩하지 않고 상위 스코프의 this를 따르게 된다.</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="-다양한-함수의-형태">📄 다양한 함수의 형태</h2>
+
+<h3 id="1-즉시-실행-함수">1. 즉시 실행 함수</h3>
+
+<p>즉시 실행함수는 함수를 정의할 때 바로 실행되는 함수입니다.<br />
+컴포넌트에 처음 렌더링될때 이외에 실행될 필요가 없는 함수를 useEffect대신 사용하기 좋을 것 같다는 생각이 들었습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 기본적인 즉시 실행 함수의 형태</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">이 함수는 즉시 실행됩니다!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">})();</span>
+
+<span class="c1">// 매개변수 전달 가능한 즉시 실행 함수</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">안녕하세요, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">님!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">})(</span><span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">// 반환값을 활용한 즉시 실행 함수</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">})(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// 출력: 7</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="2-고차-함수">2. 고차 함수</h3>
+
+<p>자바스크립트의 함수는 일급함수라는 특징을 통해 고차 함수로 사용할 수 있습니다.<br />
+따라서 고차함수는 함수를 인자로 받고 함수를 반환할 수 있다는 특징을 가지고 있습니다. 보통 배열 내장함수를 통해 고차 함수를 사용합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">newArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">item</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">});</span> <span class="c1">// [2, 4, 6] 출력</span>
+
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="-정리">📝 정리</h2>
+
+<ul>
+  <li>함수: 특정한 작업을 수행하는 하나의 블록</li>
+  <li>정의 방법
+    <ul>
+      <li>함수 선언문
+        <ul>
+          <li>가장 기본적인 방법</li>
+        </ul>
+      </li>
+      <li>함수 표현식
+        <ul>
+          <li>var을 사용할 경우 호이스팅 이슈가 있다. const, let을 사용할 경우 호이스팅은 발생하지만 TDZ(Temporal Dead Zone)에 빠져 변수에 접근할 때 에러가 발생한다.</li>
+        </ul>
+      </li>
+      <li>Funtion 생성자</li>
+      <li>화살표 함수 (ES6)
+        <ul>
+          <li>ES6에서 새로 추가된 문법</li>
+          <li>함수 자체가 아닌 상위 스코프의 this를 바인딩한다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>다양한 함수 사용방법으로 즉시 실행함수, 고차함수가 있다.</li>
+</ul>
+
+<h2 id="출처">출처</h2>
+
+<ul>
+  <li>패스트캠퍼스 프론트엔드 강의</li>
+  <li>모던 리액트 Deep Dive</li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="함수" /><category term="호이스팅" /><summary type="html"><![CDATA[함수와 호이스팅의 상관관계]]></summary></entry><entry><title type="html">[JS] 프로미스(Promise)는 어떻게 동작할까?</title><link href="http://localhost:4000/javascript/javascript-%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4(Promise)%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C/" rel="alternate" type="text/html" title="[JS] 프로미스(Promise)는 어떻게 동작할까?" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4(Promise)%EB%8A%94%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4(Promise)%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C/"><![CDATA[<h2 id="-promise란">📄 Promise란?</h2>
+
+<p>자바스크립트를 사용한 프로젝트에서 데이터를 페칭한다면 데이터를 받아오기도 전에 마치 데이터를 받아온 것처럼 화면에 데이터가 표시되고 에러가 발생합니다.</p>
+
+<p>이는 <strong>자바스크립트의 이벤트루프</strong>가 동작하여 <strong>동기적으로 코드가 실행</strong>되기 때문입니다.</p>
+
+<p>필요한 데이터를 모두 받아온 후 나머지 로직이 실행되게 만들고 싶을 때, 즉 로직을 <strong>비동기로 동작하게 할 때 Promise를 사용</strong>합니다.</p>
+
+<p>Promise는 자바스크립트 <strong>ES6</strong>부터 추가된 내장 객체로 비교적 최근에 생성되었습니다.</p>
+
+<h2 id="-promise-처리-흐름">📄 promise 처리 흐름</h2>
+
+<h3 id="1-프로미스가-생성자를-통해-pending대기-상태로-생성된다">1. 프로미스가 생성자를 통해 Pending(대기) 상태로 생성된다.</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span> <span class="c1">//pending</span>
+</code></pre></div></div>
+
+<h3 id="2-promise의-executorresolve-reject함수의-인자를-통해-순서를-제어한다">2. Promise의 executor(resolve, reject)함수의 인자를 통해 순서를 제어한다.</h3>
+
+<p><span style="color:#357ABD">resolve()</span>가 실행되는 경우 → 프로미스가 <span style="color:#357ABD">fulfilled(이행)</span> 상태가 됩니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// pending상태</span>
+  <span class="c1">// ... 비동기적인 상황이 되는 처리가 벌어짐.</span>
+  <span class="nx">resolve</span><span class="p">();</span> <span class="c1">// fulfilled</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><span style="color:#FF6B6B">reject()</span>가 실행되는 경우 → 프로미스가 <span style="color:#FF6B6B">rejected(거부)</span> 상태가 됩니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// pending상태</span>
+  <span class="nx">reject</span><span class="p">();</span> <span class="c1">//rejected</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>프로미스가 실행되는 조건에 따라 이후 실행되는 로직을 결정할 수 있습니다.</p>
+
+<ul>
+  <li><span style="color:#357ABD">resolve()</span>가 실행되는 경우 → <span style="color:#357ABD">fulfilled</span> 상태가 되어 <span style="color:#357ABD">.then</span> 콜백 함수 실행</li>
+  <li><span style="color:#FF6B6B">reject()</span>가 실행되는 경우 → <span style="color:#FF6B6B">rejected</span> 상태가 되어 <span style="color:#FF6B6B">.catch</span> 콜백 함수 실행</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myPromise</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">성공:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">실패:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p><span style="color:#FF6B6B">reject()</span> 함수를 이용해 구체적인 <strong>에러핸들링</strong>도 가능합니다. 보통 reject 함수를 실행하여 rejected 되는 이유를 넘기는데, 표준 내장 객체인 Error의 생성자를 이용해 Error 객체를 만들 수 있습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">bad</span><span class="dl">'</span><span class="p">));</span>
+<span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{...});</span> 
+</code></pre></div></div>
+
+<h3 id="3-최종으로-실행되는-로직의-경우-finally를-설정해-실행한다">3. 최종으로 실행되는 로직의 경우 finally를 설정해 실행한다.</h3>
+
+<p>프로미스 객체가 fulfilled(이행)되거나 rejected 되고 나서 가장 마지막으로 실행되어야 하는 작업이 있다면 finally 콜백함수를 설정합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myPromise</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">성공:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">실패:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">finally</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">finally 블록 실행: 작업 종료 후 항상 실행됩니다.</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="-callback-vs-promise">📄 Callback vs Promise</h2>
+<p>콜백함수도 비동기 작업을 할 수 있습니다. <br />
+콜백 함수를 사용할 때 함수가 많아질 경우 유명한 콜백 지옥에 빠지게 되어 한눈에 봐도 불안한 모습이 됩니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">c</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">callback</span><span class="p">();</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">1000ms 후에 callback 함수가 실행됩니다.</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3000ms 후에 callback 함수가 실행됩니다</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span> <span class="c1">//callback hell (콜백 지옥)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이런 경우 <strong>프로미스 체이닝 (Promise Chaning)</strong>을 통해 콜백 지옥을 해결 할 수 있습니다. 콜백 함수보다 가독성이 좋습니다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">p</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">resolve</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">p</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">p</span><span class="p">();</span> <span class="c1">// 다시 새로운 프로미스 객체를 만들어서 리턴한다.</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">p</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">4000ms 후에 fulfilled 됩니다.</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="-여러개의-promise프로미스-객체를-다루는-경우">📄 여러개의 Promise(프로미스) 객체를 다루는 경우</h2>
+
+<p>여러개의 프로미스를 다룰 때는 <strong>배열</strong>을 통해 다룰 수 있습니다.</p>
+
+<h3 id="1-promiseall">1. Promise.all</h3>
+
+<p>프로미스 객체들을 배열에 저장해 순차적으로 실행하는 경우에 Promise.all을 사용합니다. <br />
+Promise.all은 <strong>모든 프로미스가 fulfilled</strong> 되었을 경우, 각 프로미스의 결과를 배열에 담아 리턴합니다.<br />
+Promise.all에 전달되는 <strong>프로미스 중 하나라도 거부되면</strong>, Promise.all이 반환하는 프로미스는 <strong>에러</strong>와 함께 바로 거부됩니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2">에서 가져온 데이터`</span><span class="p">;</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+      <span class="p">},</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2000</span><span class="p">);</span> <span class="c1">// 랜덤한 시간 후에 데이터를 반환</span>
+    <span class="p">});</span>
   <span class="p">}</span>
+
+<span class="c1">// 프로미스 객체들을 배열로 저장</span>
+<span class="kd">const</span> <span class="nx">promises</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">fetchData</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com/data1</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">fetchData</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com/data2</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">fetchData</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com/data3</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">];</span>
+
+<span class="k">try</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">promises</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">모든 데이터를 성공적으로 가져왔습니다:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">results</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">데이터를 가져오는 도중 오류가 발생했습니다:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>공식 문서를 참고하며 작업을 진행하는 과정에서, 현재까지 Next.js의 기능을 절반 정도만 활용하고 있었다는 것을 깨달았습니다.</p>
+<p><br /></p>
 
-<p>미들웨어는 단순히 리다이렉트를 처리하는 용도뿐만 아니라, 다양한 기능을 제공하고 있습니다. 이를 적극적으로 활용하여 프로젝트를 더욱 효율적으로 진행하고 싶습니다.</p>
+<h3 id="2-promiseallsettled">2. Promise.allSettled</h3>
 
-<h2 id="참고">참고</h2>
+<p>Promise.all의 프로미스 객체들이 하나라도 실패했을 경우 바로 프로미스 체인을 중단한다면, Promise.allSettled 는 <strong>이행/실패 여부와 상관없이</strong> 모든 프로미스 객체를 실행합니다.<br />
+이후 각 프로미스의 결과에 대한 정보를 담은 배열을 리턴합니다. 여러개의 작업을 병렬로 실행하고 각 작업의 성공 또는 실패 여부를 알아야 할 때 유용합니다.</p>
+
 <ul>
-  <li><a href="https://nextjs.org/docs/app/building-your-application/routing/middleware">Next.js 공식 문서 - middleware</a></li>
-  <li><a href="https://www.reddit.com/r/nextjs/comments/tx1pcp/using_axios_in_middleware_not_working/">reddit - using_axios_in_middleware_not_working</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="middleware" /><category term="서버 컴포넌트" /><summary type="html"><![CDATA[권한이 없는 페이지 미들웨어로 리다이렉트 시키기]]></summary></entry><entry><title type="html">[React] 리액트팀은 왜 가상 돔을 만들었을까?</title><link href="http://localhost:4000/react/react-react-virtual-dom/" rel="alternate" type="text/html" title="[React] 리액트팀은 왜 가상 돔을 만들었을까?" /><published>2023-12-26T00:00:00+09:00</published><updated>2023-09-25T22:06:00+09:00</updated><id>http://localhost:4000/react/react-react%20virtual%20dom</id><content type="html" xml:base="http://localhost:4000/react/react-react-virtual-dom/"><![CDATA[<h2 id="사용자가-브라우저-주소창에-주소를-입력하면-어떤-일이-발생할까">사용자가 브라우저 주소창에 주소를 입력하면 어떤 일이 발생할까?</h2>
+  <li>응답이 성공할 경우
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nl">status</span><span class="p">:</span><span class="dl">"</span><span class="s2">fulfilled</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span><span class="p">:</span><span class="nx">result</span><span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>에러가 발생한 경우
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nl">status</span><span class="p">:</span><span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span><span class="p">,</span> <span class="nx">reason</span><span class="p">:</span><span class="nx">error</span><span class="p">}</span>
+</code></pre></div>    </div>
+    <p><br /></p>
+  </li>
+</ul>
 
-<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/cc5d46e7-ab57-462d-8b26-582a91f86f80/9fe21a7c-7ed2-4caa-82d0-cf0dcff5a192/Untitled.png" alt="Untitled" /></p>
+<p>promise.allSettled 는 다음과 같이 활용할 수 있습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">urls</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="dl">"</span><span class="s2">https://api.github.com/users/iliakan</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">https://api.github.com/users/Violet-Bora-Lee</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">https://no-such-url</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">allSettled</span><span class="p">(</span><span class="nx">urls</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">))).</span><span class="nx">then</span><span class="p">((</span><span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">results</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">result</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">fulfilled</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">urls</span><span class="p">[</span><span class="nx">num</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">urls</span><span class="p">[</span><span class="nx">num</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">reason</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="3-promiserace">3. Promise.race</h3>
+
+<p>Promise.race 는 <strong>가장 먼저 종료(fullfilled 또는 rejected)된</strong> 프로미스 객체의 결과 또는 에러를 반환합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">promise1</span><span class="p">,</span> <span class="nx">promise2</span><span class="p">,</span> <span class="nx">promise3</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">가장 빠른 프로미스 결과:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">가장 빠른 프로미스 에러:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="-정리">📝 정리</h2>
 
 <ol>
-  <li>브라우저가 사용자가 요청한 주소를 방문해 html을 다운받는다.</li>
-  <li>브라우저의 렌더링 엔진이 html 을 파싱해 DOM 트리를 만든다.</li>
-  <li>2 과정에서 CSS 파일을 만나면 CSS 파일을 다운받는다.</li>
-  <li>브라우저의 렌더링 엔진이 CSS 트리인 CSSOM을 만든다.</li>
-  <li>브라우저는 만들어진 DOM트리를 순회한다. 이 과정에서 사용자의 눈에 보여지는 부분만 순회한다. 이를 통해 트리를 분석하는 과정을 빠르게 할 수 있다.</li>
-  <li>DOM 트리에서 눈에 보이는 노드에 대한 CSSOM 정보를 찾아 노드에 적용해 렌더트리를 만든다.
+  <li>동기적으로 실행되는 작업을 비동기적으로 만들 때 Promise를 사용해 제어할 수 있다.</li>
+  <li>
+    <p>순서 뿐만 아니라 fullfilled / rejected 콜백 함수를 통해 조건 제어도 가능하다</p>
+
+    <p>성공시) pending → fullfilled → then → finally</p>
+
+    <p>실패시) pending → rejected → catch → finally</p>
+  </li>
+  <li>프로미스를 사용하면 콜백 지옥을 해결 할 수 있다.</li>
+  <li>여러개의 프로미스를 다루는 것도 가능하다
     <ol>
-      <li>레이아웃(Reflow): 노드가 브라우저 화면에 어느 좌표에 위치해야하는지 계산하는 과정</li>
-      <li>페인팅(Repaint): 레이아웃단계를 거친 노드에 색, 이미지 같은 유효한 모습을 그리는 과정</li>
+      <li>Promise.all ⇒ 하나의 프로미스라도 실패할 경우 프로미스 체이닝 중단</li>
+      <li>Promise.allSettled ⇒ 프로미스 개별의 성공/실패 여부와 상관없이, 모든 프로미스를 실행시키고 결과를 반환</li>
+      <li>Promise.race ⇒ 프로미스 개별의 성공/실패 여부와 상관없이, 가장 먼저 실행되는 프로미스 순으로 결과를 반환</li>
     </ol>
   </li>
 </ol>
 
-<h2 id="사용자-인터렉션에-의해-dom이-변경되었을-때는-어떻게-동작할까">사용자 인터렉션에 의해 DOM이 변경되었을 때는 어떻게 동작할까?</h2>
-
-<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/cc5d46e7-ab57-462d-8b26-582a91f86f80/4de94b71-c719-428e-a646-db7dfecd76b8/Untitled.png" alt="Untitled" /></p>
-
-<p>어떠한 인터렉션에 의해 DOM에 변화가 생길 때, 브라우저는 위 과정을 반복하며 렌더 트리를 다시 만든다.</p>
-
-<ol>
-  <li>Layout부터 발생하는 경우 (Reflow): 레이아웃의 높이, 너비 등 변화</li>
-  <li>Paint부터 발생하는 경우 (Refaint): 이미지, 색상 등 변화</li>
-  <li>레이어의 합성만 다시 발생하는 경우 (Composite): transform, opacity 속성 등</li>
-</ol>
-
-<p>composite(합성) 단계는 여러 레이어로 나누어진 픽셀값들을 우리가 실제로 보는 화면처럼 합성해주는 단계이다. paint단계에서 만들어진 레이어들을 순서대로 합성해 유저에게 보여준다.</p>
-
-<p>이 과정을 이해하고 있다면 렌더링 최적화 과정을 진행할 수 있다.</p>
-
-<p>예시로 애니메이션을 구현할 때, <code class="language-plaintext highlighter-rouge">position</code>과 <code class="language-plaintext highlighter-rouge">transform</code>을 선택할 수 있는데 <code class="language-plaintext highlighter-rouge">position</code>의 경우는 layout이 변경되어 reflow단계부터 트리가 재구조화된다면, <code class="language-plaintext highlighter-rouge">transform</code>은 coposite단계부터 변화가 적용되어 레이아웃과 페인트 과정을 감소시킬 수 있기 때문이다.</p>
-
-<h2 id="왜-리액트팀은-가상-dom을-만들게-되었을까">왜 리액트팀은 가상 DOM을 만들게 되었을까?</h2>
-
-<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/cc5d46e7-ab57-462d-8b26-582a91f86f80/8c2f8bd5-c3b9-46d7-8d4c-bcb825db568b/Untitled.png" alt="Untitled" /></p>
-
-<p>과거 전통적인 웹사이트는 하나의 문서에 전달되는 정보의 양이 적었다. 그렇기 때문에 DOM이 변경되어도 서버에서 완전히 새로운 페이지를 내려주는 방법이 가능했지만, 현대 웹 사이트는 유저 인터렉션이 빈번하게 발생할 뿐더러 다뤄지는 데이터 양도 많다.</p>
-
-<p>이러한 문제를 해결하기 위해 SPA가 등장했다. SPA는 ‘단일 페이지 어플리케이션’으로 웹 사이트에서 전체 페이지를 하나의 페이지에 담아 동적으로 화면을 변경하는 기술이다. 이러한 SPA 방식은 하나의 페이지에서 모든게 이루어지기 때문에 자바스크립트에 의한 DOM 조작이 빈번하게 발생해 브라우저의 성능을 저하시킨다.</p>
-
-<p>이러한 단점을 극복하기 위해, 리액트 팀은 가상(Virtual) DOM을 만들었다. 가상 DOM의 장점은 변경된 부분만 실제 브라우저 DOM에 적용할 수 있다는 것이다. 또한, 가상 DOM은 실제 브라우저 DOM에 직접 접근하는 것이 아니라 메모리에 저장되는 객체이므로, 가상 DOM에 접근하고 수정하는 과정은 매우 빠르게 이루어진다.</p>
-
-<p>리액트는 두개의 가상 DOM을 가지고 있다.</p>
-
-<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/cc5d46e7-ab57-462d-8b26-582a91f86f80/b6f75ce8-648b-4018-9f62-e572e8335c24/Untitled.png" alt="Untitled" /></p>
-
-<ol>
-  <li>렌더링 이전 화면 구조를 나타내는 가상 DOM (Virtual DOM)</li>
-  <li>렌더링 이후 화면 구조를 나타내는 가상 DOM (New Virtual DOM)</li>
-</ol>
-
-<p><strong>Reconciliation: 재조정</strong></p>
-
-<p>리액트는 상태가 변경되어 리렌더링이 일어날 때 마다 실제 브라우저가 그려지기 전에 두개의 가상 DOM을 생성한다. 이후 diffing알고리즘을 통해 변화가 발생한 노드만 실제 브라우저 DOM에 적용한다.</p>
-
-<p><strong>Batch Update</strong></p>
-
-<p>10개의 노드가 변경 되었다고 가정했을 때, 하나씩 순서대로 적용되는 것이 아니라 변경 사항을 한번에 모아서 실제 DOM에 적용한다.</p>
-
-<h2 id="정리">정리</h2>
-
-<p>리액트 가상 DOM은 자바스크립트 객체이기 때문에 접근하고 수정하는 속도가 빨라 실제 변경된 부분을 빠르게 파악할 수 있다. 이 변경된 부분만 한번에 모아서 실제 DOM에 적용시키기 때문에 브라우저 성능도 개선할 수 있다. 다만 UI 변경이 적고 브라우저에서 보여주는 데이터가 적을 경우에는 SPA 프레임워크없이 기존 웹 사이트 개발 방식을 선택해 개발하는 것도 좋은 방법이다.</p>]]></content><author><name>수진‍ (水珍)</name></author><category term="React" /><category term="브라우저" /><category term="virtual dom" /><category term="가상돔" /><summary type="html"><![CDATA[브라우저 렌더링과 리액트 가상 돔?]]></summary></entry><entry><title type="html">[Next.js] 🚨 이벤트가 함수가 prop로 전달되지 않는 이유</title><link href="http://localhost:4000/nextjs/nextjs-event%ED%95%A8%EC%88%98%EB%8A%94-%EC%99%9C-props%EB%A1%9C-%EC%A0%84%EB%8B%AC%EB%90%98%EC%A7%80-%EC%95%8A%EC%9D%84%EA%B9%8C/" rel="alternate" type="text/html" title="[Next.js] 🚨 이벤트가 함수가 prop로 전달되지 않는 이유" /><published>2023-11-10T00:00:00+09:00</published><updated>2023-11-13T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-event%ED%95%A8%EC%88%98%EB%8A%94%20%EC%99%9C%20props%EB%A1%9C%20%EC%A0%84%EB%8B%AC%EB%90%98%EC%A7%80%20%EC%95%8A%EC%9D%84%EA%B9%8C</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-event%ED%95%A8%EC%88%98%EB%8A%94-%EC%99%9C-props%EB%A1%9C-%EC%A0%84%EB%8B%AC%EB%90%98%EC%A7%80-%EC%95%8A%EC%9D%84%EA%B9%8C/"><![CDATA[<h2 id="-문제-발생">🚨 문제 발생</h2>
-
-<p>Next.js를 사용해 프로젝트를 진행하는데 에러가 발생했다.</p>
-
-<p><img src="https://github.com/SJ0826/coding-swamp-/assets/56298540/c2095e9c-76fb-4671-aa4b-e8a4d69afa99" alt="스크린샷 2023-11-10 오전 11 04 49" /></p>
-
-<p>프로젝트 환경은 다음과 같다.</p>
+<h2 id="출처">출처</h2>
 
 <ul>
-  <li>Next.js (app routing)</li>
-  <li>TS</li>
-</ul>
-
-<p>이벤트 함수를 컴포넌트 간 props로 전달하는 과정에서 발생했다.</p>
-
-<h2 id="문제-원인">❔문제 원인</h2>
-
-<ol>
-  <li>Server Component에서 Client Component로 함수를 전달 할 수 없다.</li>
-  <li>각 컴포넌트 간 props로 전달되는 함수는 직렬화 할 수 없기 때문이다.</li>
-</ol>
-
-<p>이 때 궁금한점.</p>
-
-<ol>
-  <li>난 Client Component로 컴포넌트를 변환한 적이 없는데?</li>
-  <li>함수 직렬화가 무엇이지?</li>
-</ol>
-
-<h3 id="1-난-client-component로-컴포넌트를-변환한-적이-없는데--client-component로-실행되는-조건">1. 난 Client Component로 컴포넌트를 변환한 적이 없는데? | Client Component로 실행되는 조건</h3>
-
-<p>next.js는 따로 설정하지 않으면 기본적으로 서버 컴포넌트로 실행된다. 하지만 위와 같은 에러가 발생했고 이유를 찾아보았다.</p>
-
-<p>하위 컴포넌트인 <code class="language-plaintext highlighter-rouge">Modal.tsx</code>는 <strong>onClick 이벤트</strong>를 발생시키는 컴포넌트를 포함하고 있다. onClick 이벤트는 자바스크립트 이벤트 핸들러로 웹 브라우저 상에서 사용자에 의해 컨트롤된다.</p>
-
-<p>사용자와 상호작용하는 이벤트 핸들러는 브라우저 환경에서 실행되는 클라이언트 측 코드에서 사용되어야 한다</p>
-
-<p>⭐️ 이벤트 핸들러가 실행되는 함수는 자동으로 클라이언트 컴포넌트로 변환된다!</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyModal</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">IModal</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">isOpen</span><span class="p">,</span> <span class="nx">onRequestClose</span><span class="p">,</span> <span class="nx">contentLabel</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span> <span class="c1">// 👀</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">contentLabel</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>...모달내용...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onRequestClose</span><span class="si">}</span><span class="p">&gt;</span>닫기<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> // 👀
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>에러가 발생한 포인트는 props전달 과정에 있다. props전달 과정에서 어떤 일이 발생하길래 서버 ↔️ 클라이언트 컴포넌트 간 props를 전달 할 수 없는 것일까?</p>
-
-<h3 id="2-함수-직렬화가-무엇이지--서버-️-클라이언트-컴포넌트-간-props를-전달할-때-발생하는-일">2. 함수 직렬화가 무엇이지? | 서버 ↔️ 클라이언트 컴포넌트 간 props를 전달할 때 발생하는 일</h3>
-
-<blockquote>
-  <p>If you fetch data in a Server Component, you may want to pass data down as props to Client Components. Props passed from the Server to Client Components need to be serializable by React. by. NEXT JS 공식문서</p>
-</blockquote>
-
-<p>공식문서에서도 서버 컴포넌트가 클라이언트 컴포넌트로 데이터를 props형태로 전달할때 리액트에 의해 직렬화(serializable)되어야 한다고 말한다.</p>
-
-<p>💡 함수 직렬화란?<br />
-함수를 <strong>문자열로 변환</strong>하여 데이터를 직렬화하는 과정을 뜻한다. 자바스크립트에서는 데이터를 JSON형태로 변환하는 것을 직렬화한다고 한다.</p>
-
-<p>하지만 NEXT JS에서 서버 컴포넌트에서 클라이언트 컴포넌트로 데이터를 전달할 때 JSON으로 직렬화되지 않고 React.Element로 전달한다. <br />
-전달된 React.Elements는 리액트 컴포넌트를 표현하는 객체로, JS 기본 데이터 형식 이외에도 React에 특화된 데이터를 포함하고 있다.</p>
-
-<p>다시 한번 문제를 정리하자면 다음과 같다.</p>
-
-<ol>
-  <li>하위 컴포넌트가 이벤트 함수를 props로 전달받아 클라이언트 컴포넌트로 자동 전환되었다.</li>
-  <li>컴포넌트간 데이터를 전달할 때는 직렬화 과정이 필요한데, 이때 서버 컴포넌트에서 클라이언트 컴포넌트로 props로 전달된 데이터는 직렬화 과정을 거치지 않는다.</li>
-  <li>이 데이터는 JSON으로 직렬화 되지 않고, React.Elements로 전달되기 때문이다.</li>
-</ol>
-
-<p>이 문제를 해결하는 데에 여러 방법이 있다.</p>
-
-<h2 id="-문제-해결">🔨 문제 해결</h2>
-
-<h3 id="1-클라이언트-️-클라이언트-구조-만들기">1. 클라이언트 ↔️ 클라이언트 구조 만들기</h3>
-
-<p>서버 컴포넌트 ↔️ 클라이언트 컴포넌트 구조가 문제라면, ㅊ 구조로 바꾸는 것은 어떨까?</p>
-
-<p>이 때 사용되는 명령어는 다음과 같다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>상위 컴포넌트 파일 상단에 이 명령어를 추가하면 클라이언트 컴포넌트로 선언된다. 여기서 구분을 명확하게 하기 위해 파일 이름도 바꾸어 주면 좋다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">MyModal.tsx</code> -&gt; <code class="language-plaintext highlighter-rouge">MyModal.client.tsx</code></p>
-
-<p>여기서 또 궁금점이 생겼다.</p>
-
-<p>NEXT JS에서 상위 컴포넌트가 클라이언트 컴포넌트라면 하위 컴포넌트는 모두 클라이언트로 설정된다. 이 프로젝트의 가장 상위 컴포넌트인 <code class="language-plaintext highlighter-rouge">Page.tsx</code>에 <code class="language-plaintext highlighter-rouge">use client</code>를 추가했는데, 이러면 NEXT JS 프레임워크를 사용하는 것이 의미가 있을까?</p>
-
-<p>공식문서에 따르면 이를 해결하기 위해 react-query 같은 third-party 라이브러리 사용을 권장한다. 하지만 프로젝트가 작고 상태관리 라이브러리가 굳이 필요하지 않다면 라이브러리를 추가하지 않고 이벤트 핸들러를 props로 전달하는 경우를 최대한 지양하는 편이 좋다는 생각이 들었다.</p>
-
-<h2 id="참고">참고</h2>
-
-<ul>
-  <li>
-    <p><a href="https://stackoverflow.com/questions/76948441/passing-props-to-onclick-from-server-to-client-component-in-next13">Passing props to onClick from server to client component in Next13</a></p>
-  </li>
-  <li>
-    <p><a href="https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns">Next.js 공식문서 - composition-patterns</a></p>
-  </li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="nextjs" /><category term="props" /><category term="error" /><category term="함수의 직렬화" /><category term="서버 컴포넌트" /><category term="클라이언트 컴포넌트" /><summary type="html"><![CDATA[Event handlers cannot be passed to Client Component props]]></summary></entry></feed>
+  <li>패스트캠퍼스 강의</li>
+  <li><a href="https://joshua1988.github.io/web-development/javascript/promise-for-beginners/">캡틴판교</a></li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Promise" /><category term="비동기" /></entry></feed>
