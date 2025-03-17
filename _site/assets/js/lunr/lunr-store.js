@@ -1732,4 +1732,10 @@ var store = [{
         "tags": ["NestJS","공부"],
         "url": "/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/",
         "teaser": null
+      },{
+        "title": "[네트워크] Refresh Token을 백엔드 서버에서 관리하면 프론트엔드는 편해질까, 아니면 더 피곤해질까?",
+        "excerpt":"🍪 accessToken은 메모리에, refreshToken은 쿠키에 저장하게 된 이유  여러 프로젝트를 진행하면서 항상 JWT 토큰을 다뤄왔습니다. 그 과정에서 토큰 관리 방법이 궁금해 여러 자료를 찾아봤고, 가장 많이 추천되는 방식은 다음과 같았습니다.   ✅ Access Token → 프론트엔드의 메모리에 저장  ✅ Refresh Token → 백엔드 서버에서 HttpOnly 쿠키로 관리   이번 Rebook 프로젝트에서는 프론트엔드와 백엔드 개발을 모두 맡고 있기 때문에, 그동안 궁금했던 토큰 관리 방식을 직접 실험해볼 좋은 기회가 되었습니다.   그렇다면, 백엔드에서 Refresh Token을 쿠키로 관리하면 프론트엔드의 역할이 줄어들까? 정말 프론트엔드는 더 편해질까, 아니면 새로운 복잡함이 생길까?   토큰 관리방식에 당연히 정답은 없습니다.   다만 프로젝트를 진행하며 겪은 산전수전을 이 포스트에 풀어보려 합니다.   출처   ","categories": ["network"],
+        "tags": ["쿠키","HTTP","accessToken","refreshToken","JWT","NextJS","NestJS"],
+        "url": "/network/network-Refresh-Token%EC%9D%84-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EB%8A%94-%ED%8E%B8%ED%95%B4%EC%A7%88%EA%B9%8C,-%EC%95%84%EB%8B%88%EB%A9%B4-%EB%8D%94-%ED%94%BC%EA%B3%A4%ED%95%B4%EC%A7%88%EA%B9%8C/",
+        "teaser": null
       }]

@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-10T09:20:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-17T17:12:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[네트워크] Refresh Token을 백엔드 서버에서 관리하면 프론트엔드는 편해질까, 아니면 더 피곤해질까?</title><link href="http://localhost:4000/network/network-Refresh-Token%EC%9D%84-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EB%8A%94-%ED%8E%B8%ED%95%B4%EC%A7%88%EA%B9%8C,-%EC%95%84%EB%8B%88%EB%A9%B4-%EB%8D%94-%ED%94%BC%EA%B3%A4%ED%95%B4%EC%A7%88%EA%B9%8C/" rel="alternate" type="text/html" title="[네트워크] Refresh Token을 백엔드 서버에서 관리하면 프론트엔드는 편해질까, 아니면 더 피곤해질까?" /><published>2025-03-17T00:00:00+09:00</published><updated>2025-03-17T22:06:00+09:00</updated><id>http://localhost:4000/network/network-Refresh%20Token%EC%9D%84%20%EC%BF%A0%ED%82%A4%EC%97%90%20%EC%A0%80%EC%9E%A5?%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EB%8A%94%20%ED%8E%B8%ED%95%B4%EC%A7%88%EA%B9%8C,%20%EC%95%84%EB%8B%88%EB%A9%B4%20%EB%8D%94%20%ED%94%BC%EA%B3%A4%ED%95%B4%EC%A7%88%EA%B9%8C?</id><content type="html" xml:base="http://localhost:4000/network/network-Refresh-Token%EC%9D%84-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EB%8A%94-%ED%8E%B8%ED%95%B4%EC%A7%88%EA%B9%8C,-%EC%95%84%EB%8B%88%EB%A9%B4-%EB%8D%94-%ED%94%BC%EA%B3%A4%ED%95%B4%EC%A7%88%EA%B9%8C/"><![CDATA[<h2 id="-accesstoken은-메모리에-refreshtoken은-쿠키에-저장하게-된-이유">🍪 accessToken은 메모리에, refreshToken은 쿠키에 저장하게 된 이유</h2>
+<p>여러 프로젝트를 진행하면서 항상 JWT 토큰을 다뤄왔습니다.
+그 과정에서 <strong>토큰 관리 방법</strong>이 궁금해 여러 자료를 찾아봤고, 가장 많이 추천되는 방식은 다음과 같았습니다.</p>
+
+<p>✅ <strong>Access Token</strong> → 프론트엔드의 메모리에 저장<br />
+✅ <strong>Refresh Token</strong> → 백엔드 서버에서 HttpOnly 쿠키로 관리</p>
+
+<p>이번 Rebook 프로젝트에서는 프론트엔드와 백엔드 개발을 모두 맡고 있기 때문에,
+그동안 궁금했던 토큰 관리 방식을 직접 실험해볼 좋은 기회가 되었습니다.</p>
+
+<p>그렇다면, 백엔드에서 Refresh Token을 쿠키로 관리하면 프론트엔드의 역할이 줄어들까?
+정말 프론트엔드는 더 편해질까, 아니면 새로운 복잡함이 생길까?</p>
+
+<p>토큰 관리방식에 당연히 정답은 없습니다.</p>
+
+<p>다만 프로젝트를 진행하며 겪은 산전수전을 이 포스트에 풀어보려 합니다.</p>
+
+<h2 id="출처">출처</h2>]]></content><author><name>수진‍ (水珍)</name></author><category term="network" /><category term="쿠키" /><category term="HTTP" /><category term="accessToken" /><category term="refreshToken" /><category term="JWT" /><category term="NextJS" /><category term="NestJS" /><summary type="html"><![CDATA[rebook 프로젝트에서 accessToken은 메모리로, refreshToken은 쿠키로 관리해보고 쓰는 후기]]></summary></entry><entry><title type="html">[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/" rel="alternate" type="text/html" title="[NestJS] NestJS로 배우는 백엔드 프로그래밍 완독 후기" /><published>2025-02-09T00:00:00+09:00</published><updated>2025-02-09T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%B0%B1%EC%97%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%8A%A4%ED%84%B0%EB%94%94%20%EB%85%B8%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%84%B0%EB%94%94-%EB%85%B8%ED%8A%B8/"><![CDATA[<p><img src="/assets/image/posts/nestjs-book.jpg" alt="img.png" /></p>
 
 <h2 id="️-책을-완독하고-나서">◾️ 책을 완독하고 나서</h2>
 <p><a href="https://polyester-archduke-ab6.notion.site/NestJS-NestJS-191f73e111b3809a8d32ffa142b53c2d?pvs=4">📒노션 스터디 노트</a></p>
@@ -1133,243 +1150,4 @@ return되는 순간 함수는 종료됩니다.</p>
 <ul>
   <li>패스트캠퍼스 프론트엔드 강의</li>
   <li>모던 리액트 Deep Dive</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="함수" /><category term="호이스팅" /><summary type="html"><![CDATA[함수와 호이스팅의 상관관계]]></summary></entry><entry><title type="html">[JS] 프로미스(Promise)는 어떻게 동작할까?</title><link href="http://localhost:4000/javascript/javascript-%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4(Promise)%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C/" rel="alternate" type="text/html" title="[JS] 프로미스(Promise)는 어떻게 동작할까?" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4(Promise)%EB%8A%94%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4(Promise)%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C/"><![CDATA[<h2 id="-promise란">📄 Promise란?</h2>
-
-<p>자바스크립트를 사용한 프로젝트에서 데이터를 페칭한다면 데이터를 받아오기도 전에 마치 데이터를 받아온 것처럼 화면에 데이터가 표시되고 에러가 발생합니다.</p>
-
-<p>이는 <strong>자바스크립트의 이벤트루프</strong>가 동작하여 <strong>동기적으로 코드가 실행</strong>되기 때문입니다.</p>
-
-<p>필요한 데이터를 모두 받아온 후 나머지 로직이 실행되게 만들고 싶을 때, 즉 로직을 <strong>비동기로 동작하게 할 때 Promise를 사용</strong>합니다.</p>
-
-<p>Promise는 자바스크립트 <strong>ES6</strong>부터 추가된 내장 객체로 비교적 최근에 생성되었습니다.</p>
-
-<h2 id="-promise-처리-흐름">📄 promise 처리 흐름</h2>
-
-<h3 id="1-프로미스가-생성자를-통해-pending대기-상태로-생성된다">1. 프로미스가 생성자를 통해 Pending(대기) 상태로 생성된다.</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span> <span class="c1">//pending</span>
-</code></pre></div></div>
-
-<h3 id="2-promise의-executorresolve-reject함수의-인자를-통해-순서를-제어한다">2. Promise의 executor(resolve, reject)함수의 인자를 통해 순서를 제어한다.</h3>
-
-<p><span style="color:#357ABD">resolve()</span>가 실행되는 경우 → 프로미스가 <span style="color:#357ABD">fulfilled(이행)</span> 상태가 됩니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// pending상태</span>
-  <span class="c1">// ... 비동기적인 상황이 되는 처리가 벌어짐.</span>
-  <span class="nx">resolve</span><span class="p">();</span> <span class="c1">// fulfilled</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<p><span style="color:#FF6B6B">reject()</span>가 실행되는 경우 → 프로미스가 <span style="color:#FF6B6B">rejected(거부)</span> 상태가 됩니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// pending상태</span>
-  <span class="nx">reject</span><span class="p">();</span> <span class="c1">//rejected</span>
-<span class="p">});</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<p>프로미스가 실행되는 조건에 따라 이후 실행되는 로직을 결정할 수 있습니다.</p>
-
-<ul>
-  <li><span style="color:#357ABD">resolve()</span>가 실행되는 경우 → <span style="color:#357ABD">fulfilled</span> 상태가 되어 <span style="color:#357ABD">.then</span> 콜백 함수 실행</li>
-  <li><span style="color:#FF6B6B">reject()</span>가 실행되는 경우 → <span style="color:#FF6B6B">rejected</span> 상태가 되어 <span style="color:#FF6B6B">.catch</span> 콜백 함수 실행</li>
-</ul>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myPromise</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">성공:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">실패:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<p><span style="color:#FF6B6B">reject()</span> 함수를 이용해 구체적인 <strong>에러핸들링</strong>도 가능합니다. 보통 reject 함수를 실행하여 rejected 되는 이유를 넘기는데, 표준 내장 객체인 Error의 생성자를 이용해 Error 객체를 만들 수 있습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">bad</span><span class="dl">'</span><span class="p">));</span>
-<span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{...});</span> 
-</code></pre></div></div>
-
-<h3 id="3-최종으로-실행되는-로직의-경우-finally를-설정해-실행한다">3. 최종으로 실행되는 로직의 경우 finally를 설정해 실행한다.</h3>
-
-<p>프로미스 객체가 fulfilled(이행)되거나 rejected 되고 나서 가장 마지막으로 실행되어야 하는 작업이 있다면 finally 콜백함수를 설정합니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myPromise</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">성공:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">실패:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">finally</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">finally 블록 실행: 작업 종료 후 항상 실행됩니다.</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<h2 id="-callback-vs-promise">📄 Callback vs Promise</h2>
-<p>콜백함수도 비동기 작업을 할 수 있습니다. <br />
-콜백 함수를 사용할 때 함수가 많아질 경우 유명한 콜백 지옥에 빠지게 되어 한눈에 봐도 불안한 모습이 됩니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">c</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">callback</span><span class="p">();</span>
-  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">1000ms 후에 callback 함수가 실행됩니다.</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">c</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">3000ms 후에 callback 함수가 실행됩니다</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
-<span class="p">});</span> <span class="c1">//callback hell (콜백 지옥)</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<p>이런 경우 <strong>프로미스 체이닝 (Promise Chaning)</strong>을 통해 콜백 지옥을 해결 할 수 있습니다. 콜백 함수보다 가독성이 좋습니다.</p>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">p</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">();</span>
-    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-
-<span class="nx">p</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">p</span><span class="p">();</span> <span class="c1">// 다시 새로운 프로미스 객체를 만들어서 리턴한다.</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">p</span><span class="p">())</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">4000ms 후에 fulfilled 됩니다.</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">});</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="-여러개의-promise프로미스-객체를-다루는-경우">📄 여러개의 Promise(프로미스) 객체를 다루는 경우</h2>
-
-<p>여러개의 프로미스를 다룰 때는 <strong>배열</strong>을 통해 다룰 수 있습니다.</p>
-
-<h3 id="1-promiseall">1. Promise.all</h3>
-
-<p>프로미스 객체들을 배열에 저장해 순차적으로 실행하는 경우에 Promise.all을 사용합니다. <br />
-Promise.all은 <strong>모든 프로미스가 fulfilled</strong> 되었을 경우, 각 프로미스의 결과를 배열에 담아 리턴합니다.<br />
-Promise.all에 전달되는 <strong>프로미스 중 하나라도 거부되면</strong>, Promise.all이 반환하는 프로미스는 <strong>에러</strong>와 함께 바로 거부됩니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2">에서 가져온 데이터`</span><span class="p">;</span>
-        <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-      <span class="p">},</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2000</span><span class="p">);</span> <span class="c1">// 랜덤한 시간 후에 데이터를 반환</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-
-<span class="c1">// 프로미스 객체들을 배열로 저장</span>
-<span class="kd">const</span> <span class="nx">promises</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="nx">fetchData</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com/data1</span><span class="dl">'</span><span class="p">),</span>
-  <span class="nx">fetchData</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com/data2</span><span class="dl">'</span><span class="p">),</span>
-  <span class="nx">fetchData</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com/data3</span><span class="dl">'</span><span class="p">)</span>
-<span class="p">];</span>
-
-<span class="k">try</span> <span class="p">{</span>
-	<span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">promises</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">모든 데이터를 성공적으로 가져왔습니다:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">results</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">데이터를 가져오는 도중 오류가 발생했습니다:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h3 id="2-promiseallsettled">2. Promise.allSettled</h3>
-
-<p>Promise.all의 프로미스 객체들이 하나라도 실패했을 경우 바로 프로미스 체인을 중단한다면, Promise.allSettled 는 <strong>이행/실패 여부와 상관없이</strong> 모든 프로미스 객체를 실행합니다.<br />
-이후 각 프로미스의 결과에 대한 정보를 담은 배열을 리턴합니다. 여러개의 작업을 병렬로 실행하고 각 작업의 성공 또는 실패 여부를 알아야 할 때 유용합니다.</p>
-
-<ul>
-  <li>응답이 성공할 경우
-    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nl">status</span><span class="p">:</span><span class="dl">"</span><span class="s2">fulfilled</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span><span class="p">:</span><span class="nx">result</span><span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>에러가 발생한 경우
-    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nl">status</span><span class="p">:</span><span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span><span class="p">,</span> <span class="nx">reason</span><span class="p">:</span><span class="nx">error</span><span class="p">}</span>
-</code></pre></div>    </div>
-    <p><br /></p>
-  </li>
-</ul>
-
-<p>promise.allSettled 는 다음과 같이 활용할 수 있습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">urls</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="dl">"</span><span class="s2">https://api.github.com/users/iliakan</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">https://api.github.com/users/Violet-Bora-Lee</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">https://no-such-url</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">];</span>
-
-<span class="nb">Promise</span><span class="p">.</span><span class="nx">allSettled</span><span class="p">(</span><span class="nx">urls</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">))).</span><span class="nx">then</span><span class="p">((</span><span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">results</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">result</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">fulfilled</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">urls</span><span class="p">[</span><span class="nx">num</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">urls</span><span class="p">[</span><span class="nx">num</span><span class="p">]}</span><span class="s2">: </span><span class="p">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">reason</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h3 id="3-promiserace">3. Promise.race</h3>
-
-<p>Promise.race 는 <strong>가장 먼저 종료(fullfilled 또는 rejected)된</strong> 프로미스 객체의 결과 또는 에러를 반환합니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">promise1</span><span class="p">,</span> <span class="nx">promise2</span><span class="p">,</span> <span class="nx">promise3</span><span class="p">])</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">가장 빠른 프로미스 결과:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">가장 빠른 프로미스 에러:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-  <span class="p">});</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<h2 id="-정리">📝 정리</h2>
-
-<ol>
-  <li>동기적으로 실행되는 작업을 비동기적으로 만들 때 Promise를 사용해 제어할 수 있다.</li>
-  <li>
-    <p>순서 뿐만 아니라 fullfilled / rejected 콜백 함수를 통해 조건 제어도 가능하다</p>
-
-    <p>성공시) pending → fullfilled → then → finally</p>
-
-    <p>실패시) pending → rejected → catch → finally</p>
-  </li>
-  <li>프로미스를 사용하면 콜백 지옥을 해결 할 수 있다.</li>
-  <li>여러개의 프로미스를 다루는 것도 가능하다
-    <ol>
-      <li>Promise.all ⇒ 하나의 프로미스라도 실패할 경우 프로미스 체이닝 중단</li>
-      <li>Promise.allSettled ⇒ 프로미스 개별의 성공/실패 여부와 상관없이, 모든 프로미스를 실행시키고 결과를 반환</li>
-      <li>Promise.race ⇒ 프로미스 개별의 성공/실패 여부와 상관없이, 가장 먼저 실행되는 프로미스 순으로 결과를 반환</li>
-    </ol>
-  </li>
-</ol>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li>패스트캠퍼스 강의</li>
-  <li><a href="https://joshua1988.github.io/web-development/javascript/promise-for-beginners/">캡틴판교</a></li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Promise" /><category term="비동기" /></entry></feed>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="함수" /><category term="호이스팅" /><summary type="html"><![CDATA[함수와 호이스팅의 상관관계]]></summary></entry></feed>
