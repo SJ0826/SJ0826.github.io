@@ -104,6 +104,33 @@
   crossorigin="anonymous"
 ></script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const publicKey = "yFHv6kAxv7FZoGRXLFPHZfU1pLhtSlyUYkOetVXr6T6b0cCXWvVCLeI8CLKCeUaX"; // ← 여기에 본인의 public key 입력
+        const forum = "sj0826-github-io";
+
+        fetch(`https://disqus.com/api/3.0/forums/listPosts.json?forum=${forum}&api_key=${publicKey}&related=thread`)
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            const list = document.getElementById("latest-comments-list");
+            list.innerHTML = "";
+            data.response.slice(0, 5).forEach(comment => {
+              const li = document.createElement("li");
+              li.innerHTML = `
+            <a href="${comment.thread.link}#comment-${comment.id}" target="_blank">
+              <strong>${comment.author.name}</strong>: ${comment.message.slice(0, 40)}...
+            </a>
+          `;
+              list.appendChild(li);
+            });
+          })
+          .catch(err => {
+            document.getElementById("latest-comments-list").innerHTML = "<li>댓글을 불러오지 못했어요 😥</li>";
+            console.error("댓글 불러오기 실패:", err);
+          });
+      });
+    </script>
   </head>
 
   <body class="layout--single">
@@ -381,6 +408,14 @@
 </nav>
     
   
+    <!-- 🔽 Disqus 최신 댓글 위젯 시작 -->
+    <div class="widget latest-comments">
+      <h3 class="widget-title">💬 최신 댓글</h3>
+      <ul id="latest-comments-list">
+        <li>불러오는 중...</li>
+      </ul>
+    </div>
+    <!-- 🔼 Disqus 최신 댓글 위젯 끝 -->
   </div>
 
 
@@ -639,7 +674,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-      <a href="/network/network-Refresh-Token%EC%9D%84-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EB%8A%94-%ED%8E%B8%ED%95%B4%EC%A7%88%EA%B9%8C,-%EC%95%84%EB%8B%88%EB%A9%B4-%EB%8D%94-%ED%94%BC%EA%B3%A4%ED%95%B4%EC%A7%88%EA%B9%8C/" rel="permalink"><p>[네트워크] RefreshToken을 왜 쿠키에 저장해야할까?</a>
+      <a href="/network/network-RefreshToken%EC%9D%84-%EC%99%9C-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C/" rel="permalink"><p>[네트워크] RefreshToken을 왜 쿠키에 저장해야할까?</a>
       
     </h2>
     

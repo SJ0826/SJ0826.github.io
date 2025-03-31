@@ -179,3 +179,23 @@ code, pre {
 .archive .list__item {
   padding-top: 8px;
 }
+
+
+.latest-comments {
+  margin-top: 2rem;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      a {
+        text-decoration: none;
+        color: #444;
+        &:hover {
+          color: #007acc;
+        }
+      }
+    }
+  }
+}
