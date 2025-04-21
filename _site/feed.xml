@@ -1,4 +1,264 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-31T09:13:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[네트워크] RefreshToken을 왜 쿠키에 저장해야할까?</title><link href="http://localhost:4000/network/network-RefreshToken%EC%9D%84-%EC%99%9C-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C/" rel="alternate" type="text/html" title="[네트워크] RefreshToken을 왜 쿠키에 저장해야할까?" /><published>2025-03-17T00:00:00+09:00</published><updated>2025-03-18T22:06:00+09:00</updated><id>http://localhost:4000/network/network-RefreshToken%EC%9D%84%20%EC%99%9C%20%EC%BF%A0%ED%82%A4%EC%97%90%20%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C</id><content type="html" xml:base="http://localhost:4000/network/network-RefreshToken%EC%9D%84-%EC%99%9C-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C/"><![CDATA[<h2 id="-accesstoken은-메모리에-refreshtoken은-쿠키에-저장하게-된-이유">🍪 accessToken은 메모리에, refreshToken은 쿠키에 저장하게 된 이유</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-21T09:31:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/" rel="alternate" type="text/html" title="[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유" /><published>2025-04-21T00:00:00+09:00</published><updated>2025-04-21T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C%20Socket.IO%20%EC%97%B0%EA%B2%B0%20%EC%8B%9C%20404%20%EC%97%90%EB%9F%AC%EA%B0%80%20%EB%B0%9C%EC%83%9D%ED%95%9C%20%EC%9D%B4%EC%9C%A0</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/"><![CDATA[<h2 id="️문제-상황">◾️문제 상황</h2>
+
+<p><a href="https://github.com/SJ0826/rebook-api">rebook 프로젝트</a>에서 NestJS + Socket.IO로 실시간 채팅을 구현하려던 도중, <br />클라이언트에서 WebSocket 연결이 안되고 다음과 같은 에러가 발생했습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET <span class="o">{</span>SERVER_URL<span class="o">}</span>/socket.io/?EIO<span class="o">=</span>4&amp;transport<span class="o">=</span>polling 404 <span class="o">(</span>Not Found<span class="o">)</span>
+</code></pre></div></div>
+<p><br />
+WebSocket 연결 전 polling 요청이 404로 실패하면서 웹소켓 연결 자체가 이루어지지 않았습니다.</p>
+
+<h2 id="-문제-원인">◾ 문제 원인</h2>
+
+<p>404에러 이길래 처음에는 네임스페이스 및 경로 설정 문제인 줄 알았습니다.</p>
+
+<p>Socket.IO는 내부적으로 <strong>HTTP 핸드셰이크를 위해 /socket.io 경로에 polling 요청</strong>을 먼저 보냅니다.</p>
+
+<p>하지만 NestJS는 기본적으로 이 경로를 인식하지 않으며 IoAdapter을 통해 Socket.IO를 Express 서버에 붙여줘야 정상적으로 작동합니다.</p>
+
+<p><strong>💾 ws.adapter.ts</strong></p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">SocketIoAdapter</span> <span class="kd">extends</span> <span class="nx">IoAdapter</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="nx">app</span><span class="p">:</span> <span class="nx">INestApplication</span><span class="p">,</span> <span class="c1">// NestApplication 객체</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="nx">config</span><span class="p">:</span> <span class="nx">ConfigService</span><span class="p">,</span> <span class="c1">// ConfigService</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">();</span> <span class="c1">// ⚠️ HTTP 서버 인스턴스를 super에 전달하지 않았음</span>
+  <span class="p">}</span>
+
+  <span class="nx">createIOServer</span><span class="p">(</span><span class="nx">portOrServer</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="nx">options</span><span class="p">?:</span> <span class="nx">ServerOptions</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">serverArg</span> <span class="o">=</span>
+      <span class="k">typeof</span> <span class="nx">portOrServer</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">number</span><span class="dl">'</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="nx">portOrServer</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">partialOpts</span><span class="p">:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">ServerOptions</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">cors</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">origin</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">CLIENT_URL</span><span class="dl">'</span><span class="p">)</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="nx">serverArg</span>
+      <span class="p">?</span> <span class="k">super</span><span class="p">.</span><span class="nx">createIOServer</span><span class="p">(</span><span class="nx">serverArg</span><span class="p">,</span> <span class="nx">partialOpts</span> <span class="k">as</span> <span class="nx">ServerOptions</span><span class="p">)</span>
+      <span class="p">:</span> <span class="k">super</span><span class="p">.</span><span class="nx">createIOServer</span><span class="p">(</span><span class="nx">portOrServer</span><span class="p">,</span> <span class="nx">partialOpts</span> <span class="k">as</span> <span class="nx">ServerOptions</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<ul>
+  <li>문제: SocketIoAdapter에서 super()만 호출하고 httpServer를 넘기지 않음</li>
+  <li>결과: /socket.io 핸들러가 Express에 등록되지 않아 polling 요청시 404에러가 발생함</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="️-해결-방법">◾️ 해결 방법</h2>
+
+<h3 id="1-어댑터에-httpserver-전달">1. 어댑터에 httpServer 전달</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">SocketIoAdapter</span> <span class="kd">extends</span> <span class="nx">IoAdapter</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="nx">app</span><span class="p">:</span> <span class="nx">INestApplication</span><span class="p">,</span> <span class="c1">// NestApplication 객체</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="nx">config</span><span class="p">:</span> <span class="nx">ConfigService</span><span class="p">,</span> <span class="c1">// ConfigService</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getHttpServer</span><span class="p">());</span> <span class="c1">// ✅️ HTTP 서버 인스턴스를 super에 전달</span>
+  <span class="p">}</span>
+
+  <span class="nx">createIOServer</span><span class="p">(</span><span class="nx">portOrServer</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="nx">options</span><span class="p">?:</span> <span class="nx">ServerOptions</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">serverArg</span> <span class="o">=</span>
+      <span class="k">typeof</span> <span class="nx">portOrServer</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">number</span><span class="dl">'</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="nx">portOrServer</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">partialOpts</span><span class="p">:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">ServerOptions</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">cors</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">origin</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">CLIENT_URL</span><span class="dl">'</span><span class="p">)</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="nx">serverArg</span>
+      <span class="p">?</span> <span class="k">super</span><span class="p">.</span><span class="nx">createIOServer</span><span class="p">(</span><span class="nx">serverArg</span><span class="p">,</span> <span class="nx">partialOpts</span> <span class="k">as</span> <span class="nx">ServerOptions</span><span class="p">)</span>
+      <span class="p">:</span> <span class="k">super</span><span class="p">.</span><span class="nx">createIOServer</span><span class="p">(</span><span class="nx">portOrServer</span><span class="p">,</span> <span class="nx">partialOpts</span> <span class="k">as</span> <span class="nx">ServerOptions</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h3 id="2-maints에-어댑터-등록">2. main.ts에 어댑터 등록</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">bootstrap</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">ConfigService</span><span class="p">);</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">enableCors</span><span class="p">({</span>
+    <span class="na">origin</span><span class="p">:</span> <span class="nx">config</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">CLIENT_URL</span><span class="dl">'</span><span class="p">),</span>
+    <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">});</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">useWebSocketAdapter</span><span class="p">(</span><span class="k">new</span> <span class="nx">SocketIoAdapter</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="nx">configService</span><span class="p">));</span>
+
+  <span class="k">await</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>httpServer을 제대로 전달해주고나자 polling -&gt; WebSocket 순으로 요청이 성공했습니다.</p>
+
+<p><br /></p>
+
+<h2 id="️-polling---websocket-핸드-셰이크-구조">📖️ polling -&gt; WebSocket 핸드 셰이크 구조</h2>
+
+<h3 id="️-polling---websocket-핸드-셰이크란-">↔️ polling -&gt; WebSocket 핸드 셰이크란 ?</h3>
+<ul>
+  <li>Socket.IO 연결 구조의 핵심 개념</li>
+  <li>WebSocket 연결전 서버와 먼저 HTTP로 연결하고, 그 다음 Websocket으로 업그레이드 하는 과정</li>
+</ul>
+
+<p><strong>📌 Socket.IO의 연결 과정</strong></p>
+<ol>
+  <li>클라이언트가 먼저 polling 방식으로 서버에 연결 시도</li>
+  <li>서버가 응답하고, 클라이언트와 서버가 서로 연결 확인</li>
+  <li>연결이 확인되면, HTTP연결을 Websocket으로 업그레이드</li>
+</ol>
+
+<p><strong>📌 Socket.IO가 핸드셰이크를 사용하는 이유</strong></p>
+<ul>
+  <li>Websocket을 지원하지 않는 네트워크/브라우저 환경이 아직 존재</li>
+  <li>최초연결은 HTTP로 시작해서 WebSocket 연결 가능성을 판단</li>
+</ul>
+
+<h2 id="️전체-코드">◾️전체 코드</h2>
+<h3 id="️-서버측-코드-nestjs">☑️ 서버측 코드 (NestJS)</h3>
+
+<p><strong>💾 chat.gateway.ts</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">WebSocketGateway</span><span class="p">({</span>
+  <span class="na">cors</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">origin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">{CLIENT_URL}</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">methods</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">allowedHeaders</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p><strong>💾 ws.adapter.ts</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">IoAdapter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@nestjs/platform-socket.io</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">INestApplication</span><span class="p">,</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@nestjs/common</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ServerOptions</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">socket.io</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ConfigService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@nestjs/config</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// ws 연결 프론트 서버 주소를 동적으로 연결해준다.(dev/prod 구분)</span>
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">SocketIoAdapter</span> <span class="kd">extends</span> <span class="nx">IoAdapter</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="nx">app</span><span class="p">:</span> <span class="nx">INestApplication</span><span class="p">,</span> <span class="c1">// NestApplication 객체</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="nx">config</span><span class="p">:</span> <span class="nx">ConfigService</span><span class="p">,</span> <span class="c1">// ConfigService</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getHttpServer</span><span class="p">());</span> <span class="c1">// ⚠️ HTTP 서버 인스턴스를 super에 전달</span>
+  <span class="p">}</span>
+
+  <span class="nx">createIOServer</span><span class="p">(</span><span class="nx">portOrServer</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="nx">options</span><span class="p">?:</span> <span class="nx">ServerOptions</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">serverArg</span> <span class="o">=</span>
+      <span class="k">typeof</span> <span class="nx">portOrServer</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">number</span><span class="dl">'</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="nx">portOrServer</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">partialOpts</span><span class="p">:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">ServerOptions</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">cors</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">origin</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">CLIENT_URL</span><span class="dl">'</span><span class="p">)</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="nx">serverArg</span>
+      <span class="p">?</span> <span class="k">super</span><span class="p">.</span><span class="nx">createIOServer</span><span class="p">(</span><span class="nx">serverArg</span><span class="p">,</span> <span class="nx">partialOpts</span> <span class="k">as</span> <span class="nx">ServerOptions</span><span class="p">)</span>
+      <span class="p">:</span> <span class="k">super</span><span class="p">.</span><span class="nx">createIOServer</span><span class="p">(</span><span class="nx">portOrServer</span><span class="p">,</span> <span class="nx">partialOpts</span> <span class="k">as</span> <span class="nx">ServerOptions</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>💾 main.ts</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">bootstrap</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">ConfigService</span><span class="p">);</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">enableCors</span><span class="p">({</span>
+    <span class="na">origin</span><span class="p">:</span> <span class="nx">config</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">CLIENT_URL</span><span class="dl">'</span><span class="p">),</span>
+    <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">});</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">useWebSocketAdapter</span><span class="p">(</span><span class="k">new</span> <span class="nx">SocketIoAdapter</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="nx">config</span><span class="p">));</span>
+
+  <span class="k">await</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="️-클라이언트측-코드-nextjs">☑️ 클라이언트측 코드 (NextJS)</h3>
+
+<p><strong>💾 useChat.ts</strong></p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useRef</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">io</span><span class="p">,</span> <span class="nx">Socket</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">socket.io-client</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ChatMessage</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/types/chat</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">getChatMessages</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/lib/api/chat</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useAuth</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/hooks/useAuth</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">useChat</span><span class="p">(</span>
+  <span class="nx">chatRoomId</span><span class="p">:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">onMessagesLoaded</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Dispatch</span><span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">SetStateAction</span><span class="o">&lt;</span><span class="nx">ChatMessage</span><span class="p">[]</span><span class="o">&gt;&gt;</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">accessToken</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useAuth</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">socketRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="o">&lt;</span><span class="nx">Socket</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">chatRoomId</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="c1">// 1. 기존 메세지 조회</span>
+    <span class="kd">const</span> <span class="nx">loadMessages</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getChatMessages</span><span class="p">(</span><span class="nx">chatRoomId</span><span class="p">);</span>
+        <span class="nx">onMessagesLoaded</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">메세지 조회 실패</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="c1">// 2. 소켓 연결 및 방 입장</span>
+    <span class="kd">const</span> <span class="nx">connectSocket</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">🔄 소켓 연결 시도:</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">chatRoomId</span><span class="p">,</span> <span class="na">token</span><span class="p">:</span> <span class="o">!!</span><span class="nx">accessToken</span> <span class="p">});</span>
+
+      <span class="nx">socketRef</span><span class="p">.</span><span class="nx">current</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:4000</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">transports</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">websocket</span><span class="dl">'</span><span class="p">],</span>
+        <span class="na">withCredentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">auth</span><span class="p">:</span> <span class="p">{</span> <span class="na">token</span><span class="p">:</span> <span class="nx">accessToken</span> <span class="p">},</span>
+      <span class="p">});</span>
+
+      <span class="nx">socketRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">connect</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">✅ 소켓 연결 성공!</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">socketRef</span><span class="p">.</span><span class="nx">current</span><span class="p">?.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">joinRoom</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">chatRoomId</span> <span class="p">});</span>
+      <span class="p">});</span>
+
+      <span class="nx">socketRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">connect_error</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">❌ 소켓 연결 오류:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+      <span class="p">});</span>
+
+      <span class="c1">// 메세지 수신</span>
+      <span class="nx">socketRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">newMessage</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="na">message</span><span class="p">:</span> <span class="nx">ChatMessage</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">📩 새 메시지 수신:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">message</span><span class="p">);</span>
+        <span class="nx">onMessagesLoaded</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">message</span><span class="p">]);</span>
+      <span class="p">});</span>
+    <span class="p">};</span>
+
+    <span class="nx">loadMessages</span><span class="p">();</span>
+    <span class="nx">connectSocket</span><span class="p">();</span>
+
+    <span class="c1">// cleanup</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">socketRef</span><span class="p">.</span><span class="nx">current</span><span class="p">?.</span><span class="nx">disconnect</span><span class="p">();</span>
+    <span class="p">};</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">chatRoomId</span><span class="p">,</span> <span class="nx">onMessagesLoaded</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="Socket.io" /><category term="adapter" /><category term="rebook" /><summary type="html"><![CDATA[NestJS에서 Socket.IO을 연결할 때는 IoAdapter을 통해 httpServer을 전달해주자]]></summary></entry><entry><title type="html">[네트워크] RefreshToken을 왜 쿠키에 저장해야할까?</title><link href="http://localhost:4000/network/network-RefreshToken%EC%9D%84-%EC%99%9C-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C/" rel="alternate" type="text/html" title="[네트워크] RefreshToken을 왜 쿠키에 저장해야할까?" /><published>2025-03-17T00:00:00+09:00</published><updated>2025-03-18T22:06:00+09:00</updated><id>http://localhost:4000/network/network-RefreshToken%EC%9D%84%20%EC%99%9C%20%EC%BF%A0%ED%82%A4%EC%97%90%20%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C</id><content type="html" xml:base="http://localhost:4000/network/network-RefreshToken%EC%9D%84-%EC%99%9C-%EC%BF%A0%ED%82%A4%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C/"><![CDATA[<h2 id="-accesstoken은-메모리에-refreshtoken은-쿠키에-저장하게-된-이유">🍪 accessToken은 메모리에, refreshToken은 쿠키에 저장하게 된 이유</h2>
 <p>여러 프로젝트를 진행하면서 항상 JWT 토큰을 다뤄왔습니다.
 그 과정에서 <strong>토큰 관리 방법</strong>이 궁금해 여러 자료를 찾아봤고, 가장 많이 추천되는 방식은 다음과 같았습니다.</p>
 
@@ -1053,195 +1313,4 @@ dynamic import는 컴포넌트 외부에서 선언해야합니다.</p>
 <ul>
   <li><a href="https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns">Next.js 공식 문서 - Server and Client Composition Patterns</a></li>
   <li>Next.js + ReactQuery로 SNS 서비스 만들기 (인프런)</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="middleware" /><category term="서버 컴포넌트" /><summary type="html"><![CDATA[클라이언트 컴포넌트로 서버 컴포넌트를 감싸보자]]></summary></entry><entry><title type="html">[JS] JavaScript의 다양한 함수 형태</title><link href="http://localhost:4000/javascript/js-function/" rel="alternate" type="text/html" title="[JS] JavaScript의 다양한 함수 형태" /><published>2024-03-10T00:00:00+09:00</published><updated>2024-03-10T22:06:00+09:00</updated><id>http://localhost:4000/javascript/js-function</id><content type="html" xml:base="http://localhost:4000/javascript/js-function/"><![CDATA[<h2 id="-자바스크립의-함수">📄 자바스크립의 함수</h2>
-
-<p>함수는 특정한 작업을 수행하는 과정을 표현하고, 하나의 블록으로 감싸 실행단위로 만들어 놓은 것입니다. <br />
-다음은 함수의 기본적 형태입니다. 함수의 결과 값을 나타낼 때는 return이라는 키워드를 사용합니다. return되는 순간 함수는 종료됩니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="nx">sum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h2 id="-선언방법">📄 선언방법</h2>
-
-<p>함수를 선언할 때는 function이라는 키워드를 사용합니다.
-함수의 결과 값을 나타낼 때는 return이라는 키워드를 사용합니다.
-return되는 순간 함수는 종료됩니다.</p>
-
-<p><strong>💡  매개변수와 인수</strong> <br /></p>
-<ul>
-  <li>공통점: 함수에 넘겨주는 값</li>
-  <li>차이점:
-    <ul>
-      <li>매개변수: 함수를 선언할 때 받는 입력값</li>
-      <li>인수: 함수를 호출할 때 받는 입력값</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="-함수를-정의하는-방법">📄 함수를 정의하는 방법</h2>
-
-<h3 id="1-함수-선언문">1. 함수 선언문</h3>
-
-<p>함수 선언문을 사용할 때는 <strong>function</strong>이라는 키워드를 사용해 이름을 붙여서 선언합니다.<br />
-가장 기본적인 함수를 사용하는 방법입니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// add라는 이름의 함수에 파라미터값으로 a와 b를 받아서, a + b의 결과값을 return시키는 함수.</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<h3 id="2-함수-표현식-익명함수">2. 함수 표현식 (익명함수)</h3>
-
-<p>함수 표현식은 함수의 이름을 만들어주지 않고 <strong>특정 변수에 함수를 할당</strong>하는 방식입니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">hello1</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello1</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">};</span>
-
-</code></pre></div></div>
-<p><br /></p>
-
-<p>자바스크립트에서 함수는 일급 객체입니다. 따라서 함수를 변수에 할당하는 것이 가능합니다.</p>
-
-<p><strong>💡 [일급 객체란?]</strong></p>
-<ol>
-  <li>변수에 할당할 수 있어야 합니다.</li>
-  <li>인자로 전달할 수 있어야 합니다.</li>
-  <li>다른 함수의 반환값으로 사용할 수 있어야 합니다.</li>
-</ol>
-
-<p><br /></p>
-
-<h3 id="2-1-함수-선언문과-함수-표현식의-차이점">2-1. 함수 선언문과 함수 표현식의 차이점</h3>
-
-<p>함수 선언문은 호출문이 먼저 나와있어도 문제없이 실행되지만, 함수 표현식은 호출문이 먼저 나오면 에러가 발생합니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">hello1</span><span class="p">();</span> <span class="c1">// 함수 선언문은 호출이 먼저 나와있어도 문제없이 실행.</span>
-<span class="nx">hello2</span><span class="p">();</span> <span class="c1">// 함수 표현식은 호출이 먼저나오면 문제 발생</span>
-<span class="kd">function</span> <span class="nx">hello1</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">//선언적 함수</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello1</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">var</span> <span class="nx">hello2</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello2</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">};</span>
-
-</code></pre></div></div>
-
-<p>⬇️ 결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TypeError: hello2 is not a function
-</code></pre></div></div>
-
-<p>이는 <strong>호이스팅</strong>으로 발생하는 이슈입니다.<br />
-호이스팅은 함수에 대한 선언을 실행하기 이전에 미리 메모리에 등록하는 작업입니다. 함수 선언문은 호이스팅으로 인해 실행 이전 메모리에 저장되어 코드 순서에 영향을 받지 않고 실행됩니다.<br />
-위 코드에서 hello2는 var에 할당되었는데, var는 호이스팅이 되는 시점에 undefined로 초기화되어 타입에러가 발생한 것입니다.</p>
-
-<p><br /></p>
-
-<h3 id="3-function-생성자">3. Function 생성자</h3>
-
-<p>Function 생성자는 <strong>new 키워드</strong>를 통해 함수를 생성합니다.<br />
-함수의 블록을 모두 문자열로 작성해야 하기 때문에 현재는 잘 사용하지 않는 방법입니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">return a + b;</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h3 id="4-화살표-함수-arrow-function">4. 화살표 함수 (Arrow Function)</h3>
-
-<p>화살표 함수는 <strong>ES6문법</strong>에서 소개되었습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>화살표 함수의 특징은 다음과 같습니다.</p>
-
-<ol>
-  <li>contructor를 사용할 수 없다.</li>
-  <li>arguments가 존재하지 않는다.</li>
-  <li>함수 자체에 this를 바인딩하지 않고 상위 스코프의 this를 따르게 된다.</li>
-</ol>
-
-<p><br /></p>
-
-<h2 id="-다양한-함수의-형태">📄 다양한 함수의 형태</h2>
-
-<h3 id="1-즉시-실행-함수">1. 즉시 실행 함수</h3>
-
-<p>즉시 실행함수는 함수를 정의할 때 바로 실행되는 함수입니다.<br />
-컴포넌트에 처음 렌더링될때 이외에 실행될 필요가 없는 함수를 useEffect대신 사용하기 좋을 것 같다는 생각이 들었습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 기본적인 즉시 실행 함수의 형태</span>
-<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">이 함수는 즉시 실행됩니다!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">})();</span>
-
-<span class="c1">// 매개변수 전달 가능한 즉시 실행 함수</span>
-<span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">안녕하세요, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">님!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">})(</span><span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">// 반환값을 활용한 즉시 실행 함수</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">})(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// 출력: 7</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<h3 id="2-고차-함수">2. 고차 함수</h3>
-
-<p>자바스크립트의 함수는 일급함수라는 특징을 통해 고차 함수로 사용할 수 있습니다.<br />
-따라서 고차함수는 함수를 인자로 받고 함수를 반환할 수 있다는 특징을 가지고 있습니다. 보통 배열 내장함수를 통해 고차 함수를 사용합니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">newArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">item</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-<span class="p">});</span> <span class="c1">// [2, 4, 6] 출력</span>
-
-</code></pre></div></div>
-<p><br /></p>
-
-<h2 id="-정리">📝 정리</h2>
-
-<ul>
-  <li>함수: 특정한 작업을 수행하는 하나의 블록</li>
-  <li>정의 방법
-    <ul>
-      <li>함수 선언문
-        <ul>
-          <li>가장 기본적인 방법</li>
-        </ul>
-      </li>
-      <li>함수 표현식
-        <ul>
-          <li>var을 사용할 경우 호이스팅 이슈가 있다. const, let을 사용할 경우 호이스팅은 발생하지만 TDZ(Temporal Dead Zone)에 빠져 변수에 접근할 때 에러가 발생한다.</li>
-        </ul>
-      </li>
-      <li>Funtion 생성자</li>
-      <li>화살표 함수 (ES6)
-        <ul>
-          <li>ES6에서 새로 추가된 문법</li>
-          <li>함수 자체가 아닌 상위 스코프의 this를 바인딩한다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>다양한 함수 사용방법으로 즉시 실행함수, 고차함수가 있다.</li>
-</ul>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li>패스트캠퍼스 프론트엔드 강의</li>
-  <li>모던 리액트 Deep Dive</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="함수" /><category term="호이스팅" /><summary type="html"><![CDATA[함수와 호이스팅의 상관관계]]></summary></entry></feed>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="middleware" /><category term="서버 컴포넌트" /><summary type="html"><![CDATA[클라이언트 컴포넌트로 서버 컴포넌트를 감싸보자]]></summary></entry></feed>
