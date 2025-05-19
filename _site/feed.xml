@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-21T09:31:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/" rel="alternate" type="text/html" title="[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유" /><published>2025-04-21T00:00:00+09:00</published><updated>2025-04-21T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C%20Socket.IO%20%EC%97%B0%EA%B2%B0%20%EC%8B%9C%20404%20%EC%97%90%EB%9F%AC%EA%B0%80%20%EB%B0%9C%EC%83%9D%ED%95%9C%20%EC%9D%B4%EC%9C%A0</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/"><![CDATA[<h2 id="️문제-상황">◾️문제 상황</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-19T23:19:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드</title><link href="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/" rel="alternate" type="text/html" title="[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드" /><published>2025-05-19T00:00:00+09:00</published><updated>2025-05-19T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80%20EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C%20CORS%20%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90%20%EA%B0%87%ED%98%94%EB%8D%98%20%EC%9D%B4%EC%9C%A0(%EB%8A%94%20NginX)</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/"><![CDATA[<p><img src="/assets/image/nginx.png" alt="image" /></p>
+
+<h2 id="-배경">◾ 배경</h2>
+<p>이전에 회사에서 NextJS 프로젝트를 EC2 서버에 배포하며 고생했던 경험이 있습니다. 
+이번에는 NestJS 라고 별거 있겠냐며 겁나는 마음을 속이며 배포를 진행하게 되었고, 그때 나를 힘들게 했던 NGINX라는 친구와 다시 만나게 되었습니다.</p>
+
+<p>그렇게 다시 혼쭐이나면서 겪었던 과정을 남겨봅니다.</p>
+
+<h2 id="-내가-nginx를-선택한-이유---https-통신을-하기-위해서">◾ 내가 NGINX를 선택한 이유 - HTTPS 통신을 하기 위해서</h2>
+<p>Rebook 프로젝트의 프론트엔드 서버는 AWS Amplify를 통해 간편하게 배포했습니다.
+Amplify는 모든 배포 도메인에 <strong>HTTPS가 적용된 보안 인증서</strong>를 기본 제공합니다.</p>
+
+<p>반면, 백엔드 서버는 EC2를 사용했으며, 별도의 설정 없이 기본적으로 <strong>HTTP 도메인</strong>만 제공합니다.</p>
+
+<p>이 때, 프론트엔드 서버와 백엔드 서버 사이에는 Mixed Content 에러가 발생합니다.</p>
+
+<h4 id="mixed-content-에러란">📚Mixed Content 에러란?</h4>
+
+<ul>
+  <li>HTTPS 페이지에서 HTTP 리소스를 요청할 때 발생하는 보안 에러</li>
+  <li>암호화되지 않은 데이터 전송으로 보안 위협이 발생할 수 있어, 브라우저가 요청 자체를 차단함</li>
+  <li>해결 방법
+    <ul>
+      <li>도메인을 발급하고, SSL 인증서를 적용해 백엔드 서버도 HTTPS로 통신하도록 설정하자!</li>
+    </ul>
+  </li>
+</ul>
+
+<p>NestJS에서도 SSL 인증서를 다룰 수 있지만, 역할을 구분하고 서버에 가해지는 부담을 감소하기 위해 NGINX를 도입했습니다.</p>
+
+<h4 id="-nginx의-역할">📚 NGINX의 역할</h4>
+<ul>
+  <li>SSL 인증서 관리
+    <ul>
+      <li>Let’s Encrypt 같은 무료 인증서를 자동으로 갱신</li>
+      <li>인증서의 암호화/복호화</li>
+    </ul>
+  </li>
+  <li>인프라 관리 표준 패턴 사용 (TLS Termination)</li>
+  <li>간편한 포트 관리 및 리버스 프록시
+    <ul>
+      <li>NGINX가 80/443 포트에서 요청을 받고, 내부적으로 NestJS 서버로 프록시 요청을 전달함.</li>
+      <li>NestJS 서버 포트 노출 없이 보안성과 유연성 확보</li>
+    </ul>
+  </li>
+</ul>
+
+<p>그렇게 NGINX의 설정까지 마친 저는 두가지 CORS에러를 마주하게 됩니다.</p>
+
+<h2 id="-프리플라이트options-요청-실패">◾ 프리플라이트(OPTIONS) 요청 실패</h2>
+
+<h4 id="문제-상황">📝문제 상황</h4>
+
+<ul>
+  <li>본 요청 성공적으로 도달하기 전에, 프리플라이트 요청이 404응답으로 돌아옵니다.</li>
+</ul>
+
+<p><img src="/assets/image/posts/cors-option.png" alt="image" /></p>
+
+<h4 id="문제-원인">📝문제 원인</h4>
+
+<p>문제의 원인을 찾고자 NGINX 테스트를 진행합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@ip-[<span class="s2">"be 서버 도메인"</span><span class="o">]</span>:~/rebook-api<span class="nv">$ </span><span class="nb">sudo </span>nginx <span class="nt">-t</span>
+2025/05/17 09:43:14 <span class="o">[</span>warn] 75575#75575: conflicting server name <span class="s2">"be 서버 도메인"</span> on 0.0.0.0:80, ignored // ✅
+2025/05/17 09:43:14 <span class="o">[</span>warn] 75575#75575: conflicting server name <span class="s2">"be 서버 도메인"</span> on 0.0.0.0:443, ignored // ✅
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf <span class="nb">test </span>is successful
+</code></pre></div></div>
+<p><br /></p>
+
+<p><strong>80 포트와 443 포트에서 충돌</strong>이 나서 요청이 무시되었다는 메세지를 확인했습니다.
+이 설정을 작성한 NGINX 설정파일을 확인합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@ip-172-31-13-63:~/rebook-api<span class="nv">$ </span><span class="nb">sudo ls</span> <span class="nt">-l</span> /etc/nginx/sites-enabled/
+total 0
+lrwxrwxrwx 1 root root 34 May 15 09:46 default -&gt; /etc/nginx/sites-available/default
+lrwxrwxrwx 1 root root 33 May 17 07:35 rebook -&gt; /etc/nginx/sites-available/rebook
+</code></pre></div></div>
+
+<p>기본(default)설정 파일에 80/443 포트용 server 블록이 중복 선언되어, HTTPS 요청은 수신되지만 실제 처리를 못했습니다.</p>
+
+<p>즉, 백엔드 도메인을 처리하는 <strong>server 블록이 동일 포트(80/443)에서 두 개 이상 선언</strong>되어 충돌이 발생했던 것입니다.</p>
+
+<h4 id="문제-해결">📝문제 해결</h4>
+
+<p><code class="language-plaintext highlighter-rouge">/etc/nginx/sites-available/default</code>을 디렉터리 내에서 제거하고, 오직 <strong>하나의 서버 블록에서만 80/443 요청을 처리</strong>하도록 했습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@ip-[<span class="s2">"be 서버 도메인"</span><span class="o">]</span>:~/rebook-api<span class="nv">$ </span><span class="nb">sudo </span>nginx <span class="nt">-t</span>
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf <span class="nb">test </span>is successful 
+</code></pre></div></div>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="NGINX" /><category term="PM2" /><category term="EC2" /><category term="AWS" /><summary type="html"><![CDATA[대체 왜 프로젝트에 요청은 들어오는데, 브라우저는 CORS 에러를 보여주는거야!]]></summary></entry><entry><title type="html">[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/" rel="alternate" type="text/html" title="[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유" /><published>2025-04-21T00:00:00+09:00</published><updated>2025-04-21T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C%20Socket.IO%20%EC%97%B0%EA%B2%B0%20%EC%8B%9C%20404%20%EC%97%90%EB%9F%AC%EA%B0%80%20%EB%B0%9C%EC%83%9D%ED%95%9C%20%EC%9D%B4%EC%9C%A0</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/"><![CDATA[<h2 id="️문제-상황">◾️문제 상황</h2>
 
 <p><a href="https://github.com/SJ0826/rebook-api">rebook 프로젝트</a>에서 NestJS + Socket.IO로 실시간 채팅을 구현하려던 도중, <br />클라이언트에서 WebSocket 연결이 안되고 다음과 같은 에러가 발생했습니다.</p>
 
@@ -1261,56 +1352,4 @@ dynamic import는 컴포넌트 외부에서 선언해야합니다.</p>
 
 <ul>
   <li>Next.js + ReactQuery로 SNS 서비스 만들기 (인프런)</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="MSW" /><category term="Mock" /><summary type="html"><![CDATA[프론트 작업을 완료했는데 백엔드 API 작업이 늦어질 때]]></summary></entry><entry><title type="html">[Next.js] 클라이언트 컴포넌트에서 서버 컴포넌트 유지하는 방법</title><link href="http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/" rel="alternate" type="text/html" title="[Next.js] 클라이언트 컴포넌트에서 서버 컴포넌트 유지하는 방법" /><published>2024-04-01T00:00:00+09:00</published><updated>2024-04-01T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%84%9C%EB%B2%84%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%A0%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/"><![CDATA[<h2 id="-클라이언트-컴포넌트-내에서-서버-컴포넌트-다루기">📄 클라이언트 컴포넌트 내에서 서버 컴포넌트 다루기</h2>
-
-<p>컴포넌트를 구현할 때마다 여러 난관에 부딪힌 경험이 있습니다.</p>
-
-<p>서버 컴포넌트를 작성한 후에도 이벤트 리스너를 추가하거나 훅을 적용해야 하는 경우, 결국 클라이언트 컴포넌트로 전환해야 했습니다.</p>
-
-<p>여러가지 방법을 찾아보다가 클라이언트 컴포넌트 내부에서도 서버 컴포넌트를 충분히 활용할 수 있다는 점을 발견했습니다.</p>
-
-<h3 id="-서버-컴포넌트를-children으로-받아오기">◾ 서버 컴포넌트를 children으로 받아오기</h3>
-
-<p>단순한 방법이지만 큰 차이였습니다. 
-<strong>import</strong>문으로 컴포넌트를 서버 컴포넌트를 가져오면 클라이언트 컴포넌트로 자동 변환됩니다.</p>
-
-<p>서버 컴포넌트를 <strong>children</strong>으로 받아오면 클라이언트 컴포넌트를 유지하면서 서버컴포넌트를 사용할 수 있습니다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use client</span><span class="dl">'</span>
- 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
- 
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">ClientComponent</span><span class="p">({</span>
-  <span class="nx">children</span><span class="p">,</span>
-<span class="p">}:</span> <span class="p">{</span>
-  <span class="nl">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span>
-<span class="p">})</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
- 
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">ClientComponent</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./client-component</span><span class="dl">'</span>
-<span class="k">import</span> <span class="nx">ServerComponent</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./server-component</span><span class="dl">'</span>
- 
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">ClientComponent</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">ServerComponent</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="sr">/ClientComponent</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>이렇게 하면 굳이 전체 컴포넌트를 클라이언트 컴포넌트로 전환할 필요 없이 서버 컴포넌트를 children으로 전달하여 활용할 수 있습니다.</p>
-
-<h2 id="참고">참고</h2>
-<ul>
-  <li><a href="https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns">Next.js 공식 문서 - Server and Client Composition Patterns</a></li>
-  <li>Next.js + ReactQuery로 SNS 서비스 만들기 (인프런)</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="middleware" /><category term="서버 컴포넌트" /><summary type="html"><![CDATA[클라이언트 컴포넌트로 서버 컴포넌트를 감싸보자]]></summary></entry></feed>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="MSW" /><category term="Mock" /><summary type="html"><![CDATA[프론트 작업을 완료했는데 백엔드 API 작업이 늦어질 때]]></summary></entry></feed>
