@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-19T23:19:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드</title><link href="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/" rel="alternate" type="text/html" title="[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드" /><published>2025-05-19T00:00:00+09:00</published><updated>2025-05-19T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80%20EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C%20CORS%20%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90%20%EA%B0%87%ED%98%94%EB%8D%98%20%EC%9D%B4%EC%9C%A0(%EB%8A%94%20NginX)</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/"><![CDATA[<p><img src="/assets/image/nginx.png" alt="image" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-22T00:04:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드</title><link href="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/" rel="alternate" type="text/html" title="[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드" /><published>2025-05-19T00:00:00+09:00</published><updated>2025-05-19T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80%20EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C%20CORS%20%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90%20%EA%B0%87%ED%98%94%EB%8D%98%20%EC%9D%B4%EC%9C%A0(%EB%8A%94%20NginX)</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/"><![CDATA[<p><img src="/assets/image/nginx.png" alt="image" /></p>
 
 <h2 id="-배경">◾ 배경</h2>
 <p>이전에 회사에서 NextJS 프로젝트를 EC2 서버에 배포하며 고생했던 경험이 있습니다. 
@@ -14,7 +14,7 @@ Amplify는 모든 배포 도메인에 <strong>HTTPS가 적용된 보안 인증�
 
 <p>이 때, 프론트엔드 서버와 백엔드 서버 사이에는 Mixed Content 에러가 발생합니다.</p>
 
-<h4 id="mixed-content-에러란">📚Mixed Content 에러란?</h4>
+<h3 id="mixed-content-에러란">📚Mixed Content 에러란?</h3>
 
 <ul>
   <li>HTTPS 페이지에서 HTTP 리소스를 요청할 때 발생하는 보안 에러</li>
@@ -28,7 +28,7 @@ Amplify는 모든 배포 도메인에 <strong>HTTPS가 적용된 보안 인증�
 
 <p>NestJS에서도 SSL 인증서를 다룰 수 있지만, 역할을 구분하고 서버에 가해지는 부담을 감소하기 위해 NGINX를 도입했습니다.</p>
 
-<h4 id="-nginx의-역할">📚 NGINX의 역할</h4>
+<h3 id="-nginx의-역할">📚 NGINX의 역할</h3>
 <ul>
   <li>SSL 인증서 관리
     <ul>
@@ -49,7 +49,7 @@ Amplify는 모든 배포 도메인에 <strong>HTTPS가 적용된 보안 인증�
 
 <h2 id="-프리플라이트options-요청-실패">◾ 프리플라이트(OPTIONS) 요청 실패</h2>
 
-<h4 id="문제-상황">📝문제 상황</h4>
+<h3 id="문제-상황">📝문제 상황</h3>
 
 <ul>
   <li>본 요청 성공적으로 도달하기 전에, 프리플라이트 요청이 404응답으로 돌아옵니다.</li>
@@ -57,7 +57,7 @@ Amplify는 모든 배포 도메인에 <strong>HTTPS가 적용된 보안 인증�
 
 <p><img src="/assets/image/posts/cors-option.png" alt="image" /></p>
 
-<h4 id="문제-원인">📝문제 원인</h4>
+<h3 id="문제-원인">📝문제 원인</h3>
 
 <p>문제의 원인을 찾고자 NGINX 테스트를 진행합니다.</p>
 
@@ -82,14 +82,210 @@ lrwxrwxrwx 1 root root 33 May 17 07:35 rebook -&gt; /etc/nginx/sites-available/r
 
 <p>즉, 백엔드 도메인을 처리하는 <strong>server 블록이 동일 포트(80/443)에서 두 개 이상 선언</strong>되어 충돌이 발생했던 것입니다.</p>
 
-<h4 id="문제-해결">📝문제 해결</h4>
+<h3 id="문제-해결">📝문제 해결</h3>
 
 <p><code class="language-plaintext highlighter-rouge">/etc/nginx/sites-available/default</code>을 디렉터리 내에서 제거하고, 오직 <strong>하나의 서버 블록에서만 80/443 요청을 처리</strong>하도록 했습니다.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@ip-[<span class="s2">"be 서버 도메인"</span><span class="o">]</span>:~/rebook-api<span class="nv">$ </span><span class="nb">sudo </span>nginx <span class="nt">-t</span>
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf <span class="nb">test </span>is successful 
-</code></pre></div></div>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="NGINX" /><category term="PM2" /><category term="EC2" /><category term="AWS" /><summary type="html"><![CDATA[대체 왜 프로젝트에 요청은 들어오는데, 브라우저는 CORS 에러를 보여주는거야!]]></summary></entry><entry><title type="html">[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/" rel="alternate" type="text/html" title="[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유" /><published>2025-04-21T00:00:00+09:00</published><updated>2025-04-21T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C%20Socket.IO%20%EC%97%B0%EA%B2%B0%20%EC%8B%9C%20404%20%EC%97%90%EB%9F%AC%EA%B0%80%20%EB%B0%9C%EC%83%9D%ED%95%9C%20%EC%9D%B4%EC%9C%A0</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/"><![CDATA[<h2 id="️문제-상황">◾️문제 상황</h2>
+nginx: configuration file /etc/nginx/nginx.conf <span class="nb">test </span>is successful // 테스트 성공
+</code></pre></div></div>
+
+<h2 id="-nestjs-서버서-요청을-수행하지만-브라우저에는-cors-응답이-떨어져요">◾ NestJS 서버서 요청을 수행하지만 브라우저에는 CORS 응답이 떨어져요</h2>
+<p>이 에러는 처음에 원인을 짐작조차 하지 못했습니다.</p>
+<ul>
+  <li>Status Code:  200 OK</li>
+  <li>Response: CORS ERROR</li>
+</ul>
+
+<p><img src="/assets/image/posts/cors-header-setting.png" alt="image" /></p>
+
+<p>http-filter 설정도 다시 보고, CORS 설정도 다시 봤지만 문제가 되는 부분은 없었습니다.</p>
+
+<h3 id="문제-원인-1">📝문제 원인</h3>
+
+<p>스크린샷을 자세히 보면 응답 헤더에 <strong>Access-Control-Allow-Origin 헤더</strong>가 없습니다.</p>
+
+<p>정리하자면 이렇습니다.</p>
+
+<ol>
+  <li>서버 - 요청을 정상 처리</li>
+  <li>브라우저 응답에 CORS 헤더가 없어서 응답 무효 처리</li>
+</ol>
+
+<p>NestJS가 정상 응답을 보냈지만, <strong>NGINX에서 Access-Control-Allow-Origin 헤더 설정을 하지 않아 브라우저가 해당 응답을 차단</strong>했습니다.
+NGINX를 설정할 때는 주로 백엔드로 들어오는 요청만 고려했지만, 실제로는 브라우저가 응답의 헤더도 검사하기 때문에, 응답에 대한 CORS 설정 또한 반드시 필요하다는 사실을 놓치고 있었습니다.</p>
+
+<h3 id="문제-해결-1">📝문제 해결</h3>
+
+<p>이 문제는 NGINX에서 모든 응답에 CORS 허용 헤더를 추가하며 해결할 수 있었습니다.</p>
+
+<p><strong>💾 /etc/nginx/sites-available/rebook</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+location / <span class="o">{</span>
+    add_header <span class="s1">'Access-Control-Allow-Origin'</span> <span class="s1">'[프론트 서버 도메인]'</span> always<span class="p">;</span>  // 특정 도메인에 한해 허용
+    add_header <span class="s1">'Access-Control-Allow-Credentials'</span> <span class="s1">'true'</span> always<span class="p">;</span>
+    add_header <span class="s1">'Access-Control-Allow-Headers'</span> <span class="s1">'Content-Type, Authorization'</span> always<span class="p">;</span>
+    add_header <span class="s1">'Access-Control-Allow-Methods'</span> <span class="s1">'GET, POST, PUT, PATCH, DELETE, OPTIONS'</span> always<span class="p">;</span> // 모든 메서드 허용
+
+    <span class="k">if</span> <span class="o">(</span><span class="nv">$request_method</span> <span class="o">=</span> <span class="s1">'OPTIONS'</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return </span>204<span class="p">;</span>
+    <span class="o">}</span>
+
+    proxy_pass http://localhost:4000<span class="p">;</span>
+    proxy_http_version 1.1<span class="p">;</span>
+    proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+    proxy_set_header Connection <span class="s1">'upgrade'</span><span class="p">;</span>
+    proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>
+    proxy_cache_bypass <span class="nv">$http_upgrade</span><span class="p">;</span>
+<span class="o">}</span>
+...
+</code></pre></div></div>
+
+<h2 id="-간단-회고">◾ 간단 회고</h2>
+
+<p>NGINX를 처음 회사에서 설정할 때는 인프라에 대해 거의 알지 못하던 상태였습니다.
+당시 맨몸으로 부딪히며 작업했던 경험이 이번 프로젝트에 상당한 도움이 되었습니다.</p>
+
+<p>인프라는 처음 접하면 어렵지만, 작업을 하나하나 직접 연결해 흐름이 완성되는 것을 보면 속이 시원합니다.
+오늘의 경험이 또 미래에서 헤매고 있는 저에게 도움이 되길 바랍니다.</p>
+
+<h2 id="-추가-ec2--nestjs-간단간단-배포-가이드-명령어-위주">🐞 (추가) EC2 + NestJS 간단간단 배포 가이드 (명령어 위주)</h2>
+
+<h3 id="a-ec2-서버-설정하기-aws-ec2-서버-생성-생략">A. EC2 서버 설정하기 (AWS EC2 서버 생성 생략)</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>우분투 기준입니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>✅ STEP 01.  EC2 인스턴스 접근 <br /></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/.ssh
+<span class="nv">$ </span>ssh <span class="nt">-i</span> <span class="s2">"public ip 주소"</span>
+</code></pre></div></div>
+
+<p>✅ STEP 02.  프로젝트 디렉터리 소유자 변경 <br /></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nt">-R</span> ubuntu:ubuntu <span class="o">[</span>프로젝트 경로]
+</code></pre></div></div>
+<ul>
+  <li>root(기존 소유자)에서 ubuntu로 변경</li>
+</ul>
+
+<p>✅ STEP 03.  ecosystem.config.js 생성 <br /></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">apps</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">rebook-api</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 애플리케이션 이름</span>
+      <span class="na">script</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./dist/src/main.js</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 실행할 파일</span>
+      <span class="na">instances</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 싱글 인스턴스 실행 (다중 실행 시 cluster 모드 사용)</span>
+      <span class="na">autorestart</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 크래시 발생 시 자동 재시작</span>
+      <span class="na">watch</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 코드 변경 감지 비활성화 (개발 모드에서는 true 가능)</span>
+      <span class="na">max_memory_restart</span><span class="p">:</span> <span class="dl">'</span><span class="s1">300M</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 메모리 초과 시 재시작</span>
+      <span class="na">env</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// 💡 기본값 (개발 환경)</span>
+        <span class="na">NODE_ENV</span><span class="p">:</span> <span class="dl">'</span><span class="s1">development</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">env_production</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// 💡 --env production 사용 시 적용 (운영 환경)</span>
+        <span class="na">NODE_ENV</span><span class="p">:</span> <span class="dl">'</span><span class="s1">production</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>⭐️ PM2로 프로젝트를 실행할 때는, <a href="https://pm2.keymetrics.io/docs/usage/environment/">환경변수를 ecosystem에 작성</a>합니다. 다만, github에서는 중요한 정보가 숨겨져야 하기 때문에 EC2서버에서 직접 설정합니다.</p>
+
+<h3 id="b-nginx-설치--ssl-인증서-발급">B. NGINX 설치 &amp; SSL 인증서 발급</h3>
+
+<p>[📚 NGINX 사용 목적] <br />
+▪︎ <strong>HTTPS 요청을 수신</strong> - NGINX가 443 포트에서 브라우저의 요청을 수신 후, Let’s Encrypt SSL 인증서를 보여준다.<br />
+▪︎ <strong>TLS 핸드셰이크</strong> - 브라우저가 공개키로 정보를 암호화해서 보내면 NGINX가 개인키로 복호화한다<br />
+▪︎ <strong>복호화된 HTTP 요청을 NestJS 서버로 전달</strong> - HTTPS로 받은 요청을 HTTP로 변환해서 내부 NestJS 서버에 보낸다.<br />
+▪︎ <strong>HTTP → HTTPS 리다이렉트</strong> - 80포트로 HTTP 요청이 들어오면, NGINX가 자동으로 HTTPS로 리다이렉트한다.<br /></p>
+
+<p>✅ STEP 01.  NGINX 설치</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update <span class="c"># apt: ubuntu 명령어 실행 도구</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt intall nginx <span class="nt">-y</span>
+
+<span class="nv">$ </span><span class="nb">sudo </span>systemctl start nginx <span class="c"># (nginx 실행)</span>
+<span class="nv">$ </span><span class="nb">sudo </span>systemctl <span class="nb">enable </span>nginx <span class="c"># (부팅시 nginx 자동 실행)</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>✅ STEP 02. SSL 인증서 발급</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>certbot python3-certbot-nginx <span class="nt">-y</span>
+<span class="nv">$ </span><span class="nb">sudo </span>nginx <span class="nt">-t</span> <span class="c"># (NGINX 설정 테스트)</span>
+<span class="nv">$ </span><span class="nb">sudo </span>systemctl reload nginx <span class="c"># (변경된 설정 적용)</span>
+<span class="nv">$ </span>curl <span class="nt">-I</span> <span class="o">[</span>백엔드 도메인 주소] <span class="c"># (HTTPS 정상 동작 테스트)</span>
+<span class="nv">$ </span><span class="nb">sudo </span>systemctl <span class="nb">enable </span>certbot timer <span class="c"># (SSL 인증서 자동 갱신 설정)</span>
+</code></pre></div></div>
+<p>▪︎ certbot: 무료 SSL 인증서를 발급받고 자동으로 NGINX에 적용. 인증서 발급 도구.<br />
+▪︎ python3-certbot-nginx: NGINX와 certbot을 연동하는 플러그인<br />
+▪︎ -y: 설치 중 사용자 확인 생략하고 자동 진행<br /></p>
+
+<h3 id="c-nginx-ssl-reverse-proxy-설정">C. NGINX SSL Reverse Proxy 설정</h3>
+
+<p>✅ STEP 01. NGINX 설정파일 생성</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano /etc/nginx/sites-available/[생성할 설정파일 명]
+</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>💾 /etc/nginx/sites-available/[생성할 설정파일 명]
+
+<span class="c"># HTTP 요청은 무조건 HTTPS로 리다이렉트</span>
+
+server <span class="o">{</span>
+    listen 80<span class="p">;</span>
+    server_name www.rebook.p-e.kr<span class="p">;</span>
+
+    <span class="k">return </span>301 https://<span class="nv">$host$request_uri</span><span class="p">;</span>
+<span class="o">}</span>
+
+<span class="c"># HTTPS 처리 서버 블록</span>
+server <span class="o">{</span>
+    listen 443 ssl<span class="p">;</span>
+    server_name <span class="o">[</span>백엔드 서버 도메인 주소]<span class="p">;</span>
+
+    ssl_certificate /etc/letsencrypt/live/www.rebook.p-e.kr/fullchain.pem<span class="p">;</span>
+    ssl_certificate_key /etc/letsencrypt/live/www.rebook.p-e.kr/privkey.pem<span class="p">;</span>
+    ssl_protocols TLSv1.2 TLSv1.3<span class="p">;</span>
+    ssl_ciphers HIGH:!aNULL:!MD5<span class="p">;</span>
+
+    location / <span class="o">{</span>
+        <span class="c"># ✅ 모든 응답에 CORS 헤더 추가 </span>
+        add_header <span class="s1">'Access-Control-Allow-Origin'</span> <span class="s1">'[프론트 서버 도메인 주소]'</span> always<span class="p">;</span>
+        add_header <span class="s1">'Access-Control-Allow-Credentials'</span> <span class="s1">'true'</span> always<span class="p">;</span>
+        add_header <span class="s1">'Access-Control-Allow-Headers'</span> <span class="s1">'Content-Type, Authorization'</span> always<span class="p">;</span>
+        add_header <span class="s1">'Access-Control-Allow-Methods'</span> <span class="s1">'GET, POST, PUT, PATCH, DELETE, OPTIONS'</span> always<span class="p">;</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="nv">$request_method</span> <span class="o">=</span> <span class="s1">'OPTIONS'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return </span>204<span class="p">;</span>
+       <span class="o">}</span>
+
+        proxy_pass http://localhost:4000<span class="p">;</span>  <span class="c"># NestJS 서버</span>
+        proxy_http_version 1.1<span class="p">;</span>
+        proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+        proxy_set_header Connection <span class="s1">'upgrade'</span><span class="p">;</span>
+        proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>
+        proxy_cache_bypass <span class="nv">$http_upgrade</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>✅ STEP 02. NGINX 심볼링 링크 설정</p>
+
+<p>[📚 NGINX 심볼릭 링크 사용 목적] <br />
+▪︎ /etc/nginx/sites-available/ : 설정 파일 보관소 (실제 내용 작성) <br />
+▪︎ /etc/nginx/sites-enabled/ : NGINX가 실제로 읽어들이는 활성 설정 <br />
+▪︎ 장점: 프로젝트별로 설정을 만들어두고 필요할 때만 심볼릭 링크로 필요할 때만 on/off 가능</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /etc/nginx/sites-available/[프로젝트 이름] /etc/nginx/sites-enabled/[프로젝트 이름]
+</code></pre></div></div>
+<p><br /></p>]]></content><author><name>수진‍ (水珍)</name></author><category term="NestJS" /><category term="NestJS" /><category term="NGINX" /><category term="PM2" /><category term="EC2" /><category term="AWS" /><summary type="html"><![CDATA[대체 왜 백엔드 서버에서 요청은 수행하는데, 브라우저는 CORS 에러를 보여주는거야!]]></summary></entry><entry><title type="html">[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유</title><link href="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/" rel="alternate" type="text/html" title="[NestJS] NestJS에서 Socket.IO 연결 시 404 에러가 발생하는 이유" /><published>2025-04-21T00:00:00+09:00</published><updated>2025-04-21T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C%20Socket.IO%20%EC%97%B0%EA%B2%B0%20%EC%8B%9C%20404%20%EC%97%90%EB%9F%AC%EA%B0%80%20%EB%B0%9C%EC%83%9D%ED%95%9C%20%EC%9D%B4%EC%9C%A0</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-NestJS%EC%97%90%EC%84%9C-Socket.IO-%EC%97%B0%EA%B2%B0-%EC%8B%9C-404-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0/"><![CDATA[<h2 id="️문제-상황">◾️문제 상황</h2>
 
 <p><a href="https://github.com/SJ0826/rebook-api">rebook 프로젝트</a>에서 NestJS + Socket.IO로 실시간 채팅을 구현하려던 도중, <br />클라이언트에서 WebSocket 연결이 안되고 다음과 같은 에러가 발생했습니다.</p>
 
