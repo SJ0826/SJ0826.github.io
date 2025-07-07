@@ -8,6 +8,17 @@
 
 /* http://www.456bereastreet.com/archive/200711/screen_readers_sometimes_ignore_displaynone/ */
 
+.strong {
+  font-weight: bold;
+
+  &--orange {
+    color: orange;
+  }
+
+  &--blue {
+    color: #007BFF; // 혹은 원하는 파랑 컬러
+  }
+}
 .hidden,
 .is--hidden {
   display: none;

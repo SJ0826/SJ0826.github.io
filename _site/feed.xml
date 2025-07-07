@@ -1,4 +1,300 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-22T00:04:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드</title><link href="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/" rel="alternate" type="text/html" title="[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드" /><published>2025-05-19T00:00:00+09:00</published><updated>2025-05-19T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80%20EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C%20CORS%20%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90%20%EA%B0%87%ED%98%94%EB%8D%98%20%EC%9D%B4%EC%9C%A0(%EB%8A%94%20NginX)</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/"><![CDATA[<p><img src="/assets/image/nginx.png" alt="image" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-07-07T11:24:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[Next.js 15] TanStack Query로 SSR 데이터 처리하기 (with HydrationBoundary)</title><link href="http://localhost:4000/nextjs/nextjs-TanStack-Query%EB%A1%9C-SSR-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-(with-HydrationBoundary)/" rel="alternate" type="text/html" title="[Next.js 15] TanStack Query로 SSR 데이터 처리하기 (with HydrationBoundary)" /><published>2025-07-07T00:00:00+09:00</published><updated>2025-07-07T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-TanStack%20Query%EB%A1%9C%20SSR%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0%20(with%20HydrationBoundary)</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-TanStack-Query%EB%A1%9C-SSR-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-(with-HydrationBoundary)/"><![CDATA[<h1 id="-목표">◾ 목표</h1>
+
+<p>이 포스팅은 Next.js App Router 환경에서 TanStack Query의 HydrationBoundary를 이용해 SSR 데이터를 처리하는 전체 흐름을 소개합니다. <br />
+클라이언트 렌더링만 사용하던 기존 방식에서 벗어나, <span class="highlight-orange">서버에서 데이터를 미리 가져오고 클라이언트는 이를 캐싱하여 바로 렌더링</span>하는 구조를 만들어봅니다.
+<br />
+<br /></p>
+
+<h1 id="-기술-스택">◾ 기술 스택</h1>
+<p>•	Next.js 14 (App Router 기반) <br />
+•	Axios  <br />
+•	TanStack Query (@tanstack/react-query)  <br />
+•	TypeScript  <br /></p>
+
+<p><br /></p>
+
+<h1 id="-hydrationboundary가-왜-필요할까">◾ HydrationBoundary가 왜 필요할까?</h1>
+
+<p>React Query는 <span class="highlight-orange">클라이언트에서 동일한 데이터를 다시 요청하지 않고,</span> 서버에서 미리 패치한 데이터를 <span class="highlight-orange">캐시에 미리 넣어주는 작업</span>이 필요합니다. <br />
+그 역할을 하는 것이 HydrationBoundary 입니다.</p>
+
+<h2 id="️-작동방식-요약">📌️ 작동방식 요약</h2>
+<ol>
+  <li>서버에서 queryClient.prefetchQuery() 로 데이터 요청</li>
+  <li>dehydrate()로 클라이언트로 전달할 상태 객체 생성</li>
+  <li>HydrationBoundary가 해당 상태를 클라이언트의 캐시에 주입</li>
+  <li>클라이언트에서는 useQuery() 호출 시 이미 캐시된 데이터 반환 -&gt; 네트워크 요청 X</li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="️-hydrationboundary를-사용해야-하는-상황">◾️ HydrationBoundary를 사용해야 하는 상황</h1>
+
+<ol>
+  <li>SSR에서 데이터를 미리 패치하고 싶을 때
+    <ul>
+      <li>페이지가 서버에서 렌더링 되기 전에 데이터를 미리 불러오고 싶을 때</li>
+      <li>서버에서 prefetchQuery() -&gt; 클라이언트에선 useQuery() 호출 시 <span class="highlight-orange">자동 캐시 활용</span></li>
+      <li>ex) 검색 결과 페이지, 뉴스 목록, 블로그 글 등 SEO가 중요한 콘텐츠</li>
+    </ul>
+  </li>
+  <li>CSR 컴포넌트와 SSR 데이터를 함께 쓰고 싶을 때
+    <ul>
+      <li>페이지 전체는 서버에서 렌더링 하되, 일부 컴포넌트는 CSR(‘use client’)로 만들어야 하는 경우</li>
+      <li>이때 HydrationBoundary로 데이터를 감싸면 클라이언트 컴포넌트에서도 서버에서 받아온 데이터를 그대로 재사용 가능</li>
+      <li>CSR 컴포넌트가 클라이언트에서 <span class="highlight-orange">불필요한 API 재호출 없이 즉시 렌더링</span></li>
+    </ul>
+  </li>
+  <li>네트워크 요청을 줄이고 싶을 때
+    <ul>
+      <li>CSR에서는 useQuery()가 매번 실행되므로, 네트워크 요청이 많아질 수 있음</li>
+      <li>서버에서 한번 요청하고 클라이언트에 하이드레이션하면 <span class="highlight-orange">중복 요청 방지</span></li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="-장점-요약">◾ 장점 요약</h1>
+<ul>
+  <li>퍼포먼스: CSR에서 API 요청하지 않아도 됨 (빠른 렌더링)</li>
+  <li>SEO 최적화: SSR로 HTML에 데이터 포함되어 전송</li>
+  <li>코드 분리: 데이터 fetch는 서버, 화면 렌더링은 클라이언트로 분리 가능</li>
+  <li>캐시 공유: SSR -&gt; CSR로 TanStack Query 캐시 자동 연결</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="-직접-구현하기">◾ 직접 구현하기</h1>
+
+<h2 id="1-queryclient-providertsx-구성">1. QueryClient Provider.tsx 구성</h2>
+
+<p>React Query는 내부적으로 Context API를 기반으로 작동하며, <code class="language-plaintext highlighter-rouge">QueryClient</code>라는 객체를 통해 모든 쿼리 상태(데이터, 캐시, 로딩)를 관리합니다. <br />
+따라서 이 <code class="language-plaintext highlighter-rouge">QueryClient</code>를 <code class="language-plaintext highlighter-rouge">QueryClientProvider</code>로 전역에 주입해줘야만 TanStack Query 기능들을 사용할 수 있습니다.</p>
+
+<h3 id="queryclient-생성-함수">QueryClient 생성 함수</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">createQueryClient</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">({</span>
+    <span class="na">defaultOptions</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">queries</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">staleTime</span><span class="p">:</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="c1">// 캐시 유효 시간: 1분</span>
+        <span class="na">refetchOnWindowFocus</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>  <span class="c1">// ✅ 브라우저 탭 포커스 시 refetch 비활성화</span>
+        <span class="na">refetchOnReconnect</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>    <span class="c1">// ✅ 네트워크 복구 시 refetch 비활성화</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p><strong>🔍 ️왜 기본 옵션을 비활성화할까?</strong></p>
+
+<ul>
+  <li>refetchOnWindowFocus: 브라우저 탭 포커스 시 자동 재요청
+    <ul>
+      <li>UX 깜빡임 방지 및 불필요한 네트워크 요청 줄이기</li>
+    </ul>
+  </li>
+  <li>refetchOnReconnect: 네트워크 복구 시 자동 재요청
+    <ul>
+      <li>불안정한 네트워크에서 반복 호출 방지</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="csr과-ssr-구분해서-queryclient-가져오기">CSR과 SSR 구분해서 QueryClient 가져오기</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">browserQueryClient</span><span class="p">:</span> <span class="nx">QueryClient</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">getQueryClient</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isServer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">createQueryClient</span><span class="p">();</span> <span class="c1">// SSR에서는 항상 새로운 인스턴스를 생성</span>
+  <span class="p">}</span>
+
+  <span class="c1">// CSR에서는 싱글톤으로 QueryClient 재사용</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">browserQueryClient</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">browserQueryClient</span> <span class="o">=</span> <span class="nx">createQueryClient</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">browserQueryClient</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p><strong>🔍 ️싱글톤(Singleton) 패턴이란?</strong></p>
+<ul>
+  <li><span class="highlight-orange">한번만 생성하고, 재사용하는 객체 생성 방식</span></li>
+  <li>CSR 환경에서는 싱글톤을 사용해야 <span class="highlight-orange">QueryClient 인스턴스가 공유</span>되어 React Query의 캐시가 유지됩니다.</li>
+  <li>새로 생성하면 캐시가 날아가므로 성능과 UX에 악영향을 줍니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="reactqueryclientprovider-정의">ReactQueryClientProvider 정의</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">ReactQueryClientProvider</span><span class="p">({</span> <span class="nx">children</span> <span class="p">}:</span> <span class="nx">PropsWithChildren</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">queryClient</span> <span class="o">=</span> <span class="nx">getQueryClient</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">QueryClientProvider</span> <span class="nx">client</span><span class="o">=</span><span class="p">{</span><span class="nx">queryClient</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/QueryClientProvider</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="최종-파일">최종 파일</h3>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/providers/query-client.provider.tsx</span>
+<span class="dl">'</span><span class="s1">use client</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">QueryClient</span><span class="p">,</span> <span class="nx">QueryClientProvider</span><span class="p">,</span> <span class="nx">isServer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@tanstack/react-query</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">PropsWithChildren</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">createQueryClient</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">({</span>
+    <span class="na">defaultOptions</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">queries</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">staleTime</span><span class="p">:</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">refetchOnWindowFocus</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">refetchOnReconnect</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">browserQueryClient</span><span class="p">:</span> <span class="nx">QueryClient</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">getQueryClient</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isServer</span><span class="p">)</span> <span class="k">return</span> <span class="nx">createQueryClient</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">browserQueryClient</span><span class="p">)</span> <span class="nx">browserQueryClient</span> <span class="o">=</span> <span class="nx">createQueryClient</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">browserQueryClient</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">ReactQueryClientProvider</span><span class="p">({</span> <span class="nx">children</span> <span class="p">}:</span> <span class="nx">PropsWithChildren</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">queryClient</span> <span class="o">=</span> <span class="nx">getQueryClient</span><span class="p">();</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">QueryClientProvider</span> <span class="nx">client</span><span class="o">=</span><span class="p">{</span><span class="nx">queryClient</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/QueryClientProvider&gt;</span><span class="err">;
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="2-layouttsx에서-provider로-등록">2. layout.tsx에서 Provider로 등록</h2>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/app/layout.tsx</span>
+
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./globals.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactQueryClientProvider</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/providers/query-client.provider</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">RootLayout</span><span class="p">({</span> <span class="nx">children</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ReactQueryClientProvider</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/ReactQueryClientProvider</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="3-axios-api-함수-작성">3. Axios API 함수 작성</h2>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/services/use-get-posts.ts</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@tanstack/react-query</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">IPostModel</span> <span class="p">{</span>
+  <span class="nl">userId</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">body</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getPosts</span> <span class="o">=</span> <span class="k">async</span> <span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IPostModel</span><span class="p">[]</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://jsonplaceholder.typicode.com/posts</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">useGetPosts</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">useQuery</span><span class="p">({</span>
+    <span class="na">queryKey</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">posts</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">queryFn</span><span class="p">:</span> <span class="nx">getPosts</span><span class="p">,</span>
+    <span class="na">staleTime</span><span class="p">:</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="c1">// posts 데이터는 자주 바뀌지 않기 때문에 더 오래 캐시를 유지</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p><strong>🔍 staleTime이란?</strong></p>
+<ul>
+  <li>staleTime은 데이터가 신선한 상태(fresh)로 유지되는 시간입니다.</li>
+  <li>staleTime이 지나면 해당 쿼리는 <strong>stale(오래된 상태)</strong>가 되며, 이후 이벤트(예: 리페치, 리포커스 등)에 따라 다시 fetch될 수 있습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="4-클라이언트-컴포넌트-생성">4. 클라이언트 컴포넌트 생성</h2>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/components/posts.tsx</span>
+<span class="dl">'</span><span class="s1">use client</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useGetPosts</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/services/use-get-posts</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">Posts</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">posts</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useGetPosts</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">로딩</span> <span class="nx">중</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/p&gt;</span><span class="err">;
+</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">posts</span><span class="p">?.</span><span class="nx">map</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">})</span> <span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="p">))}</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="5-서버-컴포넌트에서-hydrationboundary-적용">5. 서버 컴포넌트에서 HydrationBoundary 적용</h2>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/app/posts/page.tsx</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HydrationBoundary</span><span class="p">,</span> <span class="nx">QueryClient</span><span class="p">,</span> <span class="nx">dehydrate</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@tanstack/react-query</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">getPosts</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/services/use-get-posts</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Posts</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/components/posts</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">PostsPage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">queryClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">();</span> 
+
+  <span class="k">await</span> <span class="nx">queryClient</span><span class="p">.</span><span class="nx">prefetchQuery</span><span class="p">({</span>
+    <span class="na">queryKey</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">posts</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">queryFn</span><span class="p">:</span> <span class="nx">getPosts</span><span class="p">,</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">HydrationBoundary</span> <span class="nx">state</span><span class="o">=</span><span class="p">{</span><span class="nx">dehydrate</span><span class="p">(</span><span class="nx">queryClient</span><span class="p">)}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Posts</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/HydrationBoundary</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="-마무리">◾ 마무리</h1>
+
+<p>React Query의 HydrationBoundary를 활용하면, 서버에서 데이터를 미리 받아온 후 클라이언트에서 바로 렌더링하고, 중복 요청 없이 캐시를 활용할 수 있습니다.
+Next.js App Router의 Server Component와 매우 잘 어울리는 방식이니, 성능 최적화나 SEO가 중요한 페이지라면 도입해서 사용하는 것을 추천드립니다.</p>
+
+<h1 id="-참고">◾ 참고</h1>
+<ul>
+  <li><a href="https://medium.com/@efefurkankarakaya/creating-server-components-with-tanstack-query-axios-9abe88c0ca87">creating-server-components-with-tanstack-query-axios</a></li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="Nextjs" /><category term="SSR" /><category term="서버 컴포넌트" /><category term="TanStack Query" /><category term="HydrationBoundary" /><category term="Axios" /><summary type="html"><![CDATA[Next.js App Router + TanStack Query(TanStack) + Axios 조합으로 SSR과 클라이언트 캐시를 사용해보자!]]></summary></entry><entry><title type="html">[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드</title><link href="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/" rel="alternate" type="text/html" title="[NestJS] 내가 EC2서버에서 CORS 에러지옥에 갇혔던 이유(는 NGINX) + EC2/NextJS/PM2 배포 가이드" /><published>2025-05-19T00:00:00+09:00</published><updated>2025-05-19T22:06:00+09:00</updated><id>http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80%20EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C%20CORS%20%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90%20%EA%B0%87%ED%98%94%EB%8D%98%20%EC%9D%B4%EC%9C%A0(%EB%8A%94%20NginX)</id><content type="html" xml:base="http://localhost:4000/nestjs/nestjs-%EB%82%B4%EA%B0%80-EC2%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-CORS-%EC%97%90%EB%9F%AC%EC%A7%80%EC%98%A5%EC%97%90-%EA%B0%87%ED%98%94%EB%8D%98-%EC%9D%B4%EC%9C%A0(%EB%8A%94-NginX)/"><![CDATA[<p><img src="/assets/image/nginx.png" alt="image" /></p>
 
 <h2 id="-배경">◾ 배경</h2>
 <p>이전에 회사에서 NextJS 프로젝트를 EC2 서버에 배포하며 고생했던 경험이 있습니다. 
@@ -549,7 +845,7 @@ WebSocket 연결 전 polling 요청이 404로 실패하면서 웹소켓 연결 �
 <p>여러 프로젝트를 진행하면서 항상 JWT 토큰을 다뤄왔습니다.
 그 과정에서 <strong>토큰 관리 방법</strong>이 궁금해 여러 자료를 찾아봤고, 가장 많이 추천되는 방식은 다음과 같았습니다.</p>
 
-<p>✅ <strong>Access Token</strong> → 프론트엔드의 메모리에 저장<br />
+<p>✅ <strong>Access Token</strong> → 브라우저(클라이언트)의 메모리에 저장<br />
 ✅ <strong>Refresh Token</strong> → 백엔드 서버에서 HttpOnly 쿠키로 관리</p>
 
 <p>이번 Rebook 프로젝트에서는 프론트엔드와 백엔드 개발을 모두 맡고 있기 때문에,
@@ -1325,227 +1621,4 @@ dynamic import는 컴포넌트 외부에서 선언해야합니다.</p>
   <li>드림코딩</li>
   <li>모던 리액트 딥다이브</li>
   <li>모던 자바스크립트 딥다이브</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="비동기" /><category term="이벤트루프" /><summary type="html"><![CDATA[자바스크립트가 비동기 통신을 하는 방법]]></summary></entry><entry><title type="html">[JS] MSW(Mock Service Worker, v 2.0) - API Mocking 하기</title><link href="http://localhost:4000/javascript/javascript-MSW(Mock-Service-Worker,-v-2.0)/" rel="alternate" type="text/html" title="[JS] MSW(Mock Service Worker, v 2.0) - API Mocking 하기" /><published>2024-06-24T00:00:00+09:00</published><updated>2024-06-24T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-MSW(Mock%20Service%20Worker,%20v%202.0)</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-MSW(Mock-Service-Worker,-v-2.0)/"><![CDATA[<h2 id="-msw란">📄 MSW란?</h2>
-
-<p><a href="https://mswjs.io/">MSW</a>는 Mock Service Worker의 약자로 <strong>API 모킹</strong>을 위한 자바스크립트 라이브러리 입니다.</p>
-
-<p>다음과 같은 상황에서 사용할 수 있습니다.</p>
-
-<ul>
-  <li>백엔드 API가 미완성일 경우 미리 로직을 구성해야할 때</li>
-  <li>특정 에러를 발생시켜 에러 핸들링 테스트 할 때</li>
-</ul>
-
-<p>MSW는 <strong>Service Worker API</strong>를 사용하여 브라우저에서 발생하는 네트워크 요청을 가로챕니다. 실제 서버 대신 가짜 응답을 만들어 프론트엔드 개발자가 API 테스트를 할 수 있는 환경을 만들어줍니다.</p>
-
-<p>사내 프로젝트에서 API 전달이 늦어지며 프론트엔드에서 API 요청 로직을 미리 구현하고 테스트하기 위해 MSW를 도입했습니다. 미리 DTO를 전달받으면 추후 실제 API를 전달받았을 때 큰 공수없이 바로 API를 연결 할 수 있었습니다. 다만, 리액트 쿼리처럼 전역으로 설정을 해 예상치 못한 네트워크를 가로채는 상황을 피하기 위해 개발 환경에서만 사용하고 실제 릴리즈되는 브랜치에서는 사용하지 않았습니다.</p>
-
-<p><br /></p>
-
-<h2 id="msw-설치-nextjs-app-router-환경-기준">📄MSW 설치 (Next.js App Router 환경 기준)</h2>
-
-<p>Next.js에서 MSW를 사용할 경우 클라이언트/서버 환경 모두 요구되는데, 글 작성 시점 기준 서버 사이드에서 msw과 매끄럽게 호환하는 방법이 없어 node 서버와 함께 사용합니다.</p>
-
-<div style="border-left: 5px solid #3498db; padding: 10px; background: #f0f8ff;">
-<strong>ℹ️ Notice:</strong> Next.js에서 MSW를 사용할 경우 클라이언트/서버 환경 모두 요구되는데, 글 작성 시점 기준 서버 사이드에서 msw과 매끄럽게 호환하는 방법이 없어 node 서버와 함께 사용합니다.
-</div>
-
-<h3 id="1-설치하기">1. 설치하기</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span> <span class="nx">npm</span> <span class="nx">install</span> <span class="nx">msw</span><span class="p">@</span><span class="nd">latest</span> <span class="o">--</span><span class="nx">save</span><span class="o">-</span><span class="nx">dev</span>
-</code></pre></div></div>
-
-<h3 id="2-public-폴더에-초기화">2. public 폴더에 초기화</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span> <span class="nx">npx</span> <span class="nx">msw</span> <span class="nx">init</span> <span class="k">public</span><span class="sr">/ --sav</span><span class="err">e
-</span></code></pre></div></div>
-<ul>
-  <li>public 폴더에 설치</li>
-  <li><strong>mockServiceWorker.js</strong> 가 자동으로 생성
-    <ul>
-      <li>http 요청을 가로채 서버와의 통신을 모방한다.</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">--save</code> : package.json 에 등록되어 msw를 업데이트 할 때마다 자동으로 업데이트</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="-msw-세팅">📄 MSW 세팅</h2>
-
-<h3 id="-srcmocksbrowserts">💾 src/mocks/browser.ts</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setupWorker</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">msw/browser</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">handlers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./handlers</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">// This configures a Service Worker with the given request handlers.</span>
-<span class="kd">const</span> <span class="nx">worker</span> <span class="o">=</span> <span class="nx">setupWorker</span><span class="p">(...</span><span class="nx">handlers</span><span class="p">);</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">worker</span><span class="p">;</span>
-</code></pre></div></div>
-<ul>
-  <li>CSR 네트워크 요청용</li>
-  <li>serviceWorker가 가로챈 브라우저 요청을 전달받는다.</li>
-</ul>
-
-<h3 id="-srcmockshttpts">💾 src/mocks/http.ts</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createMiddleware</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@mswjs/http-middleware</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">express</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">cors</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">cors</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">handlers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./handlers</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">9090</span><span class="p">;</span> <span class="c1">// 서버 포트</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">({</span> <span class="na">origin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span> <span class="na">optionsSuccessStatus</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="na">credentials</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">createMiddleware</span><span class="p">(...</span><span class="nx">handlers</span><span class="p">));</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Mock server is running on port: </span><span class="p">${</span><span class="nx">port</span><span class="p">}</span><span class="s2">`</span><span class="p">));</span>
-</code></pre></div></div>
-<ul>
-  <li>SSR 네트워크 요청용 =  서버 컴포넌트에서 사용</li>
-  <li>CSR만 사용할 경우 필수는 아님</li>
-</ul>
-
-<h3 id="-srcmockshandlerts">💾 src/mocks/handler.ts</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">http</span><span class="p">,</span> <span class="nx">HttpResponse</span><span class="p">,</span> <span class="nx">StrictResponse</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">msw</span><span class="dl">'</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">faker</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@faker-js/faker</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">generateDate</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">lastWeek</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">());</span>
-  <span class="nx">lastWeek</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">lastWeek</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">-</span> <span class="mi">7</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">between</span><span class="p">({</span>
-    <span class="na">from</span><span class="p">:</span> <span class="nx">lastWeek</span><span class="p">,</span>
-    <span class="na">to</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-<span class="kd">const</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">elonmusk</span><span class="dl">'</span><span class="p">,</span> <span class="na">nickname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Elon Musk</span><span class="dl">'</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/yRsRRjGO.jpg</span><span class="dl">'</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">zerohch0</span><span class="dl">'</span><span class="p">,</span> <span class="na">nickname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">제로초</span><span class="dl">'</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/5Udwvqim.jpg</span><span class="dl">'</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">leoturtle</span><span class="dl">'</span><span class="p">,</span> <span class="na">nickname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">레오</span><span class="dl">'</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">avatar</span><span class="p">()},</span>
-<span class="p">]</span>
-<span class="kd">const</span> <span class="nx">Posts</span> <span class="o">=</span> <span class="p">[];</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">handlers</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="nx">http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/login</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">로그인</span><span class="dl">'</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">HttpResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">User</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">{</span>
-      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">'</span><span class="s1">Set-Cookie</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">connect.sid=msw-cookie;HttpOnly;Path=/</span><span class="dl">'</span>
-      <span class="p">}</span>
-    <span class="p">})</span>
-  <span class="p">}),</span>
-  <span class="nx">http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/logout</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">로그아웃</span><span class="dl">'</span><span class="p">);</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">HttpResponse</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">'</span><span class="s1">Set-Cookie</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">connect.sid=;HttpOnly;Path=/;Max-Age=0</span><span class="dl">'</span>
-      <span class="p">}</span>
-    <span class="p">})</span>
-  <span class="p">}),</span>
-<span class="c1">// ...</span>
-<span class="p">];</span>
-</code></pre></div></div>
-<ul>
-  <li>API 요청과 응답 정의</li>
-</ul>
-
-<h3 id="쿼리-파라미터-처리하기">쿼리 파라미터 처리하기</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/test/search</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">request</span><span class="p">,</span> <span class="nx">params</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
-        <span class="kd">const</span> <span class="nx">keword</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">keyword</span><span class="dl">'</span><span class="p">);</span>
-        <span class="kd">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">page</span><span class="dl">'</span><span class="p">));</span>
-        <span class="kd">const</span> <span class="nx">size</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">size</span><span class="dl">'</span><span class="p">));</span>
-        <span class="kd">const</span> <span class="nx">totalCount</span> <span class="o">=</span> <span class="nx">searchParams</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-        <span class="kd">const</span> <span class="nx">totalPages</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">totalCount</span> <span class="o">/</span> <span class="nx">size</span><span class="p">);</span>
-
-
-        <span class="k">return</span> <span class="nx">HttpResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
-            <span class="na">result</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SUCCESS</span><span class="dl">'</span><span class="p">,</span>
-            <span class="na">resultCode</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-            <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">성공</span><span class="dl">'</span><span class="p">,</span>
-            <span class="na">contents</span><span class="p">:</span> <span class="nx">test</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">page</span> <span class="o">*</span> <span class="nx">size</span><span class="p">,</span> <span class="p">(</span><span class="nx">page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">size</span><span class="p">),</span>
-            <span class="na">pageNumber</span><span class="p">:</span> <span class="nx">page</span><span class="p">,</span>
-            <span class="na">pageSize</span><span class="p">:</span> <span class="nx">size</span><span class="p">,</span>
-            <span class="nx">totalPages</span><span class="p">,</span>
-            <span class="nx">totalCount</span><span class="p">,</span>
-            <span class="na">isLastPage</span><span class="p">:</span> <span class="nx">totalPages</span> <span class="o">&lt;=</span> <span class="nx">page</span><span class="p">,</span>
-            <span class="na">isFirstPage</span><span class="p">:</span> <span class="nx">page</span> <span class="o">===</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="p">});</span>
-
-    <span class="p">})</span>
-</code></pre></div></div>
-<ul>
-  <li>url 객체 생성 후 searchParams을 통해 처리합니다.</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="-msw-서버-실행">📄 MSW 서버 실행</h2>
-
-<h3 id="1-packagejson-스크립트-추가">1. package.json 스크립트 추가</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-  <span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next dev</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">build</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next build</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next start</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">lint</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">next lint</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">mock</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">npx tsx watch ./src/mocks/http.ts</span><span class="dl">"</span>
-<span class="p">},</span>
-</code></pre></div></div>
-<ul>
-  <li>watch : 서버 코드가 수정되면 자동으로 재시작</li>
-</ul>
-
-<h3 id="2-실행">2. 실행</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span> <span class="nx">npm</span> <span class="nx">run</span> <span class="nx">mock</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<h2 id="-msw-사용-분기처리">📄 MSW 사용 분기처리</h2>
-
-<h3 id="-srcapp_componentmswcoponenttsx">💾 src\app_component\MSWCoponent.tsx</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">MSWComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nb">window</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_API_MOCKING</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-			 <span class="nx">worker</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span> <span class="na">onUnhandledRequest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bypass</span><span class="dl">"</span> <span class="p">});</span> <span class="c1">// msw 핸들러로 요청하지 않은 request는 무시. console 경고를 없앨 수 있다</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="p">[]);</span>
-
-  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div></div>
-<ul>
-  <li>MSW는 개발환경에서만 사용한다</li>
-</ul>
-
-<h3 id="-envlocal">💾 env.local</h3>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">NEXT_PUBLIC_API_MOCKING</span><span class="o">=</span><span class="nx">enabled</span> 
-</code></pre></div></div>
-<ul>
-  <li>로컬 환경에서만 돌아가는 환경변수 파일</li>
-  <li>개발 환경에서만 읽어올 수 있는 브라우저 환경 변수를 설정하여 배포환경일때는 MSW를 사용하지 않는다.</li>
-</ul>
-
-<h3 id="-srcapplayouttsx">💾 src\app\layout.tsx</h3>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">RootLayout</span><span class="p">({</span> <span class="nx">children</span> <span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">body</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">inter</span><span class="p">.</span><span class="nx">className</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">MSWComponent</span> <span class="o">/&gt;</span> <span class="c1">// ✅</span>
-          <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li>Next.js + ReactQuery로 SNS 서비스 만들기 (인프런)</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="MSW" /><category term="Mock" /><summary type="html"><![CDATA[프론트 작업을 완료했는데 백엔드 API 작업이 늦어질 때]]></summary></entry></feed>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="비동기" /><category term="이벤트루프" /><summary type="html"><![CDATA[자바스크립트가 비동기 통신을 하는 방법]]></summary></entry></feed>
