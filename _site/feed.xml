@@ -1,4 +1,152 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-07-07T11:24:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[Next.js 15] TanStack Query로 SSR 데이터 처리하기 (with HydrationBoundary)</title><link href="http://localhost:4000/nextjs/nextjs-TanStack-Query%EB%A1%9C-SSR-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-(with-HydrationBoundary)/" rel="alternate" type="text/html" title="[Next.js 15] TanStack Query로 SSR 데이터 처리하기 (with HydrationBoundary)" /><published>2025-07-07T00:00:00+09:00</published><updated>2025-07-07T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-TanStack%20Query%EB%A1%9C%20SSR%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0%20(with%20HydrationBoundary)</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-TanStack-Query%EB%A1%9C-SSR-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-(with-HydrationBoundary)/"><![CDATA[<h1 id="-목표">◾ 목표</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-08-16T14:06:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SUJIN DEV NOTE 📝</title><subtitle>주니어 개발자의 꼼질꼼질 성장일지 👻</subtitle><author><name>수진‍ (水珍)</name></author><entry><title type="html">[프로그래머스 / Lv 1] 모의고사 by JS</title><link href="http://localhost:4000/programmers-lv1/programmers-%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스 / Lv 1] 모의고사 by JS" /><published>2025-08-16T00:00:00+09:00</published><updated>2023-03-28T22:06:00+09:00</updated><id>http://localhost:4000/programmers-lv1/programmers-%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/programmers-lv1/programmers-%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/"><![CDATA[<h2 id="-문제">📄 문제</h2>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42840">🔍 프로그래머스 - 모의고사 문제 보러가기</a></p>
+
+<p>세 명의 수포자가 각각 일정한 패턴으로 문제를 찍습니다. 정답 배열이 주어졌을 때, 누가 가장 많이 맞췄는지를 구하는 문제입니다.</p>
+
+<h2 id="️-나의-풀이">🙋‍♀️ 나의 풀이</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">answers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">patterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+  <span class="p">];</span>
+
+  <span class="kd">const</span> <span class="nx">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">i</span><span class="p">,</span> <span class="nx">answer</span><span class="p">]</span> <span class="k">of</span> <span class="nx">answers</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">j</span><span class="p">,</span> <span class="nx">pattern</span><span class="p">]</span> <span class="k">of</span> <span class="nx">patterns</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">answer</span> <span class="o">===</span> <span class="nx">pattern</span><span class="p">[</span><span class="nx">i</span> <span class="o">%</span> <span class="nx">pattern</span><span class="p">.</span><span class="nx">length</span><span class="p">])</span> <span class="p">{</span>
+        <span class="nx">scores</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">maxScore</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">scores</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">highestScores</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">scores</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">scores</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">maxScore</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">highestScores</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">highestScores</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="-핵심-문법-설명">🔨 핵심 문법 설명</h2>
+
+<h3 id="1-answersentries">1. answers.entries()</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Array.prototype.entries()</code> 는 배열의 [인덱스, 값] 쌍을 반환하는 이터레이터 객체를 생성합니다.
+    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">i</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 0 'a'</span>
+<span class="c1">// 1 'b'</span>
+<span class="c1">// 2 'c'</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>➡️ 따라서 for (const [i, answer] of answers.entries()) 는 answers <strong>배열의 인덱스(i) 와 값(answer)</strong> 를 동시에 얻어옵니다.</p>
+
+<p><br /></p>
+
+<h3 id="2-forof-vs-forin">2. for…of vs for…in</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th><code class="language-plaintext highlighter-rouge">for...in</code></th>
+      <th><code class="language-plaintext highlighter-rouge">for...of</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>순회 대상</td>
+      <td>객체의 key, 배열의 <strong>인덱스</strong></td>
+      <td>이터러블의 <strong>값(value)</strong></td>
+    </tr>
+    <tr>
+      <td>대표적 용도</td>
+      <td>객체 프로퍼티 열거</td>
+      <td>배열 값, 문자열 문자 순회</td>
+    </tr>
+    <tr>
+      <td>사용 예시</td>
+      <td><code class="language-plaintext highlighter-rouge">for (let key in obj)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">for (let val of arr)</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>👉 이번 문제에서는 <strong>인덱스와 값이 동시에 필요</strong>하므로 <code class="language-plaintext highlighter-rouge">for...of answers.entries()</code> 가 가장 깔끔합니다.</p>
+
+<p><br /></p>
+
+<h3 id="3-i--patternlength-의-의미">3. <code class="language-plaintext highlighter-rouge">i % pattern.length</code> 의 의미</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">%</code> 는 <strong>나머지 연산자</strong>입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">i % pattern.length</code> 는 “인덱스 i를 패턴 길이로 나눈 나머지”를 의미합니다.</li>
+</ul>
+
+<p>예시 (2번 수포자 패턴: <code class="language-plaintext highlighter-rouge">[2, 1, 2, 3, 2, 4, 2, 5]</code>, 길이 8):</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// i: 문제 번호, i % 8: 패턴 인덱스</span>
+<span class="mi">0</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">0</span> <span class="err">→</span> <span class="nx">패턴</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">1</span> <span class="err">→</span> <span class="nx">패턴</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">...</span>
+<span class="mi">7</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">7</span> <span class="err">→</span> <span class="nx">패턴</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="mi">8</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">0</span> <span class="err">→</span> <span class="nx">다시</span> <span class="nx">패턴</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>➡️ 따라서 <code class="language-plaintext highlighter-rouge">pattern[i % pattern.length]</code> 는 <strong>무한히 반복되는 패턴에서 현재 위치의 값</strong>을 의미합니다.</p>
+
+<h2 id="-시간-복잡도-분석">🕚 시간 복잡도 분석</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">answers.length = N</code> (정답 배열의 크기)</li>
+</ul>
+
+<ol>
+  <li>바깥 반복문: <code class="language-plaintext highlighter-rouge">N</code> 번 실행</li>
+  <li>안쪽 반복문: 수포자는 항상 3명 → 상수 3번 반복 = O(1)</li>
+</ol>
+
+<p>👉 따라서 전체 반복 횟수는 <code class="language-plaintext highlighter-rouge">3N</code>, 시간 복잡도는 <strong>O(N)</strong> 입니다.</p>
+
+<p>그 외:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">i % pattern.length</code> → O(1)</li>
+  <li><code class="language-plaintext highlighter-rouge">Math.max(...scores)</code> → 길이 3 → O(1)</li>
+  <li>최고 점수 찾는 루프 → 길이 3 → O(1)</li>
+</ul>
+
+<p>➡️ 최종 시간 복잡도: <strong>O(N)</strong></p>
+
+<h2 id="정리">정리</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">answers.entries()</code> 와 <code class="language-plaintext highlighter-rouge">for...of</code> + 구조 분해 할당으로 인덱스와 값을 동시에 가져올 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">for...in</code> 은 key(인덱스), <code class="language-plaintext highlighter-rouge">for...of</code> 는 값(value)을 순회한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">i % pattern.length</code> 를 통해 패턴을 무한 반복하는 효과를 낼 수 있다.</li>
+  <li>전체 시간 복잡도는 <strong>O(N)</strong> 으로, 입력 크기에 비례하여 효율적으로 동작한다.</li>
+</ul>
+
+<h2 id="문제-출처">문제 출처</h2>
+
+<ul>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42840">프로그래머스</a></li>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="programmers-lv1" /><category term="프로그래머스" /><category term="Array.prototype.entries()" /><summary type="html"><![CDATA[Array.prototype.entries() 로 완전탐색 문제 접근하기]]></summary></entry><entry><title type="html">[Next.js 15] TanStack Query로 SSR 데이터 처리하기 (with HydrationBoundary)</title><link href="http://localhost:4000/nextjs/nextjs-TanStack-Query%EB%A1%9C-SSR-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-(with-HydrationBoundary)/" rel="alternate" type="text/html" title="[Next.js 15] TanStack Query로 SSR 데이터 처리하기 (with HydrationBoundary)" /><published>2025-07-07T00:00:00+09:00</published><updated>2025-07-07T22:06:00+09:00</updated><id>http://localhost:4000/nextjs/nextjs-TanStack%20Query%EB%A1%9C%20SSR%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0%20(with%20HydrationBoundary)</id><content type="html" xml:base="http://localhost:4000/nextjs/nextjs-TanStack-Query%EB%A1%9C-SSR-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0-(with-HydrationBoundary)/"><![CDATA[<h1 id="-목표">◾ 목표</h1>
 
 <p>이 포스팅은 Next.js App Router 환경에서 TanStack Query의 HydrationBoundary를 이용해 SSR 데이터를 처리하는 전체 흐름을 소개합니다. <br />
 클라이언트 렌더링만 사용하던 기존 방식에서 벗어나, <span class="highlight-orange">서버에서 데이터를 미리 가져오고 클라이언트는 이를 캐싱하여 바로 렌더링</span>하는 구조를 만들어봅니다.
@@ -1431,194 +1579,4 @@ dynamic import는 컴포넌트 외부에서 선언해야합니다.</p>
 <ul>
   <li><a href="https://dev.to/nipu/js-cjs-and-mjs-defference-5f21"><strong>.js, .cjs and .mjs defference</strong></a></li>
   <li>https://tech.kakao.com/posts/605</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="CJS" /><category term="ESM" /></entry><entry><title type="html">[JS] 이벤트 루프와 비동기 통신</title><link href="http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/" rel="alternate" type="text/html" title="[JS] 이벤트 루프와 비동기 통신" /><published>2024-06-29T00:00:00+09:00</published><updated>2024-06-29T22:06:00+09:00</updated><id>http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%A3%A8%ED%94%84%EC%99%80%20%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%86%B5%EC%8B%A0</id><content type="html" xml:base="http://localhost:4000/javascript/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%86%B5%EC%8B%A0/"><![CDATA[<h2 id="-싱글-스레드-자바스크립트">📝 싱글 스레드 자바스크립트</h2>
-
-<p>자바스크립트는 <strong>싱글 스레드 언어</strong>다.</p>
-
-<p>하나의 프로세스안에 여러개의 스레드가 있을 수 있다. 하지만 자바스크립트는 싱글 스레드 언어이므로 하나의 스레드만 존재한다.</p>
-
-<p>여러개의 스레드가 있다면 메모리를 공유해 동시에 여러작업이 가능하지만 하나의 스레드만 가지고 있는 자바스크립트 엔진은 작업을 병렬로 처리할 수 없다.</p>
-
-<p>자바스크립트 코드는 한줄한줄 순서대로 처리되며 하나의 작업이 끝나기전까지 다음 작업이 실행되지 않는다.</p>
-
-<p>만약 하나의 작업이 너무 오래걸리면 뒤에 있는 작업이 실행되지 않는데, 이는 <strong>Run-to-Completion</strong>이라고 불리는 자바스크립트의 특징이다.</p>
-
-<ul>
-  <li>프로세스
-    <ul>
-      <li>메모리를 사용하는 독립적인 실행 단위</li>
-      <li>다른 프로세스와 자원을 공유하지 않는다.</li>
-    </ul>
-  </li>
-  <li>스레드
-    <ul>
-      <li>하나의 프로세스 안에 존재하는 작은 실행 단위</li>
-      <li>스레드끼리 자원을 공유할 수 있다.</li>
-      <li>하나의 프로세스가 병렬로 작업을 처리할 수 있게 한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="-메모리-힙과-콜-스택---자바스크립트가-작업을-수행하는-방법">◆ 메모리 힙과 콜 스택  | 자바스크립트가 작업을 수행하는 방법</h3>
-
-<p>■ 메모리 힙 (Memory Heap)</p>
-<ul>
-  <li>선언된 변수들의 메모리 할당이 이루어진다.</li>
-  <li>비구조적으로 데이터가 저장된다.</li>
-</ul>
-
-<p>■ 콜 스택 (Call Stack)</p>
-<ul>
-  <li>함수들이 실행 순서에 따라 쌓인다.</li>
-  <li>LIFO(선입후출)의 구조로 진행된다.</li>
-</ul>
-
-<p><img src="/assets/image/posts/js-event-loop.png" alt="image" /></p>
-
-<p><br /></p>
-
-<h2 id="-이벤트-루프--자바스크립트가-비동기-통신을-하는-방법">📝 이벤트 루프 | 자바스크립트가 비동기 통신을 하는 방법</h2>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">bar</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">baz</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">baz</span><span class="dl">'</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">)</span>
-    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">bar</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="nx">baz</span><span class="p">()</span>
-<span class="p">}</span>
-
-<span class="nx">foo</span><span class="p">()</span>
-</code></pre></div></div>
-
-<ul>
-  <li>출력 순서: foo → baz → bar</li>
-</ul>
-
-<p>bar의 실행을 기다리지 않고 다음줄인 baz가 실행된 이유는 setTimeout 함수는 바로 콜스택에 들어가는 것이아니라 태스크큐에 들어가기 때문이다.</p>
-<ul>
-  <li>태스크큐에 저장되는 작업들: setTimeout, setInterval, setImmediate</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="-브라우저-이벤트-동작-순서">◆ 브라우저 이벤트 동작 순서</h3>
-<p><img src="/assets/image/posts/js-event-loop-2.png" alt="image" /></p>
-
-<ol>
-  <li><strong>콜스택</strong> 실행</li>
-  <li>콜스택이 비어있으면 <strong>마이크로 태스크 큐</strong> 확인. 큐가 빌 때까지 모든 마이크로 태스크 실행
-    <ul>
-      <li>프로미스의 <code class="language-plaintext highlighter-rouge">then</code>이나 <code class="language-plaintext highlighter-rouge">catch</code>, <code class="language-plaintext highlighter-rouge">MutationObserver</code> 등</li>
-    </ul>
-  </li>
-  <li><strong>태스크 큐</strong> 확인. 큐가 빌 때까지 모든 태스크 실행
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">setTimeout</code>, <code class="language-plaintext highlighter-rouge">setInterval</code>, I/O 작업, DOM 이벤트 등</li>
-    </ul>
-  </li>
-  <li><strong>Request Animation Frame</strong>에서 대기중인 콜백 실행
-    <ul>
-      <li>Request Animation Frame: 애니메이션을 효율적으로 실행하기 위해 제공하는 함수로 브라우저가 다음 리페인트(Repaint) 전에 지정된 콜백 함수를 실행하도록 예약</li>
-    </ul>
-  </li>
-  <li>모든 작업이 완료되면 브라우저는 <strong>렌더링</strong>을 수행해 화면을 업데이트한다.</li>
-</ol>
-
-<p><br /></p>
-
-<h3 id="-함수가-마이크로-태스크-큐에-저장될-경우">◆ 함수가 마이크로 태스크 큐에 저장될 경우</h3>
-
-<ol>
-  <li>콜 스택에서 프로미스를 만들고 프로미스에 등록된 콜백, 즉 프로미스가 다 수행이 되고나면 실행되는 <code class="language-plaintext highlighter-rouge">then</code>과 <code class="language-plaintext highlighter-rouge">mutation observer</code>라는 웹 API에 등록된 콜백이 마이크로 큐에 들어온다.</li>
-  <li>이벤트루프는 마이크로 태스크 큐에 있는 프로미스 then 콜백을 비어있는 콜스택으로 가져간다.</li>
-  <li>프로미스 <code class="language-plaintext highlighter-rouge">then</code>이 끝나면 <code class="language-plaintext highlighter-rouge">mutation obsever</code>를 콜 스택으로 가져간다.</li>
-</ol>
-
-<p><strong>⭐️ 포인트 1</strong> 이 과정에서 마이크로 태스크 큐에 새로운 함수가 들어온다면, 나중에 들어온 함수도 모두 끝날때까지 계속 콜스택으로 가지고 와서 수행한다. <br />
-<strong>⭐️ 포인트 2</strong> 마이크로 태스크 큐가 텅텅비면 테스크 큐로 넘어간다.(태스크 큐와의 차이점: 태스크 큐에서는 아이템 하나만 콜스택으로 보내고 기다린다.)</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">handleClick</span><span class="dl">"</span><span class="p">);</span>
-  <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">// promise 의 콜백은 Microtask que를 이용한다.</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">then</span><span class="dl">"</span><span class="p">);</span>
-      <span class="nx">handleClick</span><span class="p">();</span>
-    <span class="p">});</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">handleClick</span><span class="p">();</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<p>이벤트루프는 마이크로태스크 큐에 등록된 콜백이 모두 빌때까지 기다리기때문에 이벤트루프가 멈춰 브라우저가 반응하지 않는다.</p>
-
-<p><br /></p>
-
-<h3 id="-함수가-태스크-큐에-저장될-경우">◆ 함수가 태스크 큐에 저장될 경우</h3>
-
-<ol>
-  <li>브라우저에서 지정된 이벤트가 발생한다.</li>
-  <li>웹 API는 콜백함수를 태스크 큐에 넣어준다.</li>
-  <li>이벤트 루프는 계속 관찰을 하다가 콜 스택에 할일이 남아 있으면 콜스택이 비워질 떄까지 기다린다.</li>
-  <li>콜스택이 비어서 자바스크립트 엔진이 더이상 일을 하지 않을 때 태스크 큐에 있는 함수를 콜 스택으로 가져온다.</li>
-  <li>자바스크립트 엔진이 콜 스택에 들어온 콜백함수를 실행한다.</li>
-</ol>
-
-<p><strong>⭐️ 포인트 1</strong> 이벤트 루프는 콜스택에 있는 함수를 <strong>하나씩만</strong> 가져온다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">handleClick</span><span class="dl">"</span><span class="p">);</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">setTimeout</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">handleClick</span><span class="p">();</span> <span class="c1">// 콜스택에 무한으로 추가되어 동일한 내용의 이벤트루프가 반복된다.</span>
-  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">handleClick</span><span class="p">();</span>
-<span class="p">});</span>
-</code></pre></div></div>
-<p>콜백함수 내에서 다시 콜백함수를 호출하기 때문에 Task Queue에 무한으로 함수가 추가된다.</p>
-
-<p><br /></p>
-
-<h3 id="-함수가-request-animation-frame-queue에-저장될-경우">◆ 함수가 Request Animation Frame Queue에 저장될 경우</h3>
-
-<p>브라우저를 다시 업데이트 할 때는 render안의 request Animation Frame 에 등록된 콜백들을 거친 후 렌더 트리를 만들고 그 트리를 이용해서 레이아웃을 계산한 뒤에 페인트를 통해서 브라우저에 업데이트를 한 다음에 이벤트루프가 재개된다.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">requestAnimationFrame</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// 렌더링이 되기 전 브라우저가 콜백함수를 실행하는 것을 보장해준다.</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">beige</span><span class="dl">"</span><span class="p">;</span>
-  <span class="p">});</span>
-  <span class="nx">requestAnimationFrame</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">orange</span><span class="dl">"</span><span class="p">;</span>
-  <span class="p">});</span>
-  <span class="nx">requestAnimationFrame</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">;</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<p>큐는 FIFO의 구조를 가지고 있기 때문에 마지막에 들어온 코드가 가장 먼저 적용되기 때문에 최종적으로 빨간색이 적용된 상태에서 렌더트리가 만들어지고 브라우저에 표기가 완료된다.</p>
-
-<h2 id="출처">출처</h2>
-
-<ul>
-  <li>드림코딩</li>
-  <li>모던 리액트 딥다이브</li>
-  <li>모던 자바스크립트 딥다이브</li>
-</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="비동기" /><category term="이벤트루프" /><summary type="html"><![CDATA[자바스크립트가 비동기 통신을 하는 방법]]></summary></entry></feed>
+</ul>]]></content><author><name>수진‍ (水珍)</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="CJS" /><category term="ESM" /></entry></feed>
