@@ -79,7 +79,7 @@ const quadraticComplexity = () => {
 
 ### ▪ O(log N) | Logarithmic Complexity
 
-O(n)는 <span style="color: #FAAB78">입력값에 따라 처리 시간이 증가</span>합니다.
+logN은 <span style="color: #FAAB78">N이 커질 때 아주 느리게 증가하는 함수</span>입니다.
 
 O(n)은 입력 값이 1이 될 때까지 절반으로 나누는 작업을 반복합니다.<br/>
 따라서 입력값에 따라 처리 시간이 증가하지만, 비례해서 증가하는 것이 아니므로 O(1)다음으로 빠른 계산법입니다.
