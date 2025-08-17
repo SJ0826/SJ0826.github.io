@@ -874,7 +874,7 @@
 </url>
 <url>
 <loc>http://localhost:4000/algorithm/algorithm-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</loc>
-<lastmod>2023-04-07T22:06:00+09:00</lastmod>
+<lastmod>2025-08-17T22:06:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/javascript/javascript-Math-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%A0%95%EB%A6%AC/</loc>
@@ -1174,7 +1174,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/programmers-lv1/programmers-%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/</loc>
-<lastmod>2023-03-28T22:06:00+09:00</lastmod>
+<lastmod>2023-08-16T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/programmers-lv1/programmers-%EA%B4%84%ED%98%B8-%ED%9A%8C%EC%A0%84%ED%95%98%EA%B8%B0/</loc>
+<lastmod>2025-08-17T22:06:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/cs/algorithm/</loc>

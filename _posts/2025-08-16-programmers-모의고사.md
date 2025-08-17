@@ -10,7 +10,7 @@ categories:
   - programmers-lv1
 tags:
   - ["프로그래머스", "Array.prototype.entries()"]
-last_modified_at: 2023-03-28T08:06:00-05:00
+last_modified_at: 2023-08-16T08:06:00-05:00
 ---
 
 ## 📄 문제
